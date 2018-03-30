@@ -6,7 +6,7 @@ class Php56Intl < AbstractPhp56Extension
   homepage "https://php.net/manual/en/book.intl.php"
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
-  revision 14
+  revision 15
 
   bottle do
     sha256 "3cd89c97a94bd7ee0550240a132d485488729f80a466a4ce09fe513516606fcd" => :high_sierra
@@ -19,7 +19,12 @@ class Php56Intl < AbstractPhp56Extension
   needs :cxx11
 
   def install
+    # Required due to icu4c dependency
     ENV.cxx11
+
+    # icu4c 61.1 compatability
+    ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
+
     Dir.chdir "ext/intl"
 
     safe_phpize
