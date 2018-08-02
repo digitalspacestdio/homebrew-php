@@ -16,7 +16,7 @@ class Php70Mcrypt < AbstractPhp70Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   depends_on "mcrypt"
-  depends_on "libtool" => :run
+  depends_on "libtool" => :build
 
   def install
     Dir.chdir "ext/mcrypt"
