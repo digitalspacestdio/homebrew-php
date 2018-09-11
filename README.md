@@ -12,8 +12,10 @@ A centralized repository for PHP-related brews.
 Run the following in your command-line:
 
 ```sh
-$ brew tap homebrew/homebrew-php
+$ brew tap leadingreach/homebrew-php
 ```
+
+If that has some issues, [try updating our forked repo](https://help.github.com/articles/syncing-a-fork/).
 
 ## Bugs happen
 
