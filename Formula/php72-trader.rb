@@ -15,7 +15,7 @@ class Php72Trader < AbstractPhp72Extension
   end
 
   depends_on "ta-lib"
-  depends_on "libtool" => :run
+  depends_on "libtool" => :build
 
   def install
     Dir.chdir "trader-#{version}"
