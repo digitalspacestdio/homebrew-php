@@ -19,9 +19,15 @@ class Php71Mongodb < AbstractPhp71Extension
     Dir.chdir "mongodb-#{version}" unless build.head?
 
     safe_phpize
+    if OS.mac?
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
                           "--with-mongodb-ssl=darwin"
+    else
+    system "./configure", "--prefix=#{prefix}",
+                          phpconfig,
+                          "--with-mongodb-ssl=openssl"
+    end
     system "make"
     prefix.install "modules/mongodb.so"
     write_config_file if build.with? "config-file"
