@@ -27,6 +27,7 @@ class Php55Mongodb < AbstractPhp55Extension
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
                           "--with-mongodb-ssl=openssl"
+    end
     system "make"
     prefix.install "modules/mongodb.so"
     write_config_file if build.with? "config-file"
