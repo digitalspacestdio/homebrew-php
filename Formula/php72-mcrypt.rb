@@ -20,6 +20,8 @@ class Php72Mcrypt < AbstractPhp72Extension
   depends_on "libtool" => :build
 
   def install
+    Dir.chdir "mcrypt-1.0.1"
+
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
