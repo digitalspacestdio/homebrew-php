@@ -16,8 +16,6 @@ class Php72Mcrypt < AbstractPhp72Extension
 #    sha256 "5d0235c2e21bd86b8723a7155135263738ce4031a9c866c3dc9160dc912389f4" => :el_capitan
 #  end
 
-  sha256 PHP_CHECKSUM[:sha256]
-
   depends_on "mcrypt"
   depends_on "libtool" => :build
 
