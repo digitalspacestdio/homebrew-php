@@ -2,7 +2,7 @@ require File.join(File.dirname(__FILE__), 'homebrew-php-requirement')
 
 class PharBuildingRequirement < HomebrewPhpRequirement
   def satisfied?
-    `php -i| grep phar.readonly`.downcase.include? "off"
+    `PATH="$HOMEBREW_PATH" /usr/bin/env php -i| grep phar.readonly`.downcase.include? "off"
   end
 
   def message
