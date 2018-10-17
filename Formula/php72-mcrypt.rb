@@ -1,6 +1,6 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
-class Php72Molten < AbstractPhp72Extension
+class Php72Mcrypt < AbstractPhp72Extension
   init
   desc "An interface to the mcrypt library"
   homepage "http://php.net/manual/en/book.mcrypt.php"
