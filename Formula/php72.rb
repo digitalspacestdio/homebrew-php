@@ -1,6 +1,6 @@
 require File.expand_path("../../Abstract/abstract-php", __FILE__)
 
-class Php71 < AbstractPhp
+class Php72 < AbstractPhp
   init
   desc "PHP Version 7.2"
   revision 25
