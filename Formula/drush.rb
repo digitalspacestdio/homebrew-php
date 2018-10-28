@@ -6,8 +6,8 @@ class Drush < Formula
 
   desc "Command-line shell and scripting interface for Drupal"
   homepage "https://github.com/drush-ops/drush"
-  url "https://github.com/drush-ops/drush/archive/8.1.15.tar.gz"
-  sha256 "24f6ed26b5e7e21ce81760244d11f8e7057d496b36a51406de0364215ed32aa7"
+  url "https://github.com/drush-ops/drush/archive/9.5.2.tar.gz"
+  sha256 "13c010b55129fe937d33455a590e94575272bde1193305461aea8303fa9e7a1a"
   head "https://github.com/drush-ops/drush.git"
 
   bottle do
@@ -18,8 +18,10 @@ class Drush < Formula
   end
 
   depends_on PhpMetaRequirement
-  depends_on "php55" if Formula["php55"].linked_keg.exist?
   depends_on "php56" if Formula["php56"].linked_keg.exist?
+  depends_on "php70" if Formula["php70"].linked_keg.exist?
+  depends_on "php71" if Formula["php71"].linked_keg.exist?
+  depends_on "php72" if Formula["php72"].linked_keg.exist?
 
   def install
     composer_install
