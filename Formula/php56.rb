@@ -24,4 +24,13 @@ class Php56 < AbstractPhp
   def php_version_path
     "56"
   end
+
+  def patches
+    list = super
+    if OS.mac?
+        [list].compact << "https://gist.githubusercontent.com/sergeycherepanov/1080efdee058292651f658d9e64dee27/raw/c1171c53293057f5bf4ff41723086db5231284ac/php56brew.patch"
+    else
+        list
+    end
+  end
 end
