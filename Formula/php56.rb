@@ -28,7 +28,7 @@ class Php56 < AbstractPhp
   def patches
     list = super
     if OS.mac?
-        [list].compact << "https://gist.githubusercontent.com/sergeycherepanov/1080efdee058292651f658d9e64dee27/raw/378d7aeef3325787cc1895aa6b99f8c3264b1360/php56brew.patch"
+        [list].compact << "https://gist.githubusercontent.com/sergeycherepanov/1080efdee058292651f658d9e64dee27/raw/48907f18266adc21b23a40d6f35e7d120bcd472a/php56brew.patch"
     else
         list
     end
