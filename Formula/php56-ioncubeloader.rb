@@ -14,12 +14,12 @@ class Php56Ioncubeloader < AbstractPhp56Extension
   version "10.3.0"
   option "with-thread-safe", "Enable the thread-safe extenstion"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "8abd69740f480f88283ce1a5a8d999814a25b7b32c15dbd41963f1651cf4db3a" => :high_sierra
-    sha256 "43e0e717c4c7ccc761395e9f4eaf44f0175248149f2a5a7815abd9f2dc9b5f28" => :sierra
-    sha256 "43e0e717c4c7ccc761395e9f4eaf44f0175248149f2a5a7815abd9f2dc9b5f28" => :el_capitan
-  end
+#  bottle do
+#    cellar :any_skip_relocation
+#    sha256 "8abd69740f480f88283ce1a5a8d999814a25b7b32c15dbd41963f1651cf4db3a" => :high_sierra
+#    sha256 "43e0e717c4c7ccc761395e9f4eaf44f0175248149f2a5a7815abd9f2dc9b5f28" => :sierra
+#    sha256 "43e0e717c4c7ccc761395e9f4eaf44f0175248149f2a5a7815abd9f2dc9b5f28" => :el_capitan
+#  end
 
   def extension_type
     "zend_extension"
