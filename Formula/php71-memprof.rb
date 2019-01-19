@@ -13,7 +13,7 @@ class Php71Memprof < AbstractPhp71Extension
 
   def install
     safe_phpize
-    system "./configure", "--prefix=#{prefix}", phpconfig
+    system "./configure", "--prefix=#{prefix}", "--with-judy-dir=#{Formula["libjudy"].opt_prefix}", phpconfig
     system "make"
     prefix.install "modules/memprof.so" => "memprof.so"
     write_config_file if build.with? "config-file"
