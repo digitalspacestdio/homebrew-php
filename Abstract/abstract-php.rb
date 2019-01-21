@@ -277,7 +277,7 @@ INFO
     end
 
     #if build.with? "bz2"
-      args << "--with-bz2=#{Formula["zlib"].opt_prefix}" if OS.mac?
+      args << "--with-bz2=#{Formula["bzip2"].opt_prefix}" if OS.mac?
     #end
 
     if build.with? "debug"
