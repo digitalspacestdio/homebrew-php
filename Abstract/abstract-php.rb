@@ -46,6 +46,7 @@ class AbstractPhp < Formula
     depends_on "libxml2" if build.include?("with-homebrew-libxml2") || MacOS.version < :lion || MacOS.version >= :el_capitan
     depends_on "unixodbc" unless build.include?("without-unixodbc")
     depends_on "readline"
+    depends_on "zlib"
     depends_on "mysql" if build.include?("with-libmysql")
 
     # ssl
@@ -241,7 +242,7 @@ INFO
       ("--with-ndbm=/usr" if OS.mac?),
       "--with-png-dir=#{Formula["libpng"].opt_prefix}",
       "--with-xmlrpc",
-      "--with-zlib=/usr",
+      "--with-zlib=#{Formula["zlib"].opt_prefix",
       "--with-readline=#{Formula["readline"].opt_prefix}",
       "--without-gmp",
       "--without-snmp",
