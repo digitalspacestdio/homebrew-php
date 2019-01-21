@@ -47,6 +47,7 @@ class AbstractPhp < Formula
     depends_on "unixodbc" unless build.include?("without-unixodbc")
     depends_on "readline"
     depends_on "zlib"
+    depends_on "bzip2"
     depends_on "mysql" if build.include?("with-libmysql")
 
     # ssl
@@ -276,7 +277,7 @@ INFO
     end
 
     if build.with? "bz2"
-      args << "--with-bz2=/usr" if OS.mac?
+      args << "--with-bz2=#{Formula["zlib"].opt_prefix}" if OS.mac?
     end
 
     if build.with? "debug"
