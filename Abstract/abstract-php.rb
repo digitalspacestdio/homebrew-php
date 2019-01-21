@@ -245,6 +245,7 @@ INFO
       "--with-xmlrpc",
       "--with-zlib=#{Formula["zlib"].opt_prefix}",
       "--with-readline=#{Formula["readline"].opt_prefix}",
+      "--with-gdbm=#{Formula["gdbm"].opt_prefix}",
       "--without-gmp",
       "--without-snmp",
     ]
