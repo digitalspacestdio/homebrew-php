@@ -103,7 +103,7 @@ class AbstractPhp < Formula
       option "with-phpdbg", "Enable building of the phpdbg SAPI executable"
     end
     option "with-thread-safety", "Build with thread safety"
-    option "without-bz2", "Build without bz2 support"
+#    option "without-bz2", "Build without bz2 support"
     option "without-fpm", "Disable building of the fpm SAPI executable"
     option "without-ldap", "Build without LDAP support"
     option "without-mysql", "Remove MySQL/MariaDB support"
@@ -276,9 +276,9 @@ INFO
       end
     end
 
-    if build.with? "bz2"
+    #if build.with? "bz2"
       args << "--with-bz2=#{Formula["zlib"].opt_prefix}" if OS.mac?
-    end
+    #end
 
     if build.with? "debug"
       args << "--enable-debug"
