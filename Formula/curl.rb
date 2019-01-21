@@ -8,7 +8,7 @@ class Curl < Formula
   head do
     url "https://github.com/curl/curl.git"
 
-    depends_on "gcc@5" => :build
+    depends_on "gcc" => :build
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
