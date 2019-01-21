@@ -48,6 +48,9 @@ class AbstractPhp < Formula
     depends_on "readline"
     depends_on "zlib"
     depends_on "bzip2"
+    depends_on "berkeley-db"
+    depends_on "libedit"
+    depends_on "openldap"
     depends_on "mysql" if build.include?("with-libmysql")
     depends_on "gdbm"
 
@@ -241,10 +244,10 @@ INFO
       "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}",
       ("--with-kerberos=/usr" if OS.mac?),
       "--with-mhash",
-      ("--with-ndbm=/usr" if OS.mac?),
+      "--with-ndbm-dir=#{Formula["berkeley-db"].opt_prefix}",
       "--with-png-dir=#{Formula["libpng"].opt_prefix}",
       "--with-xmlrpc",
-      "--with-zlib=#{Formula["zlib"].opt_prefix}",
+      "--with-zlib-dir=#{Formula["zlib"].opt_prefix}",
       "--with-readline=#{Formula["readline"].opt_prefix}",
       "--with-gdbm=#{Formula["gdbm"].opt_prefix}",
       "--without-gmp",
@@ -279,7 +282,7 @@ INFO
     end
 
     #if build.with? "bz2"
-      args << "--with-bz2=#{Formula["bzip2"].opt_prefix}" if OS.mac?
+      args << "--with-bz2-dir=#{Formula["bzip2"].opt_prefix}" if OS.mac?
     #end
 
     if build.with? "debug"
@@ -331,8 +334,9 @@ INFO
     end
 
     unless build.without? "ldap"
-      args << "--with-ldap"
-      args << "--with-ldap-sasl=/usr"
+      args << "--with-ldap-dir=#{Formula["openldap"].opt_prefix}"
+      #args << "--with-ldap"
+      #args << "--with-ldap-sasl=/usr"
     end
 
     if build.with? "libmysql"
