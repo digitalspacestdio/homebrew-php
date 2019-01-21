@@ -49,7 +49,6 @@ class AbstractPhp < Formula
     depends_on "zlib"
     depends_on "bzip2"
     depends_on "mysql" if build.include?("with-libmysql")
-    depends_on "qdbm"
     depends_on "gdbm"
 
     # ssl
@@ -248,7 +247,6 @@ INFO
       "--with-zlib=#{Formula["zlib"].opt_prefix}",
       "--with-readline=#{Formula["readline"].opt_prefix}",
       "--with-gdbm=#{Formula["gdbm"].opt_prefix}",
-      "--with-qdbm=#{Formula["qdbm"].opt_prefix}",
       "--without-gmp",
       "--without-snmp",
     ]
