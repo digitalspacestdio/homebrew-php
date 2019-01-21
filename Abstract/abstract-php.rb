@@ -242,7 +242,7 @@ INFO
       ("--with-ndbm=/usr" if OS.mac?),
       "--with-png-dir=#{Formula["libpng"].opt_prefix}",
       "--with-xmlrpc",
-      "--with-zlib=#{Formula["zlib"].opt_prefix",
+      "--with-zlib=#{Formula["zlib"].opt_prefix}",
       "--with-readline=#{Formula["readline"].opt_prefix}",
       "--without-gmp",
       "--without-snmp",
