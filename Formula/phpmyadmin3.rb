@@ -20,10 +20,6 @@ class Phpmyadmin3 < Formula
     depends_on "php72-mcrypt" if Formula["php70"].linked_keg.exist?
   end
 
-  unless MacOS.prefer_64_bit?
-    option "without-mcrypt", "Exclude the php-mcrypt module"
-  end
-
   def install
     (share+"phpmyadmin3").install Dir["*"]
 
