@@ -1,100 +1,70 @@
-class Curl < Formula
-  desc "Get a file from an HTTP, HTTPS or FTP server"
-  homepage "https://curl.haxx.se/"
-  url "https://curl.haxx.se/download/curl-7.63.0.tar.bz2"
-  mirror "http://curl.mirror.anstey.ca/curl-7.63.0.tar.bz2"
-  sha256 "9bab7ed4ecff77020a312d84cc5fb7eb02d58419d218f267477a724a17fd8dd8"
+class Phpmyadmin3 < Formula
+  desc "Web-based administration tool for MySQL"
+  homepage "http://www.phpmyadmin.net"
+  url "https://github.com/phpmyadmin/phpmyadmin/archive/RELEASE_3_5_8_2.tar.gz"
+  sha256 "2c97bd076a923c3742caa28fc343e4d63294b32cf68f7af79fe8b7eb2a8012dc"
+  head "https://github.com/phpmyadmin/phpmyadmin.git"
 
-  head do
-    url "https://github.com/curl/curl.git"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "adbdcdd81925fdc92dc89006a6d37d1bf86e935f99a1f16384e97adf36907689" => :sierra
+    sha256 "59ac48634dd9062ca110cdffc4b5111579d883f4e01170d910621f0fdb544b4c" => :el_capitan
+    sha256 "c4c3219b9ef0c21f9cffa5baf736564b720e2ebe1b26dbd550e8164d6d84815f" => :yosemite
+    sha256 "278697e6a857eaf6ae174b62d04ff2df7abecaeaf8f76bbb4623c154f717ad7e" => :mavericks
   end
 
-  keg_only :provided_by_macos
-
-  option "with-rtmpdump", "Build with RTMP support"
-  option "with-libssh2", "Build with scp and sftp support"
-  option "with-c-ares", "Build with C-Ares async DNS support"
-  option "with-gssapi", "Build with GSSAPI/Kerberos authentication support."
-  option "with-libmetalink", "Build with libmetalink support."
-  option "with-nghttp2", "Build with HTTP/2 support (requires OpenSSL)"
-
-  deprecated_option "with-rtmp" => "with-rtmpdump"
-  deprecated_option "with-ssh" => "with-libssh2"
-  deprecated_option "with-ares" => "with-c-ares"
-
-  # HTTP/2 support requires OpenSSL 1.0.2+ or LibreSSL 2.1.3+ for ALPN Support
-  # which is currently not supported by Secure Transport (DarwinSSL).
-  if MacOS.version < :mountain_lion || build.with?("nghttp2")
-    depends_on "openssl"
-  else
-    option "with-openssl", "Build with OpenSSL instead of Secure Transport"
-    depends_on "openssl" => :optional
+  if build.with? "mcrypt"
+    depends_on "php56-mcrypt" if Formula["php56"].linked_keg.exist?
+    depends_on "php70-mcrypt" if Formula["php70"].linked_keg.exist?
+    depends_on "php71-mcrypt" if Formula["php70"].linked_keg.exist?
+    depends_on "php72-mcrypt" if Formula["php70"].linked_keg.exist?
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "c-ares" => :optional
-  depends_on "libmetalink" => :optional
-  depends_on "libssh2" => :optional
-  depends_on "nghttp2" => :optional
-  depends_on "rtmpdump" => :optional
+  unless MacOS.prefer_64_bit?
+    option "without-mcrypt", "Exclude the php-mcrypt module"
+  end
 
   def install
-    system "./buildconf" if build.head?
+    (share+"phpmyadmin3").install Dir["*"]
 
-    # Allow to build on Lion, lowering from the upstream setting of 10.8
-    ENV.append_to_cflags "-mmacosx-version-min=10.7" if MacOS.version <= :lion
-
-    args = %W[
-      --disable-debug
-      --disable-dependency-tracking
-      --disable-silent-rules
-      --prefix=#{prefix}
-    ]
-
-    # cURL has a new firm desire to find ssl with PKG_CONFIG_PATH instead of using
-    # "--with-ssl" any more. "when possible, set the PKG_CONFIG_PATH environment
-    # variable instead of using this option". Multi-SSL choice breaks w/o using it.
-    if MacOS.version < :mountain_lion || build.with?("openssl") || build.with?("nghttp2")
-      ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["openssl"].opt_lib}/pkgconfig"
-      args << "--with-ssl=#{Formula["openssl"].opt_prefix}"
-      args << "--with-ca-bundle=#{etc}/openssl/cert.pem"
-      args << "--with-ca-path=#{etc}/openssl/certs"
-    else
-      args << "--with-darwinssl"
-      args << "--without-ca-bundle"
-      args << "--without-ca-path"
+    unless File.exist?(etc+"phpmyadmin3.config.inc.php")
+      cp (share+"phpmyadmin3/config.sample.inc.php"), (etc+"phpmyadmin3.config.inc.php")
     end
+    ln_s (etc+"phpmyadmin3.config.inc.php"), (share+"phpmyadmin3/config.inc.php")
+  end
 
-    args << (build.with?("libssh2") ? "--with-libssh2" : "--without-libssh2")
-    args << (build.with?("libmetalink") ? "--with-libmetalink" : "--without-libmetalink")
-    args << (build.with?("gssapi") ? "--with-gssapi" : "--without-gssapi")
-    args << (build.with?("rtmpdump") ? "--with-librtmp" : "--without-librtmp")
+  def caveats; <<~EOS
+    Note that this formula will NOT install mysql. It is not
+    required since you might want to get connected to a remote
+    database server.
 
-    if build.with? "c-ares"
-      args << "--enable-ares=#{Formula["c-ares"].opt_prefix}"
-    else
-      args << "--disable-ares"
-    end
+    Webserver configuration example (add this at the end of
+    your /etc/apache2/httpd.conf for instance) :
+      Alias /phpmyadmin3 #{HOMEBREW_PREFIX}/share/phpmyadmin3
+      <Directory #{HOMEBREW_PREFIX}/share/phpmyadmin3/>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        <IfModule mod_authz_core.c>
+          Require all granted
+        </IfModule>
+        <IfModule !mod_authz_core.c>
+          Order allow,deny
+          Allow from all
+        </IfModule>
+      </Directory>
+    Then, open http://localhost/phpmyadmin3
 
-    system "./configure", *args
-    system "make", "install"
-    system "make", "install", "-C", "scripts"
-    libexec.install "lib/mk-ca-bundle.pl"
+    More documentation : file://#{share}/phpmyadmin3/doc/
+
+    Configuration has been copied to #{etc}/phpmyadmin3.config.inc.php
+    Don't forget to:
+      - change your secret blowfish
+      - uncomment the configuration lines (pma, pmapass ...)
+
+    EOS
   end
 
   test do
-    # Fetch the curl tarball and see that the checksum matches.
-    # This requires a network connection, but so does Homebrew in general.
-    filename = (testpath/"test.tar.gz")
-    system "#{bin}/curl", "-L", stable.url, "-o", filename
-    filename.verify_checksum stable.checksum
-
-    system libexec/"mk-ca-bundle.pl", "test.pem"
-    assert_predicate testpath/"test.pem", :exist?
-    assert_predicate testpath/"certdata.txt", :exist?
+    assert File.exist?("#{etc}/phpmyadmin3.config.inc.php")
   end
 end
