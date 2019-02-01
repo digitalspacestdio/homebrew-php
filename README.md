@@ -12,7 +12,8 @@ A centralized repository for PHP-related brews.
 Run the following in your command-line:
 
 ```sh
-$ brew tap sergeycherepanov/php
+$ brew tap djocker/common
+$ brew tap djocker/php
 ```
 
 ## Bugs happen

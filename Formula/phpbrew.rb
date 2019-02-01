@@ -16,7 +16,7 @@ class Phpbrew < AbstractPhpPhar
     sha256 "464458ea35517dbc0e7d9b85a95e3cbd7e02ca96009b013b661236ec14c3da8e" => :yosemite
   end
 
-  depends_on "sergeycherepanov/php/curl"
+  depends_on "djocker/common/curl"
   depends_on "gettext"
   depends_on "gmp"
   depends_on "jpeg"

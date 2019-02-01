@@ -31,7 +31,7 @@ class AbstractPhp < Formula
       conflicts_with php_formula_name, :because => "different php versions install the same binaries."
     end
 
-    depends_on "sergeycherepanov/php/curl" if build.include?("with-homebrew-curl") || MacOS.version < :lion
+    depends_on "djocker/common/curl" if build.include?("with-homebrew-curl") || MacOS.version < :lion
     depends_on "enchant" => :optional
     depends_on "freetds" if build.include?("with-mssql")
     depends_on "freetype"
