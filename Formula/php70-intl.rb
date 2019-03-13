@@ -17,8 +17,6 @@ class Php70Intl < AbstractPhp70Extension
 
   depends_on "icu4c"
 
-  needs :cxx11
-
   def install
 	# Required due to icu4c dependency
 	ENV.cxx11

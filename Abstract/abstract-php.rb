@@ -31,7 +31,7 @@ class AbstractPhp < Formula
       conflicts_with php_formula_name, :because => "different php versions install the same binaries."
     end
 
-    depends_on "curl" if build.include?("with-homebrew-curl") || MacOS.version < :lion
+    depends_on "djocker/common/curl" if build.include?("with-homebrew-curl") || MacOS.version < :lion
     depends_on "enchant" => :optional
     depends_on "freetds" if build.include?("with-mssql")
     depends_on "freetype"
@@ -46,7 +46,14 @@ class AbstractPhp < Formula
     depends_on "libxml2" if build.include?("with-homebrew-libxml2") || MacOS.version < :lion || MacOS.version >= :el_capitan
     depends_on "unixodbc" unless build.include?("without-unixodbc")
     depends_on "readline"
+    depends_on "zlib"
+    depends_on "bzip2"
+    depends_on "berkeley-db"
+    depends_on "libedit"
+    depends_on "openldap"
     depends_on "mysql" if build.include?("with-libmysql")
+    depends_on "gdbm"
+    depends_on "libiconv"
 
     # ssl
     if build.include?("with-homebrew-libressl")
@@ -101,7 +108,7 @@ class AbstractPhp < Formula
       option "with-phpdbg", "Enable building of the phpdbg SAPI executable"
     end
     option "with-thread-safety", "Build with thread safety"
-    option "without-bz2", "Build without bz2 support"
+#    option "without-bz2", "Build without bz2 support"
     option "without-fpm", "Disable building of the fpm SAPI executable"
     option "without-ldap", "Build without LDAP support"
     option "without-mysql", "Remove MySQL/MariaDB support"
@@ -238,11 +245,13 @@ INFO
       "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}",
       ("--with-kerberos=/usr" if OS.mac?),
       "--with-mhash",
-      ("--with-ndbm=/usr" if OS.mac?),
+      "--with-ndbm-dir=#{Formula["berkeley-db"].opt_prefix}",
       "--with-png-dir=#{Formula["libpng"].opt_prefix}",
       "--with-xmlrpc",
-      "--with-zlib=/usr",
+      "--with-zlib-dir=#{Formula["zlib"].opt_prefix}",
       "--with-readline=#{Formula["readline"].opt_prefix}",
+      "--with-gdbm=#{Formula["gdbm"].opt_prefix}",
+      "--with-iconv=#{Formula["libiconv"].opt_prefix}",
       "--without-gmp",
       "--without-snmp",
     ]
@@ -274,9 +283,9 @@ INFO
       end
     end
 
-    if build.with? "bz2"
-      args << "--with-bz2=/usr" if OS.mac?
-    end
+    #if build.with? "bz2"
+      args << "--with-bz2-dir=#{Formula["bzip2"].opt_prefix}" if OS.mac?
+    #end
 
     if build.with? "debug"
       args << "--enable-debug"
@@ -327,8 +336,9 @@ INFO
     end
 
     unless build.without? "ldap"
-      args << "--with-ldap"
-      args << "--with-ldap-sasl=/usr"
+      args << "--with-ldap-dir=#{Formula["openldap"].opt_prefix}"
+      #args << "--with-ldap"
+      #args << "--with-ldap-sasl=/usr"
     end
 
     if build.with? "libmysql"
