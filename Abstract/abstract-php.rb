@@ -93,7 +93,7 @@ class AbstractPhp < Formula
     end
 
     option "with-cgi", "Enable building of the CGI executable (implies --without-fpm)"
-    option "with-debug", "Compile with debugging symbols"
+    option "without-debug", "Compile without debugging symbols"
     option "with-embed", "Compile with embed support (built as a static library)"
     option "without-homebrew-curl", "Not include Curl support via Homebrew"
     option "with-homebrew-libressl", "Not include LibreSSL instead of OpenSSL via Homebrew"
@@ -287,7 +287,7 @@ INFO
       args << "--with-bz2-dir=#{Formula["bzip2"].opt_prefix}" if OS.mac?
     #end
 
-    if build.with? "debug"
+    if !build.without? "debug"
       args << "--enable-debug"
     end
 
@@ -395,7 +395,7 @@ INFO
       else
         args << "--enable-phpdbg"
 
-        if build.with? "debug"
+        if !build.without? "debug"
           args << "--enable-phpdbg-debug"
         end
       end
