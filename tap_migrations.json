@@ -1,6 +1,4 @@
 {
-  "composer": "homebrew/core",
   "php-cs-fixer": "homebrew/core",
-  "php72": "homebrew/core",
   "wp-cli": "homebrew/core"
 }
