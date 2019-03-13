@@ -182,7 +182,7 @@ class AbstractPhp56Extension < AbstractPhpExtension
 
   def self.init(opts = [])
     super()
-    depends_on "php56" => opts if build.with?("homebrew-php")
+    depends_on "djocker/php/php56" => opts if build.with?("homebrew-php")
   end
 end
 
@@ -191,7 +191,7 @@ class AbstractPhp70Extension < AbstractPhpExtension
 
   def self.init(opts = [])
     super()
-    depends_on "php70" => opts if build.with?("homebrew-php")
+    depends_on "djocker/php/php70" => opts if build.with?("homebrew-php")
   end
 end
 
@@ -200,7 +200,7 @@ class AbstractPhp71Extension < AbstractPhpExtension
 
   def self.init(opts = [])
     super()
-    depends_on "php71" => opts if build.with?("homebrew-php")
+    depends_on "djocker/php/php71" => opts if build.with?("homebrew-php")
   end
 end
 
@@ -209,6 +209,6 @@ class AbstractPhp72Extension < AbstractPhpExtension
 
   def self.init(opts = [])
     super()
-    depends_on "php72" => opts if build.with?("homebrew-php")
+    depends_on "djocker/php/php72" => opts if build.with?("homebrew-php")
   end
 end
