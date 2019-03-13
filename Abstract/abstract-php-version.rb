@@ -13,7 +13,7 @@ class AbstractPhpVersion < Formula
     PHP_BRANCH      = "PHP-5.6".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "56fb9878d12fdd921f6a0897e919f4e980d930160e154cbde2cc6d9206a27cac",
+      :sha256 => "ffd025d34623553ab2f7fd8fb21d0c9e6f9fa30dc565ca03a1d7b763023fba00",
     }.freeze
   end
 
@@ -24,7 +24,7 @@ class AbstractPhpVersion < Formula
     PHP_BRANCH      = "PHP-7.0".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "d71a6ecb6b13dc53fed7532a7f8f949c4044806f067502f8fb6f9facbb40452a",
+      :sha256 => "4933ea74298a1ba046b0246fe3771415c84dfb878396201b56cb5333abe86f07",
     }.freeze
   end
 
@@ -35,7 +35,7 @@ class AbstractPhpVersion < Formula
     PHP_BRANCH      = "PHP-7.1".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "069315d3c3f964fd165bbbb3c2fc56005813e2cf97bed05055318dcc4e775328",
+      :sha256 => "5b351ca86bc7e4600778aaf1d61ab9e4e38864efa86ab4cc4d5b02ea7f542ae6",
     }.freeze
   end
 
@@ -46,7 +46,7 @@ class AbstractPhpVersion < Formula
     PHP_BRANCH      = "PHP-7.2".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "9b13bde9f5a32d6f6bdb8b911bb55bb818d0c4073538f8dc48aa2deb560f55a3",
+      :sha256 => "c93e7616946a463911818c7e9f9e21276c7793fb8c7cb15877188dd0546d0554",
     }.freeze
   end
 end
