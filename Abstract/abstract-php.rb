@@ -31,7 +31,7 @@ class AbstractPhp < Formula
       conflicts_with php_formula_name, :because => "different php versions install the same binaries."
     end
 
-    depends_on "djocker/common/curl" if build.include?("with-homebrew-curl") || MacOS.version < :lion
+    depends_on "djocker/common/curl" if !build.include?("without-homebrew-curl") || MacOS.version < :lion
     depends_on "enchant" => :optional
     depends_on "freetds" if build.include?("with-mssql")
     depends_on "freetype"
@@ -95,14 +95,14 @@ class AbstractPhp < Formula
     option "with-cgi", "Enable building of the CGI executable (implies --without-fpm)"
     option "with-debug", "Compile with debugging symbols"
     option "with-embed", "Compile with embed support (built as a static library)"
-    option "with-homebrew-curl", "Include Curl support via Homebrew"
-    option "with-homebrew-libressl", "Include LibreSSL instead of OpenSSL via Homebrew"
-    option "with-homebrew-libxslt", "Include LibXSLT support via Homebrew"
+    option "without-homebrew-curl", "Not include Curl support via Homebrew"
+    option "with-homebrew-libressl", "Not include LibreSSL instead of OpenSSL via Homebrew"
+    option "without-homebrew-libxslt", "Include LibXSLT support via Homebrew"
     option "with-homebrew-libxml2", "Include Libxml2 support via Homebrew"
     option "with-imap", "Include IMAP extension"
     option "with-libmysql", "Include (old-style) libmysql support instead of mysqlnd"
     option "with-mssql", "Include MSSQL-DB support"
-    option "with-pear", "Build with PEAR"
+    option "without-pear", "Build without PEAR"
     option "with-pdo-oci", "Include Oracle databases (requries ORACLE_HOME be set)"
     unless name.split("::")[2].casecmp("php53").zero?
       option "with-phpdbg", "Enable building of the phpdbg SAPI executable"
@@ -318,13 +318,13 @@ INFO
       args << "--enable-cgi"
     end
 
-    if build.include?("with-homebrew-curl") || MacOS.version < :lion
+    if !build.include?("without-homebrew-curl") || MacOS.version < :lion
       args << "--with-curl=#{Formula["curl"].opt_prefix}"
     else
       args << "--with-curl"
     end
 
-    if build.with? "homebrew-libxslt"
+    if !build.without? "homebrew-libxslt"
       args << "--with-xsl=" + Formula["libxslt"].opt_prefix.to_s
     elsif OS.mac?
       args << "--with-xsl=/usr"

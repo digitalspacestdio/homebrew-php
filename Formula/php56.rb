@@ -7,7 +7,7 @@ class Php56 < AbstractPhp
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
-  revision 9
+  revision 10
 
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
 
