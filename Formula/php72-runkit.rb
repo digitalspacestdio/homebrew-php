@@ -1,6 +1,6 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
-class Php71Runkit < AbstractPhp72Extension
+class Php72Runkit < AbstractPhp72Extension
   init
   desc "Runkit extension"
   homepage "https://github.com/runkit7/runkit7"
