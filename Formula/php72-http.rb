@@ -9,13 +9,7 @@ class Php72Http < AbstractPhp72Extension
   head "https://github.com/m6w6/ext-http.git"
   revision 2
 
-  bottle do
-    sha256 "93b1f1673b654ea9964fa3320bfac3772c57a81509ca690228323196e9570715" => :high_sierra
-    sha256 "9c8f004a088a05df55b7e207322a746e7a9d347d520a3c52f08f06f5268d0657" => :sierra
-    sha256 "f122e4bc085b16f4301ecb2c97702c64ee6ef82abc099057f46a40bd7cad642e" => :el_capitan
-  end
-
-  depends_on "php72-raphf"
+s_on "php72-raphf"
   depends_on "php72-propro"
   depends_on "libevent" => :optional
   depends_on "icu4c" => :optional

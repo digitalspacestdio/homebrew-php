@@ -9,12 +9,7 @@ class Php72Timezonedb < AbstractPhp72Extension
   head "https://svn.php.net/repository/pecl/timezonedb/trunk/"
   revision 1
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "8eb6b90a23a3f1284eae4422a234c76f860f716c8f66cca8547cb93ddb8534a8" => :high_sierra
-    sha256 "96e0907f0db603696c91fb7cb2aeb6d5622ae4a236f34f6318481d595e51709f" => :sierra
-    sha256 "8a1794048d5e0817758b689f0b8cb40c2b266963e337303f54f9daf85ae07173" => :el_capitan
-  end
+
 
   def install
     Dir.chdir "timezonedb-#{version}" unless build.head?

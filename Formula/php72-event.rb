@@ -9,14 +9,7 @@ class Php72Event < AbstractPhp72Extension
   head "https://bitbucket.org/osmanov/pecl-event.git"
   revision 1
 
-  bottle do
-    sha256 "6375f97e1df7c9ee58079520d5361505eaac85f01da0611723378ada008f6849" => :sierra
-    sha256 "92cead5570cf16941a037cc8ed0d28d6cbff99bba5e40399485449b9e3b0d997" => :el_capitan
-    sha256 "0180e7d5596e4adbdb610f97536276498cb119e7fa08d7403c7fe56f6fdedc43" => :yosemite
-  end
-
-  depends_on "libevent"
-  depends_on "openssl"
+s_on "openssl"
 
   def install
     Dir.chdir "event-#{version}" unless build.head?

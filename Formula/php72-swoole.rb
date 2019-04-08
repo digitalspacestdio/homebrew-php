@@ -9,12 +9,7 @@ class Php72Swoole < AbstractPhp72Extension
   head "https://github.com/swoole/swoole-src.git"
   revision 1
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "eb3a57d8a322d2865376d95b9118ec5d095cba53599f65dc74205ee8adc53391" => :high_sierra
-    sha256 "bfbc73391c6aa1224509efcb562d368083ac7174611209f05a5fd006e93ed122" => :sierra
-    sha256 "517abae2f9eae2a0e40da456b50a689fea4a9321f3b1189500c53499b0a45426" => :el_capitan
-  end
+
 
   def install
     safe_phpize

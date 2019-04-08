@@ -6,16 +6,7 @@ class PhpCodeSnifferAT29 < Formula
   url "http://download.pear.php.net/package/PHP_CodeSniffer-2.9.1.tgz"
   sha256 "d8c67ddf2b303259e9b0f4294e3940dbc5316c0c2609b59acc95f6ec128b9241"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "c76387c507053760cf6fb117d7ec6356f44e4fb64726b9b4f817a909aef2a49c" => :sierra
-    sha256 "d4910f78136cc8c1fa217148bbd06db2f9249c6f9ef4577a64e954fafae0c21a" => :el_capitan
-    sha256 "d4910f78136cc8c1fa217148bbd06db2f9249c6f9ef4577a64e954fafae0c21a" => :yosemite
-  end
-
-  keg_only :versioned_formula
-
-  depends_on PhpMetaRequirement
+s_on PhpMetaRequirement
 
   def phpcs_standards
     etc+name+"Standards"

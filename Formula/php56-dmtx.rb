@@ -10,14 +10,7 @@ class Php56Dmtx < AbstractPhp56Extension
   revision 5
   head "https://github.com/maZahaca/php-dmtx.git"
 
-  bottle do
-    sha256 "a6c14f3a42d1e3df8ad48c88ba640296fc1cba19d954012ebe66e50fa585abfb" => :high_sierra
-    sha256 "dab58da160ecd363a590910c4ecb87aec9b6174b25c4fc275be3b8ca3a4e72e0" => :sierra
-    sha256 "2b482ef495475a718c1d7eaf36ea79185c14bc5cfcc227fcc301080566550f03" => :el_capitan
-  end
-
-  depends_on "libdmtx"
-  depends_on "php56-imagick"
+s_on "php56-imagick"
   depends_on "pkg-config" => :build
 
   def install

@@ -8,14 +8,7 @@ class Php70Ev < AbstractPhp70Extension
   sha256 "3c03fde9e72745e6ce6c32d680218389e0f4310908187f1529b7f227b295aeee"
   head "https://bitbucket.org/osmanov/pecl-ev.git"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "db5f3bb9fef3ef8e1e707c16c54116b029ff839f53674bf8747911da20c5494f" => :el_capitan
-    sha256 "028d6d1e66d4369c960d690ea999ff4418e4fb35c349419e43382f525deb9df2" => :yosemite
-    sha256 "b9f2b5e08a531df1038e536a11a718b723fa174bb317d8a8bcd19a327b1838a9" => :mavericks
-  end
-
-  depends_on "libev"
+s_on "libev"
 
   def install
     Dir.chdir "ev-#{version}" unless build.head?

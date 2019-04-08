@@ -13,16 +13,7 @@ class TerminusAT013 < Formula
   head "https://github.com/pantheon-systems/terminus.git"
   revision 1
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "9382caa68759f848ea15c35f49c592adc12add871a4a0b61d6d564301c825664" => :sierra
-    sha256 "13d19e24cf8d8546fa97ba0e46d7cbf6640e5e2f1901f4e691a7b037a81d0a16" => :el_capitan
-    sha256 "3817d9e7b5463a20d6dab9f1f3423aacef5aa54d3d2cf52c77710020c419647e" => :yosemite
-  end
-
-  keg_only :versioned_formula
-
-  depends_on PhpMetaRequirement
+s_on PhpMetaRequirement
 
   def install
     composer_install

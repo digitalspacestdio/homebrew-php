@@ -9,12 +9,7 @@ class Php56Molten < AbstractPhp56Extension
   head "https://github.com/chuan-yun/Molten.git"
   revision 2
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "83013acc9c4f32dc86ac6aedc7291d70419418afe6b259b65f8bc3960a19dbb4" => :high_sierra
-    sha256 "c89db0f7de08253349ac535e44f878a11cc48fe0feb054845168181de2ba54dc" => :sierra
-    sha256 "b9dc93da289511df9452f2d75eae7638fa4b6160e47e7ff1985054c91a4ab6db" => :el_capitan
-  end
+
 
   option "without-zipkin", "Disable zipkin headers"
 

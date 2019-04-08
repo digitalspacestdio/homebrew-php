@@ -8,14 +8,7 @@ class Php72Igbinary < AbstractPhp72Extension
   sha256 "1d06fc3586d61fcffbae24a46649db54d938168586557965bc1346f6d6568555"
   head "https://github.com/igbinary/igbinary.git"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "a7468eafb8999d177e258de14586bf60a5fb026a6a97568407938d4f649c1310" => :high_sierra
-    sha256 "1eb3ae7564ba88e4aefa6382b86a2b1616864f8068c711a3c8e20911dd5165ec" => :sierra
-    sha256 "d47654558cc75c48f3015909708ee30cee4c0eaa29bcb5c1a3ce5de75c3b6f24" => :el_capitan
-  end
-
-  depends_on "igbinary" => :build
+s_on "igbinary" => :build
 
   def install
     safe_phpize

@@ -9,14 +9,7 @@ class Php72Mailparse < AbstractPhp72Extension
   head "https://github.com/php/pecl-mail-mailparse.git"
   revision 1
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "37a0e6e11d25e3c28b8a04ab63b041e9926686dc9a970cbe6d5d58fc6e112ac6" => :high_sierra
-    sha256 "bbe8b518017c4864a059b57031b6746495f3e19f057b89dbed466b4d30fcf871" => :sierra
-    sha256 "0a8ab1dd08e705b857d36179a38dd93574d0d43ff4e03bdabd3a572d11923bbf" => :el_capitan
-  end
-
-  depends_on "pcre"
+s_on "pcre"
 
   def install
     Dir.chdir "mailparse-#{version}" unless build.head?

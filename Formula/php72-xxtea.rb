@@ -9,12 +9,7 @@ class Php72Xxtea < AbstractPhp72Extension
   head "https://github.com/xxtea/xxtea-pecl.git"
   revision 1
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "cf5ac3083d4ed37052190bf55d8ef5d7293dc79dca27e982f6de8659e6e1af35" => :high_sierra
-    sha256 "5fe41c8cd4e5e53c0e1d14b58b45a34bc16f2d1e1d078b143318199b9d83a1d0" => :sierra
-    sha256 "373b21da39672da0604b7c88e34d5828736ef6beb30cc0fd18562e529ab4b2a4" => :el_capitan
-  end
+
 
   def install
     Dir.chdir "xxtea-#{version}" unless build.head?

@@ -8,12 +8,7 @@ class Php70Solr < AbstractPhp70Extension
   sha256 "22865dafb76fc5839e84a5bd423bb37d5062883e5dfc4d064b43129ac9f2752c"
   head "https://git.php.net/repository/pecl/search_engine/solr.git"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "981999300a12cd4c4c34a28026ee52e6fd09959bb7b5f18d19e7a6556793dedd" => :el_capitan
-    sha256 "31271bed95ebd9451377d41bc21b149d4062fe5b2a78cd0b1bf034d8cc0910e7" => :yosemite
-    sha256 "98e7ccb885d9d144e7edb37dd4e6154e28de81b257031e8a6aafd853b893875f" => :mavericks
-  end
+
 
   def install
     Dir.chdir "solr-#{version}" unless build.head?

@@ -7,15 +7,7 @@ class XdebugOsx < Formula
   sha256 "db2c6c1835ff79fa05e655bf9425a011a743811d019a3fda894f085122f7eda4"
   head "https://github.com/w00fz/xdebug-osx.git"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "6679e7c6dc326c214eabc53eec99dcc5a905de084f99780bac621ec403276cbc" => :sierra
-    sha256 "6679e7c6dc326c214eabc53eec99dcc5a905de084f99780bac621ec403276cbc" => :el_capitan
-    sha256 "b232419ad21873b7ac55745d6507678054da58a5bb8cf4f78ee70f38ad5326fd" => :yosemite
-  end
-
-  depends_on PhpMetaRequirement
-  depends_on "php56-xdebug" if Formula["php56"].linked_keg.exist?
+s_on "php56-xdebug" if Formula["php56"].linked_keg.exist?
   depends_on "php70-xdebug" if Formula["php70"].linked_keg.exist?
   depends_on "php71-xdebug" if Formula["php71"].linked_keg.exist?
   depends_on "php72-xdebug" if Formula["php71"].linked_keg.exist?

@@ -8,15 +8,7 @@ class Php70ApcuBc < AbstractPhp70Extension
   sha256 "40b63ada315ffce81e2e8d75162606090e1cc72fe94207bc7daa6dd260694919"
   head "https://github.com/krakjoe/apcu-bc.git"
 
-  bottle do
-    cellar :any_skip_relocation
-    rebuild 1
-    sha256 "2fca217cd144746aa427b6a3487f4b97a37de34363a0286b540d601b87ee92c3" => :sierra
-    sha256 "c06cb9ca8577a8fe16cbcde4e8417a48062bcb7e46851063a792f66a7a0a11da" => :el_capitan
-    sha256 "a0daeba4631fc3abe5aa3cb98bd736035b81c18edf117dd399c29584c31fd37a" => :yosemite
-  end
-
-  depends_on "php70-apcu"
+s_on "php70-apcu"
 
   def install
     Dir.chdir "apcu_bc-#{version}" unless build.head?

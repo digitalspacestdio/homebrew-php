@@ -7,12 +7,7 @@ class ComposerAT15 < AbstractPhpPhar
   sha256 "25e75d72818c4f1d46b3ae47a8deaaf4ef25c87198329d4a6ee53601b00459e5"
   head "https://getcomposer.org/composer.phar"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "a7cb21559b4f9dc12e02e097f80e1faecacef93992b19708fe2ca458831b3989" => :high_sierra
-    sha256 "a7cb21559b4f9dc12e02e097f80e1faecacef93992b19708fe2ca458831b3989" => :sierra
-    sha256 "a7cb21559b4f9dc12e02e097f80e1faecacef93992b19708fe2ca458831b3989" => :el_capitan
-  end
+
 
   def phar_file
     "composer.phar"

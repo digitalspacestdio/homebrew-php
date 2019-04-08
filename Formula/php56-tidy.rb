@@ -8,13 +8,7 @@ class Php56Tidy < AbstractPhp56Extension
   sha256 PHP_CHECKSUM[:sha256]
   revision 6
 
-  bottle do
-    sha256 "9497dc25fc9002adba752db3e89754b84dee3ba70a802e47a5751d33b4ceeb4a" => :high_sierra
-    sha256 "4b4fd6c9e4073f72c6ae68f52751894f365e9c0f10b2be7b0cc0a4b884f70616" => :sierra
-    sha256 "06a2956d6db40a5e28adc2cdd5c6d747e1b9e7e5687fbcc1f44c8fc231b57946" => :el_capitan
-  end
-
-  depends_on "tidy-html5"
+s_on "tidy-html5"
 
   def install
     Dir.chdir "ext/tidy"

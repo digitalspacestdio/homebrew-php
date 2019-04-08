@@ -6,12 +6,7 @@ class Php70Opcache < AbstractPhp70Extension
   homepage "https://php.net/manual/en/book.opcache.php"
   revision 19
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "d24e05ca58f7813de1475dbf1279faf8ea22882e835704e2159465c5df5f2263" => :high_sierra
-    sha256 "fe6ae20c7079c1fc7fc03ebc1d68b6262bf5af313c719e806ee5034c2d3e243b" => :sierra
-    sha256 "23a838e3237daf59824e7ebf7a85843f7875f99310adbc4647c1233c15a0d7b3" => :el_capitan
-  end
+
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
