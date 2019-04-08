@@ -9,7 +9,11 @@ class Php56Memcached < AbstractPhp56Extension
   head "https://github.com/php-memcached-dev/php-memcached.git"
   revision 4
 
-
+  bottle do
+    sha256 "18711ee6ad0c9c30dd9b0ac3c972c6c02d98a6907ca6d64879ad186e47f14a28" => :high_sierra
+    sha256 "24b4176668dc9fec1d3429168a9a455b613473d529aede53f0f42a4731bff384" => :sierra
+    sha256 "c9f50bcb19952994ebb1893fec18778c4e2d1fa430ea8593752abbe86faa195e" => :el_capitan
+  end
 
   option "with-sasl", "Build with sasl support"
 

@@ -9,7 +9,12 @@ class Php72Lzf < AbstractPhp72Extension
   head "https://github.com/php/pecl-file_formats-lzf.git"
   revision 1
 
-
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "ccaa8cdf1be424f858b0fcc04681fbccd22d576ea63cab5d4eb74d378748beb7" => :high_sierra
+    sha256 "c7277d17636bd18fdf5916507829be0708e7911687f30a3afe6cf9ad6c84559f" => :sierra
+    sha256 "d511d82bba167b247731350f3ad7e1417c482a55f3b9fa5613c6b08041ff9fa7" => :el_capitan
+  end
 
   def install
     Dir.chdir "LZF-#{version}" unless build.head?

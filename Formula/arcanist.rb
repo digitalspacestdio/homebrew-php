@@ -15,7 +15,12 @@ class Arcanist < Formula
       version "201802151"
     end
   end
-
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "940958142203fbd922457fd2fb1e6d7461dace75ed991ecd4770dcf9e234821d" => :high_sierra
+    sha256 "940958142203fbd922457fd2fb1e6d7461dace75ed991ecd4770dcf9e234821d" => :sierra
+    sha256 "940958142203fbd922457fd2fb1e6d7461dace75ed991ecd4770dcf9e234821d" => :el_capitan
+  end
 
   head do
     url "https://github.com/phacility/arcanist.git"

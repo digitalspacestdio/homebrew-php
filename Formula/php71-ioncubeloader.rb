@@ -14,7 +14,16 @@ class Php71Ioncubeloader < AbstractPhp71Extension
   version "10.3.0"
   option "with-thread-safe", "Enable the thread-safe extenstion"
 
+#   bottle do
+#     cellar :any_skip_relocation
+#     sha256 "47a97cfe121091e31d8137916fdc9d7a93efe875e457d3dfb36dbe3824a324f5" => :high_sierra
+#     sha256 "595502784b53a450743b863f89ad3f835ad290cbbc9df81d974e1d6702eed9f5" => :sierra
+#     sha256 "595502784b53a450743b863f89ad3f835ad290cbbc9df81d974e1d6702eed9f5" => :el_capitan
+#   end
 
+  def extension_type
+    "zend_extension"
+  end
 
   def install
     if OS.mac?

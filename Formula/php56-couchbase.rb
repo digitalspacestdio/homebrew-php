@@ -8,7 +8,14 @@ class Php56Couchbase < AbstractPhp56Extension
   sha256 "98c0d7acf6dd1b3930c25f8902decc98a334891736e460124557065e720d7a96"
   head "https://github.com/couchbase/php-couchbase.git"
 
-s_on "php56-igbinary"
+  bottle do
+    cellar :any
+    sha256 "0e8ff8ac5c91cd593b1a3860baf6790caa2da2f986011157afc9c6f60bb9a16a" => :high_sierra
+    sha256 "b5bedf7298c05ac44e6aceba7857054b579174ea134cf83b891efcb964118023" => :sierra
+    sha256 "98bf947f938ec98b2abfa3e0cc7d623a0e2589a4f4aa5dbc5790520f7151d837" => :el_capitan
+  end
+
+  depends_on "php56-igbinary"
   depends_on "igbinary" => :build
 
   depends_on "libcouchbase"

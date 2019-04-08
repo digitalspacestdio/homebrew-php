@@ -9,7 +9,12 @@ class Php72Msgpack < AbstractPhp72Extension
   head "https://github.com/msgpack/msgpack-php.git"
   revision 1
 
-
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "f091d9a0e52fc1339ef54e2b7b220e575b31c107b288c6b15098875d9a83d81f" => :high_sierra
+    sha256 "98cf09b49d1199001be011ee36e96750f986dc67c559c1e3618b1fd75796d936" => :sierra
+    sha256 "cfbfa66f2fe7ec1d35587410ddbf22c992ad1eda2a2f7ed2824e5202a7f2567d" => :el_capitan
+  end
 
   def install
     Dir.chdir "msgpack-#{version}" unless build.head?

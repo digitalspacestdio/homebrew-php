@@ -9,7 +9,13 @@ class Php72Gearman < AbstractPhp72Extension
   head "https://github.com/wcgallego/pecl-gearman.git"
   revision 1
 
-s_on "gearman"
+  bottle do
+    sha256 "d39b030371eb5a130bafb1d7ea66d2160a13cde955e950a8d921a27657f30b04" => :high_sierra
+    sha256 "a90da773687b46f15460707733004cf798f56b0664fcc47badda84bbdd1ac6fb" => :sierra
+    sha256 "91cbb60d3b1a865f65b3253bc9d8b000273a57422534a8558175e7e5d0764a67" => :el_capitan
+  end
+
+  depends_on "gearman"
 
   def install
     safe_phpize

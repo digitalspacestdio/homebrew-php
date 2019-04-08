@@ -9,7 +9,12 @@ class Php72Stats < AbstractPhp72Extension
   head "https://git.php.net/repository/pecl/math/stats.git"
   revision 1
 
-
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "9be64d7dfc829ed7b5dae464581324b33e12824ff06a647aa60a8f6429d748ed" => :high_sierra
+    sha256 "11d879566b14e52fcfa26e711fc1a83233aa912d7f1ca6ea792a816c33b762da" => :sierra
+    sha256 "c7550cee452bd30d790f224c4a3b6528073ca0957fd44dc6b3f4d43101e7a899" => :el_capitan
+  end
 
   def install
     Dir.chdir "stats-#{version}" unless build.head?

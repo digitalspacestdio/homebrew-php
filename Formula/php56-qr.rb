@@ -7,7 +7,13 @@ class Php56Qr < AbstractPhp56Extension
   url "http://pecl.opendogs.org/get/qr-0.4.0.tgz"
   sha256 "0d628741d77f34207a00cc0b84967ecf4ccb38f03e65105573ecfead8c76f114"
 
-
+  bottle do
+    cellar :any_skip_relocation
+    rebuild 6
+    sha256 "efded626bf5ff0ce0dea0b195ca81a1d5a4ff09730230e6c90f94afdd49b1cf7" => :sierra
+    sha256 "ca711769257e3a36cfbf235635ce9ee0c838d2dcc29bf3e558ebb8fe8037a0c6" => :el_capitan
+    sha256 "508b617a1fc9715fac342dcf46c9a2bea42c5be013eac47e4aa11f67e2e14f3a" => :yosemite
+  end
 
   patch :DATA
 

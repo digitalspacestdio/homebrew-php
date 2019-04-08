@@ -8,7 +8,13 @@ class Php70Mosquitto < AbstractPhp70Extension
   sha256 "eec599110f733afe5e0331a85d8feb354ec079b088bdca2dd81a587c5b50f8e4"
   head "https://github.com/mgdm/Mosquitto-PHP.git"
 
-s_on "mosquitto"
+  bottle do
+    cellar :any
+    sha256 "f24607ee6129564ade7415f78a333c2467c58b091a41472b6e0304b8ca75c51e" => :sierra
+    sha256 "4a3c22d26804747d27b6914524562bc384c062fe85632cf8c85c31221e969b20" => :el_capitan
+  end
+
+  depends_on "mosquitto"
 
   def install
     Dir.chdir "mosquitto-#{version}" unless build.head?

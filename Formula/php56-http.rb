@@ -9,7 +9,14 @@ class Php56Http < AbstractPhp56Extension
   head "https://github.com/m6w6/ext-http.git"
   revision 2
 
-s_on "php56-raphf"
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "7b9866e27ba30ae870419b442dada1a16b6056fce7d3598f9b18bbe66f58e4ee" => :high_sierra
+    sha256 "90116f54b83605698574507824d77f4e10745cdd4077d0ac077ac2a54c164525" => :sierra
+    sha256 "668e825ca3a738467989acdd135e8b219f8b1eaaa8520322e5c75c79c8b10870" => :el_capitan
+  end
+
+  depends_on "php56-raphf"
   depends_on "php56-propro"
   depends_on "libevent" => :optional
   depends_on "icu4c" => :optional

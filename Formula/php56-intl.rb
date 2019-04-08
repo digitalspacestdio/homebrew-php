@@ -8,7 +8,16 @@ class Php56Intl < AbstractPhp56Extension
   sha256 PHP_CHECKSUM[:sha256]
   revision 15
 
-ency
+  bottle do
+    sha256 "3cd89c97a94bd7ee0550240a132d485488729f80a466a4ce09fe513516606fcd" => :high_sierra
+    sha256 "918184b314eea190e3e8286cae667f12a604539b2ed5883f1b054b76111d6e39" => :sierra
+    sha256 "3d68d07fcfcd2e3df7e12749fce0c11fa6b81b6e8379dbc04ead9a5eb7462914" => :el_capitan
+  end
+
+  depends_on "icu4c"
+
+  def install
+    # Required due to icu4c dependency
     ENV.cxx11
 
     # icu4c 61.1 compatability

@@ -9,7 +9,12 @@ class Php56Xdebug < AbstractPhp56Extension
   head "https://github.com/xdebug/xdebug.git"
   depends_on :arch => :x86_64
 
-
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "1e26ec6dc5dc4a17705591e5663f9b5de80a223f8d570ad3a8c3b9c7fa3fd01d" => :sierra
+    sha256 "e42dd71ce840b01c1b66218895391461bbe72684d234fe09a5dc39fffb34490d" => :el_capitan
+    sha256 "2c1060835cc78a9093e3b4479f192692560c2ca1dd3f2a3fe7e629e1e8de6227" => :yosemite
+  end
 
   resource "linux_compiled" do
     url "https://f001.backblazeb2.com/file/php-homebrew/xdebug-linux.tgz"

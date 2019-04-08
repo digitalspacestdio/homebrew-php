@@ -6,7 +6,14 @@ class PhpCodeSniffer < Formula
   url "http://download.pear.php.net/package/PHP_CodeSniffer-3.2.3.tgz"
   sha256 "eea9fc447b424a01e892be28970f30ba49810528291f70e8f36935ed12caf138"
 
-s_on PhpMetaRequirement
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "c673632d810cdd7c4c5794d868a567f0b4e8a39d502232917167380be0af10db" => :high_sierra
+    sha256 "c673632d810cdd7c4c5794d868a567f0b4e8a39d502232917167380be0af10db" => :sierra
+    sha256 "c673632d810cdd7c4c5794d868a567f0b4e8a39d502232917167380be0af10db" => :el_capitan
+  end
+
+  depends_on PhpMetaRequirement
 
   def phpcs_standards
     etc+name+"Standards"

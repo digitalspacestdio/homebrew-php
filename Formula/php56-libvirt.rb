@@ -7,7 +7,13 @@ class Php56Libvirt < AbstractPhp56Extension
   url "http://libvirt.org/sources/php/libvirt-php-0.4.8.tar.gz"
   sha256 "75508ab420c45fface8cdd8328053eee2207f8ff2aab572627ba8f30aacaef35"
 
-s_on "pkg-config" => :build
+  bottle do
+    cellar :any
+    rebuild 1
+    sha256 "b0fdda922b7b79352a714bd92784caa045f805294c8cba7169726b0c93d25b68" => :mavericks
+  end
+
+  depends_on "pkg-config" => :build
   depends_on "libvirt"
 
   def install

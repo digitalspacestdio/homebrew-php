@@ -9,7 +9,13 @@ class Php72Yaml < AbstractPhp72Extension
   head "https://github.com/php/pecl-file_formats-yaml.git", :branch => "php7"
   revision 1
 
-s_on "libyaml"
+  bottle do
+    sha256 "75bd9238267a0b1f173e08aa6464aa9d237eaff7dd373165efbe7e4e63ad4c6a" => :high_sierra
+    sha256 "22a40f5c39736c6a91c34ce4ddc3019cefba394da794dc77ad294d2d773bd8c7" => :sierra
+    sha256 "a6027cba46870bc7d51de83e30568a6aad8eb6b898d2ef2f63bb00803fb8b9dd" => :el_capitan
+  end
+
+  depends_on "libyaml"
 
   def install
     Dir.chdir "yaml-#{version}" unless build.head?
