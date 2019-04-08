@@ -7,12 +7,6 @@ class Box < AbstractPhpPhar
   url "https://github.com/box-project/box2/releases/download/2.7.5/box-2.7.5.phar"
   sha256 "28b4b798ad4dcf8fbf9cd68aaff495d4bbeaec4363f5f319a222829d9b6abdfe"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "cd2baa189580996769badeae4cee7139f8206edf6183979fdc70f34f544315b5" => :sierra
-    sha256 "539441dc92d8af21c95045483e9169616f20a80d1192fe2c6fc8f0789ca697fb" => :el_capitan
-    sha256 "cd2baa189580996769badeae4cee7139f8206edf6183979fdc70f34f544315b5" => :yosemite
-  end
 
   def phar_file
     "box-#{version}.phar"

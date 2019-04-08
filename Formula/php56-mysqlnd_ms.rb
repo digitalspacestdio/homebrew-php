@@ -12,11 +12,6 @@ class Php56MysqlndMs < AbstractPhp56Extension
     patch :DATA
   end
 
-  bottle do
-    sha256 "0e82ec4233e437bcae9417e5a0e90f7885c2c41fd1684e1994951725bec2a09a" => :yosemite
-    sha256 "82e862d09fb3479ffe46a9f3437f228bece64d59c806e89cba929fd346fe1bbd" => :mavericks
-    sha256 "e611764537c51fff064e2001ed4a37fc791442576af7e8b81400d05ffe0736c8" => :mountain_lion
-  end
 
   def extension
     "mysqlnd_ms"

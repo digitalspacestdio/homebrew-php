@@ -8,11 +8,6 @@ class Php56Magickwand < AbstractPhp56Extension
   sha256 "05e5fe5bc52ab9169228bbbde38b222208d1ae19db718b66d2c7ac4180847727"
   revision 2
 
-  bottle do
-    sha256 "04b7215ef20f2c06c10f574c2966abbe293bdeba8d87ab4168587eba400261e2" => :high_sierra
-    sha256 "22ef39aa3008d6d56a45a38cf702a0630574a4db4aedd2f61bb116e051fe3626" => :sierra
-    sha256 "26aa44993d0c3c95e6fcb13f11423baff10682ab1765eefb8ed32ce2a74abc86" => :el_capitan
-  end
 
   depends_on "pkg-config" => :build
   depends_on "imagemagick@6"

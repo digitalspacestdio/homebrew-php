@@ -9,12 +9,6 @@ class Php72ApcuBc < AbstractPhp72Extension
   head "https://github.com/krakjoe/apcu-bc.git"
   revision 1
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "29036fe68b6eb06c43036618f04acfbc1968ef0cbdd84bc97977f975a2c78c65" => :high_sierra
-    sha256 "8bea9ebfd8e60e4d225df409d5ecd0fc894b8195f0b3fccda496106b76141ae5" => :sierra
-    sha256 "dd02cf01ff9db6d2ab6448c4be5bbffe19b514d9eddc570eb101dd0a04f6adab" => :el_capitan
-  end
 
   depends_on "php72-apcu"
 

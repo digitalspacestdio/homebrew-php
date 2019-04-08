@@ -8,12 +8,6 @@ class Php56Suhosin < AbstractPhp56Extension
   sha256 "c02d76c4e7ce777910a37c18181cb67fd9e90efe0107feab3de3131b5f89bcea"
   head "https://github.com/stefanesser/suhosin.git"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "077fd5a259af184e56cb79c9db74765f3798d44dcc1636c2a291c1aeeb46b7ee" => :sierra
-    sha256 "826ce479fce7e50f87e8c4db4ef0a808024940b29cc503439594d9350e86187b" => :el_capitan
-    sha256 "1004c9537a2c3478e3391624e50c734a7da0789af9985350471c72a08a6ae7ec" => :yosemite
-  end
 
   def install
     safe_phpize

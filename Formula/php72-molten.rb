@@ -9,12 +9,6 @@ class Php72Molten < AbstractPhp72Extension
   head "https://github.com/chuan-yun/Molten.git"
   revision 1
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "46d91dcb36e82a23c30261fdfc4b3db008b408460e81b05a310a04d21268b02b" => :high_sierra
-    sha256 "780ceacfd7d98eafd6b9cf97521fd25f0146ebe8c3a9e8802bfc08f7190af15d" => :sierra
-    sha256 "7887f32126d7e16ade7e196ca343661bf27ad219458c027db28876fba345e24e" => :el_capitan
-  end
 
   option "without-zipkin", "Disable zipkin headers"
 

@@ -9,11 +9,6 @@ class Php71Http < AbstractPhp71Extension
   head "https://github.com/m6w6/ext-http.git"
   revision 1
 
-  bottle do
-    sha256 "87b287c4da084c137c4a9534b568d0bd6d91afa02025371ad1082078b75a1f06" => :high_sierra
-    sha256 "0cb8bbcbc8311a3ec8fc34d7d24c7d0d4f47ffede17cac30af11c2468d59de52" => :sierra
-    sha256 "5692d1b3ff22205fce34bdbf398af41d9ba5e472a8dd176cca43a48d648596c1" => :el_capitan
-  end
 
   depends_on "php71-raphf"
   depends_on "php71-propro"

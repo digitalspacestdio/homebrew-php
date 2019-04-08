@@ -4,12 +4,6 @@ class Adminer < Formula
   url "https://github.com/vrana/adminer/releases/download/v4.6.2/adminer-4.6.2.php"
   sha256 "2b3e5e87ed1214288378fc272c1ba0497ec2f1128444e3a581eabd435f5575b9"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "9abd7ee3578c322c9710d7f2d095ebe7a844303a950ddccb7bb253c1254adfee" => :high_sierra
-    sha256 "9abd7ee3578c322c9710d7f2d095ebe7a844303a950ddccb7bb253c1254adfee" => :sierra
-    sha256 "9abd7ee3578c322c9710d7f2d095ebe7a844303a950ddccb7bb253c1254adfee" => :el_capitan
-  end
 
   def install
     pkgshare.install "adminer-"+version+".php" => "index.php"

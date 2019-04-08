@@ -8,12 +8,6 @@ class Php56Redis < AbstractPhp56Extension
   sha256 "656cab2eb93bd30f30701c1280707c60e5736c5420212d5d547ebe0d3f4baf71"
   head "https://github.com/phpredis/phpredis.git"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "712b7f5bbfc3d55d7088ce73011c25de021858bb2d16437cea19cbdeeccd8cdd" => :high_sierra
-    sha256 "52884c2fe5be40904d85a81a23dfacc0bdbc327188ddc62323f9d89d2867f467" => :sierra
-    sha256 "9bd3820b287d0b90ecfb7580db161cd5c11e170a7c97c02c9ed34b0b524d3e3a" => :el_capitan
-  end
 
   depends_on "php56-igbinary"
   depends_on "igbinary" => :build

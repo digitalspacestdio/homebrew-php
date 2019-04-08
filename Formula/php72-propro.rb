@@ -9,12 +9,6 @@ class Php72Propro < AbstractPhp72Extension
   head "https://github.com/m6w6/ext-propro.git"
   revision 1
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "a05c153629f8c849f91c732d299fc72972ffa52fc6b357d7d56379ff300849dd" => :sierra
-    sha256 "2503fb7fe2093265d0d43daf794ed947b6ed9d993f466625bd96fde2637b956a" => :el_capitan
-    sha256 "01994cc753bf87c601cfba56df261149d36e785ddc4ec1bdd21af3fd4f869a34" => :yosemite
-  end
 
   def install
     safe_phpize

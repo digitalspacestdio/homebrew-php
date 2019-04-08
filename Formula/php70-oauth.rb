@@ -8,12 +8,6 @@ class Php70Oauth < AbstractPhp70Extension
   sha256 "f223a166e82ea51a241c229c5788e19dcafd8a1886ce2b7635cae29cb33c4f0e"
   head "https://svn.php.net/repository/pecl/oauth/trunk"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "d06dd29e0cf1091c399e61abe37f4ef390b9d1e26d2a9892d1a9c7b395c1bf8c" => :el_capitan
-    sha256 "325a10df83fa598c2618e372934d5f0e27897ed9602175fd208337d99fa18242" => :yosemite
-    sha256 "fccd5ece9e155fc4105d4b80fc1d63c991d5fd37e020b6a14bbd9b4e282c9e8d" => :mavericks
-  end
 
   depends_on "pcre"
 

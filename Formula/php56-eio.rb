@@ -8,13 +8,6 @@ class Php56Eio < AbstractPhp56Extension
   sha256 "ee7b21aa413cbe39caaef1d2eb893fa3bcb9a278b5665c28d179a83a4a1bdb51"
   head "https://bitbucket.org/osmanov/pecl-eio.git"
 
-  bottle do
-    cellar :any_skip_relocation
-    rebuild 1
-    sha256 "81e20500422d9cc8142b492885d0c2a1b129a9458229a1da6ecf523f2f11694d" => :el_capitan
-    sha256 "222b0d397b27de894f8a4614d89eaad6876bab054f813b4e5d66c8841206e5df" => :yosemite
-    sha256 "e03b9a77b9ea1feb05e1c426e6e06fa78c27d556f3f115e7c1e5189c20ed5400" => :mavericks
-  end
 
   depends_on "libevent" => :build
 

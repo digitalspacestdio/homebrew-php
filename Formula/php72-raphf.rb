@@ -9,12 +9,6 @@ class Php72Raphf < AbstractPhp72Extension
   head "https://github.com/m6w6/ext-raphf.git"
   revision 1
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "54fc96a8ac74f55a465f41c4993382178dc119dea80d5315d2353a505f4e1cc9" => :sierra
-    sha256 "40515e955d574fe80ccefe0913216daef400b4f8032f2ed268ef58b367175b58" => :el_capitan
-    sha256 "9cdb21ede6398c115dc3e1eb9e6291cc19e121f3514e20b3206f6908d665ce98" => :yosemite
-  end
 
   def install
     safe_phpize

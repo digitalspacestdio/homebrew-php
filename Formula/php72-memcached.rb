@@ -9,11 +9,6 @@ class Php72Memcached < AbstractPhp72Extension
   head "https://github.com/php-memcached-dev/php-memcached.git"
   revision 2
 
-  bottle do
-    sha256 "0bc05eaf14b3a0f52679d0eea6409196edc284a657f01052f89e2a4ad4d666ba" => :high_sierra
-    sha256 "d170e3ec12b691e163e92ff335a8566da93cd60bf1fec519f641742b7ad0d6fc" => :sierra
-    sha256 "4b77f44584c6aa35cca3b81a6679bc90a8a067bc6f8b98dbe84855ca74eb4098" => :el_capitan
-  end
 
   option "with-sasl", "Build with sasl support"
 

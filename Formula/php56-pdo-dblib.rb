@@ -8,11 +8,6 @@ class Php56PdoDblib < AbstractPhp56Extension
   sha256 PHP_CHECKSUM[:sha256]
   revision 6
 
-  bottle do
-    sha256 "9e053a4f22020ca1e903dcbd90f499cb8b8ce90fc760a255a5859f27aad2a139" => :high_sierra
-    sha256 "2cc85fb8577c55ebffb7cb9c724bfd5b9a107a2a30c4c549cb76b9120edfec6a" => :sierra
-    sha256 "79e2f3133149e0c5a72754b374d838366e54c9d1510ae6d836b2fa09fac76cf4" => :el_capitan
-  end
 
   depends_on "freetds"
 

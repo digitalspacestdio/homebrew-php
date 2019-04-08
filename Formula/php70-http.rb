@@ -9,11 +9,6 @@ class Php70Http < AbstractPhp70Extension
   head "https://github.com/m6w6/ext-http.git"
   revision 2
 
-  bottle do
-    sha256 "3cb8b297d70902765dfe4422ece3e5289998b4a2aa345db20481d88cf492ca50" => :high_sierra
-    sha256 "dfe770610bd2da2551d620cb53e1ca7d4f055845215312342128e6f2fdab3f54" => :sierra
-    sha256 "5400fe3bdc15640fc6a5a3af228af221a815b7e23903a70509fb761ece1143b2" => :el_capitan
-  end
 
   depends_on "php70-raphf"
   depends_on "php70-propro"
