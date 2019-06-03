@@ -7,11 +7,11 @@ class Php72Imagick < AbstractPhp72Extension
   url "https://pecl.php.net/get/imagick-3.4.3.tgz"
   sha256 "1f3c5b5eeaa02800ad22f506cd100e8889a66b2ec937e192eaaa30d74562567c"
   head "https://github.com/mkoppanen/imagick.git"
-  revision 3
+  revision 4
 
 
   depends_on "pkg-config" => :build
-  depends_on "imagemagick"
+  depends_on "imagemagick@6"
 
   def install
     Dir.chdir "imagick-#{version}" unless build.head?
@@ -19,7 +19,7 @@ class Php72Imagick < AbstractPhp72Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
-                          "--with-imagick=#{Formula["imagemagick"].opt_prefix}"
+                          "--with-imagick=#{Formula["imagemagick@6"].opt_prefix}"
     system "make"
     prefix.install "modules/imagick.so"
     write_config_file if build.with? "config-file"
