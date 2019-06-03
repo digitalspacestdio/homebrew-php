@@ -19,7 +19,7 @@ class Php71Imagick < AbstractPhp71Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
-                          "--with-imagick=#{Formula["imagemagick"].opt_prefix}"
+                          "--with-imagick=#{Formula["imagemagick@6"].opt_prefix}"
     system "make"
     prefix.install "modules/imagick.so"
     write_config_file if build.with? "config-file"
