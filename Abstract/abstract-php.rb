@@ -53,7 +53,7 @@ class AbstractPhp < Formula
     depends_on "openldap"
     depends_on "mysql" if build.include?("with-libmysql")
     depends_on "gdbm"
-    #depends_on "libiconv" if OS.linux?
+    depends_on "libiconv" if OS.mac?
 
     # ssl
     if build.include?("with-homebrew-libressl")
@@ -240,7 +240,7 @@ INFO
       "--with-freetype-dir=#{Formula["freetype"].opt_prefix}",
       "--with-gd",
       "--with-gettext=#{Formula["gettext"].opt_prefix}",
-      ("--with-iconv-dir=/usr" if OS.mac?),
+#      ("--with-iconv-dir=/usr" if OS.mac?),
       "--with-icu-dir=#{Formula["icu4c"].opt_prefix}",
       "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}",
       ("--with-kerberos=/usr" if OS.mac?),
@@ -251,7 +251,7 @@ INFO
       "--with-zlib-dir=#{Formula["zlib"].opt_prefix}",
       "--with-readline=#{Formula["readline"].opt_prefix}",
       "--with-gdbm=#{Formula["gdbm"].opt_prefix}",
-#      ("--with-iconv=#{Formula["libiconv"].opt_prefix}" if OS.linux?),
+      ("--with-iconv=#{Formula["libiconv"].opt_prefix}" if OS.mac?),
       "--without-gmp",
       "--without-snmp",
     ]
