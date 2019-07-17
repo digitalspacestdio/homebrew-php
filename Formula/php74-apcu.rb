@@ -11,6 +11,7 @@ class Php74Apcu < AbstractPhp74Extension
 
 
   depends_on "pcre"
+  depends_on "pkg-config" => :build
 
   def install
     args = []
