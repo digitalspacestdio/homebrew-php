@@ -19,7 +19,7 @@ class Php73Redis < AbstractPhp73Extension
     safe_phpize
 
     # Install symlink to igbinary headers inside memcached build directory
-    (Pathname.pwd/"ext").install_symlink Formula["igbinary"].opt_include/"php5" => "igbinary"
+    (Pathname.pwd/"ext").install_symlink Formula["igbinary"].opt_include/"php7" => "igbinary"
 
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
