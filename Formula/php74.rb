@@ -5,6 +5,8 @@ class Php74 < AbstractPhp
   desc "PHP Version 7.4"
   revision 1
 
+  depends_on "pkg-config" => :build
+
   include AbstractPhpVersion::Php74Defs
 
   url PHP_SRC_TARBALL
@@ -20,8 +22,8 @@ class Php74 < AbstractPhp
     "74"
   end
 
-  def install
-    ENV.append "PKG_CONFIG", "#{Formula["pkgconfig"].opt_prefix}"
-    super
-  end
+#   def install
+#     ENV.append "PKG_CONFIG", "#{Formula["pkgconfig"].opt_prefix}"
+#     super
+#   end
 end
