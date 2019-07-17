@@ -221,3 +221,12 @@ class AbstractPhp73Extension < AbstractPhpExtension
     depends_on "djocker/php/php73" => opts if build.with?("homebrew-php")
   end
 end
+
+class AbstractPhp74Extension < AbstractPhpExtension
+  include AbstractPhpVersion::Php74Defs
+
+  def self.init(opts = [])
+    super()
+    depends_on "djocker/php/php74" => opts if build.with?("homebrew-php")
+  end
+end
