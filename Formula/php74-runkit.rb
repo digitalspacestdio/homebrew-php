@@ -4,8 +4,8 @@ class Php74Runkit < AbstractPhp74Extension
   init
   desc "Runkit extension"
   homepage "https://github.com/runkit7/runkit7"
-  url "https://github.com/runkit7/runkit7/releases/download/1.0.9/runkit-1.0.9.tgz"
-  sha256 "9d83e3c977d6dcc0c1182b82c901936aace2ba6a4716bb9021ff86725285771a"
+  url "https://github.com/runkit7/runkit7/releases/download/2.1.0/runkit7-2.1.0.tgz"
+  sha256 "64644eaa171f3a9b5c69fa85a11c4f7061331dfd9425eed57a9d728bfb52b0dd"
   head "https://github.com/runkit7/runkit7"
   revision 1
 
