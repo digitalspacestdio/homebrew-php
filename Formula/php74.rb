@@ -5,6 +5,8 @@ class Php74 < AbstractPhp
   desc "PHP Version 7.4"
   revision 1
 
+  ENV.append "PKG_CONFIG", "#{Formula["pkgconfig"].opt_prefix}"
+
   include AbstractPhpVersion::Php74Defs
 
   url PHP_SRC_TARBALL
