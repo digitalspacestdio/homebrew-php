@@ -7,6 +7,7 @@ class Php74 < AbstractPhp
 
   depends_on "pkg-config" => :build
   depends_on "krb5"
+  depends_on "oniguruma"
 
   include AbstractPhpVersion::Php74Defs
 
