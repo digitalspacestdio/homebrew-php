@@ -4,9 +4,9 @@ class Php73Apcu < AbstractPhp73Extension
   init
   desc "APC User Cache"
   homepage "https://pecl.php.net/package/apcu"
-  url "https://github.com/krakjoe/apcu/archive/v5.1.8.tar.gz"
-  sha256 "09848619674a0871053cabba3907d2aade395772d54464d3aee45f519e217128"
-  head "https://github.com/krakjoe/apcu.git"
+  url "https://github.com/krakjoe/apcu/archive/v5.1.17.tar.gz"
+  sha256 "e6f6405ec47c2b466c968ee6bb15fc3abccb590b5fd40f579fceebeb15da6c4c"
+  head "https://github.com/krakjoe/apcu.git", :branch => "master"
   revision 1
 
 
