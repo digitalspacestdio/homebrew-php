@@ -19,4 +19,12 @@ class Php72 < AbstractPhp
   def php_version_path
     "72"
   end
+
+  def install_args
+    args = super
+    if !build.without? "pear"
+      args << "--with-pear"
+    end
+    args
+  end
 end
