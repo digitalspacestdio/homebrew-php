@@ -54,6 +54,7 @@ class AbstractPhp < Formula
     depends_on "mysql" if build.include?("with-libmysql")
     depends_on "gdbm"
     depends_on "libiconv" if OS.mac?
+    depends_on "libzip"
 
     # ssl
     if build.include?("with-homebrew-libressl")
@@ -248,7 +249,7 @@ INFO
       "--with-ndbm-dir=#{Formula["berkeley-db"].opt_prefix}",
       "--with-png-dir=#{Formula["libpng"].opt_prefix}",
       "--with-xmlrpc",
-      "--with-zlib-dir=#{Formula["zlib"].opt_prefix}",
+      "--with-zlib=#{Formula["zlib"].opt_prefix}",
       "--with-readline=#{Formula["readline"].opt_prefix}",
       "--with-gdbm=#{Formula["gdbm"].opt_prefix}",
       ("--with-iconv=#{Formula["libiconv"].opt_prefix}" if OS.mac?),
