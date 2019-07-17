@@ -13,7 +13,7 @@ class Php74Runkit < AbstractPhp74Extension
   depends_on "libtool" => :build
 
   def install
-    Dir.chdir "runkit-1.0.9"
+    Dir.chdir "runkit7-2.1.0"
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
