@@ -5,7 +5,7 @@ class Php72 < AbstractPhp
   desc "PHP Version 7.2"
   revision 29
 
-  ENV.append "PKG_CONFIG", "#{Formula["pkgconfig"].opt_prefix"
+  ENV.append "PKG_CONFIG", "#{Formula["pkgconfig"].opt_prefix}"
 
   include AbstractPhpVersion::Php72Defs
 
