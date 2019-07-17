@@ -24,8 +24,11 @@ class Php74 < AbstractPhp
     "74"
   end
 
-#   def install
-#     ENV.append "PKG_CONFIG", "#{Formula["pkgconfig"].opt_prefix}"
-#     super
-#   end
+  def install_args
+    args = super
+    if !build.without? "pear"
+      args << "--with-pear"
+    end
+    args
+  end
 end
