@@ -13,7 +13,7 @@ class Php71Intl < AbstractPhp71Extension
   depends_on "djocker/common/icu4c"
 
   def install
-        # Required due to icu4c dependency
+    # Required due to icu4c dependency
     ENV.cxx11
 
     # icu4c 61.1 compatability
