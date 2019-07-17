@@ -4,13 +4,13 @@ class Php71Intl < AbstractPhp71Extension
   init
   desc "Wrapper for the ICU library"
   homepage "https://php.net/manual/en/book.intl.php"
-  revision 26
+  revision 27
 
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
-  depends_on "icu4c"
+  depends_on "icu4c@62"
 
   def install
         # Required due to icu4c dependency
