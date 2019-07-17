@@ -62,7 +62,7 @@ class AbstractPhpVersion < Formula
     end
 
     module Php74Defs
-          PHP_SRC_TARBALL = "https://downloads.php.net/~derick/php-7.4.0alpha2.tar.bz2".freeze
+          PHP_SRC_TARBALL = "https://downloads.php.net/~derick/php-7.4.0alpha3.tar.bz2".freeze
           PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
           PHP_VERSION     = "7.4.0alpha3".freeze
           PHP_BRANCH      = "PHP-7.4".freeze
