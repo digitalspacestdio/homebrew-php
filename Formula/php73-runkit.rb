@@ -4,16 +4,15 @@ class Php73Runkit < AbstractPhp73Extension
   init
   desc "Runkit extension"
   homepage "https://github.com/runkit7/runkit7"
-  url "https://github.com/runkit7/runkit7/releases/download/1.0.9/runkit-1.0.9.tgz"
-  sha256 "9d83e3c977d6dcc0c1182b82c901936aace2ba6a4716bb9021ff86725285771a"
+  url "https://github.com/runkit7/runkit7/releases/download/2.1.0/runkit7-2.1.0.tgz"
+  sha256 "64644eaa171f3a9b5c69fa85a11c4f7061331dfd9425eed57a9d728bfb52b0dd"
   head "https://github.com/runkit7/runkit7"
-  revision 1
-
+  revision 2
 
   depends_on "libtool" => :build
 
   def install
-    Dir.chdir "runkit-1.0.9"
+    Dir.chdir "runkit7-2.1.0"
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
