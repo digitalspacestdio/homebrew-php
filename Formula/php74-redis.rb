@@ -4,10 +4,10 @@ class Php74Redis < AbstractPhp74Extension
   init
   desc "PHP extension for Redis"
   homepage "https://github.com/phpredis/phpredis"
-  url "https://github.com/phpredis/phpredis/archive/5.0.1.tar.gz"
-  sha256 "282cd0af8b922134291a2633170c22633b618ea17a6dfda75a92c8e342e54e2a"
+  url "https://github.com/phpredis/phpredis/archive/4.3.0.tar.gz"
+  sha256 "c854a39a691e7fbb813f948145a8d9042a9455295c50cc6766766c5f0693c92d"
   head "https://github.com/phpredis/phpredis.git"
-
+  revision 1
 
   depends_on "Php74-igbinary"
   depends_on "igbinary" => :build
