@@ -10,7 +10,7 @@ class Php71Intl < AbstractPhp71Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
-  depends_on "icu4c@64"
+  depends_on "djocker/common/icu4c"
 
   def install
         # Required due to icu4c dependency
@@ -26,7 +26,7 @@ class Php71Intl < AbstractPhp71Extension
                           phpconfig,
                           "--disable-dependency-tracking",
                           "--enable-intl",
-                          "--with-icu-dir=#{Formula["icu4c@64"].prefix}"
+                          "--with-icu-dir=#{Formula["djocker/common/icu4c"].prefix}"
     system "make"
     prefix.install "modules/intl.so"
     write_config_file if build.with? "config-file"
