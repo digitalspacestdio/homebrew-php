@@ -11,6 +11,7 @@ class Php74Intl < AbstractPhp74Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   depends_on "djocker/common/icu4c"
+  depends_on "pkg-config" => :build
 
   def install
         # Required due to icu4c dependency
