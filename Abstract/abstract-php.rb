@@ -241,7 +241,7 @@ INFO
       "--with-gd",
       "--with-gettext=#{Formula["gettext"].opt_prefix}",
 #      ("--with-iconv-dir=/usr" if OS.mac?),
-      "--with-icu-dir=#{Formula["icu4c"].opt_prefix}",
+      "--with-icu-dir=#{Formula["icu4c@63"].opt_prefix}",
       "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}",
       ("--with-kerberos=/usr" if OS.mac?),
       "--with-mhash",
