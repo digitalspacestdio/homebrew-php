@@ -10,7 +10,7 @@ class Php70Intl < AbstractPhp70Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
-  depends_on "icu4c"
+  depends_on "icu4c@62"
 
   def install
 	# Required due to icu4c dependency
