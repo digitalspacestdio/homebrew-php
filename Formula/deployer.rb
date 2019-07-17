@@ -4,8 +4,8 @@ class Deployer < AbstractPhpPhar
   init
   desc "Deployment tool written in PHP with support for popular frameworks out of the box."
   homepage "https://deployer.org"
-  url "https://deployer.org/releases/v6.0.5/deployer.phar"
-  sha256 "e2b1e61aac73dc4ab2f4abfbbc6065ab9af097041c8f0ac33ba263bfa9c52875"
+  url "https://deployer.org/releases/v6.4.5/deployer.phar"
+  sha256 "7ad4822509ec321e8fa97443bce8e4f621fc6d073ec703c0bdc3f82edec21ef0"
 
   bottle :unneeded
 
