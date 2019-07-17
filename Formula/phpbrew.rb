@@ -16,7 +16,7 @@ class Phpbrew < AbstractPhpPhar
   depends_on "jpeg"
   depends_on "libevent"
   depends_on "libxml2"
-  depends_on "icu4c"
+  depends_on "icu4c@64"
   depends_on "mcrypt"
   depends_on "mhash"
   depends_on "pcre"

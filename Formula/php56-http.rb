@@ -13,7 +13,7 @@ class Php56Http < AbstractPhp56Extension
   depends_on "php56-raphf"
   depends_on "php56-propro"
   depends_on "libevent" => :optional
-  depends_on "icu4c" => :optional
+  depends_on "icu4c@64" => :optional
 
   # overwrite the config file name to ensure extension is loaded after dependencies
   def config_filename
@@ -39,7 +39,7 @@ class Php56Http < AbstractPhp56Extension
     args << "--with-http-libcurl-dir"
     args << "--with-http-zlib-dir"
     args << "--with-http-libevent-dir=#{Formula["libevent"].opt_prefix}" if build.with? "libevent"
-    args << "--with-http-libicu-dir=#{Formula["icu4c"].opt_prefix}" if build.with? "icu4c"
+    args << "--with-http-libicu-dir=#{Formula["icu4c@64"].opt_prefix}" if build.with? "icu4c"
 
     system "./configure", *args
     system "make"
