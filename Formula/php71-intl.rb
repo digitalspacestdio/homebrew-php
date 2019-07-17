@@ -4,13 +4,13 @@ class Php71Intl < AbstractPhp71Extension
   init
   desc "Wrapper for the ICU library"
   homepage "https://php.net/manual/en/book.intl.php"
-  revision 27
+  revision 28
 
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
-  depends_on "icu4c@62"
+  depends_on "icu4c@63"
 
   def install
         # Required due to icu4c dependency
@@ -26,7 +26,7 @@ class Php71Intl < AbstractPhp71Extension
                           phpconfig,
                           "--disable-dependency-tracking",
                           "--enable-intl",
-                          "--with-icu-dir=#{Formula["icu4c@62"].prefix}"
+                          "--with-icu-dir=#{Formula["icu4c@63"].prefix}"
     system "make"
     prefix.install "modules/intl.so"
     write_config_file if build.with? "config-file"
