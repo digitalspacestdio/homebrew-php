@@ -10,7 +10,7 @@ class Php73Apcu < AbstractPhp73Extension
   revision 1
 
 
-  depends_on "pcre" => :build
+  depends_on "pcre"
 
   def install
     args = []
