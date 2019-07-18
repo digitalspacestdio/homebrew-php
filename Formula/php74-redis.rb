@@ -11,7 +11,6 @@ class Php74Redis < AbstractPhp74Extension
   head "https://github.com/krakjoe/apcu.git", :branch => "develop"
   version "4c61678"
   head "https://github.com/phpredis/phpredis.git"
-  revision 3
 
   depends_on "Php74-igbinary"
   depends_on "igbinary" => :build
