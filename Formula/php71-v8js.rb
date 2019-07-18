@@ -18,8 +18,8 @@ class Php71V8js < AbstractPhp71Extension
     ld_opt = "-L#{v8.opt_lib}"
 
     args = []
-    args << "--with-cc-opt=#{cc_opt}"
-    args << "--with-ld-opt=#{ld_opt}"
+    args << "--with-cc-opt=#{cc_opt}/include"
+    args << "--with-ld-opt=#{ld_opt}/libexec"
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
