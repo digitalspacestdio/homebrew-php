@@ -14,12 +14,12 @@ class Php71V8js < AbstractPhp71Extension
     Dir.chdir "v8js-#{version}" unless build.head?
 
     v8 = Formula["v8"]
-    cc_opt = "-I#{v8.opt_include}"
-    ld_opt = "-L#{v8.opt_lib}"
+    cc_opt = "-I#{v8.prefix}/libexec/include"
+    ld_opt = "-L#{v8.prefix}/libexec"
 
     args = []
-    args << "--with-cc-opt=#{cc_opt}/include"
-    args << "--with-ld-opt=#{ld_opt}/libexec"
+    args << "--with-cc-opt=#{cc_opt}"
+    args << "--with-ld-opt=#{ld_opt}"
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
