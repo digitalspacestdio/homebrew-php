@@ -18,6 +18,7 @@ class Php74Apcu < AbstractPhp74Extension
 
   def install
 
+    pcre = Formula["pcre"]
     cc_opt = "-I#{pcre.opt_include}"
     ld_opt = "-L#{pcre.opt_lib}"
 
