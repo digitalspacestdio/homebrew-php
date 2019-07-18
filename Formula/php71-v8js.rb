@@ -13,8 +13,16 @@ class Php71V8js < AbstractPhp71Extension
   def install
     Dir.chdir "v8js-#{version}" unless build.head?
 
+    v8 = Formula["v8"]
+    cc_opt = "-I#{v8.opt_include}"
+    ld_opt = "-L#{v8.opt_lib}"
+
+    args = []
+    args << "--with-cc-opt=#{cc_opt}"
+    args << "--with-ld-opt=#{ld_opt}"
+
     safe_phpize
-    system "./configure", "--prefix=#{prefix}", phpconfig
+    system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
     prefix.install "modules/v8js.so"
     write_config_file if build.with? "config-file"
