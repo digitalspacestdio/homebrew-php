@@ -3,11 +3,15 @@ require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 class Php74Redis < AbstractPhp74Extension
   init
   desc "PHP extension for Redis"
-  homepage "https://github.com/phpredis/phpredis"
-  url "https://github.com/phpredis/phpredis/archive/3.1.6.tar.gz"
-  sha256 "e0f00bd46f4790bf6e763762d9559d7175415e2f1ea1fcfea898bfb5298b43c4"
+#   homepage "https://github.com/phpredis/phpredis"
+#   url "https://github.com/phpredis/phpredis/archive/3.1.6.tar.gz"
+#   sha256 "e0f00bd46f4790bf6e763762d9559d7175415e2f1ea1fcfea898bfb5298b43c4"
+  url "https://codeload.github.com/phpredis/phpredis/tar.gz/4c616783ef4fd8d713f88fc6297721aa9d29e5ff"
+  sha256 "0ae82694260459f9ae29ba44cd0ad9ac9368070d94bd3fc9cf0c009a8e935168"
+  head "https://github.com/krakjoe/apcu.git", :branch => "develop"
+  version "4c61678"
   head "https://github.com/phpredis/phpredis.git"
-  revision 2
+  revision 3
 
   depends_on "Php74-igbinary"
   depends_on "igbinary" => :build
