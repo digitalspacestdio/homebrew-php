@@ -9,14 +9,18 @@ class Php73V8js < AbstractPhp73Extension
   head "https://github.com/phpv8/v8js.git"
   revision 1
 
-
-  depends_on "v8"
+  depends_on "v8js"
 
   def install
     Dir.chdir "v8js-#{version}" unless build.head?
 
+    v8 = Formula["v8js"]
+
+    args = []
+    args << "--with-v8js=#{v8.prefix}"
+
     safe_phpize
-    system "./configure", "--prefix=#{prefix}", phpconfig
+    system "./configure", "--prefix=#{prefix}", phpconfig, *args
     system "make"
     prefix.install "modules/v8js.so"
     write_config_file if build.with? "config-file"

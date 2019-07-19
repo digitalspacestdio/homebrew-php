@@ -6,6 +6,7 @@ class Php71V8js < AbstractPhp71Extension
   homepage "https://pecl.php.net/package/v8js"
   url "https://pecl.php.net/get/v8js-2.1.1.tgz"
   sha256 "0bed0cd24b3c2701d38773636f43dc2d8a8ff243ea220be3e427b8c8f5af3c8b"
+  head "https://github.com/phpv8/v8js.git"
   revision 1
 
   depends_on "v8js"
