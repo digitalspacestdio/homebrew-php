@@ -8,18 +8,15 @@ class Php71V8js < AbstractPhp71Extension
   sha256 "0bed0cd24b3c2701d38773636f43dc2d8a8ff243ea220be3e427b8c8f5af3c8b"
   revision 1
 
-  depends_on "v8"
+  depends_on "v8js"
 
   def install
     Dir.chdir "v8js-#{version}" unless build.head?
 
-    v8 = Formula["v8"]
-    cc_opt = "-I#{v8.prefix}/libexec/include"
-    ld_opt = "-L#{v8.prefix}/libexec"
+    v8 = Formula["v8js"]
 
     args = []
-    args << "--with-cc-opt=#{cc_opt}"
-    args << "--with-ld-opt=#{ld_opt}"
+    args << "--with-v8js=#{v8.prefix}"
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args
