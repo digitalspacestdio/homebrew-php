@@ -14,6 +14,10 @@ class Phplint < Formula
       depends_on "php71"
     elsif Formula["php72"].linked_keg.exist?
       depends_on "php72"
+    elsif Formula["php73"].linked_keg.exist?
+      depends_on "php73"
+    elsif Formula["php74"].linked_keg.exist?
+      depends_on "php75"
     else
       depends_on "php56"
     end

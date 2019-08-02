@@ -4,9 +4,9 @@ class Phpbrew < AbstractPhpPhar
   init
   desc "installs multiple version php(s) in your $HOME directory"
   homepage "https://github.com/phpbrew/phpbrew"
-  url "https://github.com/phpbrew/phpbrew/raw/56300713fe9f99084a52987d624579d92c2b1844/phpbrew"
-  version "1.22.5"
-  sha256 "84301c766146bdc04f10e8cb0e8c2aefeaf943b0bea24ca42318a8f12c0aee1b"
+  url "https://github.com/phpbrew/phpbrew/raw/581eb9ce6434b870ef004a9d70c2ccc14f9d5ab7/phpbrew"
+  version "1.23.1"
+  sha256 "c512a0ab0c28b1e90622810f959d5e9481fa0c2871a8d0ba0804b79b97f02eb5"
   revision 1
 
 

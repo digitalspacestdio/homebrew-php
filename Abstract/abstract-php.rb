@@ -32,6 +32,7 @@ class AbstractPhp < Formula
     end
 
     depends_on "djocker/common/curl" if !build.include?("without-homebrew-curl") || MacOS.version < :lion
+    depends_on "libxslt" if !build.include?("without-homebrew-libxslt") || MacOS.version < :lion
     depends_on "enchant" => :optional
     depends_on "freetds" if build.include?("with-mssql")
     depends_on "freetype"
@@ -57,6 +58,12 @@ class AbstractPhp < Formula
     depends_on "libzip"
 
     # ssl
+    if build.include?("with-homebrew-libressl")
+      depends_on "libressl"
+    else
+      depends_on "openssl"
+    end
+
     if build.include?("with-homebrew-libressl")
       depends_on "libressl"
     else
@@ -320,7 +327,7 @@ INFO
     end
 
     if !build.include?("without-homebrew-curl") || MacOS.version < :lion
-      args << "--with-curl=#{Formula["curl"].opt_prefix}"
+      args << "--with-curl=#{Formula["djocker/common/curl"].opt_prefix}"
     else
       args << "--with-curl"
     end
