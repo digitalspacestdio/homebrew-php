@@ -9,7 +9,7 @@ class Php56Intl < AbstractPhp56Extension
   revision 15
 
 
-  depends_on "phpicu4c"
+  depends_on "icu4c"
 
   def install
     # Required due to icu4c dependency
@@ -25,7 +25,7 @@ class Php56Intl < AbstractPhp56Extension
                           phpconfig,
                           "--disable-dependency-tracking",
                           "--enable-intl",
-                          "--with-icu-dir=#{Formula["phpicu4c"].prefix}"
+                          "--with-icu-dir=#{Formula["icu4c"].opt_prefix}"
     system "make"
     prefix.install "modules/intl.so"
     write_config_file if build.with? "config-file"
