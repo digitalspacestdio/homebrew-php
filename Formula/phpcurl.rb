@@ -1,17 +1,17 @@
 class Phpcurl < Formula
   desc "Get a file from an HTTP, HTTPS or FTP server"
   homepage "https://curl.haxx.se/"
-  url "https://curl.haxx.se/download/curl-7.63.0.tar.bz2"
-  mirror "http://curl.mirror.anstey.ca/curl-7.63.0.tar.bz2"
-  sha256 "9bab7ed4ecff77020a312d84cc5fb7eb02d58419d218f267477a724a17fd8dd8"
+  url "https://curl.haxx.se/download/curl-7.65.3.tar.bz2"
+  mirror "http://curl.mirror.anstey.ca/curl-7.65.3.tar.bz2"
+  sha256 "0a855e83be482d7bc9ea00e05bdb1551a44966076762f9650959179c89fce509"
 
-  bottle do
-    cellar :any
-    sha256 "9cb9b63ba604679be2bbaa9ad5f2cc864d1f4312ca02c46aa2d7ca3e7728f702" => :mojave
-    sha256 "1cb7daf7992bebe4fa3a966d4fdb410f606c8899519a30de7a0de53052085fbd" => :high_sierra
-    sha256 "2f577b9aebe369d2d024f9fbbbb2158fc7d48f6014c39c53af9451a5294cca5a" => :sierra
-    sha256 "da21f501cc53fa8ff04208d57120382fbfb762eaa34c2df0e7eac95c5e24356b" => :x86_64_linux
-  end
+#   bottle do
+#     cellar :any
+#     sha256 "9cb9b63ba604679be2bbaa9ad5f2cc864d1f4312ca02c46aa2d7ca3e7728f702" => :mojave
+#     sha256 "1cb7daf7992bebe4fa3a966d4fdb410f606c8899519a30de7a0de53052085fbd" => :high_sierra
+#     sha256 "2f577b9aebe369d2d024f9fbbbb2158fc7d48f6014c39c53af9451a5294cca5a" => :sierra
+#     sha256 "da21f501cc53fa8ff04208d57120382fbfb762eaa34c2df0e7eac95c5e24356b" => :x86_64_linux
+#   end
 
   pour_bottle? do
     reason "The bottle needs to be installed into #{Homebrew::DEFAULT_PREFIX} when built with OpenSSL."
