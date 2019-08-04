@@ -10,7 +10,7 @@ class Phpbrew < AbstractPhpPhar
   revision 1
 
 
-  depends_on "djocker/php/curl"
+  depends_on "djocker/php/curl@php"
   depends_on "gettext"
   depends_on "gmp"
   depends_on "jpeg"

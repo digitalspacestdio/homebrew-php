@@ -31,7 +31,7 @@ class AbstractPhp < Formula
       conflicts_with php_formula_name, :because => "different php versions install the same binaries."
     end
 
-    depends_on "djocker/php/curl" if !build.include?("without-homebrew-curl") || MacOS.version < :lion
+    depends_on "djocker/php/curl@php" if !build.include?("without-homebrew-curl") || MacOS.version < :lion
     depends_on "libxslt" if !build.include?("without-homebrew-libxslt") || MacOS.version < :lion
     depends_on "enchant" => :optional
     depends_on "freetds" if build.include?("with-mssql")
@@ -327,7 +327,7 @@ INFO
     end
 
     if !build.include?("without-homebrew-curl") || MacOS.version < :lion
-      args << "--with-curl=#{Formula["djocker/php/curl"].opt_prefix}"
+      args << "--with-curl=#{Formula["djocker/php/curl@php"].opt_prefix}"
     else
       args << "--with-curl"
     end
