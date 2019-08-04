@@ -13,7 +13,7 @@ class Php72Http < AbstractPhp72Extension
   depends_on "php72-raphf"
   depends_on "php72-propro"
   depends_on "libevent" => :optional
-  depends_on "djocker/common/icu4c" => :optional
+  depends_on "phpicu4c" => :optional
 
   def config_filename
     "zzz_ext-" + extension + ".ini"
@@ -40,7 +40,7 @@ class Php72Http < AbstractPhp72Extension
     args << "--with-http-libcurl-dir"
     args << "--with-http-zlib-dir"
     args << "--with-http-libevent-dir=#{Formula["libevent"].opt_prefix}" if build.with? "libevent"
-    args << "--with-http-libicu-dir=#{Formula["djocker/common/icu4c"].opt_prefix}" if build.with? "icu4c"
+    args << "--with-http-libicu-dir=#{Formula["phpicu4c"].opt_prefix}" if build.with? "icu4c"
 
     system "./configure", *args
     system "make"

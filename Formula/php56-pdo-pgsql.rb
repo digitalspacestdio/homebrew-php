@@ -9,7 +9,7 @@ class Php56PdoPgsql < AbstractPhp56Extension
   revision 7
 
 
-  depends_on "postgresql@9.6"
+  depends_on "libpq"
 
   def extension
     "pdo_pgsql"
@@ -21,7 +21,7 @@ class Php56PdoPgsql < AbstractPhp56Extension
     ENV.universal_binary if build.universal?
 
     safe_phpize
-    system "./configure", "--prefix=#{prefix}", "--with-pdo-pgsql=#{Formula["postgresql"].prefix}", phpconfig
+    system "./configure", "--prefix=#{prefix}", "--with-pdo-pgsql=#{Formula["libpq"].prefix}", phpconfig
     system "make"
     prefix.install "modules/pdo_pgsql.so"
     write_config_file if build.with? "config-file"

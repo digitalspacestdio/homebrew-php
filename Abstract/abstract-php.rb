@@ -31,14 +31,14 @@ class AbstractPhp < Formula
       conflicts_with php_formula_name, :because => "different php versions install the same binaries."
     end
 
-    depends_on "djocker/php/phpcurl" if !build.include?("without-homebrew-curl") || MacOS.version < :lion
+    depends_on "phpcurl" if !build.include?("without-homebrew-curl") || MacOS.version < :lion
     depends_on "libxslt" if !build.include?("without-homebrew-libxslt") || MacOS.version < :lion
     depends_on "enchant" => :optional
     depends_on "freetds" if build.include?("with-mssql")
     depends_on "freetype"
     depends_on "gettext"
     depends_on "gmp" => :optional
-    depends_on "djocker/common/icu4c"
+    depends_on "phpicu4c"
     depends_on "imap-uw" if build.include?("with-imap")
     depends_on "jpeg"
     depends_on "webp" => :optional if name.split("::")[2].downcase.start_with?("php7")
@@ -101,7 +101,7 @@ class AbstractPhp < Formula
     end
 
     option "with-cgi", "Enable building of the CGI executable (implies --without-fpm)"
-    option "without-debug", "Compile without debugging symbols"
+    option "with-debug", "Compile with debugging symbols"
     option "with-embed", "Compile with embed support (built as a static library)"
     option "without-homebrew-curl", "Not include Curl support via Homebrew"
     option "with-homebrew-libressl", "Not include LibreSSL instead of OpenSSL via Homebrew"
@@ -249,7 +249,7 @@ INFO
       "--with-gd",
       "--with-gettext=#{Formula["gettext"].opt_prefix}",
 #      ("--with-iconv-dir=/usr" if OS.mac?),
-      "--with-icu-dir=#{Formula["djocker/common/icu4c"].opt_prefix}",
+      "--with-icu-dir=#{Formula["phpicu4c"].opt_prefix}",
       "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}",
       ("--with-kerberos=/usr" if OS.mac?),
       "--with-mhash",
@@ -295,7 +295,7 @@ INFO
       args << "--with-bz2-dir=#{Formula["bzip2"].opt_prefix}" if OS.mac?
     #end
 
-    if !build.without? "debug"
+    if build.with? "debug"
       args << "--enable-debug"
     end
 
@@ -327,7 +327,7 @@ INFO
     end
 
     if !build.include?("without-homebrew-curl") || MacOS.version < :lion
-      args << "--with-curl=#{Formula["djocker/php/phpcurl"].opt_prefix}"
+      args << "--with-curl=#{Formula["phpcurl"].opt_prefix}"
     else
       args << "--with-curl"
     end
@@ -403,7 +403,7 @@ INFO
       else
         args << "--enable-phpdbg"
 
-        if !build.without? "debug"
+        if build.with? "debug"
           args << "--enable-phpdbg-debug"
         end
       end

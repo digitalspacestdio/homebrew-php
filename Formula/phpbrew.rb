@@ -10,13 +10,13 @@ class Phpbrew < AbstractPhpPhar
   revision 1
 
 
-  depends_on "djocker/php/phpcurl"
+  depends_on "phpcurl"
   depends_on "gettext"
   depends_on "gmp"
   depends_on "jpeg"
   depends_on "libevent"
   depends_on "libxml2"
-  depends_on "djocker/common/icu4c"
+  depends_on "phpicu4c"
   depends_on "mcrypt"
   depends_on "mhash"
   depends_on "pcre"

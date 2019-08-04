@@ -10,7 +10,7 @@ class Php73PdoPgsql < AbstractPhp73Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
-  depends_on "postgresql@9.6"
+  depends_on "libpq"
 
   def extension
     "pdo_pgsql"
@@ -20,7 +20,7 @@ class Php73PdoPgsql < AbstractPhp73Extension
     Dir.chdir "ext/pdo_pgsql"
 
     safe_phpize
-    system "./configure", "--prefix=#{prefix}", "--with-pdo-pgsql=#{Formula["postgresql"].prefix}", phpconfig
+    system "./configure", "--prefix=#{prefix}", "--with-pdo-pgsql=#{Formula["libpq"].prefix}", phpconfig
     system "make"
     prefix.install "modules/pdo_pgsql.so"
     write_config_file if build.with? "config-file"
