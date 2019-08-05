@@ -251,6 +251,7 @@ INFO
 #      ("--with-iconv-dir=/usr" if OS.mac?),
       "--with-icu-dir=#{Formula["icu4c"].opt_prefix}",
       "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}",
+      "--with-zlib-dir=#{Formula["libzip"].opt_prefix}",
       ("--with-kerberos=/usr" if OS.mac?),
       "--with-mhash",
       "--with-ndbm-dir=#{Formula["berkeley-db"].opt_prefix}",
