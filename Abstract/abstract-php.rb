@@ -49,7 +49,7 @@ class AbstractPhp < Formula
     depends_on "readline"
     depends_on "zlib"
     depends_on "bzip2"
-    depends_on "berkeley-db"
+#    depends_on "berkeley-db"
     depends_on "libedit"
     depends_on "openldap"
     depends_on "mysql" if build.include?("with-libmysql")
@@ -231,7 +231,7 @@ INFO
       "--mandir=#{man}",
       "--enable-bcmath",
       "--enable-calendar",
-      "--enable-dba",
+#      "--enable-dba",
       "--enable-exif",
       "--enable-ftp",
       "--enable-gd-native-ttf",
@@ -256,7 +256,7 @@ INFO
       "--with-ndbm-dir=#{Formula["berkeley-db"].opt_prefix}",
       "--with-png-dir=#{Formula["libpng"].opt_prefix}",
       "--with-xmlrpc",
-      "--with-zlib-dir==#{Formula["zlib"].opt_prefix}",
+      "--with-zlib==#{Formula["zlib"].opt_prefix}",
       "--with-readline=#{Formula["readline"].opt_prefix}",
       "--with-gdbm=#{Formula["gdbm"].opt_prefix}",
       ("--with-iconv=#{Formula["libiconv"].opt_prefix}" if OS.mac?),
