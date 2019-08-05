@@ -11,7 +11,7 @@ class Php74Imagick < AbstractPhp74Extension
 
 
   depends_on "pkg-config" => :build
-  depends_on "imagemagick@6"
+  depends_on "imagemagick6"
 
   def install
     Dir.chdir "imagick-#{version}" unless build.head?
@@ -19,7 +19,7 @@ class Php74Imagick < AbstractPhp74Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
-                          "--with-imagick=#{Formula["imagemagick@6"].opt_prefix}"
+                          "--with-imagick=#{Formula["imagemagick6"].opt_prefix}"
     system "make"
     prefix.install "modules/imagick.so"
     write_config_file if build.with? "config-file"
