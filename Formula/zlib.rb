@@ -1,4 +1,4 @@
-class Phpzlib < Formula
+class Zlib < Formula
   desc "General-purpose lossless data-compression library"
   homepage "https://zlib.net/"
   url "https://zlib.net/zlib-1.2.11.tar.gz"
@@ -12,10 +12,6 @@ class Phpzlib < Formula
     sha256 "f822b4dbab4a15b889316b89248c7b4d15d6af9dc460bf209b9425b0accb7fa3" => :sierra
     sha256 "3f912f6f1ce6c586128ebde29756c883b89409e652ca7aa9a29a773c2d4d0915" => :el_capitan
     sha256 "5b969eb38b90a3e31869586df9d62e59d359212b16c6a270aee690dd67caa491" => :yosemite
-  end
-
-  if OS.mac?
-    keg_only :provided_by_macos
   end
 
   # https://zlib.net/zlib_how.html
