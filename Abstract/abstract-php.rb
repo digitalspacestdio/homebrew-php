@@ -256,7 +256,7 @@ INFO
       "--with-ndbm-dir=#{Formula["berkeley-db"].opt_prefix}",
       "--with-png-dir=#{Formula["libpng"].opt_prefix}",
       "--with-xmlrpc",
-      "--with-zlib=#{Formula["phpzlib"].opt_prefix}",
+      ("--with-zlib=#{Formula["phpzlib"].opt_prefix}" if OS.mac?)
       "--with-libzip=#{Formula["libzip"].opt_prefix}",
       "--with-readline=#{Formula["readline"].opt_prefix}",
       "--with-gdbm=#{Formula["gdbm"].opt_prefix}",
