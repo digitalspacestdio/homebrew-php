@@ -14,7 +14,7 @@ class Php73Dba < AbstractPhp73Extension
   depends_on "gdbm"
 
   def extension_type
-    "zend_extension"
+    "extension"
   end
 
   def install

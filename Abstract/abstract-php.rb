@@ -231,7 +231,7 @@ INFO
       "--mandir=#{man}",
       "--enable-bcmath",
       "--enable-calendar",
-      "--enable-dba=shared",
+#      "--enable-dba=shared",
       "--enable-exif",
       "--enable-ftp",
       "--enable-gd-native-ttf",
