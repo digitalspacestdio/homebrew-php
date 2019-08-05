@@ -53,7 +53,7 @@ class AbstractPhp < Formula
     depends_on "libedit"
     depends_on "openldap"
     depends_on "mysql" if build.include?("with-libmysql")
-    depends_on "gdbm"
+#    depends_on "gdbm"
     depends_on "libiconv" if OS.mac?
     depends_on "libzip"
 
@@ -231,7 +231,7 @@ INFO
       "--mandir=#{man}",
       "--enable-bcmath",
       "--enable-calendar",
-      "--disable-dba",
+      "--enable-dba=shared",
       "--enable-exif",
       "--enable-ftp",
       "--enable-gd-native-ttf",
@@ -259,7 +259,7 @@ INFO
       "--with-zlib=#{Formula["phpzlib"].opt_prefix}",
       "--with-libzip=#{Formula["libzip"].opt_prefix}",
       "--with-readline=#{Formula["readline"].opt_prefix}",
-      "--with-gdbm=#{Formula["gdbm"].opt_prefix}",
+#      "--with-gdbm=#{Formula["gdbm"].opt_prefix}",
       ("--with-iconv=#{Formula["libiconv"].opt_prefix}" if OS.mac?),
       "--without-gmp",
       "--without-snmp",

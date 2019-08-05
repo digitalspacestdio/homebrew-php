@@ -11,6 +11,7 @@ class Php73Dba < AbstractPhp73Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   depends_on "berkeley-db"
+  depends_on "gdbm"
 
   def extension_type
     "zend_extension"
@@ -22,6 +23,7 @@ class Php73Dba < AbstractPhp73Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           "--with-ndbm-dir=#{Formula["berkeley-db"].opt_prefix}",
+                          "--with-gdbm=#{Formula["gdbm"].opt_prefix}",
                           phpconfig
     system "make"
     prefix.install "modules/dba.so"
