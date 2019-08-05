@@ -253,7 +253,7 @@ INFO
       "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}",
       ("--with-kerberos=/usr" if OS.mac?),
       "--with-mhash",
-      "--with-ndbm-dir=#{Formula["berkeley-db"].opt_prefix}",
+#      "--with-ndbm-dir=#{Formula["berkeley-db"].opt_prefix}",
       "--with-png-dir=#{Formula["libpng"].opt_prefix}",
       "--with-xmlrpc",
       "--with-zlib=#{Formula["phpzlib"].opt_prefix}",

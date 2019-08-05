@@ -21,6 +21,7 @@ class Php73Dba < AbstractPhp73Extension
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
+                          "--with-ndbm-dir=#{Formula["berkeley-db"].opt_prefix}",
                           phpconfig
     system "make"
     prefix.install "modules/dba.so"
