@@ -47,7 +47,7 @@ class AbstractPhp < Formula
     depends_on "libxml2" if build.include?("with-homebrew-libxml2") || MacOS.version < :lion || MacOS.version >= :el_capitan
     depends_on "unixodbc" unless build.include?("without-unixodbc")
     depends_on "readline"
-    depends_on "zlib"
+    depends_on "phpzlib"
     depends_on "bzip2"
 #    depends_on "berkeley-db"
     depends_on "libedit"
@@ -256,7 +256,7 @@ INFO
       "--with-ndbm-dir=#{Formula["berkeley-db"].opt_prefix}",
       "--with-png-dir=#{Formula["libpng"].opt_prefix}",
       "--with-xmlrpc",
-      "--with-zlib==#{Formula["zlib"].opt_prefix}",
+      "--with-zlib==#{Formula["phpzlib"].opt_prefix}",
       "--with-readline=#{Formula["readline"].opt_prefix}",
       "--with-gdbm=#{Formula["gdbm"].opt_prefix}",
       ("--with-iconv=#{Formula["libiconv"].opt_prefix}" if OS.mac?),
