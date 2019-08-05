@@ -18,7 +18,7 @@ class Php73Dba < AbstractPhp73Extension
   end
 
   def install
-    Dir.chdir "ext/opcache"
+    Dir.chdir "ext/dba"
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
