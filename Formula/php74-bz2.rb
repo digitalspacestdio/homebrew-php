@@ -1,6 +1,6 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
-class Php77Bz2 < AbstractPhp74Extension
+class Php74Bz2 < AbstractPhp74Extension
   init
   desc "The bzip2 functions are used to transparently read and write bzip2 (.bz2) compressed files."
   homepage "https://www.php.net/manual/en/book.bzip2.php"
