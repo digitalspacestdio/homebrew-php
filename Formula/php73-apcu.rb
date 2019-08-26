@@ -7,14 +7,20 @@ class Php73Apcu < AbstractPhp73Extension
   url "https://github.com/krakjoe/apcu/archive/v5.1.17.tar.gz"
   sha256 "e6f6405ec47c2b466c968ee6bb15fc3abccb590b5fd40f579fceebeb15da6c4c"
   head "https://github.com/krakjoe/apcu.git", :branch => "master"
-  revision 1
+  revision 2
 
 
   depends_on "pcre"
 
   def install
+    pcre = Formula["pcre"]
+    cc_opt = "-I#{pcre.opt_include}"
+    ld_opt = "-L#{pcre.opt_lib}"
+
     args = []
     args << "--enable-apcu"
+    args << "--with-cc-opt=#{cc_opt}"
+    args << "--with-ld-opt=#{ld_opt}"
 
     safe_phpize
 
@@ -23,22 +29,22 @@ class Php73Apcu < AbstractPhp73Extension
                           *args
     system "make"
     # Keep all the headers that are needed to build php-apc-bc
-    include.install [
-      "php_apc.h",
-      "apc.h",
-      "apc_globals.h",
-      "apc_cache.h",
-      "apc_stack.h",
-      "apc_lock.h",
-      "apc_pool.h",
-      "apc_cache_api.h",
-      "apc_lock_api.h",
-      "apc_sma.h",
-      "apc_pool_api.h",
-      "apc_sma_api.h",
-      "apc_arginfo.h",
-      "apc_iterator.h",
-    ]
+#     include.install [
+#       "php_apc.h",
+#       "apc.h",
+#       "apc_globals.h",
+#       "apc_cache.h",
+#       "apc_stack.h",
+#       "apc_lock.h",
+#       "apc_pool.h",
+#       "apc_cache_api.h",
+#       "apc_lock_api.h",
+#       "apc_sma.h",
+#       "apc_pool_api.h",
+#       "apc_sma_api.h",
+#       "apc_arginfo.h",
+#       "apc_iterator.h",
+#     ]
     prefix.install "modules/apcu.so"
     write_config_file if build.with? "config-file"
   end
