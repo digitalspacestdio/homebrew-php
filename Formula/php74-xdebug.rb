@@ -14,7 +14,7 @@ class Php74Xdebug < AbstractPhp74Extension
   end
 
   def install
-    #Dir.chdir "xdebug-#{version}" unless build.head?
+    Dir.chdir "xdebug-#{version}" unless build.head?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
