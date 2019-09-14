@@ -4,9 +4,9 @@ class Php74Xdebug < AbstractPhp74Extension
   init
   desc "Provides debugging and profiling capabilities."
   homepage "https://xdebug.org"
-  url "https://xdebug.org/files/xdebug-2.8.0beta2.tgz"
-  sha256 "4cdc590909074b1e28525f354d14283e663bf20e17c468246a09633553a1fea5"
-  version "2.8.0beta2"
+  url "https://codeload.github.com/xdebug/xdebug/tar.gz/c93b679af7fd0b96b48d8a0255255b46a298a9d8"
+  sha256 "5f26988062d973f79911a588bc9fb3e440d6339a34090a663d822d0e52552698"
+  version "c93b679"
   head "https://github.com/xdebug/xdebug.git"
 
   def extension_type
@@ -14,7 +14,7 @@ class Php74Xdebug < AbstractPhp74Extension
   end
 
   def install
-    Dir.chdir "xdebug-#{version}" unless build.head?
+    #Dir.chdir "xdebug-#{version}" unless build.head?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
