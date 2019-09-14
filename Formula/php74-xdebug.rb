@@ -6,8 +6,9 @@ class Php74Xdebug < AbstractPhp74Extension
   homepage "https://xdebug.org"
   url "https://codeload.github.com/xdebug/xdebug/tar.gz/c93b679af7fd0b96b48d8a0255255b46a298a9d8"
   sha256 "5f26988062d973f79911a588bc9fb3e440d6339a34090a663d822d0e52552698"
-  version "c93b679"
   head "https://github.com/xdebug/xdebug.git"
+  version "c93b679"
+  revision 2
 
   def extension_type
     "zend_extension"
