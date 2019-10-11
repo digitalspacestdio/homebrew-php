@@ -4,10 +4,10 @@ class Php56 < AbstractPhp
   init
   desc "PHP Version 5.6"
   include AbstractPhpVersion::Php56Defs
-
+  version PHP_VERSION
+  revision 11
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
-  revision 10
 
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
 

@@ -3,6 +3,7 @@ require File.expand_path("../../Abstract/abstract-php", __FILE__)
 class Php74 < AbstractPhp
   init
   desc "PHP Version 7.4"
+  version PHP_VERSION
   revision 1
 
   depends_on "pkg-config" => :build
