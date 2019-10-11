@@ -40,35 +40,35 @@ class AbstractPhpVersion < Formula
   end
 
   module Php72Defs
-    PHP_SRC_TARBALL = "https://php.net/get/php-7.2.22.tar.bz2/from/this/mirror".freeze
+    PHP_SRC_TARBALL = "https://php.net/get/php-7.2.23.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
-    PHP_VERSION     = "7.2.22".freeze
+    PHP_VERSION     = "7.2.23".freeze
     PHP_BRANCH      = "PHP-7.2".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "c10a9883b586ada5ef1149f2571625b27efdcc3e70a04fbb9121979633b0f08a",
+      :sha256 => "a17af3643d29d7e730f977e3776dc3e325d5ca00b361e41dbfc2368ebad5430d",
     }.freeze
   end
 
   module Php73Defs
-      PHP_SRC_TARBALL = "https://php.net/get/php-7.3.9.tar.bz2/from/this/mirror".freeze
+      PHP_SRC_TARBALL = "https://php.net/get/php-7.3.10.tar.bz2/from/this/mirror".freeze
       PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
-      PHP_VERSION     = "7.3.9".freeze
+      PHP_VERSION     = "7.3.10".freeze
       PHP_BRANCH      = "PHP-7.3".freeze
 
       PHP_CHECKSUM    = {
-        :sha256 => "a39c9709a8c9eb7ea8ac4933ef7a78b92f7e5735a405c8b8e42ee39541d963c4",
+        :sha256 => "506dd871c0fb8f00f872f53dd3b1dfa5f23a9edb4dfc521e5669c78a78c45448",
       }.freeze
     end
 
     module Php74Defs
-      PHP_SRC_TARBALL = "https://downloads.php.net/~derick/php-7.4.0RC1.tar.bz2".freeze
+      PHP_SRC_TARBALL = "https://downloads.php.net/~derick/php-7.4.0RC3.tar.bz2".freeze
       PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
-      PHP_VERSION     = "7.4.0RC1".freeze
+      PHP_VERSION     = "7.4.0RC3".freeze
       PHP_BRANCH      = "PHP-7.4".freeze
 
       PHP_CHECKSUM    = {
-        :sha256 => "fb826bb86c8bdcfc7fe8858deeaebd772120a3c9c1230fa27325c14ef7c062c8",
+        :sha256 => "594298fba380b6110ba2117ff3efbfd42425dad022fec944ed0a64c05d861918",
       }.freeze
     end
 end
