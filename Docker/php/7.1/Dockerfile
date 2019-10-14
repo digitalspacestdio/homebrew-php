@@ -16,7 +16,7 @@ RUN brew install ${BREW_FORMULA}-pdo-pgsql ${BREW_FORMULA}-mongodb ${BREW_FORMUL
 RUN brew install ${BREW_FORMULA}-xhprof ${BREW_FORMULA}-memprof ${BREW_FORMULA}-xdebug
 
 # Cleanup
-RUN formulalist=$(brew list | grep 'perl\|berkeley-db\|python@2\|autoconf') && [[ "" -neq "$formulalist" ]] && brew remove "$formulalist"; \
+RUN brew list | grep 'perl\|berkeley-db\|python@2\|autoconf' | xargs --no-run-if-empty brew remove; \
     rm -rf /home/linuxbrew/.cache/Homebrew; \
     brew cleanup; \
     rm -rf /home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/vendor/portable-ruby
