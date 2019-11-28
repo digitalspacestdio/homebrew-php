@@ -29,46 +29,46 @@ class AbstractPhpVersion < Formula
   end
 
   module Php71Defs
-    PHP_SRC_TARBALL = "https://php.net/get/php-7.1.32.tar.bz2/from/this/mirror".freeze
+    PHP_SRC_TARBALL = "https://php.net/get/php-7.1.33.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
-    PHP_VERSION     = "7.1.32".freeze
+    PHP_VERSION     = "7.1.33".freeze
     PHP_BRANCH      = "PHP-7.1".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "d7c7a1adddc75ac17f63349e966db25930b6b3ce736640349bea9e10909cab7a",
+      :sha256 => "95a5e5f2e2b79b376b737a82d9682c91891e60289fa24183463a2aca158f4f4b",
     }.freeze
   end
 
   module Php72Defs
-    PHP_SRC_TARBALL = "https://php.net/get/php-7.2.23.tar.bz2/from/this/mirror".freeze
+    PHP_SRC_TARBALL = "https://php.net/get/php-7.2.25.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
-    PHP_VERSION     = "7.2.23".freeze
+    PHP_VERSION     = "7.2.25".freeze
     PHP_BRANCH      = "PHP-7.2".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "a17af3643d29d7e730f977e3776dc3e325d5ca00b361e41dbfc2368ebad5430d",
+      :sha256 => "7cb336b1ed0f9d87f46bbcb7b3437ee252d0d5060c0fb1a985adb6cbc73a6b9e",
     }.freeze
   end
 
   module Php73Defs
-      PHP_SRC_TARBALL = "https://php.net/get/php-7.3.10.tar.bz2/from/this/mirror".freeze
+      PHP_SRC_TARBALL = "https://php.net/get/php-7.3.12.tar.bz2/from/this/mirror".freeze
       PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
-      PHP_VERSION     = "7.3.10".freeze
+      PHP_VERSION     = "7.3.12".freeze
       PHP_BRANCH      = "PHP-7.3".freeze
 
       PHP_CHECKSUM    = {
-        :sha256 => "506dd871c0fb8f00f872f53dd3b1dfa5f23a9edb4dfc521e5669c78a78c45448",
+        :sha256 => "d317b029f991410578cc38ba4b76c9f764ec29c67e7124e1fec57bceb3ad8c39",
       }.freeze
     end
 
     module Php74Defs
-      PHP_SRC_TARBALL = "https://downloads.php.net/~derick/php-7.4.0RC3.tar.bz2".freeze
+      PHP_SRC_TARBALL = "https://php.net/get/php-7.4.0.tar.bz2/from/this/mirror".freeze
       PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
-      PHP_VERSION     = "7.4.0RC3".freeze
+      PHP_VERSION     = "7.4.0".freeze
       PHP_BRANCH      = "PHP-7.4".freeze
 
       PHP_CHECKSUM    = {
-        :sha256 => "594298fba380b6110ba2117ff3efbfd42425dad022fec944ed0a64c05d861918",
+        :sha256 => "bf206be96a39e643180013df39ddcd0493966692a2422c4b7d3355b6a15a01c0",
       }.freeze
     end
 end
