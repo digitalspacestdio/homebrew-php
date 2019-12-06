@@ -497,146 +497,146 @@ INFO
     end
   end
 
-  def caveats
-    s = []
-
-    if build.with?("httpd")
-      if MacOS.version <= :leopard
-        s << <<~EOS
-          For 10.5 and Apache:
-              Apache needs to run in 32-bit mode. You can either force Apache to start in 32-bit mode or you can thin the Apache executable.
-        EOS
-      end
-
-      if php_version.start_with?("7.")
-        s << <<~EOS
-          To enable PHP in Apache add the following to httpd.conf and restart Apache:
-              LoadModule php7_module #{HOMEBREW_PREFIX}/opt/php#{php_version_path}/libexec/apache2/libphp7.so
-
-              <FilesMatch \.php$>
-                  SetHandler application/x-httpd-php
-              </FilesMatch>
-
-          Finally, check DirectoryIndex includes index.php
-              DirectoryIndex index.php index.html
-        EOS
-      else
-        s << <<~EOS
-          To enable PHP in Apache add the following to httpd.conf and restart Apache:
-              LoadModule php5_module #{HOMEBREW_PREFIX}/opt/php#{php_version_path}/libexec/apache2/libphp5.so
-        EOS
-      end
-    end
-
-    s << <<~EOS
-      The php.ini file can be found in:
-          #{config_path}/php.ini
-    EOS
-
-    if build.with? "pear"
-      s << <<~EOS
-        ✩✩✩✩ PEAR ✩✩✩✩
-
-        If PEAR complains about permissions, 'fix' the default PEAR permissions and config:
-
-            chmod -R ug+w #{lib}/php
-            pear config-set php_ini #{etc}/php/#{php_version}/php.ini system
-      EOS
-    end
-
-    s << <<~EOS
-      ✩✩✩✩ Extensions ✩✩✩✩
-
-      If you are having issues with custom extension compiling, ensure that you are using the brew version, by placing #{HOMEBREW_PREFIX}/bin before /usr/sbin in your PATH:
-
-            PATH="#{HOMEBREW_PREFIX}/bin:$PATH"
-
-      PHP#{php_version_path} Extensions will always be compiled against this PHP. Please install them using --without-homebrew-php to enable compiling against system PHP.
-    EOS
-
-    s << <<~EOS
-      ✩✩✩✩ PHP CLI ✩✩✩✩
-
-      If you wish to swap the PHP you use on the command line, you should add the following to ~/.bashrc, ~/.zshrc, ~/.profile or your shell's equivalent configuration file:
-        export PATH="$(brew --prefix homebrew/php/php#{php_version.delete(".")})/bin:$PATH"
-    EOS
-
-    if build.include?("with-mcrypt")
-      s << <<~EOS
-      ✩✩✩✩  Mcrypt ✩✩✩✩
-
-      mcrypt is no longer included by default, install it as a separate extension:
-
-          brew install php#{php_version_path}-mcrypt
-    EOS
-    end
-
-    if build.include?("enable-opcache")
-      s << <<~EOS
-      ✩✩✩✩ Opcache ✩✩✩✩
-
-      opcache (PHP 5.5 and 5.6) is no longer included by default, install it as a separate extension:
-
-          brew install php#{php_version_path}-opcache
-    EOS
-    end
-
-    if build.include?("with-gmp")
-      s << <<~EOS
-        GMP has moved to its own formula, please install it by running: brew install php#{php_version_path}-gmp
-      EOS
-    end
-
-    if build.include?("with-snmp")
-      s << <<~EOS
-        SNMP has moved to its own formula, please install it by running: brew install php#{php_version_path}-snmp
-      EOS
-    end
-
-    if build.include?("with-tidy")
-      s << <<~EOS
-        Tidy has moved to its own formula, please install it by running: brew install php#{php_version_path}-tidy
-      EOS
-    end
-
-    if build_fpm?
-      s << <<~EOS
-        ✩✩✩✩ FPM ✩✩✩✩
-
-        To launch php-fpm on startup:
-            mkdir -p ~/Library/LaunchAgents
-            cp #{opt_prefix}/#{plist_name}.plist ~/Library/LaunchAgents/
-            launchctl load -w ~/Library/LaunchAgents/#{plist_name}.plist
-
-        The control script is located at #{opt_sbin}/php#{php_version_path}-fpm
-      EOS
-
-      if MacOS.version >= :mountain_lion
-        s << <<~EOS
-          OS X 10.8 and newer come with php-fpm pre-installed, to ensure you are using the brew version you need to make sure #{HOMEBREW_PREFIX}/sbin is before /usr/sbin in your PATH:
-
-            PATH="#{HOMEBREW_PREFIX}/sbin:$PATH"
-        EOS
-      end
-
-      s << <<~EOS
-        You may also need to edit the plist to use the correct "UserName".
-
-        Please note that the plist was called 'homebrew-php.josegonzalez.php#{php_version.delete(".")}.plist' in old versions of this formula.
-
-        With the release of macOS Sierra the Apache module is now not built by default. If you want to build it on your system you have to install php with the --with-httpd option. See  brew options php#{php_version_path} for more details.
-      EOS
-    end
-
-    s << <<~EOS
-      By 31st March 2018 we will deprecate and archive the PHP tap.
-      Some of the formulae will be migrated to homebrew-core.
-
-      For more details, see https://github.com/Homebrew/homebrew-php/issues/4721
-    EOS
-
-    s.join "\n"
-  end
+#   def caveats
+#     s = []
+#
+#     if build.with?("httpd")
+#       if MacOS.version <= :leopard
+#         s << <<~EOS
+#           For 10.5 and Apache:
+#               Apache needs to run in 32-bit mode. You can either force Apache to start in 32-bit mode or you can thin the Apache executable.
+#         EOS
+#       end
+#
+#       if php_version.start_with?("7.")
+#         s << <<~EOS
+#           To enable PHP in Apache add the following to httpd.conf and restart Apache:
+#               LoadModule php7_module #{HOMEBREW_PREFIX}/opt/php#{php_version_path}/libexec/apache2/libphp7.so
+#
+#               <FilesMatch \.php$>
+#                   SetHandler application/x-httpd-php
+#               </FilesMatch>
+#
+#           Finally, check DirectoryIndex includes index.php
+#               DirectoryIndex index.php index.html
+#         EOS
+#       else
+#         s << <<~EOS
+#           To enable PHP in Apache add the following to httpd.conf and restart Apache:
+#               LoadModule php5_module #{HOMEBREW_PREFIX}/opt/php#{php_version_path}/libexec/apache2/libphp5.so
+#         EOS
+#       end
+#     end
+#
+#     s << <<~EOS
+#       The php.ini file can be found in:
+#           #{config_path}/php.ini
+#     EOS
+#
+#     if build.with? "pear"
+#       s << <<~EOS
+#         ✩✩✩✩ PEAR ✩✩✩✩
+#
+#         If PEAR complains about permissions, 'fix' the default PEAR permissions and config:
+#
+#             chmod -R ug+w #{lib}/php
+#             pear config-set php_ini #{etc}/php/#{php_version}/php.ini system
+#       EOS
+#     end
+#
+#     s << <<~EOS
+#       ✩✩✩✩ Extensions ✩✩✩✩
+#
+#       If you are having issues with custom extension compiling, ensure that you are using the brew version, by placing #{HOMEBREW_PREFIX}/bin before /usr/sbin in your PATH:
+#
+#             PATH="#{HOMEBREW_PREFIX}/bin:$PATH"
+#
+#       PHP#{php_version_path} Extensions will always be compiled against this PHP. Please install them using --without-homebrew-php to enable compiling against system PHP.
+#     EOS
+#
+#     s << <<~EOS
+#       ✩✩✩✩ PHP CLI ✩✩✩✩
+#
+#       If you wish to swap the PHP you use on the command line, you should add the following to ~/.bashrc, ~/.zshrc, ~/.profile or your shell's equivalent configuration file:
+#         export PATH="$(brew --prefix homebrew/php/php#{php_version.delete(".")})/bin:$PATH"
+#     EOS
+#
+#     if build.include?("with-mcrypt")
+#       s << <<~EOS
+#       ✩✩✩✩  Mcrypt ✩✩✩✩
+#
+#       mcrypt is no longer included by default, install it as a separate extension:
+#
+#           brew install php#{php_version_path}-mcrypt
+#     EOS
+#     end
+#
+#     if build.include?("enable-opcache")
+#       s << <<~EOS
+#       ✩✩✩✩ Opcache ✩✩✩✩
+#
+#       opcache (PHP 5.5 and 5.6) is no longer included by default, install it as a separate extension:
+#
+#           brew install php#{php_version_path}-opcache
+#     EOS
+#     end
+#
+#     if build.include?("with-gmp")
+#       s << <<~EOS
+#         GMP has moved to its own formula, please install it by running: brew install php#{php_version_path}-gmp
+#       EOS
+#     end
+#
+#     if build.include?("with-snmp")
+#       s << <<~EOS
+#         SNMP has moved to its own formula, please install it by running: brew install php#{php_version_path}-snmp
+#       EOS
+#     end
+#
+#     if build.include?("with-tidy")
+#       s << <<~EOS
+#         Tidy has moved to its own formula, please install it by running: brew install php#{php_version_path}-tidy
+#       EOS
+#     end
+#
+#     if build_fpm?
+#       s << <<~EOS
+#         ✩✩✩✩ FPM ✩✩✩✩
+#
+#         To launch php-fpm on startup:
+#             mkdir -p ~/Library/LaunchAgents
+#             cp #{opt_prefix}/#{plist_name}.plist ~/Library/LaunchAgents/
+#             launchctl load -w ~/Library/LaunchAgents/#{plist_name}.plist
+#
+#         The control script is located at #{opt_sbin}/php#{php_version_path}-fpm
+#       EOS
+#
+#       if MacOS.version >= :mountain_lion
+#         s << <<~EOS
+#           OS X 10.8 and newer come with php-fpm pre-installed, to ensure you are using the brew version you need to make sure #{HOMEBREW_PREFIX}/sbin is before /usr/sbin in your PATH:
+#
+#             PATH="#{HOMEBREW_PREFIX}/sbin:$PATH"
+#         EOS
+#       end
+#
+#       s << <<~EOS
+#         You may also need to edit the plist to use the correct "UserName".
+#
+#         Please note that the plist was called 'homebrew-php.josegonzalez.php#{php_version.delete(".")}.plist' in old versions of this formula.
+#
+#         With the release of macOS Sierra the Apache module is now not built by default. If you want to build it on your system you have to install php with the --with-httpd option. See  brew options php#{php_version_path} for more details.
+#       EOS
+#     end
+#
+#     s << <<~EOS
+#       By 31st March 2018 we will deprecate and archive the PHP tap.
+#       Some of the formulae will be migrated to homebrew-core.
+#
+#       For more details, see https://github.com/Homebrew/homebrew-php/issues/4721
+#     EOS
+#
+#     s.join "\n"
+#   end
 
   test do
     system "#{bin}/php -i"
