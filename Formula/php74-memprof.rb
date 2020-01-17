@@ -4,10 +4,10 @@ class Php74Memprof < AbstractPhp74Extension
   init
   desc "XHProf is a function-level hierarchical profiler for PHP and has a simple HTML based user interface."
   homepage "https://tideways.com"
-  url "https://codeload.github.com/arnaud-lb/php-memory-profiler/tar.gz/bc76256dd39530d8534a26e6a8e5e2c5d6535c4e"
-  sha256 "fed07166ab1ce81ecb16ddd586a6456c6b574b72e965d1a9d1c0debdef374db1"
+  url "https://codeload.github.com/arnaud-lb/php-memory-profiler/tar.gz/9a47f88ae139b902030b4156125d2a645a812f3c"
+  sha256 "2f9f3e2c6f3adefd370082d548c97b66f51191424c9a7a1697ed82273ff9a325"
   head "https://github.com/arnaud-lb/php-memory-profiler.git", :branch => "master"
-  version "bc76256"
+  version "9a47f88"
 
   depends_on "libjudy"
 
