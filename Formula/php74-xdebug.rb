@@ -4,11 +4,11 @@ class Php74Xdebug < AbstractPhp74Extension
   init
   desc "Provides debugging and profiling capabilities."
   homepage "https://xdebug.org"
-  url "https://codeload.github.com/xdebug/xdebug/tar.gz/c93b679af7fd0b96b48d8a0255255b46a298a9d8"
-  sha256 "5f26988062d973f79911a588bc9fb3e440d6339a34090a663d822d0e52552698"
+  url "https://codeload.github.com/xdebug/xdebug/tar.gz/02890b34d419e6d0364946ddd904a0ebfbe92bca"
+  sha256 "227e39d602afc993af5fa761c746eb1d59b0622625294f28a1adcc0f527650b9"
   head "https://github.com/xdebug/xdebug.git"
-  version "c93b679"
-  revision 2
+  version "2.9.1"
+  revision 1
 
   def extension_type
     "zend_extension"
