@@ -21,4 +21,13 @@ class Php72 < AbstractPhp
   def php_version_path
     "72"
   end
+
+  def patches
+    list = super
+    if OS.mac?
+        [list].compact << "https://raw.githubusercontent.com/djocker/homebrew-php/master/Patches/php72/macos.patch"
+    else
+        list
+    end
+  end
 end

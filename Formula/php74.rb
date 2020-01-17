@@ -33,4 +33,13 @@ class Php74 < AbstractPhp
     end
     args
   end
+
+  def patches
+    list = super
+    if OS.mac?
+        [list].compact << "https://raw.githubusercontent.com/djocker/homebrew-php/master/Patches/php74/macos.patch"
+    else
+        list
+    end
+  end
 end
