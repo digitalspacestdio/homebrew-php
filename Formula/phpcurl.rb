@@ -20,7 +20,7 @@ class Phpcurl < Formula
 
   head do
     url "https://github.com/curl/curl.git"
-    depends_on "openssl" => :build
+    depends_on "openssl@1.1" => :build
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
@@ -42,10 +42,10 @@ class Phpcurl < Formula
   # HTTP/2 support requires OpenSSL 1.0.2+ or LibreSSL 2.1.3+ for ALPN Support
   # which is currently not supported by Secure Transport (DarwinSSL).
   if MacOS.version < :mountain_lion || build.with?("nghttp2") || build.with?("openssl")
-    depends_on "openssl"
+    depends_on "openssl@1.1"
   else
     option "with-openssl", "Build with OpenSSL instead of Secure Transport"
-    depends_on "openssl" => :optional
+    depends_on "openssl@1.1" => :optional
   end
 
   depends_on "pkg-config" => :build
@@ -76,10 +76,10 @@ class Phpcurl < Formula
     # "--with-ssl" any more. "when possible, set the PKG_CONFIG_PATH environment
     # variable instead of using this option". Multi-SSL choice breaks w/o using it.
     if MacOS.version < :mountain_lion || build.with?("openssl") || build.with?("nghttp2")
-      ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["openssl"].opt_lib}/pkgconfig"
-      args << "--with-ssl=#{Formula["openssl"].opt_prefix}"
-      args << "--with-ca-bundle=#{etc}/openssl/cert.pem"
-      args << "--with-ca-path=#{etc}/openssl/certs"
+      ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["openssl@1.1"].opt_lib}/pkgconfig"
+      args << "--with-ssl=#{Formula["openssl@1.1"].opt_prefix}"
+      args << "--with-ca-bundle=#{etc}/openssl@1.1/cert.pem"
+      args << "--with-ca-path=#{etc}/openssl@1.1/certs"
     else
       args << "--with-darwinssl"
       args << "--without-ca-bundle"
