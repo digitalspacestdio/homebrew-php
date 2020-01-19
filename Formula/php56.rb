@@ -20,6 +20,10 @@ class Php56 < AbstractPhp
     "56"
   end
 
+  def openssl_formula_name
+    "openssl@1.0"
+  end
+
   def patches
     list = super
     if OS.mac?

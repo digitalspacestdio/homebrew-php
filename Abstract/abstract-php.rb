@@ -61,15 +61,8 @@ class AbstractPhp < Formula
     if build.include?("with-homebrew-libressl")
       depends_on "libressl"
     else
-      depends_on "openssl"
+      depends_on openssl_formula_name
     end
-
-    if build.include?("with-homebrew-libressl")
-      depends_on "libressl"
-    else
-      depends_on "openssl"
-    end
-
     #argon for 7.2
     depends_on "argon2" => :optional if build.include?("with-argon2")
 
@@ -147,6 +140,10 @@ class AbstractPhp < Formula
 
   def php_version_path
     raise "Unspecified php version path"
+  end
+
+  def openssl_formula_name
+    "openssl"
   end
 
   def install
