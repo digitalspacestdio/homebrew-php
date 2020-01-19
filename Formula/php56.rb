@@ -1,6 +1,125 @@
 require File.expand_path("../../Abstract/abstract-php", __FILE__)
 
 class Php56 < AbstractPhp
+
+  def php_open_ssl_formula
+    "openssl@1.0"
+  end
+
+  def self.init
+      homepage "https://php.net"
+
+      # So PHP extensions don't report missing symbols
+      skip_clean "bin", "sbin"
+
+      head do
+        depends_on "autoconf" => :build
+        depends_on "re2c" => :build
+        depends_on "flex" => :build
+        depends_on "bison@2.7" => :build
+      end
+
+      # obtain list of php formulas
+      php_formulas = Formula.names.grep(Regexp.new('^php\d\d$')).sort
+
+      # remove our self from the list
+      php_formulas.delete(name.split("::")[2].downcase)
+
+      # Add homebrew-core as a conflicted formula
+      php_formulas << "php"
+
+      # conflict with out php versions
+      php_formulas.each do |php_formula_name|
+        conflicts_with php_formula_name, :because => "different php versions install the same binaries."
+      end
+
+      depends_on "phpcurl" if !build.include?("without-homebrew-curl") || MacOS.version < :lion
+      depends_on "libxslt" if !build.include?("without-homebrew-libxslt") || MacOS.version < :lion
+      depends_on "enchant" => :optional
+      depends_on "freetds" if build.include?("with-mssql")
+      depends_on "freetype"
+      depends_on "gettext"
+      depends_on "gmp" => :optional
+      depends_on "icu4c"
+      depends_on "imap-uw" if build.include?("with-imap")
+      depends_on "jpeg"
+      depends_on "webp" => :optional if name.split("::")[2].downcase.start_with?("php7")
+      depends_on "libvpx" => :optional if name.split("::")[2].downcase.start_with?("php56")
+      depends_on "libpng"
+      depends_on "libxml2" if build.include?("with-homebrew-libxml2") || MacOS.version < :lion || MacOS.version >= :el_capitan
+      depends_on "unixodbc" unless build.include?("without-unixodbc")
+      depends_on "readline"
+      depends_on "zlib"
+      depends_on "bzip2"
+  #    depends_on "berkeley-db"
+      depends_on "libedit"
+      depends_on "openldap"
+      depends_on "mysql" if build.include?("with-libmysql")
+  #    depends_on "gdbm"
+      depends_on "libiconv" if OS.mac?
+      depends_on "libzip"
+
+      # ssl
+      if build.include?("with-homebrew-libressl")
+        depends_on "libressl"
+      else
+        depends_on "openssl@1.0"
+      end
+      #argon for 7.2
+      depends_on "argon2" => :optional if build.include?("with-argon2")
+
+      # libsodium for 7.2
+      depends_on "libsodium" => :recommended if name.split("::")[2].downcase.start_with?("php72")
+
+      deprecated_option "with-pgsql" => "with-postgresql"
+      depends_on "postgresql" => :optional
+
+      # Sanity Checks
+
+      if build.include?("with-cgi") && build.include?("with-fpm")
+        raise "Cannot specify more than one CGI executable to build."
+      end
+
+      option "with-httpd", "Enable building of shared Apache Handler module"
+      deprecated_option "homebrew-apxs" => "with-homebrew-apxs"
+      deprecated_option "with-homebrew-apxs" => "with-httpd"
+      deprecated_option "with-apache" => "with-httpd"
+      deprecated_option "with-apache22" => "with-httpd"
+      deprecated_option "with-httpd22" => "with-httpd"
+      deprecated_option "with-httpd24" => "with-httpd"
+
+      depends_on "httpd" => :optional
+
+      # Argon2 option
+      if name.split("::")[2].downcase.start_with?("php72")
+        option "with-argon2", "Include libargon2 password hashing support"
+      end
+
+      option "with-cgi", "Enable building of the CGI executable (implies --without-fpm)"
+      option "with-debug", "Compile with debugging symbols"
+      option "with-embed", "Compile with embed support (built as a static library)"
+      option "without-homebrew-curl", "Not include Curl support via Homebrew"
+      option "with-homebrew-libressl", "Not include LibreSSL instead of OpenSSL via Homebrew"
+      option "without-homebrew-libxslt", "Include LibXSLT support via Homebrew"
+      option "with-homebrew-libxml2", "Include Libxml2 support via Homebrew"
+      option "with-imap", "Include IMAP extension"
+      option "with-libmysql", "Include (old-style) libmysql support instead of mysqlnd"
+      option "with-mssql", "Include MSSQL-DB support"
+      option "without-pear", "Build without PEAR"
+      option "with-pdo-oci", "Include Oracle databases (requries ORACLE_HOME be set)"
+      unless name.split("::")[2].casecmp("php53").zero?
+        option "with-phpdbg", "Enable building of the phpdbg SAPI executable"
+      end
+      option "with-thread-safety", "Build with thread safety"
+  #    option "without-bz2", "Build without bz2 support"
+      option "without-fpm", "Disable building of the fpm SAPI executable"
+      option "without-ldap", "Build without LDAP support"
+      option "without-mysql", "Remove MySQL/MariaDB support"
+      option "without-legacy-mysql", "Do not include the deprecated mysql_ functions"
+      option "without-pcntl", "Build without Process Control support"
+      option "without-unixodbc", "Build without unixODBC support"
+  end
+
   init
   desc "PHP Version 5.6"
   include AbstractPhpVersion::Php56Defs
@@ -17,10 +136,6 @@ class Php56 < AbstractPhp
 
   def php_version_path
     "56"
-  end
-
-  def php_openssl_formula_name
-    "openssl@1.0"
   end
 
   def patches

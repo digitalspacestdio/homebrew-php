@@ -61,7 +61,7 @@ class AbstractPhp < Formula
     if build.include?("with-homebrew-libressl")
       depends_on "libressl"
     else
-      depends_on php_openssl_formula_name
+      depends_on "openssl"
     end
     #argon for 7.2
     depends_on "argon2" => :optional if build.include?("with-argon2")
@@ -122,6 +122,10 @@ class AbstractPhp < Formula
   # Thanks mistym & #machomebrew
   skip_clean "lib/php/.lock"
 
+  def php_open_ssl_formula
+    "openssl@1.0"
+  end
+
   def config_path
     etc+"php"+php_version
   end
@@ -142,15 +146,10 @@ class AbstractPhp < Formula
     raise "Unspecified php version path"
   end
 
-  def php_openssl_formula_name
-    "openssl"
-  end
-
   def install
     # Ensure this php has a version specified
     php_version
     php_version_path
-    php_openssl_formula_name
 
     # Not removing all pear.conf and .pearrc files from PHP path results in
     # the PHP configure not properly setting the pear binary to be installed
@@ -309,7 +308,7 @@ INFO
     if build.include?("with-homebrew-libressl")
       args << "--with-openssl=" + Formula["libressl"].opt_prefix.to_s
     else
-      args << "--with-openssl=" + Formula[php_openssl_formula_name].opt_prefix.to_s
+      args << "--with-openssl=" + Formula[php_open_ssl_formula].opt_prefix.to_s
     end
 
     # Build PHP-FPM by default
@@ -339,7 +338,7 @@ INFO
 
     if build.with? "imap"
       args << "--with-imap=#{Formula["imap-uw"].opt_prefix}"
-      args << "--with-imap-ssl=" + Formula[php_openssl_formula_name].opt_prefix.to_s
+      args << "--with-imap-ssl=" + Formula[php_open_ssl_formula].opt_prefix.to_s
     end
 
     unless build.without? "ldap"
