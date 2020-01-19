@@ -308,7 +308,7 @@ INFO
     if build.include?("with-homebrew-libressl")
       args << "--with-openssl=" + Formula["libressl"].opt_prefix.to_s
     else
-      args << "--with-openssl=" + Formula["openssl"].opt_prefix.to_s
+      args << "--with-openssl=" + Formula[openssl_formula_name].opt_prefix.to_s
     end
 
     # Build PHP-FPM by default
@@ -338,7 +338,7 @@ INFO
 
     if build.with? "imap"
       args << "--with-imap=#{Formula["imap-uw"].opt_prefix}"
-      args << "--with-imap-ssl=" + Formula["openssl"].opt_prefix.to_s
+      args << "--with-imap-ssl=" + Formula[openssl_formula_name].opt_prefix.to_s
     end
 
     unless build.without? "ldap"
