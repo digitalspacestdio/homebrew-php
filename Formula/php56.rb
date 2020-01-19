@@ -11,7 +11,6 @@ class Php56 < AbstractPhp
 
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
 
-
   def php_version
     "5.6"
   end
@@ -20,7 +19,7 @@ class Php56 < AbstractPhp
     "56"
   end
 
-  def openssl_formula_name
+  def php_openssl_formula_name
     "openssl@1.0"
   end
 

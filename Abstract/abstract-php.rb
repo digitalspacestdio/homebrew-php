@@ -142,7 +142,7 @@ class AbstractPhp < Formula
     raise "Unspecified php version path"
   end
 
-  def openssl_formula_name
+  def php_openssl_formula_name
     "openssl"
   end
 
@@ -150,6 +150,7 @@ class AbstractPhp < Formula
     # Ensure this php has a version specified
     php_version
     php_version_path
+    php_openssl_formula_name
 
     # Not removing all pear.conf and .pearrc files from PHP path results in
     # the PHP configure not properly setting the pear binary to be installed
