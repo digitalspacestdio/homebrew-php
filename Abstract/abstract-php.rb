@@ -61,7 +61,7 @@ class AbstractPhp < Formula
     if build.include?("with-homebrew-libressl")
       depends_on "libressl"
     else
-      depends_on openssl_formula_name
+      depends_on php_openssl_formula_name
     end
     #argon for 7.2
     depends_on "argon2" => :optional if build.include?("with-argon2")
@@ -309,7 +309,7 @@ INFO
     if build.include?("with-homebrew-libressl")
       args << "--with-openssl=" + Formula["libressl"].opt_prefix.to_s
     else
-      args << "--with-openssl=" + Formula[openssl_formula_name].opt_prefix.to_s
+      args << "--with-openssl=" + Formula[php_openssl_formula_name].opt_prefix.to_s
     end
 
     # Build PHP-FPM by default
@@ -339,7 +339,7 @@ INFO
 
     if build.with? "imap"
       args << "--with-imap=#{Formula["imap-uw"].opt_prefix}"
-      args << "--with-imap-ssl=" + Formula[openssl_formula_name].opt_prefix.to_s
+      args << "--with-imap-ssl=" + Formula[php_openssl_formula_name].opt_prefix.to_s
     end
 
     unless build.without? "ldap"
