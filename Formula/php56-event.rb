@@ -10,7 +10,7 @@ class Php56Event < AbstractPhp56Extension
 
 
   depends_on "libevent"
-  depends_on "openssl"
+  depends_on "openssl@1.0"
 
   def install
     Dir.chdir "event-#{version}" unless build.head?
@@ -23,7 +23,7 @@ class Php56Event < AbstractPhp56Extension
     args << "--enable-event-debug"
     args << "--with-event-libevent-dir=#{Formula["libevent"].opt_prefix}"
     args << "--with-event-openssl"
-    args << "--with-openssl-dir=#{Formula["openssl"].opt_prefix}"
+    args << "--with-openssl-dir=#{Formula["openssl@1.0"].opt_prefix}"
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args

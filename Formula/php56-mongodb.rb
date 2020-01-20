@@ -8,6 +8,7 @@ class Php56Mongodb < AbstractPhp56Extension
   sha256 "b970fce679b7682260eacdd1dbf6bdb895ea56e0de8a2ff74dc5af881e4d7d6a"
   head "https://github.com/mongodb/mongo-php-driver.git"
 
+  depends_on "openssl@1.0"
 
   def install
     Dir.chdir "mongodb-#{version}" unless build.head?
@@ -20,7 +21,7 @@ class Php56Mongodb < AbstractPhp56Extension
     else
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
-                          "--with-mongodb-ssl=openssl"
+                          "--with-mongodb-ssl=openssl@1.0"
     end
     system "make"
     prefix.install "modules/mongodb.so"
