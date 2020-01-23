@@ -1,6 +1,6 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
-class Php73Sodium < AbstractPhp73Extension
+class Php72Sodium < AbstractPhp72Extension
   init
   desc "GMP core php extension"
   homepage "https://php.net/manual/en/book.sodium.php"
