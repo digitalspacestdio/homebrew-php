@@ -123,7 +123,7 @@ class AbstractPhp < Formula
   skip_clean "lib/php/.lock"
 
   def php_open_ssl_formula
-    "openssl@1.0"
+    "openssl"
   end
 
   def config_path
