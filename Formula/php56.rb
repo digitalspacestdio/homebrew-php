@@ -138,12 +138,10 @@ class Php56 < AbstractPhp
     "56"
   end
 
-  def patches
-    list = super
-    if OS.mac?
-        [list].compact << "https://raw.githubusercontent.com/djocker/homebrew-php/master/Patches/php56/macos.patch"
-    else
-        list
+  if OS.mac?
+    patch do
+      url "https://raw.githubusercontent.com/djocker/homebrew-php/master/Patches/php56/macos.patch"
+      sha256 "f77d653a6f7437266c41de207a02b313d4ee38ad6071a2d5cf6eb6cb678ee99f"
     end
   end
 end

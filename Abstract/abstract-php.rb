@@ -205,12 +205,12 @@ INFO
     build.without? "pear"
   end
 
-  def patches
-    # Bug in PHP 5.x causes build to fail on OSX 10.5 Leopard due to
-    # outdated system libraries being first on library search path:
-    # https://bugs.php.net/bug.php?id=44294
-    "https://gist.github.com/ablyler/6579338/raw/5713096862e271ca78e733b95e0235d80fed671a/Makefile.global.diff" if MacOS.version == :leopard
-  end
+#   def patches
+#     # Bug in PHP 5.x causes build to fail on OSX 10.5 Leopard due to
+#     # outdated system libraries being first on library search path:
+#     # https://bugs.php.net/bug.php?id=44294
+#     "https://gist.github.com/ablyler/6579338/raw/5713096862e271ca78e733b95e0235d80fed671a/Makefile.global.diff" if MacOS.version == :leopard
+#   end
 
   def install_args
     # Prevent PHP from harcoding sed shim path
