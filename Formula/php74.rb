@@ -5,7 +5,7 @@ class Php74 < AbstractPhp
   desc "PHP Version 7.4"
   include AbstractPhpVersion::Php74Defs
   version PHP_VERSION
-  revision 1
+  revision 2
 
   depends_on "pkg-config" => :build
   depends_on "krb5"
@@ -31,6 +31,7 @@ class Php74 < AbstractPhp
     if !build.without? "pear"
       args << "--with-pear"
     end
+    args << "--enable-gd"
     args
   end
 
