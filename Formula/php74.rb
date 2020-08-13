@@ -5,7 +5,7 @@ class Php74 < AbstractPhp
   desc "PHP Version 7.4"
   include AbstractPhpVersion::Php74Defs
   version PHP_VERSION
-  revision 2
+  revision 3
 
   depends_on "pkg-config" => :build
   depends_on "krb5"
