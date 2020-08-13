@@ -10,6 +10,7 @@ class Php74 < AbstractPhp
   depends_on "pkg-config" => :build
   depends_on "krb5"
   depends_on "oniguruma"
+  depends_on "libjpeg"
 
   include AbstractPhpVersion::Php74Defs
 
@@ -32,6 +33,7 @@ class Php74 < AbstractPhp
       args << "--with-pear"
     end
     args << "--enable-gd"
+    args << "--with-jpeg-dir=#{Formula["libjpeg"].opt_prefix}"
     args
   end
 
