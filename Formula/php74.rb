@@ -33,9 +33,8 @@ class Php74 < AbstractPhp
       args << "--with-pear"
     end
     args << "--enable-gd"
-    args << "--with-jpeg-dir=#{Formula["libjpeg"].opt_prefix}"
-    args << "--with-jpeg"
-    args << "--with-freetype"
+    args << "--with-freetype=#{Formula["freetype"].opt_prefix}"
+    args << "--with-jpeg=#{Formula["libjpeg"].opt_prefix}"
     args
   end
 
