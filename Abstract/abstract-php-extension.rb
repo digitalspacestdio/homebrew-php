@@ -46,7 +46,7 @@ class AbstractPhpExtension < Formula
 
   def php_branch
     class_name = self.class.name.split("::").last
-    matches = /^Php([5,7])([0-9]+)/.match(class_name)
+    matches = /^Php([5,7,8])([0-9]+)/.match(class_name)
     if matches
       matches[1] + "." + matches[2]
     else
@@ -90,7 +90,7 @@ class AbstractPhpExtension < Formula
 
   def extension
     class_name = self.class.name.split("::").last
-    matches = /^Php[5,7][0-9](.+)/.match(class_name)
+    matches = /^Php[5,7,8][0-9](.+)/.match(class_name)
     if matches
       matches[1].downcase
     else
@@ -228,5 +228,14 @@ class AbstractPhp74Extension < AbstractPhpExtension
   def self.init(opts = [])
     super()
     depends_on "djocker/php/php74" => opts if build.with?("homebrew-php")
+  end
+end
+
+class AbstractPhp80Extension < AbstractPhpExtension
+  include AbstractPhpVersion::Php80Defs
+
+  def self.init(opts = [])
+    super()
+    depends_on "djocker/php/php80" => opts if build.with?("homebrew-php")
   end
 end

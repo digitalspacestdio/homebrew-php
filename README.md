@@ -5,7 +5,7 @@ A centralized repository for PHP-related brews.
 ## Requirements
 
 * [Homebrew](https://github.com/Homebrew/brew) or [Linuxbrew](https://github.com/Linuxbrew/brew)
-* macOS: El Capitan, Sierra, High Sierra or Mojave. Linux: Debian Based
+* macOS: El Capitan, Sierra, High Sierra, Mojave or Catalina. Linux: Debian Based
 
 ## Installation
 
@@ -93,13 +93,13 @@ The purpose of this repository is to allow PHP developers to quickly retrieve wo
 **Note:** For a list of available configuration options run:
 
 ```sh
-$ brew options php71
+$ brew options 
 ```
 
-Once the tap is installed, you can install `php54`, `php55`, `php56`, `php70`, `php71`, `php72`, or any formulae you might need via:
+Once the tap is installed, you can install `php56`, `php70`, `php71`, `php72`, `php73`, `php74`, `php8` or any formulae you might need via:
 
 ```sh
-$ brew install php71
+$ brew install 
 ```
 
 That's it!
@@ -114,26 +114,26 @@ If using Apache, you will need to update the `LoadModule` call. For convenience,
 
 ```
 # /etc/apache2/httpd.conf
-# Swapping from PHP 5.5 to PHP 7.1
+# Swapping from PHP 5.6 to PHP 7.4
 # $HOMEBREW_PREFIX is normally `/usr/local`
-# LoadModule php5_module    $HOMEBREW_PREFIX/Cellar/php55/5.5.18/libexec/apache2/libphp5.so
-LoadModule php7_module    $HOMEBREW_PREFIX/Cellar/php71/7.1.11/libexec/apache2/libphp7.so
+# LoadModule php5_module    $HOMEBREW_PREFIX/Cellar/php56/5.6.18/libexec/apache2/libphp5.so
+LoadModule php7_module    $HOMEBREW_PREFIX/Cellar/php71/7.4.11/libexec/apache2/libphp7.so
 ```
 
 If using FPM, you will need to unload the `plist` controlling php, or manually stop the daemon, via your command line:
 
 ```sh
-# Swapping from PHP 5.5 to PHP 7.1
+# Swapping from PHP 5.6 to PHP 7.4
 # $HOMEBREW_PREFIX is normally `/usr/local`
-$ cp $HOMEBREW_PREFIX/Cellar/php71/7.1.11/homebrew.mxcl.php71.plist ~/Library/LaunchAgents/
-$ launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php55.plist
+$ cp $HOMEBREW_PREFIX/Cellar/php71/7.4.11/homebrew.mxcl.php71.plist ~/Library/LaunchAgents/
+$ launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist
 $ launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php71.plist
 ```
 
 If you would like to swap the PHP you use on the command line, you should update the `$PATH` variable in either your `.profile`, `.zshrc`, `.bashrc` or `.bash_profile`:
 
 ```
-# Swapping from PHP 7.0 to PHP 7.1
+# Swapping from PHP 7.0 to PHP 7.4
 # export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
 ```
