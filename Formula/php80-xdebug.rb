@@ -4,10 +4,10 @@ class Php80Xdebug < AbstractPhp80Extension
   init
   desc "Provides debugging and profiling capabilities."
   homepage "https://xdebug.org"
-  url "https://codeload.github.com/xdebug/xdebug/tar.gz/b554fd406b365a0cec09e81200f16a2d30d59693"
-  sha256 "3b37c0bc21e3d68237fc2d4faa002cc01d9de23c33da226ed5cf737562a8c6eb"
+  url "https://github.com/xdebug/xdebug/archive/2.9.7.tar.gz"
+  sha256 "676d7a39751cf5020b7f15afd132d21602a693a178768ee2921c95bfb4c0cc6b"
   head "https://github.com/xdebug/xdebug.git"
-  version "2.9.6"
+  version "2.9.7"
   revision 1
 
   def extension_type
