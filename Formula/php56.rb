@@ -33,40 +33,40 @@ class Php56 < AbstractPhp
         conflicts_with php_formula_name, :because => "different php versions install the same binaries."
       end
 
-      depends_on "phpcurl" if !build.include?("without-homebrew-curl") || MacOS.version < :lion
-      depends_on "libxslt" if !build.include?("without-homebrew-libxslt") || MacOS.version < :lion
+      depends_on "phpcurl" if !build.without?("homebrew-curl") || MacOS.version < :lion
+      depends_on "libxslt" if !build.without?("homebrew-libxslt") || MacOS.version < :lion
       depends_on "enchant" => :optional
-      depends_on "freetds" if build.include?("with-mssql")
+      depends_on "freetds" if build.with?("mssql")
       depends_on "freetype"
       depends_on "gettext"
       depends_on "gmp" => :optional
       depends_on "icu4c"
-      depends_on "imap-uw" if build.include?("with-imap")
+      depends_on "imap-uw" if build.with?("imap")
       depends_on "jpeg"
       depends_on "webp" => :optional if name.split("::")[2].downcase.start_with?("php7")
       depends_on "libvpx" => :optional if name.split("::")[2].downcase.start_with?("php56")
       depends_on "libpng"
-      depends_on "libxml2" if build.include?("with-homebrew-libxml2") || MacOS.version < :lion || MacOS.version >= :el_capitan
-      depends_on "unixodbc" unless build.include?("without-unixodbc")
+      depends_on "libxml2" if build.with?("homebrew-libxml2") || MacOS.version < :lion || MacOS.version >= :el_capitan
+      depends_on "unixodbc" unless build.without?("unixodbc")
       depends_on "readline"
       depends_on "zlib"
       depends_on "bzip2"
   #    depends_on "berkeley-db"
       depends_on "libedit"
       depends_on "openldap"
-      depends_on "mysql" if build.include?("with-libmysql")
+      depends_on "mysql" if build.with?("libmysql")
   #    depends_on "gdbm"
       depends_on "libiconv" if OS.mac?
       depends_on "libzip"
 
       # ssl
-      if build.include?("with-homebrew-libressl")
+      if build.with?("homebrew-libressl")
         depends_on "libressl"
       else
         depends_on "openssl@1.0"
       end
       #argon for 7.2
-      depends_on "argon2" => :optional if build.include?("with-argon2")
+      depends_on "argon2" => :optional if build.with?("argon2")
 
       # libsodium for 7.2
       depends_on "libsodium" => :recommended if name.split("::")[2].downcase.start_with?("php72")
@@ -76,7 +76,7 @@ class Php56 < AbstractPhp
 
       # Sanity Checks
 
-      if build.include?("with-cgi") && build.include?("with-fpm")
+      if build.with?("cgi") && build.with?("fpm")
         raise "Cannot specify more than one CGI executable to build."
       end
 
