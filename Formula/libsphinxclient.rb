@@ -8,10 +8,10 @@ class Libsphinxclient < Formula
   head "https://github.com/sphinxsearch/sphinx.git"
 
 
-  devel do
-    url "http://sphinxsearch.com/files/sphinx-2.3.1-beta.tar.gz"
-    sha256 "0e5ebee66fe5b83dd8cbdebffd236dcd7cd33a7633c2e30b23330c65c61ee0e3"
-  end
+#   devel do
+#     url "http://sphinxsearch.com/files/sphinx-2.3.1-beta.tar.gz"
+#     sha256 "0e5ebee66fe5b83dd8cbdebffd236dcd7cd33a7633c2e30b23330c65c61ee0e3"
+#   end
 
   def install
     Dir.chdir "api/libsphinxclient"
