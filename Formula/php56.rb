@@ -2,10 +2,6 @@ require File.expand_path("../../Abstract/abstract-php", __FILE__)
 
 class Php56 < AbstractPhp
 
-  def php_open_ssl_formula
-    "openssl@1.0"
-  end
-
   def self.init
       homepage "https://php.net"
 
@@ -63,7 +59,7 @@ class Php56 < AbstractPhp
       if build.with?("homebrew-libressl")
         depends_on "libressl"
       else
-        depends_on "openssl@1.0"
+        depends_on "openssl"
       end
       #argon for 7.2
       depends_on "argon2" => :optional if build.with?("argon2")
@@ -143,4 +139,10 @@ class Php56 < AbstractPhp
       sha256 "f77d653a6f7437266c41de207a02b313d4ee38ad6071a2d5cf6eb6cb678ee99f"
     end
   end
+
+  patch do
+    url "https://raw.githubusercontent.com/djocker/homebrew-php/master/Patches/php56/LibSSL-1.1-compatibility.patch"
+    sha256 "c9715b544ae249c0e76136dfadd9d282237233459694b9e75d0e3e094ab0c993"
+  end
+
 end
