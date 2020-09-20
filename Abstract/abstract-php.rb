@@ -45,7 +45,7 @@ class AbstractPhp < Formula
     depends_on "libvpx" => :optional if name.split("::")[2].downcase.start_with?("php56")
     depends_on "libpng"
     depends_on "libxml2" if build.with?("homebrew-libxml2") || MacOS.version < :lion || MacOS.version >= :el_capitan
-    depends_on "unixodbc" unless build.with?("unixodbc")
+    depends_on "unixodbc" unless build.without?("unixodbc")
     depends_on "readline"
     depends_on "zlib"
     depends_on "bzip2"
