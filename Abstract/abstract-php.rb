@@ -45,7 +45,7 @@ class AbstractPhp < Formula
     depends_on "libvpx" => :optional if name.split("::")[2].downcase.start_with?("php56")
     depends_on "libpng"
     depends_on "libxml2" if build.with?("homebrew-libxml2") || MacOS.version < :lion || MacOS.version >= :el_capitan
-    depends_on "unixodbc" unless build.without?("unixodbc")
+    depends_on "unixodbc"
     depends_on "readline"
     depends_on "zlib"
     depends_on "bzip2"
@@ -113,7 +113,6 @@ class AbstractPhp < Formula
     option "without-mysql", "Remove MySQL/MariaDB support"
     option "without-legacy-mysql", "Do not include the deprecated mysql_ functions"
     option "without-pcntl", "Build without Process Control support"
-    option "without-unixodbc", "Build without unixODBC support"
   end
 
   # Fixes the pear .lock permissions issue that keeps it from operating correctly.
@@ -264,11 +263,9 @@ INFO
       args << "--with-libxml-dir=#{Formula["libxml2"].opt_prefix}"
     end
 
-    # Build PDO ODBC with unixODBC by default
-    unless build.without? "unixodbc"
-      args << "--with-pdo-odbc=unixODBC,#{Formula["unixodbc"].opt_prefix}"
-      args << "--with-unixODBC=#{Formula["unixodbc"].opt_prefix}"
-    end
+    args << "--with-pdo-odbc=unixODBC,#{Formula["unixodbc"].opt_prefix}"
+    args << "--with-unixODBC=#{Formula["unixodbc"].opt_prefix}"
+
 
     # Build with argon2 support (Password Hashing API)
     if build.with?("argon2")
