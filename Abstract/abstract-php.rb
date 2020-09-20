@@ -31,8 +31,8 @@ class AbstractPhp < Formula
       conflicts_with php_formula_name, :because => "different php versions install the same binaries."
     end
 
-    depends_on "phpcurl" if !build.with?("homebrew-curl") || MacOS.version < :lion
-    depends_on "libxslt" if !build.with?("homebrew-libxslt") || MacOS.version < :lion
+    depends_on "phpcurl"
+    depends_on "libxslt"
     depends_on "enchant" => :optional
     depends_on "freetds" if build.with?("mssql")
     depends_on "freetype"
@@ -96,9 +96,7 @@ class AbstractPhp < Formula
     option "with-cgi", "Enable building of the CGI executable (implies --without-fpm)"
     option "with-debug", "Compile with debugging symbols"
     option "with-embed", "Compile with embed support (built as a static library)"
-    option "without-homebrew-curl", "Not include Curl support via Homebrew"
     option "with-homebrew-libressl", "Not include LibreSSL instead of OpenSSL via Homebrew"
-    option "without-homebrew-libxslt", "Include LibXSLT support via Homebrew"
     option "with-homebrew-libxml2", "Include Libxml2 support via Homebrew"
     option "with-imap", "Include IMAP extension"
     option "with-libmysql", "Include (old-style) libmysql support instead of mysqlnd"
@@ -324,17 +322,8 @@ INFO
       args << "--enable-cgi"
     end
 
-    if !build.with?("homebrew-curl") || MacOS.version < :lion
-      args << "--with-curl=#{Formula["phpcurl"].opt_prefix}"
-    else
-      args << "--with-curl"
-    end
-
-    if !build.without? "homebrew-libxslt"
-      args << "--with-xsl=" + Formula["libxslt"].opt_prefix.to_s
-    elsif OS.mac?
-      args << "--with-xsl=/usr"
-    end
+    args << "--with-curl=#{Formula["phpcurl"].opt_prefix}"
+    args << "--with-xsl=" + Formula["libxslt"].opt_prefix.to_s
 
     if build.with? "imap"
       args << "--with-imap=#{Formula["imap-uw"].opt_prefix}"
