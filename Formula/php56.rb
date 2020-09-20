@@ -33,8 +33,8 @@ class Php56 < AbstractPhp
         conflicts_with php_formula_name, :because => "different php versions install the same binaries."
       end
 
-      depends_on "phpcurl" if !build.without?("homebrew-curl") || MacOS.version < :lion
-      depends_on "libxslt" if !build.without?("homebrew-libxslt") || MacOS.version < :lion
+      depends_on "phpcurl" if !build.with?("homebrew-curl") || MacOS.version < :lion
+      depends_on "libxslt" if !build.with?("homebrew-libxslt") || MacOS.version < :lion
       depends_on "enchant" => :optional
       depends_on "freetds" if build.with?("mssql")
       depends_on "freetype"

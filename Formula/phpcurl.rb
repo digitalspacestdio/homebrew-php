@@ -1,10 +1,11 @@
 class Phpcurl < Formula
   desc "Get a file from an HTTP, HTTPS or FTP server"
   homepage "https://curl.haxx.se/"
-  url "https://curl.haxx.se/download/curl-7.65.3.tar.bz2"
-  mirror "http://curl.mirror.anstey.ca/curl-7.65.3.tar.bz2"
-  sha256 "0a855e83be482d7bc9ea00e05bdb1551a44966076762f9650959179c89fce509"
-  revision 2
+  url "https://curl.haxx.se/download/curl-7.72.0.tar.bz2"
+  mirror "http://curl.mirror.anstey.ca/curl-7.72.0.tar.bz2"
+  sha256 "ad91970864102a59765e20ce16216efc9d6ad381471f7accceceab7d905703ef"
+  version '7.72.0'
+  revision 1
 
   pour_bottle? do
     reason "The bottle needs to be installed into #{Homebrew::DEFAULT_PREFIX} when built with OpenSSL."

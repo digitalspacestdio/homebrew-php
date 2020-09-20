@@ -31,8 +31,8 @@ class AbstractPhp < Formula
       conflicts_with php_formula_name, :because => "different php versions install the same binaries."
     end
 
-    depends_on "phpcurl" if !build.without?("homebrew-curl") || MacOS.version < :lion
-    depends_on "libxslt" if !build.without?("homebrew-libxslt") || MacOS.version < :lion
+    depends_on "phpcurl" if !build.with?("homebrew-curl") || MacOS.version < :lion
+    depends_on "libxslt" if !build.with?("homebrew-libxslt") || MacOS.version < :lion
     depends_on "enchant" => :optional
     depends_on "freetds" if build.with?("mssql")
     depends_on "freetype"
@@ -45,7 +45,7 @@ class AbstractPhp < Formula
     depends_on "libvpx" => :optional if name.split("::")[2].downcase.start_with?("php56")
     depends_on "libpng"
     depends_on "libxml2" if build.with?("homebrew-libxml2") || MacOS.version < :lion || MacOS.version >= :el_capitan
-    depends_on "unixodbc" unless build.without?("unixodbc")
+    depends_on "unixodbc" unless build.with?("unixodbc")
     depends_on "readline"
     depends_on "zlib"
     depends_on "bzip2"
@@ -324,7 +324,7 @@ INFO
       args << "--enable-cgi"
     end
 
-    if !build.without?("homebrew-curl") || MacOS.version < :lion
+    if !build.with?("homebrew-curl") || MacOS.version < :lion
       args << "--with-curl=#{Formula["phpcurl"].opt_prefix}"
     else
       args << "--with-curl"
