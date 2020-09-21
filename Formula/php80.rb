@@ -5,7 +5,7 @@ class Php80 < AbstractPhp
   desc "PHP Version 8"
   include AbstractPhpVersion::Php80Defs
   version PHP_VERSION
-  revision 1
+  revision 2
 
   depends_on "pkg-config" => :build
   depends_on "krb5"
