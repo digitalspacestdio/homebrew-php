@@ -144,6 +144,7 @@ class AbstractPhp < Formula
   end
 
   def install
+    ENV["CFLAGS"] = "-arch i386 -arch x86_64"
     # Ensure this php has a version specified
     php_version
     php_version_path
@@ -217,6 +218,7 @@ INFO
     ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
 
     args = [
+      "CFLAGS=-Wno-error=implicit-function-declarations",
       "--prefix=#{prefix}",
       "--localstatedir=#{var}",
       "--sysconfdir=#{config_path}",

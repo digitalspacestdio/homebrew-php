@@ -14,7 +14,7 @@ class Php80Zip < AbstractPhp80Extension
   depends_on "pkg-config" => :build
 
   def install
-        # Required due to icu4c dependency
+    # Required due to icu4c dependency
     ENV.cxx11
 
     # icu4c 61.1 compatability
