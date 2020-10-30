@@ -144,6 +144,8 @@ class AbstractPhp < Formula
   end
 
   def install
+    ENV["CFLAGS"] = "-Wno-error"
+
     # Ensure this php has a version specified
     php_version
     php_version_path
@@ -417,6 +419,8 @@ INFO
   end
 
   def _install
+    ENV["CFLAGS"] = "-Wno-error"
+
     system "./buildconf", "--force" if build.head?
     system "./configure", *install_args
 
