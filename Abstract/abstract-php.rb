@@ -11,6 +11,7 @@ class AbstractPhp < Formula
     skip_clean "bin", "sbin"
 
     head do
+      depends_on "gcc" => :build
       depends_on "autoconf" => :build
       depends_on "re2c" => :build
       depends_on "flex" => :build
@@ -144,6 +145,8 @@ class AbstractPhp < Formula
   end
 
   def install
+    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-10"
+    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-10"
     ENV["CFLAGS"] = "-Wno-error"
 
     # Ensure this php has a version specified
