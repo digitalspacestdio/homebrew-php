@@ -29,10 +29,4 @@ class Php72 < AbstractPhp
     end
   end
 
-  if OS.mac?
-      patch do
-        url "https://raw.githubusercontent.com/djocker/homebrew-php/master/Patches/php73/80171.patch"
-        sha256 "4c51e35fd936a7f3f5613c72e6395b9afa8f569061c00849683e09e8fe986a0f"
-      end
-  end
 end
