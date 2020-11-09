@@ -16,7 +16,7 @@ class ComposerAT110 < AbstractPhpPhar
     "composer-1.10"
   end
 
-  depends_on PharRequirement
+  # depends_on PharRequirement
 
   # The default behavior is to create a shell script that invokes the phar file.
   # Other tools, at least Ansible, expect the composer executable to be a PHP
