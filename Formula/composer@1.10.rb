@@ -1,6 +1,6 @@
 require File.expand_path("../../Abstract/abstract-php-phar", __FILE__)
 
-class ComposerAT15 < AbstractPhpPhar
+class ComposerAT110 < AbstractPhpPhar
   desc "Dependency Manager for PHP"
   homepage "https://getcomposer.org"
   url "https://getcomposer.org/download/1.10.17/composer.phar"
