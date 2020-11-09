@@ -10,12 +10,13 @@ class AbstractPhp < Formula
     # So PHP extensions don't report missing symbols
     skip_clean "bin", "sbin"
 
+    if name.split("::")[2].downcase.start_with?("php56")
+      depends_on "gcc@9" => :build
+    else
+      depends_on "gcc" => :build
+    end
+
     head do
-      if name.split("::")[2].downcase.start_with?("php56")
-        depends_on "gcc@9" => :build
-      else
-        depends_on "gcc" => :build
-      end
       depends_on "autoconf" => :build
       depends_on "re2c" => :build
       depends_on "flex" => :build
