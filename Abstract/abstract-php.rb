@@ -11,7 +11,11 @@ class AbstractPhp < Formula
     skip_clean "bin", "sbin"
 
     head do
-      depends_on "gcc" => :build
+      if name.split("::")[2].downcase.start_with?("php56")
+        depends_on "gcc@9" => :build
+      else
+        depends_on "gcc" => :build
+      end
       depends_on "autoconf" => :build
       depends_on "re2c" => :build
       depends_on "flex" => :build
@@ -145,13 +149,17 @@ class AbstractPhp < Formula
   end
 
   def install
-    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-10"
-    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-10"
-    ENV["CFLAGS"] = "-Wno-error"
-
     # Ensure this php has a version specified
     php_version
     php_version_path
+
+    if php_version.start_with?("5.6")
+      ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+      ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+    else
+      ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-10"
+      ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-10"
+    end
 
     # Not removing all pear.conf and .pearrc files from PHP path results in
     # the PHP configure not properly setting the pear binary to be installed
@@ -221,7 +229,8 @@ INFO
     # Ensure system dylibs can be found by linker on Sierra
     ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
 
-    ENV["CFLAGS"] = "-Wno-error"
+    libzip = Formula["libzip"]
+    ENV["CFLAGS"] = "-Wno-error -I#{libzip.opt_include}"
 
     args = [
       "--prefix=#{prefix}",
@@ -422,7 +431,6 @@ INFO
   end
 
   def _install
-    ENV["CFLAGS"] = "-Wno-error"
 
     system "./buildconf", "--force" if build.head?
     system "./configure", *install_args
