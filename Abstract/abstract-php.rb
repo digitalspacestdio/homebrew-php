@@ -13,7 +13,7 @@ class AbstractPhp < Formula
     if name.split("::")[2].downcase.start_with?("php56")
       depends_on "gcc@9" => :build
     else
-      depends_on "gcc" => :build
+      depends_on "gcc@10" => :build
     end
 
     head do
@@ -158,8 +158,8 @@ class AbstractPhp < Formula
       ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
       ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
     else
-      ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-10"
-      ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-10"
+      ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
+      ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
     end
 
     # Not removing all pear.conf and .pearrc files from PHP path results in
