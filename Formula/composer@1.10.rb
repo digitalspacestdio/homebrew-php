@@ -1,11 +1,11 @@
 require File.expand_path("../../Abstract/abstract-php-phar", __FILE__)
 
-class ComposerAT12 < AbstractPhpPhar
-  init
+class ComposerAT110 < AbstractPhpPhar
   desc "Dependency Manager for PHP"
   homepage "https://getcomposer.org"
-  url "https://getcomposer.org/download/1.2.4/composer.phar"
-  sha256 "3c900579659b79a4e528722e35bd160c86090e370e9cb41cc07c7a22c674c657"
+  url "https://getcomposer.org/download/1.10.17/composer.phar"
+  sha256 "6fa00eba5103ce6750f94f87af8356e12cc45d5bbb11a140533790cf60725f1c"
+  head "https://getcomposer.org/composer.phar"
 
 
   def phar_file
@@ -13,8 +13,10 @@ class ComposerAT12 < AbstractPhpPhar
   end
 
   def phar_bin
-    "composer-1.2"
+    "composer-1.10"
   end
+
+  # depends_on PharRequirement
 
   # The default behavior is to create a shell script that invokes the phar file.
   # Other tools, at least Ansible, expect the composer executable to be a PHP
@@ -34,12 +36,17 @@ class ComposerAT12 < AbstractPhpPhar
   end
 
   def caveats
-    <<~EOS
+    <<-EOS
       This installs the older composer version #{version} as '#{phar_bin}'.
+
+      composer no longer depends on the homebrew php Formulas since the last couple of macOS releases
+      contains a php version compatible with composer. If this has been part of your workflow
+      previously then please make the appropriate changes and `brew install php71` or other appropriate
+      Homebrew PHP version.
     EOS
   end
 
   test do
-    system "#{bin}/composer-1.2", "--version"
+    system "#{bin}/composer-1.10", "--version"
   end
 end
