@@ -4,9 +4,10 @@ class Php80Mongodb < AbstractPhp80Extension
   init
   desc "MongoDB driver for PHP."
   homepage "https://pecl.php.net/package/mongodb"
-  url "https://github.com/mongodb/mongo-php-driver/releases/download/1.8.0/mongodb-1.8.0.tgz"
-  sha256 "096f02f240f1c7108dbbc9b4cd93e53e0517c8a85aaf99ac2fdd368f149a23b1"
+  url "https://github.com/mongodb/mongo-php-driver/releases/download/1.9.0-RC1/mongodb-1.9.0RC1.tgz"
+  sha256 "2c0961a81ce5fdca3b381638a2f91a0f971bec55a87ee9ef4ea25995c94dce72"
   head "https://github.com/mongodb/mongo-php-driver.git"
+  version "1.9.0-RC1"
   revision 1
 
   depends_on "openssl"
