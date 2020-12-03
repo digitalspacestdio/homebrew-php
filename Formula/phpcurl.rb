@@ -35,13 +35,14 @@ class Phpcurl < Formula
 
   # HTTP/2 support requires OpenSSL 1.0.2+ or LibreSSL 2.1.3+ for ALPN Support
   # which is currently not supported by Secure Transport (DarwinSSL).
-  if MacOS.version < :mountain_lion || build.with?("nghttp2") || build.with?("openssl")
-    depends_on "openssl@1.1"
-  else
-    option "with-openssl", "Build with OpenSSL instead of Secure Transport"
-    depends_on "openssl@1.1" => :optional
-  end
+#   if MacOS.version < :mountain_lion || build.with?("nghttp2") || build.with?("openssl")
+#     depends_on "djocker/common/openssl11"
+#   else
+#     option "with-openssl", "Build with OpenSSL instead of Secure Transport"
+#     depends_on "djocker/common/openssl11" => :optional
+#   end
 
+  depends_on "djocker/common/openssl11"
   depends_on "pkg-config" => :build
   depends_on "c-ares" => :optional
   depends_on "libmetalink" => :optional
@@ -52,6 +53,9 @@ class Phpcurl < Formula
     depends_on "krb5" if build.with? "gssapi"
     depends_on "openldap" => :optional
   end
+
+  ENV['CFLAGS'] = '-I$(brew --prefix djocker/common/openssl11)/include'
+  ENV['LDFLAGS'] = '-L$(brew --prefix djocker/common/openssl11)/lib'
 
   def install
     system "./buildconf" if build.head?
@@ -69,16 +73,20 @@ class Phpcurl < Formula
     # cURL has a new firm desire to find ssl with PKG_CONFIG_PATH instead of using
     # "--with-ssl" any more. "when possible, set the PKG_CONFIG_PATH environment
     # variable instead of using this option". Multi-SSL choice breaks w/o using it.
-    if MacOS.version < :mountain_lion || build.with?("openssl") || build.with?("nghttp2")
-      ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["djocker/common/openssl11"].opt_lib}/pkgconfig"
-      args << "--with-ssl=#{Formula["djocker/common/openssl11"].opt_prefix}"
-      args << "--with-ca-bundle=#{etc}/openssl@1.1/cert.pem"
-      args << "--with-ca-path=#{etc}/openssl@1.1/certs"
-    else
-      args << "--with-darwinssl"
-      args << "--without-ca-bundle"
-      args << "--without-ca-path"
-    end
+    #     if MacOS.version < :mountain_lion || build.with?("openssl") || build.with?("nghttp2")
+    #       ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["djocker/common/openssl11"].opt_lib}/pkgconfig"
+    #       args << "--with-ssl=#{Formula["djocker/common/openssl11"].opt_prefix}"
+    #       args << "--with-ca-bundle=#{etc}/openssl@1.1/cert.pem"
+    #       args << "--with-ca-path=#{etc}/openssl@1.1/certs"
+    #     else
+    #       args << "--with-darwinssl"
+    #       args << "--without-ca-bundle"
+    #       args << "--without-ca-path"
+    #     end
+
+    args << "--with-ssl=#{Formula["djocker/common/openssl11"].opt_prefix}"
+    args << "--with-ca-bundle=#{etc}/openssl@1.1/cert.pem"
+    args << "--with-ca-path=#{etc}/openssl@1.1/certs"
 
     args << (build.with?("libssh2") ? "--with-libssh2" : "--without-libssh2")
     args << (build.with?("libmetalink") ? "--with-libmetalink" : "--without-libmetalink")
