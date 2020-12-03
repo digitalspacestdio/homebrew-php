@@ -5,7 +5,7 @@ class Phpcurl < Formula
   mirror "http://curl.mirror.anstey.ca/curl-7.72.0.tar.bz2"
   sha256 "ad91970864102a59765e20ce16216efc9d6ad381471f7accceceab7d905703ef"
   version '7.72.0'
-  revision 1
+  revision 2
 
   pour_bottle? do
     reason "The bottle needs to be installed into #{Homebrew::DEFAULT_PREFIX} when built with OpenSSL."
@@ -14,7 +14,7 @@ class Phpcurl < Formula
 
   head do
     url "https://github.com/curl/curl.git"
-    depends_on "openssl@1.1" => :build
+    depends_on "djocker/common/openssl11" => :build
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
@@ -70,8 +70,8 @@ class Phpcurl < Formula
     # "--with-ssl" any more. "when possible, set the PKG_CONFIG_PATH environment
     # variable instead of using this option". Multi-SSL choice breaks w/o using it.
     if MacOS.version < :mountain_lion || build.with?("openssl") || build.with?("nghttp2")
-      ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["openssl@1.1"].opt_lib}/pkgconfig"
-      args << "--with-ssl=#{Formula["openssl@1.1"].opt_prefix}"
+      ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["djocker/common/openssl11"].opt_lib}/pkgconfig"
+      args << "--with-ssl=#{Formula["djocker/common/openssl11"].opt_prefix}"
       args << "--with-ca-bundle=#{etc}/openssl@1.1/cert.pem"
       args << "--with-ca-path=#{etc}/openssl@1.1/certs"
     else
