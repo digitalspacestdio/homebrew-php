@@ -10,7 +10,7 @@ class Php56Twig < AbstractPhp56Extension
 
 
   def install
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     Dir.chdir "ext/twig" do
       safe_phpize

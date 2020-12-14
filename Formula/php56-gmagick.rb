@@ -13,7 +13,7 @@ class Php56Gmagick < AbstractPhp56Extension
   def install
     Dir.chdir "gmagick-#{version}"
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     args = []
     args << "--prefix=#{prefix}"

@@ -17,7 +17,7 @@ class Php56Memcache < AbstractPhp56Extension
   def install
     Dir.chdir "memcache-#{version}" unless build.head?
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     ENV['CFLAGS'] = '-fgnu89-inline'
     ENV['LDFLAGS'] = '-fgnu89-inline'

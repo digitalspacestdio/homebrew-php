@@ -14,7 +14,7 @@ class Php70ApcuBc < AbstractPhp70Extension
   def install
     Dir.chdir "apcu_bc-#{version}" unless build.head?
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     args = []
     args << "--enable-apc"

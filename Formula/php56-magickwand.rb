@@ -13,7 +13,7 @@ class Php56Magickwand < AbstractPhp56Extension
   depends_on "imagemagick6"
 
   def install
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",

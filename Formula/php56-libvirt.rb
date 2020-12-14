@@ -12,7 +12,7 @@ class Php56Libvirt < AbstractPhp56Extension
   depends_on "libvirt"
 
   def install
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     system "./configure", "--prefix=#{prefix}", phpconfig
     system "make"

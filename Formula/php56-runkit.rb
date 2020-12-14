@@ -16,7 +16,7 @@ class Php56Runkit < AbstractPhp56Extension
   end
 
   def install
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",

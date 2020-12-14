@@ -13,7 +13,7 @@ class Php71Maxminddb < AbstractPhp71Extension
   def install
     Dir.chdir "ext"
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}", "--with-maxminddb=#{Formula["libmaxminddb"].opt_prefix}", phpconfig

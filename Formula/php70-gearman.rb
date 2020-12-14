@@ -12,7 +12,7 @@ class Php70Gearman < AbstractPhp70Extension
   depends_on "gearman"
 
   def install
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",

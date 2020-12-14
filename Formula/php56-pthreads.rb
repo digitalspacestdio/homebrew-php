@@ -12,7 +12,7 @@ class Php56Pthreads < AbstractPhp56Extension
   def install
     Dir.chdir "pthreads-#{version}" unless build.head?
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",

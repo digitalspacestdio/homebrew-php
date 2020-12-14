@@ -12,7 +12,7 @@ class Php56Crypto < AbstractPhp56Extension
   def install
     Dir.chdir "crypto-#{version}" unless build.head?
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     args = []
     args << "--with-crypto"

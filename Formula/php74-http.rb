@@ -20,7 +20,7 @@ class Php74Http < AbstractPhp74Extension
   end
 
   def install
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
 

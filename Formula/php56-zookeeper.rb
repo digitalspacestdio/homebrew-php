@@ -15,7 +15,7 @@ class Php56Zookeeper < AbstractPhp56Extension
   def install
     Dir.chdir "zookeeper-#{version}" unless build.head?
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     args = []
     args << "--prefix=#{prefix}"

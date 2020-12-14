@@ -16,7 +16,7 @@ class Php56Httpparser < AbstractPhp56Extension
   def install
     Dir.chdir "ext"
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
 

@@ -14,7 +14,7 @@ class Php70Yaml < AbstractPhp70Extension
   def install
     Dir.chdir "yaml-#{version}" unless build.head?
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",

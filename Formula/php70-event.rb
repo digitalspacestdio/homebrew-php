@@ -15,7 +15,7 @@ class Php70Event < AbstractPhp70Extension
   def install
     Dir.chdir "event-#{version}" unless build.head?
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     args = []
     args << "--with-event-core"

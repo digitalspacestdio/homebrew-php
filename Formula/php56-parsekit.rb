@@ -26,7 +26,7 @@ class Php56Parsekit < AbstractPhp56Extension
   def install
     Dir.chdir "parsekit-#{version}" unless build.head?
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",

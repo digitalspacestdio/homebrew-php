@@ -14,7 +14,7 @@ class Php56Gmp < AbstractPhp56Extension
   def install
     Dir.chdir "ext/gmp"
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",

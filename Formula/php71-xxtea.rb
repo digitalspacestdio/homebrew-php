@@ -12,7 +12,7 @@ class Php71Xxtea < AbstractPhp71Extension
   def install
     Dir.chdir "xxtea-#{version}" unless build.head?
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",

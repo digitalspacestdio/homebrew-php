@@ -12,7 +12,7 @@ class Php70Uv < AbstractPhp70Extension
   depends_on "libuv"
 
   def install
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",

@@ -17,7 +17,7 @@ class Php56Pdflib < AbstractPhp56Extension
   def install
     Dir.chdir "pdflib-#{version}"
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",

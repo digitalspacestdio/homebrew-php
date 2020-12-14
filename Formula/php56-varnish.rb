@@ -13,7 +13,7 @@ class Php56Varnish < AbstractPhp56Extension
   def install
     Dir.chdir "varnish-#{version}"
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
 

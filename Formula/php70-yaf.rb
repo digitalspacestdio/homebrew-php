@@ -12,7 +12,7 @@ class Php70Yaf < AbstractPhp70Extension
   depends_on "pcre"
 
   def install
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig

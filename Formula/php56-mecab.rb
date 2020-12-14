@@ -12,7 +12,7 @@ class Php56Mecab < AbstractPhp56Extension
   depends_on "mecab"
 
   def install
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",

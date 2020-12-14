@@ -11,7 +11,7 @@ class Php56Sundown < AbstractPhp56Extension
   def install
     Dir.chdir "sundown-#{version}"
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig

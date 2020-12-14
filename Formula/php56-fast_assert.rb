@@ -13,7 +13,7 @@ class Php56FastAssert < AbstractPhp56Extension
   end
 
   def install
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     args = []
     args << "--enable-fast_assert"

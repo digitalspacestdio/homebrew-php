@@ -10,7 +10,7 @@ class Php70Scrypt < AbstractPhp70Extension
 
 
   def install
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
     ENV["CFLAGS"] = "-arch i386 -arch x86_64"
 
     safe_phpize

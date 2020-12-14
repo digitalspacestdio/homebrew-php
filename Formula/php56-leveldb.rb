@@ -14,7 +14,7 @@ class Php56Leveldb < AbstractPhp56Extension
   def install
     Dir.chdir "leveldb-#{version}" unless build.head?
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     args = []
     args << "--prefix=#{prefix}"

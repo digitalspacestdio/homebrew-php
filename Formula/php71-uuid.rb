@@ -33,7 +33,7 @@ class Php71Uuid < AbstractPhp71Extension
   def install
     Dir.chdir "uuid-#{version}" unless build.head?
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",

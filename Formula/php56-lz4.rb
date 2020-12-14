@@ -9,7 +9,7 @@ class Php56Lz4 < AbstractPhp56Extension
 
 
   def install
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig

@@ -16,7 +16,7 @@ class Php56Riak < AbstractPhp56Extension
   def install
     Dir.chdir "riak-#{version}" unless build.head?
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",

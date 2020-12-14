@@ -13,7 +13,7 @@ class Php74Meminfo < AbstractPhp74Extension
   def install
     Dir.chdir "extension/php7" unless build.head?
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",

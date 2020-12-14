@@ -13,7 +13,7 @@ class Php56Zmq < AbstractPhp56Extension
   depends_on "zeromq"
 
   def install
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     inreplace "package.xml", "@PACKAGE_VERSION@", version
     inreplace "php-zmq.spec", "@PACKAGE_VERSION@", version

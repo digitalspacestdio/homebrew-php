@@ -12,7 +12,7 @@ class Php71Geos < AbstractPhp71Extension
   depends_on "geos"
 
   def install
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",

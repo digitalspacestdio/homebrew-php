@@ -13,7 +13,7 @@ class Php56Midgard2 < AbstractPhp56Extension
   depends_on "midgard2"
 
   def install
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",

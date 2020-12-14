@@ -10,7 +10,7 @@ class Php56Pimple < AbstractPhp56Extension
 
 
   def install
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     Dir.chdir "ext/pimple" do
       safe_phpize

@@ -12,7 +12,7 @@ class Php56Graphdat < AbstractPhp56Extension
   def install
     Dir.chdir "graphdat-#{version}" unless build.head?
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",

@@ -18,7 +18,7 @@ class Php56PdoPgsql < AbstractPhp56Extension
   def install
     Dir.chdir "ext/pdo_pgsql"
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}", "--with-pdo-pgsql=#{Formula["libpq"].prefix}", phpconfig

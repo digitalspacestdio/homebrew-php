@@ -17,7 +17,7 @@ class Php56Tidy < AbstractPhp56Extension
     # API compatibility with tidy-html5 v5.0.0 - https://github.com/htacg/tidy-html5/issues/224
     inreplace "tidy.c", "buffio.h", "tidybuffio.h"
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",

@@ -14,7 +14,7 @@ class Php56SymfonyDebug < AbstractPhp56Extension
   end
 
   def install
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     Dir.chdir "Resources/ext" do
       safe_phpize

@@ -11,7 +11,7 @@ class Php56Yar < AbstractPhp56Extension
   def install
     Dir.chdir "yar-#{version}"
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig

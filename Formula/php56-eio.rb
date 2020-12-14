@@ -17,7 +17,7 @@ class Php56Eio < AbstractPhp56Extension
   def install
     Dir.chdir "eio-#{version}" unless build.head?
 
-    ENV.universal_binary if build.universal?
+    # ENV.universal_binary if build.universal?
 
     args = []
     args << "--with-eio"
