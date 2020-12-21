@@ -226,8 +226,8 @@ class AbstractPhp74Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php74Defs
 
   def safe_phpize
-    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
-    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
+    ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
+    ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
     super()
   end
 
