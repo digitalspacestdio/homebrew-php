@@ -5,7 +5,7 @@ class Php74Common < Formula
   desc "PHP Version 7.4 (Common Package)"
   include AbstractPhpVersion::Php74Defs
   version PHP_VERSION
-  revision 1
+  revision 2
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
@@ -21,9 +21,8 @@ class Php74Common < Formula
   depends_on "php74-redis"
   depends_on "php74-tidy"
   depends_on "php74-gmp"
-  depends_on "php74-xhprof"
   depends_on "php74-xdebug"
-  depends_on "php74-memprof"
+  depends_on "php74-opcache"
 
   keg_only "this package contains dependency only"
 

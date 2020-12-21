@@ -189,6 +189,12 @@ end
 class AbstractPhp70Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php70Defs
 
+  def safe_phpize
+    ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
+    ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
+    super()
+  end
+
   def self.init(opts = [])
     super()
     depends_on "djocker/php/php70" => opts if build.with?("homebrew-php")
@@ -197,6 +203,12 @@ end
 
 class AbstractPhp71Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php71Defs
+
+  def safe_phpize
+    ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
+    ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
+    super()
+  end
 
   def self.init(opts = [])
     super()
@@ -207,6 +219,12 @@ end
 class AbstractPhp72Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php72Defs
 
+  def safe_phpize
+    ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
+    ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
+    super()
+  end
+
   def self.init(opts = [])
     super()
     depends_on "djocker/php/php72" => opts if build.with?("homebrew-php")
@@ -215,6 +233,12 @@ end
 
 class AbstractPhp73Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php73Defs
+
+  def safe_phpize
+    ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
+    ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
+    super()
+  end
 
   def self.init(opts = [])
     super()
@@ -240,10 +264,14 @@ end
 class AbstractPhp80Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php80Defs
 
-  def self.init(opts = [])
-    super()
-    depends_on "djocker/php/php80" => opts if build.with?("homebrew-php")
+  def safe_phpize
     ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
     ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
+    super()
+  end
+
+  def self.init(opts = [])
+    super()
+    depends_on "djocker/php/php80" => opts if build.with?("homebrew-php")php
   end
 end
