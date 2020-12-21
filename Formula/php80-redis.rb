@@ -6,9 +6,9 @@ class Php80Redis < AbstractPhp80Extension
 #   homepage "https://github.com/phpredis/phpredis"
 #   url "https://github.com/phpredis/phpredis/archive/3.1.6.tar.gz"
 #   sha256 "e0f00bd46f4790bf6e763762d9559d7175415e2f1ea1fcfea898bfb5298b43c4"
-  url "https://github.com/phpredis/phpredis/archive/5.3.1.tar.gz"
-  sha256 "930dc88ef126509b8991c52757fdc68908c753b476ad6f25dae0ce6925870f14"
-  version "5.3.1"
+  url "https://github.com/phpredis/phpredis/archive/5.3.2.tar.gz"
+  sha256 "e30ef918fd29ef3a4aa762376cf8dad3d1ff7fe429e24944ea0c5affca233806"
+  version "5.3.2"
   head "https://github.com/phpredis/phpredis.git"
 
   depends_on "Php80-igbinary"

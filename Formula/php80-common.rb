@@ -16,13 +16,11 @@ class Php80Common < Formula
   #depends_on "php80-imagick"
   depends_on "php80-intl"
   depends_on "php80-pdo-pgsql"
-  #depends_on "php80-mongodb"
-  #depends_on "php80-redis"
+  depends_on "php80-mongodb"
+  depends_on "php80-redis"
   depends_on "php80-tidy"
   depends_on "php80-gmp"
-  #depends_on "php80-xhprof"
-  #depends_on "php80-xdebug"
-  #depends_on "php80-memprof"
+  depends_on "php80-xdebug"
 
   keg_only "this package contains dependency only"
 

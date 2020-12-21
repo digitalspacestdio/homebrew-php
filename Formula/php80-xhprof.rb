@@ -4,10 +4,10 @@ class Php80Xhprof < AbstractPhp80Extension
   init
   desc "XHProf is a function-level hierarchical profiler for PHP and has a simple HTML based user interface."
   homepage "https://github.com/longxinH/xhprof"
-  url "https://codeload.github.com/longxinH/xhprof/tar.gz/2b14d1ab76195f4d460a240a55aed3724df93c51"
-  sha256 "522521f0d870b8b19462cd9cfc4f71a0c0bb2712310b723d9fe7863035206f77"
+  url "https://codeload.github.com/longxinH/xhprof/tar.gz/3d256898fb4f8443fec43c7f4bd7ae439e8aeff2"
+  sha256 "c73b98a4f54dbee6570692a1ec6faef41653bb32bd02397a0229f458b99754c5"
   head "https://github.com/longxinH/xhprof.git", :branch => "master"
-  version "2.2.2-beta"
+  version "2.2.3"
   revision 1
 
   def install
