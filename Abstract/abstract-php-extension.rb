@@ -225,11 +225,15 @@ end
 class AbstractPhp74Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php74Defs
 
+  def safe_phpize
+    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
+    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
+    super()
+  end
+
   def self.init(opts = [])
     super()
     depends_on "djocker/php/php74" => opts if build.with?("homebrew-php")
-    ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
-    ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
   end
 end
 
