@@ -16,8 +16,6 @@ class Php74Xdebug < AbstractPhp74Extension
 
   def install
     #Dir.chdir "xdebug-#{version}" unless build.head?
-    ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
-    ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
 
     safe_phpize
 
