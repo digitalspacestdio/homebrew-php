@@ -228,6 +228,8 @@ class AbstractPhp74Extension < AbstractPhpExtension
   def self.init(opts = [])
     super()
     depends_on "djocker/php/php74" => opts if build.with?("homebrew-php")
+    ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
+    ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
   end
 end
 
@@ -237,5 +239,7 @@ class AbstractPhp80Extension < AbstractPhpExtension
   def self.init(opts = [])
     super()
     depends_on "djocker/php/php80" => opts if build.with?("homebrew-php")
+    ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
+    ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
   end
 end
