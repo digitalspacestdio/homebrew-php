@@ -14,8 +14,9 @@ class Php74Intl < AbstractPhp74Extension
   depends_on "pkg-config" => :build
 
   def install
-        # Required due to icu4c dependency
-    ENV.cxx11
+    # Required due to icu4c dependency
+    ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
+    ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
 
     # icu4c 61.1 compatability
     ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
