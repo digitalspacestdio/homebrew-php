@@ -8,7 +8,7 @@ class Php74Xdebug < AbstractPhp74Extension
   sha256 "3b37c0bc21e3d68237fc2d4faa002cc01d9de23c33da226ed5cf737562a8c6eb"
   head "https://github.com/xdebug/xdebug.git"
   version "2.9.6"
-  revision 1
+  revision 2
 
   def extension_type
     "zend_extension"
