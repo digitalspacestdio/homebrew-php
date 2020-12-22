@@ -180,6 +180,12 @@ end
 class AbstractPhp56Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php56Defs
 
+  def safe_phpize
+    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+    super()
+  end
+
   def self.init(opts = [])
     super()
     depends_on "djocker/php/php56" => opts if build.with?("homebrew-php")
