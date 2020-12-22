@@ -272,6 +272,6 @@ class AbstractPhp80Extension < AbstractPhpExtension
 
   def self.init(opts = [])
     super()
-    depends_on "djocker/php/php80" => opts if build.with?("homebrew-php")php
+    depends_on "djocker/php/php80" => opts if build.with?("homebrew-php")
   end
 end
