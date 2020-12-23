@@ -241,8 +241,8 @@ class AbstractPhp73Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php73Defs
 
   def safe_phpize
-    ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
-    ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
+    ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-9"
+    ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-9"
     super()
   end
 
