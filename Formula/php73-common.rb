@@ -5,10 +5,7 @@ class Php73Common < Formula
   desc "PHP Version 7.3 (Common Package)"
   include AbstractPhpVersion::Php73Defs
   version PHP_VERSION
-  revision 2
-
-  url PHP_SRC_TARBALL
-  sha256 PHP_CHECKSUM[:sha256]
+  revision 4
 
   depends_on "php73"
   depends_on "php73-apcu"

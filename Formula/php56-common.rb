@@ -5,10 +5,7 @@ class Php56Common < Formula
   desc "PHP Version 5.6 (Common Package)"
   include AbstractPhpVersion::Php56Defs
   version PHP_VERSION
-  revision 2
-
-  url PHP_SRC_TARBALL
-  sha256 PHP_CHECKSUM[:sha256]
+  revision 4
 
   depends_on "php56"
   depends_on "php56-apcu"
