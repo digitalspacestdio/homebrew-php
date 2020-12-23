@@ -27,9 +27,9 @@ class Php80Common < Formula
   keg_only "this package contains dependency only"
 
   if OS.mac?
-    system "/usr/local/bin/brew list --formula | grep 'php[5-8][0-9]' | xargs -I{} printf '{} ' | xargs /usr/local/bin/brew unlink"
+    system "#{HOMEBREW_PREFIX}/bin/brew list --formula | grep 'php[5-8][0-9]' | xargs -I{} printf '{} ' | xargs #{HOMEBREW_PREFIX}/bin/brew unlink"
   elsif OS.linux?
-    system "/home/linuxbrew/.linuxbrew/bin/brew list --formula | grep 'php[5-8][0-9]' | xargs -I{} printf '{} ' | xargs --no-run-if-empty /home/linuxbrew/.linuxbrew/bin/brew unlink"
+    system "#{HOMEBREW_PREFIX}/bin/brew list --formula | grep 'php[5-8][0-9]' | xargs -I{} printf '{} ' | xargs --no-run-if-empty #{HOMEBREW_PREFIX}/bin/brew unlink"
   end
 
   def install
