@@ -5,7 +5,7 @@ class Php56Mongodb < AbstractPhp56Extension
   desc "MongoDB driver for PHP."
   homepage "https://pecl.php.net/package/mongodb"
   url "https://github.com/mongodb/mongo-php-driver/releases/download/1.7.5/mongodb-1.7.5.tgz"
-sha256 "1a9e7117b749c2dd63bd3493bf38c24a9acd11646ec96a0d92ba6380eee0ab9a"
+  sha256 "e48a07618c0ae8be628299991b5f481861c891a22544a2365a63361cc181c379"
   head "https://github.com/mongodb/mongo-php-driver.git"
   version "1.7.5"
   revision 2
