@@ -8,7 +8,7 @@ class Php80Mongodb < AbstractPhp80Extension
   sha256 "1a9e7117b749c2dd63bd3493bf38c24a9acd11646ec96a0d92ba6380eee0ab9a"
   head "https://github.com/mongodb/mongo-php-driver.git"
   version "1.9.0"
-  revision 1
+  revision 2
 
   depends_on "openssl"
 
@@ -18,7 +18,7 @@ class Php80Mongodb < AbstractPhp80Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
-                          "--with-openssl-dir=#{Formula["openssl"].opt_prefix}"
+                          "--with-mongodb-ssl=openssl --with-openssl-dir=#{Formula["openssl"].opt_prefix}"
     system "make"
     prefix.install "modules/mongodb.so"
     write_config_file if build.with? "config-file"

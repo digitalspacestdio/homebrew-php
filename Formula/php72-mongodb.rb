@@ -7,6 +7,8 @@ class Php72Mongodb < AbstractPhp72Extension
   url "https://pecl.php.net/get/mongodb-1.6.1.tgz"
   sha256 "1560141933a36862ee4d65171d2cc371c9fd468f59f3bef94cf2903186253cc8"
   head "https://github.com/mongodb/mongo-php-driver.git"
+  version "1.6.1"
+  revision 2
 
   depends_on "openssl"
 
@@ -16,7 +18,7 @@ class Php72Mongodb < AbstractPhp72Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
-                          "--with-openssl-dir=#{Formula["openssl"].opt_prefix}"
+                          "--with-mongodb-ssl=openssl --with-openssl-dir=#{Formula["openssl"].opt_prefix}"
     system "make"
     prefix.install "modules/mongodb.so"
     write_config_file if build.with? "config-file"
