@@ -26,7 +26,11 @@ class Php80Common < Formula
   
   keg_only "this package contains dependency only"
 
-  system "/usr/local/bin/brew list --formula | grep 'php[5-8][0-9]' | awk '{ print $1 \" \" }' | xargs -I{} /usr/local/bin/brew unlink {}"
+  if OS.mac?
+    system "/usr/local/bin/brew list --formula | grep 'php[5-8][0-9]' | xargs -I{} printf '{} ' | xargs /usr/local/bin/brew unlink"
+  elsif OS.linux?
+    system "/home/linuxbrew/.linuxbrew/bin/brew list --formula | grep 'php[5-8][0-9]' | xargs -I{} printf '{} ' | xargs --no-run-if-empty /home/linuxbrew/.linuxbrew/bin/brew unlink"
+  end
 
   def install
     system "echo $(date) > installed.txt"
