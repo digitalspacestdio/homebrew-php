@@ -4,9 +4,11 @@ class Php74Mongodb < AbstractPhp74Extension
   init
   desc "MongoDB driver for PHP."
   homepage "https://pecl.php.net/package/mongodb"
-  url "https://pecl.php.net/get/mongodb-1.6.1.tgz"
-  sha256 "1560141933a36862ee4d65171d2cc371c9fd468f59f3bef94cf2903186253cc8"
+  url "https://pecl.php.net/get/mongodb-1.9.0.tgz"
+  sha256 "1a9e7117b749c2dd63bd3493bf38c24a9acd11646ec96a0d92ba6380eee0ab9a"
   head "https://github.com/mongodb/mongo-php-driver.git"
+  version "1.9.0"
+  revision 1
 
   depends_on "openssl"
 
