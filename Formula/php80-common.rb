@@ -26,7 +26,7 @@ class Php80Common < Formula
   
   keg_only "this package contains dependency only"
 
-  system "/usr/local/bin/brew list --formula | grep 'php[5-8][0-9]' | while read line; do /usr/local/bin/brew unlink $line; done"
+  system "/usr/local/bin/brew list --formula | grep 'php[5-8][0-9]' | awk '{ print $1 \" \" }' | xargs -I{} /usr/local/bin/brew unlink {}"
 
   def install
     system "echo $(date) > installed.txt"
