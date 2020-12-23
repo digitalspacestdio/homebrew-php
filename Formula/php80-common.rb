@@ -26,6 +26,10 @@ class Php80Common < Formula
   
   keg_only "this package contains dependency only"
 
+  def init
+    system 'brew list --formula | grep 'php[5-8][0-9]' | while read line; do brew unlink $line; done'
+  end
+
   def install
     system "echo $(date) > installed.txt"
     prefix.install "installed.txt"
