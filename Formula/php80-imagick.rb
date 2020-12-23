@@ -3,10 +3,12 @@ require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 class Php80Imagick < AbstractPhp80Extension
   init
   desc "Provides a wrapper to the ImageMagick library."
-  homepage "https://pecl.php.net/package/imagick"
-  url "https://pecl.php.net/get/imagick-3.4.4.tgz"
-  sha256 "8dd5aa16465c218651fc8993e1faecd982e6a597870fd4b937e9ece02d567077"
+  homepage "https://github.com/Imagick/imagick"
   head "https://github.com/mkoppanen/imagick.git"
+  url "https://github.com/imagick/imagick/tarball/132a11fd26675db9eb9f0e9a3e2887c161875206"
+  sha256 "5cf964a7a5ba6e28d81507638f41a10d88070f0ee1b8019a650e2a4490609c2a"
+
+  version "imagick-132a11f"
   revision 1
 
 
