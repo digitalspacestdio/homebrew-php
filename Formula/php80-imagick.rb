@@ -8,7 +8,7 @@ class Php80Imagick < AbstractPhp80Extension
   url "https://github.com/imagick/imagick/tarball/132a11fd26675db9eb9f0e9a3e2887c161875206"
   sha256 "5cf964a7a5ba6e28d81507638f41a10d88070f0ee1b8019a650e2a4490609c2a"
 
-  version "imagick-132a11f"
+  version "132a11f"
   revision 1
 
 
@@ -16,7 +16,7 @@ class Php80Imagick < AbstractPhp80Extension
   depends_on "imagemagick6"
 
   def install
-    Dir.chdir "imagick-#{version}" unless build.head?
+    #Dir.chdir "imagick-#{version}" unless build.head?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
