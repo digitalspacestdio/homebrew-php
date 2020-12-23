@@ -11,6 +11,7 @@ class Php80Xhprof < AbstractPhp80Extension
   revision 1
 
   def install
+    Dir.chdir "extension"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig
     system "make"
