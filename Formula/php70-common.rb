@@ -1,7 +1,7 @@
 require "formula"
 require File.expand_path("../../Abstract/abstract-php-version", __FILE__)
 
-class Php71Common < Formula
+class Php70Common < Formula
   desc "PHP Version 7.1 (Common Package)"
   include AbstractPhpVersion::Php71Defs
   version PHP_VERSION
