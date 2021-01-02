@@ -8,7 +8,6 @@ class Php71Sodium < AbstractPhp71Extension
   sha256 "2eebf3772d7441449b47abfe8f52043b9c6d6b5aff66aebd339c5d459d7fca28"
   head "https://github.com/jedisct1/libsodium-php.git"
 
-
   depends_on "libsodium"
 
   def install

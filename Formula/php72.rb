@@ -5,7 +5,7 @@ class Php72 < AbstractPhp
   desc "PHP Version 7.2"
   include AbstractPhpVersion::Php72Defs
   version PHP_VERSION
-  revision 1
+  revision 2
 
   include AbstractPhpVersion::Php72Defs
 

@@ -73,7 +73,7 @@ class AbstractPhp < Formula
     depends_on "argon2" => :optional if build.with?("argon2")
 
     # libsodium for 7.2
-    depends_on "libsodium" => :recommended if name.split("::")[2].downcase.start_with?("php72")
+    # depends_on "libsodium" => :recommended if name.split("::")[2].downcase.start_with?("php72")
 
     deprecated_option "with-pgsql" => "with-postgresql"
     depends_on "postgresql" => :optional
@@ -424,9 +424,9 @@ INFO
       args << "--enable-maintainer-zts"
     end
 
-    if build.with? "libsodium"
-        args << "--with-sodium=#{Formula['libsodium'].opt_prefix}"
-    end
+#     if build.with? "libsodium"
+#         args << "--with-sodium=#{Formula['libsodium'].opt_prefix}"
+#     end
 
     args
   end
