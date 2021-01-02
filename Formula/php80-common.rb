@@ -16,13 +16,13 @@ class Php80Common < Formula
   depends_on "php80-igbinary"
   depends_on "php80-imagick"
   depends_on "php80-intl"
+  depends_on "php80-mcrypt"
   depends_on "php80-mongodb"
   depends_on "php80-opcache"
   depends_on "php80-pdo-pgsql"
+  depends_on "php80-sodium"
   depends_on "php80-redis"
   depends_on "php80-tidy"
-  depends_on "php80-xdebug"
-  depends_on "php80-xhprof"
   
   keg_only "this package contains dependency only"
 

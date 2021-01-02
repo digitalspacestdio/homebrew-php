@@ -22,8 +22,6 @@ class Php56Common < Formula
   depends_on "php56-pdo-pgsql"
   depends_on "php56-redis"
   depends_on "php56-tidy"
-  depends_on "php56-xdebug"
-  depends_on "php56-xhprof"
 
   keg_only "this package contains dependency only"
 

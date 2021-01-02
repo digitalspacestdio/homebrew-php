@@ -20,10 +20,9 @@ class Php71Common < Formula
   depends_on "php71-mongodb"
   depends_on "php71-opcache"
   depends_on "php71-pdo-pgsql"
+  depends_on "php71-sodium"
   depends_on "php71-redis"
   depends_on "php71-tidy"
-  depends_on "php71-xdebug"
-  depends_on "php71-xhprof"
 
   keg_only "this package contains dependency only"
 
