@@ -15,7 +15,8 @@ class Php74Sodium < AbstractPhp74Extension
     Dir.chdir "ext/sodium"
 
     safe_phpize
-    system "./configure", "--prefix=#{prefix}", "--with-sodium=#{Formula['libsodium'].opt_prefix}"
+    system "./configure", "--prefix=#{prefix}",
+                          "--with-sodium=#{Formula['libsodium'].opt_prefix}",
                           phpconfig,
                           "--disable-dependency-tracking"
     system "make"
