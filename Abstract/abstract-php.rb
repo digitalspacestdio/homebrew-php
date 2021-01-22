@@ -13,7 +13,11 @@ class AbstractPhp < Formula
     if name.split("::")[2].downcase.start_with?("php56")
       depends_on "gcc@9" => :build
     else
-      depends_on "gcc@10" => :build
+      if OS.linux?
+        depends_on "gcc@9" => :build
+      else
+        depends_on "gcc@10" => :build
+      end
     end
 
     head do
