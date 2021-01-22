@@ -13,8 +13,8 @@ class Php72Intl < AbstractPhp72Extension
   depends_on "icu4c"
 
   def install
-        # Required due to icu4c dependency
-    ENV.cxx11
+    # Required due to icu4c dependency
+    #ENV.cxx11
 
     # icu4c 61.1 compatability
     ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
