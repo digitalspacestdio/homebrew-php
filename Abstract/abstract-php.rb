@@ -162,8 +162,14 @@ class AbstractPhp < Formula
       ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
       ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
     else
-      ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
-      ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
+      if OS.linux?
+        ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+        ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+      else
+        ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
+        ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
+      end
+
     end
 
     # Not removing all pear.conf and .pearrc files from PHP path results in
