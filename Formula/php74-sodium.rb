@@ -16,7 +16,7 @@ class Php74Sodium < AbstractPhp74Extension
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
-                          "--with-sodium=#{Formula['libsodium'].opt_prefix}",
+                          "--with-libsodium=#{Formula['libsodium'].opt_prefix}",
                           phpconfig,
                           "--disable-dependency-tracking"
     system "make"
