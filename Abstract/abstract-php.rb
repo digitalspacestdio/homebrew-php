@@ -48,8 +48,8 @@ class AbstractPhp < Formula
     depends_on "freetype"
     depends_on "gettext"
     depends_on "gmp" => :optional
-    depends_on "icu4c@67.1" if php_version.start_with?("5.6", "7.1", "7.2")
-    depends_on "icu4c"  if !php_version.start_with?("5.6", "7.1", "7.2")
+    depends_on "icu4c@67.1" if name.split("::")[2].downcase.start_with?("php56", "php71", "php72")
+    depends_on "icu4c"  if !name.split("::")[2].downcase.start_with?("php56", "php71", "php72")
     depends_on "imap-uw" if build.with?("imap")
     depends_on "jpeg"
     depends_on "webp" => :optional if name.split("::")[2].downcase.start_with?("php7")
