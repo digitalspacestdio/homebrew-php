@@ -48,7 +48,8 @@ class AbstractPhp < Formula
     depends_on "freetype"
     depends_on "gettext"
     depends_on "gmp" => :optional
-    depends_on "icu4c"
+    depends_on "icu4c@67.1" if php_version.start_with?("5.6", "7.1", "7.2")
+    depends_on "icu4c"  if !php_version.start_with?("5.6", "7.1", "7.2")
     depends_on "imap-uw" if build.with?("imap")
     depends_on "jpeg"
     depends_on "webp" => :optional if name.split("::")[2].downcase.start_with?("php7")
@@ -269,7 +270,8 @@ INFO
       "--with-gd",
       "--with-gettext=#{Formula["gettext"].opt_prefix}",
 #      ("--with-iconv-dir=/usr" if OS.mac?),
-      "--with-icu-dir=#{Formula["icu4c"].opt_prefix}",
+      "--with-icu-dir=#{Formula["icu4c@67.1"].opt_prefix}" if php_version.start_with?("5.6", "7.1", "7.2"),
+      "--with-icu-dir=#{Formula["icu4c"].opt_prefix}" if !php_version.start_with?("5.6", "7.1", "7.2"),
       "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}",
       ("--with-kerberos=/usr" if OS.mac?),
       "--with-mhash",
