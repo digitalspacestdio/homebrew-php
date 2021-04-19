@@ -13,7 +13,7 @@ class Php70Http < AbstractPhp70Extension
   depends_on "php70-raphf"
   depends_on "php70-propro"
   depends_on "libevent" => :optional
-  depends_on "icu4c" => :optional
+  depends_on "icu4c@67.1" => :optional
 
   def config_filename
     "zzz_ext-" + extension + ".ini"
