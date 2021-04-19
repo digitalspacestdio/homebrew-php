@@ -163,12 +163,22 @@ class AbstractPhp < Formula
       ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
       ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
     else
-      if OS.linux?
-        ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
-        ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+      if php_version.start_with?("7.1")
+          if OS.linux?
+            ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+            ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+          else
+            ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10 -DTRUE=1 -DFALSE=0"
+            ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10 -DTRUE=1 -DFALSE=0"
+          end
       else
-        ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
-        ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
+          if OS.linux?
+            ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+            ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+          else
+            ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
+            ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
+          end
       end
     end
 
