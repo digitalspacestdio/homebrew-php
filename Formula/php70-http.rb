@@ -7,7 +7,7 @@ class Php70Http < AbstractPhp70Extension
   url "https://github.com/m6w6/ext-http/archive/RELEASE_3_1_0.tar.gz"
   sha256 "6b931205c1af59bba227715dd846b1495b441b76dabd661054791ef21b719214"
   head "https://github.com/m6w6/ext-http.git"
-  revision 2
+  revision 4
 
 
   depends_on "php70-raphf"
@@ -40,7 +40,7 @@ class Php70Http < AbstractPhp70Extension
     args << "--with-http-libcurl-dir"
     args << "--with-http-zlib-dir"
     args << "--with-http-libevent-dir=#{Formula["libevent"].opt_prefix}" if build.with? "libevent"
-    args << "--with-http-libicu-dir=#{Formula["icu4c"].opt_prefix}" if build.with? "icu4c"
+    args << "--with-http-libicu-dir=#{Formula["icu4c@67.1"].opt_prefix}" if build.with? "icu4c"
 
     system "./configure", *args
     system "make"

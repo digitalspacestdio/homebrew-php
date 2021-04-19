@@ -4,7 +4,7 @@ class Php70Intl < AbstractPhp70Extension
   init
   desc "Wrapper for the ICU library"
   homepage "https://php.net/manual/en/book.intl.php"
-  revision 26
+  revision 28
 
 
   url PHP_SRC_TARBALL
@@ -26,7 +26,7 @@ class Php70Intl < AbstractPhp70Extension
                           phpconfig,
                           "--disable-dependency-tracking",
                           "--enable-intl",
-                          "--with-icu-dir=#{Formula["icu4c"].opt_prefix}"
+                          "--with-icu-dir=#{Formula["icu4c@67.1"].opt_prefix}"
     system "make"
     prefix.install "modules/intl.so"
     write_config_file if build.with? "config-file"
