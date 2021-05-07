@@ -7,13 +7,13 @@ class Php72Http < AbstractPhp72Extension
   url "https://github.com/m6w6/ext-http/archive/RELEASE_3_1_0.tar.gz"
   sha256 "6b931205c1af59bba227715dd846b1495b441b76dabd661054791ef21b719214"
   head "https://github.com/m6w6/ext-http.git"
-  revision 2
+  revision 3
 
 
   depends_on "php72-raphf"
   depends_on "php72-propro"
   depends_on "libevent" => :optional
-  depends_on "icu4c" => :optional
+  depends_on "icu4c@67.1" => :optional
 
   def config_filename
     "zzz_ext-" + extension + ".ini"

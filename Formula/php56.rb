@@ -8,6 +8,8 @@ class Php56 < AbstractPhp
       # So PHP extensions don't report missing symbols
       skip_clean "bin", "sbin"
 
+      depends_on "gcc@9" => :build
+
       head do
         depends_on "autoconf" => :build
         depends_on "re2c" => :build

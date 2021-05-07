@@ -9,6 +9,7 @@ class Php74Sodium < AbstractPhp74Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  depends_on "pkg-config" => :build
   depends_on "libsodium"
 
   def install
@@ -16,7 +17,7 @@ class Php74Sodium < AbstractPhp74Extension
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
-                          "--with-sodium=#{Formula['libsodium'].opt_prefix}",
+                          "--with-libsodium=#{Formula['libsodium'].opt_prefix}",
                           phpconfig,
                           "--disable-dependency-tracking"
     system "make"

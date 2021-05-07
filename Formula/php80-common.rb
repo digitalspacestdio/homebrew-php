@@ -16,7 +16,6 @@ class Php80Common < Formula
   depends_on "php80-igbinary"
   depends_on "php80-imagick"
   depends_on "php80-intl"
-  depends_on "php80-mcrypt"
   depends_on "php80-mongodb"
   depends_on "php80-opcache"
   depends_on "php80-pdo-pgsql"

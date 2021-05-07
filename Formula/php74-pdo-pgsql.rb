@@ -19,8 +19,13 @@ class Php74PdoPgsql < AbstractPhp74Extension
   def install
     Dir.chdir "ext/pdo_pgsql"
 
+    if OS.linux?
+    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+    else
     ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
     ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
+    end
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}", "--with-pdo-pgsql=#{Formula["libpq"].prefix}", phpconfig

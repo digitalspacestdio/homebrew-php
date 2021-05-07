@@ -15,8 +15,13 @@ class Php74Intl < AbstractPhp74Extension
 
   def install
     # Required due to icu4c dependency
+    if OS.linux?
+    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+    else
     ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
     ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
+    end
 
     # icu4c 61.1 compatability
     ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"

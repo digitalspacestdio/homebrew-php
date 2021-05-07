@@ -9,11 +9,14 @@ class Php72Sodium < AbstractPhp72Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  depends_on "libsodium"
+
   def install
     Dir.chdir "ext/sodium"
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
+                          "--with-sodium=#{Formula['libsodium'].opt_prefix}",
                           phpconfig,
                           "--disable-dependency-tracking"
     system "make"

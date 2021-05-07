@@ -13,7 +13,11 @@ class AbstractPhp < Formula
     if name.split("::")[2].downcase.start_with?("php56")
       depends_on "gcc@9" => :build
     else
-      depends_on "gcc@10" => :build
+      if OS.linux?
+        depends_on "gcc@9" => :build
+      else
+        depends_on "gcc@10" => :build
+      end
     end
 
     head do
@@ -44,7 +48,8 @@ class AbstractPhp < Formula
     depends_on "freetype"
     depends_on "gettext"
     depends_on "gmp" => :optional
-    depends_on "icu4c"
+    depends_on "icu4c@67.1" if name.split("::")[2].downcase.start_with?("php56", "php71", "php72")
+    depends_on "icu4c"  if !name.split("::")[2].downcase.start_with?("php56", "php71", "php72")
     depends_on "imap-uw" if build.with?("imap")
     depends_on "jpeg"
     depends_on "webp" => :optional if name.split("::")[2].downcase.start_with?("php7")
@@ -158,8 +163,23 @@ class AbstractPhp < Formula
       ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
       ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
     else
-      ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
-      ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
+      if php_version.start_with?("7.1")
+          if OS.linux?
+            ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+            ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+          else
+            ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10 -DTRUE=1 -DFALSE=0"
+            ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10 -DTRUE=1 -DFALSE=0"
+          end
+      else
+          if OS.linux?
+            ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+            ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+          else
+            ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
+            ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
+          end
+      end
     end
 
     # Not removing all pear.conf and .pearrc files from PHP path results in
@@ -260,7 +280,8 @@ INFO
       "--with-gd",
       "--with-gettext=#{Formula["gettext"].opt_prefix}",
 #      ("--with-iconv-dir=/usr" if OS.mac?),
-      "--with-icu-dir=#{Formula["icu4c"].opt_prefix}",
+      ("--with-icu-dir=#{Formula["icu4c@67.1"].opt_prefix}" if php_version.start_with?("5.6", "7.1", "7.2")),
+      ("--with-icu-dir=#{Formula["icu4c"].opt_prefix}" if !php_version.start_with?("5.6", "7.1", "7.2")),
       "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}",
       ("--with-kerberos=/usr" if OS.mac?),
       "--with-mhash",
