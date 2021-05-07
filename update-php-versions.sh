@@ -21,3 +21,7 @@ export CONFIG='module Php'$(echo $PHP_VERSION | awk -F. '{ print $1 "" $2 }')'De
 
 perl -i -p0e 's/module Php'$(echo $PHP_VERSION | awk -F. '{ print $1 "" $2 }')'Defs.*?end/'\$ENV{"CONFIG"}'/s' ${DIR}/Abstract/abstract-php-version.rb
 done
+
+git add "Abstract/abstract-php-version.rb"
+git commit -m "php version update"
+git push
