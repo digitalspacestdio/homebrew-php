@@ -51,35 +51,35 @@ class AbstractPhpVersion < Formula
   end
 
   module Php73Defs
-      PHP_SRC_TARBALL = "https://php.net/get/php-7.3.26.tar.bz2/from/this/mirror".freeze
-      PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
-      PHP_VERSION     = "7.3.26".freeze
-      PHP_BRANCH      = "PHP-7.3".freeze
+    PHP_SRC_TARBALL = "https://php.net/get/php-7.3.28.tar.bz2/from/this/mirror".freeze
+    PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
+    PHP_VERSION     = "7.3.28".freeze
+    PHP_BRANCH      = "PHP-7.3".freeze
 
-      PHP_CHECKSUM    = {
-        :sha256 => "371e5a7c8154fd3c52b14baace5f7d04c4bbb8e841d356c54a2b6a688db39d4e",
-      }.freeze
-    end
+    PHP_CHECKSUM    = {
+      :sha256 => "8f636e644594388436ea05ff34c9eb135e6dc119c1130199e9488d5795439964",
+    }.freeze
+  end
 
     module Php74Defs
-      PHP_SRC_TARBALL = "https://php.net/get/php-7.4.14.tar.bz2/from/this/mirror".freeze
-      PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
-      PHP_VERSION     = "7.4.14".freeze
-      PHP_BRANCH      = "PHP-7.4".freeze
+    PHP_SRC_TARBALL = "https://php.net/get/php-7.4.19.tar.bz2/from/this/mirror".freeze
+    PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
+    PHP_VERSION     = "7.4.19".freeze
+    PHP_BRANCH      = "PHP-7.4".freeze
 
-      PHP_CHECKSUM    = {
-        :sha256 => "6889ca0605adee3aa7077508cd79fcef1dbd88461cdf25e7c1a86997b8d0a1f6",
-      }.freeze
-    end
+    PHP_CHECKSUM    = {
+      :sha256 => "25d09b8145b284d870431c1b40aba7944e4bf1836278538f8e29780e7f85ddea",
+    }.freeze
+  end
 
     module Php80Defs
-      PHP_SRC_TARBALL = "https://php.net/get/php-8.0.1.tar.bz2/from/this/mirror".freeze
-      PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
-      PHP_VERSION     = "8.0.1".freeze
-      PHP_BRANCH      = "PHP-8.0".freeze
+    PHP_SRC_TARBALL = "https://php.net/get/php-8.0.6.tar.bz2/from/this/mirror".freeze
+    PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
+    PHP_VERSION     = "8.0.6".freeze
+    PHP_BRANCH      = "PHP-8.0".freeze
 
-      PHP_CHECKSUM    = {
-        :sha256 => "c44e76af40d133de64564f9caf5daec52bbe84c1ccb4e4500a62233d614ebdee",
-      }.freeze
-    end
+    PHP_CHECKSUM    = {
+      :sha256 => "26a8a9dad66012039deb0bcf151c6e22ab1e4b6a91508383ff705da41289526e",
+    }.freeze
+  end
 end
