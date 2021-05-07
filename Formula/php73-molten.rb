@@ -12,9 +12,9 @@ class Php73Molten < AbstractPhp73Extension
 
   option "without-zipkin", "Disable zipkin headers"
 
-  depends_on "Php73-redis"
-  depends_on "Php73-memcached"
-  depends_on "Php73-mongodb"
+  depends_on "djocker/php/php73-redis"
+  depends_on "djocker/php/php73-memcached"
+  depends_on "djocker/php/php73-mongodb"
 
   def install
     args = []

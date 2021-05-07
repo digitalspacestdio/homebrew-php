@@ -11,7 +11,7 @@ class Php80Redis < AbstractPhp80Extension
   version "5.3.2"
   head "https://github.com/phpredis/phpredis.git"
 
-  depends_on "Php80-igbinary"
+  depends_on "djocker/php/php80-igbinary"
   depends_on "igbinary" => :build
 
   def install

@@ -10,8 +10,8 @@ class Php80Http < AbstractPhp80Extension
   revision 2
 
 
-  depends_on "Php80-raphf"
-  depends_on "Php80-propro"
+  depends_on "djocker/php/php80-raphf"
+  depends_on "djocker/php/php80-propro"
   depends_on "libevent" => :optional
   depends_on "icu4c" => :optional
 

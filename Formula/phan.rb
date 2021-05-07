@@ -10,8 +10,8 @@ class Phan < Formula
   head "https://github.com/phan/phan.git"
 
 
-  depends_on "php72-ast"
-  depends_on "php72"
+  depends_on "djocker/php/php72-ast"
+  depends_on "djocker/php/php72"
 
   conflicts_with "phan@0.10", :because => "it provivides a phan binary"
   conflicts_with "phan@0.8", :because => "it provivides a phan binary"

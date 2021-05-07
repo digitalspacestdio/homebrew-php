@@ -12,7 +12,7 @@ class Php56Dmtx < AbstractPhp56Extension
 
 
   depends_on "libdmtx"
-  depends_on "php56-imagick"
+  depends_on "djocker/php/php56-imagick"
   depends_on "pkg-config" => :build
 
   def install

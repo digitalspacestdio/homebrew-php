@@ -10,8 +10,8 @@ class Php71Http < AbstractPhp71Extension
   revision 3
 
 
-  depends_on "php71-raphf"
-  depends_on "php71-propro"
+  depends_on "djocker/php/php71-raphf"
+  depends_on "djocker/php/php71-propro"
   depends_on "libevent" => :optional
   depends_on "icu4c@67.1" => :optional
 

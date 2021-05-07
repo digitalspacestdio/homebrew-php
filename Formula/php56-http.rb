@@ -10,8 +10,8 @@ class Php56Http < AbstractPhp56Extension
   revision 2
 
 
-  depends_on "php56-raphf"
-  depends_on "php56-propro"
+  depends_on "djocker/php/php56-raphf"
+  depends_on "djocker/php/php56-propro"
   depends_on "libevent" => :optional
   depends_on "icu4c" => :optional
 

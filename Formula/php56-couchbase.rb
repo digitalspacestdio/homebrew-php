@@ -9,7 +9,7 @@ class Php56Couchbase < AbstractPhp56Extension
   head "https://github.com/couchbase/php-couchbase.git"
 
 
-  depends_on "php56-igbinary"
+  depends_on "djocker/php/php56-igbinary"
   depends_on "igbinary" => :build
 
   depends_on "libcouchbase"

@@ -12,9 +12,9 @@ class Php70Molten < AbstractPhp70Extension
 
   option "without-zipkin", "Disable zipkin headers"
 
-  depends_on "php70-redis"
-  depends_on "php70-memcached"
-  depends_on "php70-mongodb"
+  depends_on "djocker/php/php70-redis"
+  depends_on "djocker/php/php70-memcached"
+  depends_on "djocker/php/php70-mongodb"
 
   def install
     args = []

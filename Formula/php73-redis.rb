@@ -9,7 +9,7 @@ class Php73Redis < AbstractPhp73Extension
   head "https://github.com/phpredis/phpredis.git"
   revision 2
 
-  depends_on "Php73-igbinary"
+  depends_on "djocker/php/php73-igbinary"
   depends_on "igbinary" => :build
 
   def install

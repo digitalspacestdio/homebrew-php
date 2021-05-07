@@ -12,9 +12,9 @@ class Php72Molten < AbstractPhp72Extension
 
   option "without-zipkin", "Disable zipkin headers"
 
-  depends_on "php72-redis"
-  depends_on "php72-memcached"
-  depends_on "php72-mongodb"
+  depends_on "djocker/php/php72-redis"
+  depends_on "djocker/php/php72-memcached"
+  depends_on "djocker/php/php72-mongodb"
 
   def install
     args = []

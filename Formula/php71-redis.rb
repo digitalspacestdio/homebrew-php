@@ -9,7 +9,7 @@ class Php71Redis < AbstractPhp71Extension
   head "https://github.com/phpredis/phpredis.git"
   revision 2
 
-  depends_on "php71-igbinary"
+  depends_on "djocker/php/php71-igbinary"
   depends_on "igbinary" => :build
 
   def install

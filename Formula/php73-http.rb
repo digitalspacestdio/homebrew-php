@@ -10,8 +10,8 @@ class Php73Http < AbstractPhp73Extension
   revision 2
 
 
-  depends_on "Php73-raphf"
-  depends_on "Php73-propro"
+  depends_on "djocker/php/php73-raphf"
+  depends_on "djocker/php/php73-propro"
   depends_on "libevent" => :optional
   depends_on "icu4c" => :optional
 

@@ -10,8 +10,8 @@ class Php70Http < AbstractPhp70Extension
   revision 4
 
 
-  depends_on "php70-raphf"
-  depends_on "php70-propro"
+  depends_on "djocker/php/php70-raphf"
+  depends_on "djocker/php/php70-propro"
   depends_on "libevent" => :optional
   depends_on "icu4c@67.1" => :optional
 

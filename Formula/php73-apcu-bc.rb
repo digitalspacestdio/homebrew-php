@@ -10,7 +10,7 @@ class Php73ApcuBc < AbstractPhp73Extension
   revision 1
 
 
-  depends_on "Php73-apcu"
+  depends_on "djocker/php/php73-apcu"
 
   def install
     Dir.chdir "apcu_bc-#{version}" unless build.head?

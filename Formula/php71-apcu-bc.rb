@@ -9,7 +9,7 @@ class Php71ApcuBc < AbstractPhp71Extension
   head "https://github.com/krakjoe/apcu-bc.git"
 
 
-  depends_on "php71-apcu"
+  depends_on "djocker/php/php71-apcu"
 
   def install
     Dir.chdir "apcu_bc-#{version}" unless build.head?

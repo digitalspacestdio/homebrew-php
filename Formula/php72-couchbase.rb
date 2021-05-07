@@ -9,7 +9,7 @@ class Php72Couchbase < AbstractPhp72Extension
   head "https://github.com/couchbase/php-couchbase.git"
 
 
-  depends_on "php72-igbinary"
+  depends_on "djocker/php/php72-igbinary"
   depends_on "igbinary" => :build
 
   depends_on "libcouchbase"

@@ -11,7 +11,7 @@ class Php74Redis < AbstractPhp74Extension
   version "141a81e"
   head "https://github.com/phpredis/phpredis.git"
 
-  depends_on "Php74-igbinary"
+  depends_on "djocker/php/php74-igbinary"
   depends_on "igbinary" => :build
 
   def install
