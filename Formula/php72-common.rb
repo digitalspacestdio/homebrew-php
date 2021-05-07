@@ -5,7 +5,7 @@ class Php72Common < Formula
   desc "PHP Version 7.2 (Common Package)"
   include AbstractPhpVersion::Php72Defs
   version PHP_VERSION
-  revision 4
+  revision 5
 
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -23,6 +23,7 @@ class Php72Common < Formula
   depends_on "php72-sodium"
   depends_on "php72-redis"
   depends_on "php72-tidy"
+  depends_on "php72-ldap"
 
   keg_only "this package contains dependency only"
 

@@ -23,6 +23,7 @@ class Php70Common < Formula
   depends_on "php70-sodium"
   depends_on "php70-redis"
   depends_on "php70-tidy"
+  depends_on "php70-ldap"
 
   keg_only "this package contains dependency only"
 
