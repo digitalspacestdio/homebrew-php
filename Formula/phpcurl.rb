@@ -44,6 +44,7 @@ class Phpcurl < Formula
 
   depends_on "openssl@1.1"
   depends_on "pkg-config" => :build
+  depends_on "gcc@9" => :build
   depends_on "c-ares" => :optional
   depends_on "libmetalink" => :optional
   depends_on "libssh2" => :optional
@@ -58,6 +59,9 @@ class Phpcurl < Formula
   ENV['LDFLAGS'] = '-L$(brew --prefix openssl@1.1)/lib'
 
   def install
+    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+
     system "./buildconf" if build.head?
 
     # Allow to build on Lion, lowering from the upstream setting of 10.8
