@@ -137,13 +137,13 @@ class Php56 < AbstractPhp
 
   if OS.mac?
     patch do
-      url "https://raw.githubusercontent.com/djocker/homebrew-php/master/Patches/php56/macos.patch"
+      url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php56/macos.patch"
       sha256 "f77d653a6f7437266c41de207a02b313d4ee38ad6071a2d5cf6eb6cb678ee99f"
     end
   end
 
   patch do
-    url "https://raw.githubusercontent.com/djocker/homebrew-php/master/Patches/php56/LibSSL-1.1-compatibility.patch"
+    url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php56/LibSSL-1.1-compatibility.patch"
     sha256 "c9715b544ae249c0e76136dfadd9d282237233459694b9e75d0e3e094ab0c993"
   end
 

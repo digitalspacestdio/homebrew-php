@@ -40,7 +40,7 @@ class Php74 < AbstractPhp
 
   if OS.mac?
       patch do
-        url "https://raw.githubusercontent.com/djocker/homebrew-php/master/Patches/php74/macos.patch"
+        url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php74/macos.patch"
         sha256 "53de4079666daabac28358b8a025e3c60103e5b1230c66860c8e0b7414c0fec1"
       end
   end

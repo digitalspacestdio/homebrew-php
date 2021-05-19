@@ -1,13 +1,13 @@
-FROM djocker/linuxbrew as builder
+FROM digitalspacestdio/linuxbrew as builder
 LABEL maintainer="Sergey Cherepanov <s@cherepanov.co>"
-LABEL name="djocker/php"
+LABEL name="digitalspacestdio/php"
 ARG DEBIAN_FRONTEND=noninteractive
-ARG BREW_FORMULA=djocker/php/php72
+ARG BREW_FORMULA=digitalspacestdio/php/php72
 ARG HOMEBREW_NO_INSTALL_CLEANUP=1
 ARG HOMEBREW_NO_AUTO_UPDATE=1
 ARG HOMEBREW_NO_ANALYTICS=1
 
-RUN brew tap djocker/php
+RUN brew tap digitalspacestdio/php
 
 RUN brew install --only-dependencies ${BREW_FORMULA}
 RUN brew install ${BREW_FORMULA}
@@ -24,7 +24,7 @@ RUN brew list | grep 'perl\|berkeley-db\|python@2\|autoconf' | xargs --no-run-if
     brew cleanup; \
     rm -rf /home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/vendor/portable-ruby
 
-FROM djocker/debian
+FROM digitalspacestdio/debian
 RUN useradd -m -s /bin/bash linuxbrew
 USER linuxbrew
 WORKDIR /home/linuxbrew
