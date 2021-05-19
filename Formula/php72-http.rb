@@ -10,8 +10,8 @@ class Php72Http < AbstractPhp72Extension
   revision 3
 
 
-  depends_on "djocker/php/php72-raphf"
-  depends_on "djocker/php/php72-propro"
+  depends_on "digitalspacestdio/php/php72-raphf"
+  depends_on "digitalspacestdio/php/php72-propro"
   depends_on "libevent" => :optional
   depends_on "icu4c@67.1" => :optional
 

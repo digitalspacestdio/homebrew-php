@@ -9,7 +9,7 @@ class Php80Couchbase < AbstractPhp80Extension
   head "https://github.com/couchbase/php-couchbase.git"
 
 
-  depends_on "djocker/php/php80-igbinary"
+  depends_on "digitalspacestdio/php/php80-igbinary"
   depends_on "igbinary" => :build
 
   depends_on "libcouchbase"

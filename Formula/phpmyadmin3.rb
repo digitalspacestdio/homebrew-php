@@ -7,10 +7,10 @@ class Phpmyadmin3 < Formula
 
 
   if build.with? "mcrypt"
-    depends_on "djocker/php/php56-mcrypt" if Formula["php56"].linked_keg.exist?
-    depends_on "djocker/php/php70-mcrypt" if Formula["php70"].linked_keg.exist?
-    depends_on "djocker/php/php71-mcrypt" if Formula["php70"].linked_keg.exist?
-    depends_on "djocker/php/php72-mcrypt" if Formula["php70"].linked_keg.exist?
+    depends_on "digitalspacestdio/php/php56-mcrypt" if Formula["php56"].linked_keg.exist?
+    depends_on "digitalspacestdio/php/php70-mcrypt" if Formula["php70"].linked_keg.exist?
+    depends_on "digitalspacestdio/php/php71-mcrypt" if Formula["php70"].linked_keg.exist?
+    depends_on "digitalspacestdio/php/php72-mcrypt" if Formula["php70"].linked_keg.exist?
   end
 
   def install

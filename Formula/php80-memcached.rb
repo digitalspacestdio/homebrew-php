@@ -14,7 +14,7 @@ class Php80Memcached < AbstractPhp80Extension
   option "with-sasl", "Build with sasl support"
 
   depends_on "pkg-config" => :build
-  depends_on "djocker/php/php80-igbinary"
+  depends_on "digitalspacestdio/php/php80-igbinary"
   depends_on "igbinary" => :build
   depends_on "libmemcached"
 

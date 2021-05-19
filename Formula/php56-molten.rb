@@ -12,9 +12,9 @@ class Php56Molten < AbstractPhp56Extension
 
   option "without-zipkin", "Disable zipkin headers"
 
-  depends_on "djocker/php/php56-redis"
-  depends_on "djocker/php/php56-memcached"
-  depends_on "djocker/php/php56-mongodb"
+  depends_on "digitalspacestdio/php/php56-redis"
+  depends_on "digitalspacestdio/php/php56-memcached"
+  depends_on "digitalspacestdio/php/php56-mongodb"
 
   def install
     args = []

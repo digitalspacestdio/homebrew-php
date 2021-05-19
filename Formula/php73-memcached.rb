@@ -13,7 +13,7 @@ class Php73Memcached < AbstractPhp73Extension
   option "with-sasl", "Build with sasl support"
 
   depends_on "pkg-config" => :build
-  depends_on "djocker/php/php73-igbinary"
+  depends_on "digitalspacestdio/php/php73-igbinary"
   depends_on "igbinary" => :build
   depends_on "libmemcached"
 

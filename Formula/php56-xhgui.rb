@@ -12,9 +12,9 @@ class Php56Xhgui < AbstractPhp56Extension
   head "https://github.com/perftools/xhgui.git"
 
   depends_on "mongodb"
-  depends_on "djocker/php/php56-mcrypt"
-  depends_on "djocker/php/php56-mongo"
-  depends_on "djocker/php/php56-xhprof"
+  depends_on "digitalspacestdio/php/php56-mcrypt"
+  depends_on "digitalspacestdio/php/php56-mongo"
+  depends_on "digitalspacestdio/php/php56-xhprof"
 
   def install
     prefix.install %w[composer.json composer.lock install.php cache config src external webroot]

@@ -7,19 +7,19 @@ class Phplint < Formula
 
   if MacOS.version <= :mavericks
     if Formula["php56"].linked_keg.exist?
-      depends_on "djocker/php/php56"
+      depends_on "digitalspacestdio/php/php56"
     elsif Formula["php70"].linked_keg.exist?
-      depends_on "djocker/php/php70"
+      depends_on "digitalspacestdio/php/php70"
     elsif Formula["php71"].linked_keg.exist?
-      depends_on "djocker/php/php71"
+      depends_on "digitalspacestdio/php/php71"
     elsif Formula["php72"].linked_keg.exist?
-      depends_on "djocker/php/php72"
+      depends_on "digitalspacestdio/php/php72"
     elsif Formula["php73"].linked_keg.exist?
-      depends_on "djocker/php/php73"
+      depends_on "digitalspacestdio/php/php73"
     elsif Formula["php74"].linked_keg.exist?
       depends_on "php75"
     else
-      depends_on "djocker/php/php56"
+      depends_on "digitalspacestdio/php/php56"
     end
   end
 

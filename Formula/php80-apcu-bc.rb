@@ -10,7 +10,7 @@ class Php80ApcuBc < AbstractPhp80Extension
   revision 1
 
 
-  depends_on "djocker/php/php80-apcu"
+  depends_on "digitalspacestdio/php/php80-apcu"
 
   def install
     Dir.chdir "apcu_bc-#{version}" unless build.head?

@@ -10,7 +10,7 @@ class Php74ApcuBc < AbstractPhp74Extension
   revision 1
 
 
-  depends_on "djocker/php/php74-apcu"
+  depends_on "digitalspacestdio/php/php74-apcu"
 
   def install
     Dir.chdir "apcu_bc-#{version}" unless build.head?

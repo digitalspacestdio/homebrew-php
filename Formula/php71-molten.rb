@@ -12,9 +12,9 @@ class Php71Molten < AbstractPhp71Extension
 
   option "without-zipkin", "Disable zipkin headers"
 
-  depends_on "djocker/php/php71-redis"
-  depends_on "djocker/php/php71-memcached"
-  depends_on "djocker/php/php71-mongodb"
+  depends_on "digitalspacestdio/php/php71-redis"
+  depends_on "digitalspacestdio/php/php71-memcached"
+  depends_on "digitalspacestdio/php/php71-mongodb"
 
   def install
     args = []

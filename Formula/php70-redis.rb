@@ -9,7 +9,7 @@ class Php70Redis < AbstractPhp70Extension
   head "https://github.com/phpredis/phpredis.git"
 
 
-  depends_on "djocker/php/php70-igbinary"
+  depends_on "digitalspacestdio/php/php70-igbinary"
   depends_on "igbinary" => :build
 
   def install

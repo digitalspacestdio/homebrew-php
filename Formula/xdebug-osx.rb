@@ -9,10 +9,10 @@ class XdebugOsx < Formula
 
 
   depends_on PhpMetaRequirement
-  depends_on "djocker/php/php56-xdebug" if Formula["php56"].linked_keg.exist?
-  depends_on "djocker/php/php70-xdebug" if Formula["php70"].linked_keg.exist?
-  depends_on "djocker/php/php71-xdebug" if Formula["php71"].linked_keg.exist?
-  depends_on "djocker/php/php72-xdebug" if Formula["php71"].linked_keg.exist?
+  depends_on "digitalspacestdio/php/php56-xdebug" if Formula["php56"].linked_keg.exist?
+  depends_on "digitalspacestdio/php/php70-xdebug" if Formula["php70"].linked_keg.exist?
+  depends_on "digitalspacestdio/php/php71-xdebug" if Formula["php71"].linked_keg.exist?
+  depends_on "digitalspacestdio/php/php72-xdebug" if Formula["php71"].linked_keg.exist?
 
   def install
     bin.install "xdebug-toggle"

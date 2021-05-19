@@ -12,9 +12,9 @@ class Php80Molten < AbstractPhp80Extension
 
   option "without-zipkin", "Disable zipkin headers"
 
-  depends_on "djocker/php/php80-redis"
-  depends_on "djocker/php/php80-memcached"
-  depends_on "djocker/php/php80-mongodb"
+  depends_on "digitalspacestdio/php/php80-redis"
+  depends_on "digitalspacestdio/php/php80-memcached"
+  depends_on "digitalspacestdio/php/php80-mongodb"
 
   def install
     args = []

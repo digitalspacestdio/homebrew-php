@@ -10,8 +10,8 @@ class Php74Http < AbstractPhp74Extension
   revision 2
 
 
-  depends_on "djocker/php/php74-raphf"
-  depends_on "djocker/php/php74-propro"
+  depends_on "digitalspacestdio/php/php74-raphf"
+  depends_on "digitalspacestdio/php/php74-propro"
   depends_on "libevent" => :optional
   depends_on "icu4c" => :optional
 
