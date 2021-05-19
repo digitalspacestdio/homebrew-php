@@ -4,8 +4,9 @@ A centralized repository for PHP-related brews.
 
 ## Requirements
 
-* [Homebrew](https://github.com/Homebrew/brew) or [Linuxbrew](https://github.com/Linuxbrew/brew)
-* macOS: El Capitan, Sierra, High Sierra, Mojave or Catalina. Linux: Debian Based
+* [Homebrew](https://github.com/Homebrew/brew) or [Linuxbrew](https://github.com/Linuxbrew/brew). 
+* macOS: El Capitan, Sierra, High Sierra, Mojave, Catalina or BigSur.  
+* Linux: Debian Based
 
 ## Installation
 
