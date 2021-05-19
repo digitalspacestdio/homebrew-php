@@ -8,12 +8,14 @@ class Php70Sodium < AbstractPhp70Extension
   sha256 "2eebf3772d7441449b47abfe8f52043b9c6d6b5aff66aebd339c5d459d7fca28"
   head "https://github.com/jedisct1/libsodium-php.git"
 
-
   depends_on "libsodium"
 
   def install
     safe_phpize
-    system "./configure", "--prefix=#{prefix}", phpconfig
+    system "./configure", "--prefix=#{prefix}",
+                              "--with-sodium=#{Formula['libsodium'].opt_prefix}",
+                              phpconfig,
+                              "--disable-dependency-tracking"
     system "make"
     prefix.install "modules/sodium.so"
     write_config_file if build.with? "config-file"
