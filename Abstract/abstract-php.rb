@@ -41,6 +41,7 @@ class AbstractPhp < Formula
       conflicts_with php_formula_name, :because => "different php versions install the same binaries."
     end
 
+    depends_on "sqlite"
     depends_on "phpcurl"
     depends_on "libxslt"
     depends_on "enchant" => :optional
@@ -357,6 +358,7 @@ INFO
       args << "--enable-cgi"
     end
 
+    args << "--with-sqlite=#{Formula["sqlite"].opt_prefix}"
     args << "--with-curl=#{Formula["phpcurl"].opt_prefix}"
     args << "--with-xsl=" + Formula["libxslt"].opt_prefix.to_s
 
