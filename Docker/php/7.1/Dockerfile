@@ -10,17 +10,27 @@ ARG HOMEBREW_FORCE_BREWED_CURL=1
 ARG HOMEBREW_FORCE_BREWED_GIT=1
 
 ## Install gcc
-RUN brew install digitalspacestdio/common/gcc@5 digitalspacestdio/common/gcc@9
+USER root
+RUN apt update && apt install -yqq build-essential systemtap-sdt-dev make uuid-runtime
+USER linuxbrew
 
 # Install php
-RUN brew install --only-dependencies ${BREW_FORMULA}-common
+RUN brew tap digitalspacestdio/common && brew tap digitalspacestdio/php
 RUN brew install ${BREW_FORMULA}-common
 RUN brew install ${BREW_FORMULA}-xhprof ${BREW_FORMULA}-xdebug
 RUN brew install composer
 RUN brew install composer@1.10
 
 # Cleanup
-RUN brew list | grep 'perl\|python@2\|autoconf\|binutils\|gcc' | xargs --no-run-if-empty brew remove \
+RUN brew list | grep 'perl\|python@2\|autoconf\|binutils\|gcc' | xargs --no-run-if-empty brew uninstall --ignore-dependencies \
     && brew cleanup \
     && rm -rf /home/linuxbrew/.cache/Homebrew \
     && rm -rf /home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/vendor/portable-ruby
+
+USER root
+RUN apt remove -yqq build-essential systemtap-sdt-dev make uuid-runtime && apt autoremove -y \
+    && apt-get clean \
+    && rm -rf /var/cache/apt \
+    && rm -rf /var/lib/apt/lists/*
+
+USER linuxbrew
