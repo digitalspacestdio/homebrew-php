@@ -11,7 +11,7 @@ ARG HOMEBREW_FORCE_BREWED_GIT=1
 
 ## Install gcc
 USER root
-RUN apt update && apt install -yqq build-essential systemtap-sdt-dev make uuid-runtime
+RUN apt update && apt install -yqq build-essential systemtap-sdt-dev make uuid-runtime pkg-config
 USER linuxbrew
 
 # Install php
@@ -29,7 +29,7 @@ RUN brew list | grep 'perl\|python@2\|autoconf\|binutils\|gcc' | xargs --no-run-
     && rm -rf /home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/vendor/portable-ruby
 
 USER root
-RUN apt remove -yqq build-essential systemtap-sdt-dev make uuid-runtime && apt autoremove -y \
+RUN apt remove -yqq build-essential systemtap-sdt-dev make uuid-runtime pkg-config && apt autoremove -y \
     && apt-get clean \
     && rm -rf /var/cache/apt \
     && rm -rf /var/lib/apt/lists/*
