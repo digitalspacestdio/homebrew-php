@@ -5,7 +5,7 @@ class Php74Common < Formula
   desc "PHP Version 7.4 (Common Package)"
   include AbstractPhpVersion::Php74Defs
   version PHP_VERSION
-  revision 6
+  revision 7
 
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
