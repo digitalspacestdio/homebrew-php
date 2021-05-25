@@ -25,6 +25,7 @@ class Php74Common < Formula
   depends_on "digitalspacestdio/php/php74-tidy"
   depends_on "digitalspacestdio/php/php74-zip"
   depends_on "digitalspacestdio/php/php74-ldap"
+  depends_on "digitalspacestdio/php/php74-ioncubeloader"
 
   keg_only "this package contains dependency only"
 

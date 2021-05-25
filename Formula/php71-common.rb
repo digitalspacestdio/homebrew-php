@@ -24,6 +24,7 @@ class Php71Common < Formula
   depends_on "digitalspacestdio/php/php71-redis"
   depends_on "digitalspacestdio/php/php71-tidy"
   depends_on "digitalspacestdio/php/php71-ldap"
+  depends_on "digitalspacestdio/php/php71-ioncubeloader"
 
   keg_only "this package contains dependency only"
 
