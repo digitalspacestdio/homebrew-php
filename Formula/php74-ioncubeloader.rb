@@ -21,8 +21,8 @@ class Php74Ioncubeloader < AbstractPhp74Extension
 
   def install
     if OS.mac?
-      prefix.install "ioncube_loader_dar_7.4.so" => "ioncubeloader.so" if build.without? "thread-safe"
-      prefix.install "ioncube_loader_dar_7.4_ts.so" => "ioncubeloader_ts.so" if build.with? "thread-safe"
+      prefix.install "ioncube_loader_mac_7.4.so" => "ioncubeloader.so" if build.without? "thread-safe"
+      prefix.install "ioncube_loader_mac_7.4_ts.so" => "ioncubeloader_ts.so" if build.with? "thread-safe"
     elsif OS.linux?
       prefix.install "ioncube_loader_lin_7.4.so" => "ioncubeloader.so" if build.without? "thread-safe"
       prefix.install "ioncube_loader_lin_7.4_ts.so" => "ioncubeloader_ts.so" if build.with? "thread-safe"

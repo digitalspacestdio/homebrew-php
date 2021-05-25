@@ -21,8 +21,8 @@ class Php56Ioncubeloader < AbstractPhp56Extension
 
   def install
     if OS.mac?
-      prefix.install "ioncube_loader_dar_5.6.so" => "ioncubeloader.so" if build.without? "thread-safe"
-      prefix.install "ioncube_loader_dar_5.6_ts.so" => "ioncubeloader_ts.so" if build.with? "thread-safe"
+      prefix.install "ioncube_loader_mac_5.6.so" => "ioncubeloader.so" if build.without? "thread-safe"
+      prefix.install "ioncube_loader_mac_5.6_ts.so" => "ioncubeloader_ts.so" if build.with? "thread-safe"
     elsif OS.linux?
       prefix.install "ioncube_loader_lin_5.6.so" => "ioncubeloader.so" if build.without? "thread-safe"
       prefix.install "ioncube_loader_lin_5.6_ts.so" => "ioncubeloader_ts.so" if build.with? "thread-safe"

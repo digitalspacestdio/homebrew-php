@@ -21,8 +21,8 @@ class Php72Ioncubeloader < AbstractPhp72Extension
 
   def install
     if OS.mac?
-      prefix.install "ioncube_loader_dar_7.2.so" => "ioncubeloader.so" if build.without? "thread-safe"
-      prefix.install "ioncube_loader_dar_7.2_ts.so" => "ioncubeloader_ts.so" if build.with? "thread-safe"
+      prefix.install "ioncube_loader_mac_7.2.so" => "ioncubeloader.so" if build.without? "thread-safe"
+      prefix.install "ioncube_loader_mac_7.2_ts.so" => "ioncubeloader_ts.so" if build.with? "thread-safe"
     elsif OS.linux?
       prefix.install "ioncube_loader_lin_7.2.so" => "ioncubeloader.so" if build.without? "thread-safe"
       prefix.install "ioncube_loader_lin_7.2_ts.so" => "ioncubeloader_ts.so" if build.with? "thread-safe"
