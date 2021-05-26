@@ -5,7 +5,7 @@ class Php56Common < Formula
   desc "PHP Version 5.6 (Common Package)"
   include AbstractPhpVersion::Php56Defs
   version PHP_VERSION
-  revision 5
+  revision 6
 
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -14,7 +14,6 @@ class Php56Common < Formula
   depends_on "digitalspacestdio/php/php56-apcu"
   depends_on "digitalspacestdio/php/php56-gmp"
   depends_on "digitalspacestdio/php/php56-igbinary"
-  depends_on "digitalspacestdio/php/php56-imagick"
   depends_on "digitalspacestdio/php/php56-intl"
   depends_on "digitalspacestdio/php/php56-mcrypt"
   depends_on "digitalspacestdio/php/php56-mongodb"

@@ -5,7 +5,7 @@ class Php70Common < Formula
   desc "PHP Version 7.1 (Common Package)"
   include AbstractPhpVersion::Php71Defs
   version PHP_VERSION
-  revision 5
+  revision 6
 
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -14,7 +14,6 @@ class Php70Common < Formula
   depends_on "digitalspacestdio/php/php70-apcu"
   depends_on "digitalspacestdio/php/php70-gmp"
   depends_on "digitalspacestdio/php/php70-igbinary"
-  depends_on "digitalspacestdio/php/php70-imagick"
   depends_on "digitalspacestdio/php/php70-intl"
   depends_on "digitalspacestdio/php/php70-mcrypt"
   depends_on "digitalspacestdio/php/php70-mongodb"
