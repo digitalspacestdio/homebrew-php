@@ -22,6 +22,8 @@ RUN brew install ${BREW_FORMULA}-xhprof ${BREW_FORMULA}-xdebug
 RUN brew install composer
 RUN brew install composer@1.10
 RUN brew install msmtp
+RUN brew install node
+RUN npm install --global yarn
 
 # Cleanup
 RUN brew list | grep 'perl\|python@2\|autoconf\|binutils\|gcc' | xargs --no-run-if-empty brew uninstall --ignore-dependencies \
