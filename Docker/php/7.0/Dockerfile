@@ -15,7 +15,8 @@ RUN apt update && apt install -yqq build-essential systemtap-sdt-dev make uuid-r
 USER linuxbrew
 
 # Install php
-RUN brew tap digitalspacestdio/common && brew tap digitalspacestdio/php
+RUN brew tap digitalspacestdio/common
+RUN brew tap digitalspacestdio/php
 RUN brew install ${BREW_FORMULA}-common
 RUN brew install ${BREW_FORMULA}-xhprof ${BREW_FORMULA}-xdebug
 RUN brew install composer
