@@ -62,24 +62,24 @@ class AbstractPhpVersion < Formula
   end
 
     module Php74Defs
-    PHP_SRC_TARBALL = "https://php.net/get/php-7.4.21.tar.bz2/from/this/mirror".freeze
+    PHP_SRC_TARBALL = "https://php.net/get/php-7.4.22.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
-    PHP_VERSION     = "7.4.21".freeze
+    PHP_VERSION     = "7.4.22".freeze
     PHP_BRANCH      = "PHP-7.4".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "36ec6102e757e2c2b7742057a700bbff77c76fa0ccbe9c860398c3d24e32822a",
+      :sha256 => "5022bbca661bc1ab5dfaee72873bcd0f0980d9dd34f980a682029496f51caae1",
     }.freeze
   end
 
     module Php80Defs
-    PHP_SRC_TARBALL = "https://php.net/get/php-8.0.8.tar.bz2/from/this/mirror".freeze
+    PHP_SRC_TARBALL = "https://php.net/get/php-8.0.9.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
-    PHP_VERSION     = "8.0.8".freeze
+    PHP_VERSION     = "8.0.9".freeze
     PHP_BRANCH      = "PHP-8.0".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "14bd77d71a98943e14b324da83e31b572781df583cda9650a184fae3214cd16f",
+      :sha256 => "6ac8edebd295ddc43fb010653c43ccf203cd7cdc40981b210ed5275994040806",
     }.freeze
   end
 end
