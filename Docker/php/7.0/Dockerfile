@@ -23,6 +23,7 @@ RUN brew install composer
 RUN brew install composer@1.10
 RUN brew install msmtp
 RUN brew install node
+RUN brew install mysql-client && brew link -f mysql-client
 RUN npm install --global yarn
 
 # Cleanup
