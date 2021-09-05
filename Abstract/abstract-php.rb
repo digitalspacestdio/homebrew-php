@@ -670,34 +670,43 @@ INFO
     end
   end
 
-  def plist; <<~EOS
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    <plist version="1.0">
-    <dict>
-      <key>KeepAlive</key>
-      <true/>
-      <key>Label</key>
-      <string>#{plist_name}</string>
-      <key>ProgramArguments</key>
-      <array>
-        <string>#{opt_sbin}/php-fpm</string>
-        <string>--nodaemonize</string>
-        <string>--fpm-config</string>
-        <string>#{config_path}/php-fpm.conf</string>
-      </array>
-      <key>RunAtLoad</key>
-      <true/>
-      <key>LaunchOnlyOnce</key>
-      <true/>
-      <key>UserName</key>
-      <string>#{`whoami`.chomp}</string>
-      <key>WorkingDirectory</key>
-      <string>#{var}</string>
-      <key>StandardErrorPath</key>
-      <string>#{opt_prefix}/var/log/php#{php_version}-fpm.log</string>
-    </dict>
-    </plist>
-    EOS
+  plist_options manual: "php-fpm"
+  service do
+    run [opt_sbin/"php-fpm", "--nodaemonize", "--fpm-config", "#{config_path}/php-fpm.conf"]
+    run_type :immediate
+    keep_alive true
+    error_log_path var/"log/php#{php_version}-fpm.log"
+    working_dir var
   end
+
+#   def plist; <<~EOS
+#     <?xml version="1.0" encoding="UTF-8"?>
+#     <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+#     <plist version="1.0">
+#     <dict>
+#       <key>KeepAlive</key>
+#       <true/>
+#       <key>Label</key>
+#       <string>#{plist_name}</string>
+#       <key>ProgramArguments</key>
+#       <array>
+#         <string>#{opt_sbin}/php-fpm</string>
+#         <string>--nodaemonize</string>
+#         <string>--fpm-config</string>
+#         <string>#{config_path}/php-fpm.conf</string>
+#       </array>
+#       <key>RunAtLoad</key>
+#       <true/>
+#       <key>LaunchOnlyOnce</key>
+#       <true/>
+#       <key>UserName</key>
+#       <string>#{`whoami`.chomp}</string>
+#       <key>WorkingDirectory</key>
+#       <string>#{var}</string>
+#       <key>StandardErrorPath</key>
+#       <string>#{opt_prefix}/var/log/php#{php_version}-fpm.log</string>
+#     </dict>
+#     </plist>
+#     EOS
+#   end
 end
