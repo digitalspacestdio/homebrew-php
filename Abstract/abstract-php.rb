@@ -351,7 +351,7 @@ INFO
       args << "--with-fpm-user=_www"
       args << "--with-fpm-group=_www"
       (prefix+"var/log").mkpath
-      touch prefix+"var/log/php-fpm.log"
+      touch prefix+"var/log/php#{php_version}-fpm.log"
 #       plist_path.write plist
 #       plist_path.chmod 0644
     elsif build.with? "cgi"
