@@ -350,8 +350,8 @@ INFO
       args << "--enable-fpm"
       args << "--with-fpm-user=_www"
       args << "--with-fpm-group=_www"
-      (prefix+"var/log").mkpath
-      touch prefix+"var/log/php#{php_version}-fpm.log"
+      (prefix+"var/log/php").mkpath
+      touch prefix+"var/log/php/php#{php_version}-fpm.log"
 #       plist_path.write plist
 #       plist_path.chmod 0644
     elsif build.with? "cgi"
@@ -534,7 +534,7 @@ INFO
     run [opt_sbin/"php-fpm", "--nodaemonize", "--fpm-config", "#{config_path}/php-fpm.conf"]
     run_type :immediate
     keep_alive true
-    error_log_path var/"log/php#{php_version}-fpm.log"
+    error_log_path var/"log/php/php#{php_version}-fpm.log"
     working_dir var
   end
 end
