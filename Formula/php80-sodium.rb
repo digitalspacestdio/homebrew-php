@@ -9,6 +9,7 @@ class Php80Sodium < AbstractPhp80Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  depends_on "pkg-config" => :build
   depends_on "libsodium"
 
   def install
