@@ -8,7 +8,6 @@ class Php56Event < AbstractPhp56Extension
   sha256 "44756686df68d8ef4fcee31359c0c03802b1f55ad88db7ac142169777f3d17ef"
   head "https://bitbucket.org/osmanov/pecl-event.git"
 
-
   depends_on "libevent"
   depends_on "openssl@1.0"
 

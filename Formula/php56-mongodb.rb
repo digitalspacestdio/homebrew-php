@@ -9,7 +9,7 @@ class Php56Mongodb < AbstractPhp56Extension
   head "https://github.com/mongodb/mongo-php-driver.git"
   version "1.7.5"
   revision 2
-  depends_on "openssl"
+  depends_on "openssl@1.1"
 
   def install
     Dir.chdir "mongodb-#{version}" unless build.head?

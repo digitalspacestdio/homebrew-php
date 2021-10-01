@@ -73,8 +73,9 @@ class AbstractPhp < Formula
     if build.with?("homebrew-libressl")
       depends_on "libressl"
     else
-      depends_on "openssl"
+      depends_on "openssl@1.1"
     end
+
     #argon for 7.2
     depends_on "argon2" => :optional if build.with?("argon2")
 
@@ -132,7 +133,7 @@ class AbstractPhp < Formula
   skip_clean "lib/php/.lock"
 
   def php_open_ssl_formula
-    "openssl"
+    "openssl@1.1"
   end
 
   def config_path

@@ -9,7 +9,7 @@ class Php74Mongodb < AbstractPhp74Extension
   head "https://github.com/mongodb/mongo-php-driver.git"
   version "1.9.0"
 
-  depends_on "openssl"
+  depends_on "openssl@1.1"
 
   def install
     Dir.chdir "mongodb-#{version}" unless build.head?

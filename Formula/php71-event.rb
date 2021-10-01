@@ -10,7 +10,7 @@ class Php71Event < AbstractPhp71Extension
 
 
   depends_on "libevent"
-  depends_on "openssl"
+  depends_on "openssl@1.1"
 
   def install
     Dir.chdir "event-#{version}" unless build.head?

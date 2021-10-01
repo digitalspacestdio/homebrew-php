@@ -61,7 +61,7 @@ class Php56 < AbstractPhp
       if build.with?("homebrew-libressl")
         depends_on "libressl"
       else
-        depends_on "openssl"
+        depends_on "openssl@1.1"
       end
       #argon for 7.2
       depends_on "argon2" => :optional if build.with?("argon2")

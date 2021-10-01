@@ -10,7 +10,7 @@ class Php71Mongodb < AbstractPhp71Extension
   version "1.9.0"
   revision 2
 
-  depends_on "openssl"
+  depends_on "openssl@1.1"
 
   def install
     Dir.chdir "mongodb-#{version}" unless build.head?
