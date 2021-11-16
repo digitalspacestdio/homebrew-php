@@ -3,9 +3,10 @@ require File.expand_path("../../Abstract/abstract-php-phar", __FILE__)
 class ComposerAT110 < AbstractPhpPhar
   desc "Dependency Manager for PHP"
   homepage "https://getcomposer.org"
-  url "https://getcomposer.org/download/1.10.17/composer.phar"
-  sha256 "6fa00eba5103ce6750f94f87af8356e12cc45d5bbb11a140533790cf60725f1c"
+  url "https://getcomposer.org/download/1.10.23/composer.phar"
+  sha256 "2fc3ae370a979602a3bc2c950a38db02e51b4ca2072f7b8e15a518b443b835e7"
   head "https://getcomposer.org/composer.phar"
+  version "1.10.23"
 
   def phar_file
     "composer.phar"
