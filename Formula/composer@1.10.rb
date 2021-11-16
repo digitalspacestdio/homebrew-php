@@ -7,7 +7,6 @@ class ComposerAT110 < AbstractPhpPhar
   sha256 "6fa00eba5103ce6750f94f87af8356e12cc45d5bbb11a140533790cf60725f1c"
   head "https://getcomposer.org/composer.phar"
 
-
   def phar_file
     "composer.phar"
   end

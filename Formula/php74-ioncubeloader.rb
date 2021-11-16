@@ -5,10 +5,10 @@ class Php74Ioncubeloader < AbstractPhp74Extension
   desc "Loader for ionCube Secured Files"
   homepage "https://www.ioncube.com/loaders.php"
   if OS.mac?
-    sha256 "95e2575ba23bf1befb83071948d9fb23fad2651e96489dbf98a2ebfec6cae3be"
+    sha256 "5d698aba86bb99cbea19b792c9ac488ca1aef4cd107cee166cace534943ab0b2"
     url "https://downloads.ioncube.com/loader_downloads/ioncube_loaders_mac_x86-64.tar.gz"
   elsif OS.linux?
-    sha256 "d7e0880e455310cda1c19762cd0d155cb8b7cac25ad2f906013764f8088c8a52"
+    sha256 "828edd1326c3a901662746b7745679e819681cc82b65ee1fbf9c3d907ac4ef4e"
     url "https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz"
   end
   version "10.4.5"

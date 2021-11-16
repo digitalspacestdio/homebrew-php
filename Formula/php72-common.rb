@@ -23,7 +23,7 @@ class Php72Common < Formula
   depends_on "digitalspacestdio/php/php72-redis"
   depends_on "digitalspacestdio/php/php72-tidy"
   depends_on "digitalspacestdio/php/php72-ldap"
-  depends_on "digitalspacestdio/php/php72-ioncubeloader"
+  # depends_on "digitalspacestdio/php/php72-ioncubeloader"
 
   keg_only "this package contains dependency only"
 
