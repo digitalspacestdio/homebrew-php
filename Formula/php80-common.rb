@@ -21,6 +21,7 @@ class Php80Common < Formula
   depends_on "digitalspacestdio/php/php80-sodium"
   depends_on "digitalspacestdio/php/php80-redis"
   depends_on "digitalspacestdio/php/php80-tidy"
+  depends_on "digitalspacestdio/php/php74-zip"
   depends_on "digitalspacestdio/php/php80-ldap"
   
   keg_only "this package contains dependency only"
