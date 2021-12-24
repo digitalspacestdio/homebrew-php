@@ -19,7 +19,6 @@ RUN brew tap digitalspacestdio/common
 RUN brew tap digitalspacestdio/php
 RUN brew install ${BREW_FORMULA}-common
 RUN brew install ${BREW_FORMULA}-xhprof ${BREW_FORMULA}-xdebug
-RUN brew install ${BREW_FORMULA}-ldap
 RUN brew install composer
 RUN brew install composer@1.10
 RUN brew install msmtp
