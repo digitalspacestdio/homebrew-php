@@ -7,7 +7,7 @@ images=$(ls -d */ | cut -f1 -d'/')
 for image in $images; do
   tags=$(ls -d $image/*/ | cut -f2 -d'/' | sort -r)
   for tag in $tags; do
-    docker build --rm --squash -t "$repository/$image:$tag" $image/$tag
+    docker build --no-cache --rm --squash -t "$repository/$image:$tag" $image/$tag
     version=$(docker run --rm "$repository/$image:$tag" php -v | egrep -o 'PHP [0-9][0-9]*\.[0-9][0-9]*\.[0-9][A-z0-9]*' | egrep -o '[0-9][0-9]*\.[0-9][0-9]*\.[0-9][A-z0-9]*' )
     major=$(echo $version | awk -F. '{print $1}')
     minor=$(echo $version | awk -F. '{print $2}')
