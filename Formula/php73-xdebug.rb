@@ -4,10 +4,10 @@ class Php73Xdebug < AbstractPhp73Extension
   init
   desc "Provides debugging and profiling capabilities."
   homepage "https://xdebug.org"
-  url "https://codeload.github.com/xdebug/xdebug/tar.gz/02890b34d419e6d0364946ddd904a0ebfbe92bca"
-  sha256 "227e39d602afc993af5fa761c746eb1d59b0622625294f28a1adcc0f527650b9"
+  url "https://github.com/xdebug/xdebug/tarball/52911afee0d66f4569d71d25bb9532c8fab9d5f5"
+  sha256 "bde555d03e9c9b4984aa7b988fedc185259cc1672ec853027aaf0237577374b3"
   head "https://github.com/xdebug/xdebug.git"
-  version "2.9.1"
+  version "3.1.2"
   revision 1
 
   def extension_type

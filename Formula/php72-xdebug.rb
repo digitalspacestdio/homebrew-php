@@ -4,17 +4,18 @@ class Php72Xdebug < AbstractPhp72Extension
   init
   desc "Provides debugging and profiling capabilities."
   homepage "https://xdebug.org"
-  url "https://xdebug.org/files/xdebug-2.6.0.tgz"
-  sha256 "b5264cc03bf68fcbb04b97229f96dca505d7b87ec2fb3bd4249896783d29cbdc"
+  url "https://github.com/xdebug/xdebug/tarball/52911afee0d66f4569d71d25bb9532c8fab9d5f5"
+  sha256 "bde555d03e9c9b4984aa7b988fedc185259cc1672ec853027aaf0237577374b3"
   head "https://github.com/xdebug/xdebug.git"
-
+  version "3.1.2"
+  revision 1
 
   def extension_type
     "zend_extension"
   end
 
   def install
-    Dir.chdir "xdebug-#{version}" unless build.head?
+    #Dir.chdir "xdebug-#{version}" unless build.head?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
@@ -22,6 +23,7 @@ class Php72Xdebug < AbstractPhp72Extension
                           "--disable-debug",
                           "--disable-dependency-tracking",
                           "--enable-xdebug"
+    system "make clean"
     system "make"
     prefix.install "modules/xdebug.so"
     write_config_file if build.with? "config-file"
