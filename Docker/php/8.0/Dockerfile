@@ -37,4 +37,4 @@ RUN brew list | grep 'perl\|python@2\|autoconf\|binutils\|gcc' | xargs --no-run-
     && rm -rf /home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/vendor/portable-ruby
 
 FROM digitalspacestudio/linuxbrew:latest
-COPY --from=builder --chown=linuxbrew:linuxbrew /home/linuxbrew/.linuxbrew /home/linuxbrew/.linuxbrew
+COPY --from=builder --chown=linuxbrew:linuxbrew /home/linuxbrew/.linuxbrew /home/linuxbrew/
