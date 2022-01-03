@@ -6,10 +6,10 @@ repository=${1-digitalspacestudio}
 image=php-node
 formulas_php="digitalspacestdio/php/php80 digitalspacestdio/php/php74 digitalspacestdio/php/php73 digitalspacestdio/php/php72"
 formulas_node="node node@14 node@12"
-for php_formula in $formulas_php; do
-  for node_formula in $formulas_node; do
-    tag=$(echo $php_formula | md5 | cut -c-8)-$(echo $node_formula | md5 | cut -c-8)
-    docker build --rm --build-arg "BREW_FORMULA_PHP_PHP=$php_formula" --build-arg "BREW_FORMULA_NODE=$formulas_node" -t "$repository/$image:$tag" $image
+for formula_php in $formulas_php; do
+  for formula_node in $formulas_node; do
+    tag=$(echo $formula_php | md5 | cut -c-8)-$(echo $formula_node | md5 | cut -c-8)
+    docker build --rm --build-arg "BREW_FORMULA_PHP_PHP=$formula_php" --build-arg "BREW_FORMULA_NODE=$formula_node" -t "$repository/$image:$tag" $image
 
     php_version=$(docker run --rm "$repository/$image:$tag" php -v | egrep -o 'PHP [0-9][0-9]*\.[0-9][0-9]*\.[0-9][A-z0-9]*' | egrep -o '[0-9][0-9]*\.[0-9][0-9]*\.[0-9][A-z0-9]*' )
     php_major=$(echo $php_version | awk -F. '{print $1}')
