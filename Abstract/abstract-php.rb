@@ -53,6 +53,7 @@ class AbstractPhp < Formula
     depends_on "icu4c"  if !name.split("::")[2].downcase.start_with?("php56", "php71", "php72")
     depends_on "imap-uw" if build.with?("imap")
     depends_on "jpeg"
+    depends_on "pcre2"
     depends_on "webp" => :optional if name.split("::")[2].downcase.start_with?("php7")
     depends_on "libvpx" => :optional if name.split("::")[2].downcase.start_with?("php56")
     depends_on "libpng"
@@ -284,7 +285,7 @@ INFO
 #      ("--with-iconv-dir=/usr" if OS.mac?),
       ("--with-icu-dir=#{Formula["icu4c@67.1"].opt_prefix}" if php_version.start_with?("5.6", "7.1", "7.2")),
       ("--with-icu-dir=#{Formula["icu4c"].opt_prefix}" if !php_version.start_with?("5.6", "7.1", "7.2")),
-      ("--without-pcre-jit" if !php_version.start_with?("7.", "8.")),
+      ("--with-external-pcre" if !php_version.start_with?("7.4", "8.")),
       "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}",
       ("--with-kerberos=/usr" if OS.mac?),
       "--with-mhash",
