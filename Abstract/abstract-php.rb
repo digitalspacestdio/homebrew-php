@@ -284,6 +284,7 @@ INFO
 #      ("--with-iconv-dir=/usr" if OS.mac?),
       ("--with-icu-dir=#{Formula["icu4c@67.1"].opt_prefix}" if php_version.start_with?("5.6", "7.1", "7.2")),
       ("--with-icu-dir=#{Formula["icu4c"].opt_prefix}" if !php_version.start_with?("5.6", "7.1", "7.2")),
+      ("--without-pcre-jit" if !php_version.start_with?("7.", "8.")),
       "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}",
       ("--with-kerberos=/usr" if OS.mac?),
       "--with-mhash",
