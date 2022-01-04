@@ -7,10 +7,10 @@ class Php81Apcu < AbstractPhp81Extension
   #url "https://github.com/krakjoe/apcu/archive/v5.1.17.tar.gz"
   #sha256 "e6f6405ec47c2b466c968ee6bb15fc3abccb590b5fd40f579fceebeb15da6c4c"
   #head "https://github.com/krakjoe/apcu.git"
-  url "https://github.com/krakjoe/apcu/archive/v5.1.18.tar.gz"
-  sha256 "0ffae84b607bf3bfb87a0ab756b7712a93c3de2be20177b94ebf845c3d94f117"
+  url "https://github.com/krakjoe/apcu/archive/v5.1.21.tar.gz"
+  sha256 "6406376c069fd8e51cd470bbb38d809dee7affbea07949b2a973c62ec70bd502"
   head "https://github.com/krakjoe/apcu.git", :branch => "master"
-  version "5.1.18"
+  version "5.1.21"
   revision 1
 
 
