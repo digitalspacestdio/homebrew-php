@@ -311,3 +311,23 @@ class AbstractPhp80Extension < AbstractPhpExtension
     depends_on "digitalspacestdio/php/php80" => opts if build.with?("homebrew-php")
   end
 end
+
+class AbstractPhp81Extension < AbstractPhpExtension
+  include AbstractPhpVersion::Php81Defs
+
+  def safe_phpize
+    if OS.linux?
+    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+    else
+    ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
+    ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
+    end
+    super()
+  end
+
+  def self.init(opts = [])
+    super()
+    depends_on "digitalspacestdio/php/php81" => opts if build.with?("homebrew-php")
+  end
+end
