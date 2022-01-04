@@ -1,10 +1,10 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
-class Php74Intl < AbstractPhp74Extension
+class Php81Intl < AbstractPhp81Extension
   init
   desc "Wrapper for the ICU library"
   homepage "https://php.net/manual/en/book.intl.php"
-  revision 26
+  revision 1
 
 
   url PHP_SRC_TARBALL
@@ -15,16 +15,10 @@ class Php74Intl < AbstractPhp74Extension
 
   def install
     # Required due to icu4c dependency
-    if OS.linux?
-    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
-    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
-    else
-    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
-    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
-    end
+    ENV.cxx11
 
     # icu4c 61.1 compatability
-    ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
+    #ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
     
     Dir.chdir "ext/intl"
 

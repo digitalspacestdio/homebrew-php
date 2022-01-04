@@ -5,7 +5,7 @@ class Phpcurl < Formula
   mirror "http://curl.mirror.anstey.ca/curl-7.72.0.tar.bz2"
   sha256 "ad91970864102a59765e20ce16216efc9d6ad381471f7accceceab7d905703ef"
   version '7.72.0'
-  revision 2
+  revision 3
 
   pour_bottle? do
     reason "The bottle needs to be installed into #{Homebrew::DEFAULT_PREFIX} when built with OpenSSL."
@@ -44,7 +44,7 @@ class Phpcurl < Formula
 
   depends_on "openssl@1.1"
   depends_on "pkg-config" => :build
-  depends_on "gcc@9" => :build
+  depends_on "gcc" => :build
   depends_on "c-ares" => :optional
   depends_on "libmetalink" => :optional
   depends_on "libssh2" => :optional
@@ -59,8 +59,8 @@ class Phpcurl < Formula
   ENV['LDFLAGS'] = '-L$(brew --prefix openssl@1.1)/lib'
 
   def install
-    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
-    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
+    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
 
     system "./buildconf" if build.head?
 

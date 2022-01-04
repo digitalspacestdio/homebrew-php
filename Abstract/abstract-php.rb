@@ -16,7 +16,7 @@ class AbstractPhp < Formula
       if OS.linux?
         depends_on "gcc@9" => :build
       else
-        depends_on "gcc@10" => :build
+        depends_on "gcc" => :build
       end
     end
 
@@ -170,16 +170,16 @@ class AbstractPhp < Formula
             ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
             ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
           else
-            ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10 -DTRUE=1 -DFALSE=0"
-            ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10 -DTRUE=1 -DFALSE=0"
+            ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11 -DTRUE=1 -DFALSE=0"
+            ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11 -DTRUE=1 -DFALSE=0"
           end
       else
           if OS.linux?
             ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
             ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
           else
-            ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
-            ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
+            ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
+            ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
           end
       end
     end

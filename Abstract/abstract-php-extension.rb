@@ -200,8 +200,8 @@ class AbstractPhp70Extension < AbstractPhpExtension
     ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
     ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
     else
-    ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
-    ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
+    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
+    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
     end
     super()
   end
@@ -220,8 +220,8 @@ class AbstractPhp71Extension < AbstractPhpExtension
     ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
     ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
     else
-    ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10 -DTRUE=1 -DFALSE=0"
-    ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10 -DTRUE=1 -DFALSE=0"
+    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11 -DTRUE=1 -DFALSE=0"
+    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11 -DTRUE=1 -DFALSE=0"
     end
     super()
   end
@@ -240,8 +240,8 @@ class AbstractPhp72Extension < AbstractPhpExtension
     ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
     ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
     else
-    ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
-    ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
+    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
+    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
     end
     super()
   end
@@ -260,8 +260,8 @@ class AbstractPhp73Extension < AbstractPhpExtension
     ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
     ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
     else
-    ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
-    ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
+    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
+    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
     end
     super()
   end
@@ -280,8 +280,8 @@ class AbstractPhp74Extension < AbstractPhpExtension
     ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
     ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
     else
-    ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
-    ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
+    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
+    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
     end
     super()
   end
@@ -300,8 +300,8 @@ class AbstractPhp80Extension < AbstractPhpExtension
     ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
     ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
     else
-    ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
-    ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
+    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
+    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
     end
     super()
   end
@@ -309,5 +309,25 @@ class AbstractPhp80Extension < AbstractPhpExtension
   def self.init(opts = [])
     super()
     depends_on "digitalspacestdio/php/php80" => opts if build.with?("homebrew-php")
+  end
+end
+
+class AbstractPhp81Extension < AbstractPhpExtension
+  include AbstractPhpVersion::Php81Defs
+
+  def safe_phpize
+    if OS.linux?
+    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+    else
+    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
+    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
+    end
+    super()
+  end
+
+  def self.init(opts = [])
+    super()
+    depends_on "digitalspacestdio/php/php81" => opts if build.with?("homebrew-php")
   end
 end
