@@ -26,7 +26,9 @@ RUN mkdir -p $(brew --prefix)/etc/php && ln -s $(brew --prefix)/etc/php/$($(brew
 RUN mkdir -p $(brew --prefix)/var/log/php && ln -s $(brew --prefix)/var/log/php/$($(brew --prefix digitalspacestdio/php/php80)/bin/php -v | egrep -o 'PHP [0-9][0-9]*\.[0-9][0-9]*\.[0-9][A-z0-9]*' | egrep -o '[0-9][0-9]*\.[0-9][0-9]*') $(brew --prefix)/var/log/php/current
 RUN brew install composer
 RUN brew install composer@1.10
-RUN brew install ${BREW_FORMULA_NODE} && npm install --global yarn
+RUN brew install ${BREW_FORMULA_NODE}
+RUN brew link --overwrite ${BREW_FORMULA_NODE}
+RUN npm install --global yarn
 
 # Cleanup
 RUN brew list | grep 'perl\|python@2\|autoconf\|binutils\|gcc' | xargs --no-run-if-empty brew uninstall --ignore-dependencies \

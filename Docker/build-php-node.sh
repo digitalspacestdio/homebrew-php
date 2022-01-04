@@ -9,7 +9,7 @@ formulas_node="node node@14 node@12"
 for formula_php in $formulas_php; do
   for formula_node in $formulas_node; do
     tag=$(echo $formula_php | md5 | cut -c-8)-$(echo $formula_node | md5 | cut -c-8)
-    docker build --rm --build-arg "BREW_FORMULA_PHP_PHP=$formula_php" --build-arg "BREW_FORMULA_NODE=$formula_node" -t "$repository/$image:$tag" $image
+    docker build --rm --build-arg "BREW_FORMULA_PHP=$formula_php" --build-arg "BREW_FORMULA_NODE=$formula_node" -t "$repository/$image:$tag" $image
 
     php_version=$(docker run --rm "$repository/$image:$tag" php -v | egrep -o 'PHP [0-9][0-9]*\.[0-9][0-9]*\.[0-9][A-z0-9]*' | egrep -o '[0-9][0-9]*\.[0-9][0-9]*\.[0-9][A-z0-9]*' )
     php_major=$(echo $php_version | awk -F. '{print $1}')
