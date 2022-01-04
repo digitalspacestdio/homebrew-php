@@ -12,7 +12,7 @@ class Php81 < AbstractPhp
   depends_on "oniguruma"
   depends_on "libjpeg"
 
-  include AbstractPhpVersion::Php80Defs
+  include AbstractPhpVersion::Php81Defs
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
@@ -20,11 +20,11 @@ class Php81 < AbstractPhp
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
 
   def php_version
-    "8.0"
+    "8.1"
   end
 
   def php_version_path
-    "80"
+    "81"
   end
 
   def install_args

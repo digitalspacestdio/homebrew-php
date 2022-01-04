@@ -14,11 +14,11 @@ class Php81Intl < AbstractPhp81Extension
   depends_on "pkg-config" => :build
 
   def install
-        # Required due to icu4c dependency
+    # Required due to icu4c dependency
     ENV.cxx11
 
     # icu4c 61.1 compatability
-    ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
+    #ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
     
     Dir.chdir "ext/intl"
 

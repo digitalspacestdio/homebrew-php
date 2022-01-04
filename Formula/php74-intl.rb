@@ -19,8 +19,8 @@ class Php74Intl < AbstractPhp74Extension
     ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
     ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
     else
-    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-10"
-    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-10"
+    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
+    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
     end
 
     # icu4c 61.1 compatability
