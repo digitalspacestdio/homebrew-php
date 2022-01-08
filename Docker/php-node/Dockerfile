@@ -1,7 +1,8 @@
-FROM ${FROM_IMAGE} AS builder
+FROM ${FROM_IMAGE_BUILDER} AS builder
 LABEL maintainer="Sergey Cherepanov <sergey@digitalspace.studio>"
-LABEL name="digitalspacestudio/node-php"
+LABEL name="digitalspacestudio/php-node"
 ARG DEBIAN_FRONTEND=noninteractive
+ARG BREW_FORMULA_NODE_DEPS=node
 ARG BREW_FORMULA_NODE=node
 ARG HOMEBREW_NO_INSTALL_CLEANUP=1
 ARG HOMEBREW_NO_AUTO_UPDATE=1
@@ -15,15 +16,20 @@ RUN apt update && apt install -yqq build-essential systemtap-sdt-dev make uuid-r
 USER linuxbrew
 
 # Install node
-RUN brew install ${BREW_FORMULA_NODE}
+RUN brew-build-recursive ${BREW_FORMULA_NODE}
 RUN brew link --overwrite ${BREW_FORMULA_NODE}
 RUN npm install --global yarn
+RUN brew-clean-build-recursive ${BREW_FORMULA_NODE}
 
 # Cleanup
-RUN brew list | grep 'perl\|python@2\|autoconf\|binutils\|gcc' | xargs --no-run-if-empty brew uninstall --ignore-dependencies \
-    && brew cleanup
+#RUN brew list | grep 'perl\|python@2\|autoconf\|binutils\|gcc' | xargs --no-run-if-empty brew uninstall --ignore-dependencies \
+#    && brew cleanup
+
+# Copy php
+FROM ${FROM_IMAGE_PHP} as php
+COPY --from=builder --chown=linuxbrew:linuxbrew /home/linuxbrew/.linuxbrew/ /home/linuxbrew/.linuxbrew/
 
 # Finilize
 FROM ${FROM_IMAGE}
-RUN rm -rf /home/linuxbrew/.linuxbrew
-COPY --from=builder --chown=linuxbrew:linuxbrew /home/linuxbrew/.linuxbrew /home/linuxbrew/.linuxbrew
+COPY --from=php --chown=linuxbrew:linuxbrew /home/linuxbrew/.linuxbrew/ /home/linuxbrew/.linuxbrew/
+
