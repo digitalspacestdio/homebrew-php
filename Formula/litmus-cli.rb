@@ -8,8 +8,6 @@ class LitmusCli < AbstractPhpPhar
   version "0.3.2"
   sha256 "d2bcfe00bf5adabfbaa9798f8accda0f8ced37c8cba282b1e588b75c9a656564"
 
-  bottle :unneeded
-
   def phar_file
     "litmus-cli.phar"
   end
