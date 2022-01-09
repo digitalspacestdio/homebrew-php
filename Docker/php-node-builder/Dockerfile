@@ -8,13 +8,14 @@ ARG HOMEBREW_NO_AUTO_UPDATE=1
 ARG HOMEBREW_NO_ANALYTICS=1
 ARG HOMEBREW_FORCE_BREWED_CURL=1
 ARG HOMEBREW_FORCE_BREWED_GIT=1
+ARG BREW_INSTALL_ARGS="--quiet -s"
 
 ## Install gcc
 USER root
-RUN apt update && apt install -yqq build-essential build-essential procps curl file git systemtap-sdt-dev
+RUN apt update -qqq && apt install -yqqq --no-install-recommends build-essential build-essential procps curl file git systemtap-sdt-dev
 USER linuxbrew
 
 # Install node
 RUN brew tap digitalspacestdio/common
 RUN brew tap digitalspacestdio/php
-RUN brew install -s ${BREW_FORMULA_DEPS}
+RUN brew-clean-build-recursive ${BREW_FORMULA_DEPS}

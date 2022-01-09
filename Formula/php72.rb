@@ -7,6 +7,8 @@ class Php72 < AbstractPhp
   version PHP_VERSION
   revision 2
 
+  depends_on "libjpeg"
+
   include AbstractPhpVersion::Php72Defs
 
   url PHP_SRC_TARBALL
@@ -20,6 +22,17 @@ class Php72 < AbstractPhp
 
   def php_version_path
     "72"
+  end
+
+  def install_args
+    args = super
+    if !build.without? "pear"
+      args << "--with-pear"
+    end
+    args << "--enable-gd"
+    args << "--with-freetype=#{Formula["freetype"].opt_prefix}"
+    args << "--with-jpeg=#{Formula["libjpeg"].opt_prefix}"
+    args
   end
 
   if OS.mac?

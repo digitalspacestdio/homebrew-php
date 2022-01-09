@@ -5,7 +5,9 @@ class Php73 < AbstractPhp
   desc "PHP Version 7.3"
   include AbstractPhpVersion::Php73Defs
   version PHP_VERSION
-  revision 1
+  revision 2
+
+  depends_on "libjpeg"
 
   include AbstractPhpVersion::Php73Defs
 
@@ -20,6 +22,17 @@ class Php73 < AbstractPhp
 
   def php_version_path
     "73"
+  end
+
+  def install_args
+    args = super
+    if !build.without? "pear"
+    args << "--with-pear"
+    end
+    args << "--enable-gd"
+    args << "--with-freetype=#{Formula["freetype"].opt_prefix}"
+    args << "--with-jpeg=#{Formula["libjpeg"].opt_prefix}"
+    args
   end
 
   if OS.mac?

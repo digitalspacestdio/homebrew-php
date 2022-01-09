@@ -7,8 +7,6 @@ formulas_php="digitalspacestdio/php/php80 digitalspacestdio/php/php74 digitalspa
 formulas_node="node node@14 node@12"
 formulas_extra="mysql-client msmtp composer@2.2"
 versions_php=()
-echo "brew tap digitalspacestdio/common && brew tap digitalspacestdio/php && brew-list-build-deps $formulas_php $formulas_node $formulas_extra"
-exit
 formulas_deps=$(docker run --rm $repository/linuxbrew sh -c "brew tap digitalspacestdio/common && brew tap digitalspacestdio/php && brew-list-build-deps $formulas_php $formulas_node $formulas_extra")
 echo $formulas_deps > formulas_deps.txt
 exit 0
