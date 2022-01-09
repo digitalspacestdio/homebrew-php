@@ -47,11 +47,11 @@ class AbstractPhp < Formula
     depends_on "freetype"
     depends_on "gettext"
     depends_on "gmp" => :optional
-    depends_on "icu4c@67.1" if name.split("::")[2].downcase.start_with?("php56", "php70", "php71", "php8")
-    depends_on "icu4c" if !name.split("::")[2].downcase.start_with?("php56", "php70", "php71", "php8")
+    depends_on "icu4c@67.1" if name.split("::")[2].downcase.start_with?("php56", "php70", "php71")
+    depends_on "icu4c" if !name.split("::")[2].downcase.start_with?("php56", "php70", "php71")
     depends_on "imap-uw" if build.with?("imap")
-    depends_on "jpeg" if name.split("::")[2].downcase.start_with?("php56", "php70", "php71", "php8")
-    depends_on "libjpeg" if !name.split("::")[2].downcase.start_with?("php56", "php70", "php71", "php8")
+    depends_on "jpeg" if name.split("::")[2].downcase.start_with?("php56", "php70", "php71")
+    depends_on "libjpeg" if !name.split("::")[2].downcase.start_with?("php56", "php70", "php71")
     depends_on "pcre2"
     depends_on "webp" => :optional if name.split("::")[2].downcase.start_with?("php7", "php8")
     depends_on "libvpx" => :optional if name.split("::")[2].downcase.start_with?("php56")
