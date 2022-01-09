@@ -11,14 +11,12 @@ class AbstractPhp < Formula
     skip_clean "bin", "sbin"
 
     if name.split("::")[2].downcase.start_with?("php56")
-      depends_on "gcc@9" => :build
+      depends_on "gcc@10" => :build
     else
-      if OS.linux?
-        depends_on "gcc@9" => :build
-      else
-        depends_on "gcc" => :build
-      end
+      depends_on "gcc" => :build
     end
+
+    depends_on "gcc" => :build
 
     head do
       depends_on "autoconf" => :build
@@ -161,29 +159,49 @@ class AbstractPhp < Formula
     # Ensure this php has a version specified
     php_version
     php_version_path
-
     if php_version.start_with?("5.6")
+      ENV.cxx11
+      # Work around configure issues with Xcode 12
+      # See https://bugs.php.net/bug.php?id=80171
+      ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
+      # Workaround for https://bugs.php.net/80310
+      ENV.append "CFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
+      ENV.append "CXXFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
+
+      # icu4c 61.1 compatability
+      ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
+
+      # Prevent homebrew from harcoding path to sed shim in phpize script
+      ENV["lt_cv_path_SED"] = "sed"
+    end
+
+     if php_version.start_with?("5.6")
       ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
       ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
-    else
-      if php_version.start_with?("7.1")
-          if OS.linux?
-            ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
-            ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
-          else
-            ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11 -DTRUE=1 -DFALSE=0"
-            ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11 -DTRUE=1 -DFALSE=0"
-          end
+     else
+      if php_version.start_with?("7.1", "7.0")
+#           if OS.linux?
+#             ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+#             ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+#           else
+#             ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11 -DTRUE=1 -DFALSE=0"
+#             ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11 -DTRUE=1 -DFALSE=0"
+#           end
+          ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11 -DTRUE=1 -DFALSE=0"
+          ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11 -DTRUE=1 -DFALSE=0"
       else
-          if OS.linux?
-            ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
-            ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
-          else
-            ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
-            ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
-          end
+#           if OS.linux?
+#             ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+#             ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+#           else
+#             ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
+#             ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
+#           end
+          ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
+          ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
       end
-    end
+     end
 
     # Not removing all pear.conf and .pearrc files from PHP path results in
     # the PHP configure not properly setting the pear binary to be installed

@@ -181,8 +181,8 @@ class AbstractPhp56Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php56Defs
 
   def safe_phpize
-    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
-    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+#     ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+#     ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
     super()
   end
 
@@ -196,13 +196,15 @@ class AbstractPhp70Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php70Defs
 
   def safe_phpize
-    if OS.linux?
-    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
-    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
-    else
+#     if OS.linux?
+#     ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+#     ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+#     else
+#     ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
+#     ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
+#     end
     ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
     ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
-    end
     super()
   end
 
@@ -216,13 +218,15 @@ class AbstractPhp71Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php71Defs
 
   def safe_phpize
-    if OS.linux?
-    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
-    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
-    else
+#     if OS.linux?
+#     ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+#     ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+#     else
+#     ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11 -DTRUE=1 -DFALSE=0"
+#     ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11 -DTRUE=1 -DFALSE=0"
+#     end
     ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11 -DTRUE=1 -DFALSE=0"
     ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11 -DTRUE=1 -DFALSE=0"
-    end
     super()
   end
 
@@ -236,13 +240,15 @@ class AbstractPhp72Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php72Defs
 
   def safe_phpize
-    if OS.linux?
-    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
-    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
-    else
+#     if OS.linux?
+#     ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+#     ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+#     else
+#     ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
+#     ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
+#     end
     ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
     ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
-    end
     super()
   end
 
@@ -256,13 +262,15 @@ class AbstractPhp73Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php73Defs
 
   def safe_phpize
-    if OS.linux?
-    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
-    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
-    else
+#     if OS.linux?
+#     ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+#     ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+#     else
+#     ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
+#     ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
+#     end
     ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
     ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
-    end
     super()
   end
 
@@ -276,13 +284,15 @@ class AbstractPhp74Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php74Defs
 
   def safe_phpize
-    if OS.linux?
-    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
-    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
-    else
+#     if OS.linux?
+#     ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+#     ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+#     else
+#     ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
+#     ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
+#     end
     ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
     ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
-    end
     super()
   end
 
@@ -296,13 +306,15 @@ class AbstractPhp80Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php80Defs
 
   def safe_phpize
-    if OS.linux?
-    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
-    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
-    else
+#     if OS.linux?
+#     ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+#     ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+#     else
+#     ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
+#     ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
+#     end
     ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
     ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
-    end
     super()
   end
 
@@ -316,13 +328,15 @@ class AbstractPhp81Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php81Defs
 
   def safe_phpize
-    if OS.linux?
-    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
-    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
-    else
+#     if OS.linux?
+#     ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+#     ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+#     else
+#     ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
+#     ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
+#     end
     ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
     ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
-    end
     super()
   end
 
