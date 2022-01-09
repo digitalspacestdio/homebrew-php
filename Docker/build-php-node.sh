@@ -8,9 +8,6 @@ formulas_node="node node@14 node@12"
 formulas_extra="mysql-client msmtp composer@2.2"
 versions_php=()
 formulas_deps=$(docker run --rm $repository/linuxbrew sh -c "brew tap digitalspacestdio/common && brew tap digitalspacestdio/php && brew-list-build-deps $formulas_php $formulas_node $formulas_extra")
-echo $formulas_deps > formulas_deps.txt
-exit 0
-
 # Assemble universal builder
 docker build --rm \
     --build-arg "BREW_FORMULA_DEPS=$formulas_deps" \
