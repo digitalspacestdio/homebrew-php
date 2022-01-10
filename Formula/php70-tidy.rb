@@ -10,19 +10,19 @@ class Php70Tidy < AbstractPhp70Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
-  depends_on "tidy-html5"
+  depends_on "php-tidy-html5"
 
   def install
     Dir.chdir "ext/tidy"
 
-    # API compatibility with tidy-html5 v5.0.0 - https://github.com/htacg/tidy-html5/issues/224
+    # API compatibility with php-tidy-html5 v5.0.0 - https://github.com/htacg/php-tidy-html5/issues/224
     inreplace "tidy.c", "buffio.h", "tidybuffio.h"
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
                           "--disable-dependency-tracking",
-                          "--with-tidy=#{Formula["tidy-html5"].opt_prefix}"
+                          "--with-tidy=#{Formula["php-tidy-html5"].opt_prefix}"
     system "make"
     prefix.install "modules/tidy.so"
     write_config_file if build.with? "config-file"

@@ -160,6 +160,12 @@ class AbstractPhp < Formula
     # Ensure this php has a version specified
     php_version
     php_version_path
+
+    if Hardware::CPU.arch == :x86_64
+        ENV.append "CFLAGS", "-march=haswell"
+        ENV.append "CXXFLAGS", "-march=haswell"
+    end
+
     if php_version.start_with?("5.6")
       ENV.cxx11
       # Work around configure issues with Xcode 12
