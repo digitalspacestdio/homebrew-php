@@ -1,3 +1,6 @@
+ARG FROM_IMAGE_BUILDER=digitalspacestudio/php-node-builder
+ARG FROM_IMAGE_PHP=digitalspacestudio/php
+ARG FROM_IMAGE=digitalspacestudio/linuxbrew
 FROM ${FROM_IMAGE_BUILDER} AS builder
 LABEL maintainer="Sergey Cherepanov <sergey@digitalspace.studio>"
 LABEL name="digitalspacestudio/php-node"
@@ -9,10 +12,6 @@ ARG HOMEBREW_NO_AUTO_UPDATE=1
 ARG HOMEBREW_NO_ANALYTICS=1
 ARG HOMEBREW_FORCE_BREWED_CURL=1
 ARG HOMEBREW_FORCE_BREWED_GIT=1
-
-## Install gcc
-USER root
-RUN apt update && apt install -yqq build-essential systemtap-sdt-dev make uuid-runtime pkg-config
 USER linuxbrew
 
 # Install node
@@ -22,8 +21,9 @@ RUN npm install --global yarn
 RUN brew-clean-build-recursive ${BREW_FORMULA_NODE}
 
 # Cleanup
-#RUN brew list | grep 'perl\|python@2\|autoconf\|binutils\|gcc' | xargs --no-run-if-empty brew uninstall --ignore-dependencies \
-#    && brew cleanup
+RUN brew cleanup \
+    && rm -rf /home/linuxbrew/.cache/Homebrew \
+    && rm -rf /home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/vendor/portable-ruby
 
 # Copy php
 FROM ${FROM_IMAGE_PHP} as php
