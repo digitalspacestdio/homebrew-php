@@ -8,6 +8,8 @@ set +o allexport
 repository=${1-digitalspacestudio}
 versions_php=()
 
+DOCKER_IMAGE_BUILDER=${DOCKER_IMAGE_BUILDER-"$repository/php-node-builder"}
+
 #if [[ -z $DOCKER_IMAGE_BUILDER ]]; then
 #  DOCKER_IMAGE_BUILDER="$repository/php-node-builder"
 #  if [[ -z $DOCKER_BUILD_SKIP_BUILDER ]]; then
@@ -31,7 +33,7 @@ for formula_php in $FORMULAS_PHP; do
 #    FROM_IMAGE="$repository/linuxbrew" \
 
     docker build $DOCKER_BUILD_PHP_ARGS --rm \
-    --build-arg FROM_IMAGE_BUILDER="${DOCKER_IMAGE_BUILDER}" \
+    --build-arg FROM_IMAGE_BUILDER=$DOCKER_IMAGE_BUILDER \
     --build-arg FROM_IMAGE="$repository/linuxbrew" \
     --build-arg BREW_FORMULA_PHP="$formula_php" \
     -t "$repository/php:$php_major.$php_minor.$php_fix" \

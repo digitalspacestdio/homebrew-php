@@ -1,6 +1,6 @@
-ARG FROM_IMAGE_BUILDER=digitalspacestudio/php-node-builder
-ARG FROM_IMAGE=digitalspacestudio/linuxbrew
-FROM ${FROM_IMAGE_BUILDER} AS builder
+ARG FROM_IMAGE_BUILDER=digitalspacestudio/php-node-builder:latest
+ARG FROM_IMAGE=digitalspacestudio/linuxbrew:latest
+FROM $FROM_IMAGE_BUILDER AS builder
 LABEL maintainer="Sergey Cherepanov <sergey@digitalspace.studio>"
 LABEL name="digitalspacestudio/php"
 ARG DEBIAN_FRONTEND=noninteractive
@@ -46,7 +46,7 @@ RUN brew-build-recursive install composer@2.2
 RUN brew-build-recursive install composer@1.10
 
 # Cleanup
-RUN brew-clean-build-recursive ${BREW_FORMULA_PHP}-common ${BREW_FORMULA_PHP}-xdebug ${BREW_FORMULA_PHP}-xdebug ${BREW_FORMULA_PHP}-xhprof \
+RUN brew-clean-build-recursive ${BREW_FORMULA_PHP} ${BREW_FORMULA_PHP}-common ${BREW_FORMULA_PHP}-xdebug ${BREW_FORMULA_PHP}-xdebug ${BREW_FORMULA_PHP}-xhprof \
     composer@2.2 composer@1.10 \
     mysql-client msmtp \
 
@@ -55,6 +55,6 @@ RUN brew cleanup \
     && rm -rf /home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/vendor/portable-ruby
 
 # Finilize
-FROM ${FROM_IMAGE}
+FROM $FROM_IMAGE
 RUN rm -rf /home/linuxbrew/.linuxbrew
 COPY --from=builder --chown=linuxbrew:linuxbrew /home/linuxbrew/.linuxbrew /home/linuxbrew/.linuxbrew
