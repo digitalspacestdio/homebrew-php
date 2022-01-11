@@ -27,7 +27,8 @@ RUN brew cleanup \
 
 # Copy php
 FROM ${FROM_IMAGE_PHP} as php
-COPY --from=builder --chown=linuxbrew:linuxbrew /home/linuxbrew/.linuxbrew/ /home/linuxbrew/.linuxbrew/
+RUN rm -rf /home/linuxbrew/.linuxbrew
+COPY --from=builder --chown=linuxbrew:linuxbrew /home/linuxbrew/.linuxbrew /home/linuxbrew/.linuxbrew
 
 # Finilize
 FROM ${FROM_IMAGE}
