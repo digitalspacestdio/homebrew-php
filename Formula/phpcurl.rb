@@ -44,7 +44,7 @@ class Phpcurl < Formula
 
   depends_on "openssl@1.1"
   depends_on "pkg-config" => :build
-  depends_on "gcc" => :build
+#  depends_on "gcc" => :build
   depends_on "c-ares" => :optional
   depends_on "libmetalink" => :optional
   depends_on "libssh2" => :optional
@@ -59,8 +59,8 @@ class Phpcurl < Formula
   ENV['LDFLAGS'] = '-L$(brew --prefix openssl@1.1)/lib'
 
   def install
-    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
-    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
+    #ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
+    #ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
 
     system "./buildconf" if build.head?
 

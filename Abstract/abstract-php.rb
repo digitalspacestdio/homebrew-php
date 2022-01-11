@@ -10,13 +10,14 @@ class AbstractPhp < Formula
     # So PHP extensions don't report missing symbols
     skip_clean "bin", "sbin"
 
-    if name.split("::")[2].downcase.start_with?("php56")
-      depends_on "gcc@10" => :build
-    else
-      depends_on "gcc" => :build
-    end
+#     if name.split("::")[2].downcase.start_with?("php56")
+#       depends_on "gcc@10" => :build
+#     else
+#       #depends_on "gcc" => :build
+#     end
 
-    depends_on "gcc" => :build
+    depends_on "gcc@10" => :build if OS.mac? && name.split("::")[2].downcase.start_with?("php56")
+    depends_on "gcc" => :build if OS.mac? && !name.split("::")[2].downcase.start_with?("php56")
 
     head do
       depends_on "autoconf" => :build
@@ -195,8 +196,10 @@ class AbstractPhp < Formula
 #             ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11 -DTRUE=1 -DFALSE=0"
 #             ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11 -DTRUE=1 -DFALSE=0"
 #           end
-          ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11 -DTRUE=1 -DFALSE=0"
-          ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11 -DTRUE=1 -DFALSE=0"
+#           ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11 -DTRUE=1 -DFALSE=0"
+#           ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11 -DTRUE=1 -DFALSE=0"
+          ENV.append "CFLAGS", "-DTRUE=1 -DFALSE=0"
+          ENV.append "CXXFLAGS", "-DTRUE=1 -DFALSE=0"
       else
 #           if OS.linux?
 #             ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
@@ -205,8 +208,8 @@ class AbstractPhp < Formula
 #             ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
 #             ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
 #           end
-          ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
-          ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
+#           ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
+#           ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
       end
      end
 
