@@ -13,4 +13,3 @@ docker buildx build --push --platform linux/amd64,linux/arm64 $DOCKER_BUILD_BUIL
     --build-arg "BREW_FORMULA_DEPS=$formulas_deps" \
     -t "$repository/php-node-builder" \
     php-node-builder
-

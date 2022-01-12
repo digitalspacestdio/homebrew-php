@@ -32,7 +32,7 @@ for formula_php in $FORMULAS_PHP; do
 #    FROM_IMAGE_BUILDER=${DOCKER_IMAGE_BUILDER} \
 #    FROM_IMAGE="$repository/linuxbrew" \
 
-    docker build $DOCKER_BUILD_PHP_ARGS --rm \
+    docker buildx build --push --platform linux/amd64,linux/arm64 $DOCKER_BUILD_PHP_ARGS \
     --build-arg FROM_IMAGE_BUILDER=$DOCKER_IMAGE_BUILDER \
     --build-arg FROM_IMAGE="$repository/linuxbrew" \
     --build-arg BREW_FORMULA_PHP="$formula_php" \
@@ -60,7 +60,7 @@ for php_version in $php_version; do
 #    FROM_IMAGE_PHP="$repository/php:$php_version" \
 #    FROM_IMAGE="$repository/linuxbrew" \
 
-    docker build $DOCKER_BUILD_NODE_ARGS --rm \
+    docker buildx build --push --platform linux/amd64,linux/arm64 $DOCKER_BUILD_PHP_ARGS \
     --build-arg FROM_IMAGE_BUILDER="${DOCKER_IMAGE_BUILDER}" \
     --build-arg FROM_IMAGE_PHP="$repository/php:$php_version" \
     --build-arg FROM_IMAGE="$repository/linuxbrew" \
