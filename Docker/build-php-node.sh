@@ -34,7 +34,7 @@ for formula_php in $FORMULAS_PHP; do
 
     docker buildx build --push --platform linux/amd64,linux/arm64 $DOCKER_BUILD_PHP_ARGS \
     --build-arg FROM_IMAGE_BUILDER=$DOCKER_IMAGE_BUILDER \
-    --build-arg FROM_IMAGE="$repository/linuxbrew" \
+    --build-arg FROM_IMAGE="debian:bullseye-slim" \
     --build-arg BREW_FORMULA_PHP="$formula_php" \
     -t "$repository/php:$php_major.$php_minor.$php_fix" \
     -t "$repository/php:$php_major.$php_minor" \
@@ -63,7 +63,7 @@ for php_version in $php_version; do
     docker buildx build --push --platform linux/amd64,linux/arm64 $DOCKER_BUILD_PHP_ARGS \
     --build-arg FROM_IMAGE_BUILDER="${DOCKER_IMAGE_BUILDER}" \
     --build-arg FROM_IMAGE_PHP="$repository/php:$php_version" \
-    --build-arg FROM_IMAGE="$repository/linuxbrew" \
+    --build-arg FROM_IMAGE="debian:bullseye-slim" \
     --build-arg BREW_FORMULA_NODE="$formula_php" \
     -t "$repository/php-node:$php_major.$php_minor.$php_fix-$node_major.$node_minor.$node_fix" \
     -t "$repository/php-node:$php_major.$php_minor-$node_major.$node_minor" \
