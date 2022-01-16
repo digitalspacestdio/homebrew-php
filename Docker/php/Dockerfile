@@ -72,4 +72,16 @@ RUN brew cleanup \
 FROM $FROM_IMAGE
 RUN rm -rf /home/linuxbrew/.linuxbrew
 COPY --from=builder --chown=linuxbrew:linuxbrew /home/linuxbrew/.linuxbrew /home/linuxbrew/.linuxbrew
-CMD ["php-fpm", "-c", "/home/linuxbrew/.linuxbrew/etc/php"]
+RUN echo 'export PATH="/home/linuxbrew/.linuxbrew/sbin:$PATH"' >> /home/linuxbrew/.profile
+ENV PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH \
+    SHELL=/bin/bash \
+    LANG=en_US.UTF-8 \
+    EDITOR=micro \
+    HOMEBREW_NO_AUTO_UPDATE=1 \
+    HOMEBREW_NO_ENV_HINTS=1 \
+    HOMEBREW_NO_INSTALL_CLEANUP=1 \
+    HOMEBREW_FORCE_BREWED_CURL=1 \
+    HOMEBREW_FORCE_BREWED_GIT=1
+WORKDIR /home/linuxbrew
+SHELL ["/bin/bash", "-c"]
+CMD ["bash"]
