@@ -22,6 +22,7 @@ class Php70Mcrypt < AbstractPhp70Extension
     args << "--with-mcrypt=#{Formula["phpmcrypt"].opt_prefix}"
     args << phpconfig
 
+    cpu = Hardware::CPU.arm? ? "aarch64" : Hardware.oldest_cpu
     if OS.mac?
       args << "--build=#{cpu}-apple-darwin#{OS.kernel_version.major}"
     else

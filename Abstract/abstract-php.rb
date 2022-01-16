@@ -162,10 +162,9 @@ class AbstractPhp < Formula
     php_version
     php_version_path
 
-    if Hardware::CPU.arch == :x86_64
-        ENV.append "CFLAGS", "-march=haswell"
-        ENV.append "CXXFLAGS", "-march=haswell"
-    end
+    cpu = Hardware::CPU.arm? ? "aarch64" : Hardware.oldest_cpu
+    ENV.append "CFLAGS", "-march=#{cpu}"
+    ENV.append "CXXFLAGS", "-march=#{cpu}"
 
     if php_version.start_with?("5.6")
       ENV.cxx11

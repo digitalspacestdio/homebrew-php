@@ -21,6 +21,7 @@ class Php56Mcrypt < AbstractPhp56Extension
     args << "--with-mcrypt=#{Formula["phpmcrypt"].opt_prefix}"
     args << phpconfig
 
+    cpu = Hardware::CPU.arm? ? "aarch64" : Hardware.oldest_cpu
     if OS.mac?
       args << "--build=#{cpu}-apple-darwin#{OS.kernel_version.major}"
     else

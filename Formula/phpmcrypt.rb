@@ -35,6 +35,7 @@ class Phpmcrypt < Formula
       args << "--prefix=#{prefix}"
       args << "--mandir=#{man}"
 
+      cpu = Hardware::CPU.arm? ? "aarch64" : Hardware.oldest_cpu
       if OS.mac?
         args << "--build=#{cpu}-apple-darwin#{OS.kernel_version.major}"
       else
@@ -50,6 +51,7 @@ class Phpmcrypt < Formula
     args << "--with-libmcrypt-prefix=#{prefix}"
     args << "-mandir=#{man}"
 
+    cpu = Hardware::CPU.arm? ? "aarch64" : Hardware.oldest_cpu
     if OS.mac?
       args << "--build=#{cpu}-apple-darwin#{OS.kernel_version.major}"
     else
