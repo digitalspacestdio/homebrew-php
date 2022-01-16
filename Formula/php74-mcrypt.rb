@@ -7,7 +7,7 @@ class Php74Mcrypt < AbstractPhp74Extension
   url "https://pecl.php.net/get/mcrypt-1.0.1.tgz"
   sha256 "a3b0e5493b5cd209ab780ee54733667293d369e6b7052b4a7dab9dd0def46ac6"
   head "https://github.com/chuan-yun/Molten.git"
-  revision 2
+  revision 3
 
 
   depends_on "mcrypt"
@@ -16,11 +16,20 @@ class Php74Mcrypt < AbstractPhp74Extension
   def install
     Dir.chdir "mcrypt-1.0.1"
 
+    args = []
+    args << "--prefix=#{prefix}"
+    args << "--disable-dependency-tracking"
+    args << "--with-mcrypt=#{Formula["mcrypt"].opt_prefix}"
+    args << phpconfig
+
+    if OS.mac?
+      args << "--build=#{cpu}-apple-darwin#{OS.kernel_version.major}"
+    else
+      args << "--build=#{cpu}-linux-gnu"
+    end
+
     safe_phpize
-    system "./configure", "--prefix=#{prefix}",
-                          phpconfig,
-                          "--disable-dependency-tracking",
-                          "--with-mcrypt=#{Formula["mcrypt"].opt_prefix}"
+    system "./configure", *args
     system "make"
     prefix.install "modules/mcrypt.so"
     write_config_file if build.with? "config-file"

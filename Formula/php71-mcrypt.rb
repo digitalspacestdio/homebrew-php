@@ -16,11 +16,20 @@ class Php71Mcrypt < AbstractPhp71Extension
   def install
     Dir.chdir "ext/mcrypt"
 
+    args = []
+    args << "--prefix=#{prefix}"
+    args << "--disable-dependency-tracking"
+    args << "--with-mcrypt=#{Formula["mcrypt"].opt_prefix}"
+    args << phpconfig
+
+    if OS.mac?
+      args << "--build=#{cpu}-apple-darwin#{OS.kernel_version.major}"
+    else
+      args << "--build=#{cpu}-linux-gnu"
+    end
+
     safe_phpize
-    system "./configure", "--prefix=#{prefix}",
-                          phpconfig,
-                          "--disable-dependency-tracking",
-                          "--with-mcrypt=#{Formula["mcrypt"].opt_prefix}"
+    system "./configure", *args
     system "make"
     prefix.install "modules/mcrypt.so"
     write_config_file if build.with? "config-file"
