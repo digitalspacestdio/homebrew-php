@@ -10,7 +10,7 @@ class Php73Mcrypt < AbstractPhp73Extension
   revision 2
 
 
-  depends_on "mcrypt"
+  depends_on "phpmcrypt"
   depends_on "libtool" => :build
 
   def install
@@ -19,7 +19,7 @@ class Php73Mcrypt < AbstractPhp73Extension
     args = []
     args << "--prefix=#{prefix}"
     args << "--disable-dependency-tracking"
-    args << "--with-mcrypt=#{Formula["mcrypt"].opt_prefix}"
+    args << "--with-mcrypt=#{Formula["phpmcrypt"].opt_prefix}"
     args << phpconfig
 
     if OS.mac?

@@ -9,7 +9,7 @@ class Php56Mcrypt < AbstractPhp56Extension
   revision 7
 
 
-  depends_on "mcrypt"
+  depends_on "phpmcrypt"
   depends_on "libtool" => :build
 
   def install
@@ -18,7 +18,7 @@ class Php56Mcrypt < AbstractPhp56Extension
     args = []
     args << "--prefix=#{prefix}"
     args << "--disable-dependency-tracking"
-    args << "--with-mcrypt=#{Formula["mcrypt"].opt_prefix}"
+    args << "--with-mcrypt=#{Formula["phpmcrypt"].opt_prefix}"
     args << phpconfig
 
     if OS.mac?
