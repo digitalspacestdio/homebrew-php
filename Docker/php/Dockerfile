@@ -72,3 +72,4 @@ RUN brew cleanup \
 FROM $FROM_IMAGE
 RUN rm -rf /home/linuxbrew/.linuxbrew
 COPY --from=builder --chown=linuxbrew:linuxbrew /home/linuxbrew/.linuxbrew /home/linuxbrew/.linuxbrew
+CMD ["php-fpm", "-c", "/home/linuxbrew/.linuxbrew/etc/php"]
