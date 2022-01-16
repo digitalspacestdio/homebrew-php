@@ -5,6 +5,8 @@ class Phpmcrypt < Formula
   sha256 "5145aa844e54cca89ddab6fb7dd9e5952811d8d787c4f4bf27eb261e6c182098"
   license "GPL-3.0-or-later"
 
+  keg_only "php only dependency"
+
   # Added automake as a build dependency to update config files in libmcrypt.
   # Please remove in future if there is a patch upstream which recognises aarch64 macos.
   depends_on "automake" => :build
