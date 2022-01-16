@@ -6,7 +6,7 @@ class Php56Mcrypt < AbstractPhp56Extension
   homepage "http://php.net/manual/en/book.mcrypt.php"
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
-  revision 7
+  revision 8
 
 
   depends_on "phpmcrypt"
