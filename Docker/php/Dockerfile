@@ -61,8 +61,8 @@ RUN brew-clean-build-recursive digitalspacestdio/php/php81 digitalspacestdio/php
     node node@14 node@12 \
     msmtp composer@2.2 composer@1.10
 
-RUN brew remove --ignore-dependencies gcc binutils
-RUN brew-clean-build-recursive gcc binutils util-linux
+#RUN brew remove --ignore-dependencies gcc binutils
+#RUN brew-clean-build-recursive gcc binutils util-linux
 
 RUN brew cleanup \
     && rm -rf /home/linuxbrew/.cache/Homebrew \
