@@ -2,7 +2,7 @@ class Phpmcrypt < Formula
   desc "Replacement for the old crypt package and crypt(1) command"
   homepage "https://mcrypt.sourceforge.io"
   url "https://f001.backblazeb2.com/file/php-homebrew/mcrypt/mcrypt-2.6.8.tar.gz"
-  sha256 "485e1861479272911f7832019d1b5d31873cde67b2e456bd984ce4bf5df532b1"
+  sha256 "96dd3d5f42400a9918676ed1b7db87467589ba200410132f33766c52fbeefa35"
   license "GPL-3.0-or-later"
   revision 6
 
@@ -30,9 +30,9 @@ class Phpmcrypt < Formula
 
     resource("libmcrypt").stage do
       # Workaround for ancient config files not recognising aarch64 macos.
-      #%w[config.guess config.sub].each do |fn|
-      #  cp "#{Formula["automake"].opt_prefix}/share/automake-#{Formula["automake"].version.major_minor}/#{fn}", fn
-      #end
+      %w[config.guess config.sub].each do |fn|
+       cp "#{Formula["automake"].opt_prefix}/share/automake-#{Formula["automake"].version.major_minor}/#{fn}", fn
+      end
 
       args = []
       args << "--prefix=#{prefix}"
@@ -42,6 +42,10 @@ class Phpmcrypt < Formula
       system "make", "install"
     end
 
+    # Workaround for ancient config files not recognising aarch64 macos.
+    %w[config.guess config.sub].each do |fn|
+      cp "#{Formula["automake"].opt_prefix}/share/automake-#{Formula["automake"].version.major_minor}/#{fn}", fn
+    end
     args = []
     args << "--prefix=#{prefix}"
     args << "--with-libmcrypt-prefix=#{prefix}"
