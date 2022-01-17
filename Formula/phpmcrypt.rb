@@ -2,9 +2,9 @@ class Phpmcrypt < Formula
   desc "Replacement for the old crypt package and crypt(1) command"
   homepage "https://mcrypt.sourceforge.io"
   url "https://f001.backblazeb2.com/file/php-homebrew/mcrypt/mcrypt-2.6.8.tar.gz"
-  sha256 "485e1861479272911f7832019d1b5d31873cde67b2e456bd984ce4bf5df532b1"
+  sha256 "fda960d3b8308096055dcbc7643e4fce792305e3f93aacb66b3c9ecbf4a4d63c"
   license "GPL-3.0-or-later"
-  revision 5
+  revision 6
 
   keg_only "php only dependency"
 
@@ -17,7 +17,7 @@ class Phpmcrypt < Formula
 
   resource "libmcrypt" do
     url "https://f001.backblazeb2.com/file/php-homebrew/mcrypt/libmcrypt-2.5.8.tar.gz"
-    sha256 "6e8dbfedf9baaae6409c0404b662812a4f220220f48f33b3476216d7edf91c99"
+    sha256 "fda960d3b8308096055dcbc7643e4fce792305e3f93aacb66b3c9ecbf4a4d63c"
   end
 
   # Patch to correct inclusion of malloc function on OSX.
@@ -30,9 +30,9 @@ class Phpmcrypt < Formula
 
     resource("libmcrypt").stage do
       # Workaround for ancient config files not recognising aarch64 macos.
-      %w[config.guess config.sub].each do |fn|
-        cp "#{Formula["automake"].opt_prefix}/share/automake-#{Formula["automake"].version.major_minor}/#{fn}", fn
-      end
+      #%w[config.guess config.sub].each do |fn|
+      #  cp "#{Formula["automake"].opt_prefix}/share/automake-#{Formula["automake"].version.major_minor}/#{fn}", fn
+      #end
 
       args = []
       args << "--prefix=#{prefix}"
