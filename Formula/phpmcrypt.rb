@@ -4,7 +4,7 @@ class Phpmcrypt < Formula
   url "https://f001.backblazeb2.com/file/php-homebrew/mcrypt/mcrypt-2.6.8.tar.gz"
   sha256 "485e1861479272911f7832019d1b5d31873cde67b2e456bd984ce4bf5df532b1"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
 
   keg_only "php only dependency"
 
@@ -16,8 +16,8 @@ class Phpmcrypt < Formula
   uses_from_macos "zlib"
 
   resource "libmcrypt" do
-    url "https://downloads.sourceforge.net/project/mcrypt/Libmcrypt/2.5.8/libmcrypt-2.5.8.tar.gz"
-    sha256 "e4eb6c074bbab168ac47b947c195ff8cef9d51a211cdd18ca9c9ef34d27a373e"
+    url "https://f001.backblazeb2.com/file/php-homebrew/mcrypt/libmcrypt-2.5.8.tar.gz"
+    sha256 "5d71d21529ec1d444aa1a5a74bf54dcf1f86baedaa6bce0ea7b475d910bc0a12"
   end
 
   # Patch to correct inclusion of malloc function on OSX.
