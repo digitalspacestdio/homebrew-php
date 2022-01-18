@@ -58,6 +58,8 @@ RUN brew cleanup \
 
 # Finilize
 FROM $FROM_IMAGE
+RUN useradd -m -s /bin/bash linuxbrew
+USER linuxbrew
 RUN rm -rf /home/linuxbrew/.linuxbrew
 COPY --from=builder --chown=linuxbrew:linuxbrew /home/linuxbrew/.linuxbrew /home/linuxbrew/.linuxbrew
 RUN echo 'export PATH="/home/linuxbrew/.linuxbrew/sbin:$PATH"' >> /home/linuxbrew/.profile
