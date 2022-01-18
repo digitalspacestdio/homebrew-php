@@ -2,9 +2,6 @@ ARG FROM_IMAGE_BUILDER=digitalspacestudio/php-node-builder
 ARG FROM_IMAGE_PHP=digitalspacestudio/php
 ARG FROM_IMAGE=digitalspacestudio/linuxbrew
 
-FROM ${FROM_IMAGE_PHP} as php
-RUN php --version
-
 FROM ${FROM_IMAGE_BUILDER} AS builder
 LABEL maintainer="Sergey Cherepanov <sergey@digitalspace.studio>"
 LABEL name="digitalspacestudio/php-node"
