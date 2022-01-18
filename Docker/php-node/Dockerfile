@@ -2,6 +2,9 @@ ARG FROM_IMAGE_BUILDER=digitalspacestudio/php-node-builder
 ARG FROM_IMAGE_PHP=digitalspacestudio/php
 ARG FROM_IMAGE=digitalspacestudio/linuxbrew
 
+FROM ${FROM_IMAGE_PHP} as php
+RUN php --version
+
 FROM ${FROM_IMAGE_BUILDER} AS builder
 LABEL maintainer="Sergey Cherepanov <sergey@digitalspace.studio>"
 LABEL name="digitalspacestudio/php-node"
@@ -39,7 +42,8 @@ COPY --from=builder --chown=linuxbrew:linuxbrew /home/linuxbrew/.linuxbrew /home
 FROM ${FROM_IMAGE}
 RUN useradd -m -s /bin/bash linuxbrew
 USER linuxbrew
-COPY --from=php --chown=linuxbrew:linuxbrew /home/linuxbrew/.linuxbrew/ /home/linuxbrew/.linuxbrew/
+RUN rm -rf /home/linuxbrew/.linuxbrew
+COPY --from=builder --chown=linuxbrew:linuxbrew /home/linuxbrew/.linuxbrew /home/linuxbrew/.linuxbrew
 RUN echo 'export PATH="/home/linuxbrew/.linuxbrew/sbin:$PATH"' >> /home/linuxbrew/.profile
 ENV PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH \
     SHELL=/bin/bash \
@@ -53,4 +57,3 @@ ENV PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH \
 WORKDIR /home/linuxbrew
 SHELL ["/bin/bash", "-c"]
 CMD ["bash"]
-

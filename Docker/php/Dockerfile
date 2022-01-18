@@ -57,7 +57,7 @@ RUN brew cleanup \
     && rm -rf /home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/vendor/portable-ruby
 
 # Finilize
-FROM $FROM_IMAGE
+FROM ${FROM_IMAGE}
 RUN useradd -m -s /bin/bash linuxbrew
 USER linuxbrew
 RUN rm -rf /home/linuxbrew/.linuxbrew
