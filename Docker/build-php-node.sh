@@ -40,7 +40,7 @@ for php_version in $php_version; do
     --build-arg FROM_IMAGE_BUILDER="${DOCKER_IMAGE_BUILDER}" \
     --build-arg FROM_IMAGE_PHP="$repository/php:$php_version" \
     --build-arg FROM_IMAGE="debian:bullseye-slim" \
-    --build-arg BREW_FORMULA_NODE="$formula_php" \
+    --build-arg BREW_FORMULA_NODE="$formula_node" \
     -t "$repository/php-node:$php_major.$php_minor.$php_fix-$node_major.$node_minor.$node_fix" \
     -t "$repository/php-node:$php_major.$php_minor-$node_major.$node_minor" \
     -t "$repository/php-node:$php_major.$php_minor-$node_major" \
