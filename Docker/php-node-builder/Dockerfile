@@ -21,4 +21,4 @@ RUN brew tap digitalspacestdio/php
 #RUN sed -i 's/https:\/\/github.com\/fxcoudert\/gcc\/archive\/refs\/tags\/gcc-11.2.0-arm-20211124.tar.gz/https:\/\/ftp.gnu.org\/gnu\/gcc\/gcc-11.2.0\/gcc-11.2.0.tar.xz/g' /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/homebrew/homebrew-core/Formula/gcc.rb
 #RUN sed -i 's/d7f8af7a0d9159db2ee3c59ffb335025a3d42547784bee321d58f2b4712ca5fd/d08edc536b54c372a1010ff6619dd274c0f1603aa49212ba20f7aa2cda36fa8b/g' /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/homebrew/homebrew-core/Formula/gcc.rb
 RUN brew-build-recursive ${BREW_FORMULA_DEPS}
-RUN echo "${BREW_FORMULA_DEPS}" > ~/.brew_formula_deps
+RUN echo "${BREW_FORMULA_DEPS}" > ~/.brew_php_node_builder_deps

@@ -46,20 +46,8 @@ RUN brew-build-recursive composer@2.2
 RUN brew-build-recursive composer@1.10
 
 # Cleanup
-RUN brew-clean-build-recursive digitalspacestdio/php/php81 digitalspacestdio/php/php80 digitalspacestdio/php/php74 digitalspacestdio/php/php73 digitalspacestdio/php/php72 \
-    ${BREW_FORMULA_PHP} ${BREW_FORMULA_PHP}-common ${BREW_FORMULA_PHP}-xdebug ${BREW_FORMULA_PHP}-xdebug ${BREW_FORMULA_PHP}-xhprof \
-    node node@14 node@12 \
-    msmtp composer@2.2 composer@1.10
-
-RUN brew-clean-build-recursive digitalspacestdio/php/php81 digitalspacestdio/php/php80 digitalspacestdio/php/php74 digitalspacestdio/php/php73 digitalspacestdio/php/php72 \
-    ${BREW_FORMULA_PHP} ${BREW_FORMULA_PHP}-common ${BREW_FORMULA_PHP}-xdebug ${BREW_FORMULA_PHP}-xdebug ${BREW_FORMULA_PHP}-xhprof \
-    node node@14 node@12 \
-    msmtp composer@2.2 composer@1.10
-
-RUN brew-clean-build-recursive digitalspacestdio/php/php81 digitalspacestdio/php/php80 digitalspacestdio/php/php74 digitalspacestdio/php/php73 digitalspacestdio/php/php72 \
-    ${BREW_FORMULA_PHP} ${BREW_FORMULA_PHP}-common ${BREW_FORMULA_PHP}-xdebug ${BREW_FORMULA_PHP}-xdebug ${BREW_FORMULA_PHP}-xhprof \
-    node node@14 node@12 \
-    msmtp composer@2.2 composer@1.10
+RUN brew-clean-build-recursive ${BREW_FORMULA_PHP} ${BREW_FORMULA_PHP}-common ${BREW_FORMULA_PHP}-xdebug ${BREW_FORMULA_PHP}-xhprof
+RUN brew-clean-build-recursive $(cat ~/.brew_php_node_builder_deps)
 
 #RUN brew remove --ignore-dependencies gcc binutils
 #RUN brew-clean-build-recursive gcc binutils util-linux

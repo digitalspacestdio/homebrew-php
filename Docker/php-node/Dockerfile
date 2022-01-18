@@ -26,6 +26,7 @@ RUN brew-build-recursive ${BREW_FORMULA_NODE}
 RUN brew link --overwrite ${BREW_FORMULA_NODE}
 RUN npm install --global yarn
 RUN brew-clean-build-recursive ${BREW_FORMULA_NODE}
+RUN brew-clean-build-recursive $(cat ~/.brew_php_node_builder_deps)
 
 # Cleanup
 RUN brew cleanup \
