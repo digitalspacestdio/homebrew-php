@@ -23,7 +23,7 @@ for php_version in $php_version; do
     php_minor=$(echo $php_version | awk -F. '{print $2}')
     php_fix=$(echo $php_version | awk -F. '{print $3}')
     php_fix_major_minor_fix="$repository/php:$php_major.$php_minor.$php_fix";
-    php_fix_major_minor= "$repository/php:$php_major.$php_minor";
+    php_fix_major_minor="$repository/php:$php_major.$php_minor";
     php__major="$repository/php:$php_major";
 
     node_version=$(docker run --rm $repository/linuxbrew sh -c "brew info ${formula_node} --json" | jq '.[].versions.stable' | egrep -o '[0-9][0-9]*\.[0-9][0-9]*\.[0-9][A-z0-9]*')
