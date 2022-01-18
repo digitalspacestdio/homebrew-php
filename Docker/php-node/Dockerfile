@@ -33,11 +33,6 @@ RUN brew cleanup \
     && rm -rf /home/linuxbrew/.cache/Homebrew \
     && rm -rf /home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/vendor/portable-ruby
 
-# Copy php
-FROM ${FROM_IMAGE_PHP} as php
-RUN rm -rf /home/linuxbrew/.linuxbrew
-COPY --from=builder --chown=linuxbrew:linuxbrew /home/linuxbrew/.linuxbrew /home/linuxbrew/.linuxbrew
-
 # Finilize
 FROM ${FROM_IMAGE}
 RUN useradd -m -s /bin/bash linuxbrew
