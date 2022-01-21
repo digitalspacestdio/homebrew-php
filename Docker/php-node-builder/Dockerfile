@@ -2,17 +2,22 @@ FROM digitalspacestudio/linuxbrew:latest AS builder
 LABEL maintainer="Sergey Cherepanov <sergey@digitalspace.studio>"
 LABEL name="digitalspacestudio/php-node-builder"
 ARG DEBIAN_FRONTEND=noninteractive
-ARG BREW_FORMULA_DEPS=""
 ARG HOMEBREW_NO_INSTALL_CLEANUP=1
 ARG HOMEBREW_NO_AUTO_UPDATE=1
 ARG HOMEBREW_NO_ANALYTICS=1
 ARG HOMEBREW_FORCE_BREWED_CURL=1
 ARG HOMEBREW_FORCE_BREWED_GIT=1
 ARG BREW_INSTALL_ARGS="--quiet -s"
+ARG BREW_FORMULAS_PHP=""
+ARG BREW_FORMULAS_NODE=""
+ARG BREW_FORMULAS_EXTRA=""
 USER linuxbrew
 
 # Tap
 RUN brew tap digitalspacestdio/common
 RUN brew tap digitalspacestdio/php
-RUN brew-build-recursive ${BREW_FORMULA_DEPS}
-RUN echo "${BREW_FORMULA_DEPS}" > ~/.brew_php_node_builder_deps
+RUN brew list > ~/.brew_installed_packages
+RUN echo $BREW_BUILD_DEPS > ~/.brew_builder_formulas
+RUN echo "$BREW_FORMULAS_PHP $BREW_FORMULAS_NODE $BREW_FORMULAS_EXTRA" > ~/.brew_builder_formulas
+RUN brew-build-recursi  ve $(brew-list-build-deps $(echo "$BREW_FORMULAS_PHP $BREW_FORMULAS_NODE $BREW_FORMULAS_EXTRA"))
+

@@ -6,10 +6,10 @@ set -o allexport
 source .env
 set +o allexport
 repository=${1-digitalspacestudio}
-formulas_deps=$(docker run --rm $repository/linuxbrew sh -c "brew tap digitalspacestdio/common && brew tap digitalspacestdio/php && brew-list-build-deps $FORMULAS_PHP $FORMULAS_NODE $FORMULAS_EXTRA")
-
 # Assemble universal builder
 docker buildx build --push --platform linux/amd64,linux/arm64 $DOCKER_BUILD_BUILDER_ARGS \
-    --build-arg "BREW_FORMULA_DEPS=$formulas_deps" \
+    --build-arg "BREW_FORMULAS_PHP=$FORMULAS_PHP" \
+    --build-arg "BREW_FORMULAS_NODE=$FORMULAS_NODE" \
+    --build-arg "BREW_FORMULAS_EXTRA=$FORMULAS_EXTRA" \
     -t "$repository/php-node-builder" \
     php-node-builder

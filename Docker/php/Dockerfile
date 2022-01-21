@@ -46,8 +46,7 @@ RUN brew-build-recursive composer@2.2
 RUN brew-build-recursive composer@1.10
 
 # Cleanup
-RUN brew-clean-build-recursive ${BREW_FORMULA_PHP} ${BREW_FORMULA_PHP}-common ${BREW_FORMULA_PHP}-xdebug ${BREW_FORMULA_PHP}-xhprof
-RUN brew-clean-build-recursive $(cat ~/.brew_php_node_builder_deps)
+RUN brew-clean-build-recursive $(cat ~/.brew_builder_formulas; echo "${BREW_FORMULA_PHP} ${BREW_FORMULA_PHP}-common ${BREW_FORMULA_PHP}-xdebug ${BREW_FORMULA_PHP}-xhprof composer@2.2 composer@1.10")
 
 #RUN brew remove --ignore-dependencies gcc binutils
 #RUN brew-clean-build-recursive gcc binutils util-linux
