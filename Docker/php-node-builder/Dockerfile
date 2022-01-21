@@ -17,7 +17,6 @@ USER linuxbrew
 RUN brew tap digitalspacestdio/common
 RUN brew tap digitalspacestdio/php
 RUN brew list > ~/.brew_installed_packages
-RUN echo $BREW_BUILD_DEPS > ~/.brew_builder_formulas
 RUN echo "$BREW_FORMULAS_PHP $BREW_FORMULAS_NODE $BREW_FORMULAS_EXTRA" > ~/.brew_builder_formulas
-RUN brew-build-recursi  ve $(brew-list-build-deps $(echo "$BREW_FORMULAS_PHP $BREW_FORMULAS_NODE $BREW_FORMULAS_EXTRA"))
+RUN brew-build-recursive $(brew-list-build-deps $(echo "$BREW_FORMULAS_PHP $BREW_FORMULAS_NODE $BREW_FORMULAS_EXTRA"))
 
