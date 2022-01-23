@@ -4,7 +4,7 @@ FROM $FROM_IMAGE_BUILDER AS builder
 LABEL maintainer="Sergey Cherepanov <sergey@digitalspace.studio>"
 LABEL name="digitalspacestudio/php"
 ARG DEBIAN_FRONTEND=noninteractive
-ARG BREW_FORMULA_PHP=digitalspacestdio/php/php80
+ARG BREW_FORMULA_PHP=digitalspacestdio/php/php81
 ARG HOMEBREW_NO_INSTALL_CLEANUP=1
 ARG HOMEBREW_NO_AUTO_UPDATE=1
 ARG HOMEBREW_NO_ANALYTICS=1
