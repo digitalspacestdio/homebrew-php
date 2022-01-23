@@ -10,7 +10,7 @@ class Php70Mcrypt < AbstractPhp70Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
-  depends_on "phpmcrypt"
+  depends_on "digitalspacestdio/php/phpmcrypt "
   depends_on "libtool" => :build
 
   def install
@@ -19,7 +19,7 @@ class Php70Mcrypt < AbstractPhp70Extension
     args = []
     args << "--prefix=#{prefix}"
     args << "--disable-dependency-tracking"
-    args << "--with-mcrypt=#{Formula["phpmcrypt"].opt_prefix}"
+    args << "--with-mcrypt=#{Formula["digitalspacestdio/php/phpmcrypt "].opt_prefix}"
     args << phpconfig
 
     safe_phpize

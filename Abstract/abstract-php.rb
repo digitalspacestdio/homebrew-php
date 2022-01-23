@@ -41,7 +41,7 @@ class AbstractPhp < Formula
     end
 
     depends_on "sqlite"
-    depends_on "phpcurl"
+    depends_on "digitalspacestdio/php/phpcurl"
     depends_on "libxslt"
     depends_on "enchant" => :optional
     depends_on "freetds" if build.with?("mssql")
@@ -389,7 +389,7 @@ INFO
     end
 
     args << "--with-sqlite=#{Formula["sqlite"].opt_prefix}"
-    args << "--with-curl=#{Formula["phpcurl"].opt_prefix}"
+    args << "--with-curl=#{Formula["digitalspacestdio/php/phpcurl"].opt_prefix}"
     args << "--with-xsl=" + Formula["libxslt"].opt_prefix.to_s
 
     if build.with? "imap"

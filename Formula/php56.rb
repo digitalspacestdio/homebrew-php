@@ -31,7 +31,7 @@ class Php56 < AbstractPhp
         conflicts_with php_formula_name, :because => "different php versions install the same binaries."
       end
 
-      depends_on "phpcurl"
+      depends_on "digitalspacestdio/php/phpcurl"
       depends_on "libxslt"
       depends_on "enchant" => :optional
       depends_on "freetds" if build.with?("mssql")
