@@ -9,12 +9,12 @@ class Php56Tidy < AbstractPhp56Extension
   revision 6
 
 
-  depends_on "tidy-html5"
+  depends_on "digitalspacestdio/php/php-tidy-html5"
 
   def install
     Dir.chdir "ext/tidy"
 
-    # API compatibility with tidy-html5 v5.0.0 - https://github.com/htacg/tidy-html5/issues/224
+    # API compatibility with digitalspacestdio/php/php-tidy-html5 v5.0.0 - https://github.com/htacg/digitalspacestdio/php/php-tidy-html5/issues/224
     inreplace "tidy.c", "buffio.h", "tidybuffio.h"
 
     # ENV.universal_binary if build.universal?
@@ -23,7 +23,7 @@ class Php56Tidy < AbstractPhp56Extension
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
                           "--disable-dependency-tracking",
-                          "--with-tidy=#{Formula["tidy-html5"].opt_prefix}"
+                          "--with-tidy=#{Formula["digitalspacestdio/php/php-tidy-html5"].opt_prefix}"
     system "make"
     prefix.install "modules/tidy.so"
     write_config_file if build.with? "config-file"
