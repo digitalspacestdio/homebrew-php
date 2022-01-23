@@ -25,8 +25,8 @@ RUN brew-build-recursive msmtp
 #USER linuxbrew
 
 # Untap repositories if exists
-RUN brew tap | grep 'digitalspacestdio/common' && brew untap digitalspacestdio/common || exit 0
-RUN brew tap | grep 'digitalspacestdio/php' && brew untap digitalspacestdio/php || exit 0
+RUN brew tap | grep 'digitalspacestdio/common' && brew untap -f digitalspacestdio/common || exit 0
+RUN brew tap | grep 'digitalspacestdio/php' && brew untap -f digitalspacestdio/php || exit 0
 
 # Tap repositories
 RUN brew tap digitalspacestdio/common
