@@ -25,11 +25,11 @@ COPY --from=php --chown=linuxbrew:linuxbrew /home/linuxbrew/.linuxbrew /home/lin
 RUN brew-build-recursive ${BREW_FORMULA_NODE}
 RUN brew link --overwrite ${BREW_FORMULA_NODE}
 RUN npm install --global yarn
-RUN brew-clean-build-recursive ${BREW_FORMULA_NODE}
-RUN brew-clean-build-recursive $(cat ~/.brew_php_node_builder_deps)
 
 # Cleanup
+RUN brew-clean-build-recursive $(cat ~/.brew_php_node_builder_deps)
 RUN brew cleanup \
+    && rm -rf /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/* \
     && rm -rf /home/linuxbrew/.cache/Homebrew \
     && rm -rf /home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/vendor/portable-ruby
 
