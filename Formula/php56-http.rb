@@ -13,7 +13,7 @@ class Php56Http < AbstractPhp56Extension
   depends_on "digitalspacestdio/php/php56-raphf"
   depends_on "digitalspacestdio/php/php56-propro"
   depends_on "libevent" => :optional
-  depends_on "icu4c@67.1"
+  depends_on "digitalspacestdio/common/icu4c@67.1"
 
   # overwrite the config file name to ensure extension is loaded after dependencies
   def config_filename
