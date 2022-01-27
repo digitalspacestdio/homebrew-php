@@ -27,7 +27,7 @@ RUN brew link --overwrite ${BREW_FORMULA_NODE}
 RUN npm install --global yarn
 
 # Cleanup
-RUN brew-clean-build-recursive $(cat ~/.brew_php_node_builder_deps)
+RUN brew-clean-build-recursive $(cat ~/.brew_builder_formulas; echo ${BREW_FORMULA_NODE})
 RUN brew cleanup \
     && rm -rf /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/* \
     && rm -rf /home/linuxbrew/.cache/Homebrew \

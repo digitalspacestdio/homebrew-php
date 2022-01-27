@@ -42,7 +42,7 @@ RUN mkdir -p $(brew --prefix)/etc/php && ln -s $(brew --prefix)/etc/php/$($(brew
 RUN mkdir -p $(brew --prefix)/var/log/php && ln -s $(brew --prefix)/var/log/php/$($(brew --prefix ${BREW_FORMULA_PHP})/bin/php -v | egrep -o 'PHP [0-9][0-9]*\.[0-9][0-9]*\.[0-9][A-z0-9]*' | egrep -o '[0-9][0-9]*\.[0-9][0-9]*') $(brew --prefix)/var/log/php/current
 
 # Cleanup
-RUN brew-clean-build-recursive $(cat ~/.brew_php_node_builder_deps)
+RUN brew-clean-build-recursive $(cat ~/.brew_builder_formulas; echo ${BREW_FORMULA_PHP}-common ${BREW_FORMULA_PHP}-xdebug ${BREW_FORMULA_PHP}-xhprof composer@2.2 composer@1.10)
 RUN brew cleanup \
     && rm -rf /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/* \
     && rm -rf /home/linuxbrew/.cache/Homebrew \
