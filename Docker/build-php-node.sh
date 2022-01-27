@@ -14,7 +14,7 @@ for formula_php in $FORMULAS_PHP; do
     php_major=$(echo $php_version | awk -F. '{print $1}')
     php_minor=$(echo $php_version | awk -F. '{print $2}')
     php_fix=$(echo $php_version | awk -F. '{print $3}')
-    versions_php+=("$php_major.$php_minor.$php_fix")
+    versions_php=("$versions_php $php_major.$php_minor.$php_fix")
 done
 
 for php_version in $versions_php; do
