@@ -18,8 +18,7 @@ ARG HOMEBREW_FORCE_BREWED_CURL=1
 ARG HOMEBREW_FORCE_BREWED_GIT=1
 USER linuxbrew
 # Copy php
-RUN rm -rf /home/linuxbrew/.linuxbrew
-COPY --from=php --chown=linuxbrew:linuxbrew /home/linuxbrew/.linuxbrew /home/linuxbrew/.linuxbrew
+COPY --from=php --chown=linuxbrew:linuxbrew /home/linuxbrew/.linuxbrew/ /home/linuxbrew/.linuxbrew/
 
 # Install node
 RUN brew-build-recursive ${BREW_FORMULA_NODE}
