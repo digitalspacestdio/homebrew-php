@@ -17,6 +17,8 @@ for formula_php in $FORMULAS_PHP; do
     versions_php=("$versions_php $php_major.$php_minor.$php_fix")
 done
 
+versions_php="$(echo $versions_php | tr ' ' '\n' | sort)"
+
 for php_version in $versions_php; do
   for formula_node in $FORMULAS_NODE; do
     php_major=$(echo $php_version | awk -F. '{print $1}')
