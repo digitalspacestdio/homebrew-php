@@ -15,9 +15,6 @@ class Phpmcrypt < Formula
 
   uses_from_macos "zlib"
 
-  ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11" if OS.mac?
-  ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11" if OS.mac?
-
   resource "libmcrypt" do
     url "https://f001.backblazeb2.com/file/php-homebrew/mcrypt/libmcrypt-2.5.8.tar.gz"
     sha256 "fda960d3b8308096055dcbc7643e4fce792305e3f93aacb66b3c9ecbf4a4d63c"
