@@ -26,5 +26,4 @@ if git status --porcelain 2>&1 | grep 'Abstract/abstract-php-version.rb'; then
   git add "Abstract/abstract-php-version.rb"
   git commit -m "php version update"
   git push
-  bash Docker/build.sh
 fi
