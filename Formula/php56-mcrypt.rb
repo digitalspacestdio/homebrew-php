@@ -8,7 +8,7 @@ class Php56Mcrypt < AbstractPhp56Extension
   sha256 PHP_CHECKSUM[:sha256]
   revision 9
 
-  depends_on "digitalspacestdio/php/phpmcrypt"
+  depends_on "mcrypt"
   depends_on "libtool" => :build
 
   def install
@@ -17,7 +17,7 @@ class Php56Mcrypt < AbstractPhp56Extension
     args = []
     args << "--prefix=#{prefix}"
     args << "--disable-dependency-tracking"
-    args << "--with-mcrypt=#{Formula["digitalspacestdio/php/phpmcrypt"].opt_prefix}"
+    args << "--with-mcrypt=#{Formula["mcrypt"].opt_prefix}"
     args << phpconfig
 
     safe_phpize
