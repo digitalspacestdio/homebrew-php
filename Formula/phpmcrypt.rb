@@ -2,7 +2,7 @@ class Phpmcrypt < Formula
   desc "Replacement for the old crypt package and crypt(1) command"
   homepage "https://mcrypt.sourceforge.io"
   url "https://f001.backblazeb2.com/file/php-homebrew/mcrypt/mcrypt-2.6.8.tar.gz"
-  sha256 "96dd3d5f42400a9918676ed1b7db87467589ba200410132f33766c52fbeefa35"
+  sha256 "485e1861479272911f7832019d1b5d31873cde67b2e456bd984ce4bf5df532b1"
   license "GPL-3.0-or-later"
   revision 6
 
