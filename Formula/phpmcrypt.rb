@@ -4,7 +4,7 @@ class Phpmcrypt < Formula
   url "https://f001.backblazeb2.com/file/php-homebrew/mcrypt/mcrypt-2.6.8.tar.gz"
   sha256 "96dd3d5f42400a9918676ed1b7db87467589ba200410132f33766c52fbeefa35"
   license "GPL-3.0-or-later"
-  revision 7
+  revision 8
 
   keg_only "php only dependency"
 
@@ -14,6 +14,9 @@ class Phpmcrypt < Formula
   depends_on "mhash"
 
   uses_from_macos "zlib"
+
+  ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11" if OS.mac?
+  ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11" if OS.mac?
 
   resource "libmcrypt" do
     url "https://f001.backblazeb2.com/file/php-homebrew/mcrypt/libmcrypt-2.5.8.tar.gz"
