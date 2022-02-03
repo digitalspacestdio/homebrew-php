@@ -39,7 +39,7 @@ class AbstractPhpExtension < Formula
 
   def self.init
     depends_on "autoconf" => :build
-    depends_on "gcc@10" => :build if OS.mac? && name.split("::")[2].downcase.start_with?("php56")
+    depends_on "gcc@9" => :build if OS.mac? && name.split("::")[2].downcase.start_with?("php56")
     depends_on "gcc" => :build if OS.mac? && !name.split("::")[2].downcase.start_with?("php56")
 
     option "without-homebrew-php", "Ignore homebrew PHP and use default instead"
@@ -183,8 +183,8 @@ class AbstractPhp56Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php56Defs
 
   def safe_phpize
-#     ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
-#     ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9" if OS.mac?
+    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9" if OS.mac?
     super()
   end
 
@@ -229,6 +229,8 @@ class AbstractPhp71Extension < AbstractPhpExtension
 #     end
 #    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11 -DTRUE=1 -DFALSE=0"
 #    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11 -DTRUE=1 -DFALSE=0"
+    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11" if OS.mac?
+    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11" if OS.mac?
     ENV.append "CFLAGS", "-DTRUE=1 -DFALSE=0"
     ENV.append "CXXFLAGS", "-DTRUE=1 -DFALSE=0"
     super()
@@ -253,6 +255,8 @@ class AbstractPhp72Extension < AbstractPhpExtension
 #     end
 #     ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
 #     ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
+    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11" if OS.mac?
+    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11" if OS.mac?
     super()
   end
 
@@ -275,6 +279,8 @@ class AbstractPhp73Extension < AbstractPhpExtension
 #     end
 #     ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
 #     ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
+    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11" if OS.mac?
+    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11" if OS.mac?
     super()
   end
 
@@ -297,6 +303,8 @@ class AbstractPhp74Extension < AbstractPhpExtension
 #     end
 #     ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
 #     ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
+    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11" if OS.mac?
+    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11" if OS.mac?
     super()
   end
 
@@ -319,6 +327,8 @@ class AbstractPhp80Extension < AbstractPhpExtension
 #     end
 #     ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
 #     ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
+    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11" if OS.mac?
+    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11" if OS.mac?
     super()
   end
 
@@ -341,6 +351,8 @@ class AbstractPhp81Extension < AbstractPhpExtension
 #     end
 #     ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
 #     ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
+    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11" if OS.mac?
+    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11" if OS.mac?
     super()
   end
 
