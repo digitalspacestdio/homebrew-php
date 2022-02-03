@@ -13,10 +13,6 @@ class Phplibmcrypt < Formula
 
   uses_from_macos "zlib"
 
-  # Patch to correct inclusion of malloc function on OSX.
-  # Upstream: https://sourceforge.net/p/mcrypt/patches/14/
-  patch :DATA
-
   def install
     # Work around configure issues with Xcode 12
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
@@ -33,22 +29,3 @@ class Phplibmcrypt < Formula
     system "make", "install"
   end
 end
-
-__END__
-diff --git a/src/rfc2440.c b/src/rfc2440.c
-index 5a1f296..aeb501c 100644
---- a/src/rfc2440.c
-+++ b/src/rfc2440.c
-@@ -23,7 +23,12 @@
- #include <zlib.h>
- #endif
- #include <stdio.h>
-+
-+#ifdef __APPLE__
-+#include <malloc/malloc.h>
-+#else
- #include <malloc.h>
-+#endif
-
- #include "xmalloc.h"
- #include "keys.h"
