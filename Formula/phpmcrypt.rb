@@ -4,7 +4,7 @@ class Phpmcrypt < Formula
   url "https://f001.backblazeb2.com/file/php-homebrew/mcrypt/mcrypt-2.6.8.tar.gz"
   sha256 "485e1861479272911f7832019d1b5d31873cde67b2e456bd984ce4bf5df532b1"
   license "GPL-3.0-or-later"
-  revision 6
+  revision 7
 
   keg_only "php only dependency"
 
