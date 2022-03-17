@@ -5,7 +5,7 @@ class Php56Common < Formula
   desc "PHP Version 5.6 (Common Package)"
   include AbstractPhpVersion::Php56Defs
   version PHP_VERSION
-  revision 18
+  revision 19
 
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -68,12 +68,12 @@ class Php56Common < Formula
 
   def config_file
       <<~EOS
-        [program:php56-fpm]
+        [program:php56]
         command=#{HOMEBREW_PREFIX}/opt/php56/sbin/php-fpm --nodaemonize --fpm-config #{HOMEBREW_PREFIX}/etc/php/5.6/php-fpm.conf
         directory=#{HOMEBREW_PREFIX}/opt/php56
-        stdout_logfile=#{HOMEBREW_PREFIX}/var/log/supervisor/php56.log
+        stdout_logfile=#{HOMEBREW_PREFIX}/var/log/php56-supervisor.log
         stdout_logfile_maxbytes=1MB
-        stderr_logfile=#{HOMEBREW_PREFIX}/var/log/supervisor/php56.err
+        stderr_logfile=#{HOMEBREW_PREFIX}/var/log/php56-supervisor.err
         stderr_logfile_maxbytes=1MB
         user=#{user}
         autorestart=true
