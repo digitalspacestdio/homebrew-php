@@ -5,7 +5,7 @@ class Php56Common < Formula
   desc "PHP Version 5.6 (Common Package)"
   include AbstractPhpVersion::Php56Defs
   version PHP_VERSION
-  revision 17
+  revision 18
 
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -109,7 +109,7 @@ class Php56Common < Formula
     if build.with? "supervisor"
       if config_file
         supervisor_config_dir.mkpath
-        supervisor_config_path.write(config_file)
+        supervisor_config_path.write(config_file) if !File.exist?(supervisor_config_path)
       end
     end
   end
