@@ -553,16 +553,16 @@ INFO
     end
   end
 
+  service do
+    run ["#{sbin}/php-fpm", "--nodaemonize", "--fpm-config", "#{config_path}/php-fpm.conf"]
+    keep_alive true
+  end
+
   test do
     system "#{bin}/php -i"
 
     if build_fpm?
       system "#{sbin}/php-fpm -y #{config_path}/php-fpm.conf -t"
     end
-  end
-
-  service do
-    run [opt_sbin/"php-fpm", "--nodaemonize", "--fpm-config", "#{config_path}/php-fpm.conf"]
-    keep_alive true
   end
 end
