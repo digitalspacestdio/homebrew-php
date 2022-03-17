@@ -46,7 +46,7 @@ class Php56Common < Formula
       etc / "php" / "5.6" / "php-fpm.conf"
   end
 
-  def php_log_dir
+  def log_dir
       var / "log"
   end
 
@@ -106,6 +106,7 @@ class Php56Common < Formula
     end
 
     prefix.install "installed.txt"
+    log_dir.mkpath
     if build.with? "supervisor"
       if config_file
         supervisor_config_dir.mkpath
