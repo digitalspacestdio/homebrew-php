@@ -5,7 +5,7 @@ class Php56Common < Formula
   desc "PHP Version 5.6 (Common Package)"
   include AbstractPhpVersion::Php56Defs
   version PHP_VERSION
-  revision 7
+  revision 8
 
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -38,8 +38,12 @@ class Php56Common < Formula
     end
   end
 
-  def digitalvisor_config_path
-      etc / "digitalvisor.d" / "php56-fpm.ini"
+  def supervisor_config_dir
+      etc / "digitalvisor.d"
+  end
+
+  def supervisor_config_path
+      supervisor_config_dir / "php56-fpm.ini"
   end
 
   def config_file
@@ -61,7 +65,10 @@ class Php56Common < Formula
     system "echo $(date) > installed.txt"
     prefix.install "installed.txt"
     if build.with?("supervisor")
-      digitalvisor_config_path.write(config_file)
+      if config_file
+        supervisor_config_dir.mkpath
+        supervisor_config_path.write(config_file)
+      end
     end
   end
 end
