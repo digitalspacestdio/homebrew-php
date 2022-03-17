@@ -5,10 +5,15 @@ class Php56Common < Formula
   desc "PHP Version 5.6 (Common Package)"
   include AbstractPhpVersion::Php56Defs
   version PHP_VERSION
-  revision 6
+  revision 7
 
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+
+  option "with-supervisor", "Build with supervisor support"
+  if build.with?("supervisor")
+    depends_on "digitalvisor"
+  end
 
   depends_on "digitalspacestdio/php/php56"
   depends_on "digitalspacestdio/php/php56-apcu"
@@ -33,8 +38,30 @@ class Php56Common < Formula
     end
   end
 
+  def digitalvisor_config_path
+      etc / "digitalvisor.d" / "php56-fpm.ini"
+  end
+
+  def config_file
+      <<~EOS
+        [program:php56-fpm]
+        command=#{opt_prefix}/sbin/php-fpm --nodaemonize --fpm-config #{HOMEBREW_PREFIX}/etc/php/5.6/php-fpm.conf
+        directory=#{opt_prefix}
+        stdout_logfile=#{HOMEBREW_PREFIX}/var/log/supervisor/php56.log
+        stderr_logfile=#{HOMEBREW_PREFIX}/var/log/supervisor/php56.err
+        user=#{ENV.USER}
+        autorestart=true
+        stopasgroup=true
+        EOS
+  rescue StandardError
+      nil
+  end
+
   def install
     system "echo $(date) > installed.txt"
     prefix.install "installed.txt"
+    if build.with?("supervisor")
+      digitalvisor_config_path.write(config_file)
+    end
   end
 end
