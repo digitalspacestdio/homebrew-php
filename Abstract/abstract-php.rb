@@ -561,12 +561,8 @@ INFO
     end
   end
 
-  plist_options manual: "php-fpm"
   service do
     run [opt_sbin/"php-fpm", "--nodaemonize", "--fpm-config", "#{config_path}/php-fpm.conf"]
-    run_type :immediate
     keep_alive true
-    error_log_path var/"log/php/php#{php_version}-fpm.log"
-    working_dir var
   end
 end
