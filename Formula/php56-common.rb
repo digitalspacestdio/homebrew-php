@@ -5,7 +5,7 @@ class Php56Common < Formula
   desc "PHP Version 5.6 (Common Package)"
   include AbstractPhpVersion::Php56Defs
   version PHP_VERSION
-  revision 16
+  revision 17
 
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -44,6 +44,10 @@ class Php56Common < Formula
 
   def config_path_php_fpm
       etc / "php" / "5.6" / "php-fpm.conf"
+  end
+
+  def php_log_dir
+      var / "log"
   end
 
   def supervisor_config_dir
@@ -98,6 +102,7 @@ class Php56Common < Formula
         s.sub!(/^.*?user\s*=.+$/, "; user = #{user}")
         s.sub!(/^.*?group\s*=.+$/, "; group = #{user_group}")
         s.sub!(/^.*?listen\s*=.+$/, "listen = 127.0.0.1:9056")
+        s.sub!(/^.*?error_log\s*=.+$/, "error_log = /dev/stdout")
     end
 
     prefix.install "installed.txt"
