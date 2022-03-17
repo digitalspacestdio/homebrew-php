@@ -94,7 +94,6 @@ class Php72Common < Formula
 
     inreplace config_path_php do |s|
         s.sub!(/^.*?short_open_tag\s*=.+$/, "short_open_tag = off")
-        s.sub!(/^.*?detect_unicode\s*=.+$/, "detect_unicode = off")
         s.sub!(/^.*?max_execution_time\s*=.+$/, "max_execution_time = 900")
         s.sub!(/^.*?memory_limit\s*=.+$/, "memory_limit = 4096M")
         s.sub!(/^.*?upload_max_filesize\s*=.+$/, "upload_max_filesize = 256M")
