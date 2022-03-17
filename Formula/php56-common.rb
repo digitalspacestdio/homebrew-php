@@ -94,9 +94,11 @@ class Php56Common < Formula
     config_path_php.sub(/^.*?display_startup_errors\s*=.+$/, "display_startup_errors = on")
     config_path_php.sub(/^.*?soap.wsdl_cache_ttl\s*=.+$/, "soap.wsdl_cache_ttl = 1")
 
-    config_path_php_fpm.sub(/^.*?user\s*=.+$/, "; user = #{user}")
-    config_path_php_fpm.sub(/^.*?group\s*=.+$/, "; group = #{user_group}")
-    config_path_php_fpm.sub(/^.*?listen\s*=.+$/, "listen = 127.0.0.1:9056")
+    inreplace config_path_php_fpm do |s|
+        s.sub!(/^.*?user\s*=.+$/, "; user = #{user}")
+        s.sub!(/^.*?group\s*=.+$/, "; group = #{user_group}")
+        s.sub!(/^.*?listen\s*=.+$/, "listen = 127.0.0.1:9056")
+    end
 
     prefix.install "installed.txt"
     if build.with? "with-supervisor"
