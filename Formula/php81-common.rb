@@ -45,7 +45,7 @@ class Php81Common < Formula
   end
 
   def config_path_php_fpm
-      etc / "php" / "8.1" / "php-fpm.conf"
+      etc / "php" / "8.1" / "php-fpm.d" / "www.conf"
   end
 
   def log_dir

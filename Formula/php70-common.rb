@@ -45,7 +45,7 @@ class Php70Common < Formula
   end
 
   def config_path_php_fpm
-      etc / "php" / "7.0" / "php-fpm.conf"
+      etc / "php" / "7.0" / "php-fpm.d" / "www.conf"
   end
 
   def log_dir
