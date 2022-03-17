@@ -5,7 +5,7 @@ class Php56Common < Formula
   desc "PHP Version 5.6 (Common Package)"
   include AbstractPhpVersion::Php56Defs
   version PHP_VERSION
-  revision 10
+  revision 11
 
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -38,6 +38,10 @@ class Php56Common < Formula
     end
   end
 
+  def config_path
+        etc / "php" / "5.6" /
+  end
+
   def supervisor_config_dir
       etc / "digitalvisor.d"
   end
@@ -46,14 +50,20 @@ class Php56Common < Formula
       supervisor_config_dir / "php56-fpm.ini"
   end
 
+  def user
+    ENV['USER']
+  end
+
   def config_file
       <<~EOS
         [program:php56-fpm]
-        command=#{opt_prefix}/sbin/php-fpm --nodaemonize --fpm-config #{HOMEBREW_PREFIX}/etc/php/5.6/php-fpm.conf
-        directory=#{opt_prefix}
+        command=#{Formula["php56"].opt_prefix}/sbin/php-fpm --nodaemonize --fpm-config #{HOMEBREW_PREFIX}/etc/php/5.6/php-fpm.conf
+        directory=#{Formula["php56"].opt_prefix}
         stdout_logfile=#{HOMEBREW_PREFIX}/var/log/supervisor/php56.log
+        stdout_logfile_maxbytes=1MB
         stderr_logfile=#{HOMEBREW_PREFIX}/var/log/supervisor/php56.err
-        user=#{ENV.USER}
+        stderr_logfile_maxbytes=1MB
+        user=#{user}
         autorestart=true
         stopasgroup=true
         EOS
@@ -63,6 +73,21 @@ class Php56Common < Formula
 
   def install
     system "echo $(date) > installed.txt"
+
+    inreplace config_path+"php.ini" do |s|
+      s.sub!(/^.*?short_open_tag\s*=.+$/, "short_open_tag = off")
+      s.sub!(/^.*?detect_unicode\s*=.+$/, "detect_unicode = off")
+      s.sub!(/^.*?max_execution_time\s*=.+$/, "max_execution_time = 900")
+      s.sub!(/^.*?memory_limit\s*=.+$/, "memory_limit = 4096M")
+      s.sub!(/^.*?upload_max_filesize\s*=.+$/, "upload_max_filesize = 256M")
+      s.sub!(/^.*?post_max_size\s*=.+$/, "post_max_size = 256M")
+      s.sub!(/^.*?display_errors\s*=.+$/, "display_errors = on")
+      s.sub!(/^.*?error_reporting\s*=.+$/, "error_reporting = E_ALL ^ E_DEPRECATED")
+      s.sub!(/^.*?max_input_vars\s*=.+$/, "max_input_vars = 100000")
+      s.sub!(/^.*?display_startup_errors\s*=.+$/, "display_startup_errors = on")
+      s.sub!(/^.*?soap.wsdl_cache_ttl\s*=.+$/, "soap.wsdl_cache_ttl = 1")
+    end
+
     prefix.install "installed.txt"
     if build.with? "with-supervisor"
       if config_file
