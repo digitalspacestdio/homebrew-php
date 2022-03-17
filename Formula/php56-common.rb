@@ -5,7 +5,7 @@ class Php56Common < Formula
   desc "PHP Version 5.6 (Common Package)"
   include AbstractPhpVersion::Php56Defs
   version PHP_VERSION
-  revision 11
+  revision 12
 
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -38,8 +38,8 @@ class Php56Common < Formula
     end
   end
 
-  def config_path
-        etc / "php" / "5.6" /
+  def config_path_php
+        etc / "php" / "5.6" / "php.ini"
   end
 
   def supervisor_config_dir
@@ -74,7 +74,7 @@ class Php56Common < Formula
   def install
     system "echo $(date) > installed.txt"
 
-    inreplace config_path+"php.ini" do |s|
+    inreplace config_path_php do |s|
       s.sub!(/^.*?short_open_tag\s*=.+$/, "short_open_tag = off")
       s.sub!(/^.*?detect_unicode\s*=.+$/, "detect_unicode = off")
       s.sub!(/^.*?max_execution_time\s*=.+$/, "max_execution_time = 900")
