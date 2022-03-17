@@ -5,7 +5,7 @@ class Php56Common < Formula
   desc "PHP Version 5.6 (Common Package)"
   include AbstractPhpVersion::Php56Defs
   version PHP_VERSION
-  revision 12
+  revision 13
 
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -39,7 +39,11 @@ class Php56Common < Formula
   end
 
   def config_path_php
-        etc / "php" / "5.6" / "php.ini"
+      etc / "php" / "5.6" / "php.ini"
+  end
+
+  def config_path_php_fpm
+      etc / "php" / "5.6" / "php-fpm.conf"
   end
 
   def supervisor_config_dir
@@ -52,6 +56,10 @@ class Php56Common < Formula
 
   def user
     ENV['USER']
+  end
+
+  def user_group
+    system "id -Gn #{user}"
   end
 
   def config_file
@@ -85,6 +93,10 @@ class Php56Common < Formula
     config_path_php.sub(/^.*?max_input_vars\s*=.+$/, "max_input_vars = 100000")
     config_path_php.sub(/^.*?display_startup_errors\s*=.+$/, "display_startup_errors = on")
     config_path_php.sub(/^.*?soap.wsdl_cache_ttl\s*=.+$/, "soap.wsdl_cache_ttl = 1")
+
+    config_path_php_fpm.sub(/^.*?user\s*=.+$/, "; user = #{user}")
+    config_path_php_fpm.sub(/^.*?group\s*=.+$/, "; group = #{user_group}")
+    config_path_php_fpm.sub(/^.*?listen\s*=.+$/, "listen = 127.0.0.1:9056")
 
     prefix.install "installed.txt"
     if build.with? "with-supervisor"
