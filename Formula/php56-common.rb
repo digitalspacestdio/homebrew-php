@@ -12,7 +12,7 @@ class Php56Common < Formula
 
   option "with-supervisor", "Build with supervisor support"
   if build.with?("supervisor")
-    depends_on "digitalvisor"
+    depends_on "digitalspacestdio/common/digitalvisor"
   end
 
   depends_on "digitalspacestdio/php/php56"
