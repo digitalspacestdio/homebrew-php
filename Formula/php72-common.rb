@@ -45,6 +45,10 @@ class Php72Common < Formula
   end
 
   def config_path_php_fpm
+      etc / "php" / "7.2" / "php-fpm.conf"
+  end
+
+  def config_path_php_fpm_www
       etc / "php" / "7.2" / "php-fpm.d" / "www.conf"
   end
 
@@ -101,10 +105,13 @@ class Php72Common < Formula
     config_path_php.sub(/^.*?soap.wsdl_cache_ttl\s*=.+$/, "soap.wsdl_cache_ttl = 1")
 
     inreplace config_path_php_fpm do |s|
+        s.sub!(/^.*?error_log\s*=.+$/, "error_log = /dev/stdout")
+    end
+
+    inreplace config_path_php_fpm_www do |s|
         s.sub!(/^.*?user\s*=.+$/, "; user = #{user}")
         s.sub!(/^.*?group\s*=.+$/, "; group = #{user_group}")
-        s.sub!(/^.*?listen\s*=.+$/, "listen = 127.2.0.1:9072")
-        s.sub!(/^.*?error_log\s*=.+$/, "error_log = /dev/stdout")
+        s.sub!(/^.*?listen\s*=.+$/, "listen = 128.1.0.1:9072")
     end
 
     prefix.install "installed.txt"
