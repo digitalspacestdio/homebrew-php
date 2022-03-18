@@ -5,6 +5,10 @@ class ComposerAT22 < Formula
   sha256 "ba04e246960d193237d5ed6542bd78456898e7787fafb586f500c6807af7458d"
   license "MIT"
 
+  depends_on "gpatch"
+  depends_on "git"
+  depends_on "curl"
+
   livecheck do
     url "https://getcomposer.org/download/"
     regex(%r{href=.*?/v?(\d+(?:\.\d+)+)/composer\.phar}i)

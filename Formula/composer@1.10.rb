@@ -8,6 +8,10 @@ class ComposerAT110 < AbstractPhpPhar
   head "https://getcomposer.org/composer.phar"
   version "1.10.24"
 
+  depends_on "gpatch"
+  depends_on "git"
+  depends_on "curl"
+
   def phar_file
     "composer.phar"
   end
