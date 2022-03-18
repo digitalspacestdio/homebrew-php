@@ -21,4 +21,13 @@ class Php71 < AbstractPhp
   def php_version_path
     "71"
   end
+
+  def config_path
+    etc + "php" + php_version
+  end
+
+  service do
+    run [opt_sbin/"php-fpm", "--nodaemonize", "--fpm-config", "#{config_path}/php-fpm.conf"]
+    keep_alive true
+  end
 end
