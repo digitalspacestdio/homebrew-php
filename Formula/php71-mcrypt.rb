@@ -4,13 +4,13 @@ class Php71Mcrypt < AbstractPhp71Extension
   init
   desc "Interface to the mcrypt library"
   homepage "https://php.net/manual/en/book.mcrypt.php"
-  revision 22
+  revision 23
 
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
-  depends_on "mcrypt"
+  depends_on "phpmcrypt"
   depends_on "libtool" => :build
 
   def install
@@ -19,7 +19,7 @@ class Php71Mcrypt < AbstractPhp71Extension
     args = []
     args << "--prefix=#{prefix}"
     args << "--disable-dependency-tracking"
-    args << "--with-mcrypt=#{Formula["mcrypt"].opt_prefix}"
+    args << "--with-mcrypt=#{Formula["digitalspacestdio/php/phpmcrypt"].opt_prefix}"
     args << phpconfig
 
     safe_phpize
