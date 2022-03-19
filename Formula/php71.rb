@@ -27,7 +27,7 @@ class Php71 < AbstractPhp
   end
 
   service do
-    run [opt_sbin/"php-fpm", "--nodaemonize", "--fpm-config", etc + "php" + php_version  + "/php-fpm.conf"]
+    run [opt_sbin/"php-fpm", "--nodaemonize", "--fpm-config", etc + "php/7.1/php-fpm.conf"]
     keep_alive true
   end
 end
