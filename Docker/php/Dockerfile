@@ -34,7 +34,8 @@ RUN brew tap digitalspacestdio/php
 
 # Install php
 RUN brew-build-recursive ${BREW_FORMULA_PHP}-common ${BREW_FORMULA_PHP}-xdebug ${BREW_FORMULA_PHP}-xhprof \
-    composer@2.2 composer@1.10
+    composer@2.2 composer@1.10 \
+    pv
 
 RUN brew link --overwrite ${BREW_FORMULA_PHP}
 
@@ -42,7 +43,7 @@ RUN mkdir -p $(brew --prefix)/etc/php/$($(brew --prefix ${BREW_FORMULA_PHP})/bin
 RUN mkdir -p $(brew --prefix)/var/log/php/$($(brew --prefix ${BREW_FORMULA_PHP})/bin/php -v | egrep -o 'PHP [0-9][0-9]*\.[0-9][0-9]*\.[0-9][a-zA-Z0-9]*' | egrep -o '[0-9][0-9]*\.[0-9][0-9]*') && ln -s $(brew --prefix)/var/log/php/$($(brew --prefix ${BREW_FORMULA_PHP})/bin/php -v | egrep -o 'PHP [0-9][0-9]*\.[0-9][0-9]*\.[0-9][a-zA-Z0-9]*' | egrep -o '[0-9][0-9]*\.[0-9][0-9]*') $(brew --prefix)/var/log/php/current
 
 # Cleanup
-RUN brew-clean-build-recursive $(cat ~/.brew_builder_formulas; echo ${BREW_FORMULA_PHP}-common ${BREW_FORMULA_PHP}-xdebug ${BREW_FORMULA_PHP}-xhprof composer@2.2 composer@1.10)
+RUN brew-clean-build-recursive $(cat ~/.brew_builder_formulas; echo ${BREW_FORMULA_PHP}-common ${BREW_FORMULA_PHP}-xdebug ${BREW_FORMULA_PHP}-xhprof composer@2.2 composer@1.10 pv)
 RUN brew cleanup \
     && rm -rf /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/* \
     && rm -rf /home/linuxbrew/.cache/Homebrew \
