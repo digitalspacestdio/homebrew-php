@@ -6,7 +6,7 @@ class Php74 < AbstractPhp
   include AbstractPhpVersion::Php74Defs
   version PHP_VERSION
   revision 4
-
+  keg_only :versioned_formula
   depends_on "pkg-config" => :build
   depends_on "krb5"
   depends_on "oniguruma"

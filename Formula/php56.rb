@@ -1,7 +1,7 @@
 require File.expand_path("../../Abstract/abstract-php", __FILE__)
 
 class Php56 < AbstractPhp
-
+  keg_only :versioned_formula
   def self.init
       homepage "https://php.net"
 

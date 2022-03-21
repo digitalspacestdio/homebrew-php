@@ -6,7 +6,7 @@ class Php73 < AbstractPhp
   include AbstractPhpVersion::Php73Defs
   version PHP_VERSION
   revision 2
-
+  keg_only :versioned_formula
   depends_on "libjpeg"
 
   include AbstractPhpVersion::Php73Defs

@@ -6,7 +6,7 @@ class Php80 < AbstractPhp
   include AbstractPhpVersion::Php80Defs
   version PHP_VERSION
   revision 2
-
+  keg_only :versioned_formula
   depends_on "pkg-config" => :build
   depends_on "krb5"
   depends_on "oniguruma"

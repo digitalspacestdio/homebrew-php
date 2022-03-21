@@ -6,7 +6,7 @@ class Php71 < AbstractPhp
   include AbstractPhpVersion::Php71Defs
   version PHP_VERSION
   revision 30
-
+  keg_only :versioned_formula
   include AbstractPhpVersion::Php71Defs
 
   url PHP_SRC_TARBALL
