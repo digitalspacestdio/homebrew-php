@@ -4,9 +4,10 @@ class Php70Redis < AbstractPhp70Extension
   init
   desc "PHP extension for Redis"
   homepage "https://github.com/phpredis/phpredis"
-  url "https://github.com/phpredis/phpredis/archive/3.1.4.tar.gz"
-  sha256 "656cab2eb93bd30f30701c1280707c60e5736c5420212d5d547ebe0d3f4baf71"
+  url "https://github.com/phpredis/phpredis/archive/5.3.7.tar.gz"
+  sha256 "6f5cda93aac8c1c4bafa45255460292571fb2f029b0ac4a5a4dc66987a9529e6"
   head "https://github.com/phpredis/phpredis.git"
+  revision 1
 
 
   depends_on "digitalspacestdio/php/php70-igbinary"

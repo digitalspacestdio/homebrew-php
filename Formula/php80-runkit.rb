@@ -4,10 +4,10 @@ class Php80Runkit < AbstractPhp80Extension
   init
   desc "Runkit extension"
   homepage "https://github.com/runkit7/runkit7"
-  url "https://github.com/runkit7/runkit7/archive/4.0.0a2.tar.gz"
-  sha256 "1c77f8ac51984e0af8eb0611dd26e25cef223f91a6519d9631c4d0a1c2eaa037"
+  url "https://github.com/runkit7/runkit7/archive/4.0.0a3.tar.gz"
+  sha256 "ead22e46715e96f4982c015ad74a85bf76babdeb23c41adbe2220d0d2de8256d"
   head "https://github.com/runkit7/runkit7"
-  version "4.0.0a2"
+  version "4.0.0a3"
   revision 1
 
 

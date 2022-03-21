@@ -3,13 +3,10 @@ require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 class Php81Redis < AbstractPhp81Extension
   init
   desc "PHP extension for Redis"
-#   homepage "https://github.com/phpredis/phpredis"
-#   url "https://github.com/phpredis/phpredis/archive/3.1.6.tar.gz"
-#   sha256 "e0f00bd46f4790bf6e763762d9559d7175415e2f1ea1fcfea898bfb5298b43c4"
-  url "https://github.com/phpredis/phpredis/archive/5.3.5.tar.gz"
-  sha256 "88d8c7e93bfd9576fb5a51e28e8f9cc62e3515af5a3bca5486a76e70657213f2"
-  version "5.3.5"
+  url "https://github.com/phpredis/phpredis/archive/5.3.7.tar.gz"
+  sha256 "6f5cda93aac8c1c4bafa45255460292571fb2f029b0ac4a5a4dc66987a9529e6"
   head "https://github.com/phpredis/phpredis.git"
+  revision 1
 
   depends_on "digitalspacestdio/php/php81-igbinary"
   depends_on "igbinary" => :build
