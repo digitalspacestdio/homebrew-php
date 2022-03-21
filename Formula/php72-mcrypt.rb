@@ -10,7 +10,7 @@ class Php72Mcrypt < AbstractPhp72Extension
   revision 5
 
 
-  depends_on "phpmcrypt"
+  depends_on "digitalspacestdio/php/phpmcrypt"
   depends_on "libtool" => :build
 
   def install

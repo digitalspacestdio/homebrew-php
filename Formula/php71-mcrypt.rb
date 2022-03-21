@@ -10,7 +10,7 @@ class Php71Mcrypt < AbstractPhp71Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
-  depends_on "phpmcrypt"
+  depends_on "digitalspacestdio/php/phpmcrypt"
   depends_on "libtool" => :build
 
   def install
