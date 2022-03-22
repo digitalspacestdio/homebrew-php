@@ -84,13 +84,13 @@ class AbstractPhpVersion < Formula
   end
 
   module Php81Defs
-    PHP_SRC_TARBALL = "https://php.net/get/php-8.1.3.tar.bz2/from/this/mirror".freeze
+    PHP_SRC_TARBALL = "https://php.net/get/php-8.1.4.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
-    PHP_VERSION     = "8.1.3".freeze
+    PHP_VERSION     = "8.1.4".freeze
     PHP_BRANCH      = "PHP-8.1".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "354c4e2c506046eca812d1fc2526884a2f54b5e3d20ef0ede919a69eb232d0be",
+      :sha256 => "b3f688cb69758523838b8e7f509aaef0152133d9b84a84a0b7cf68eeafc1df76",
     }.freeze
   end
 end
