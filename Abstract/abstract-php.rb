@@ -10,10 +10,9 @@ class AbstractPhp < Formula
     # So PHP extensions don't report missing symbols
     skip_clean "bin", "sbin"
 
-    depends_on "autoconf@2.69" => :build if name.split("::")[2].downcase.start_with?("php56")
-    depends_on "autoconf" => :build if !name.split("::")[2].downcase.start_with?("php56")
     depends_on "gcc@10" => :build if OS.mac? && name.split("::")[2].downcase.start_with?("php56")
     depends_on "gcc" => :build if OS.mac? && !name.split("::")[2].downcase.start_with?("php56")
+    depends_on "autoconf" => :build
     depends_on "re2c" => :build
     depends_on "flex" => :build
     depends_on "bison@2.7" => :build
@@ -157,11 +156,8 @@ class AbstractPhp < Formula
     cpu = Hardware::CPU.arm? ? "aarch64" : Hardware.oldest_cpu
     ENV.append "CFLAGS", "-march=#{cpu}"
     ENV.append "CXXFLAGS", "-march=#{cpu}"
-    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf" if name.split("::")[2].downcase.start_with?("php56")
-    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader" if name.split("::")[2].downcase.start_with?("php56")
-
-    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf" if !name.split("::")[2].downcase.start_with?("php56")
-    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader" if !name.split("::")[2].downcase.start_with?("php56")
+    ENV.append "PHP_AUTOCONF", "#{Formula["autoconf"].opt_bin}/autoconf"
+    ENV.append "PHP_AUTOHEADER", "#{Formula["autoconf"].opt_bin}/autoheader"
 
     if php_version.start_with?("5.6")
       ENV.cxx11
