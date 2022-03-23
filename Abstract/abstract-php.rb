@@ -10,7 +10,7 @@ class AbstractPhp < Formula
     # So PHP extensions don't report missing symbols
     skip_clean "bin", "sbin"
 
-    depends_on "gcc@10" => :build if OS.mac? && name.split("::")[2].downcase.start_with?("php56")
+    depends_on "gcc@9" => :build if OS.mac? && name.split("::")[2].downcase.start_with?("php56")
     depends_on "gcc" => :build if OS.mac? && !name.split("::")[2].downcase.start_with?("php56")
     depends_on "autoconf" => :build
 
@@ -174,8 +174,8 @@ class AbstractPhp < Formula
     end
 
      if php_version.start_with?("5.6")
-      ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10" if OS.mac?
-      ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10" if OS.mac?
+      ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9" if OS.mac?
+      ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9" if OS.mac?
      else
       ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11" if OS.mac?
       ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11" if OS.mac?
