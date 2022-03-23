@@ -180,8 +180,6 @@ class AbstractPhp71Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php71Defs
 
   def safe_phpize
-    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11" if OS.mac?
-    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11" if OS.mac?
     ENV.append "CFLAGS", "-DTRUE=1 -DFALSE=0"
     ENV.append "CXXFLAGS", "-DTRUE=1 -DFALSE=0"
     super()
@@ -196,12 +194,6 @@ end
 class AbstractPhp72Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php72Defs
 
-  def safe_phpize
-    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11" if OS.mac?
-    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11" if OS.mac?
-    super()
-  end
-
   def self.init(opts = [])
     super()
     depends_on "digitalspacestdio/php/php72"
@@ -210,12 +202,6 @@ end
 
 class AbstractPhp73Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php73Defs
-
-  def safe_phpize
-    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11" if OS.mac?
-    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11" if OS.mac?
-    super()
-  end
 
   def self.init(opts = [])
     super()
@@ -226,12 +212,6 @@ end
 class AbstractPhp74Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php74Defs
 
-  def safe_phpize
-    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11" if OS.mac?
-    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11" if OS.mac?
-    super()
-  end
-
   def self.init(opts = [])
     super()
     depends_on "digitalspacestdio/php/php74"
@@ -241,12 +221,6 @@ end
 class AbstractPhp80Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php80Defs
 
-  def safe_phpize
-    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11" if OS.mac?
-    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11" if OS.mac?
-    super()
-  end
-
   def self.init(opts = [])
     super()
     depends_on "digitalspacestdio/php/php80"
@@ -255,12 +229,6 @@ end
 
 class AbstractPhp81Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php81Defs
-
-  def safe_phpize
-    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11" if OS.mac?
-    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11" if OS.mac?
-    super()
-  end
 
   def self.init(opts = [])
     super()
