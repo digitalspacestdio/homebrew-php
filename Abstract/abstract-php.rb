@@ -463,7 +463,7 @@ INFO
 
   def _install
 
-    system "./buildconf", "--force" if build.head?
+    # system "./buildconf", "--force" if build.head?
     system "./configure", *install_args
 
     if build.with?("httpd")
