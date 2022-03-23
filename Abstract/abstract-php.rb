@@ -13,9 +13,6 @@ class AbstractPhp < Formula
     depends_on "gcc@10" => :build if OS.mac? && name.split("::")[2].downcase.start_with?("php56")
     depends_on "gcc" => :build if OS.mac? && !name.split("::")[2].downcase.start_with?("php56")
     depends_on "autoconf" => :build
-    depends_on "re2c" => :build
-    depends_on "flex" => :build
-    depends_on "bison@2.7" => :build
 
     # obtain list of php formulas
     php_formulas = Formula.names.grep(Regexp.new('^php\d\d$')).sort
