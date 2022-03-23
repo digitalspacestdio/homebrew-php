@@ -402,7 +402,7 @@ INFO
     end
 
     # Do not build opcache by default; use a "phpxx-opcache" formula
-    args << "--disable-opcache" if php_version.start_with?("5.5", "5.6", "7.")
+    # args << "--disable-opcache" if php_version.start_with?("5.5", "5.6", "7.")
 
     if build.with? "pcntl"
       args << "--enable-pcntl"
