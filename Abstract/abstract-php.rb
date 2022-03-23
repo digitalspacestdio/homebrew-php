@@ -157,6 +157,11 @@ class AbstractPhp < Formula
     cpu = Hardware::CPU.arm? ? "aarch64" : Hardware.oldest_cpu
     ENV.append "CFLAGS", "-march=#{cpu}"
     ENV.append "CXXFLAGS", "-march=#{cpu}"
+    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf" if name.split("::")[2].downcase.start_with?("php56")
+    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader" if name.split("::")[2].downcase.start_with?("php56")
+
+    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf" if !name.split("::")[2].downcase.start_with?("php56")
+    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader" if !name.split("::")[2].downcase.start_with?("php56")
 
     if php_version.start_with?("5.6")
       ENV.cxx11

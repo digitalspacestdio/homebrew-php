@@ -187,13 +187,13 @@ end
 class AbstractPhp56Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php56Defs
   depends_on "gcc@10" => :build if OS.mac?
+  ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf" if name.split("::")[2].downcase.start_with?("php56")
+  ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader" if name.split("::")[2].downcase.start_with?("php56")
+
+  ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf" if !name.split("::")[2].downcase.start_with?("php56")
+  ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader" if !name.split("::")[2].downcase.start_with?("php56")
+
   def safe_phpize
-    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf" if name.split("::")[2].downcase.start_with?("php56")
-    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader" if name.split("::")[2].downcase.start_with?("php56")
-
-    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf" if !name.split("::")[2].downcase.start_with?("php56")
-    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader" if !name.split("::")[2].downcase.start_with?("php56")
-
     ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10" if OS.mac?
     ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10" if OS.mac?
     system phpize
