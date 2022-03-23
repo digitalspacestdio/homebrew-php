@@ -4,7 +4,7 @@ class Php73Intl < AbstractPhp73Extension
   init
   desc "Wrapper for the ICU library"
   homepage "https://php.net/manual/en/book.intl.php"
-  revision 27
+  revision 28
 
 
   url PHP_SRC_TARBALL

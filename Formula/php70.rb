@@ -5,7 +5,7 @@ class Php70 < AbstractPhp
   desc "PHP Version 7.0"
   include AbstractPhpVersion::Php70Defs
   version PHP_VERSION
-  revision 21
+  revision 22
   keg_only :versioned_formula
   include AbstractPhpVersion::Php70Defs
 

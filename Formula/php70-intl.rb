@@ -4,7 +4,7 @@ class Php70Intl < AbstractPhp70Extension
   init
   desc "Wrapper for the ICU library"
   homepage "https://php.net/manual/en/book.intl.php"
-  revision 28
+  revision 29
 
 
   url PHP_SRC_TARBALL
@@ -13,12 +13,12 @@ class Php70Intl < AbstractPhp70Extension
   depends_on "digitalspacestdio/common/icu4c@67.1"
 
   def install
-	# Required due to icu4c dependency
-	ENV.cxx11
+    # Required due to icu4c dependency
+    ENV.cxx11
 
-	# icu4c 61.1 compatability
-	ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
-	
+    # icu4c 61.1 compatability
+    ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
+    
     Dir.chdir "ext/intl"
 
     safe_phpize
