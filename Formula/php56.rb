@@ -24,6 +24,9 @@ class Php56 < AbstractPhp
         conflicts_with php_formula_name, :because => "different php versions install the same binaries."
       end
 
+      unless build.without? "sqlite"
+          depends_on "sqlite"
+      end
       depends_on "digitalspacestdio/php/phpcurl"
       depends_on "libxslt"
       depends_on "enchant" => :optional
@@ -102,10 +105,10 @@ class Php56 < AbstractPhp
         option "with-phpdbg", "Enable building of the phpdbg SAPI executable"
       end
       option "with-thread-safety", "Build with thread safety"
-  #    option "without-bz2", "Build without bz2 support"
       option "without-fpm", "Disable building of the fpm SAPI executable"
       option "without-ldap", "Build without LDAP support"
       option "without-mysql", "Remove MySQL/MariaDB support"
+      option "without-sqlite", "Remove sqlite support"
       option "without-legacy-mysql", "Do not include the deprecated mysql_ functions"
       option "without-pcntl", "Build without Process Control support"
   end
