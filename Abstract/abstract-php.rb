@@ -36,8 +36,8 @@ class AbstractPhp < Formula
     depends_on "freetype"
     depends_on "gettext"
     depends_on "gmp" => :optional
-    depends_on "digitalspacestdio/common/icu4c@67.1" if name.split("::")[2].downcase.start_with?("php56", "php70", "php71")
-    depends_on "digitalspacestdio/common/icu4c@69.1" if name.split("::")[2].downcase.start_with?("php72", "php73")
+    depends_on "digitalspacestdio/common/icu4c@67.1" if name.split("::")[2].downcase.start_with?("php70", "php71")
+    depends_on "digitalspacestdio/common/icu4c@69.1" if name.split("::")[2].downcase.start_with?("php56", "php72", "php73")
     depends_on "icu4c" if name.split("::")[2].downcase.start_with?("php74", "php80", "php81")
     depends_on "imap-uw" if build.with?("imap")
     depends_on "jpeg" if name.split("::")[2].downcase.start_with?("php56", "php70", "php71")
@@ -284,8 +284,8 @@ INFO
       "--with-gd",
       "--with-gettext=#{Formula["gettext"].opt_prefix}",
 #      ("--with-iconv-dir=/usr" if OS.mac?),
-      ("--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@67.1"].opt_prefix}" if php_version.start_with?("5.6", "7.0", "7.1")),
-      ("--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}" if php_version.start_with?("7.2", "7.3")),
+      ("--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@67.1"].opt_prefix}" if php_version.start_with?("7.0", "7.1")),
+      ("--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}" if php_version.start_with?("5.6", "7.2", "7.3")),
       ("--with-icu-dir=#{Formula["icu4c"].opt_prefix}" if php_version.start_with?("7.4", "8.0", "8.1")),
       ("--with-external-pcre" if !OS.mac? && !php_version.start_with?("7.4", "8.")),
       ("--without-pcre-jit" if OS.mac?),
