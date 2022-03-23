@@ -186,12 +186,14 @@ end
 class AbstractPhp56Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php56Defs
   depends_on "gcc@10" => :build if OS.mac?
-  ENV.append "PHP_AUTOCONF", "#{Formula["autoconf"].opt_bin}/autoconf"
-  ENV.append "PHP_AUTOHEADER", "#{Formula["autoconf"].opt_bin}/autoheader"
+  ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
+  ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
 
   def safe_phpize
     ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10" if OS.mac?
     ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10" if OS.mac?
+    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
+    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
     system phpize
   end
   def self.init(opts = [])
