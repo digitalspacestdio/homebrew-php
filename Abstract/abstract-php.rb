@@ -4,6 +4,7 @@ require "formula"
 require File.join(File.dirname(__FILE__), "abstract-php-version")
 
 class AbstractPhp < Formula
+  keg_only :versioned_formula
   def self.init
     homepage "https://php.net"
 

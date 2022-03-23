@@ -16,6 +16,7 @@ class InvalidPhpizeError < RuntimeError
 end
 
 class AbstractPhpExtension < Formula
+  keg_only :versioned_formula
   depends_on "gcc" => :build if OS.mac?
   def self.init
     depends_on "autoconf" => :build
