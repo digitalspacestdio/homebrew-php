@@ -6,9 +6,10 @@ class Php56Mcrypt < AbstractPhp56Extension
   homepage "http://php.net/manual/en/book.mcrypt.php"
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
-  revision 9
+  revision 10
 
-  depends_on "mcrypt"
+  depends_on "digitalspacestdio/php/phpmcrypt" if OS.linux?
+  depends_on "mcrypt" if OS.mac?
   depends_on "libtool" => :build
 
   def install
@@ -17,7 +18,8 @@ class Php56Mcrypt < AbstractPhp56Extension
     args = []
     args << "--prefix=#{prefix}"
     args << "--disable-dependency-tracking"
-    args << "--with-mcrypt=#{Formula["mcrypt"].opt_prefix}"
+    args << "--with-mcrypt=#{Formula["digitalspacestdio/php/phpmcrypt"].opt_prefix}" if OS.linux?
+    args << "--with-mcrypt=#{Formula["mcrypt"].opt_prefix}" if OS.mac?
     args << phpconfig
 
     safe_phpize
