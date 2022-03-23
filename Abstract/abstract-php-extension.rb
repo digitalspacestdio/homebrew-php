@@ -157,6 +157,8 @@ class AbstractPhp56Extension < AbstractPhpExtension
   def safe_phpize
     ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9" if OS.mac?
     ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9" if OS.mac?
+    ENV["CC"] = "gcc-9" if !OS.mac?
+    ENV["CXX"] = "g++-9" if !OS.mac?
     ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
     ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
     system phpize
