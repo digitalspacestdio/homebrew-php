@@ -4,18 +4,16 @@ class Php73Intl < AbstractPhp73Extension
   init
   desc "Wrapper for the ICU library"
   homepage "https://php.net/manual/en/book.intl.php"
-  revision 26
+  revision 27
 
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
   depends_on "digitalspacestdio/common/icu4c@69.1"
+  depends_on "pkg-config" => :build
 
   def install
-        # Required due to icu4c dependency
-    ENV.cxx11
-
     # icu4c 61.1 compatability
     ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
     
