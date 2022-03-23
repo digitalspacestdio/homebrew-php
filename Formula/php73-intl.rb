@@ -6,7 +6,6 @@ class Php73Intl < AbstractPhp73Extension
   homepage "https://php.net/manual/en/book.intl.php"
   revision 28
 
-
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
