@@ -7,7 +7,7 @@ class Php56 < AbstractPhp
 
       # So PHP extensions don't report missing symbols
       skip_clean "bin", "sbin"
-      depends_on "gcc@9" => :build if OS.mac?
+      depends_on "gcc@10" => :build if OS.mac?
 
       head do
         depends_on "autoconf" => :build
