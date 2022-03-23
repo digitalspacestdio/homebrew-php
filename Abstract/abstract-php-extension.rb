@@ -16,8 +16,7 @@ class InvalidPhpizeError < RuntimeError
 end
 
 class AbstractPhpExtension < Formula
-  depends_on "gcc@9" => :build if OS.mac? && name.split("::")[2].downcase.start_with?("php56")
-  depends_on "gcc" => :build if OS.mac? && !name.split("::")[2].downcase.start_with?("php56")
+  depends_on "gcc" => :build if OS.mac?
 
   def initialize(*)
     super
@@ -188,7 +187,7 @@ end
 
 class AbstractPhp56Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php56Defs
-
+  depends_on "gcc@9" => :build if OS.mac?
   def self.init(opts = [])
     super()
     depends_on "digitalspacestdio/php/php56" => opts if build.with?("homebrew-php")
