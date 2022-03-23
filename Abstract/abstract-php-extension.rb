@@ -17,7 +17,6 @@ end
 
 class AbstractPhpExtension < Formula
   depends_on "gcc" => :build if OS.mac?
-  depends_on "gcc@9" => :build if OS.mac?
 
   def initialize(*)
     super
@@ -66,8 +65,8 @@ class AbstractPhpExtension < Formula
   def safe_phpize
     ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
     ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
-    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-9" if OS.mac?
-    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-9" if OS.mac?
+    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11" if OS.mac?
+    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11" if OS.mac?
     system phpize
   end
 
@@ -186,10 +185,13 @@ end
 
 class AbstractPhp56Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php56Defs
+  depends_on "gcc@9" => :build if OS.mac?
   def safe_phpize
+    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
+    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
     ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9" if OS.mac?
     ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9" if OS.mac?
-    super()
+    system phpize
   end
   def self.init(opts = [])
     super()
