@@ -4,8 +4,7 @@ class Php70Opcache < AbstractPhp70Extension
   init
   desc "OPcache improves PHP performance"
   homepage "https://php.net/manual/en/book.opcache.php"
-  revision 19
-
+  revision 20
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
