@@ -17,34 +17,11 @@ end
 
 class AbstractPhpExtension < Formula
   depends_on "gcc" => :build if OS.mac?
-
-  def initialize(*)
-    super
-
-    if build.without? "homebrew-php"
-      installed_php_version = nil
-      i = IO.popen("#{phpize} -v")
-      out = i.readlines.join("")
-      i.close
-      { 53 => 20090626, 54 => 20100412, 55 => 20121113, 56 => 20131106, 70 => 20151012, 71 => 20160303, 72 => 20170718 }.each do |v, api|
-        installed_php_version = v.to_s if out.match(/#{api}/)
-      end
-
-      raise UnsupportedPhpApiError if installed_php_version.nil?
-
-      required_php_version = php_branch.sub(".", "").to_s
-      unless installed_php_version == required_php_version
-        raise InvalidPhpizeError.new(installed_php_version, required_php_version)
-      end
-    end
-  end
-
   def self.init
     depends_on "autoconf" => :build
     depends_on "gcc@9" => :build if OS.mac? && name.split("::")[2].downcase.start_with?("php56")
     depends_on "gcc" => :build if OS.mac? && !name.split("::")[2].downcase.start_with?("php56")
 
-    option "without-homebrew-php", "Ignore homebrew PHP and use default instead"
     option "without-config-file", "Do not install extension config file"
   end
 
@@ -71,27 +48,15 @@ class AbstractPhpExtension < Formula
   end
 
   def phpize
-    if build.without? "homebrew-php"
-      "phpize"
-    else
       "#{Formula[php_formula].opt_bin}/phpize"
-    end
   end
 
   def phpini
-    if build.without? "homebrew-php"
-      "php.ini presented by \"php --ini\""
-    else
       "#{Formula[php_formula].config_path}/php.ini"
-    end
   end
 
   def phpconfig
-    if build.without? "homebrew-php"
-      ""
-    else
       "--with-php-config=#{Formula[php_formula].opt_bin}/php-config"
-    end
   end
 
   def extension
@@ -198,7 +163,7 @@ class AbstractPhp56Extension < AbstractPhpExtension
   end
   def self.init(opts = [])
     super()
-    depends_on "digitalspacestdio/php/php56" => opts if build.with?("homebrew-php")
+    depends_on "digitalspacestdio/php/php56"
   end
 end
 
@@ -207,7 +172,7 @@ class AbstractPhp70Extension < AbstractPhpExtension
 
   def self.init(opts = [])
     super()
-    depends_on "digitalspacestdio/php/php70" => opts if build.with?("homebrew-php")
+    depends_on "digitalspacestdio/php/php70"
   end
 end
 
@@ -224,7 +189,7 @@ class AbstractPhp71Extension < AbstractPhpExtension
 
   def self.init(opts = [])
     super()
-    depends_on "digitalspacestdio/php/php71" => opts if build.with?("homebrew-php")
+    depends_on "digitalspacestdio/php/php71"
   end
 end
 
@@ -239,7 +204,7 @@ class AbstractPhp72Extension < AbstractPhpExtension
 
   def self.init(opts = [])
     super()
-    depends_on "digitalspacestdio/php/php72" => opts if build.with?("homebrew-php")
+    depends_on "digitalspacestdio/php/php72"
   end
 end
 
@@ -254,7 +219,7 @@ class AbstractPhp73Extension < AbstractPhpExtension
 
   def self.init(opts = [])
     super()
-    depends_on "digitalspacestdio/php/php73" => opts if build.with?("homebrew-php")
+    depends_on "digitalspacestdio/php/php73"
   end
 end
 
@@ -269,7 +234,7 @@ class AbstractPhp74Extension < AbstractPhpExtension
 
   def self.init(opts = [])
     super()
-    depends_on "digitalspacestdio/php/php74" => opts if build.with?("homebrew-php")
+    depends_on "digitalspacestdio/php/php74"
   end
 end
 
@@ -284,7 +249,7 @@ class AbstractPhp80Extension < AbstractPhpExtension
 
   def self.init(opts = [])
     super()
-    depends_on "digitalspacestdio/php/php80" => opts if build.with?("homebrew-php")
+    depends_on "digitalspacestdio/php/php80"
   end
 end
 
@@ -299,6 +264,6 @@ class AbstractPhp81Extension < AbstractPhpExtension
 
   def self.init(opts = [])
     super()
-    depends_on "digitalspacestdio/php/php81" => opts if build.with?("homebrew-php")
+    depends_on "digitalspacestdio/php/php81"
   end
 end
