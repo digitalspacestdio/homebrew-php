@@ -6,10 +6,14 @@ class Php56Intl < AbstractPhp56Extension
   homepage "https://php.net/manual/en/book.intl.php"
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
-  revision 15
+  revision 16
 
+  depends_on "digitalspacestdio/common/icu4c@69.1"
 
-  depends_on "digitalspacestdio/common/icu4c@67.1"
+  patch do
+    url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php56/1011-Accommodate-changes-to-canonicalized-forms-in-ICU-70_1.patch"
+    sha256 "151415835f71b370b40a822d9aabd192369295bbdaf2f16646905bcec5dba8c1"
+  end
 
   def install
     # Required due to icu4c dependency
@@ -33,7 +37,7 @@ class Php56Intl < AbstractPhp56Extension
                           phpconfig,
                           "--disable-dependency-tracking",
                           "--enable-intl",
-                          "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@67.1"].opt_prefix}"
+                          "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}"
     system "make"
     prefix.install "modules/intl.so"
     write_config_file if build.with? "config-file"
