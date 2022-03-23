@@ -11,8 +11,8 @@ class Php56Intl < AbstractPhp56Extension
   depends_on "digitalspacestdio/common/icu4c@69.1"
 
   patch do
-    url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php56/1011-Accommodate-changes-to-canonicalized-forms-in-ICU-70_1.patch"
-    sha256 "151415835f71b370b40a822d9aabd192369295bbdaf2f16646905bcec5dba8c1"
+    url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php56/php-5.6-intl-detect-icu-via-pkg-config.patch"
+    sha256 "ea5fa9d12a2a464e9cc5ba1be7b1ce453842aca5de9c7522ba82b14df85abbc7"
   end
 
   def install

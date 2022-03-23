@@ -17,13 +17,6 @@ class Php73PdoPgsql < AbstractPhp73Extension
   end
 
   def install
-#     if OS.linux?
-#     ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
-#     ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
-#     else
-#     ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
-#     ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
-#     end
     Dir.chdir "ext/pdo_pgsql"
 
     safe_phpize
