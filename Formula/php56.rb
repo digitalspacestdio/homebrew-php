@@ -31,7 +31,7 @@ class Php56 < AbstractPhp
       depends_on "freetype"
       depends_on "gettext"
       depends_on "gmp" => :optional
-      depends_on "icu4c"
+      depends_on "digitalspacestdio/common/icu4c@67.1"
       depends_on "imap-uw" if build.with?("imap")
       depends_on "jpeg"
       depends_on "webp" => :optional if name.split("::")[2].downcase.start_with?("php7")
