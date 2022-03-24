@@ -5,7 +5,8 @@ class PhpTidyHtml5 < Formula
   sha256 "59c86d5b2e452f63c5cdb29c866a12a4c55b1741d7025cf2f3ce0cde99b0660e"
   license "Zlib"
   head "https://github.com/htacg/tidy-html5.git", branch: "next"
-
+  keg_only "this package contains dependency only"
+  revision 2
   livecheck do
     url :stable
     regex(/^v?(\d+\.\d*?[02468](?:\.\d+)*)$/i)
