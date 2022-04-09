@@ -5,7 +5,7 @@ class Php81Common < Formula
   desc "PHP Version 8.1 (Common Package)"
   include AbstractPhpVersion::Php81Defs
   version PHP_VERSION
-  revision 9
+  revision 10
 
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -64,12 +64,30 @@ class Php81Common < Formula
       supervisor_config_dir / "php81-fpm.ini"
   end
 
+  def nginx_config_dir
+      etc / "nginx" / "php.d"
+  end
+
+  def nginx_config_path
+      nginx_config_dir / "php81.conf"
+  end
+
   def user
     ENV['USER']
   end
 
   def user_group
     system "id -Gn #{user}"
+  end
+
+  def nginx_snippet_file
+     <<~EOS
+        if (-f $documentRoot/.php81) {
+          set $php_version 81;
+        }
+     EOS
+  rescue StandardError
+      nil
   end
 
   def config_file
@@ -134,6 +152,10 @@ class Php81Common < Formula
         supervisor_config_dir.mkpath
         File.delete supervisor_config_path if File.exist?(supervisor_config_path)
         supervisor_config_path.write(config_file)
+
+        nginx_config_dir.mkpath
+        File.delete nginx_config_path if File.exist?(nginx_config_path)
+        nginx_config_path.write(nginx_snippet_file)
       end
     end
   end
