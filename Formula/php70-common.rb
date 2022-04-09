@@ -64,6 +64,24 @@ class Php70Common < Formula
       supervisor_config_dir / "php70-fpm.ini"
   end
 
+  def nginx_config_dir
+      etc / "nginx" / "php.d"
+  end
+
+  def nginx_config_path
+      nginx_config_dir / "php80.conf"
+  end
+
+  def nginx_snippet_file
+     <<~EOS
+        if (-f $documentRoot/.php70) {
+          set $php_version 70;
+        }
+     EOS
+  rescue StandardError
+      nil
+  end
+
   def user
     ENV['USER']
   end
@@ -136,5 +154,12 @@ class Php70Common < Formula
         supervisor_config_path.write(config_file)
       end
     end
+
+    if nginx_snippet_file
+        nginx_config_dir.mkpath
+        File.delete nginx_config_path if File.exist?(nginx_config_path)
+        nginx_config_path.write(nginx_snippet_file)
+    end
+
   end
 end

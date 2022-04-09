@@ -160,5 +160,6 @@ class Php81Common < Formula
         File.delete nginx_config_path if File.exist?(nginx_config_path)
         nginx_config_path.write(nginx_snippet_file)
     end
+
   end
 end

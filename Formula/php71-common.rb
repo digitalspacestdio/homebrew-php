@@ -64,6 +64,24 @@ class Php71Common < Formula
       supervisor_config_dir / "php71-fpm.ini"
   end
 
+  def nginx_config_dir
+      etc / "nginx" / "php.d"
+  end
+
+  def nginx_config_path
+      nginx_config_dir / "php80.conf"
+  end
+
+  def nginx_snippet_file
+     <<~EOS
+        if (-f $documentRoot/.php71) {
+          set $php_version 71;
+        }
+     EOS
+  rescue StandardError
+      nil
+  end
+
   def user
     ENV['USER']
   end
