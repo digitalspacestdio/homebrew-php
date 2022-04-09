@@ -5,7 +5,7 @@ class Php81Common < Formula
   desc "PHP Version 8.1 (Common Package)"
   include AbstractPhpVersion::Php81Defs
   version PHP_VERSION
-  revision 10
+  revision 11
 
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -152,11 +152,13 @@ class Php81Common < Formula
         supervisor_config_dir.mkpath
         File.delete supervisor_config_path if File.exist?(supervisor_config_path)
         supervisor_config_path.write(config_file)
+      end
+    end
 
+    if nginx_snippet_file
         nginx_config_dir.mkpath
         File.delete nginx_config_path if File.exist?(nginx_config_path)
         nginx_config_path.write(nginx_snippet_file)
-      end
     end
   end
 end
