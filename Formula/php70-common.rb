@@ -5,7 +5,7 @@ class Php70Common < Formula
   desc "PHP Version 7.0 (Common Package)"
   include AbstractPhpVersion::Php70Defs
   version PHP_VERSION
-  revision 7
+  revision 22
 
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -69,7 +69,7 @@ class Php70Common < Formula
   end
 
   def nginx_config_path
-      nginx_config_dir / "php80.conf"
+      nginx_config_dir / "php70.conf"
   end
 
   def nginx_snippet_file
