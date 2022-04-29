@@ -62,35 +62,35 @@ class AbstractPhpVersion < Formula
   end
 
   module Php74Defs
-    PHP_SRC_TARBALL = "https://php.net/get/php-7.4.28.tar.bz2/from/this/mirror".freeze
+    PHP_SRC_TARBALL = "https://php.net/get/php-7.4.29.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
-    PHP_VERSION     = "7.4.28".freeze
+    PHP_VERSION     = "7.4.29".freeze
     PHP_BRANCH      = "PHP-7.4".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "2085086a863444b0e39547de1a4969fd1c40a0c188eb58fab2938b649b0c4b58",
+      :sha256 => "7dde58a02b225c25130c6e2ae2cbba7254bb0340f7fe17291478176d866f9482",
     }.freeze
   end
 
   module Php80Defs
-    PHP_SRC_TARBALL = "https://php.net/get/php-8.0.17.tar.bz2/from/this/mirror".freeze
+    PHP_SRC_TARBALL = "https://php.net/get/php-8.0.18.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
-    PHP_VERSION     = "8.0.17".freeze
+    PHP_VERSION     = "8.0.18".freeze
     PHP_BRANCH      = "PHP-8.0".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "52811ee2dde71660ca32737a4ac696c24591eb22e846dd8e09ee77122660283f",
+      :sha256 => "826ee34881a1c349678d4f7cc55ff9141fa1411344e4bb8f95d0f9223bceb55a",
     }.freeze
   end
 
   module Php81Defs
-    PHP_SRC_TARBALL = "https://php.net/get/php-8.1.4.tar.bz2/from/this/mirror".freeze
+    PHP_SRC_TARBALL = "https://php.net/get/php-8.1.5.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
-    PHP_VERSION     = "8.1.4".freeze
+    PHP_VERSION     = "8.1.5".freeze
     PHP_BRANCH      = "PHP-8.1".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "b3f688cb69758523838b8e7f509aaef0152133d9b84a84a0b7cf68eeafc1df76",
+      :sha256 => "827de56771c3ab8313a069812f15f6ec49989d510aebd0dce180839c6d8d6ff3",
     }.freeze
   end
 end
