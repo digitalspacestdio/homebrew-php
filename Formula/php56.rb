@@ -7,7 +7,7 @@ class Php56 < AbstractPhp
 
       # So PHP extensions don't report missing symbols
       skip_clean "bin", "sbin"
-      depends_on "gcc@9" => :build if OS.mac?
+      depends_on "gcc@9" => :build
       depends_on "autoconf" => :build
 
       # obtain list of php formulas
@@ -117,7 +117,7 @@ class Php56 < AbstractPhp
   desc "PHP Version 5.6"
   include AbstractPhpVersion::Php56Defs
   version PHP_VERSION
-  revision 13
+  revision 14
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 

@@ -180,8 +180,8 @@ class AbstractPhp < Formula
     end
 
      if php_version.start_with?("5.6")
-      ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9" if OS.mac?
-      ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9" if OS.mac?
+      ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+      ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
      else
       ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11" if OS.mac?
       ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11" if OS.mac?
