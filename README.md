@@ -7,6 +7,7 @@ A centralized repository for PHP-related brews.
 * [Homebrew](https://github.com/Homebrew/brew) or [Linuxbrew](https://github.com/Linuxbrew/brew). 
 * macOS: El Capitan, Sierra, High Sierra, Mojave, Catalina or BigSur.  
 * Linux: Debian Based (with installed: `systemtap-sdt-dev` `build-essential`)
+* Linux: OpenSUSE (with installed: `systemtap-sdt-devel` `gcc-c++` `make` `patch`)
 
 ## Installation
 
