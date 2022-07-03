@@ -11,7 +11,7 @@ versions_php=()
 DOCKER_IMAGE_BUILDER=${DOCKER_IMAGE_BUILDER-"$repository/php-node-builder"}
 
 for formula_php in $FORMULAS_PHP; do
-    php_version=$(docker run --rm $repository/linuxbrew sh -c "brew tap digitalspacestdio/php && brew info ${formula_php} --json" | jq '.[].versions.stable' | egrep -o '[0-9][0-9]*\.[0-9][0-9]*\.[0-9][A-z0-9]*')
+    php_version=$(docker run --rm $repository/linuxbrew sh -c "brew tap digitalspacestdio/php && brew info ${formula_php} --json" | jq '.[].versions.stable' | grep -o '[0-9]\+\.[0-9]\+\.[0-9A-Za-z]\+')
     versions_php+=("$php_version")
     php_major=$(echo $php_version | awk -F. '{print $1}')
     php_minor=$(echo $php_version | awk -F. '{print $2}')

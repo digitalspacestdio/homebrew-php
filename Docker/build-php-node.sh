@@ -10,7 +10,7 @@ versions_php=()
 
 DOCKER_IMAGE_BUILDER=${DOCKER_IMAGE_BUILDER-"$repository/php-node-builder"}
 for formula_php in $FORMULAS_PHP; do
-    php_version=$(docker run --rm $repository/linuxbrew sh -c "brew tap digitalspacestdio/php && brew info ${formula_php} --json" | jq '.[].versions.stable' | egrep -o '[0-9][0-9]*\.[0-9][0-9]*\.[0-9][A-z0-9]*')
+    php_version=$(docker run --rm $repository/linuxbrew sh -c "brew tap digitalspacestdio/php && brew info ${formula_php} --json" | jq '.[].versions.stable' | grep -o '[0-9]\+\.[0-9]\+\.[0-9A-Za-z]\+')
     php_major=$(echo $php_version | awk -F. '{print $1}')
     php_minor=$(echo $php_version | awk -F. '{print $2}')
     php_fix=$(echo $php_version | awk -F. '{print $3}')
@@ -28,7 +28,7 @@ for php_version in $versions_php; do
     php_fix_major_minor="$repository/php:$php_major.$php_minor";
     php__major="$repository/php:$php_major";
 
-    node_version=$(docker run --rm $repository/linuxbrew sh -c "brew info ${formula_node} --json" | jq '.[].versions.stable' | egrep -o '[0-9][0-9]*\.[0-9][0-9]*\.[0-9][A-z0-9]*')
+    node_version=$(docker run --rm $repository/linuxbrew sh -c "brew info ${formula_node} --json" | jq '.[].versions.stable' | grep -o '[0-9]\+\.[0-9]\+\.[0-9A-Za-z]\+')
 
     node_major=$(echo $node_version | awk -F. '{print $1}')
     node_minor=$(echo $node_version | awk -F. '{print $2}')
