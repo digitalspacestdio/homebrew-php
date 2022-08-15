@@ -29,10 +29,7 @@ class AbstractPhp < Formula
       conflicts_with php_formula_name, :because => "different php versions install the same binaries."
     end
 
-    unless build.without? "sqlite"
-        depends_on "sqlite"
-    end
-
+    depends_on "sqlite"
     depends_on "digitalspacestdio/php/phpcurl"
     depends_on "libxslt"
     depends_on "enchant" => :optional
@@ -118,7 +115,6 @@ class AbstractPhp < Formula
     option "without-fpm", "Disable building of the fpm SAPI executable"
     option "without-ldap", "Build without LDAP support"
     option "without-mysql", "Remove MySQL/MariaDB support"
-    option "without-sqlite", "Remove sqlite support"
     option "without-legacy-mysql", "Do not include the deprecated mysql_ functions"
     option "without-pcntl", "Build without Process Control support"
   end
@@ -368,9 +364,7 @@ INFO
       args << "--enable-cgi"
     end
 
-    unless build.without? "sqlite"
-        args << "--with-sqlite=#{Formula["sqlite"].opt_prefix}"
-    end
+    args << "--with-sqlite=#{Formula["sqlite"].opt_prefix}"
     args << "--with-curl=#{Formula["digitalspacestdio/php/phpcurl"].opt_prefix}"
     args << "--with-xsl=" + Formula["libxslt"].opt_prefix.to_s
 
