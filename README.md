@@ -14,9 +14,13 @@ A centralized repository for PHP-related brews.
 Run the following in your command-line:
 
 ```sh
-$ brew tap digitalspacestdio/common
-$ brew tap digitalspacestdio/php
+brew tap digitalspacestdio/common
 ```
+
+```sh
+brew tap digitalspacestdio/php
+```
+
 
 ## Bugs happen
 
