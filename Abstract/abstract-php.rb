@@ -12,7 +12,7 @@ class AbstractPhp < Formula
     skip_clean "bin", "sbin"
 
     depends_on "gcc@9" => :build if OS.mac? && name.split("::")[2].downcase.start_with?("php56")
-    depends_on "gcc" => :build if OS.mac? && !name.split("::")[2].downcase.start_with?("php56")
+    depends_on "gcc@11" => :build if OS.mac? && !name.split("::")[2].downcase.start_with?("php56")
     depends_on "autoconf" => :build
 
     # obtain list of php formulas
@@ -179,8 +179,8 @@ class AbstractPhp < Formula
       ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
       ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
      else
-      ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11" if OS.mac?
-      ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11" if OS.mac?
+      ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11" if OS.mac?
+      ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11" if OS.mac?
       if php_version.start_with?("7.1", "7.0")
           ENV.append "CFLAGS", "-DTRUE=1 -DFALSE=0"
           ENV.append "CXXFLAGS", "-DTRUE=1 -DFALSE=0"
