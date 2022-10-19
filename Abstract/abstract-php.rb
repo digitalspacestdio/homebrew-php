@@ -12,7 +12,8 @@ class AbstractPhp < Formula
     skip_clean "bin", "sbin"
 
     depends_on "gcc@9" => :build if OS.mac? && name.split("::")[2].downcase.start_with?("php56")
-    depends_on "gcc@11" => :build if OS.mac? && !name.split("::")[2].downcase.start_with?("php56")
+    depends_on "gcc@11" => :build if OS.mac? && name.split("::")[2].downcase.start_with?("php70", "php71", "php72")
+    depends_on "gcc" => :build if OS.mac?
     depends_on "autoconf" => :build
 
     # obtain list of php formulas
@@ -38,7 +39,7 @@ class AbstractPhp < Formula
     depends_on "gettext"
     depends_on "gmp" => :optional
     depends_on "digitalspacestdio/common/icu4c@67.1" if name.split("::")[2].downcase.start_with?("php70", "php71", "php72")
-    depends_on "digitalspacestdio/common/icu4c@69.1" if name.split("::")[2].downcase.start_with?("php56", "php73")
+    depends_on "digitalspacestdio/common/icu4c@69.1" if name.split("::")[2].downcase.start_with?("php56")
     depends_on "icu4c" if name.split("::")[2].downcase.start_with?("php74", "php80", "php81")
     depends_on "imap-uw" if build.with?("imap")
     depends_on "jpeg" if name.split("::")[2].downcase.start_with?("php56", "php70", "php71")
@@ -179,8 +180,14 @@ class AbstractPhp < Formula
       ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
       ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
      else
-      ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11" if OS.mac?
-      ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11" if OS.mac?
+      if php_version.start_with?("7.0", "7.1", "7.2")
+        ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11" if OS.mac?
+        ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11" if OS.mac?
+      else 
+        ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-12" if OS.mac?
+        ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-12" if OS.mac?
+      end
+      
       if php_version.start_with?("7.1", "7.0")
           ENV.append "CFLAGS", "-DTRUE=1 -DFALSE=0"
           ENV.append "CXXFLAGS", "-DTRUE=1 -DFALSE=0"
