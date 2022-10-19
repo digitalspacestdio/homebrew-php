@@ -19,7 +19,7 @@ class AbstractPhpExtension < Formula
     keg_only :versioned_formula
     def self.init
     depends_on "autoconf" => :build
-    depends_on "gcc" => :build if OS.mac?
+    depends_on "gcc@11" => :build if OS.mac?
     option "without-config-file", "Do not install extension config file"
   end
 
@@ -40,8 +40,8 @@ class AbstractPhpExtension < Formula
   def safe_phpize
     ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
     ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
-    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-12" if OS.mac?
-    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-12" if OS.mac?
+    ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11" if OS.mac?
+    ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11" if OS.mac?
     system phpize
   end
 
