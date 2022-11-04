@@ -179,10 +179,10 @@ class AbstractPhp < Formula
       ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
       ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
      else
-      if php_version.start_with?("7.", "8.")
-        ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11" if OS.mac?
-        ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11" if OS.mac?
-      end
+      #if php_version.start_with?("7.", "8.")
+      #  ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11" if OS.mac?
+      #  ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11" if OS.mac?
+      #end
       
       if php_version.start_with?("7.1", "7.0")
           ENV.append "CFLAGS", "-DTRUE=1 -DFALSE=0"
