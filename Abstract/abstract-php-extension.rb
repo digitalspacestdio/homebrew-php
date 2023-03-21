@@ -148,13 +148,13 @@ end
 
 class AbstractPhp56Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php56Defs
-  depends_on "gcc@9" => :build if OS.mac?
+  depends_on "gcc@9" => :build if OS.linux?
   ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
   ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
 
   def safe_phpize
-    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
-    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9" if OS.linux?
+    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9" if OS.linux?
     ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
     ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
     system phpize
