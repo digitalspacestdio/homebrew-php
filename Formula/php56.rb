@@ -7,7 +7,7 @@ class Php56 < AbstractPhp
 
       # So PHP extensions don't report missing symbols
       skip_clean "bin", "sbin"
-      depends_on "gcc@9" => :build
+      depends_on "gcc@9" => :build if OS.linux?
       depends_on "autoconf" => :build
 
       # obtain list of php formulas
@@ -159,8 +159,8 @@ class Php56 < AbstractPhp
     # Prevent homebrew from harcoding path to sed shim in phpize script
     ENV["lt_cv_path_SED"] = "sed"
     
-    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
-    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
+    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9" if OS.linux?
+    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9" if OS.linux?
     # buildconf required due to system library linking bug patch
     system "./buildconf", "--force"
     inreplace "configure" do |s|
