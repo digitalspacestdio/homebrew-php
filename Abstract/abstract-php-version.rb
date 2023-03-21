@@ -93,4 +93,15 @@ class AbstractPhpVersion < Formula
       :sha256 => "f4fb298a0eb091f944ecebac57b76daae768a970c2f51610a5ab24f34d8c0caf",
     }.freeze
   end
+
+  module Php82Defs
+    PHP_SRC_TARBALL = "https://php.net/get/php-8.2.4.tar.bz2/from/this/mirror".freeze
+    PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
+    PHP_VERSION     = "8.2.4".freeze
+    PHP_BRANCH      = "PHP-8.2".freeze
+
+    PHP_CHECKSUM    = {
+      :sha256 => "79186f94bd510db86e31e535dd448277a1eb92a87878303a1ead44602d8b1197",
+    }.freeze
+  end
 end
