@@ -13,7 +13,7 @@ class Php81Http < AbstractPhp81Extension
   depends_on "digitalspacestdio/php/php81-raphf"
   depends_on "digitalspacestdio/php/php81-propro"
   depends_on "libevent" => :optional
-  depends_on "icu4c" => :optional
+  depends_on "digitalspacestdio/common/icu4c@72.1" => :optional
 
   def config_filename
     "zzz_ext-" + extension + ".ini"
@@ -40,7 +40,7 @@ class Php81Http < AbstractPhp81Extension
     args << "--with-http-libcurl-dir"
     args << "--with-http-zlib-dir"
     args << "--with-http-libevent-dir=#{Formula["libevent"].opt_prefix}" if build.with? "libevent"
-    args << "--with-http-libicu-dir=#{Formula["icu4c"].opt_prefix}" if build.with? "icu4c"
+    args << "--with-http-libicu-dir=#{Formula["digitalspacestdio/common/icu4c@72.1"].opt_prefix}" if build.with? "icu4c"
 
     system "./configure", *args
     system "make"

@@ -4,13 +4,13 @@ class Php80Intl < AbstractPhp80Extension
   init
   desc "Wrapper for the ICU library"
   homepage "https://php.net/manual/en/book.intl.php"
-  revision 26
+  revision 27
 
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
-  depends_on "icu4c"
+  depends_on "digitalspacestdio/common/icu4c@72.1"
   depends_on "pkg-config" => :build
 
   def install
@@ -27,7 +27,7 @@ class Php80Intl < AbstractPhp80Extension
                           phpconfig,
                           "--disable-dependency-tracking",
                           "--enable-intl",
-                          "--with-icu-dir=#{Formula["icu4c"].opt_prefix}"
+                          "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@72.1"].opt_prefix}"
     system "make"
     prefix.install "modules/intl.so"
     write_config_file if build.with? "config-file"
