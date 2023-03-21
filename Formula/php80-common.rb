@@ -30,7 +30,7 @@ class Php80Common < Formula
   depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-ldap"
   # depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-ioncubeloader"
 
-  keg_only "this package contains dependency only"
+  # keg_only "this package contains dependency only"
 
   def fetch
     if OS.mac?
