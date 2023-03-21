@@ -12,7 +12,7 @@ class AbstractPhp < Formula
     skip_clean "bin", "sbin"
 
     depends_on "gcc@9" => :build if OS.mac? && name.split("::")[2].downcase.start_with?("php56")
-    depends_on "gcc@11" => :build if OS.mac? && name.split("::")[2].downcase.start_with?("php7", "php8")
+    #depends_on "gcc@11" => :build if OS.mac? && name.split("::")[2].downcase.start_with?("php7", "php8")
     depends_on "autoconf" => :build
 
     # obtain list of php formulas
@@ -39,7 +39,7 @@ class AbstractPhp < Formula
     depends_on "gmp" => :optional
     depends_on "digitalspacestdio/common/icu4c@67.1" if name.split("::")[2].downcase.start_with?("php70", "php71", "php72")
     depends_on "digitalspacestdio/common/icu4c@69.1" if name.split("::")[2].downcase.start_with?("php56")
-    depends_on "icu4c" if name.split("::")[2].downcase.start_with?("php74", "php80", "php81")
+    depends_on "digitalspacestdio/common/icu4c@72.1" if name.split("::")[2].downcase.start_with?("php74", "php80", "php81", "php82")
     depends_on "imap-uw" if build.with?("imap")
     depends_on "jpeg" if name.split("::")[2].downcase.start_with?("php56", "php70", "php71")
     depends_on "libjpeg" if !name.split("::")[2].downcase.start_with?("php56", "php70", "php71")
@@ -175,10 +175,10 @@ class AbstractPhp < Formula
       ENV["lt_cv_path_SED"] = "sed"
     end
 
-     if php_version.start_with?("5.6")
+    if php_version.start_with?("5.6")
       ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
       ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
-     else
+    else
       #if php_version.start_with?("7.", "8.")
       #  ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11" if OS.mac?
       #  ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11" if OS.mac?
@@ -188,7 +188,7 @@ class AbstractPhp < Formula
           ENV.append "CFLAGS", "-DTRUE=1 -DFALSE=0"
           ENV.append "CXXFLAGS", "-DTRUE=1 -DFALSE=0"
       end
-     end
+    end
 
     # Not removing all pear.conf and .pearrc files from PHP path results in
     # the PHP configure not properly setting the pear binary to be installed
@@ -290,7 +290,7 @@ INFO
 #      ("--with-iconv-dir=/usr" if OS.mac?),
       ("--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@67.1"].opt_prefix}" if php_version.start_with?("7.0", "7.1", "7.2")),
       ("--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}" if php_version.start_with?("5.6", "7.3")),
-      ("--with-icu-dir=#{Formula["icu4c"].opt_prefix}" if php_version.start_with?("7.4", "8.0", "8.1")),
+      ("--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@72.1"].opt_prefix}" if php_version.start_with?("7.4", "8.0", "8.1", "8.2")),
       ("--with-external-pcre" if !OS.mac? && !php_version.start_with?("7.4", "8.")),
       ("--without-pcre-jit" if OS.mac?),
       "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}",
@@ -464,8 +464,7 @@ INFO
   end
 
   def _install
-
-    system "./buildconf", "--force" if build.head?
+    system "./buildconf", "--force"
     system "./configure", *install_args
 
     if build.with?("httpd")

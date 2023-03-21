@@ -20,11 +20,11 @@ class Php82 < AbstractPhp
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
 
   def php_version
-    "8.2"
+    "#{PHP_VERSION_MAJOR}"
   end
 
   def php_version_path
-    "82"
+    "#{PHP_BRANCH_NUM}"
   end
 
   def install_args
