@@ -15,20 +15,20 @@ class Php82Common < Formula
     depends_on "digitalspacestdio/common/digitalvisor"
   end
 
-  depends_on "digitalspacestdio/php/php81"
-  depends_on "digitalspacestdio/php/php81-apcu"
-  depends_on "digitalspacestdio/php/php81-gmp"
-  depends_on "digitalspacestdio/php/php81-igbinary"
-  depends_on "digitalspacestdio/php/php81-intl"
-  depends_on "digitalspacestdio/php/php81-mongodb"
-  depends_on "digitalspacestdio/php/php81-opcache"
-  depends_on "digitalspacestdio/php/php81-pdo-pgsql"
-  depends_on "digitalspacestdio/php/php81-sodium"
-  depends_on "digitalspacestdio/php/php81-redis"
-  depends_on "digitalspacestdio/php/php81-tidy"
-  depends_on "digitalspacestdio/php/php81-zip"
-  depends_on "digitalspacestdio/php/php81-ldap"
-  # depends_on "digitalspacestdio/php/php81-ioncubeloader"
+  depends_on "digitalspacestdio/php/php82"
+  depends_on "digitalspacestdio/php/php82-apcu"
+  depends_on "digitalspacestdio/php/php82-gmp"
+  depends_on "digitalspacestdio/php/php82-igbinary"
+  depends_on "digitalspacestdio/php/php82-intl"
+  depends_on "digitalspacestdio/php/php82-mongodb"
+  depends_on "digitalspacestdio/php/php82-opcache"
+  depends_on "digitalspacestdio/php/php82-pdo-pgsql"
+  depends_on "digitalspacestdio/php/php82-sodium"
+  depends_on "digitalspacestdio/php/php82-redis"
+  depends_on "digitalspacestdio/php/php82-tidy"
+  depends_on "digitalspacestdio/php/php82-zip"
+  depends_on "digitalspacestdio/php/php82-ldap"
+  # depends_on "digitalspacestdio/php/php82-ioncubeloader"
 
   keg_only "this package contains dependency only"
 
@@ -41,15 +41,15 @@ class Php82Common < Formula
   end
 
   def config_path_php
-      etc / "php" / "8.1" / "php.ini"
+      etc / "php" / "8.2" / "php.ini"
   end
 
   def config_path_php_fpm
-      etc / "php" / "8.1" / "php-fpm.conf"
+      etc / "php" / "8.2" / "php-fpm.conf"
   end
 
   def config_path_php_fpm_www
-      etc / "php" / "8.1" / "php-fpm.d" / "www.conf"
+      etc / "php" / "8.2" / "php-fpm.d" / "www.conf"
   end
 
   def log_dir
@@ -61,7 +61,7 @@ class Php82Common < Formula
   end
 
   def supervisor_config_path
-      supervisor_config_dir / "php81-fpm.ini"
+      supervisor_config_dir / "php82-fpm.ini"
   end
 
   def nginx_config_dir
@@ -69,7 +69,7 @@ class Php82Common < Formula
   end
 
   def nginx_config_path
-      nginx_config_dir / "php81.conf"
+      nginx_config_dir / "php82.conf"
   end
 
   def user
@@ -82,8 +82,8 @@ class Php82Common < Formula
 
   def nginx_snippet_file
      <<~EOS
-        if (-f $documentRoot/.php81) {
-          set $php_version 81;
+        if (-f $documentRoot/.php82) {
+          set $php_version 82;
         }
      EOS
   rescue StandardError
@@ -92,12 +92,12 @@ class Php82Common < Formula
 
   def config_file
       <<~EOS
-        [program:php81]
-        command=#{HOMEBREW_PREFIX}/opt/php81/sbin/php-fpm --nodaemonize --fpm-config #{HOMEBREW_PREFIX}/etc/php/8.1/php-fpm.conf
-        directory=#{HOMEBREW_PREFIX}/opt/php81
-        stdout_logfile=#{HOMEBREW_PREFIX}/var/log/php81-supervisor.log
+        [program:php82]
+        command=#{HOMEBREW_PREFIX}/opt/php82/sbin/php-fpm --nodaemonize --fpm-config #{HOMEBREW_PREFIX}/etc/php/8.2/php-fpm.conf
+        directory=#{HOMEBREW_PREFIX}/opt/php82
+        stdout_logfile=#{HOMEBREW_PREFIX}/var/log/php82-supervisor.log
         stdout_logfile_maxbytes=1MB
-        stderr_logfile=#{HOMEBREW_PREFIX}/var/log/php81-supervisor.err
+        stderr_logfile=#{HOMEBREW_PREFIX}/var/log/php82-supervisor.err
         stderr_logfile_maxbytes=1MB
         user=#{user}
         autorestart=true
