@@ -14,6 +14,24 @@ class Php82Xdebug < AbstractPhp82Extension
     "zend_extension"
   end
 
+  def config_file
+    <<~EOS
+      [#{extension}]
+      #{extension_type}="#{module_path}"
+      xdebug.mode=off
+      xdebug.start_with_request=trigger
+      xdebug.client_host=127.0.0.1
+      xdebug.client_port=9003
+      xdebug.discover_client_host=false
+      xdebug.remote_cookie_expire_time = 3600
+      xdebug.idekey=PHPSTORM
+      xdebug.overload_var_dump=0
+      xdebug.max_nesting_level=512
+    EOS
+  rescue StandardError
+    nil
+  end
+
   def install
     #Dir.chdir "xdebug-#{version}" unless build.head?
 
@@ -26,6 +44,7 @@ class Php82Xdebug < AbstractPhp82Extension
     system "make clean"
     system "make"
     prefix.install "modules/xdebug.so"
+    File.delete config_filepath if File.exist?(config_filepath) && build.with? "config-file"
     write_config_file if build.with? "config-file"
   end
 end

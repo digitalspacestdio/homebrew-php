@@ -30,7 +30,7 @@ class Php82Common < Formula
   depends_on "digitalspacestdio/php/php82-ldap"
   # depends_on "digitalspacestdio/php/php82-ioncubeloader"
 
-  keg_only "this package contains dependency only"
+  # keg_only "this package contains dependency only"
 
   def fetch
     if OS.mac?
@@ -123,7 +123,7 @@ class Php82Common < Formula
   end
 
   def install
-    system "echo $(date) > installed.txt"
+    # system "echo $(date) > installed.txt"
 
     begin
         inreplace config_path_php do |s|
@@ -154,15 +154,16 @@ class Php82Common < Formula
         inreplace config_path_php_fpm_www do |s|
             s.sub!(/^.*?user\s*=.+$/, "; user = #{user}")
             s.sub!(/^.*?group\s*=.+$/, "; group = #{user_group}")
-            s.sub!(/^.*?listen\s*=.+$/, "listen = 127.0.0.1:9081")
+            s.sub!(/^.*?listen\s*=.+$/, "listen = 127.0.0.1:9082")
         end
     rescue StandardError
         nil
     end
 
-    prefix.install "installed.txt"
+    # prefix.install "installed.txt"
     php82_binary_path.write(php82_binary_wrapper)
-    bin.install "php82"
+    php82_binary_path.chmod(0755)
+    bin.install "bin/php82"
 
     log_dir.mkpath
 
