@@ -3,6 +3,7 @@ require File.expand_path("../../Abstract/abstract-php-version", __FILE__)
 
 class Php72Common < Formula
   include AbstractPhpVersion::Php72Defs
+  desc "PHP Version #{PHP_VERSION} (Common Package)"
   version PHP_VERSION
   revision 23
 
@@ -171,10 +172,12 @@ class Php72Common < Formula
       end
     end
 
-    if nginx_snippet_file
-        nginx_config_dir.mkpath
-        File.delete nginx_config_path if File.exist?(nginx_config_path)
-        nginx_config_path.write(nginx_snippet_file)
+    if build.with? "nginx"
+      if nginx_snippet_file
+          nginx_config_dir.mkpath
+          File.delete nginx_config_path if File.exist?(nginx_config_path)
+          nginx_config_path.write(nginx_snippet_file)
+      end
     end
   end
 end
