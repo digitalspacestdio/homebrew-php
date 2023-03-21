@@ -11,9 +11,10 @@ class Php74Common < Formula
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
   option "with-supervisor", "Build with supervisor support"
-  if build.with?("supervisor")
-    depends_on "digitalspacestdio/common/digitalvisor"
-  end
+  option "with-nginx", "Build with nginx support"
+  
+  depends_on "digitalspacestdio/common/digitalvisor" if build.with?("supervisor")
+  depends_on "digitalspacestdio/common/nginx8181" if build.with?("nginx")
 
   depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}"
   depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-apcu"
@@ -65,7 +66,7 @@ class Php74Common < Formula
   end
 
   def nginx_config_dir
-      etc / "nginx" / "php.d"
+      etc / "nginx8181" / "php.d"
   end
 
   def nginx_config_path
@@ -82,7 +83,7 @@ class Php74Common < Formula
 
   def nginx_snippet_file
      <<~EOS
-        if (-f $documentRoot/.php#{PHP_BRANCH_NUM}) {
+        if (-f $document_root/.php#{PHP_BRANCH_NUM}) {
           set $php_version #{PHP_BRANCH_NUM};
         }
      EOS
