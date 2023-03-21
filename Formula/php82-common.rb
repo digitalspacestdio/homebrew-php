@@ -5,7 +5,7 @@ class Php82Common < Formula
   desc "PHP Version 8.2 (Common Package)"
   include AbstractPhpVersion::Php82Defs
   version PHP_VERSION
-  revision 22
+  revision 1
 
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
