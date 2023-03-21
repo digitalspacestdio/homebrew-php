@@ -44,7 +44,9 @@ class Php82Xdebug < AbstractPhp82Extension
     system "make clean"
     system "make"
     prefix.install "modules/xdebug.so"
-    File.delete config_filepath if File.exist?(config_filepath) && build.with? "config-file"
+    if File.exist?(config_filepath) && build.with? "config-file"
+      File.delete config_filepath 
+    end
     write_config_file if build.with? "config-file"
   end
 end
