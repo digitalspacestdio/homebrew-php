@@ -1,11 +1,10 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
-class Php74Zip < AbstractPhp74Extension
+class Php70Zip < AbstractPhp70Extension
   init
   desc "Zip"
   homepage "https://www.php.net/manual/ru/book.zip.php"
   revision 1
-
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]

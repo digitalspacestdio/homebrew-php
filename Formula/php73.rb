@@ -5,7 +5,7 @@ class Php73 < AbstractPhp
   desc "PHP Version 7.3"
   include AbstractPhpVersion::Php73Defs
   version PHP_VERSION
-  revision 4
+  revision 5
   keg_only :versioned_formula
   depends_on "libjpeg"
 

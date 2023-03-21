@@ -58,7 +58,7 @@ class AbstractPhp < Formula
     depends_on "mysql" if build.with?("libmysql")
 #    depends_on "gdbm"
     depends_on "libiconv" if OS.mac?
-    depends_on "libzip"
+#    depends_on "libzip"
 
     # ssl
     if build.with?("homebrew-libressl")
@@ -258,8 +258,8 @@ INFO
     # Ensure system dylibs can be found by linker on Sierra
     ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
 
-    libzip = Formula["libzip"]
-    ENV["CFLAGS"] = "-Wno-error -I#{libzip.opt_include}"
+#    libzip = Formula["libzip"]
+    #ENV["CFLAGS"] = "-Wno-error -I#{libzip.opt_include}"
 
     args = [
       "--prefix=#{prefix}",
@@ -283,7 +283,7 @@ INFO
       "--enable-sysvsem",
       "--enable-sysvshm",
       "--enable-wddx",
-      "--enable-zip",
+#      "--enable-zip",
       "--with-freetype-dir=#{Formula["freetype"].opt_prefix}",
       "--with-gd",
       "--with-gettext=#{Formula["gettext"].opt_prefix}",
@@ -300,7 +300,7 @@ INFO
       "--with-png-dir=#{Formula["libpng"].opt_prefix}",
       "--with-xmlrpc",
       "--with-zlib=#{Formula["zlib"].opt_prefix}",
-      "--with-libzip=#{Formula["libzip"].opt_prefix}",
+#      "--with-libzip=#{Formula["libzip"].opt_prefix}",
       "--with-readline=#{Formula["readline"].opt_prefix}",
 #      "--with-gdbm=#{Formula["gdbm"].opt_prefix}",
       ("--with-iconv=#{Formula["libiconv"].opt_prefix}" if OS.mac?),
