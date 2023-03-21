@@ -42,15 +42,15 @@ class Php71Common < Formula
   end
 
   def config_path_php
-      etc / "php" / "#{PHP_VERSION}" / "php.ini"
+      etc / "php" / "#{PHP_VERSION_MAJOR}" / "php.ini"
   end
 
   def config_path_php_fpm
-      etc / "php" / "#{PHP_VERSION}" / "php-fpm.conf"
+      etc / "php" / "#{PHP_VERSION_MAJOR}" / "php-fpm.conf"
   end
 
   def config_path_php_fpm_www
-      etc / "php" / "#{PHP_VERSION}" / "php-fpm.d" / "www.conf"
+      etc / "php" / "#{PHP_VERSION_MAJOR}" / "php-fpm.d" / "www.conf"
   end
 
   def log_dir
@@ -94,7 +94,7 @@ class Php71Common < Formula
   def config_file
       <<~EOS
         [program:php#{PHP_BRANCH_NUM}]
-        command=#{HOMEBREW_PREFIX}/opt/php#{PHP_BRANCH_NUM}/sbin/php-fpm --nodaemonize --fpm-config #{HOMEBREW_PREFIX}/etc/php/#{PHP_VERSION}/php-fpm.conf
+        command=#{HOMEBREW_PREFIX}/opt/php#{PHP_BRANCH_NUM}/sbin/php-fpm --nodaemonize --fpm-config #{HOMEBREW_PREFIX}/etc/php/#{PHP_VERSION_MAJOR}/php-fpm.conf
         directory=#{HOMEBREW_PREFIX}/opt/php#{PHP_BRANCH_NUM}
         stdout_logfile=#{HOMEBREW_PREFIX}/var/log/php#{PHP_BRANCH_NUM}-supervisor.log
         stdout_logfile_maxbytes=1MB
@@ -178,6 +178,6 @@ class Php71Common < Formula
           File.delete nginx_config_path if File.exist?(nginx_config_path)
           nginx_config_path.write(nginx_snippet_file)
       end
-    fi
+    end
   end
 end

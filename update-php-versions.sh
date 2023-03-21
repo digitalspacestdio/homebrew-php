@@ -11,6 +11,7 @@ PHP_TARBZ2_SHA256=$(echo ${RELEASES} | jq -r '.source[] | select(.filename | con
 export CONFIG='module Php'$(echo $PHP_VERSION | awk -F. '{ print $1 "" $2 }')'Defs
     PHP_SRC_TARBALL = "https://php.net/get/'$PHP_TARBZ2_FILENAME'/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
+    PHP_VERSION_MAJOR = "'$(echo $PHP_VERSION | awk -F. '{ print $1 "." $2 }')'".freeze
     PHP_VERSION     = "'$PHP_VERSION'".freeze
     PHP_BRANCH      = "PHP-'$(echo $PHP_VERSION | awk -F. '{ print $1 "." $2 }')'".freeze
     PHP_BRANCH_NUM  = "'$(echo $PHP_VERSION | awk -F. '{ print $1 $2 }')'".freeze

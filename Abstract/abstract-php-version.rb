@@ -9,6 +9,7 @@ class AbstractPhpVersion < Formula
   module Php56Defs
     PHP_SRC_TARBALL = "https://php.net/get/php-5.6.40.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
+    PHP_VERSION_MAJOR = "5.6".freeze
     PHP_VERSION     = "5.6.40".freeze
     PHP_BRANCH      = "PHP-5.6".freeze
     PHP_BRANCH_NUM  = "56".freeze
@@ -21,6 +22,7 @@ class AbstractPhpVersion < Formula
   module Php70Defs
     PHP_SRC_TARBALL = "https://php.net/get/php-7.0.33.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
+    PHP_VERSION_MAJOR = "7.0".freeze
     PHP_VERSION     = "7.0.33".freeze
     PHP_BRANCH      = "PHP-7.0".freeze
     PHP_BRANCH_NUM  = "70".freeze
@@ -33,6 +35,7 @@ class AbstractPhpVersion < Formula
   module Php71Defs
     PHP_SRC_TARBALL = "https://php.net/get/php-7.1.33.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
+    PHP_VERSION_MAJOR = "7.1".freeze
     PHP_VERSION     = "7.1.33".freeze
     PHP_BRANCH      = "PHP-7.1".freeze
     PHP_BRANCH_NUM  = "71".freeze
@@ -45,6 +48,7 @@ class AbstractPhpVersion < Formula
   module Php72Defs
     PHP_SRC_TARBALL = "https://php.net/get/php-7.2.34.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
+    PHP_VERSION_MAJOR = "7.2".freeze
     PHP_VERSION     = "7.2.34".freeze
     PHP_BRANCH      = "PHP-7.2".freeze
     PHP_BRANCH_NUM  = "72".freeze
@@ -57,6 +61,7 @@ class AbstractPhpVersion < Formula
   module Php73Defs
     PHP_SRC_TARBALL = "https://php.net/get/php-7.3.33.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
+    PHP_VERSION_MAJOR = "7.3".freeze
     PHP_VERSION     = "7.3.33".freeze
     PHP_BRANCH      = "PHP-7.3".freeze
     PHP_BRANCH_NUM  = "73".freeze
@@ -69,6 +74,7 @@ class AbstractPhpVersion < Formula
   module Php74Defs
     PHP_SRC_TARBALL = "https://php.net/get/php-7.4.33.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
+    PHP_VERSION_MAJOR = "7.4".freeze
     PHP_VERSION     = "7.4.33".freeze
     PHP_BRANCH      = "PHP-7.4".freeze
     PHP_BRANCH_NUM  = "74".freeze
@@ -81,6 +87,7 @@ class AbstractPhpVersion < Formula
   module Php80Defs
     PHP_SRC_TARBALL = "https://php.net/get/php-8.0.28.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
+    PHP_VERSION_MAJOR = "8.0".freeze
     PHP_VERSION     = "8.0.28".freeze
     PHP_BRANCH      = "PHP-8.0".freeze
     PHP_BRANCH_NUM  = "80".freeze
@@ -93,6 +100,7 @@ class AbstractPhpVersion < Formula
   module Php81Defs
     PHP_SRC_TARBALL = "https://php.net/get/php-8.1.17.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
+    PHP_VERSION_MAJOR = "8.1".freeze
     PHP_VERSION     = "8.1.17".freeze
     PHP_BRANCH      = "PHP-8.1".freeze
     PHP_BRANCH_NUM  = "81".freeze
@@ -105,6 +113,7 @@ class AbstractPhpVersion < Formula
   module Php82Defs
     PHP_SRC_TARBALL = "https://php.net/get/php-8.2.4.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
+    PHP_VERSION_MAJOR = "8.2".freeze
     PHP_VERSION     = "8.2.4".freeze
     PHP_BRANCH      = "PHP-8.2".freeze
     PHP_BRANCH_NUM  = "82".freeze
