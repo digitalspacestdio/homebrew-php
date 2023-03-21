@@ -144,6 +144,23 @@ class Php56 < AbstractPhp
   end
 
   def install
+    ENV.cxx11
+    # Work around configure issues with Xcode 12
+    # See https://bugs.php.net/bug.php?id=80171
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
+    # Workaround for https://bugs.php.net/80310
+    ENV.append "CFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
+    ENV.append "CXXFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
+
+    # icu4c 61.1 compatability
+    ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
+
+    # Prevent homebrew from harcoding path to sed shim in phpize script
+    ENV["lt_cv_path_SED"] = "sed"
+    
+    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
     # buildconf required due to system library linking bug patch
     system "./buildconf", "--force"
     inreplace "configure" do |s|
