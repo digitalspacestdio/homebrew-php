@@ -13,6 +13,7 @@ export CONFIG='module Php'$(echo $PHP_VERSION | awk -F. '{ print $1 "" $2 }')'De
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION     = "'$PHP_VERSION'".freeze
     PHP_BRANCH      = "PHP-'$(echo $PHP_VERSION | awk -F. '{ print $1 "." $2 }')'".freeze
+    PHP_BRANCH_NUM  = "'$(echo $PHP_VERSION | awk -F. '{ print $1 $2 }')'".freeze
 
     PHP_CHECKSUM    = {
       :sha256 => "'$PHP_TARBZ2_SHA256'",

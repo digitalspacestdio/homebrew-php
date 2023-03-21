@@ -80,6 +80,21 @@ class Php82Common < Formula
     system "id -Gn #{user}"
   end
 
+  def php82_binary_path
+    buildpath / "bin" / "php82"
+  end
+
+  def php82_binary_wrapper
+    <<~EOS
+      #!/usr/bin/env bash
+      export PATH="#{HOMEBREW_PREFIX}/opt/php#{PHP_BRANCH_NUM}/bin:$PATH"
+      
+      exec php "$@"
+    EOS
+  rescue StandardError
+      nil
+  end
+
   def nginx_snippet_file
      <<~EOS
         if (-f $documentRoot/.php82) {
@@ -146,7 +161,11 @@ class Php82Common < Formula
     end
 
     prefix.install "installed.txt"
+    php82_binary_path.write(php82_binary_wrapper)
+    bin.install "php82"
+
     log_dir.mkpath
+
     if build.with? "supervisor"
       if config_file
         supervisor_config_dir.mkpath
