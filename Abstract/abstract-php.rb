@@ -152,9 +152,17 @@ class AbstractPhp < Formula
     php_version
     php_version_path
 
-    cpu = Hardware::CPU.arm? ? "aarch64" : Hardware.oldest_cpu
-    ENV.append "CFLAGS", "-march=#{cpu}"
-    ENV.append "CXXFLAGS", "-march=#{cpu}"
+    if Hardware::CPU.intel?
+      #cpu = Hardware.oldest_cpu
+      #ENV.append "CFLAGS", "-march=#{cpu}"
+      #ENV.append "CXXFLAGS", "-march=#{cpu}"
+      ENV.append "CFLAGS", "-march=nehalem"
+      ENV.append "CFLAGS", "-msse4.2"
+
+      ENV.append "CXXFLAGS", "-march=nehalem"
+      ENV.append "CXXFLAGS", "-msse4.2"
+    end
+
     ENV.append "PHP_AUTOCONF", "#{Formula["autoconf"].opt_bin}/autoconf"
     ENV.append "PHP_AUTOHEADER", "#{Formula["autoconf"].opt_bin}/autoheader"
 
