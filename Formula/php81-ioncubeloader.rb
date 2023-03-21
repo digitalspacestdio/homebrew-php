@@ -5,13 +5,13 @@ class Php81Ioncubeloader < AbstractPhp81Extension
   desc "Loader for ionCube Secured Files"
   homepage "https://www.ioncube.com/loaders.php"
   if OS.mac?
-    sha256 "266863265f1eb2d37fee13a9416f179df528c7cda9b59b71de29dbcb66bedc25"
-    url "https://f001.backblazeb2.com/file/php-homebrew/ioncubeloader/ioncube_loaders_dar_x86-64.tar.gz"
+    sha256 "fc007e50cdaa17c3c1e0163c9e6bb9adbe09b70c65968f9f65032ceb8deccba4"
+    url "https://f001.backblazeb2.com/file/php-homebrew/ioncubeloader/12.0.5/ioncube_loaders_mac_x86-64.tar.gz"
   elsif OS.linux?
-    sha256 "6db2468cff898b5fbe9af4810f45c1ee6d382c563518419d47090b18e3fa7640"
-    url "https://f001.backblazeb2.com/file/php-homebrew/ioncubeloader/ioncube_loaders_lin_x86-64.tar.gz"
+    sha256 "c4d6d65d19909c9029b928b19c1f982a47fb33d2c7834a6a1c9babe861ef55f6"
+    url "https://f001.backblazeb2.com/file/php-homebrew/ioncubeloader/12.0.5/ioncube_loaders_lin_x86-64.tar.gz"
   end
-  version "10.3.0"
+  version "12.0.5"
   option "with-thread-safe", "Enable the thread-safe extenstion"
 
 
@@ -21,11 +21,11 @@ class Php81Ioncubeloader < AbstractPhp81Extension
 
   def install
     if OS.mac?
-      prefix.install "ioncube_loader_mac_7.2.so" => "ioncubeloader.so" if build.without? "thread-safe"
-      prefix.install "ioncube_loader_mac_7.2_ts.so" => "ioncubeloader_ts.so" if build.with? "thread-safe"
+      prefix.install "ioncube_loader_mac_8.2.so" => "ioncubeloader.so" if build.without? "thread-safe"
+      prefix.install "ioncube_loader_mac_8.2_ts.so" => "ioncubeloader_ts.so" if build.with? "thread-safe"
     elsif OS.linux?
-      prefix.install "ioncube_loader_lin_7.2.so" => "ioncubeloader.so" if build.without? "thread-safe"
-      prefix.install "ioncube_loader_lin_7.2_ts.so" => "ioncubeloader_ts.so" if build.with? "thread-safe"
+      prefix.install "ioncube_loader_lin_8.2.so" => "ioncubeloader.so" if build.without? "thread-safe"
+      prefix.install "ioncube_loader_lin_8.2_ts.so" => "ioncubeloader_ts.so" if build.with? "thread-safe"
     end
     write_config_file if build.with? "config-file"
   end

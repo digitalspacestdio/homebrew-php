@@ -1,7 +1,7 @@
 set -x
 pushd `dirname $0` > /dev/null;DIR=`pwd -P`;popd > /dev/null
 
-for VERSION in "5.6" "7.0" "7.1" "7.2" "7.3" "7.4" "8.0" "8.1"
+for VERSION in "5.6" "7.0" "7.1" "7.2" "7.3" "7.4" "8.0" "8.1" "8.2"
 do
 RELEASES=$(curl -L --silent 'https://www.php.net/releases?json&version='$VERSION)
 PHP_VERSION=$(echo ${RELEASES} | jq -r '."version"')
