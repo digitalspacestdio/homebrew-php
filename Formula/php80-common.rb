@@ -2,10 +2,10 @@ require "formula"
 require File.expand_path("../../Abstract/abstract-php-version", __FILE__)
 
 class Php80Common < Formula
-  desc "PHP Version 8.0 (Common Package)"
   include AbstractPhpVersion::Php80Defs
+  desc "PHP Version #{PHP_VERSION} (Common Package)"
   version PHP_VERSION
-  revision 22
+  revision 23
 
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -15,20 +15,20 @@ class Php80Common < Formula
     depends_on "digitalspacestdio/common/digitalvisor"
   end
 
-  depends_on "digitalspacestdio/php/php80"
-  depends_on "digitalspacestdio/php/php80-apcu"
-  depends_on "digitalspacestdio/php/php80-gmp"
-  depends_on "digitalspacestdio/php/php80-igbinary"
-  depends_on "digitalspacestdio/php/php80-intl"
-  depends_on "digitalspacestdio/php/php80-mongodb"
-  depends_on "digitalspacestdio/php/php80-opcache"
-  depends_on "digitalspacestdio/php/php80-pdo-pgsql"
-  depends_on "digitalspacestdio/php/php80-sodium"
-  depends_on "digitalspacestdio/php/php80-redis"
-  depends_on "digitalspacestdio/php/php80-tidy"
-  depends_on "digitalspacestdio/php/php80-zip"
-  depends_on "digitalspacestdio/php/php80-ldap"
-  # depends_on "digitalspacestdio/php/php80-ioncubeloader"
+  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}"
+  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-apcu"
+  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-gmp"
+  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-igbinary"
+  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-intl"
+  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-mongodb"
+  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-opcache"
+  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-pdo-pgsql"
+  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-sodium"
+  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-redis"
+  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-tidy"
+  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-zip"
+  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-ldap"
+  # depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-ioncubeloader"
 
   keg_only "this package contains dependency only"
 
@@ -41,15 +41,15 @@ class Php80Common < Formula
   end
 
   def config_path_php
-      etc / "php" / "8.0" / "php.ini"
+      etc / "php" / "#{PHP_VERSION}" / "php.ini"
   end
 
   def config_path_php_fpm
-      etc / "php" / "8.0" / "php-fpm.conf"
+      etc / "php" / "#{PHP_VERSION}" / "php-fpm.conf"
   end
 
   def config_path_php_fpm_www
-      etc / "php" / "8.0" / "php-fpm.d" / "www.conf"
+      etc / "php" / "#{PHP_VERSION}" / "php-fpm.d" / "www.conf"
   end
 
   def log_dir
@@ -61,7 +61,7 @@ class Php80Common < Formula
   end
 
   def supervisor_config_path
-      supervisor_config_dir / "php80-fpm.ini"
+      supervisor_config_dir / "php#{PHP_BRANCH_NUM}-fpm.ini"
   end
 
   def nginx_config_dir
@@ -69,17 +69,7 @@ class Php80Common < Formula
   end
 
   def nginx_config_path
-      nginx_config_dir / "php80.conf"
-  end
-
-  def nginx_snippet_file
-     <<~EOS
-        if (-f $documentRoot/.php80) {
-          set $php_version 80;
-        }
-     EOS
-  rescue StandardError
-      nil
+      nginx_config_dir / "php#{PHP_BRANCH_NUM}.conf"
   end
 
   def user
@@ -90,14 +80,24 @@ class Php80Common < Formula
     system "id -Gn #{user}"
   end
 
+  def nginx_snippet_file
+     <<~EOS
+        if (-f $documentRoot/.php#{PHP_BRANCH_NUM}) {
+          set $php_version #{PHP_BRANCH_NUM};
+        }
+     EOS
+  rescue StandardError
+      nil
+  end
+
   def config_file
       <<~EOS
-        [program:php80]
-        command=#{HOMEBREW_PREFIX}/opt/php80/sbin/php-fpm --nodaemonize --fpm-config #{HOMEBREW_PREFIX}/etc/php/8.0/php-fpm.conf
-        directory=#{HOMEBREW_PREFIX}/opt/php80
-        stdout_logfile=#{HOMEBREW_PREFIX}/var/log/php80-supervisor.log
+        [program:php#{PHP_BRANCH_NUM}]
+        command=#{HOMEBREW_PREFIX}/opt/php#{PHP_BRANCH_NUM}/sbin/php-fpm --nodaemonize --fpm-config #{HOMEBREW_PREFIX}/etc/php/#{PHP_VERSION}/php-fpm.conf
+        directory=#{HOMEBREW_PREFIX}/opt/php#{PHP_BRANCH_NUM}
+        stdout_logfile=#{HOMEBREW_PREFIX}/var/log/php#{PHP_BRANCH_NUM}-supervisor.log
         stdout_logfile_maxbytes=1MB
-        stderr_logfile=#{HOMEBREW_PREFIX}/var/log/php80-supervisor.err
+        stderr_logfile=#{HOMEBREW_PREFIX}/var/log/php#{PHP_BRANCH_NUM}-supervisor.err
         stderr_logfile_maxbytes=1MB
         user=#{user}
         autorestart=true
@@ -107,9 +107,22 @@ class Php80Common < Formula
       nil
   end
 
-  def install
-    system "echo $(date) > installed.txt"
+  def binary_wrapper_path
+    buildpath / "bin" / "php#{PHP_BRANCH_NUM}"
+  end
 
+  def binary_wrapper
+    <<~EOS
+      #!/usr/bin/env bash
+      export PATH="#{HOMEBREW_PREFIX}/opt/php#{PHP_BRANCH_NUM}/bin:$PATH"
+      
+      exec php "$@"
+    EOS
+  rescue StandardError
+      nil
+  end
+
+  def install
     begin
         inreplace config_path_php do |s|
             s.sub!(/^.*?short_open_tag\s*=.+$/, "short_open_tag = off")
@@ -139,13 +152,16 @@ class Php80Common < Formula
         inreplace config_path_php_fpm_www do |s|
             s.sub!(/^.*?user\s*=.+$/, "; user = #{user}")
             s.sub!(/^.*?group\s*=.+$/, "; group = #{user_group}")
-            s.sub!(/^.*?listen\s*=.+$/, "listen = 127.0.0.1:9080")
+            s.sub!(/^.*?listen\s*=.+$/, "listen = 127.0.0.1:90#{PHP_BRANCH_NUM}")
         end
     rescue StandardError
         nil
     end
 
-    prefix.install "installed.txt"
+    # prefix.install "installed.txt"
+    binary_wrapper_path.write(binary_wrapper)
+    binary_wrapper_path.chmod(0755)
+    bin.install "bin/php#{PHP_BRANCH_NUM}"
     log_dir.mkpath
     if build.with? "supervisor"
       if config_file
@@ -160,6 +176,5 @@ class Php80Common < Formula
         File.delete nginx_config_path if File.exist?(nginx_config_path)
         nginx_config_path.write(nginx_snippet_file)
     end
-
   end
 end
