@@ -262,3 +262,12 @@ class AbstractPhp81Extension < AbstractPhpExtension
     depends_on "digitalspacestdio/php/php81"
   end
 end
+
+class AbstractPhp82Extension < AbstractPhpExtension
+  include AbstractPhpVersion::Php82Defs
+
+  def self.init(opts = [])
+    super()
+    depends_on "digitalspacestdio/php/php82"
+  end
+end
