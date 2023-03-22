@@ -7,7 +7,7 @@ class Php56Xdebug < AbstractPhp56Extension
   url "https://pecl.php.net/get/xdebug-2.5.5.tgz"
   sha256 "72108bf2bc514ee7198e10466a0fedcac3df9bbc5bd26ce2ec2dafab990bf1a4"
   head "https://github.com/xdebug/xdebug.git"
-  #depends_on :arch => :x86_64
+  depends_on :arch => :x86_64 if OS.linux?
 
   resource "linux_compiled" do
     url "https://f001.backblazeb2.com/file/php-homebrew/xdebug-linux.tgz"
