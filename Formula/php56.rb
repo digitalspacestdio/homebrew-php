@@ -37,8 +37,8 @@ class Php56 < AbstractPhp
       depends_on "digitalspacestdio/common/icu4c@69.1"
       depends_on "imap-uw" if build.with?("imap")
       depends_on "jpeg"
-      depends_on "webp" => :optional if name.split("::")[2].downcase.start_with?("php7")
-      depends_on "libvpx" => :optional if name.split("::")[2].downcase.start_with?("php56")
+#      depends_on "webp" => :optional if name.split("::")[2].downcase.start_with?("php7")
+      depends_on "libvpx" => :optional
       depends_on "libpng"
       depends_on "libxml2" if build.with?("homebrew-libxml2") || MacOS.version < :lion || MacOS.version >= :el_capitan
       depends_on "unixodbc"
@@ -62,8 +62,7 @@ class Php56 < AbstractPhp
       #argon for 7.2
       depends_on "argon2" => :optional if build.with?("argon2")
 
-      # libsodium for 7.2
-      depends_on "libsodium" => :recommended if name.split("::")[2].downcase.start_with?("php72")
+      depends_on "libsodium"
 
       deprecated_option "with-pgsql" => "with-postgresql"
       depends_on "postgresql" => :optional
@@ -114,33 +113,38 @@ class Php56 < AbstractPhp
   end
 
   init
-  desc "PHP Version 5.6"
   include AbstractPhpVersion::Php56Defs
+  desc "PHP Version #{PHP_VERSION_MAJOR}"
   version PHP_VERSION
-  revision 15
+  revision 16
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
 
   def php_version
-    "5.6"
+    "#{PHP_VERSION_MAJOR}"
   end
 
   def php_version_path
-    "56"
+    "#{PHP_BRANCH_NUM}"
   end
 
   if OS.mac?
     patch do
-      url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php56/macos.patch"
+      url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php#{PHP_BRANCH_NUM}/macos.patch"
       sha256 "f77d653a6f7437266c41de207a02b313d4ee38ad6071a2d5cf6eb6cb678ee99f"
     end
   end
 
   patch do
-    url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php56/LibSSL-1.1-compatibility.patch"
+    url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php#{PHP_BRANCH_NUM}/LibSSL-1.1-compatibility.patch"
     sha256 "c9715b544ae249c0e76136dfadd9d282237233459694b9e75d0e3e094ab0c993"
+  end
+
+  def install_args
+    super
+    args << "--with-sodium=#{Formula['libsodium'].opt_prefix}"
   end
 
   def install

@@ -7,16 +7,16 @@ class Php56Sodium < AbstractPhp56Extension
   url "https://github.com/aletheia7/php-sodium/archive/1.2.0.tar.gz"
   sha256 "cf8365e5d4862bfbd61783e0e8cdf4ddbf0124a1d93492c33a8a05919af08893"
   head "https://github.com/alethia7/php-sodium.git"
-  revision 2
+  revision 3
 
-  depends_on "digitalspacestdio/php/libsodium@1.0.12"
+  depends_on "libsodium"
 
   def install
     # ENV.universal_binary if build.universal?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
-                              "--with-sodium=#{Formula['digitalspacestdio/php/libsodium@1.0.12'].opt_prefix}",
+                              "--with-sodium=#{Formula['libsodium'].opt_prefix}",
                               phpconfig,
                               "--disable-dependency-tracking"
     system "make"
