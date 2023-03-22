@@ -23,7 +23,42 @@ brew tap digitalspacestdio/php
 ```
 
 ```sh
-brew install digitalspacestdio/php/php82-common
+# install 8.2 with xdebug
+brew install php82-common php82-xdebug
+# check installation
+php82 -v
+# install 8.1 with xdebug
+brew install php81-common php81-xdebug
+# check installation
+php81 -v
+# install 8.0 with xdebug
+brew install php80-common php80-xdebug
+# check installation
+php80 -v
+# install 7.4 with xdebug
+brew install php74-common php74-xdebug
+# check installation
+php74 -v
+# install 7.3 with xdebug
+brew install php73-common php73-xdebug
+# check installation
+php73 -v
+# install 7.2 with xdebug
+brew install php72-common php72-xdebug
+# check installation
+php72 -v
+# install 7.1 with xdebug
+brew install php71-common php71-xdebug
+# check installation
+php71 -v
+# install 7.0 with xdebug
+brew install php70-common php70-xdebug
+# check installation
+php70 -v
+# install 5.6 with xdebug
+brew install php56-common php56-xdebug
+# check installation
+php56 -v
 ```
 
 ## Bugs happen
