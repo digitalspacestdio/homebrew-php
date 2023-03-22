@@ -1,4 +1,4 @@
-# Homebrew/Linuxbrew PHP
+# Homebrew PHP (Linux/macOS/Windows)
 
 A centralized repository for PHP-related brews.
 
