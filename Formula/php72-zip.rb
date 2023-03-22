@@ -10,6 +10,7 @@ class Php72Zip < AbstractPhp72Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   depends_on "libzip"
+  depends_on "zlib"
   depends_on "pkg-config" => :build
 
   def install
@@ -26,7 +27,8 @@ class Php72Zip < AbstractPhp72Extension
                           phpconfig,
                           "--disable-dependency-tracking",
                           "--enable-zip",
-                          "--with-libzip=#{Formula["libzip"].opt_prefix}"
+                          "--with-libzip=#{Formula["libzip"].opt_prefix}",
+                          "--with-zlib-dir=#{Formula["zlib"].opt_prefix}"
     system "make"
     prefix.install "modules/zip.so"
     write_config_file if build.with? "config-file"
