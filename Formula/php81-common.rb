@@ -126,17 +126,17 @@ class Php81Common < Formula
   def install
     begin
         inreplace config_path_php do |s|
-            s.sub!(/^.*?short_open_tag\s*=.+$/, "short_open_tag = off")
-            s.sub!(/^.*?max_execution_time\s*=.+$/, "max_execution_time = 900")
-            s.sub!(/^.*?memory_limit\s*=.+$/, "memory_limit = 4096M")
-            s.sub!(/^.*?upload_max_filesize\s*=.+$/, "upload_max_filesize = 256M")
-            s.sub!(/^.*?post_max_size\s*=.+$/, "post_max_size = 256M")
-            s.sub!(/^.*?display_errors\s*=.+$/, "display_errors = on")
-            s.sub!(/^.*?error_reporting\s*=.+$/, "error_reporting = E_ALL ^ E_DEPRECATED")
-            s.sub!(/^.*?max_input_vars\s*=.+$/, "max_input_vars = 100000")
-            s.sub!(/^.*?display_startup_errors\s*=.+$/, "display_startup_errors = on")
-            s.sub!(/^.*?soap.wsdl_cache_ttl\s*=.+$/, "soap.wsdl_cache_ttl = 1")
-            s.sub!(/^.*?date.timezone\s*=.+$/, "date.timezone = UTC")
+          s.sub!(/^.*?short_open_tag\s*=.*$/, "short_open_tag = off")
+          s.sub!(/^.*?max_execution_time\s*=.*$/, "max_execution_time = 900")
+          s.sub!(/^.*?memory_limit\s*=.*$/, "memory_limit = 4096M")
+          s.sub!(/^.*?upload_max_filesize\s*=.*$/, "upload_max_filesize = 256M")
+          s.sub!(/^.*?post_max_size\s*=.*$/, "post_max_size = 256M")
+          s.sub!(/^.*?display_errors\s*=.*$/, "display_errors = on")
+          s.sub!(/^.*?error_reporting\s*=.*$/, "error_reporting = E_ALL ^ E_DEPRECATED")
+          s.sub!(/^.*?max_input_vars\s*=.*$/, "max_input_vars = 100000")
+          s.sub!(/^.*?display_startup_errors\s*=.*$/, "display_startup_errors = on")
+          s.sub!(/^.*?soap.wsdl_cache_ttl\s*=.*$/, "soap.wsdl_cache_ttl = 1")
+          s.sub!(/^.*?date.timezone\s*=.*$/, "date.timezone = UTC")
         end
     rescue StandardError
         nil
