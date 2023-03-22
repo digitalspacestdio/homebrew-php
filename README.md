@@ -4,10 +4,11 @@ A centralized repository for PHP-related brews.
 
 ## Requirements
 
-* [Homebrew](https://github.com/Homebrew/brew) or [Linuxbrew](https://github.com/Linuxbrew/brew). 
-* macOS: El Capitan, Sierra, High Sierra, Mojave, Catalina or BigSur.  
-* Linux: Debian Based (with installed: `systemtap-sdt-dev` `build-essential`)
-* Linux: OpenSUSE (with installed: `systemtap-sdt-devel` `gcc-c++` `make` `patch`)
+* [Homebrew](https://brew.sh/). 
+* macOS (Intel or Apple Silicon): High Sierra, Mojave, Catalina, BigSur, Monterey, Ventura.  
+* Linux (Arm64 or Amd64): Debian Based (with installed: `systemtap-sdt-dev` `build-essential`)
+* Linux (Arm64 or Amd64): OpenSUSE (with installed: `systemtap-sdt-devel` `gcc-c++` `make` `patch`)
+* Windows (Amd64): via WSL2
 
 ## Installation
 
@@ -85,98 +86,3 @@ New bug reports will be created with a template of this information for you to f
 
 
 This will help us diagnose your issues much quicker, as well as find similarities between different reported issues.
-
-## Background
-
-This repository contains **PHP-related** formulae for [Homebrew](https://github.com/Homebrew/brew).
-
-(This replaces the PHP formulae that used to live under [adamv's homebrew-alt repository](https://github.com/adamv/homebrew-alt).)
-
-The purpose of this repository is to allow PHP developers to quickly retrieve working, up-to-date formulae. The mainline Homebrew repositories are maintained by non-php developers, so testing/maintaining PHP-related brews has fallen by the wayside. If you are a PHP developer using Homebrew, please contribute to this repository.
-
-## Usage
-
-**Note:** For a list of available configuration options run:
-
-```sh
-$ brew options 
-```
-
-Once the tap is installed, you can install `php56`, `php70`, `php71`, `php72`, `php73`, `php74`, `php8` or any formulae you might need via:
-
-```sh
-$ brew install 
-```
-
-That's it!
-
-Please also follow the instructions from `brew info` at the end of the install to ensure you properly installed your PHP version.
-
-### Installing Multiple Versions
-
-Using multiple PHP versions from `homebrew-php` is pretty straightforward.
-
-If using Apache, you will need to update the `LoadModule` call. For convenience, simply comment out the old PHP version:
-
-```
-# /etc/apache2/httpd.conf
-# Swapping from PHP 5.6 to PHP 7.4
-# $HOMEBREW_PREFIX is normally `/usr/local`
-# LoadModule php5_module    $HOMEBREW_PREFIX/Cellar/php56/5.6.18/libexec/apache2/libphp5.so
-LoadModule php7_module    $HOMEBREW_PREFIX/Cellar/php71/7.4.11/libexec/apache2/libphp7.so
-```
-
-If using FPM, you will need to unload the `plist` controlling php, or manually stop the daemon, via your command line:
-
-```sh
-# Swapping from PHP 5.6 to PHP 7.4
-# $HOMEBREW_PREFIX is normally `/usr/local`
-$ cp $HOMEBREW_PREFIX/Cellar/php71/7.4.11/homebrew.mxcl.php71.plist ~/Library/LaunchAgents/
-$ launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist
-$ launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php71.plist
-```
-
-If you would like to swap the PHP you use on the command line, you should update the `$PATH` variable in either your `.profile`, `.zshrc`, `.bashrc` or `.bash_profile`:
-
-```
-# Swapping from PHP 7.0 to PHP 7.4
-# export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
-export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
-```
-
-Please be aware that you must make this type of change EACH time you swap between PHP `minor` versions. You will typically only need to update the Apache/FPM when upgrading your PHP `patch` version.
-
-### PEAR Extensions
-
-Pear is no longer compiled by default, instead you need to install php with the `--with-pear` option, such as: `brew install php71 --with-pear`.
-
-Please note that all extensions installed with the included `pear` will be installed to the respective php's bin path. For example, supposing you installed `PHP_CodeSniffer` as follows:
-
-```sh
-$ pear install PHP_CodeSniffer
-```
-
-It would be nice to be able to use the `phpcs` command via command-line, or other utilities. You will need to add the installed php's `bin` directory to your path. The following would be added to your `.bashrc` or `.bash_profile` when running the `php71` brew:
-
-```sh
-export PATH="$(brew --prefix php71)/bin:$PATH"
-```
-
-Some caveats:
-
-- Remember to use the proper PHP version in that export. So if you installed the `php70` formula, use `php70` instead of `php71` in the export.
-- Updating your installed PHP will result in the binaries no longer existing within your path. In such cases, you will need to reinstall the pear extensions. Alternatives include installing `pear` outside of `homebrew-php` or using the `homebrew-php` version of your extension.
-- Uninstalling your `homebrew-php` PHP formula will also remove the extensions.
-
-## Contributing
-
-See [Contributing](CONTRIBUTING.md)
-
-## Todo
-
-- [x] Proper PHP Versioning? See issue [#8](https://github.com/homebrew/homebrew-php/issues/8)
-- [x] Pull out all PHP-related brews from Homebrew
-
-## License
-
-See [LICENSE](LICENSE).
