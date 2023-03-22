@@ -450,7 +450,10 @@ INFO
   end
 
   def _install
-    system "PHP_AUTOCONF=#{Formula["autoconf"].opt_bin}/autoconf PHP_AUTOHEADER=#{Formula["autoconf"].opt_bin}/autoheader ./buildconf", "--force"
+    ENV.append "PHP_AUTOCONF", "#{Formula["autoconf"].opt_bin}/autoconf"
+    ENV.append "PHP_AUTOHEADER", "#{Formula["autoconf"].opt_bin}/autoheader"
+
+    system "./buildconf", "--force"
     system "./configure", *install_args
 
     if build.with?("httpd")
