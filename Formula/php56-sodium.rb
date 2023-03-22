@@ -16,7 +16,8 @@ class Php56Sodium < AbstractPhp56Extension
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
-                              "--with-sodium=#{Formula['libsodium'].opt_prefix}",
+                              "--with-sodium=shared,#{Formula['libsodium'].opt_prefix}",
+                              "--enable-sodium=shared,#{Formula['libsodium'].opt_prefix}",
                               phpconfig,
                               "--disable-dependency-tracking"
     system "make"
