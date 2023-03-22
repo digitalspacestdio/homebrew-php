@@ -136,6 +136,7 @@ class Php71Common < Formula
             s.sub!(/^.*?max_input_vars\s*=.+$/, "max_input_vars = 100000")
             s.sub!(/^.*?display_startup_errors\s*=.+$/, "display_startup_errors = on")
             s.sub!(/^.*?soap.wsdl_cache_ttl\s*=.+$/, "soap.wsdl_cache_ttl = 1")
+            s.sub!(/^.*?date.timezone\s*=.+$/, "date.timezone = UTC")
         end
     rescue StandardError
         nil
