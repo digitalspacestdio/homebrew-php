@@ -22,6 +22,9 @@ brew tap digitalspacestdio/common
 brew tap digitalspacestdio/php
 ```
 
+```sh
+brew install digitalspacestdio/php/php82-common
+```
 
 ## Bugs happen
 
