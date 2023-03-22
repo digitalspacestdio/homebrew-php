@@ -455,7 +455,7 @@ INFO
 
     system(
       {
-        "PHP_AUTOCONF" => "#{Formula["autoconf"].opt_bin}/autoconf"
+        "PHP_AUTOCONF" => "#{Formula["autoconf"].opt_bin}/autoconf",
         "PHP_AUTOHEADER" => "#{Formula["autoconf"].opt_bin}/autoheader"
       },
       "./buildconf",
