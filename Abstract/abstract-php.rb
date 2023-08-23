@@ -57,7 +57,7 @@ class AbstractPhp < Formula
     depends_on "openldap"
     depends_on "mysql" if build.with?("libmysql")
 #    depends_on "gdbm"
-    depends_on "libiconv" if OS.mac?
+    depends_on "libiconv"
 #    depends_on "libzip"
 
     # ssl
@@ -269,27 +269,32 @@ INFO
       "--enable-sysvsem",
       "--enable-sysvshm",
       "--enable-wddx",
-#      "--enable-zip",
-      "--with-freetype-dir=#{Formula["freetype"].opt_prefix}",
-      "--with-gd",
+
+      ("--with-gd" if !php_version.start_with?("7.4", "8.")),
+      ("--enable-gd" if php_version.start_with?("7.4", "8.")),
+      
+      ("--with-freetype-dir=#{Formula["freetype"].opt_prefix}" if !php_version.start_with?("7.4", "8.")),
+      ("--with-freetype=#{Formula["freetype"].opt_prefix}" if php_version.start_with?("7.4", "8.")),
+
+      ("--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}" if !php_version.start_with?("7.4", "8.")),
+      ("--with-jpeg=#{Formula["jpeg"].opt_prefix}" if php_version.start_with?("7.4", "8.")),
+
       "--with-gettext=#{Formula["gettext"].opt_prefix}",
-#      ("--with-iconv-dir=/usr" if OS.mac?),
+
       ("--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@67.1"].opt_prefix}" if php_version.start_with?("7.0", "7.1", "7.2")),
       ("--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}" if php_version.start_with?("5.6", "7.3")),
-      ("--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@72.1"].opt_prefix}" if php_version.start_with?("7.4", "8.0", "8.1", "8.2")),
+      ("--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@72.1"].opt_prefix}" if php_version.start_with?("7.4", "8.")),
+
       ("--with-external-pcre" if !OS.mac? && !php_version.start_with?("7.4", "8.")),
       ("--without-pcre-jit" if OS.mac?),
-      "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}",
       ("--with-kerberos=/usr" if OS.mac?),
+
       "--with-mhash",
-#      "--with-ndbm-dir=#{Formula["berkeley-db"].opt_prefix}",
+      "--with-zlib=#{Formula["zlib"].opt_prefix}",
       "--with-png-dir=#{Formula["libpng"].opt_prefix}",
       "--with-xmlrpc",
-      "--with-zlib=#{Formula["zlib"].opt_prefix}",
-#      "--with-libzip=#{Formula["libzip"].opt_prefix}",
       "--with-readline=#{Formula["readline"].opt_prefix}",
-#      "--with-gdbm=#{Formula["gdbm"].opt_prefix}",
-      ("--with-iconv=#{Formula["libiconv"].opt_prefix}" if OS.mac?),
+      ("--with-iconv=#{Formula["libiconv"].opt_prefix}"),
       "--without-gmp",
       "--without-snmp",
     ]

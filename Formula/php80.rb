@@ -32,9 +32,6 @@ class Php80 < AbstractPhp
     if !build.without? "pear"
       args << "--with-pear"
     end
-    args << "--enable-gd"
-    args << "--with-freetype=#{Formula["freetype"].opt_prefix}"
-    args << "--with-jpeg=#{Formula["libjpeg"].opt_prefix}"
     args
   end
 

@@ -85,41 +85,41 @@ class AbstractPhpVersion < Formula
   end
 
   module Php80Defs
-    PHP_SRC_TARBALL = "https://php.net/get/php-8.0.29.tar.bz2/from/this/mirror".freeze
+    PHP_SRC_TARBALL = "https://php.net/get/php-8.0.30.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "8.0".freeze
-    PHP_VERSION     = "8.0.29".freeze
+    PHP_VERSION     = "8.0.30".freeze
     PHP_BRANCH      = "PHP-8.0".freeze
     PHP_BRANCH_NUM  = "80".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "4801a1f0e17170286723ab54acd045ac78a9656021d56f104a64543eec922e12",
+      :sha256 => "98a9cb6a0e27a6950cdf4b26dcac48f2be2d936d5224a502f066cf3d4cf19b92",
     }.freeze
   end
 
   module Php81Defs
-    PHP_SRC_TARBALL = "https://php.net/get/php-8.1.20.tar.bz2/from/this/mirror".freeze
+    PHP_SRC_TARBALL = "https://php.net/get/php-8.1.22.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "8.1".freeze
-    PHP_VERSION     = "8.1.20".freeze
+    PHP_VERSION     = "8.1.22".freeze
     PHP_BRANCH      = "PHP-8.1".freeze
     PHP_BRANCH_NUM  = "81".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "55578587514a2707500f85319e57c0d4df9b8803cdb26566595ac4bf459dc4dd",
+      :sha256 => "992354e382c6c618d01ed4be06beea8dec3178b14153df64d3c8c48b85e9fbc2",
     }.freeze
   end
 
   module Php82Defs
-    PHP_SRC_TARBALL = "https://php.net/get/php-8.2.7.tar.bz2/from/this/mirror".freeze
+    PHP_SRC_TARBALL = "https://php.net/get/php-8.2.9.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "8.2".freeze
-    PHP_VERSION     = "8.2.7".freeze
+    PHP_VERSION     = "8.2.9".freeze
     PHP_BRANCH      = "PHP-8.2".freeze
     PHP_BRANCH_NUM  = "82".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "5bfb2a35c67921bdcadd5c90cb290ad7537d24da113a5e8bc2d646b02de7488f",
+      :sha256 => "48460b994ae7eb5096a310f44d13e865de1771104d4a550d53072be58a6f176c",
     }.freeze
   end
 end
