@@ -122,4 +122,17 @@ class AbstractPhpVersion < Formula
       :sha256 => "48460b994ae7eb5096a310f44d13e865de1771104d4a550d53072be58a6f176c",
     }.freeze
   end
+
+  module Php82Defs
+    PHP_SRC_TARBALL = "https://github.com/php/php-src/archive/refs/tags/php-8.3.0beta3.tar.gz".freeze
+    PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
+    PHP_VERSION_MAJOR = "8.3".freeze
+    PHP_VERSION     = "8.3.0beta3".freeze
+    PHP_BRANCH      = "PHP-8.3".freeze
+    PHP_BRANCH_NUM  = "83".freeze
+
+    PHP_CHECKSUM    = {
+      :sha256 => "bdd6ae27a5e9c6da526973507ecd26361f8b1e69c86b5d5eda4ea6011d0c8566",
+    }.freeze
+  end
 end

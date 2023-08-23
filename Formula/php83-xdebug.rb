@@ -1,13 +1,13 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
-class Php74Xdebug < AbstractPhp74Extension
+class Php83Xdebug < AbstractPhp83Extension
   init
   desc "Provides debugging and profiling capabilities."
   homepage "https://xdebug.org"
+  #url "https://github.com/xdebug/xdebug/archive/master.tar.gz"
+  #sha256 "b3afd650918ec5faaae0bf4b68cd9cd623d6477262792b2ac8f100aafa82d2f8"
   head "https://github.com/xdebug/xdebug.git"
-  url "https://github.com/xdebug/xdebug/archive/refs/tags/3.1.6.tar.gz"
-  sha256 "217e05fbe43940fcbfe18e8f15e3e8ded7dd35926b0bee916782d0fffe8dcc53"
-  version "3.1.6"
+  #version "3.3.0dev"
   revision 1
 
   def extension_type

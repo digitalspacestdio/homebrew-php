@@ -4,10 +4,10 @@ class Php82Xdebug < AbstractPhp82Extension
   init
   desc "Provides debugging and profiling capabilities."
   homepage "https://xdebug.org"
-  url "https://github.com/xdebug/xdebug/archive/refs/tags/3.2.0.tar.gz"
-  sha256 "a5979f2060b92375523662f451bfebd76b718116921c60bcdf8e87be0c58dd72"
   head "https://github.com/xdebug/xdebug.git"
-  version "3.2.0"
+  url "https://github.com/xdebug/xdebug/archive/refs/tags/3.2.2.tar.gz"
+  sha256 "505b7b3bf5f47d1b72d18f064a8becb6854b8574195ca472e6f8da00bdc951a8"
+  version "3.2.2"
   revision 1
 
   def extension_type
