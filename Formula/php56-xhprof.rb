@@ -14,7 +14,7 @@ class Php56Xhprof < AbstractPhp56Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig
     system "make"
-    prefix.install "modules/tideways.so" => "tideways.so"
+    prefix.install "modules/tideways.so" => "xhprof.so"
     write_config_file if build.with? "config-file"
   end
 end
