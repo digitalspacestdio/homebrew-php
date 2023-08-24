@@ -11,6 +11,8 @@ class Php83 < AbstractPhp
   depends_on "krb5"
   depends_on "oniguruma"
   depends_on "libjpeg"
+  depends_on "bison"
+  depends_on "re2c"
 
   include AbstractPhpVersion::Php83Defs
 
@@ -32,6 +34,8 @@ class Php83 < AbstractPhp
     if !build.without? "pear"
       args << "--with-pear"
     end
+    args << "--with-bison=#{Formula["bison"].opt_prefix}"
+    args << "--with-re2c=#{Formula["re2c"].opt_prefix}"
     args
   end
 
