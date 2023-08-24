@@ -123,7 +123,7 @@ class AbstractPhpVersion < Formula
     }.freeze
   end
 
-  module Php82Defs
+  module Php83Defs
     PHP_SRC_TARBALL = "https://github.com/php/php-src/archive/refs/tags/php-8.3.0beta3.tar.gz".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "8.3".freeze
