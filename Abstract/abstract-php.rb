@@ -52,13 +52,10 @@ class AbstractPhp < Formula
     depends_on "readline"
     depends_on "zlib"
     depends_on "bzip2"
-#    depends_on "berkeley-db"
     depends_on "libedit"
     depends_on "openldap"
     depends_on "mysql" if build.with?("libmysql")
-#    depends_on "gdbm"
-    depends_on "libiconv"
-#    depends_on "libzip"
+    depends_on "libiconv" if OS.mac?
 
     # ssl
     if build.with?("homebrew-libressl")
