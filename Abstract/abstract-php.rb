@@ -320,9 +320,7 @@ INFO
       end
     end
 
-    #if build.with? "bz2"
-      args << "--with-bz2-dir=#{Formula["bzip2"].opt_prefix}" if OS.mac?
-    #end
+    args << "--with-bz2-dir=#{Formula["bzip2"].opt_prefix}"
 
     if build.with? "debug"
       args << "--enable-debug"
