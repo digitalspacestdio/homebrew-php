@@ -12,6 +12,7 @@ class Php81Intl < AbstractPhp81Extension
 
   depends_on "digitalspacestdio/common/icu4c@72.1"
   depends_on "pkg-config" => :build
+  depends_on "gcc@11" => :build
 
   def install
     # Required due to icu4c dependency
