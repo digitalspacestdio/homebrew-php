@@ -291,7 +291,7 @@ INFO
       "--with-png-dir=#{Formula["libpng"].opt_prefix}",
       "--with-xmlrpc",
       "--with-readline=#{Formula["readline"].opt_prefix}",
-      ("--with-iconv=#{Formula["libiconv"].opt_prefix}"),
+      ("--with-iconv=#{Formula["libiconv"].opt_prefix}" if OS.mac?),
       "--without-gmp",
       "--without-snmp",
     ]
