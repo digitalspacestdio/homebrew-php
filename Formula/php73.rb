@@ -6,6 +6,12 @@ class Php73 < AbstractPhp
   include AbstractPhpVersion::Php73Defs
   version PHP_VERSION
   revision 5
+
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
+    rebuild 1
+    sha256 arm64_ventura: "5a76931c761b066498f9108c8cf7a82f97a6054dce8a82550b20501a85fd279f"
+  end
   keg_only :versioned_formula
   depends_on "libjpeg"
 
