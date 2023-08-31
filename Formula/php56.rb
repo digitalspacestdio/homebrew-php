@@ -130,6 +130,12 @@ class Php56 < AbstractPhp
     "#{PHP_BRANCH_NUM}"
   end
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
+    rebuild 1
+    sha256 arm64_ventura: "e1294da6f2b8df6cb0c5e69d4ad484fa0441f334a6c0de4b8dcf9dd2db3e07e9"
+  end
+
   if OS.mac?
     patch do
       url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php#{PHP_BRANCH_NUM}/macos.patch"
