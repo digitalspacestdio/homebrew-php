@@ -6,6 +6,12 @@ class Php74 < AbstractPhp
   include AbstractPhpVersion::Php74Defs
   version PHP_VERSION
   revision 4
+
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
+    rebuild 1
+    sha256 arm64_ventura: "d9080503535d31ec4180b41419072c954a9d8441397837869418844024ca25e5"
+  end
   keg_only :versioned_formula
   depends_on "pkg-config" => :build
   depends_on "krb5"
