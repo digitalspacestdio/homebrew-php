@@ -10,7 +10,7 @@ class Php70 < AbstractPhp
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
     rebuild 1
-    sha256 arm64_ventura: "7baf0b182bbf3932cda7e1c19c7351a6394b2423c54f7620da9cb1ad9bf73e88"
+    sha256 arm64_ventura: "2b5596db81234ec7baa0bc5f231fc1fc2a082c3b028c2c217eddbd92daa71775"
   end
   keg_only :versioned_formula
   include AbstractPhpVersion::Php70Defs
