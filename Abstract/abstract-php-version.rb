@@ -98,28 +98,28 @@ class AbstractPhpVersion < Formula
   end
 
   module Php81Defs
-    PHP_SRC_TARBALL = "https://php.net/get/php-8.1.22.tar.bz2/from/this/mirror".freeze
+    PHP_SRC_TARBALL = "https://php.net/get/php-8.1.23.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "8.1".freeze
-    PHP_VERSION     = "8.1.22".freeze
+    PHP_VERSION     = "8.1.23".freeze
     PHP_BRANCH      = "PHP-8.1".freeze
     PHP_BRANCH_NUM  = "81".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "992354e382c6c618d01ed4be06beea8dec3178b14153df64d3c8c48b85e9fbc2",
+      :sha256 => "929a62785177da892ddffca074bab2f1ff578473a0d4adb915c12f5f3e34ec1b",
     }.freeze
   end
 
   module Php82Defs
-    PHP_SRC_TARBALL = "https://php.net/get/php-8.2.9.tar.bz2/from/this/mirror".freeze
+    PHP_SRC_TARBALL = "https://php.net/get/php-8.2.10.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "8.2".freeze
-    PHP_VERSION     = "8.2.9".freeze
+    PHP_VERSION     = "8.2.10".freeze
     PHP_BRANCH      = "PHP-8.2".freeze
     PHP_BRANCH_NUM  = "82".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "48460b994ae7eb5096a310f44d13e865de1771104d4a550d53072be58a6f176c",
+      :sha256 => "cc9834e8f1b613d7677af8843c3651e9829abca8ebfe9079251d0d85d9a0aa3e",
     }.freeze
   end
 
