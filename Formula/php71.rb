@@ -6,6 +6,12 @@ class Php71 < AbstractPhp
   include AbstractPhpVersion::Php71Defs
   version PHP_VERSION
   revision 32
+
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
+    rebuild 1
+    sha256 arm64_ventura: "1c2188b1dab4633566416eded4f2dfcd57b87cf048c5361a300ae033f9db1d30"
+  end
   keg_only :versioned_formula
   include AbstractPhpVersion::Php71Defs
 
