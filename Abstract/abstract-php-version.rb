@@ -124,15 +124,15 @@ class AbstractPhpVersion < Formula
   end
 
   module Php83Defs
-    PHP_SRC_TARBALL = "https://github.com/php/php-src/archive/refs/tags/php-8.3.0beta3.tar.gz".freeze
+    PHP_SRC_TARBALL = "https://github.com/php/php-src/archive/refs/tags/php-8.3.0RC1.tar.gz".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "8.3".freeze
-    PHP_VERSION     = "8.3.0beta3".freeze
+    PHP_VERSION     = "8.3.0rc1".freeze
     PHP_BRANCH      = "PHP-8.3".freeze
     PHP_BRANCH_NUM  = "83".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "bdd6ae27a5e9c6da526973507ecd26361f8b1e69c86b5d5eda4ea6011d0c8566",
+      :sha256 => "8bc815f82ef48695bc2cb2a65f99d8336dcb97a4d5e77c8775da076d98ebc463",
     }.freeze
   end
 end
