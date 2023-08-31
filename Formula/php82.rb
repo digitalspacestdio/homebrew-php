@@ -27,6 +27,13 @@ class Php82 < AbstractPhp
     "#{PHP_BRANCH_NUM}"
   end
 
+
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
+    rebuild 1
+    sha256 arm64_ventura: "6dbf3ee9874413eda7f9c208f42851d5bb5b59f1684e5f4edf56d81fd5eedbd4"
+  end
+
   def install_args
     args = super
     if !build.without? "pear"
