@@ -10,6 +10,12 @@ class Php82PdoPgsql < AbstractPhp82Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
+    rebuild 1
+    sha256 cellar: :any, arm64_ventura: "671908c180ef6207b5d92ce9ff9c8dcb1f8199cfb42916a7d32e2ca8695072d5"
+  end
+
   depends_on "libpq"
 
   def extension
