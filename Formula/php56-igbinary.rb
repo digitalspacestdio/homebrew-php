@@ -8,6 +8,12 @@ class Php56Igbinary < AbstractPhp56Extension
   sha256 "1d06fc3586d61fcffbae24a46649db54d938168586557965bc1346f6d6568555"
   head "https://github.com/igbinary/igbinary.git"
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6e6547f3dac9729d123bce955271b491869a2c92ffe58f62bd96e32e0d9bea54"
+  end
+
 
   depends_on "igbinary" => :build
 
