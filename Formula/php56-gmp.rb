@@ -8,6 +8,12 @@ class Php56Gmp < AbstractPhp56Extension
   sha256 PHP_CHECKSUM[:sha256]
   revision 6
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
+    rebuild 1
+    sha256 cellar: :any, arm64_ventura: "157d970d797585975780024b8bd958fe92cfe42f5f79c2ae29f6cd188df94afe"
+  end
+
 
   depends_on "gmp"
 
