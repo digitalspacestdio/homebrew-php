@@ -16,7 +16,8 @@ rm -rf /tmp/$PHP_FORMULA.bottle
 mkdir -p /tmp/$PHP_FORMULA.bottle
 cd /tmp/$PHP_FORMULA.bottle
 brew deps --direct $PHP_FORMULA-common | xargs brew uninstall --ignore-dependencies || /usr/bin/true
-brew install $(brew deps --direct $PHP_FORMULA-common | xargs -I{} bash -c 'brew deps --direct {}' | sort | uniq -u | grep -v $PHP_FORMULA"\$")
+brew install $(brew deps --direct $PHP_FORMULA)
+brew install $(brew deps --direct $PHP_FORMULA-common | xargs -I{} bash -c 'brew deps --direct {}' | sort | uniq -u | grep -v $PHP_FORMULA)
 brew install --build-bottle $(brew deps --direct $PHP_FORMULA-common)
 brew bottle --root-url 'https://f003.backblazeb2.com/file/homebrew-bottles' --json $(brew deps --direct $PHP_FORMULA-common)
 ls | grep $PHP_FORMULA'.*json$' | xargs -I{} bash -c 'brew bottle --merge --write --json {}'
