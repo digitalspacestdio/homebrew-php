@@ -14,7 +14,7 @@ class Php82Redis < AbstractPhp82Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8a20cd9eea25982486b6c6947c29e338071b4941f932a5f0e187bf06c69d78f0"
   end
 
-  depends_on "digitalspacestdio/php/php81-igbinary"
+  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-igbinary"
   depends_on "igbinary" => :build
 
   def install

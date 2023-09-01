@@ -9,7 +9,7 @@ class Php82Couchbase < AbstractPhp82Extension
   head "https://github.com/couchbase/php-couchbase.git"
 
 
-  depends_on "digitalspacestdio/php/php81-igbinary"
+  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-igbinary"
   depends_on "igbinary" => :build
 
   depends_on "libcouchbase"

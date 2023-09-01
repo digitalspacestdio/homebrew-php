@@ -14,7 +14,7 @@ class Php83Memcached < AbstractPhp83Extension
   option "with-sasl", "Build with sasl support"
 
   depends_on "pkg-config" => :build
-  depends_on "digitalspacestdio/php/php81-igbinary"
+  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-igbinary"
   depends_on "igbinary" => :build
   depends_on "libmemcached"
 
