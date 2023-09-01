@@ -8,6 +8,12 @@ class Php83Redis < AbstractPhp83Extension
   head "https://github.com/phpredis/phpredis.git"
   revision 1
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d17148fc1d6512622b929cf13916f4a1ca949f5c051d609661f7cac628c6c96c"
+  end
+
   depends_on "digitalspacestdio/php/php81-igbinary"
   depends_on "igbinary" => :build
 
