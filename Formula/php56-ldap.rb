@@ -10,6 +10,12 @@ class Php56Ldap < AbstractPhp56Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
+    rebuild 1
+    sha256 cellar: :any, arm64_ventura: "52dfbf70cca5cfa912bb6b32cf7d9a7fe45e72272c54290df82600a94337df83"
+  end
+
   depends_on "openldap"
 
   def install
