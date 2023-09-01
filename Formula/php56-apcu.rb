@@ -8,6 +8,12 @@ class Php56Apcu < AbstractPhp56Extension
   sha256 "454f302ec13a6047ca4c39e081217ce5a61bbea815aec9c1091fb849e70b4d00"
   head "https://github.com/krakjoe/apcu.git"
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "79073d58bdc967c8c0572f1e5464c475c8991ff64690ca9c74e118784012839c"
+  end
+
 
   option "with-apc-bc", "Whether APCu should provide APC full compatibility support"
   depends_on "pcre"
