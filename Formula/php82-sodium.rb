@@ -9,6 +9,12 @@ class Php82Sodium < AbstractPhp82Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
+    rebuild 1
+    sha256 cellar: :any, arm64_ventura: "148aaba74e05841d7bdb2c47e8f7a12a481dec8c8a23481f5b47b67ef7dc9165"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "libsodium"
 
