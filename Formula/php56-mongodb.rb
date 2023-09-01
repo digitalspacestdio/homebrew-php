@@ -9,6 +9,12 @@ class Php56Mongodb < AbstractPhp56Extension
   head "https://github.com/mongodb/mongo-php-driver.git"
   version "1.7.5"
   revision 2
+
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
+    rebuild 1
+    sha256 cellar: :any, arm64_ventura: "e3ec36af694212d9ca289ca52428a94ad2d917ca9c62bac88468884449a1f41b"
+  end
   depends_on "openssl@1.1"
 
   def install
