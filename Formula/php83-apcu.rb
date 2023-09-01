@@ -10,6 +10,12 @@ class Php83Apcu < AbstractPhp83Extension
   version "5.1.22"
   revision 2
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9a21621e1eadbf4f094c276426d9ae44706a39deb20745462babfe777ea2ae43"
+  end
+
   depends_on "pcre"
 
   def install
