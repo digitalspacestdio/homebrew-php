@@ -8,6 +8,12 @@ class Php56Redis < AbstractPhp56Extension
   sha256 "656cab2eb93bd30f30701c1280707c60e5736c5420212d5d547ebe0d3f4baf71"
   head "https://github.com/phpredis/phpredis.git"
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "33811092576a92c745002c753edf0ea301c7e1bb39fba2514e882e8ea9ebb47f"
+  end
+
 
   depends_on "digitalspacestdio/php/php56-igbinary"
   depends_on "igbinary" => :build
