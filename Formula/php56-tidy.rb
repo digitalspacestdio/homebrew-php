@@ -8,6 +8,12 @@ class Php56Tidy < AbstractPhp56Extension
   sha256 PHP_CHECKSUM[:sha256]
   revision 6
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
+    rebuild 1
+    sha256 cellar: :any, arm64_ventura: "fb99f76cfdb7359ae6634dc40a0257944b83271c3e31b625be2fb5a6bb44bcaa"
+  end
+
 
   depends_on "digitalspacestdio/php/php-tidy-html5"
 
