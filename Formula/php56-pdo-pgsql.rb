@@ -8,6 +8,12 @@ class Php56PdoPgsql < AbstractPhp56Extension
   sha256 PHP_CHECKSUM[:sha256]
   revision 7
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
+    rebuild 1
+    sha256 cellar: :any, arm64_ventura: "57970f023eec60b10b5610c991d3da54353512f373e724718713fbdeda40cc69"
+  end
+
 
   depends_on "libpq"
 
