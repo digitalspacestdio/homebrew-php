@@ -9,6 +9,12 @@ class Php56Zip < AbstractPhp56Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
+    rebuild 1
+    sha256 cellar: :any, arm64_ventura: "3b619e0218b532f96e64326e6a4bea4abea5e02fde317f80ef3fa7689a5b84a3"
+  end
+
   depends_on "zlib"
   depends_on "libzip"
   depends_on "pkg-config" => :build
