@@ -10,6 +10,12 @@ class Php83Mongodb < AbstractPhp83Extension
   version "1.15.1"
   revision 2
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
+    rebuild 1
+    sha256 cellar: :any, arm64_ventura: "1193951954df0cf403e37e5613e27cdb5e53e9ea724f3cd798b71cea5006b655"
+  end
+
   depends_on "openssl"
 
   def install
