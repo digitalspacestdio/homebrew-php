@@ -133,7 +133,7 @@ class Php56 < AbstractPhp
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
     rebuild 2
-    sha256 arm64_ventura: "74fbf6e321507c5147d400ec77741e217a98a024330fd27681cdd3d3c51708b1"
+    sha256 arm64_ventura: "2964aa28876e354cbae8fa58193adc8491ff0416b99aaf9eed81a5c91297c548"
   end
 
   if OS.mac?
