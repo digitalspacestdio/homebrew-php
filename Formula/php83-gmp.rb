@@ -10,6 +10,12 @@ class Php83Gmp < AbstractPhp83Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
+    rebuild 1
+    sha256 cellar: :any, arm64_ventura: "6009418534352a1e8f854ba630f7fb84337bc2d336b5be69f0627a9fcc2cce9f"
+  end
+
   depends_on "gmp"
 
   def install
