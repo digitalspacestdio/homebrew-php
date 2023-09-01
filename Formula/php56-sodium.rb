@@ -9,6 +9,12 @@ class Php56Sodium < AbstractPhp56Extension
   head "https://github.com/alethia7/php-sodium.git"
   revision 3
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
+    rebuild 1
+    sha256 cellar: :any, arm64_ventura: "23b93a017f3c47e3288ba9f0299964534bddd448a85fd53c9d635d0c2f6a505f"
+  end
+
   depends_on "libsodium"
 
   def install
