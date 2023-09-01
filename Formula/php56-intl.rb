@@ -8,6 +8,12 @@ class Php56Intl < AbstractPhp56Extension
   sha256 PHP_CHECKSUM[:sha256]
   revision 17
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
+    rebuild 1
+    sha256 cellar: :any, arm64_ventura: "c90c7111ba748f84f70a963b51e4689bb3abd4b9a323d01e6fd6abff9cabfd6a"
+  end
+
   depends_on "digitalspacestdio/common/icu4c@69.1"
 
   patch do
