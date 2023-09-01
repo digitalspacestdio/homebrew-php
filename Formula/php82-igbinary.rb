@@ -10,6 +10,12 @@ class Php82Igbinary < AbstractPhp82Extension
   version "3.2.14"
   revision 1
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8dfd9e095b6ab59616ef8ce5f0122255e0243ce9b1321e57f7b0402511e1cb38"
+  end
+
 
   depends_on "igbinary" => :build
 
