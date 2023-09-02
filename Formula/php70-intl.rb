@@ -10,6 +10,11 @@ class Php70Intl < AbstractPhp70Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5c6d1b814b378aa13e2e450e2e8b05b0926c355ccef52d5df2c47d87d7774044"
+  end
+
   depends_on "digitalspacestdio/common/icu4c@67.1"
 
   def install
