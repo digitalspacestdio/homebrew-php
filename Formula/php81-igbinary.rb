@@ -10,6 +10,11 @@ class Php81Igbinary < AbstractPhp81Extension
   version "3.2.6"
   revision 1
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "28232647866c4655706c0f14555dd3158b3e0e058de707055f5e80962caf2bd1"
+  end
+
 
   depends_on "igbinary" => :build
 
