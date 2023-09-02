@@ -10,6 +10,11 @@ class Php81Opcache < AbstractPhp81Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "19548af3f7b86c28621135755ae0a2701a8741167a60dd0d2f741827c3cbea7c"
+  end
+
   depends_on "pcre"
 
   def extension_type
