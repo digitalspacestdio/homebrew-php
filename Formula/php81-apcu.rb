@@ -12,7 +12,8 @@ class Php81Apcu < AbstractPhp81Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1bb611741bf0bfda6793fc04bce34a375e96308617c05e8d074cfd749b723566"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fdb5a16e3407b9743f4805ee4cbd7685bf4e1a5776164867a475b5ada34405f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bb611741bf0bfda6793fc04bce34a375e96308617c05e8d074cfd749b723566"
   end
 
   depends_on "pcre"
