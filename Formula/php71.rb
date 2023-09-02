@@ -8,9 +8,10 @@ class Php71 < AbstractPhp
   revision 32
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
-    rebuild 1
-    sha256 arm64_ventura: "1c2188b1dab4633566416eded4f2dfcd57b87cf048c5361a300ae033f9db1d30"
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5d2dbcf3e392ac050abbc062ba5b851d2e9add85c7d2098cfdc381137c89e7eb"
+    sha256 cellar: :any_skip_relocation, ventura:       "a7536bf803731178521e4cd1f5d98b7be742149a90055be1e2f82db64c8d0057"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3353adf20dc0f895f616cfe1dea2e71cc14b45cbf065f9c1e10765f614c6a20"
   end
   keg_only :versioned_formula
   include AbstractPhpVersion::Php71Defs
