@@ -10,6 +10,11 @@ class Php80Mongodb < AbstractPhp80Extension
   version "1.12.0"
   revision 1
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
+    sha256 cellar: :any_skip_relocation, ventura: "c590bc93a7dbb259ec9bc8e481de97cb1ad0d6f8c6274b6072625a2b0e5ed311"
+  end
+
   depends_on "openssl"
   depends_on "digitalspacestdio/common/icu4c@72.1"
 
