@@ -22,13 +22,13 @@ for jsonfile in ./*.json; do
         mergedfile=$(jq -r '.["digitalspacestdio/php/'$JSON_FORMULA_NAME'"].formula.name + "-" + ."digitalspacestdio/php/'$JSON_FORMULA_NAME'".formula.pkg_version + ".json"' "$jsonfile")
         while read tgzName; do
             if [[ -f "$tgzName" ]]; then
-                s3cmd info "s3://homebrew-bottles/$PHP_FORMULA/$tgzName" && {
+                s3cmd info "s3://homebrew-bottles/$PHP_FORMULA/$tgzName" >/dev/null && {
                     s3cmd del "s3://homebrew-bottles/$PHP_FORMULA/$tgzName"
                 } || /usr/bin/true
                 s3cmd put "$tgzName" "s3://homebrew-bottles/$PHP_FORMULA/$tgzName"
             fi
         done < <(jq -r '."digitalspacestdio/php/'$JSON_FORMULA_NAME'".bottle.tags[].filename' "$jsonfile")
-        s3cmd info "s3://homebrew-bottles/$PHP_FORMULA/$mergedfile" && {
+        s3cmd info "s3://homebrew-bottles/$PHP_FORMULA/$mergedfile" >/dev/null && {
             s3cmd get "s3://homebrew-bottles/$PHP_FORMULA/$mergedfile" "$mergedfile".src
             if [[ "object" != $(cat "$mergedfile".src| jq -r type) ]]; then
                 cp "$jsonfile" "$mergedfile".src
