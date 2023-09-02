@@ -9,6 +9,11 @@ class Php70Mongodb < AbstractPhp70Extension
   head "https://github.com/mongodb/mongo-php-driver.git"
   version "1.9.0"
   revision 2
+
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8e0b186d4461803f69b384f267a2d797e440a7d8a8f29f6e3acff868b0d0cc96"
+  end
   depends_on "openssl@1.1"
 
   def install
