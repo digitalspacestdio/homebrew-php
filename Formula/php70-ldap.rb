@@ -10,6 +10,11 @@ class Php70Ldap < AbstractPhp70Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7193232cd79c1823a4d7a63dba455cb0db5476305df96e16eb12ad0816196f7b"
+  end
+
   depends_on "openldap"
 
   def install
