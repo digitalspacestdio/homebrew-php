@@ -9,6 +9,11 @@ class Php70Redis < AbstractPhp70Extension
   head "https://github.com/phpredis/phpredis.git"
   revision 1
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "74c25726d1af095b242b221a29046fa30013749d0769dc1d264a1e3c379c43cd"
+  end
+
 
   depends_on "digitalspacestdio/php/php70-igbinary"
   depends_on "igbinary" => :build
