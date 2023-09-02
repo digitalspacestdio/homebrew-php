@@ -8,6 +8,11 @@ class Php70Sodium < AbstractPhp70Extension
   sha256 "2eebf3772d7441449b47abfe8f52043b9c6d6b5aff66aebd339c5d459d7fca28"
   head "https://github.com/jedisct1/libsodium-php.git"
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "39a747da45038472515d154e03070b73feb8f85a9b2c04000a11c9146e492c25"
+  end
+
   depends_on "libsodium"
 
   def install
