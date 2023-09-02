@@ -9,9 +9,8 @@ class Php56Intl < AbstractPhp56Extension
   revision 17
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
-    rebuild 1
-    sha256 cellar: :any, arm64_ventura: "c90c7111ba748f84f70a963b51e4689bb3abd4b9a323d01e6fd6abff9cabfd6a"
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "67b91818c344624f15e52ef1633173bad37cedb0c7dc6f846c005e681cb54982"
   end
 
   depends_on "digitalspacestdio/common/icu4c@69.1"
