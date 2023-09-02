@@ -11,6 +11,7 @@ class Php80 < AbstractPhp
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2e5bbdabbab4469ef0bffedc2cb4a6eb5dbd15ef0ca16fe12a18d2615971f87b"
     sha256 cellar: :any_skip_relocation, ventura:       "4510af0f9ca2af1a37b26b38950406acd4b2bf709f5b497367053690d8c9abc0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87d1d7736e798ca053dc1758e0194e9b2810bd1c465c462676979271d91c65ad"
   end
   keg_only :versioned_formula
   depends_on "pkg-config" => :build
