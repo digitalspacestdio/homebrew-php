@@ -10,6 +10,11 @@ class Php74Gmp < AbstractPhp74Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9cd8ec2a564a0f9b1afe54206d44cc8b201da0ed4d9035dd3845f8c606844d28"
+  end
+
   depends_on "gmp"
 
   def install
