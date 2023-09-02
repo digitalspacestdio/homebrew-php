@@ -30,14 +30,14 @@ for jsonfile in ./*.json; do
         done < <(jq -r '."digitalspacestdio/php/'$JSON_FORMULA_NAME'".bottle.tags[].filename' "$jsonfile")
         s3cmd info "s3://homebrew-bottles/$PHP_FORMULA/$mergedfile" && {
             s3cmd get "s3://homebrew-bottles/$PHP_FORMULA/$mergedfile" "$mergedfile".src
-            jq -s  '.[0]."digitalspacestdio/php/'$JSON_FORMULA_NAME'".bottle.tags = .[0]."digitalspacestdio/php/'$JSON_FORMULA_NAME'".bottle.tags * .[1]."digitalspacestdio/php/'$JSON_FORMULA_NAME'".bottle.tags | .[0]' "$mergedfile".src "$jsonfile" > "$mergedfile"
+            jq -s  '.[0]."digitalspacestdio/php/'$JSON_FORMULA_NAME'".bottle.tags = .[0]."digitalspacestdio/php/'$JSON_FORMULA_NAME'".bottle.tags * .[1]."digitalspacestdio/php/'$JSON_FORMULA_NAME'".bottle.tags | .[0]' "$mergedfile" "$jsonfile".src > "$mergedfile"
             s3cmd del "s3://homebrew-bottles/$PHP_FORMULA/$mergedfile"
             s3cmd put "$mergedfile" "s3://homebrew-bottles/$PHP_FORMULA/$mergedfile"
-            brew bottle --no-rebuild --merge --write --json "$mergedfile"
+            brew bottle --skip-relocation --no-rebuild --merge --write --json "$mergedfile"
             rm "$mergedfile" "$mergedfile".src
         } || {
             s3cmd put "$jsonfile" "s3://homebrew-bottles/$PHP_FORMULA/$mergedfile"
-            brew bottle --no-rebuild --merge --write --json "$jsonfile"
+            brew bottle --skip-relocation --no-rebuild --merge --write --json "$jsonfile"
         }
     fi
 done
