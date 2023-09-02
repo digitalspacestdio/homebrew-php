@@ -44,4 +44,6 @@ for jsonfile in ./*.json; do
         }
     fi
 done
+git pull --rebase
+git push
 cd -
