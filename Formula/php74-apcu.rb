@@ -13,6 +13,11 @@ class Php74Apcu < AbstractPhp74Extension
   version "1f98e34"
   revision 3
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9496a16b75aabd4b400180f6286a25326ea25658e5eb71aeb65479617509c66e"
+  end
+
   depends_on "pcre"
 
   def install
