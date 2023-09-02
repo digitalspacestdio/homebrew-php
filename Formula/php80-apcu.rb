@@ -10,6 +10,11 @@ class Php80Apcu < AbstractPhp80Extension
   version "5.1.18"
   revision 2
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
+    sha256 cellar: :any_skip_relocation, ventura: "67a1d5900e1bd4ace7b04e81d5c92addd2e570d7a8451457264668f37d419d8c"
+  end
+
   depends_on "pcre"
 
   def install
