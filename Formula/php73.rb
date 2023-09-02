@@ -8,9 +8,10 @@ class Php73 < AbstractPhp
   revision 5
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
-    rebuild 1
-    sha256 arm64_ventura: "5a76931c761b066498f9108c8cf7a82f97a6054dce8a82550b20501a85fd279f"
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e3686a8e102cc852ef8e9e13f19c7762609c6cb3fecadcc3821c750c48a67bc2"
+    sha256 cellar: :any_skip_relocation, ventura:       "2df62b82439bd6189c57f7c2fd2dc9b97238d310232dba004e50557653281089"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e00422bede1bba600597e01627eb5da20d9ec99dd892334e19416f3288fe28cf"
   end
   keg_only :versioned_formula
   depends_on "libjpeg"
