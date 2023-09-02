@@ -10,6 +10,13 @@ class Php71Mongodb < AbstractPhp71Extension
   version "1.9.0"
   revision 2
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4f54b76c3a4f65ba99beb95a73cba6a86968bc35d53123da041de8eabfb60a61"
+    sha256 cellar: :any_skip_relocation, ventura:       "5ebbcc5da5e82dd8489ccc6a366f9e716ea0b9f7aeb512ca6f38897f0b389543"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c18150d7e3e7b220d2d3d22edd5f9bee51d900d57895f622ce29f618da1ad943"
+  end
+
   depends_on "openssl@1.1"
 
   def install
