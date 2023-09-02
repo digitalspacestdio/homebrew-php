@@ -9,6 +9,11 @@ class Php70Zip < AbstractPhp70Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0c97762936d0e13629bfea879e2e2d1bf4cf4b199f112f029153e2b04d25b07a"
+  end
+
   depends_on "libzip"
   depends_on "zlib"
   depends_on "pkg-config" => :build
