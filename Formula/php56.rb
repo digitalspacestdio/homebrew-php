@@ -131,9 +131,8 @@ class Php56 < AbstractPhp
   end
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
-    rebuild 2
-    sha256 arm64_ventura: "2964aa28876e354cbae8fa58193adc8491ff0416b99aaf9eed81a5c91297c548"
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5436a4c38d09bac549c8a9b940aa0ceb576a7d84680c781541d4c52415c772e4"
   end
 
   if OS.mac?
