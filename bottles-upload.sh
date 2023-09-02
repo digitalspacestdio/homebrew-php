@@ -33,7 +33,7 @@ for jsonfile in ./*.json; do
             if [[ "object" != $(cat "$mergedfile".src| jq -r type) ]]; then
                 cp "$jsonfile" "$mergedfile".src
             fi
-            jq -s  '.[0]."digitalspacestdio/php/'$JSON_FORMULA_NAME'".bottle.tags = .[0]."digitalspacestdio/php/'$JSON_FORMULA_NAME'".bottle.tags * .[1]."digitalspacestdio/php/'$JSON_FORMULA_NAME'".bottle.tags | .[0]' "$jsonfile" "$mergedfile".src > "$mergedfile"
+            jq -s  '.[1]."digitalspacestdio/php/'$JSON_FORMULA_NAME'".bottle.tags = .[0]."digitalspacestdio/php/'$JSON_FORMULA_NAME'".bottle.tags * .[1]."digitalspacestdio/php/'$JSON_FORMULA_NAME'".bottle.tags | .[1]' "$mergedfile".src "$jsonfile" > "$mergedfile"
             s3cmd del "s3://homebrew-bottles/$PHP_FORMULA/$mergedfile"
             s3cmd put "$mergedfile" "s3://homebrew-bottles/$PHP_FORMULA/$mergedfile"
             brew bottle --skip-relocation --no-rebuild --merge --write --json "$mergedfile"
