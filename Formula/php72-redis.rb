@@ -9,6 +9,12 @@ class Php72Redis < AbstractPhp72Extension
   head "https://github.com/phpredis/phpredis.git"
   revision 1
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e1b5382e0a42f2c14a57602cab88cd7095cf2ef7a98b2bf56cbc656d76c6d630"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2e1791a8ecbbe471042515db37e30cc2f271d0758eb783a2fc891643fd6e658"
+  end
+
   depends_on "digitalspacestdio/php/php72-igbinary"
   depends_on "igbinary" => :build
 
