@@ -9,9 +9,8 @@ class Php83Redis < AbstractPhp83Extension
   revision 1
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d17148fc1d6512622b929cf13916f4a1ca949f5c051d609661f7cac628c6c96c"
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e1bdfba5e176d3bad1b42dfb9567062f7f52193a6a3cc4705f86852df11bbf76"
   end
 
   depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-igbinary"
