@@ -7,6 +7,13 @@ class Php71Apcu < AbstractPhp71Extension
   url "https://github.com/krakjoe/apcu/archive/v5.1.8.tar.gz"
   sha256 "09848619674a0871053cabba3907d2aade395772d54464d3aee45f519e217128"
   head "https://github.com/krakjoe/apcu.git"
+
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "80a7e64545989e6e3b3e8c3c8d24bd5ebc0a0364686126d1dc240aa7384d0ea6"
+    sha256 cellar: :any_skip_relocation, ventura:       "4e84d8262dc3f24691dfa1236bf0c86600a71d073b5713511ec9cde2cdbdb9b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41c573db1b194525187e040c55a6309d8729f9004661c6efbd0427055bb49030"
+  end
   depends_on "pcre"
   revision 2
 
