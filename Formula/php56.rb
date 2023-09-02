@@ -40,7 +40,7 @@ class Php56 < AbstractPhp
 #      depends_on "webp" => :optional if name.split("::")[2].downcase.start_with?("php7")
       depends_on "libvpx" => :optional
       depends_on "libpng"
-      depends_on "libxml2" if build.with?("homebrew-libxml2") || MacOS.version < :lion || MacOS.version >= :el_capitan
+      depends_on "libxml2" if build.with?("homebrew-libxml2") || MacOS.version < :lion || MacOS.version >= :el_capitan || OS.linux?
       depends_on "unixodbc"
       depends_on "readline"
       depends_on "zlib"
@@ -209,7 +209,7 @@ class Php56 < AbstractPhp
       "--without-snmp",
     ]
 
-    if build.with?("homebrew-libxml2") || MacOS.version < :lion || MacOS.version >= :el_capitan
+    if build.with?("homebrew-libxml2") || MacOS.version < :lion || MacOS.version >= :el_capitan || OS.linux?
       args << "--with-libxml-dir=#{Formula["libxml2"].opt_prefix}"
     end
 
