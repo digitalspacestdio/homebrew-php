@@ -10,6 +10,11 @@ class Php80Opcache < AbstractPhp80Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
+    sha256 cellar: :any_skip_relocation, ventura: "ac2089a3beab8374fa58c478c863416d1405d5d047571040ac9be27657f3bf40"
+  end
+
   depends_on "pcre"
 
   def extension_type
