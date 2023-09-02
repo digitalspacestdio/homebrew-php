@@ -9,6 +9,12 @@ class Php72Sodium < AbstractPhp72Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a369afd5706759b7a61ca98c7ee61f7cdbcac920b5e77fe1b25354c956dcd53b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc71a2b94b8abc8820c08a7e9bf51b9d5de0d2fee7180bc05bf12259b0caadda"
+  end
+
   depends_on "libsodium"
 
   def install
