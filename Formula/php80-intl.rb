@@ -10,6 +10,11 @@ class Php80Intl < AbstractPhp80Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
+    sha256 cellar: :any_skip_relocation, ventura: "81455a7c5f1a006936d79cf0ef53fa1d17da49dee3a20717b7cb1428f582d437"
+  end
+
   depends_on "digitalspacestdio/common/icu4c@72.1"
   depends_on "pkg-config" => :build
 
