@@ -10,6 +10,11 @@ class Php81Gmp < AbstractPhp81Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cf384d2a782b5ec4e8c1fc2dfda93a2a341bda19f799eb2dde7d9bb75a496aae"
+  end
+
   depends_on "gmp"
 
   def install
