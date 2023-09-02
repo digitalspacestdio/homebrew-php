@@ -12,7 +12,8 @@ class Php82PdoPgsql < AbstractPhp82Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2a8bc8072bcfc119b1d07dba9af6ffddb9d2a9a06cad5232e16651f49cca8862"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4b5e4f5f01b177cccc8b0b16dee17ed4c273b5155ecae2fc66e89ea8f90dd4f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a8bc8072bcfc119b1d07dba9af6ffddb9d2a9a06cad5232e16651f49cca8862"
   end
 
   depends_on "libpq"
