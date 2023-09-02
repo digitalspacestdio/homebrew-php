@@ -9,6 +9,11 @@ class Php70Apcu < AbstractPhp70Extension
   head "https://github.com/krakjoe/apcu.git"
   revision 2
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "20cf152efc8c3187821b504c4417445e874dcb2ae6d2aa4106769ab16897a134"
+  end
+
   depends_on "pcre"
 
   def install
