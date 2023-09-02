@@ -9,6 +9,12 @@ class Php72Apcu < AbstractPhp72Extension
   head "https://github.com/krakjoe/apcu.git"
   revision 2
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9023f3446684b2eadec851e28af740e789655a235a599bb56e17965f80d8573d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac20919c55f37e01de76717f3abe40efbeb94297b562af278d2baca9ad380f9d"
+  end
+
   depends_on "pcre"
 
   def install
