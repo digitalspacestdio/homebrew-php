@@ -10,6 +10,11 @@ class Php81Intl < AbstractPhp81Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "00ae7565ee1703af2fdfaaa35170a915dbe9b5296eae42199d12bb9fbf0de4cb"
+  end
+
   depends_on "digitalspacestdio/common/icu4c@72.1"
   depends_on "pkg-config" => :build
   depends_on "gcc@11" => :build
