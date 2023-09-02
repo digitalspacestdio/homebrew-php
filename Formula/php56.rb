@@ -40,7 +40,7 @@ class Php56 < AbstractPhp
 #      depends_on "webp" => :optional if name.split("::")[2].downcase.start_with?("php7")
       depends_on "libvpx" => :optional
       depends_on "libpng"
-      depends_on "libxml2" if build.with?("homebrew-libxml2") || MacOS.version < :lion || MacOS.version >= :el_capitan || OS.linux?
+      depends_on "libxml2"
       depends_on "unixodbc"
       depends_on "readline"
       depends_on "zlib"
@@ -94,7 +94,6 @@ class Php56 < AbstractPhp
       option "without-homebrew-curl", "Not include Curl support via Homebrew"
       option "with-homebrew-libressl", "Not include LibreSSL instead of OpenSSL via Homebrew"
       option "without-homebrew-libxslt", "Include LibXSLT support via Homebrew"
-      option "with-homebrew-libxml2", "Include Libxml2 support via Homebrew"
       option "with-imap", "Include IMAP extension"
       option "with-libmysql", "Include (old-style) libmysql support instead of mysqlnd"
       option "with-mssql", "Include MSSQL-DB support"
@@ -208,11 +207,7 @@ class Php56 < AbstractPhp
       "--without-gmp",
       "--without-snmp",
     ]
-
-    if build.with?("homebrew-libxml2") || MacOS.version < :lion || MacOS.version >= :el_capitan || OS.linux?
-      args << "--with-libxml-dir=#{Formula["libxml2"].opt_prefix}"
-    end
-
+    args << "--with-libxml-dir=#{Formula["libxml2"].opt_prefix}"
     args << "--with-pdo-odbc=unixODBC,#{Formula["unixodbc"].opt_prefix}"
     args << "--with-unixODBC=#{Formula["unixodbc"].opt_prefix}"
 
