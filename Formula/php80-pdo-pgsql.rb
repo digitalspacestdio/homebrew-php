@@ -14,6 +14,7 @@ class Php80PdoPgsql < AbstractPhp80Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7770064f2809f3d1f818201d82dd1443e386526b1e279e81ee54a82de6d6cb40"
     sha256 cellar: :any_skip_relocation, ventura:       "93f6b00d84b6e2523762b774d1af673a6b27939a32ab17589cb4d39dd2fab2bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcb4d51c5bfabec9c6a7479d78b559256651e6c90f5b768fec494c1eb018f7af"
   end
 
   depends_on "libpq"
