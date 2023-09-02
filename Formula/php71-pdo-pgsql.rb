@@ -10,6 +10,13 @@ class Php71PdoPgsql < AbstractPhp71Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f7d91bd95c233b425318575e220ee4db29be37e20f351e2070a81b452343a000"
+    sha256 cellar: :any_skip_relocation, ventura:       "fda12de570ed71443a5d993578c62e0fd3dee305ac176002ba79af4a0fcd5c2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b0b5e420c93196a48355d1d664afabcc6d789b84f1cb8897ba7f3e298bddfd7"
+  end
+
   depends_on "libpq"
 
   def extension
