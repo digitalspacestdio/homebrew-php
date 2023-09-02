@@ -10,6 +10,11 @@ class Php80Igbinary < AbstractPhp80Extension
   version "3.1.6"
   revision 1
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
+    sha256 cellar: :any_skip_relocation, ventura: "8f07063c30850e791e69a98fc658d34e158de0538d53cc50b0e9db7dce68f674"
+  end
+
 
   depends_on "igbinary" => :build
 
