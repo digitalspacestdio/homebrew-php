@@ -10,6 +10,11 @@ class Php74Opcache < AbstractPhp74Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f0f2d8cf6c3c3a0dfb13bf1722b846e62e80847247bf011dc2b3b88f7f8b1220"
+  end
+
   depends_on "pcre"
 
   def extension_type
