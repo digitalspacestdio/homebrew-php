@@ -9,6 +9,11 @@ class Php80Sodium < AbstractPhp80Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
+    sha256 cellar: :any_skip_relocation, ventura: "b44baf933fc28868872a4e850b239457c4de1d86cfe09970763e641d331c9490"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "libsodium"
 
