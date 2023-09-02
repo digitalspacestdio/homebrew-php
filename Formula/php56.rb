@@ -152,6 +152,11 @@ class Php56 < AbstractPhp
     sha256 "92d9746508a98b5871a4645b59aa95a364aae63705aa9e184da829eedb6c74a9"
   end
 
+  patch do
+    url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php#{PHP_BRANCH_NUM}/Use-pkg-config-for-PHP_SETUP_LIBXML.patch"
+    sha256 "9a8b3fe443b117f671164eda48437daf132aaae14dd93e2aad67213f40abad0e"
+  end
+
   def install_args
     # Prevent PHP from harcoding sed shim path
     ENV["lt_cv_path_SED"] = "sed"
