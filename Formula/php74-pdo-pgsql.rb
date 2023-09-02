@@ -10,6 +10,11 @@ class Php74PdoPgsql < AbstractPhp74Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cba44957fb5f47f7f5984127b593c02bb8b674ca89b47035830d5d681c727b5f"
+  end
+
   depends_on "libpq"
 
   def extension
