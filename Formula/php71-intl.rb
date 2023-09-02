@@ -9,6 +9,13 @@ class Php71Intl < AbstractPhp71Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "49ab525605090c6b9006f1665027abbff1023f656218e4d182868aa000d6407d"
+    sha256 cellar: :any_skip_relocation, ventura:       "a2a48adc72bdd986d43167517595489a1048f4748bc21b8d75bd0235e8daa431"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a072297d0f482a0513077cada549f02b018048f2a3952f5a99990a443b41825"
+  end
+
   depends_on "digitalspacestdio/common/icu4c@67.1"
 
   def install
