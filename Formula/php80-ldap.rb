@@ -10,6 +10,11 @@ class Php80Ldap < AbstractPhp80Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
+    sha256 cellar: :any_skip_relocation, ventura: "43a0db7dffe9f8f75bc92c067c4dcc0571d2f31fa0466ee451025e93cbfeff32"
+  end
+
   depends_on "openldap"
 
   def install
