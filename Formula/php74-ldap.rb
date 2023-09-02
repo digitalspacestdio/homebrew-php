@@ -10,6 +10,11 @@ class Php74Ldap < AbstractPhp74Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "17d589bb68ec575b835683b3475ca6c42c98230531e78fea6c709389e04c74cc"
+  end
+
   depends_on "openldap"
 
   def install
