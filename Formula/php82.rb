@@ -29,7 +29,8 @@ class Php82 < AbstractPhp
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
-    sha256 x86_64_linux: "fc2f746d3124bc2f8ddf8d23c0004a0cbdd61164c5d22edf0b1831045dcd4624"
+    sha256 arm64_ventura: "c0498c8f358abc5392c77f530d09b5f85fa1fc683f57afecd17c747660372ad7"
+    sha256 x86_64_linux:  "fc2f746d3124bc2f8ddf8d23c0004a0cbdd61164c5d22edf0b1831045dcd4624"
   end
 
   def install_args
