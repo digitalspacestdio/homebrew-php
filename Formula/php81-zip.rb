@@ -10,6 +10,11 @@ class Php81Zip < AbstractPhp81Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1b79590bd51bace3672660a00e57434996a946108c6e0609200fe9ca398f924e"
+  end
+
   depends_on "libzip"
   depends_on "pkg-config" => :build
 
