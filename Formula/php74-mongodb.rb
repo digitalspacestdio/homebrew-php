@@ -10,6 +10,11 @@ class Php74Mongodb < AbstractPhp74Extension
   version "1.9.0"
   revision 2
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c616632586a44ac078455ca123120b0e7928686e97d8ced45880f25db4e0aebb"
+  end
+
   depends_on "openssl"
   depends_on "digitalspacestdio/common/icu4c@72.1"
 
