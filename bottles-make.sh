@@ -22,4 +22,4 @@ brew install --build-bottle $(brew deps --direct $PHP_FORMULA-common)
 brew bottle --skip-relocation --no-rebuild --root-url 'https://f003.backblazeb2.com/file/homebrew-bottles/'$PHP_FORMULA --json $(brew deps --direct $PHP_FORMULA-common)
 ls | grep $PHP_FORMULA'.*--.*.gz$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
 ls | grep $PHP_FORMULA'.*--.*.json$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
-cd -
+cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
