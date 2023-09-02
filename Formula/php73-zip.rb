@@ -9,6 +9,13 @@ class Php73Zip < AbstractPhp73Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a7765e57ca2c7f760fe5934a1f8d012e9a6c3af9601bae8dc67d96ef848f7e81"
+    sha256 cellar: :any_skip_relocation, ventura:       "96b085898b33a9207065316cc524124e6bf570c0d77ee956a5f92410abd0c176"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dde631a6c747287fd7c69b23c53f33e44b936da3d348af072704fb5dfa883401"
+  end
+
   depends_on "libzip"
   depends_on "zlib"
   depends_on "pkg-config" => :build
