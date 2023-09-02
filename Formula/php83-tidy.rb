@@ -11,9 +11,8 @@ class Php83Tidy < AbstractPhp83Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
-    rebuild 1
-    sha256 cellar: :any, arm64_ventura: "9770d2cc187178bf10f55012ded17b6aa7cf8d4372a83d7f98ccd1c63e1fe24e"
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5aa2e920aa51c197e0b3f3cea1530c26365e41e17218823395a8122df1df59ef"
   end
 
   depends_on "digitalspacestdio/php/php-tidy-html5"
