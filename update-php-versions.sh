@@ -1,7 +1,9 @@
 set -x
 #pushd `dirname $0` > /dev/null;DIR=`pwd -P`;popd > /dev/null
 
-cd $(brew --prefix)/Library/Taps/digitalspacestdio/homebrew-php
+brew tap digitalspacestdio/common
+brew tap digitalspacestdio/php
+cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
 git fetch --all
 git reset --hard origin/master
 DIR=$(pwd -P)
