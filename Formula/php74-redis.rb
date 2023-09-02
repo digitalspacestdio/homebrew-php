@@ -8,6 +8,11 @@ class Php74Redis < AbstractPhp74Extension
   head "https://github.com/phpredis/phpredis.git"
   revision 1
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "762fbf6b21fed2008fc0441e1c6f7f20ffd54f8d9f4d2b227f5d86b147c1cfda"
+  end
+
   depends_on "digitalspacestdio/php/php74-igbinary"
   depends_on "igbinary" => :build
 
