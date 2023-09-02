@@ -9,6 +9,11 @@ class Php74Igbinary < AbstractPhp74Extension
   head "https://github.com/igbinary/igbinary.git"
   revision 2
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f8d3f3d9341f8c0075288e1caaad9695d195643ecf267e58bc802fde8ca97ac8"
+  end
+
 
   depends_on "igbinary" => :build
 
