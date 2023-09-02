@@ -13,6 +13,7 @@ class Php74Tidy < AbstractPhp74Extension
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9233991b768465bb12762e5e58aa03e7655c91086435659cb9d926bfe28657d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bf61dfe254c1410056e35001b5fbba00fc92fe964aff03646982c35c1848dab"
   end
 
   depends_on "digitalspacestdio/php/php-tidy-html5"
