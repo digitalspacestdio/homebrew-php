@@ -8,6 +8,11 @@ class Php80Redis < AbstractPhp80Extension
   head "https://github.com/phpredis/phpredis.git"
   revision 1
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
+    sha256 cellar: :any_skip_relocation, ventura: "8e4ea634be3871a808cf3dd473aed56274b51ab5d4d44d722608695e85d79285"
+  end
+
   depends_on "digitalspacestdio/php/php80-igbinary"
   depends_on "igbinary" => :build
 
