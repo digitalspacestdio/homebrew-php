@@ -10,6 +10,11 @@ class Php74Zip < AbstractPhp74Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a2105830bacabdf857113b7c405b7c221330f1502d14c22f7fd9cdc4a0e853de"
+  end
+
   depends_on "libzip"
   depends_on "zlib"
   depends_on "pkg-config" => :build
