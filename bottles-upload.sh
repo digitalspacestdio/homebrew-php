@@ -28,6 +28,9 @@ for jsonfile in ./*.json; do
         done < <(jq -r '."digitalspacestdio/php/'$JSON_FORMULA_NAME'".bottle.tags[].filename' "$jsonfile")
         s3cmd info "s3://homebrew-bottles/$PHP_FORMULA/$mergedfile" && {
             s3cmd get "s3://homebrew-bottles/$PHP_FORMULA/$mergedfile" "$mergedfile".src
+            if [[ "object" -neq  $(cat php82-8.2.10_1.arm64_ventura.bottle.json| jq -r type) ]]; then
+                cp "$jsonfile" "$mergedfile".src
+            fi
             jq -s  '.[0]."digitalspacestdio/php/'$JSON_FORMULA_NAME'".bottle.tags = .[0]."digitalspacestdio/php/'$JSON_FORMULA_NAME'".bottle.tags * .[1]."digitalspacestdio/php/'$JSON_FORMULA_NAME'".bottle.tags | .[0]' "$jsonfile" "$mergedfile".src > "$mergedfile"
             s3cmd del "s3://homebrew-bottles/$PHP_FORMULA/$mergedfile"
             s3cmd put "$mergedfile" "s3://homebrew-bottles/$PHP_FORMULA/$mergedfile"
