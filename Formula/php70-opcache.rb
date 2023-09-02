@@ -9,6 +9,11 @@ class Php70Opcache < AbstractPhp70Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a132840b69ad5c9511e0c95a0bbdc78fb9f303aa44511c39f90b7473f1541b97"
+  end
+
   depends_on "pcre"
 
   def extension_type
