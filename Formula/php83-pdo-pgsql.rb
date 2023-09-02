@@ -11,9 +11,8 @@ class Php83PdoPgsql < AbstractPhp83Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
-    rebuild 1
-    sha256 cellar: :any, arm64_ventura: "f2009a75e1bf75d7620d8806880fdef14acba90e001a9641ed0307761969bc25"
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ea612b8237868adbcd5fb7d22af2e438afa6be26de4f3e6c8719713d193d6d29"
   end
 
   depends_on "libpq"
