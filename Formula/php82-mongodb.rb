@@ -12,8 +12,7 @@ class Php82Mongodb < AbstractPhp82Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4db9b925e26a1d64dc96172236e5d20cf6a117e3ca53ded4a82877db9d9aaabb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67f53c7fc162b622ea877dc8d06cd8b4cd9bd5d70710e3d4a1f9de8b282094c6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8bcd9ed36ba9d4a06a1b858303e4a573a697357f0e14d7bb7555edd410ccd45f"
   end
 
   depends_on "openssl"
