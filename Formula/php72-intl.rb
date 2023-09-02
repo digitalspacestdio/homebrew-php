@@ -9,6 +9,12 @@ class Php72Intl < AbstractPhp72Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "14fd36d76b3dd4f03f086256fff694f398e5f2948e4b24839d846df0bacc8e1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66f4c353c6de71a780370aab9d9ee6544bcadce874f617e2b4a5283dc5e4d3ea"
+  end
+
   depends_on "digitalspacestdio/common/icu4c@67.1"
   depends_on "pkg-config" => :build
 
