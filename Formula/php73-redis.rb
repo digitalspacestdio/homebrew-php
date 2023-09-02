@@ -9,6 +9,13 @@ class Php73Redis < AbstractPhp73Extension
   head "https://github.com/phpredis/phpredis.git"
   revision 1
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "40938db20d988c7f68c1c7654a14fc180bc54c0b00c212c206531fd6e3d51f30"
+    sha256 cellar: :any_skip_relocation, ventura:       "04b2f203f03f080113a1832112c212f4bc3cb6bf40d1a26255f1a21caf25d9a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b99d24bf0f757e87887ab4bbf151b0b13ba19ac92d144c2303c674c30f07e1c7"
+  end
+
   depends_on "digitalspacestdio/php/php73-igbinary"
   depends_on "igbinary" => :build
 
