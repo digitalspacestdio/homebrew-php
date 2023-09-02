@@ -10,6 +10,13 @@ class Php73Opcache < AbstractPhp73Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "24e5b498239fc05efbcfe1eecd719d65bdb8a6dd8cc06db4a96ed64d07addede"
+    sha256 cellar: :any_skip_relocation, ventura:       "ea194f67f8ea2abd8692faa518ce874b3d6695f1aa69603b3248b76dc9cbc8ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f2fd80d0e1caf1d3f7e173f04c5cad681464a06061ec022715f6797d940a0a3"
+  end
+
   depends_on "pcre"
 
   def extension_type
