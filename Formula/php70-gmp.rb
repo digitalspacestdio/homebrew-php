@@ -10,6 +10,11 @@ class Php70Gmp < AbstractPhp70Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e36863ab95ed448042852c48614b6201f79e33bc280974f91a5cadec0e0d9d21"
+  end
+
   depends_on "gmp"
 
   def install
