@@ -9,9 +9,8 @@ class Php56Opcache < AbstractPhp56Extension
   revision 7
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9d9f5b3ddaf80eae352c48b808ae82b4ca3d8187dfe1708b724a935b8be2873b"
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "dc411bc8fb37defd57a080cb5a377cdf494483ede5908055f682515411bd25b2"
   end
 
 
