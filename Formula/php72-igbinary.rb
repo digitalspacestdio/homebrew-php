@@ -8,6 +8,12 @@ class Php72Igbinary < AbstractPhp72Extension
   sha256 "1d06fc3586d61fcffbae24a46649db54d938168586557965bc1346f6d6568555"
   head "https://github.com/igbinary/igbinary.git"
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "de8755c1a5dbef2a5ccc400c08cd5cf468c664d64fb1b00c03b469e7d8ab16a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13e471b20c50f83f6c943d966cdacd5edd9da92b6b91abec91dbd8f670c28308"
+  end
+
 
   depends_on "igbinary" => :build
 
