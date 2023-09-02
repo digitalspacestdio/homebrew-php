@@ -9,9 +9,8 @@ class Php56Apcu < AbstractPhp56Extension
   head "https://github.com/krakjoe/apcu.git"
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "094d1489dd1e10e888596ba2f14b5567411caa81be4bc888b6d90592bb192e9a"
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c1cd18786eb3eb4ed343a9aecfdebc3cd5cbb65a675dd0f10382f90453242b7c"
   end
 
 
