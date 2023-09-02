@@ -10,9 +10,8 @@ class Php56Zip < AbstractPhp56Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
-    rebuild 1
-    sha256 cellar: :any, arm64_ventura: "3b619e0218b532f96e64326e6a4bea4abea5e02fde317f80ef3fa7689a5b84a3"
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0a33a162c82b545c8bcfdaa09d5303bdf8ea69149c966cf0195df6aea5413968"
   end
 
   depends_on "zlib"
