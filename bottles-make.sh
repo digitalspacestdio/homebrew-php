@@ -20,6 +20,6 @@ brew install $(brew deps --direct $PHP_FORMULA)
 brew install $(brew deps --direct $PHP_FORMULA-common | xargs -I{} bash -c 'brew deps --direct {}' | sort | uniq -u | grep -v $PHP_FORMULA)
 brew install --build-bottle $(brew deps --direct $PHP_FORMULA-common)
 brew bottle --no-rebuild --root-url 'https://f003.backblazeb2.com/file/homebrew-bottles/'$PHP_FORMULA --json $(brew deps --direct $PHP_FORMULA-common)
-ls | grep $PHP_FORMULA'.*json$' | xargs -I{} bash -c 'brew bottle --merge --write --json {}'
-ls | grep $PHP_FORMULA'.*gz$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs -I{} bash -c 'mv {}'
+ls | grep $PHP_FORMULA'.*--.*.gz$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs -I{} bash -c 'mv {}'
+ls | grep $PHP_FORMULA'.*--.*.json$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs --no-run-if-empty -I{} bash -c 'mv {}'
 cd -
