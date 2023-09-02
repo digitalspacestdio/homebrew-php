@@ -11,9 +11,8 @@ class Php83Opcache < AbstractPhp83Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c2176f1fafb2a3971664e241b78581e9ad4cef8fa1e39675f2a6953f55d519ea"
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fc843a96b5fb7c72e386094725b41ec8b40c542ba68201ccd7f835a090569ca8"
   end
 
   depends_on "pcre"
