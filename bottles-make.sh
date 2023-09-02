@@ -5,11 +5,9 @@ if [[ -z $1 ]]; then
     exit 1;
 fi
 
-brew untap -f digitalspacestdio/php || /usr/bin/true
-brew untap -f digitalspacestdio/common || /usr/bin/true
-
-brew tap digitalspacestdio/common
-brew tap digitalspacestdio/php
+cd $(brew --prefix)/Library/Taps/digitalspacestdio/homebrew-php
+git fetch --all
+git reset --hard origin/master
 
 PHP_FORMULA=$1
 rm -rf /tmp/$PHP_FORMULA.bottle

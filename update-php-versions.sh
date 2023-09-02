@@ -1,5 +1,10 @@
 set -x
-pushd `dirname $0` > /dev/null;DIR=`pwd -P`;popd > /dev/null
+#pushd `dirname $0` > /dev/null;DIR=`pwd -P`;popd > /dev/null
+
+cd $(brew --prefix)/Library/Taps/digitalspacestdio/homebrew-php
+git fetch --all
+git reset --hard origin/master
+DIR=$(pwd -P)
 
 for VERSION in "5.6" "7.0" "7.1" "7.2" "7.3" "7.4" "8.0" "8.1" "8.2"
 do
