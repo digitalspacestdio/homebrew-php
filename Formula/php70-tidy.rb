@@ -10,6 +10,11 @@ class Php70Tidy < AbstractPhp70Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2addf032ab76e8a26258ea392f99b3e35ee59f52479a4d57a584fc9363b55edf"
+  end
+
   depends_on "digitalspacestdio/php/php-tidy-html5"
 
   def install
