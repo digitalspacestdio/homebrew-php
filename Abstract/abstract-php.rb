@@ -266,35 +266,47 @@ INFO
       "--enable-sysvsem",
       "--enable-sysvshm",
       "--enable-wddx",
-
-      ("--with-gd" if !php_version.start_with?("7.4", "8.")),
-      ("--enable-gd" if php_version.start_with?("7.4", "8.")),
-      
-      ("--with-freetype-dir=#{Formula["freetype"].opt_prefix}" if !php_version.start_with?("7.4", "8.")),
-      ("--with-freetype=#{Formula["freetype"].opt_prefix}" if php_version.start_with?("7.4", "8.")),
-
-      ("--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}" if !php_version.start_with?("7.4", "8.")),
-      ("--with-jpeg=#{Formula["jpeg"].opt_prefix}" if php_version.start_with?("7.4", "8.")),
-
       "--with-gettext=#{Formula["gettext"].opt_prefix}",
-
-      ("--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@67.1"].opt_prefix}" if php_version.start_with?("7.0", "7.1", "7.2")),
-      ("--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}" if php_version.start_with?("5.6", "7.3")),
-      ("--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@72.1"].opt_prefix}" if php_version.start_with?("7.4", "8.")),
-
-      ("--with-external-pcre" if !OS.mac? && !php_version.start_with?("7.4", "8.")),
-      ("--without-pcre-jit" if OS.mac?),
-      ("--with-kerberos=/usr" if OS.mac?),
-
       "--with-mhash",
       "--with-zlib=#{Formula["zlib"].opt_prefix}",
       "--with-png-dir=#{Formula["libpng"].opt_prefix}",
       "--with-xmlrpc",
       "--with-readline=#{Formula["readline"].opt_prefix}",
-      ("--with-iconv=#{Formula["libiconv"].opt_prefix}" if OS.mac?),
       "--without-gmp",
       "--without-snmp",
     ]
+
+    if OS.mac?
+      args << "--without-pcre-jit"
+      args << "--with-kerberos=/usr"
+      args << "--with-iconv=#{Formula["libiconv"].opt_prefix}"
+    end
+
+    if php_version.start_with?("7.0", "7.1", "7.2")
+      args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@67.1"].opt_prefix}"
+    end
+
+    if php_version.start_with?("5.6", "7.3")
+      args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}"
+    end
+
+    if !php_version.start_with?("7.4", "8.")
+      args << "--with-gd"
+      args << "--with-freetype-dir=#{Formula["freetype"].opt_prefix}"
+      args << "--with-jpeg=#{Formula["jpeg"].opt_prefix}"
+      args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@72.1"].opt_prefix}"
+    end
+
+    if php_version.start_with?("7.4", "8.")
+      args << "--enable-gd"
+      args << "--with-freetype-dir=#{Formula["freetype"].opt_prefix}"
+      args << "--with-jpeg=#{Formula["jpeg"].opt_prefix}"
+      args << "--with-external-pcre" if !OS.mac? 
+    end
+
+    if php_version.start_with?("7.", "8.")
+      args << "--with-webp-dir=#{Formula['webp'].opt_prefix}"
+    end
 
     if build.with?("homebrew-libxml2") || MacOS.version < :lion || MacOS.version >= :el_capitan
       args << "--with-libxml-dir=#{Formula["libxml2"].opt_prefix}"
@@ -430,9 +442,9 @@ INFO
       args << "--enable-zend-signals"
     end
 
-    if build.with? "webp"
-      args << "--with-webp-dir=#{Formula['webp'].opt_prefix}"
-    end
+    # if build.with? "webp"
+    #   args << "--with-webp-dir=#{Formula['webp'].opt_prefix}"
+    # end
 
     if build.with? "libvpx"
       args << "--with-vpx-dir=#{Formula['libvpx'].opt_prefix}"
