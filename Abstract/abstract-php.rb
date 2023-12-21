@@ -47,7 +47,7 @@ class AbstractPhp < Formula
     depends_on "webp" => :optional if name.split("::")[2].downcase.start_with?("php7", "php8")
     depends_on "libvpx" => :optional if name.split("::")[2].downcase.start_with?("php56")
     depends_on "libpng"
-    depends_on "libxml2" if build.with?("homebrew-libxml2") || MacOS.version < :lion || MacOS.version >= :el_capitan
+    depends_on "libxml2" if build.with?("homebrew-libxml2") || OS.mac? && (MacOS.version < :lion || MacOS.version >= :el_capitan)
     depends_on "unixodbc"
     depends_on "readline"
     depends_on "zlib"
@@ -238,8 +238,10 @@ INFO
     # Prevent PHP from harcoding sed shim path
     ENV["lt_cv_path_SED"] = "sed"
 
-    # Ensure system dylibs can be found by linker on Sierra
-    ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
+    if (OS.mac?) {
+      # Ensure system dylibs can be found by linker on Sierra
+      ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
+    }
 
 #    libzip = Formula["libzip"]
     #ENV["CFLAGS"] = "-Wno-error -I#{libzip.opt_include}"
@@ -308,7 +310,7 @@ INFO
       args << "--with-webp-dir=#{Formula['webp'].opt_prefix}"
     end
 
-    if build.with?("homebrew-libxml2") || MacOS.version < :lion || MacOS.version >= :el_capitan
+    if build.with?("homebrew-libxml2") || OS.mac? && (MacOS.version < :lion || MacOS.version >= :el_capitan)
       args << "--with-libxml-dir=#{Formula["libxml2"].opt_prefix}"
     end
 
