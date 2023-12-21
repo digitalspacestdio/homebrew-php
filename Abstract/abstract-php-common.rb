@@ -1,10 +1,11 @@
-require File.expand_path("../../Abstract/abstract-php-common", __FILE__)
+# encoding: utf-8
+require "formula"
+require File.expand_path("../../Abstract/abstract-php-version", __FILE__)
 
-class Php83Common < AbstractPhpCommon
+class AbstractPhpCommon < Formula
   include AbstractPhpVersion::Php83Defs
   desc "PHP Version #{PHP_VERSION} (Common Package)"
   version PHP_VERSION
-  revision 24
 
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -28,6 +29,7 @@ class Php83Common < AbstractPhpCommon
   depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-tidy"
   depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-zip"
   depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-ldap"
+  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-xdebug"
   # depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-ioncubeloader"
 
   # keg_only "this package contains dependency only"
