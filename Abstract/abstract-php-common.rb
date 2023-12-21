@@ -58,7 +58,7 @@ class AbstractPhpCommon < Formula
   end
 
   def nginx_config_dir
-      etc / "digitalspace" / "nginx" / "conf.d"
+      etc / "digitalspace" / "nginx" / "php.d"
   end
 
   def nginx_config_path
