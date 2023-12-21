@@ -3,9 +3,9 @@ require File.join(File.dirname(__FILE__), "../Requirements/php-meta-requirement"
 require File.join(File.dirname(__FILE__), "../Requirements/phar-requirement")
 
 class AbstractPhpPhar < Formula
-  def initialize(*)
-    super
-  end
+  # def initialize(*)
+  #   super
+  # end
 
   def self.init
     depends_on PhpMetaRequirement
