@@ -8,8 +8,8 @@ class HomebrewPhpTools < Formula
 
   def install
     libexec.install Dir["bin"]
-    bin.write_exec_script libexec/"_php-bottles-make-upload.sh"
-    bin.write_exec_script libexec/"_php-update-versions.sh"
+    bin.write_exec_script libexec/"bin/_php-bottles-make-upload.sh"
+    bin.write_exec_script libexec/"bin/_php-update-versions.sh"
   end
 
   def caveats
