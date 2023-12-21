@@ -6,8 +6,10 @@ class Php83Xdebug < AbstractPhp83Extension
   homepage "https://xdebug.org"
   #url "https://github.com/xdebug/xdebug/archive/master.tar.gz"
   #sha256 "b3afd650918ec5faaae0bf4b68cd9cd623d6477262792b2ac8f100aafa82d2f8"
+  url "https://github.com/xdebug/xdebug/archive/refs/tags/3.3.1.tar.gz"
+  sha256 "76d0467154d7f2714a07f88c7c17658e24dd58fb919a9aa08ab4bc23dccce76d"
   head "https://github.com/xdebug/xdebug.git"
-  #version "3.3.0dev"
+  version "3.3.1"
   revision 1
 
   def extension_type

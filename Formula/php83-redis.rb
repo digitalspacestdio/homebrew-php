@@ -3,8 +3,8 @@ require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 class Php83Redis < AbstractPhp83Extension
   init
   desc "PHP extension for Redis"
-  url "https://github.com/phpredis/phpredis/archive/5.3.7.tar.gz"
-  sha256 "6f5cda93aac8c1c4bafa45255460292571fb2f029b0ac4a5a4dc66987a9529e6"
+  url "https://github.com/phpredis/phpredis/archive/6.0.2.tar.gz"
+  sha256 "786944f1c7818cc7fd4289a0d0a42ea630a07ebfa6dfa9f70ba17323799fc430"
   head "https://github.com/phpredis/phpredis.git"
   revision 1
 

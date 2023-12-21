@@ -4,11 +4,11 @@ class Php83Mongodb < AbstractPhp83Extension
   init
   desc "MongoDB driver for PHP."
   homepage "https://github.com/mongodb/mongo-php-driver"
-  url "https://github.com/mongodb/mongo-php-driver/releases/download/1.15.1/mongodb-1.15.1.tgz"
-  sha256 "b2038e778d71f45cadb8c93a30eb548e5c2c1e4f832807a775ed516b7816b749"
+  url "https://github.com/mongodb/mongo-php-driver/releases/download/1.17.1/mongodb-1.17.1.tgz"
+  sha256 "34b7d0528b5c3f2b9b7f677294ad7aa7822bb704ba6583bae99f2bbf79a29be1"
   head "https://github.com/mongodb/mongo-php-driver.git"
-  version "1.15.1"
-  revision 2
+  version "1.17.2"
+  revision 1
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
