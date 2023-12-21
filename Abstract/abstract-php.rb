@@ -238,10 +238,10 @@ INFO
     # Prevent PHP from harcoding sed shim path
     ENV["lt_cv_path_SED"] = "sed"
 
-    if (OS.mac?) {
+    if OS.mac? 
       # Ensure system dylibs can be found by linker on Sierra
       ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
-    }
+    end
 
 #    libzip = Formula["libzip"]
     #ENV["CFLAGS"] = "-Wno-error -I#{libzip.opt_include}"
