@@ -307,8 +307,7 @@ INFO
     end
 
     if php_version.start_with?("7.", "8.")
-      args << "--with-webp"
-      args << "--with-webp-dir=#{Formula['webp'].opt_prefix}"
+      args << "--with-webp=#{Formula['webp'].opt_prefix}"
     end
 
     if build.with?("homebrew-libxml2") || OS.mac? && (MacOS.version < :lion || MacOS.version >= :el_capitan)
