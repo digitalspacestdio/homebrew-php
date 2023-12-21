@@ -76,7 +76,7 @@ class AbstractPhpCommon < Formula
   def nginx_config
      <<~EOS
         if (-f $document_root/.php#{PHP_BRANCH_NUM}) {
-          set $php_version #{PHP_BRANCH_NUM};
+          set $php_version #{PHP_VERSION_MAJOR};
         }
      EOS
   rescue StandardError
@@ -206,7 +206,7 @@ class AbstractPhpCommon < Formula
         inreplace config_path_php_fpm_www do |s|
             s.sub!(/^.*?user\s*=.+$/, "; user = #{user}")
             s.sub!(/^.*?group\s*=.+$/, "; group = #{user_group}")
-            s.sub!(/^.*?listen\s*=.+$/, "listen = 127.0.0.1:90#{PHP_BRANCH_NUM}")
+            s.sub!(/^.*?listen\s*=.+$/, "listen = #{var}/run/php#{PHP_BRANCH_NUM}-fpm.sock ")
         end
     rescue StandardError
         nil
