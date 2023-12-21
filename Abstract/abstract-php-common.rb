@@ -5,17 +5,6 @@ require File.expand_path("../../Abstract/abstract-php-version", __FILE__)
 class AbstractPhpCommon < Formula
   include AbstractPhpVersion::Php83Defs
   desc "PHP Version #{PHP_VERSION} (Common Package)"
-  version PHP_VERSION
-
-  url "file:///dev/null"
-  sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-
-  option "with-supervisor", "Build with supervisor support"
-  option "with-nginx", "Build with nginx support"
-  
-  depends_on "digitalspacestdio/common/digitalvisor" if build.with?("http-stack")
-  depends_on "digitalspacestdio/common/http-stack" if build.with?("http-stack")
-
   depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}"
   depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-apcu"
   depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-gmp"
@@ -37,8 +26,10 @@ class AbstractPhpCommon < Formula
   def fetch
     if OS.mac?
       system "#{HOMEBREW_PREFIX}/bin/brew list --formula | grep 'php[5-8][0-9]$' | xargs -I{} printf '{} ' | xargs #{HOMEBREW_PREFIX}/bin/brew unlink 1>&2"
+      system "#{HOMEBREW_PREFIX}/bin/brew list --formula | grep 'php[5-8][0-9]-common$' | xargs -I{} printf '{} ' | xargs #{HOMEBREW_PREFIX}/bin/brew unlink 1>&2"
     elsif OS.linux?
       system "#{HOMEBREW_PREFIX}/bin/brew list --formula | grep 'php[5-8][0-9]$' | xargs -I{} printf '{} ' | xargs --no-run-if-empty #{HOMEBREW_PREFIX}/bin/brew unlink 1>&2"
+      system "#{HOMEBREW_PREFIX}/bin/brew list --formula | grep 'php[5-8][0-9]-common$' | xargs -I{} printf '{} ' | xargs --no-run-if-empty #{HOMEBREW_PREFIX}/bin/brew unlink 1>&2"
     end
   end
 
@@ -59,7 +50,7 @@ class AbstractPhpCommon < Formula
   end
 
   def supervisor_config_dir
-      etc / "digitalvisor.d"
+      etc / "digitalspace" / "supervisor.d"
   end
 
   def supervisor_config_path
@@ -67,7 +58,7 @@ class AbstractPhpCommon < Formula
   end
 
   def nginx_config_dir
-      etc / "nginx8181" / "php.d"
+      etc / "digitalspace" / "nginx"
   end
 
   def nginx_config_path
@@ -82,7 +73,7 @@ class AbstractPhpCommon < Formula
     system "id -Gn #{user}"
   end
 
-  def nginx_snippet_file
+  def nginx_config
      <<~EOS
         if (-f $document_root/.php#{PHP_BRANCH_NUM}) {
           set $php_version #{PHP_BRANCH_NUM};
@@ -92,7 +83,7 @@ class AbstractPhpCommon < Formula
       nil
   end
 
-  def config_file
+  def supervisor_config
       <<~EOS
         [program:php#{PHP_BRANCH_NUM}]
         command=#{HOMEBREW_PREFIX}/opt/php#{PHP_BRANCH_NUM}/sbin/php-fpm --nodaemonize --fpm-config #{HOMEBREW_PREFIX}/etc/php/#{PHP_VERSION_MAJOR}/php-fpm.conf
@@ -109,11 +100,71 @@ class AbstractPhpCommon < Formula
       nil
   end
 
-  def binary_wrapper_path
+  def binary_dir
+    buildpath / "bin"
+  end
+
+  def binary_path
+    buildpath / "bin" / "php"
+  end
+
+  def binary_versioned_path
     buildpath / "bin" / "php#{PHP_BRANCH_NUM}"
   end
 
   def binary_wrapper
+    <<~EOS
+      #!/usr/bin/env bash
+      set -e
+      # set -x
+      find-up () {
+        path=${2-$PWD}
+        while [[ "$path" != "" && ! -e "$path/$1" ]]; do
+          path=${path%/*}
+        done
+        echo "$path"
+      }
+
+      PHP_RC_PATH=$(find-up .phprc $(pwd))
+
+      if [[ ! -z $PHP_RC_PATH ]]; then
+        PHP_RC_PATH="${PHP_RC_PATH}/.phprc"
+      else
+        PHP_RC_PATH=$(find-up .php-version $(pwd))
+        if [[ ! -z $PHP_RC_PATH ]]; then
+          PHP_RC_PATH="${PHP_RC_PATH}/.php-version"
+        fi
+      fi
+
+      if [[ ! -z $PHP_RC_PATH ]]; then
+        PHP_VERSION=$(cat $PHP_RC_PATH | head -1 | grep -o '\\d.\\d') || {
+          >&2  echo "Incorrect PHP version in the file: ${PHP_RC_PATH}"
+          exit 1
+        }
+      else
+        PHP_VERSION=$($(brew list 2>/dev/null | grep -o 'php[0-9]\\{2\\}$' | sort | tail -1) --version 2>/dev/null | grep -o '^PHP \\d.\\d.\\d' | grep -o '\\d.\\d' 2>/dev/null)
+      fi
+
+      if [[ -z $PHP_VERSION ]]; then
+        >&2 echo "Can't determine a php version!"
+        exit 1
+      fi
+
+      PHP_EXECUTABLE=php$(echo $PHP_VERSION | awk -F. '{ print $1$2 }')
+
+      if [[ -z $PHP_EXECUTABLE ]] || ! which "$PHP_EXECUTABLE" > /dev/null 2>1; then
+        >&2 echo "Cant find a php executable for the version: $PHP_VERSION"
+        >&2 echo "You can try to install it by following command: brew install ${PHP_EXECUTABLE}-common"
+        exit 1
+      fi
+      
+      exec ${PHP_EXECUTABLE} "$@"
+    EOS
+  rescue StandardError
+      nil
+  end
+
+  def binary_versioned_wrapper
     <<~EOS
       #!/usr/bin/env bash
       export PATH="#{HOMEBREW_PREFIX}/opt/php#{PHP_BRANCH_NUM}/bin:$PATH"
@@ -161,25 +212,28 @@ class AbstractPhpCommon < Formula
         nil
     end
 
+    binary_dir.mkpath
+
     # prefix.install "installed.txt"
-    binary_wrapper_path.write(binary_wrapper)
-    binary_wrapper_path.chmod(0755)
+    binary_path.write(binary_wrapper)
+    binary_path.chmod(0755)
+    bin.install "bin/php"
+
+    binary_versioned_path.write(binary_versioned_wrapper)
+    binary_versioned_path.chmod(0755)
     bin.install "bin/php#{PHP_BRANCH_NUM}"
+    
     log_dir.mkpath
-    if build.with? "supervisor"
-      if config_file
-        supervisor_config_dir.mkpath
-        File.delete supervisor_config_path if File.exist?(supervisor_config_path)
-        supervisor_config_path.write(config_file)
-      end
+    if supervisor_config
+      supervisor_config_dir.mkpath
+      File.delete supervisor_config_path if File.exist?(supervisor_config_path)
+      supervisor_config_path.write(supervisor_config)
     end
 
-    if build.with? "nginx"
-      if nginx_snippet_file
-          nginx_config_dir.mkpath
-          File.delete nginx_config_path if File.exist?(nginx_config_path)
-          nginx_config_path.write(nginx_snippet_file)
-      end
+    if nginx_config
+        nginx_config_dir.mkpath
+        File.delete nginx_config_path if File.exist?(nginx_config_path)
+        nginx_config_path.write(nginx_config)
     end
   end
 end
