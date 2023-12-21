@@ -10,7 +10,7 @@ brew tap digitalspacestdio/common
 brew tap digitalspacestdio/php
 cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
 git stash
-git pull origin/master
+git pull
 
 PHP_FORMULA=$1
 echo "Ceating bottles for $PHP_FORMULA ..."

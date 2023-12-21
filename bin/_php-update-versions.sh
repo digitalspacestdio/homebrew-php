@@ -5,7 +5,7 @@ brew tap digitalspacestdio/common
 brew tap digitalspacestdio/php
 cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
 git stash
-git pull origin/master
+git pull
 DIR=$(pwd -P)
 
 for VERSION in "5.6" "7.0" "7.1" "7.2" "7.3" "7.4" "8.0" "8.1" "8.2"
