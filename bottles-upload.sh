@@ -12,6 +12,7 @@ git fetch --all
 git reset --hard origin/master
 
 PHP_FORMULA=$1
+s3cmd info "s3://homebrew-bottles"
 cd /tmp/$PHP_FORMULA.bottle
 ls | grep $PHP_FORMULA'.*--.*.gz$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
 ls | grep $PHP_FORMULA'.*--.*.json$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
@@ -44,6 +45,7 @@ for jsonfile in ./*.json; do
         }
     fi
 done
+cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
 git pull --rebase
 git push
 cd -
