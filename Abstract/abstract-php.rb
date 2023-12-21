@@ -258,7 +258,6 @@ INFO
       "--enable-opcache-file",
       "--enable-exif",
       "--enable-ftp",
-      "--enable-gd-native-ttf",
       "--enable-mbregex",
       "--enable-mbstring",
       "--enable-shmop",
@@ -271,7 +270,6 @@ INFO
       "--with-gettext=#{Formula["gettext"].opt_prefix}",
       "--with-mhash",
       "--with-zlib=#{Formula["zlib"].opt_prefix}",
-      "--with-png-dir=#{Formula["libpng"].opt_prefix}",
       "--with-xmlrpc",
       "--with-readline=#{Formula["readline"].opt_prefix}",
       "--without-gmp",
@@ -282,6 +280,10 @@ INFO
       args << "--without-pcre-jit"
       args << "--with-kerberos=/usr"
       args << "--with-iconv=#{Formula["libiconv"].opt_prefix}"
+    end
+
+    if php_version.start_with?("5.6", "7.0", "7.1")
+      args << "--enable-gd-native-ttf"
     end
 
     if php_version.start_with?("7.0", "7.1", "7.2")
@@ -297,14 +299,17 @@ INFO
       args << "--with-freetype-dir=#{Formula["freetype"].opt_prefix}"
       args << "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}"
       args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@72.1"].opt_prefix}"
+      args << "--with-png-dir=#{Formula["libpng"].opt_prefix}"
     end
 
     if php_version.start_with?("7.4", "8.")
       args << "--enable-gd"
       args << "--with-freetype=#{Formula["freetype"].opt_prefix}"
       args << "--with-jpeg=#{Formula["jpeg"].opt_prefix}"
-      args << "--with-webp=#{Formula['webp'].opt_prefix}"
+      args << "--with-webp"
       args << "--with-external-pcre" if !OS.mac? 
+
+      ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["webp"].opt_lib}/pkgconfig"
     end
 
     if build.with?("homebrew-libxml2") || OS.mac? && (MacOS.version < :lion || MacOS.version >= :el_capitan)
@@ -440,10 +445,6 @@ INFO
 
       args << "--enable-zend-signals"
     end
-
-    # if build.with? "webp"
-    #   args << "--with-webp-dir=#{Formula['webp'].opt_prefix}"
-    # end
 
     if build.with? "libvpx"
       args << "--with-vpx-dir=#{Formula['libvpx'].opt_prefix}"
