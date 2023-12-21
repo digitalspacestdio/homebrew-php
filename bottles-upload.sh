@@ -4,7 +4,7 @@ set -e
 if [[ -z $1 ]]; then
     exit 1;
 fi
-
+export HOMEBREW_NO_AUTO_UPDATE=1
 brew tap digitalspacestdio/common
 brew tap digitalspacestdio/php
 cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
