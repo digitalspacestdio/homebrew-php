@@ -4,10 +4,10 @@ class Php83Mongodb < AbstractPhp83Extension
   init
   desc "MongoDB driver for PHP."
   homepage "https://github.com/mongodb/mongo-php-driver"
-  url "https://github.com/mongodb/mongo-php-driver/releases/download/1.17.1/mongodb-1.17.1.tgz"
-  sha256 "34b7d0528b5c3f2b9b7f677294ad7aa7822bb704ba6583bae99f2bbf79a29be1"
+  url "https://github.com/mongodb/mongo-php-driver/releases/download/1.16.2/mongodb-1.16.2.tgz"
+  sha256 "d630cf32a73b6e5e05d2806782d35e06d24b7d5c83cfec08239549e6b6a600b2"
   head "https://github.com/mongodb/mongo-php-driver.git"
-  version "1.17.2"
+  version "1.16.2"
   revision 1
 
   bottle do
