@@ -307,6 +307,7 @@ INFO
     end
 
     if php_version.start_with?("7.", "8.")
+      args << "--with-webp"
       args << "--with-webp-dir=#{Formula['webp'].opt_prefix}"
     end
 
