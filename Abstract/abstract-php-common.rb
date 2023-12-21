@@ -13,8 +13,8 @@ class AbstractPhpCommon < Formula
   option "with-supervisor", "Build with supervisor support"
   option "with-nginx", "Build with nginx support"
   
-  depends_on "digitalspacestdio/common/digitalvisor" if build.with?("supervisor")
-  depends_on "digitalspacestdio/common/nginx8181" if build.with?("nginx")
+  depends_on "digitalspacestdio/common/digitalvisor" if build.with?("http-stack")
+  depends_on "digitalspacestdio/common/http-stack" if build.with?("http-stack")
 
   depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}"
   depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-apcu"

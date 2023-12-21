@@ -9,8 +9,8 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 brew tap digitalspacestdio/common
 brew tap digitalspacestdio/php
 cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
-git fetch --all
-git reset --hard origin/master
+git stash
+git pull origin/master
 
 PHP_FORMULA=$1
 echo "Ceating bottles for $PHP_FORMULA ..."
