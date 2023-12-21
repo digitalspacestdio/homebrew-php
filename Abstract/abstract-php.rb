@@ -295,15 +295,15 @@ INFO
     if !php_version.start_with?("7.4", "8.")
       args << "--with-gd"
       args << "--with-freetype-dir=#{Formula["freetype"].opt_prefix}"
-      args << "--with-jpeg=#{Formula["jpeg"].opt_prefix}"
-      args << "--with-webp=#{Formula['webp'].opt_prefix}"
+      args << "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}"
       args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@72.1"].opt_prefix}"
     end
 
     if php_version.start_with?("7.4", "8.")
       args << "--enable-gd"
-      args << "--with-freetype-dir=#{Formula["freetype"].opt_prefix}"
+      args << "--with-freetype=#{Formula["freetype"].opt_prefix}"
       args << "--with-jpeg=#{Formula["jpeg"].opt_prefix}"
+      args << "--with-webp=#{Formula['webp'].opt_prefix}"
       args << "--with-external-pcre" if !OS.mac? 
     end
 
