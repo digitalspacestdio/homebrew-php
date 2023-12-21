@@ -10,7 +10,7 @@ class Php56Tidy < AbstractPhp56Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f3eacc74c10c603ccb4cb85b4e6f83cf6919ce2f8a0e6448bb02295390b1cc60"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "341979626d7c0bdb6c90738093b3fa772dbb8fbf71a257cd19148efa28471507"
     sha256 cellar: :any_skip_relocation, ventura:       "57c3378baccb3af1dd013d8b0edc11879cf2c1c067a7339f3d717c8ba10d9673"
   end
 
