@@ -51,4 +51,14 @@ class Php83 < AbstractPhp
         sha256 "53de4079666daabac28358b8a025e3c60103e5b1230c66860c8e0b7414c0fec1"
       end
   end
+
+  service do
+    name macos: "php#{PHP_VERSION_MAJOR}-fpm", linux: "php#{PHP_VERSION_MAJOR}-fpm"
+    run [opt_sbin/"php-fpm", "--nodaemonize", "--fpm-config", "#{etc}/php/#{PHP_VERSION_MAJOR}/php-fpm.conf"]
+    working_dir HOMEBREW_PREFIX
+    keep_alive true
+    require_root false
+    log_path var/"log/php-#{PHP_VERSION_MAJOR}/service.log"
+    error_log_path var/"log/php-#{PHP_VERSION_MAJOR}/service-error.log"
+  end
 end

@@ -394,4 +394,13 @@ class Php56 < AbstractPhp
     super
   end
 
+  service do
+    name macos: "php#{PHP_VERSION_MAJOR}-fpm", linux: "php#{PHP_VERSION_MAJOR}-fpm"
+    run [opt_sbin/"php-fpm", "--nodaemonize", "--fpm-config", "#{etc}/php/#{PHP_VERSION_MAJOR}/php-fpm.conf"]
+    working_dir HOMEBREW_PREFIX
+    keep_alive true
+    require_root false
+    log_path var/"log/php-#{PHP_VERSION_MAJOR}/service.log"
+    error_log_path var/"log/php-#{PHP_VERSION_MAJOR}/service-error.log"
+  end
 end

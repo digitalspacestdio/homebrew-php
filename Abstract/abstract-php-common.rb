@@ -33,6 +33,10 @@ class AbstractPhpCommon < Formula
     end
   end
 
+  def formula_php
+    "php#{PHP_BRANCH_NUM}"
+  end
+
   def config_path_php
       etc / "php" / "#{PHP_VERSION_MAJOR}" / "php.ini"
   end
@@ -206,7 +210,7 @@ class AbstractPhpCommon < Formula
         inreplace config_path_php_fpm_www do |s|
             s.sub!(/^.*?user\s*=.+$/, "; user = #{user}")
             s.sub!(/^.*?group\s*=.+$/, "; group = #{user_group}")
-            s.sub!(/^.*?listen\s*=.+$/, "listen = #{var}/run/php#{PHP_BRANCH_NUM}-fpm.sock ")
+            s.sub!(/^.*?listen\s*=.+$/, "listen = #{var}/run/php#{PHP_VERSION_MAJOR}-fpm.sock ")
         end
     rescue StandardError
         nil

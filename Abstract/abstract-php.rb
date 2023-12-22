@@ -205,6 +205,14 @@ INFO
       mv("#{user_pearrc}-backup", user_pearrc) if File.exist? "#{user_pearrc}-backup"
       raise
     end
+
+    begin
+      inreplace config_path_php_fpm_www do |s|
+        s.sub!(/^.*?listen\s*=.+$/, "listen = #{var}/run/php#{php_version}-fpm.sock ")
+      end
+    rescue StandardError
+      nil
+    end
   end
 
   def apache_apxs
@@ -524,20 +532,23 @@ INFO
 
         inreplace config_path+"php-fpm.conf" do |s|
           s.sub!(/^;?daemonize\s*=.+$/, "daemonize = no")
-          s.sub!(/^;include\s*=.+$/, ";include=#{config_path}/fpm.d/*.conf") if php_version.start_with?("5")
-          s.sub!(/^;?listen\.mode\s*=.+$/, "listen.mode = 0666") if php_version.start_with?("5")
-          s.sub!(/^;?pm\.max_children\s*=.+$/, "pm.max_children = 10") if php_version.start_with?("5")
-          s.sub!(/^;?pm\.start_servers\s*=.+$/, "pm.start_servers = 3") if php_version.start_with?("5")
-          s.sub!(/^;?pm\.min_spare_servers\s*=.+$/, "pm.min_spare_servers = 2") if php_version.start_with?("5")
-          s.sub!(/^;?pm\.max_spare_servers\s*=.+$/, "pm.max_spare_servers = 5") if php_version.start_with?("5")
+          #s.sub!(/^;include\s*=.+$/, ";include=#{config_path}/fpm.d/*.conf")
+          #s.sub!(/^;?listen\.mode\s*=.+$/, "listen.mode = 0666")
+          #s.sub!(/^;?pm\.max_children\s*=.+$/, "pm.max_children = 10")
+          #s.sub!(/^;?pm\.start_servers\s*=.+$/, "pm.start_servers = 3")
+          #s.sub!(/^;?pm\.min_spare_servers\s*=.+$/, "pm.min_spare_servers = 2")
+          #s.sub!(/^;?pm\.max_spare_servers\s*=.+$/, "pm.max_spare_servers = 5")
         end
       end
     end
   end
 
-  service do
-    run ["#{sbin}/php-fpm", "--nodaemonize", "--fpm-config", "#{config_path}/php-fpm.conf"]
-    keep_alive true
+  def post_install
+    unless File.exist?("#{etc}/php/#{php_version}/php-fpm.d/www.conf")
+      inreplace "#{etc}/php/#{php_version}/php-fpm.d/www.conf" do |s|
+        s.sub!(/^.*?listen\s*=.+/, "listen = #{var}/run/php#{php_version}-fpm.sock")
+      end
+    end
   end
 
   test do
