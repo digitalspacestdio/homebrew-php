@@ -29,6 +29,8 @@ class AbstractPhp < Formula
       conflicts_with php_formula_name, :because => "different php versions install the same binaries."
     end
 
+    depends_on "php-cli-wrapper"
+
     depends_on "sqlite"
     depends_on "digitalspacestdio/php/phpcurl"
     depends_on "libxslt"
@@ -543,12 +545,41 @@ INFO
     end
   end
 
+  def supervisor_config_dir
+    etc / "digitalspace-supervisor.d"
+  end
+
+  def supervisor_config_path
+      supervisor_config_dir / "php#{php_version_path}-fpm.ini"
+  end
+
+  def supervisor_config
+      <<~EOS
+        [program:php#{php_version_path}]
+        command=#{HOMEBREW_PREFIX}/opt/php#{php_version_path}/sbin/php-fpm --nodaemonize --fpm-config #{HOMEBREW_PREFIX}/etc/php/#{php_version}/php-fpm.conf
+        directory=#{HOMEBREW_PREFIX}/opt/php#{php_version_path}
+        stdout_logfile=#{HOMEBREW_PREFIX}/var/log/digitalspace-supervisor-php#{php_version_path}.log
+        stdout_logfile_maxbytes=1MB
+        stderr_logfile=#{HOMEBREW_PREFIX}/var/log/digitalspace-supervisor-php#{php_version_path}.err
+        stderr_logfile_maxbytes=1MB
+        user=#{ENV['USER']}
+        autorestart=true
+        stopasgroup=true
+        EOS
+  rescue StandardError
+      nil
+  end
+
   def post_install
     unless File.exist?("#{etc}/php/#{php_version}/php-fpm.d/www.conf")
       inreplace "#{etc}/php/#{php_version}/php-fpm.d/www.conf" do |s|
         s.sub!(/^.*?listen\s*=.+/, "listen = #{var}/run/php#{php_version}-fpm.sock")
       end
     end
+
+    supervisor_config_dir.mkpath
+    File.delete supervisor_config_path if File.exist?(supervisor_config_path)
+    supervisor_config_path.write(supervisor_config)
   end
 
   test do

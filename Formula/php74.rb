@@ -55,7 +55,7 @@ class Php74 < AbstractPhp
     working_dir HOMEBREW_PREFIX
     keep_alive true
     require_root false
-    log_path var/"log/php-#{PHP_VERSION_MAJOR}/service.log"
-    error_log_path var/"log/php-#{PHP_VERSION_MAJOR}/service-error.log"
+    log_path var/"log/service-php-#{PHP_VERSION_MAJOR}.log"
+    error_log_path var/"log/service-php-#{PHP_VERSION_MAJOR}-error.log"
   end
 end

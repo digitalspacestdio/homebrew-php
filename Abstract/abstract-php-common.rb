@@ -53,22 +53,6 @@ class AbstractPhpCommon < Formula
       var / "log"
   end
 
-  def supervisor_config_dir
-      etc / "digitalspace" / "supervisor.d"
-  end
-
-  def supervisor_config_path
-      supervisor_config_dir / "php#{PHP_BRANCH_NUM}-fpm.ini"
-  end
-
-  def nginx_config_dir
-      etc / "digitalspace" / "nginx" / "php.d"
-  end
-
-  def nginx_config_path
-      nginx_config_dir / "php#{PHP_BRANCH_NUM}.conf"
-  end
-
   def user
     ENV['USER']
   end
@@ -77,95 +61,12 @@ class AbstractPhpCommon < Formula
     system "id -Gn #{user}"
   end
 
-  def nginx_config
-     <<~EOS
-        if (-f $document_root/.php#{PHP_BRANCH_NUM}) {
-          set $php_version #{PHP_VERSION_MAJOR};
-        }
-     EOS
-  rescue StandardError
-      nil
-  end
-
-  def supervisor_config
-      <<~EOS
-        [program:php#{PHP_BRANCH_NUM}]
-        command=#{HOMEBREW_PREFIX}/opt/php#{PHP_BRANCH_NUM}/sbin/php-fpm --nodaemonize --fpm-config #{HOMEBREW_PREFIX}/etc/php/#{PHP_VERSION_MAJOR}/php-fpm.conf
-        directory=#{HOMEBREW_PREFIX}/opt/php#{PHP_BRANCH_NUM}
-        stdout_logfile=#{HOMEBREW_PREFIX}/var/log/php#{PHP_BRANCH_NUM}-supervisor.log
-        stdout_logfile_maxbytes=1MB
-        stderr_logfile=#{HOMEBREW_PREFIX}/var/log/php#{PHP_BRANCH_NUM}-supervisor.err
-        stderr_logfile_maxbytes=1MB
-        user=#{user}
-        autorestart=true
-        stopasgroup=true
-        EOS
-  rescue StandardError
-      nil
-  end
-
   def binary_dir
     buildpath / "bin"
   end
 
-  def binary_path
-    buildpath / "bin" / "php"
-  end
-
   def binary_versioned_path
     buildpath / "bin" / "php#{PHP_BRANCH_NUM}"
-  end
-
-  def binary_wrapper
-    <<~EOS
-      #!/usr/bin/env bash
-      set -e
-      # set -x
-      find-up () {
-        path=${2-$PWD}
-        while [[ "$path" != "" && ! -e "$path/$1" ]]; do
-          path=${path%/*}
-        done
-        echo "$path"
-      }
-
-      PHP_RC_PATH=$(find-up .phprc $(pwd))
-
-      if [[ ! -z $PHP_RC_PATH ]]; then
-        PHP_RC_PATH="${PHP_RC_PATH}/.phprc"
-      else
-        PHP_RC_PATH=$(find-up .php-version $(pwd))
-        if [[ ! -z $PHP_RC_PATH ]]; then
-          PHP_RC_PATH="${PHP_RC_PATH}/.php-version"
-        fi
-      fi
-
-      if [[ ! -z $PHP_RC_PATH ]]; then
-        PHP_VERSION=$(cat $PHP_RC_PATH | head -1 | grep -o '\\d.\\d') || {
-          >&2  echo "Incorrect PHP version in the file: ${PHP_RC_PATH}"
-          exit 1
-        }
-      else
-        PHP_VERSION=$($(brew list 2>/dev/null | grep -o 'php[0-9]\\{2\\}$' | sort | tail -1) --version 2>/dev/null | grep -o '^PHP \\d.\\d.\\d' | grep -o '\\d.\\d' 2>/dev/null)
-      fi
-
-      if [[ -z $PHP_VERSION ]]; then
-        >&2 echo "Can't determine a php version!"
-        exit 1
-      fi
-
-      PHP_EXECUTABLE=php$(echo $PHP_VERSION | awk -F. '{ print $1$2 }')
-
-      if [[ -z $PHP_EXECUTABLE ]] || ! which "$PHP_EXECUTABLE" > /dev/null 2>1; then
-        >&2 echo "Cant find a php executable for the version: $PHP_VERSION"
-        >&2 echo "You can try to install it by following command: brew install ${PHP_EXECUTABLE}-common"
-        exit 1
-      fi
-      
-      exec ${PHP_EXECUTABLE} "$@"
-    EOS
-  rescue StandardError
-      nil
   end
 
   def binary_versioned_wrapper
@@ -216,28 +117,12 @@ class AbstractPhpCommon < Formula
         nil
     end
 
-    binary_dir.mkpath
-
     # prefix.install "installed.txt"
-    binary_path.write(binary_wrapper)
-    binary_path.chmod(0755)
-    bin.install "bin/php"
 
     binary_versioned_path.write(binary_versioned_wrapper)
     binary_versioned_path.chmod(0755)
     bin.install "bin/php#{PHP_BRANCH_NUM}"
     
     log_dir.mkpath
-    if supervisor_config
-      supervisor_config_dir.mkpath
-      File.delete supervisor_config_path if File.exist?(supervisor_config_path)
-      supervisor_config_path.write(supervisor_config)
-    end
-
-    if nginx_config
-        nginx_config_dir.mkpath
-        File.delete nginx_config_path if File.exist?(nginx_config_path)
-        nginx_config_path.write(nginx_config)
-    end
   end
 end
