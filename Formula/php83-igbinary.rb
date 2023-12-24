@@ -12,7 +12,7 @@ class Php83Igbinary < AbstractPhp83Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bb5e5e89e2c9794bb216161d13c55f03d45676e21f33740153e1e1a9e60aaf4c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7cca3bb03eaeba469d4f74211b7027c51a4f643532ea4f24eeb356d885450378"
     sha256 cellar: :any_skip_relocation, ventura:       "12a559cfbf887085ca3852d451b57f27731360ff29ecea68b416c910b931e911"
   end
 
