@@ -81,6 +81,16 @@ class AbstractPhpCommon < Formula
   end
 
   def install
+    # prefix.install "installed.txt"
+
+    binary_versioned_path.write(binary_versioned_wrapper)
+    binary_versioned_path.chmod(0755)
+    bin.install "bin/php#{PHP_BRANCH_NUM}"
+    
+    log_dir.mkpath
+  end
+
+  def post_install
     begin
         inreplace config_path_php do |s|
           s.sub!(/^.*?short_open_tag\s*=.*$/, "short_open_tag = off")
@@ -116,13 +126,5 @@ class AbstractPhpCommon < Formula
     rescue StandardError
         nil
     end
-
-    # prefix.install "installed.txt"
-
-    binary_versioned_path.write(binary_versioned_wrapper)
-    binary_versioned_path.chmod(0755)
-    bin.install "bin/php#{PHP_BRANCH_NUM}"
-    
-    log_dir.mkpath
   end
 end

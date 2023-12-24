@@ -29,7 +29,7 @@ class AbstractPhp < Formula
       conflicts_with php_formula_name, :because => "different php versions install the same binaries."
     end
 
-    depends_on "php-cli-wrapper"
+    depends_on "digitalspacestdio/php/php-cli-wrapper"
 
     depends_on "sqlite"
     depends_on "digitalspacestdio/php/phpcurl"
@@ -206,14 +206,6 @@ INFO
       mv("#{config_pearrc}-backup", config_pearrc) if File.exist? "#{config_pearrc}-backup"
       mv("#{user_pearrc}-backup", user_pearrc) if File.exist? "#{user_pearrc}-backup"
       raise
-    end
-
-    begin
-      inreplace config_path_php_fpm_www do |s|
-        s.sub!(/^.*?listen\s*=.+$/, "listen = #{var}/run/php#{php_version}-fpm.sock ")
-      end
-    rescue StandardError
-      nil
     end
   end
 
@@ -553,11 +545,25 @@ INFO
       supervisor_config_dir / "php#{php_version_path}-fpm.ini"
   end
 
+  def config_path_php
+      etc / "php" / "#{PHP_VERSION_MAJOR}" / "php.ini"
+  end
+
+  def config_path_php_fpm
+      etc / "php" / "#{PHP_VERSION_MAJOR}" / "php-fpm.conf"
+  end
+
+  def config_path_php_fpm_www
+      etc / "php" / "#{PHP_VERSION_MAJOR}" / "php-fpm.d" / "www.conf"
+  end
+
   def post_install
-    unless File.exist?("#{etc}/php/#{php_version}/php-fpm.d/www.conf")
-      inreplace "#{etc}/php/#{php_version}/php-fpm.d/www.conf" do |s|
-        s.sub!(/^.*?listen\s*=.+/, "listen = #{var}/run/php#{php_version}-fpm.sock")
+    begin
+      inreplace config_path_php_fpm_www do |s|
+        s.sub!(/^.*?listen\s*=.+$/, "listen = #{var}/run/php#{php_version}-fpm.sock ")
       end
+    rescue StandardError
+      nil
     end
 
     supervisor_config =<<~EOS
