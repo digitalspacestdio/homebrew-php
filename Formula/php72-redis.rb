@@ -11,7 +11,7 @@ class Php72Redis < AbstractPhp72Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e1b5382e0a42f2c14a57602cab88cd7095cf2ef7a98b2bf56cbc656d76c6d630"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7cf63c7d5f4bd1803fb8b818c10506d813aad991dd12aee4d4c3042558729198"
     sha256 cellar: :any_skip_relocation, ventura:       "03be31fb76fc0c689a18c74cdc87f58971b889470e2b1d4250d60e2969c6c742"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2e1791a8ecbbe471042515db37e30cc2f271d0758eb783a2fc891643fd6e658"
   end
