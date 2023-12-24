@@ -11,7 +11,7 @@ class Php72Apcu < AbstractPhp72Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b9c9295b96d763a52b7236f12921d5b68400db376eb280e01e2e23da8ddd8771"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9beae6630318ca2d7da59c0cec870321583410801f79a0a1efba42eda948edc7"
     sha256 cellar: :any_skip_relocation, ventura:       "d77ec24aa15e5c94cf4ad8fcaec190a03d4b16c742afcf1132917b56a9c07edb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac20919c55f37e01de76717f3abe40efbeb94297b562af278d2baca9ad380f9d"
   end
