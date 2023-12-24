@@ -9,7 +9,7 @@ class Php81 < AbstractPhp
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5bc498e8812d4a9a3c15508b166a2eed8b51f54cefa60cdc30504938db491783"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "13a2696ba0f57a8211a654878d855f67afb29ff63a69b66638c4bc77d0a2a740"
   end
   keg_only :versioned_formula
   depends_on "pkg-config" => :build
