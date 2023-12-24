@@ -10,6 +10,11 @@ class Php71Xdebug < AbstractPhp71Extension
   version "2.7.2"
   revision 1
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ecc2eb84e303d7900357a589e13318bec2e2c5b22efdca0df05bf11adb645d60"
+  end
+
 
   def extension_type
     "zend_extension"
