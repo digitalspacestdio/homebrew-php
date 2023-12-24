@@ -12,7 +12,7 @@ class Php80Gmp < AbstractPhp80Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fea9de20a32fa4558b075a23730fa7d4926fba77f2bc6658a81b8c4220c488d0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ce3cf256d048da83f4674b92d541374ae894a4fece681930033808c39746aef3"
     sha256 cellar: :any_skip_relocation, ventura:       "60399b9afaad0f00a035a4a8b818d37663692b83c772ad54a32502e5642860dc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "23e4a2337b4324edcd330ca186040aab866ee7184db0cd7ee1251dffb7277321"
   end
