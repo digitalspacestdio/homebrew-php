@@ -5,6 +5,7 @@ class HomebrewPhpTools < Formula
   version "0.1.0"
 
   depends_on "s3cmd"
+  depends_on "jq"
 
   def install
     libexec.install Dir["bin"]
