@@ -22,21 +22,21 @@ class AbstractPhpCommon < Formula
     version php_version_full
     revision 24
 
-    depends_on "digitalspacestdio/php/php#{@php_version}"
-    depends_on "digitalspacestdio/php/php#{@php_version}-apcu"
-    depends_on "digitalspacestdio/php/php#{@php_version}-gmp"
-    depends_on "digitalspacestdio/php/php#{@php_version}-igbinary"
-    depends_on "digitalspacestdio/php/php#{@php_version}-intl"
-    depends_on "digitalspacestdio/php/php#{@php_version}-mongodb"
-    depends_on "digitalspacestdio/php/php#{@php_version}-opcache"
-    depends_on "digitalspacestdio/php/php#{@php_version}-pdo-pgsql"
-    depends_on "digitalspacestdio/php/php#{@php_version}-sodium"
-    depends_on "digitalspacestdio/php/php#{@php_version}-redis"
-    depends_on "digitalspacestdio/php/php#{@php_version}-tidy"
-    depends_on "digitalspacestdio/php/php#{@php_version}-zip"
-    depends_on "digitalspacestdio/php/php#{@php_version}-ldap"
-    depends_on "digitalspacestdio/php/php#{@php_version}-xdebug"
-    # depends_on "digitalspacestdio/php/php#{@php_version}-ioncubeloader"
+    depends_on "digitalspacestdio/php/php#{@php_version_path}"
+    depends_on "digitalspacestdio/php/php#{@php_version_path}-apcu"
+    depends_on "digitalspacestdio/php/php#{@php_version_path}-gmp"
+    depends_on "digitalspacestdio/php/php#{@php_version_path}-igbinary"
+    depends_on "digitalspacestdio/php/php#{@php_version_path}-intl"
+    depends_on "digitalspacestdio/php/php#{@php_version_path}-mongodb"
+    depends_on "digitalspacestdio/php/php#{@php_version_path}-opcache"
+    depends_on "digitalspacestdio/php/php#{@php_version_path}-pdo-pgsql"
+    depends_on "digitalspacestdio/php/php#{@php_version_path}-sodium"
+    depends_on "digitalspacestdio/php/php#{@php_version_path}-redis"
+    depends_on "digitalspacestdio/php/php#{@php_version_path}-tidy"
+    depends_on "digitalspacestdio/php/php#{@php_version_path}-zip"
+    depends_on "digitalspacestdio/php/php#{@php_version_path}-ldap"
+    depends_on "digitalspacestdio/php/php#{@php_version_path}-xdebug"
+    # depends_on "digitalspacestdio/php/php#{@php_version_path}-ioncubeloader"
 
     # keg_only "this package contains dependency only"
   end
@@ -80,13 +80,13 @@ class AbstractPhpCommon < Formula
   end
 
   def binary_versioned_path
-    buildpath / "bin" / "php#{@php_version}"
+    buildpath / "bin" / "php#{@php_version_path}"
   end
 
   def binary_versioned_wrapper
     <<~EOS
       #!/usr/bin/env bash
-      export PATH="#{HOMEBREW_PREFIX}/opt/php#{@php_version}/bin:$PATH"
+      export PATH="#{HOMEBREW_PREFIX}/opt/php#{@php_version_path}/bin:$PATH"
       
       exec php "$@"
     EOS
@@ -99,7 +99,7 @@ class AbstractPhpCommon < Formula
 
     binary_versioned_path.write(binary_versioned_wrapper)
     binary_versioned_path.chmod(0755)
-    bin.install "bin/php#{@php_version}"
+    bin.install "bin/php#{@php_version_path}"
     
     log_dir.mkpath
   end
