@@ -12,7 +12,7 @@ class Php81Ldap < AbstractPhp81Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4feb595bbc3021173605b37a43bc8dd4141a533cc0ea1e6aef9a3e3b7577952e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8827f51886a5a85a81e4bf0b7ba509aaecab63be30ded9ff5139a473cf647012"
   end
 
   depends_on "openldap"
