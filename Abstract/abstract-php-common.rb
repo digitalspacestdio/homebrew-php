@@ -44,10 +44,10 @@ class AbstractPhpCommon < Formula
   def fetch
     if OS.mac?
       system "#{HOMEBREW_PREFIX}/bin/brew list --formula | grep 'php[5-8][0-9]$' | xargs -I{} printf '{} ' | xargs #{HOMEBREW_PREFIX}/bin/brew unlink 1>&2"
-      system "#{HOMEBREW_PREFIX}/bin/brew list --formula | grep 'php[5-8][0-9]-common$' | xargs -I{} printf '{} ' | xargs #{HOMEBREW_PREFIX}/bin/brew unlink 1>&2"
+      #system "#{HOMEBREW_PREFIX}/bin/brew list --formula | grep 'php[5-8][0-9]-common$' | xargs -I{} printf '{} ' | xargs #{HOMEBREW_PREFIX}/bin/brew unlink 1>&2"
     elsif OS.linux?
       system "#{HOMEBREW_PREFIX}/bin/brew list --formula | grep 'php[5-8][0-9]$' | xargs -I{} printf '{} ' | xargs --no-run-if-empty #{HOMEBREW_PREFIX}/bin/brew unlink 1>&2"
-      system "#{HOMEBREW_PREFIX}/bin/brew list --formula | grep 'php[5-8][0-9]-common$' | xargs -I{} printf '{} ' | xargs --no-run-if-empty #{HOMEBREW_PREFIX}/bin/brew unlink 1>&2"
+      #system "#{HOMEBREW_PREFIX}/bin/brew list --formula | grep 'php[5-8][0-9]-common$' | xargs -I{} printf '{} ' | xargs --no-run-if-empty #{HOMEBREW_PREFIX}/bin/brew unlink 1>&2"
     end
   end
 

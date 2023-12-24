@@ -115,7 +115,7 @@ class Php56 < AbstractPhp
   include AbstractPhpVersion::Php56Defs
   desc "PHP Version #{PHP_VERSION_MAJOR}"
   version PHP_VERSION
-  revision 16
+  revision PHP_REVISION
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 

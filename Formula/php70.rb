@@ -5,7 +5,7 @@ class Php70 < AbstractPhp
   desc "PHP Version 7.0"
   include AbstractPhpVersion::Php70Defs
   version PHP_VERSION
-  revision 23
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
@@ -22,11 +22,11 @@ class Php70 < AbstractPhp
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
 
   def php_version
-    "7.0"
+    "#{PHP_VERSION_MAJOR}"
   end
 
   def php_version_path
-    "70"
+    "#{PHP_BRANCH_NUM}"
   end
 
   service do

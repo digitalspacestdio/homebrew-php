@@ -22,11 +22,11 @@ class Php71 < AbstractPhp
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
 
   def php_version
-    "7.1"
+    "#{PHP_VERSION_MAJOR}"
   end
 
   def php_version_path
-    "71"
+    "#{PHP_BRANCH_NUM}"
   end
 
   def config_path

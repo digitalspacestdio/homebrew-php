@@ -5,7 +5,7 @@ class Php83 < AbstractPhp
   desc "PHP Version 8.3"
   include AbstractPhpVersion::Php83Defs
   version PHP_VERSION
-  revision 1
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"

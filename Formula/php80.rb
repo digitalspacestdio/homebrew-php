@@ -5,7 +5,7 @@ class Php80 < AbstractPhp
   desc "PHP Version 8"
   include AbstractPhpVersion::Php80Defs
   version PHP_VERSION
-  revision 2
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
@@ -27,11 +27,11 @@ class Php80 < AbstractPhp
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
 
   def php_version
-    "8.0"
+    "#{PHP_VERSION_MAJOR}"
   end
 
   def php_version_path
-    "80"
+    "#{PHP_BRANCH_NUM}"
   end
 
   def install_args

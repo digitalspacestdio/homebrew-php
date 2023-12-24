@@ -5,7 +5,7 @@ class Php82 < AbstractPhp
   desc "PHP Version 8.2"
   include AbstractPhpVersion::Php82Defs
   version PHP_VERSION
-  revision 1
+  revision PHP_REVISION
   keg_only :versioned_formula
   depends_on "pkg-config" => :build
   depends_on "krb5"

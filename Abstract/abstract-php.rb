@@ -126,8 +126,16 @@ class AbstractPhp < Formula
     "openssl@1.1"
   end
 
+  def php_version
+    raise "Unspecified php version"
+  end
+
+  def php_version_path
+    raise "Unspecified php version path"
+  end
+
   def config_path
-    etc+"php"+php_version
+    etc / "php" / php_version
   end
 
   def home_path
@@ -136,14 +144,6 @@ class AbstractPhp < Formula
 
   def build_fpm?
     true unless build.without?("fpm") || build.with?("cgi")
-  end
-
-  def php_version
-    raise "Unspecified php version"
-  end
-
-  def php_version_path
-    raise "Unspecified php version path"
   end
 
   def install
