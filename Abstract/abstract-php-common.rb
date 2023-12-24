@@ -2,26 +2,44 @@
 require "formula"
 require File.expand_path("../../Abstract/abstract-php-version", __FILE__)
 
-class AbstractPhpCommon < Formula
-  include AbstractPhpVersion::Php83Defs
-  desc "PHP Version #{PHP_VERSION} (Common Package)"
-  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}"
-  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-apcu"
-  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-gmp"
-  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-igbinary"
-  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-intl"
-  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-mongodb"
-  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-opcache"
-  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-pdo-pgsql"
-  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-sodium"
-  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-redis"
-  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-tidy"
-  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-zip"
-  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-ldap"
-  depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-xdebug"
-  # depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-ioncubeloader"
+class AbstractPhpCommon < Formula  
+  # def @php_version
+  #   raise "Unspecified php version"
+  # end
 
-  # keg_only "this package contains dependency only"
+  # def @php_version_path
+  #   raise "Unspecified php version path"
+  # end
+
+  def self.init (php_version, php_version_full, php_version_path)
+    @php_version = php_version
+    @php_version_full = php_version_full
+    @php_version_path = php_version_path
+
+    desc "PHP Version #{@php_version_full} (Common Package)"
+    url "file:///dev/null"
+    sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    version php_version_full
+    revision 24
+
+    depends_on "digitalspacestdio/php/php#{@php_version}"
+    depends_on "digitalspacestdio/php/php#{@php_version}-apcu"
+    depends_on "digitalspacestdio/php/php#{@php_version}-gmp"
+    depends_on "digitalspacestdio/php/php#{@php_version}-igbinary"
+    depends_on "digitalspacestdio/php/php#{@php_version}-intl"
+    depends_on "digitalspacestdio/php/php#{@php_version}-mongodb"
+    depends_on "digitalspacestdio/php/php#{@php_version}-opcache"
+    depends_on "digitalspacestdio/php/php#{@php_version}-pdo-pgsql"
+    depends_on "digitalspacestdio/php/php#{@php_version}-sodium"
+    depends_on "digitalspacestdio/php/php#{@php_version}-redis"
+    depends_on "digitalspacestdio/php/php#{@php_version}-tidy"
+    depends_on "digitalspacestdio/php/php#{@php_version}-zip"
+    depends_on "digitalspacestdio/php/php#{@php_version}-ldap"
+    depends_on "digitalspacestdio/php/php#{@php_version}-xdebug"
+    # depends_on "digitalspacestdio/php/php#{@php_version}-ioncubeloader"
+
+    # keg_only "this package contains dependency only"
+  end
 
   def fetch
     if OS.mac?
@@ -33,20 +51,16 @@ class AbstractPhpCommon < Formula
     end
   end
 
-  def formula_php
-    "php#{PHP_BRANCH_NUM}"
-  end
-
   def config_path_php
-      etc / "php" / "#{PHP_VERSION_MAJOR}" / "php.ini"
+      etc / "php" / "#{@php_version}" / "php.ini"
   end
 
   def config_path_php_fpm
-      etc / "php" / "#{PHP_VERSION_MAJOR}" / "php-fpm.conf"
+      etc / "php" / "#{@php_version}" / "php-fpm.conf"
   end
 
   def config_path_php_fpm_www
-      etc / "php" / "#{PHP_VERSION_MAJOR}" / "php-fpm.d" / "www.conf"
+      etc / "php" / "#{@php_version}" / "php-fpm.d" / "www.conf"
   end
 
   def log_dir
@@ -66,13 +80,13 @@ class AbstractPhpCommon < Formula
   end
 
   def binary_versioned_path
-    buildpath / "bin" / "php#{PHP_BRANCH_NUM}"
+    buildpath / "bin" / "php#{@php_version}"
   end
 
   def binary_versioned_wrapper
     <<~EOS
       #!/usr/bin/env bash
-      export PATH="#{HOMEBREW_PREFIX}/opt/php#{PHP_BRANCH_NUM}/bin:$PATH"
+      export PATH="#{HOMEBREW_PREFIX}/opt/php#{@php_version}/bin:$PATH"
       
       exec php "$@"
     EOS
@@ -85,7 +99,7 @@ class AbstractPhpCommon < Formula
 
     binary_versioned_path.write(binary_versioned_wrapper)
     binary_versioned_path.chmod(0755)
-    bin.install "bin/php#{PHP_BRANCH_NUM}"
+    bin.install "bin/php#{@php_version}"
     
     log_dir.mkpath
   end
@@ -121,7 +135,7 @@ class AbstractPhpCommon < Formula
         inreplace config_path_php_fpm_www do |s|
             s.sub!(/^.*?user\s*=.+$/, "; user = #{user}")
             s.sub!(/^.*?group\s*=.+$/, "; group = #{user_group}")
-            s.sub!(/^.*?listen\s*=.+$/, "listen = #{var}/run/php#{PHP_VERSION_MAJOR}-fpm.sock ")
+            s.sub!(/^.*?listen\s*=.+$/, "listen = #{var}/run/php#{@php_version}-fpm.sock ")
         end
     rescue StandardError
         nil

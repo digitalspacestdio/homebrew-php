@@ -546,15 +546,15 @@ INFO
   end
 
   def config_path_php
-      etc / "php" / "#{PHP_VERSION_MAJOR}" / "php.ini"
+      etc / "php" / "#{php_version}" / "php.ini"
   end
 
   def config_path_php_fpm
-      etc / "php" / "#{PHP_VERSION_MAJOR}" / "php-fpm.conf"
+      etc / "php" / "#{php_version}" / "php-fpm.conf"
   end
 
   def config_path_php_fpm_www
-      etc / "php" / "#{PHP_VERSION_MAJOR}" / "php-fpm.d" / "www.conf"
+      etc / "php" / "#{php_version}" / "php-fpm.d" / "www.conf"
   end
 
   def post_install
