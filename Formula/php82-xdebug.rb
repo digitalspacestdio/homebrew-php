@@ -12,7 +12,7 @@ class Php82Xdebug < AbstractPhp82Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8724d052b6fc8ba844bcb04d82c223a6d17bb857c75f530407ee024e34cbb3c5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7df5e047ba8f6bacfe41cca0c54a17a284adeb957ea6d156397247b4b1f5ac6e"
   end
 
   def extension_type
