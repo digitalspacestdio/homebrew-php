@@ -12,7 +12,7 @@ class Php71Xdebug < AbstractPhp71Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ecc2eb84e303d7900357a589e13318bec2e2c5b22efdca0df05bf11adb645d60"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4696ecac2c36531810b39c8db652b31819bed20a2c11beb43337679a66d61e80"
   end
 
 
