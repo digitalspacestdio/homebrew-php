@@ -9,7 +9,9 @@ FORMULAS=${@:-$(brew search digitalspacestdio/php | grep 'php[7-9]\{1\}[0-9]\{1\
 for formula in $FORMULAS; do
     echo "---> Starting $formula"
     ./_php-bottles-make.sh $formula && {
-        ./_php-bottles-upload.sh $formula || echo "Failed to upload bottles for $formula"
+        if [[ ! -z $NO_UPLOAD ]];  then
+            ./_php-bottles-upload.sh $formula || echo "Failed to upload bottles for $formula"
+        fi
     } || echo "Failed to build bottles for $formula"
     echo "---> Finished $formula"
 done

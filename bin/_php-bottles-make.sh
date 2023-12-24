@@ -14,7 +14,7 @@ git pull
 
 PHP_FORMULA=$1
 echo "Ceating bottles for $PHP_FORMULA ..."
-    rm -rf /tmp/$PHP_FORMULA.
+    rm -rf /tmp/$PHP_FORMULA.bottle
     mkdir -p /tmp/$PHP_FORMULA.bottle
 cd /tmp/$PHP_FORMULA.bottle
 brew deps --direct $PHP_FORMULA-common | grep $PHP_FORMULA | xargs -I{} bash -c 'brew uninstall -f --ignore-dependencies {} || /usr/bin/true'
