@@ -12,7 +12,7 @@ class Php80Tidy < AbstractPhp80Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "679da1c2c745316ec63323d9a05b40516e2280491a0b634a008c5e27d1a32bb1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c7a662ded57e577ef65eb8c9b0fa6e3dae1e95ef6f8f8e89a7c2664f7d62a9e0"
     sha256 cellar: :any_skip_relocation, ventura:       "4ececf0b0a95549e6f576491f97542ff8753d9ba4608832cb36eee0c6b579e20"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7eb184df3ade06a9c308a2b9a5b12d2d5d514d149e47ae8796e705017b5d6080"
   end
