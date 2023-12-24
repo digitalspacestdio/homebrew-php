@@ -10,6 +10,11 @@ class Php81Xdebug < AbstractPhp81Extension
   version "3.2.2"
   revision 1
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b0bc0d9f63d05d4805353fedcc1b704403d0bef502d345a90530595b60400273"
+  end
+
   def extension_type
     "zend_extension"
   end
