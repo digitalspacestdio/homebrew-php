@@ -9,9 +9,7 @@ class Php72 < AbstractPhp
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2039ba2e915bb98605ee2ca1799fd348b68c07b568823ff3941e39f00d901dfe"
-    sha256 cellar: :any_skip_relocation, ventura:       "feccd1207478d7725a26bd6c928541e787502f3d81ead762a47b70b13ef3384b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fcd2387b571178151daff91685be03a563cb46eeabc2641bb717008adb042d46"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8a4874dfd7460d16dc1fc648a8017a169a1c63b7f1151a120d20d873ad8f9f1d"
   end
   keg_only :versioned_formula
   depends_on "libjpeg"
