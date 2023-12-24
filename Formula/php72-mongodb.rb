@@ -12,7 +12,7 @@ class Php72Mongodb < AbstractPhp72Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5e23f2627da9e7d9cfe682b78c2f91db8ec3c5e77ef11fc3018ba07a7e636789"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b29f1654d886a526ad12c6bdbff4e9a647e25f46877f540a592a1b70b8aa569c"
     sha256 cellar: :any_skip_relocation, ventura:       "4cbaf3ba001bd8a3a82a5f3250a663fab0b74cdf3650cd91f651ddaae79dbaac"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b31b958d7beb399471fc0168772ac4a96b72afbef31733c1aa64e28f35cb9f0"
   end
