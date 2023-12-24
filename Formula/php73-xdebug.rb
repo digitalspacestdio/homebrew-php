@@ -12,7 +12,7 @@ class Php73Xdebug < AbstractPhp73Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2f07f24b4e6c274005f6925b6a0f6c95dcd12d64b719f012d53d76389afed4ac"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "07e3a3e0c539f63097c4e2cbc8656f3bc2df6c033ac8d89bdeb9475c86cd0129"
   end
 
   def extension_type
