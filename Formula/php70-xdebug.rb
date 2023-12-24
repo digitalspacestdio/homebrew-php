@@ -12,7 +12,7 @@ class Php70Xdebug < AbstractPhp70Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d4b2fa414ddba88e806fff578861f6dd67e56dbb65dc73bdfb075f5db4e97ccc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4079843c662eb6c1eeca8333fb37374f5f5046ebbed4ea97601b336a5ea85a39"
   end
 
 
