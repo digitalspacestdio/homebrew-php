@@ -9,9 +9,7 @@ class Php74 < AbstractPhp
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fa0a0f56aa357767f9fc444f9f91eca3fa2d073ddc01ba0b66eb57bea18cf53b"
-    sha256 cellar: :any_skip_relocation, ventura:       "dbcd84e5f62b3085f039903553e0b4bf4c2449b64282d3a46797f4f7214bf019"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "931baadf698fce59a5ffd1212753905c4304c1de4d5502171ceebdc3a59403fd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "46d0082b8dfae2bd06b30ea3e8b14c7179a12791f854b1255c1db47e16fcae6c"
   end
   keg_only :versioned_formula
   depends_on "pkg-config" => :build
