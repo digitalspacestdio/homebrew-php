@@ -12,7 +12,7 @@ class Php83Tidy < AbstractPhp83Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "373f1be2a6fc5ab8a9e8995dbf58bc6a7347390e7b7beb910eede2b46b98d544"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b8372cb06b5f9c230ea2716c1e54546ceaaaff4b34ed0d19ead8fa06a8a23922"
   end
 
   depends_on "digitalspacestdio/php/php-tidy-html5"
