@@ -12,7 +12,7 @@ class Php72PdoPgsql < AbstractPhp72Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "96093c961c461bbb98fef84903dacb1b76165de8a498c173a04ed8adae39e6e4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7d232ea668d6aa099b5cadfe7de39f6c0da68a79234658410879e0e2fcaa6d1c"
     sha256 cellar: :any_skip_relocation, ventura:       "f2e865d72f1a448f4f03981aab55f0e2a65cf248fcfa82d988c4e8b60bb2176c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bc2ed57f75639a69ecf8ffe8713bed70e972a371c4b35c4954417bdafd74dcd"
   end
