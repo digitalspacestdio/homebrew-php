@@ -12,17 +12,19 @@ cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
 git stash
 git pull
 
-PHP_FORMULA=$1
-echo "Ceating bottles for $PHP_FORMULA ..."
+FORMULAS=${@:-$(brew search digitalspacestdio/php | grep 'php[7-9]\{1\}[0-9]\{1\}$' | awk -F'/' '{ print $3 }' | sort)}
+for PHP_FORMULA in $FORMULAS; do
+    echo "Ceating bottles for $PHP_FORMULA ..."
     rm -rf /tmp/$PHP_FORMULA.bottle
     mkdir -p /tmp/$PHP_FORMULA.bottle
-cd /tmp/$PHP_FORMULA.bottle
-brew deps --direct $PHP_FORMULA-common | grep $PHP_FORMULA | xargs -I{} bash -c 'brew uninstall -f --ignore-dependencies {} || /usr/bin/true'
-brew install $(brew deps $(brew deps --direct $PHP_FORMULA-common | grep $PHP_FORMULA | grep -v $PHP_FORMULA"$") | grep -v $PHP_FORMULA)
-#brew install $(brew deps --direct $PHP_FORMULA | grep -v $PHP_FORMULA)
-#brew install $(brew deps --direct $PHP_FORMULA-common | xargs -I{} bash -c 'brew deps --direct {}' | sort | uniq -u | grep -v $PHP_FORMULA)
-brew install --build-bottle $(brew deps --direct $PHP_FORMULA-common | grep $PHP_FORMULA) 2>&1
-brew bottle --skip-relocation --no-rebuild --root-url 'https://f003.backblazeb2.com/file/homebrew-bottles/'$PHP_FORMULA --json $(brew deps --direct $PHP_FORMULA-common)
-ls | grep $PHP_FORMULA'.*--.*.gz$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
-ls | grep $PHP_FORMULA'.*--.*.json$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
-cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
+    cd /tmp/$PHP_FORMULA.bottle
+    brew deps --direct $PHP_FORMULA-common | grep $PHP_FORMULA | xargs -I{} bash -c 'brew uninstall -f --ignore-dependencies {} || /usr/bin/true'
+    brew install $(brew deps $(brew deps --direct $PHP_FORMULA-common | grep $PHP_FORMULA | grep -v $PHP_FORMULA"$") | grep -v $PHP_FORMULA)
+    #brew install $(brew deps --direct $PHP_FORMULA | grep -v $PHP_FORMULA)
+    #brew install $(brew deps --direct $PHP_FORMULA-common | xargs -I{} bash -c 'brew deps --direct {}' | sort | uniq -u | grep -v $PHP_FORMULA)
+    brew install --build-bottle $(brew deps --direct $PHP_FORMULA-common | grep $PHP_FORMULA) 2>&1
+    brew bottle --skip-relocation --no-rebuild --root-url 'https://f003.backblazeb2.com/file/homebrew-bottles/'$PHP_FORMULA --json $(brew deps --direct $PHP_FORMULA-common)
+    ls | grep $PHP_FORMULA'.*--.*.gz$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
+    ls | grep $PHP_FORMULA'.*--.*.json$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
+    cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
+done
