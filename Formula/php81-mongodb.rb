@@ -12,7 +12,7 @@ class Php81Mongodb < AbstractPhp81Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "47af95cdcea161aac0821be81377b07f3b872d47e913b170de6c65e7fcc77bee"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f66c17d3b06e8d72b2b479e8069db9d73b7101f07971031b7c72a1d789954120"
     sha256 cellar: :any_skip_relocation, ventura:       "a5a49b294a89d782ef73f7df83bcfbf2c56457d800b5cd8424ac542288eaab0e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "10d8b430cb71a0a25bad9abc16136c6a89212bac3148d49be1a084a12889891b"
   end
