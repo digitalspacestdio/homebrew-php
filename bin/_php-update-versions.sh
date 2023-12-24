@@ -1,4 +1,6 @@
-set -x
+#!/bin/bash
+set -e
+if [[ ! -z $DEBUG ]]; then set -x; fi
 #pushd `dirname $0` > /dev/null;DIR=`pwd -P`;popd > /dev/null
 
 brew tap digitalspacestdio/common

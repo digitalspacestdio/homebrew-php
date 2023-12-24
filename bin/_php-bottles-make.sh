@@ -1,6 +1,6 @@
 #!/bin/bash
-set -x
 set -e
+if [[ ! -z $DEBUG ]]; then set -x; fi
 if [[ -z $1 ]]; then
     exit 1;
 fi
