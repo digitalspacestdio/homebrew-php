@@ -12,7 +12,7 @@ class Php81Zip < AbstractPhp81Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a6111bc229be8ca6e1433a6ac86513f2e5cbcec88e0c037c1679e9ea0367f0b6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "08b476cec70496f0b45246bcf7647c65eb14cff9dfe9cba5ff9af00ca569b244"
   end
 
   depends_on "libzip"
