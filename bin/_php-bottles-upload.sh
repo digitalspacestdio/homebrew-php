@@ -50,6 +50,7 @@ for PHP_FORMULA in $FORMULAS; do
     done
 done
 cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
+git add .
 git commit -m "bottles update"
 git pull --rebase
 git push
