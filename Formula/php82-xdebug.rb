@@ -26,7 +26,7 @@ class Php82Xdebug < AbstractPhp82Extension
       xdebug.mode=off
       xdebug.start_with_request=trigger
       xdebug.client_host=127.0.0.1
-      xdebug.client_port=9003
+      xdebug.client_port=90#{PHP_BRANCH_NUM}
       xdebug.discover_client_host=false
       xdebug.remote_cookie_expire_time = 3600
       xdebug.idekey=PHPSTORM
@@ -38,8 +38,6 @@ class Php82Xdebug < AbstractPhp82Extension
   end
 
   def install
-    #Dir.chdir "xdebug-#{version}" unless build.head?
-
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
@@ -49,9 +47,9 @@ class Php82Xdebug < AbstractPhp82Extension
     system "make clean"
     system "make"
     prefix.install "modules/xdebug.so"
-    if File.exist?(config_filepath) && build.with?("config-file")
-      File.delete config_filepath 
-    end
-    write_config_file if build.with? "config-file"
+  end
+
+  def post_install
+    write_config_file
   end
 end

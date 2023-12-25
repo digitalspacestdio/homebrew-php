@@ -21,8 +21,6 @@ class Php70Xdebug < AbstractPhp70Extension
   end
 
   def install
-    #Dir.chdir "xdebug-#{version}" unless build.head?
-
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
@@ -31,6 +29,9 @@ class Php70Xdebug < AbstractPhp70Extension
                           "--enable-xdebug"
     system "make"
     prefix.install "modules/xdebug.so"
-    write_config_file if build.with? "config-file"
+  end
+
+  def post_install
+    write_config_file
   end
 end
