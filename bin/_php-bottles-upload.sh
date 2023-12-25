@@ -40,16 +40,17 @@ for PHP_FORMULA in $FORMULAS; do
                 jq -s  '.[1]."digitalspacestdio/php/'$JSON_FORMULA_NAME'".bottle.tags = .[0]."digitalspacestdio/php/'$JSON_FORMULA_NAME'".bottle.tags * .[1]."digitalspacestdio/php/'$JSON_FORMULA_NAME'".bottle.tags | .[1]' "$mergedfile".src "$jsonfile" > "$mergedfile"
                 s3cmd del "s3://homebrew-bottles/$PHP_FORMULA/$mergedfile"
                 s3cmd put "$mergedfile" "s3://homebrew-bottles/$PHP_FORMULA/$mergedfile"
-                brew bottle --skip-relocation --no-rebuild --merge --write --json "$mergedfile"
+                brew bottle --skip-relocation --no-rebuild --merge --write --no-commit --json "$mergedfile"
                 rm "$mergedfile" "$mergedfile".src
             } || {
                 s3cmd put "$jsonfile" "s3://homebrew-bottles/$PHP_FORMULA/$mergedfile"
-                brew bottle --skip-relocation --no-rebuild --merge --write --json "$jsonfile"
-            }
+                brew bottle --skip-relocation --no-rebuild --merge --write --no-commit --json "$jsonfile"
+            } || exit 1
         fi
     done
 done
 cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
+git commit -m "bottles update"
 git pull --rebase
 git push
 cd -
