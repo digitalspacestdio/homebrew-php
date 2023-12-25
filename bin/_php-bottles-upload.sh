@@ -16,7 +16,7 @@ FORMULAS=${@:-$(brew search digitalspacestdio/php | grep 'php[7-9]\{1\}[0-9]\{1\
 for PHP_FORMULA in $FORMULAS; do
     echo "Upload bottles for $PHP_FORMULA ..."
     s3cmd info "s3://homebrew-bottles" > /dev/null
-    cd /tmp/$PHP_FORMULA.bottle
+    cd ${HOME}/.bottles/$PHP_FORMULA.bottle
     ls | grep $PHP_FORMULA'.*--.*.gz$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
     ls | grep $PHP_FORMULA'.*--.*.json$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
     for jsonfile in ./*.json; do

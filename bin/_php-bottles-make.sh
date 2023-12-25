@@ -15,9 +15,9 @@ git pull
 FORMULAS=${@:-$(brew search digitalspacestdio/php | grep 'php[7-9]\{1\}[0-9]\{1\}$' | awk -F'/' '{ print $3 }' | sort)}
 for PHP_FORMULA in $FORMULAS; do
     echo "Ceating bottles for $PHP_FORMULA ..."
-    rm -rf /tmp/$PHP_FORMULA.bottle
-    mkdir -p /tmp/$PHP_FORMULA.bottle
-    cd /tmp/$PHP_FORMULA.bottle
+    rm -rf ${HOME}/.bottles/$PHP_FORMULA.bottle
+    mkdir -p ${HOME}/.bottles/$PHP_FORMULA.bottle
+    cd ${HOME}/.bottles/$PHP_FORMULA.bottle
     brew deps --direct $PHP_FORMULA-common | grep $PHP_FORMULA | xargs -I{} bash -c 'brew uninstall -f --ignore-dependencies {} || /usr/bin/true'
     brew install $(brew deps $(brew deps --direct $PHP_FORMULA-common | grep $PHP_FORMULA | grep -v $PHP_FORMULA"$") | grep -v $PHP_FORMULA)
     #brew install $(brew deps --direct $PHP_FORMULA | grep -v $PHP_FORMULA)
