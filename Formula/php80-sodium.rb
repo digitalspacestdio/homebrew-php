@@ -12,6 +12,7 @@ class Php80Sodium < AbstractPhp80Extension
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a98669863fc6f6f537b96e77ffa726e166003b8197a70f9c40a80911380a0f72"
+    sha256 cellar: :any_skip_relocation, sonoma:        "282eb7c686b27691a7dcfe884f316fd54124bff72ce51a15f7de822bb43057c9"
     sha256 cellar: :any_skip_relocation, ventura:       "b44baf933fc28868872a4e850b239457c4de1d86cfe09970763e641d331c9490"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8261f8604f7e928c16d071220a965cf42e157557048589b78fd3d2ffbf9f2080"
   end

@@ -13,6 +13,7 @@ class Php74Zip < AbstractPhp74Extension
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "16e7db49b178d6b96ea747378d107c12049e0528622b7eb195c8213bbd1b45a1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "08af733dbc2e1de267a7e2f252d2a6650e5d117226bb944108df3fa48071f6ea"
     sha256 cellar: :any_skip_relocation, ventura:       "ed2866f062820b5df4e7952508c753c8d3553120e185c3a09c91f4a021ea00db"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a774d255ca91bc5e7481f4b6b23e3fccf464dae4563553bc1d11d9d3c7438f66"
   end

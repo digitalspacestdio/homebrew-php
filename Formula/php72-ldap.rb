@@ -13,6 +13,7 @@ class Php72Ldap < AbstractPhp72Extension
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "da1f6b34b8074007e97caf8c2082d976a7915f02e993ffaca00ea8927aeafdea"
+    sha256 cellar: :any_skip_relocation, sonoma:        "28ce415a5e106b140df9a5890e27de6c624fb9954256b2eb9709b0e708fcf479"
     sha256 cellar: :any_skip_relocation, ventura:       "c205bde4b7e8eedc415e9e434cd4cc22e290d6f5b6bafa129ffda6a02e962a23"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd2e012b4f4a49087eeb35dfa6e7b53dba3054452cc5fc2501c60a6e4efe92ba"
   end
