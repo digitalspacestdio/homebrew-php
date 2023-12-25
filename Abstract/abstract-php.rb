@@ -46,7 +46,7 @@ class AbstractPhp < Formula
     depends_on "jpeg" if name.split("::")[2].downcase.start_with?("php56", "php70", "php71")
     depends_on "libjpeg" if !name.split("::")[2].downcase.start_with?("php56", "php70", "php71")
     depends_on "pcre2"
-    depends_on "webp" => :optional if name.split("::")[2].downcase.start_with?("php7", "php8")
+    depends_on "webp" if name.split("::")[2].downcase.start_with?("php7", "php8")
     depends_on "libvpx" => :optional if name.split("::")[2].downcase.start_with?("php56")
     depends_on "libpng"
     depends_on "libxml2" if build.with?("homebrew-libxml2") || OS.mac? && (MacOS.version < :lion || MacOS.version >= :el_capitan)
