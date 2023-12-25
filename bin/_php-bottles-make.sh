@@ -12,6 +12,12 @@ cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
 git stash
 git pull
 
+BACKUP_ETC_PHP_DIR=$(brew --prefix)/etc/php.$(date +'%Y%m%d%H%M%S')
+if [[ -d $(brew --prefix)/etc/php ]]; then
+    echo "Backing up the etc folder to: ${BACKUP_ETC_PHP_DIR}"
+    mv "$(brew --prefix)/etc/php" "${BACKUP_ETC_PHP_DIR}";
+fi
+
 FORMULAS=${@:-$(brew search digitalspacestdio/php | grep 'php[7-9]\{1\}[0-9]\{1\}$' | awk -F'/' '{ print $3 }' | sort)}
 for PHP_FORMULA in $FORMULAS; do
     echo "Ceating bottles for $PHP_FORMULA ..."
@@ -28,3 +34,8 @@ for PHP_FORMULA in $FORMULAS; do
     ls | grep $PHP_FORMULA'.*--.*.json$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
     cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
 done
+
+if [[ -d $(brew --prefix)/etc/php ]]; then
+    echo "Restoring the etc folder from: ${BACKUP_ETC_PHP_DIR}"
+    mv "${BACKUP_ETC_PHP_DIR}" "$(brew --prefix)/etc/php";
+fi
