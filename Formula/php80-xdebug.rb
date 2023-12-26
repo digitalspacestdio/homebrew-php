@@ -12,7 +12,7 @@ class Php80Xdebug < AbstractPhp80Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3b5c38fe9ee214fc91a953fd344f66e4595d73a69506b798b217c89ba10c0f9c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "98c9089b7bc51b1a5bf06aaddaf73e7ca0d4a0252a61ec8919ac28b891180cff"
     sha256 cellar: :any_skip_relocation, sonoma:        "4f2243e5aaa40886f5a7c0b94c8cc8a97822403549aef18f3e817d564746629f"
   end
 

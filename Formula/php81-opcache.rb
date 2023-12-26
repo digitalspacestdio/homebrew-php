@@ -12,7 +12,7 @@ class Php81Opcache < AbstractPhp81Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "de714c4a12a9aee3e220430a888b35ad829e489c0c0ece1a5d8da7d4c7ef182a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ac127aa8307b80879ec006d36d7dd8f9d0f91937061b2366f55e1f2d9a858f96"
     sha256 cellar: :any_skip_relocation, sonoma:        "6cda95c19e9e0e6517ad6bb1195c067ca300ecc64eb0d51e3d17955f315cf1fd"
   end
 

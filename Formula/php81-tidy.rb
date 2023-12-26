@@ -12,7 +12,7 @@ class Php81Tidy < AbstractPhp81Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7eeba383482664580e8096743e33cf66ddd4ccd4b892272ad4f3323ea5126d97"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "257dd29d8f14ab9f1b3e7f427267baa4b54d43dafb0a178bab53b8881f592065"
     sha256 cellar: :any_skip_relocation, sonoma:        "f46fa5d310fa2e2b8eaea442770c05ee84d1aee37a23abf14b81f911d989805d"
   end
 

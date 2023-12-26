@@ -11,7 +11,7 @@ class Php74Igbinary < AbstractPhp74Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c877142e5faa8d2ce9b8943af22bf1c562eded77ff7cb900e7188039464cd506"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8b069c2cb045832583db216e780f6e4ba1c59686fdbd5cb80e393f938503f522"
     sha256 cellar: :any_skip_relocation, sonoma:        "3b938ff9760f69e1807c98f60353964e1dbb42adbc42ae3ca545e70ce5b31814"
     sha256 cellar: :any_skip_relocation, ventura:       "4bc984f3519416757f6c5e12420a126961ec34fc5530b0133a503c0ace4f3130"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8187b5156ea5b6c36ad37bbf4988726b45c2886321c201fd110ff6e311e06da3"
