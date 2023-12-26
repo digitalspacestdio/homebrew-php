@@ -55,6 +55,10 @@ class AbstractPhpCommon < Formula
       etc / "php" / "#{@@php_version}" / "php.ini"
   end
 
+  def config_path_phprc
+    etc / "php" / ".phprc"
+end
+
   def config_path_php_fpm
       etc / "php" / "#{@@php_version}" / "php-fpm.conf"
   end
@@ -140,6 +144,10 @@ class AbstractPhpCommon < Formula
         end
     rescue StandardError
         nil
+    end
+
+    if !File.exist?(config_path_phprc) || Gem::Dependency.new('', "> " + config_path_phprc.read).match?('', @@php_version)
+      config_path_phprc.write(@@php_version)
     end
   end
 end
