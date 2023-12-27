@@ -15,7 +15,7 @@ class Php71Opcache < AbstractPhp71Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3c61cc8d7427d18d08c396be767d2a9adc39e849aef2e82622134c950b7c9319"
     sha256 cellar: :any_skip_relocation, sonoma:        "30b75a3be58831293ec90e3f0560823b5e84943be86d4a14f752b15dd1f3a125"
     sha256 cellar: :any_skip_relocation, ventura:       "d7f3551ed368bb48c751605abdc7dca155c7d0f654c06472d32422bf0684993c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f0cf95fbf5be16125fffb30afe401692e00428c69e02561b0a637031aef56da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "827e7fcf484d7f7a8ba97cc74e0d49d85d7faa7e3ca84c94a14a720f40ac8ecf"
   end
 
   depends_on "pcre"

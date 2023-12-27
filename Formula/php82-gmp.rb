@@ -14,6 +14,7 @@ class Php82Gmp < AbstractPhp82Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "212f18007021627268f2bdbb508ee83ead6e952e867642fc8cabb686879922cf"
     sha256 cellar: :any_skip_relocation, sonoma:        "97ed39923c57bc68e412ab16038d71692aea3ad7bb64cf7ddc872ca64566e230"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "006b95c4c8f63f31be198153d1883c29a24b199638ff3a84d38f0eedbce0f49d"
   end
 
   depends_on "gmp"

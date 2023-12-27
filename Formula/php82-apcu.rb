@@ -15,7 +15,7 @@ class Php82Apcu < AbstractPhp82Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3b2f3da03d04894441eb47d9d4806b9deb9096c82db6e1844529690b00d7aa59"
     sha256 cellar: :any_skip_relocation, sonoma:        "9f78e1614e362770129f76ba74c96c51e05799db1b3691ed178a1719d5fbac02"
     sha256 cellar: :any_skip_relocation, ventura:       "8ca1fc35350d59c970ef98929bbde607ef791d5119b1c227d3ae3f3eed25625c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be3e297a9bf18ce56448da609e3637611b449490a05bdea446237e9154be2538"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fb475424381b02e1b664bcfa94ab05f9d6b82ee92ffa3b98352cde1b1db02a0"
   end
 
   depends_on "pcre"

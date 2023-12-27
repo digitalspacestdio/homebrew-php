@@ -11,6 +11,7 @@ class Php81 < AbstractPhp
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "28fc195346251ab60e7ce62928747653ff9a0c8c62ccf38edd99a1e522c23567"
     sha256 cellar: :any_skip_relocation, sonoma:        "1a4cea39c9a0dfef05fd39a8275a94415c75cc85b97017b790f0b90a3e85c81c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3d9f6a6c786b62a1a8455d221b74e7d27b9cfc67bb4219add8cccc4efb73516"
   end
   keg_only :versioned_formula
   depends_on "pkg-config" => :build

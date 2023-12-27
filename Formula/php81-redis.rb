@@ -13,7 +13,7 @@ class Php81Redis < AbstractPhp81Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0de3d664194a62e6b3c793a15d796fdc18d5e0dc4c89e3477f94cb0defc0082f"
     sha256 cellar: :any_skip_relocation, sonoma:        "3a5b2471728cf040b6ad79a3bb4d36f571e79e292fc6aa66a03e1633f5d139f3"
     sha256 cellar: :any_skip_relocation, ventura:       "777a56b27a235f39a80cfe15be66e75d2ac31bd84143e8bcf31a989f58788a4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05674ec25d246168880310471edfc6b4ae78199b9ad69fd40f449152d6e6bf46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cff0da292090fbc55d59f43eec5ec9806f516df0040e546b7a605cedf73427cc"
   end
 
   depends_on "digitalspacestdio/php/php81-igbinary"

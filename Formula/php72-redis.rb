@@ -14,7 +14,7 @@ class Php72Redis < AbstractPhp72Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3589473ff64f89b62c24188aa08ce5965de847e1cf1606e9305d5113f958296c"
     sha256 cellar: :any_skip_relocation, sonoma:        "a2f21a4551aacb0da36e0ce782731d9f30d4147b61355d8bad5406da7c11ea71"
     sha256 cellar: :any_skip_relocation, ventura:       "03be31fb76fc0c689a18c74cdc87f58971b889470e2b1d4250d60e2969c6c742"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2e1791a8ecbbe471042515db37e30cc2f271d0758eb783a2fc891643fd6e658"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77f80df9403f2a318c090814a2da8b5ee891c8c5cef6949dc0dcc33c4ddbff86"
   end
 
   depends_on "digitalspacestdio/php/php72-igbinary"

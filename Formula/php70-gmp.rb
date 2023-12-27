@@ -15,7 +15,7 @@ class Php70Gmp < AbstractPhp70Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5c9585f171cf601054e3ad6aaac64b90f39ca970eecff0d0eb62b38d2c56a4ab"
     sha256 cellar: :any_skip_relocation, sonoma:        "72d3b6b74a131fca0a8c457afff9cf0505cd648a1f865be98f86c2b64d476d28"
     sha256 cellar: :any_skip_relocation, ventura:       "61182ed029a159879b252f9b3f57819916c8713acbd6a8e5b326f91322511ae4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e36863ab95ed448042852c48614b6201f79e33bc280974f91a5cadec0e0d9d21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2388555c8ee967ec8becf2cdd4336b6fb242e1b072f0338da3df373dcebd6403"
   end
 
   depends_on "gmp"

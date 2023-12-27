@@ -15,7 +15,7 @@ class Php72Tidy < AbstractPhp72Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0fd485e0731e89184f6eb04d85d4a2b977f861dc555599801d21c9189f61cf05"
     sha256 cellar: :any_skip_relocation, sonoma:        "ecde75102ffa8bd0c3a0f54acd1c440d20c5e631997a6e8b35d284885023a8b6"
     sha256 cellar: :any_skip_relocation, ventura:       "4027f9e5f372490826d861d0e6b8e5a15e51259987bbe88f06973447fdd6d3bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73c1ab1a5441880771ca82a2e1d808522d7445128e2f1364fee24170def187c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14d9168b7eb4b25ec907f8008a1b85418488f953a9f1a60eecfc11e0e711e235"
   end
 
   depends_on "digitalspacestdio/php/php-tidy-html5"

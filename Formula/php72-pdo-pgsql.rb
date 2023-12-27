@@ -15,7 +15,7 @@ class Php72PdoPgsql < AbstractPhp72Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ce7c9a18f6330919836f5555e99acb6207c91a31e99f083e41b1c7bd53dcfc0a"
     sha256 cellar: :any_skip_relocation, sonoma:        "c1f3792f69dde4e5b0988bf66ccbd463e1198e039cbef1a2cde3d4862e975352"
     sha256 cellar: :any_skip_relocation, ventura:       "f2e865d72f1a448f4f03981aab55f0e2a65cf248fcfa82d988c4e8b60bb2176c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bc2ed57f75639a69ecf8ffe8713bed70e972a371c4b35c4954417bdafd74dcd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c41e557471e68432cb3dc5929f5058b0b1a10a7fae5b670c21d29528c667a12"
   end
 
   depends_on "libpq"

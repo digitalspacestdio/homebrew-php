@@ -13,7 +13,7 @@ class Php82Redis < AbstractPhp82Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "12bc351832110a2a1c5ab43f49d81e105178c0314e6d84586dc150a24e462ad7"
     sha256 cellar: :any_skip_relocation, sonoma:        "ff67a420f72045f990fba5c7c022ac2eafa618c42d05517b9cd8dd5ca7333746"
     sha256 cellar: :any_skip_relocation, ventura:       "1442ffa5fed1b273e51c749a852ff9d0f83f6cc8bb71ae9b816b5566e01a746e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "112decd7d2dfb80b674a22bc1446a3abf28d035c53c3909fc35515f07229a9a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "558ff6f28f32e43500029b71322d3c983cb2f077bd999f9a069a4915f1fdb7a6"
   end
 
   depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-igbinary"

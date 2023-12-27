@@ -14,7 +14,7 @@ class Php71Zip < AbstractPhp71Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "85ad2d73d58dd26fc8356b61f29b75af42e2571bf194d23147cbc9c6c72a5686"
     sha256 cellar: :any_skip_relocation, sonoma:        "298f2b7e2b6befe7e58c251a3f7cf1684e349b19a5c6c9bb28179a1b2265ccd8"
     sha256 cellar: :any_skip_relocation, ventura:       "7ae7982e69e86e25f9cabcac0e56455fadde467ade0b31f77dde995a914274cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be286a0b4b9b28f62b3961819c4a1813d91966cbbca506c3729523a292afc18e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9621962b18d9d71cf0ba707eb08f0a7c275378367eebdc1919a557981c721ca8"
   end
   depends_on "libzip"
   depends_on "zlib"

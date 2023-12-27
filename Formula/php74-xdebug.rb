@@ -14,6 +14,7 @@ class Php74Xdebug < AbstractPhp74Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8d774de080b9f26b044ed8dc6d47330cb54b2c8ac70562fca8311ea6cbf78ed8"
     sha256 cellar: :any_skip_relocation, sonoma:        "f7ba94ed41f1a40c1c52cee4f86b1963bc8cdab782f3efe49c373ad111cc3150"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd9a9741744fdc1d534213ae3de5528dd6bd0d8fdac887f9e30956adae41baa5"
   end
 
   def extension_type

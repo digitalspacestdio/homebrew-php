@@ -13,7 +13,7 @@ class Php74Redis < AbstractPhp74Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0db2e7ea0a51556f1368c16f59aa418b43f067120f8d3a46695fb82000bca587"
     sha256 cellar: :any_skip_relocation, sonoma:        "0256063d3ab80fd4d432e6a4a3d6556240507a84353092cf1faae06273ef42af"
     sha256 cellar: :any_skip_relocation, ventura:       "be5771ad82b6a38a47920fa0c4360525bec80635b2243f42b5008833f1fd115e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41425a87211dd254971a549c0b1d21a54a04b6d857916141d5dfc6e8e0212542"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a6587b8f602115c7da8b9f105ff854016e95ce4bd143d5138046488c5689915"
   end
 
   depends_on "digitalspacestdio/php/php74-igbinary"

@@ -15,7 +15,7 @@ class Php70Intl < AbstractPhp70Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1df01c225010dcf328ca3b8bfe7cbed68a4b33cc3efe899f1b432bbdb2e771b0"
     sha256 cellar: :any_skip_relocation, sonoma:        "65c0b8186f79ec4303d7a433649f116351ce911b87cdfc3eec1c11a53165f483"
     sha256 cellar: :any_skip_relocation, ventura:       "28940735c9a2faa701ddd58e1a98d7d8d1f2ea7aaa9ac48be72aeabb73577ec6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c6d1b814b378aa13e2e450e2e8b05b0926c355ccef52d5df2c47d87d7774044"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5586b0f4941f1083363e62ed376376d6f76359252072e6e5158e125bb3c5698b"
   end
 
   depends_on "digitalspacestdio/common/icu4c@67.1"
