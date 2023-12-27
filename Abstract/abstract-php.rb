@@ -49,7 +49,7 @@ class AbstractPhp < Formula
     depends_on "webp" if name.split("::")[2].downcase.start_with?("php7", "php8")
     depends_on "libvpx" => :optional if name.split("::")[2].downcase.start_with?("php56")
     depends_on "libpng"
-    depends_on "libxml2" if build.with?("homebrew-libxml2") || OS.mac? && (MacOS.version < :lion || MacOS.version >= :el_capitan)
+    depends_on "libxml2"
     depends_on "unixodbc"
     depends_on "readline"
     depends_on "zlib"
@@ -100,7 +100,6 @@ class AbstractPhp < Formula
     option "with-debug", "Compile with debugging symbols"
     option "with-embed", "Compile with embed support (built as a static library)"
     option "with-homebrew-libressl", "Not include LibreSSL instead of OpenSSL via Homebrew"
-    option "with-homebrew-libxml2", "Include Libxml2 support via Homebrew"
     option "with-imap", "Include IMAP extension"
     option "with-libmysql", "Include (old-style) libmysql support instead of mysqlnd"
     option "with-mssql", "Include MSSQL-DB support"
@@ -314,10 +313,7 @@ INFO
       ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["webp"].opt_lib}/pkgconfig"
     end
 
-    if build.with?("homebrew-libxml2") || OS.mac? && (MacOS.version < :lion || MacOS.version >= :el_capitan)
-      args << "--with-libxml-dir=#{Formula["libxml2"].opt_prefix}"
-    end
-
+    args << "--with-libxml-dir=#{Formula["libxml2"].opt_prefix}"    
     args << "--with-pdo-odbc=unixODBC,#{Formula["unixodbc"].opt_prefix}"
     args << "--with-unixODBC=#{Formula["unixodbc"].opt_prefix}"
 
