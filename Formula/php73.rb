@@ -9,6 +9,7 @@ class Php73 < AbstractPhp
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22e09b560f9111ba0cd0492ac5e11cee3fc9a4e6d09c2b84a6121822b605571a"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "bb2727578c878b3162b27d7cb636c5b22672d8c0b0c89cfdc8c986b43e28998a"
     sha256 cellar: :any_skip_relocation, sonoma:        "964605761822bd91d9bcc1a8d2e212274181bb7c1f0ec116a3300d1211445ef0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "328bda8fb809eb904564b68de12a7f130c6b87206e7a0aa29057772a9517ed22"

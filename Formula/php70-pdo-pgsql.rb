@@ -12,6 +12,7 @@ class Php70PdoPgsql < AbstractPhp70Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "47fe1a8c1587e407cfa949bb5de92a64109ad7e1af2a02d4da71d6b986f814cb"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f345184c5338a5695c45525566461e25f2b3bc9497bb632a508050008937464d"
     sha256 cellar: :any_skip_relocation, sonoma:        "d4c632bf3b93b330c6b0213303a3258f7d299d5e5ba7a86452a6c03392478a32"
     sha256 cellar: :any_skip_relocation, ventura:       "ef84e1948529da6f6cf4134a1a439688be0a540e2de99b631158d4921e260681"

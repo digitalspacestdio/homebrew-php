@@ -12,6 +12,7 @@ class Php74Opcache < AbstractPhp74Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e038a0dba794bcc338c01c6bfe1356eb22e20c80ecfedf01d26b1d631617b77f"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "830aefba843c076b511629bc30bf5eaf23f9a69d87f5f592cce10fa64dc567b4"
     sha256 cellar: :any_skip_relocation, sonoma:        "d7019221ce2b09c65bb749348fa22bdad011cc5dcb298393997077647d036c77"
     sha256 cellar: :any_skip_relocation, ventura:       "af754db13218378dd03eae76fc62b14bcf1be06fdf20865ef00f47478629e8a2"
