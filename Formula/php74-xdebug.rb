@@ -33,7 +33,6 @@ class Php74Xdebug < AbstractPhp74Extension
       xdebug.discover_client_host=false
       xdebug.remote_cookie_expire_time = 3600
       xdebug.idekey=PHPSTORM
-      xdebug.overload_var_dump=0
       xdebug.max_nesting_level=512
     EOS
   rescue StandardError
