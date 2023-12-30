@@ -29,7 +29,7 @@ class Php73Xdebug < AbstractPhp73Extension
       xdebug.mode=off
       xdebug.start_with_request=trigger
       xdebug.client_host=127.0.0.1
-      xdebug.client_port=90#{PHP_BRANCH_NUM}
+      xdebug.client_port=9000
       xdebug.discover_client_host=false
       xdebug.remote_cookie_expire_time = 3600
       xdebug.idekey=PHPSTORM
