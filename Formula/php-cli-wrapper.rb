@@ -3,7 +3,7 @@ require "formula"
 class PhpCliWrapper < Formula
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-  version "0.1.2"
+  version "0.1.3"
 
   def binary_dir
     buildpath / "bin"
@@ -64,7 +64,7 @@ class PhpCliWrapper < Formula
       PHP_VER=$(echo $PHP_VERSION | awk -F. '{ print $1$2 }')
       PHP_EXECUTABLE=$(brew --prefix php${PHP_VER})/bin/php
 
-      if [[ -z $PHP_EXECUTABLE ]] || [[ ! -e "$PHP_EXECUTABLE" ]] > /dev/null 2>1; then
+      if [[ -z $PHP_EXECUTABLE ]] || [[ ! -e "$PHP_EXECUTABLE" ]] > /dev/null 2>&1; then
         >&2 echo "Cant find a php executable for the version: $PHP_VERSION"
         >&2 echo "You can try to install it by following command: brew install ${PHP_EXECUTABLE}-common"
         exit 1
