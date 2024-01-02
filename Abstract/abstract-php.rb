@@ -553,10 +553,17 @@ INFO
       etc / "php" / "#{php_version}" / "php-fpm.d" / "www.conf"
   end
 
+  def config_path_phprc
+    etc / "php" / ".phprc"
+  end
+
   def post_install
     begin
       inreplace config_path_php_fpm_www do |s|
         s.sub!(/^.*?listen\s*=.+$/, "listen = #{var}/run/php#{php_version}-fpm.sock ")
+      end
+      if !File.exist?(config_path_phprc) || Gem::Dependency.new('', "> " + config_path_phprc.read).match?('', php_version)
+        config_path_phprc.write(php_version)
       end
     rescue StandardError
       nil
