@@ -20,7 +20,7 @@ class AbstractPhpCommon < Formula
     url "file:///dev/null"
     sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     version php_version_full
-    revision 24
+    revision 25
 
     depends_on "digitalspacestdio/php/php#{@@php_version_path}"
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-apcu"
@@ -57,7 +57,7 @@ class AbstractPhpCommon < Formula
 
   def config_path_phprc
     etc / "php" / ".phprc"
-end
+  end
 
   def config_path_php_fpm
       etc / "php" / "#{@@php_version}" / "php-fpm.conf"
@@ -110,19 +110,22 @@ end
   end
 
   def post_install
+
+    system "echo #{config_path_php}"
+
     begin
         inreplace config_path_php do |s|
-          s.sub!(/^.*?short_open_tag\s*=.*$/, "short_open_tag = off", false)
-          s.sub!(/^.*?max_execution_time\s*=.*$/, "max_execution_time = 900", false)
-          s.sub!(/^.*?memory_limit\s*=.*$/, "memory_limit = 4096M", false)
-          s.sub!(/^.*?upload_max_filesize\s*=.*$/, "upload_max_filesize = 256M", false)
-          s.sub!(/^.*?post_max_size\s*=.*$/, "post_max_size = 256M", false)
-          s.sub!(/^.*?display_errors\s*=.*$/, "display_errors = on", false)
-          s.sub!(/^.*?error_reporting\s*=.*$/, "error_reporting = E_ALL ^ E_DEPRECATED", false)
-          s.sub!(/^.*?max_input_vars\s*=.*$/, "max_input_vars = 100000", false)
-          s.sub!(/^.*?display_startup_errors\s*=.*$/, "display_startup_errors = on", false)
-          s.sub!(/^.*?soap.wsdl_cache_ttl\s*=.*$/, "soap.wsdl_cache_ttl = 1", false)
-          s.sub!(/^.*?date.timezone\s*=.*$/, "date.timezone = UTC", false)
+          s.sub!(/^.*?short_open_tag\s*=.*$/, "short_open_tag = off")
+          s.sub!(/^.*?max_execution_time\s*=.*$/, "max_execution_time = 900")
+          s.sub!(/^.*?memory_limit\s*=.*$/, "memory_limit = 4096M")
+          s.sub!(/^.*?upload_max_filesize\s*=.*$/, "upload_max_filesize = 256M")
+          s.sub!(/^.*?post_max_size\s*=.*$/, "post_max_size = 256M")
+          s.sub!(/^.*?display_errors\s*=.*$/, "display_errors = on")
+          s.sub!(/^.*?error_reporting\s*=.*$/, "error_reporting = E_ALL ^ E_DEPRECATED")
+          s.sub!(/^.*?max_input_vars\s*=.*$/, "max_input_vars = 100000")
+          s.sub!(/^.*?display_startup_errors\s*=.*$/, "display_startup_errors = on")
+          s.sub!(/^.*?soap.wsdl_cache_ttl\s*=.*$/, "soap.wsdl_cache_ttl = 1")
+          s.sub!(/^.*?date.timezone\s*=.*$/, "date.timezone = UTC")
         end
     rescue StandardError
         nil
@@ -130,7 +133,7 @@ end
 
     begin
         inreplace config_path_php_fpm do |s|
-            s.sub!(/^.*?error_log\s*=.+$/, "error_log = /dev/stdout", false)
+            s.sub!(/^.*?error_log\s*=.+$/, "error_log = /dev/stdout")
         end
     rescue StandardError
         nil
@@ -138,9 +141,9 @@ end
 
     begin
         inreplace config_path_php_fpm_www do |s|
-            s.sub!(/^.*?user\s*=.+$/, "; user = #{user}", false)
-            s.sub!(/^.*?group\s*=.+$/, "; group = #{user_group}", false)
-            s.sub!(/^.*?listen\s*=.+$/, "listen = #{var}/run/php#{@@php_version}-fpm.sock", false)
+            s.sub!(/^.*?user\s*=.+$/, "; user = #{user}")
+            s.sub!(/^.*?group\s*=.+$/, "; group = #{user_group}")
+            s.sub!(/^.*?listen\s*=.+$/, "listen = #{var}/run/php#{@@php_version}-fpm.sock")
         end
     rescue StandardError
         nil
