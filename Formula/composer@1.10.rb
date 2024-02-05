@@ -3,10 +3,10 @@ require File.expand_path("../../Abstract/abstract-php-phar", __FILE__)
 class ComposerAT110 < AbstractPhpPhar
   desc "Dependency Manager for PHP"
   homepage "https://getcomposer.org"
-  url "https://getcomposer.org/download/1.10.26/composer.phar"
-  sha256 "cbfe1f85276c57abe464d934503d935aa213494ac286275c8dfabfa91e3dbdc4"
+  url "https://getcomposer.org/download/1.10.27/composer.phar"
+  sha256 "230d28fb29f3c6c07ab2382390bef313e36de17868b2bd23b2e070554cae23d2"
   head "https://getcomposer.org/composer.phar"
-  version "1.10.26"
+  version "1.10.27"
 
   depends_on "gpatch"
   depends_on "git"
