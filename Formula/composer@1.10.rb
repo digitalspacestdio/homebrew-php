@@ -10,7 +10,8 @@ class ComposerAT110 < AbstractPhpPhar
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/composer@1.10"
-    sha256 cellar: :any_skip_relocation, sonoma: "0142ff7e91b5b6fc0161cc9ea395ba26842a6a2f53059a28fee82bf0b33875bd"
+    sha256 cellar: :any_skip_relocation, sonoma:       "0142ff7e91b5b6fc0161cc9ea395ba26842a6a2f53059a28fee82bf0b33875bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c04a64950e93419766aae7210c3c51abe42972fbfcdfe281dc6b7eaf55ce0866"
   end
 
   depends_on "gpatch"

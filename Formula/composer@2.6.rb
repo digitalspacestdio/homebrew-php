@@ -6,6 +6,11 @@ class ComposerAT26 < Formula
   license "MIT"
   version "2.6.6"
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/composer@2.6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "58c971caad51b8ffb8909b83b83099a18737cf3082242f97cf1b9519069ef32e"
+  end
+
   depends_on "gpatch"
   depends_on "git"
   depends_on "curl"
