@@ -20,7 +20,7 @@ class AbstractPhpCommon < Formula
     url "file:///dev/null"
     sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     version php_version_full
-    revision 25
+    revision 26
 
     depends_on "digitalspacestdio/php/php#{@@php_version_path}"
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-apcu"
@@ -105,12 +105,10 @@ class AbstractPhpCommon < Formula
     binary_versioned_path.write(binary_versioned_wrapper)
     binary_versioned_path.chmod(0755)
     bin.install binary_versioned_path
-    
-    log_dir.mkpath
   end
 
   def post_install
-
+    log_dir.mkpath
     system "echo #{config_path_php}"
 
     begin
