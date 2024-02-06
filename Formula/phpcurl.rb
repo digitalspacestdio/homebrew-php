@@ -7,6 +7,11 @@ class Phpcurl < Formula
   version '7.72.0'
   revision 3
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/phpcurl"
+    sha256 cellar: :any_skip_relocation, sonoma: "e6fa70c2522e07b18812e21378f62de356be9cd571fc13b50c9185b57347c780"
+  end
+
   pour_bottle? do
     reason "The bottle needs to be installed into #{Homebrew::DEFAULT_PREFIX} when built with OpenSSL."
     satisfy { OS.mac? || HOMEBREW_PREFIX.to_s == Homebrew::DEFAULT_PREFIX }
