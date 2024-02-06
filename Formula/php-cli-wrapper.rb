@@ -5,6 +5,11 @@ class PhpCliWrapper < Formula
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   version "0.1.3"
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php-cli-wrapper"
+    sha256 cellar: :any_skip_relocation, sonoma: "51189810fb09959c18288adab531e4808be6b8ef7b3b1f6cdc819cf4f0f5d905"
+  end
+
   def binary_dir
     buildpath / "bin"
   end

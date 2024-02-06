@@ -6,6 +6,11 @@ class ComposerAT22 < Formula
   license "MIT"
   version "2.2.22"
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/composer@2.2"
+    sha256 cellar: :any_skip_relocation, sonoma: "c3593a3450328861983c23cd76210f9213f13760588da0904485023d24e0455c"
+  end
+
   depends_on "gpatch"
   depends_on "git"
   depends_on "curl"

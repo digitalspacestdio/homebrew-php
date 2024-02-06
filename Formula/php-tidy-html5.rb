@@ -5,6 +5,11 @@ class PhpTidyHtml5 < Formula
   sha256 "59c86d5b2e452f63c5cdb29c866a12a4c55b1741d7025cf2f3ce0cde99b0660e"
   license "Zlib"
   head "https://github.com/htacg/tidy-html5.git", branch: "next"
+
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php-tidy-html5"
+    sha256 cellar: :any_skip_relocation, sonoma: "9eaa3e2e179d40f893bf4897f3835d780f383c67cd42adb6c69935169329492e"
+  end
   keg_only "this package contains dependency only"
   revision 2
   livecheck do

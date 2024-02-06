@@ -8,6 +8,11 @@ class ComposerAT110 < AbstractPhpPhar
   head "https://getcomposer.org/composer.phar"
   version "1.10.27"
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/composer@1.10"
+    sha256 cellar: :any_skip_relocation, sonoma: "0142ff7e91b5b6fc0161cc9ea395ba26842a6a2f53059a28fee82bf0b33875bd"
+  end
+
   depends_on "gpatch"
   depends_on "git"
   depends_on "curl"
