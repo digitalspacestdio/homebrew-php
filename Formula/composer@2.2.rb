@@ -8,8 +8,9 @@ class ComposerAT22 < Formula
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/composer@2.2"
-    sha256 cellar: :any_skip_relocation, sonoma:       "c3593a3450328861983c23cd76210f9213f13760588da0904485023d24e0455c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "6bbeb10691fd15bfed1596cc9f9db1f8d7ff978b0a8160844c019ff6d189f32b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c9f86215bba8fe4d0574ca6df33121a07abe31b5a1ef2e30f81584df5fee8e58"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c3593a3450328861983c23cd76210f9213f13760588da0904485023d24e0455c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bbeb10691fd15bfed1596cc9f9db1f8d7ff978b0a8160844c019ff6d189f32b"
   end
 
   depends_on "gpatch"

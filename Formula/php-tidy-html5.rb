@@ -8,8 +8,9 @@ class PhpTidyHtml5 < Formula
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php-tidy-html5"
-    sha256 cellar: :any_skip_relocation, sonoma:       "9eaa3e2e179d40f893bf4897f3835d780f383c67cd42adb6c69935169329492e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1b82d4be0be0795a282d13295b2a7450c7f3fc848f1e136d36fabe1431dc1085"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "57cddbc967a345863ed6f61776399b8a1b257589cc12839e142ad8d690fcfd7a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9eaa3e2e179d40f893bf4897f3835d780f383c67cd42adb6c69935169329492e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b82d4be0be0795a282d13295b2a7450c7f3fc848f1e136d36fabe1431dc1085"
   end
   keg_only "this package contains dependency only"
   revision 2
