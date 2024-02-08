@@ -147,7 +147,11 @@ class AbstractPhpCommon < Formula
         nil
     end
 
-    if !File.exist?(config_path_phprc) || Gem::Dependency.new('', "> " + config_path_phprc.read).match?('', @@php_version)
+    # if !File.exist?(config_path_phprc) || Gem::Dependency.new('', "> " + config_path_phprc.read).match?('', @@php_version)
+    #   config_path_phprc.write(@@php_version)
+    # end
+
+    if !File.exist?(config_path_phprc)
       config_path_phprc.write(@@php_version)
     end
   end
