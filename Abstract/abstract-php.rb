@@ -464,6 +464,8 @@ INFO
     # Work around configure issues with Xcode 12
     # See https://bugs.php.net/bug.php?id=80171
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration" if php_version.start_with?("7.2", "7.1", "7.0")
+
+    ENV.append "CFLAGS", "-DDEBUG_ZEND=2" if build.with? "debug"
     
     ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
     ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
