@@ -8,9 +8,9 @@ FORMULAS=$(brew search digitalspacestdio/php | grep "$1\|$1@[0-9]\+" | awk -F'/'
 
 for FORMULA in $FORMULAS; do
     echo "---> Starting $FORMULA"
-    ${DIR}/_bottles-bottles-make.sh $FORMULA && {
+    ${DIR}/_bottles-make.sh $FORMULA && {
         if [[ -z $NO_UPLOAD ]];  then
-            ${DIR}/_bottles-bottles-upload.sh $FORMULA || echo "Failed to upload bottles for $FORMULA"
+            ${DIR}/_bottles-upload.sh $FORMULA || echo "Failed to upload bottles for $FORMULA"
         fi
     } || echo "Failed to build bottles for $FORMULA"
     echo "---> Finished $FORMULA"
