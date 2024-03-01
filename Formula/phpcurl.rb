@@ -9,7 +9,7 @@ class Phpcurl < Formula
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/phpcurl"
-    sha256 cellar: :any_skip_relocation, sonoma: "e6fa70c2522e07b18812e21378f62de356be9cd571fc13b50c9185b57347c780"
+    sha256 cellar: :any_skip_relocation, sonoma: "2b96c9aeead49bbf7035a23397e3c82d08c7fe69a83ce924aa270decdec34081"
   end
 
   pour_bottle? do
