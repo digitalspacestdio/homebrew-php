@@ -5,7 +5,7 @@ class Phpcurl < Formula
   mirror "http://curl.mirror.anstey.ca/curl-7.72.0.tar.bz2"
   sha256 "ad91970864102a59765e20ce16216efc9d6ad381471f7accceceab7d905703ef"
   version '7.72.0'
-  revision 3
+  revision 4
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/phpcurl"
@@ -47,6 +47,8 @@ class Phpcurl < Formula
 #     depends_on "openssl@1.1" => :optional
 #   end
 
+  depends_on "brotli"
+  depends_on "libidn2"
   depends_on "openssl@1.1"
   depends_on "pkg-config" => :build
 #  depends_on "gcc" => :build
