@@ -289,17 +289,16 @@ INFO
 
     if php_version.start_with?("7.0", "7.1", "7.2")
       args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@67.1"].opt_prefix}"
-    end
-
-    if php_version.start_with?("5.6", "7.3")
+    elsif php_version.start_with?("5.6", "7.3")
       args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}"
+    else
+      args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@72.1"].opt_prefix}"
     end
 
     if !php_version.start_with?("7.4", "8.")
       args << "--with-gd"
       args << "--with-freetype-dir=#{Formula["freetype"].opt_prefix}"
       args << "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}"
-      args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@72.1"].opt_prefix}"
       args << "--with-png-dir=#{Formula["libpng"].opt_prefix}"
     end
 
