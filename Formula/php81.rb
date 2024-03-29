@@ -1,9 +1,9 @@
 require File.expand_path("../../Abstract/abstract-php", __FILE__)
 
 class Php81 < AbstractPhp
-  init
-  desc "PHP Version 8.1"
   include AbstractPhpVersion::Php81Defs
+  init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
+  desc "PHP " + PHP_VERSION
   version PHP_VERSION
   revision PHP_REVISION
 
@@ -14,18 +14,11 @@ class Php81 < AbstractPhp
     sha256 cellar: :any_skip_relocation, sonoma:        "1a4cea39c9a0dfef05fd39a8275a94415c75cc85b97017b790f0b90a3e85c81c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3d9f6a6c786b62a1a8455d221b74e7d27b9cfc67bb4219add8cccc4efb73516"
   end
-  keg_only :versioned_formula
-  depends_on "pkg-config" => :build
-  depends_on "krb5"
-  depends_on "oniguruma"
-  depends_on "libjpeg"
-
-  include AbstractPhpVersion::Php81Defs
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
-
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
+  keg_only :versioned_formula
 
   def php_version
     "#{PHP_VERSION_MAJOR}"
@@ -34,6 +27,13 @@ class Php81 < AbstractPhp
   def php_version_path
     "#{PHP_BRANCH_NUM}"
   end
+  
+  depends_on "pkg-config" => :build
+  depends_on "krb5"
+  depends_on "oniguruma"
+  depends_on "libjpeg"
+
+
 
   def install_args
     args = super

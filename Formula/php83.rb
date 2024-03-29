@@ -1,9 +1,9 @@
 require File.expand_path("../../Abstract/abstract-php", __FILE__)
 
 class Php83 < AbstractPhp
-  init
-  desc "PHP Version 8.3"
   include AbstractPhpVersion::Php83Defs
+  init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
+  desc "PHP " + PHP_VERSION
   version PHP_VERSION
   revision PHP_REVISION
 
@@ -14,20 +14,11 @@ class Php83 < AbstractPhp
     sha256 cellar: :any_skip_relocation, sonoma:        "c35efa27e64562309462c469afe0ad7130370f07768da89ca7b2eb87fe2e5968"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d4c1cd98f6a8be27e391b3a68b22b443234fc9b838c2fe6af94c4a8132661b1"
   end
-  keg_only :versioned_formula
-  depends_on "pkg-config" => :build
-  depends_on "krb5"
-  depends_on "oniguruma"
-  depends_on "libjpeg"
-  depends_on "bison"
-  depends_on "re2c"
-
-  include AbstractPhpVersion::Php83Defs
-
+  
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
-
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
+  keg_only :versioned_formula
 
   def php_version
     "#{PHP_VERSION_MAJOR}"
@@ -36,6 +27,13 @@ class Php83 < AbstractPhp
   def php_version_path
     "#{PHP_BRANCH_NUM}"
   end
+
+  depends_on "pkg-config" => :build
+  depends_on "krb5"
+  depends_on "oniguruma"
+  depends_on "libjpeg"
+  depends_on "bison"
+  depends_on "re2c"
 
   def install_args
     args = super

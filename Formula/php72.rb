@@ -1,9 +1,9 @@
 require File.expand_path("../../Abstract/abstract-php", __FILE__)
 
 class Php72 < AbstractPhp
-  init
-  desc "PHP Version 7.2"
   include AbstractPhpVersion::Php72Defs
+  init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
+  desc "PHP " + PHP_VERSION
   version PHP_VERSION
   revision PHP_REVISION
 
@@ -14,15 +14,10 @@ class Php72 < AbstractPhp
     sha256 cellar: :any_skip_relocation, sonoma:        "cd278124e224e3eafab58a8b1aca6b3b50c4ad6e42aaacc89ebfc4cf2b772f67"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cda7b9693fddb1ad19a28f2e4f10f1b77deb67741503b33d537c8552ae75a5c1"
   end
-  keg_only :versioned_formula
+  
   depends_on "libjpeg"
 
-  include AbstractPhpVersion::Php72Defs
-
-  url PHP_SRC_TARBALL
-  sha256 PHP_CHECKSUM[:sha256]
-
-  head PHP_GITHUB_URL, :branch => PHP_BRANCH
+  keg_only :versioned_formula
 
   def php_version
     "#{PHP_VERSION_MAJOR}"
@@ -31,6 +26,10 @@ class Php72 < AbstractPhp
   def php_version_path
     "#{PHP_BRANCH_NUM}"
   end
+  
+  url PHP_SRC_TARBALL
+  sha256 PHP_CHECKSUM[:sha256]
+  head PHP_GITHUB_URL, :branch => PHP_BRANCH
 
   def install_args
     args = super

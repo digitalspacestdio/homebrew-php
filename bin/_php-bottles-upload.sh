@@ -10,7 +10,7 @@ brew tap digitalspacestdio/common
 brew tap digitalspacestdio/php
 cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
 git stash
-git pull
+#git pull
 
 FORMULAS=${@:-$(brew search digitalspacestdio/php | grep 'php[7-9]\{1\}[0-9]\{1\}$' | awk -F'/' '{ print $3 }' | sort)}
 for PHP_FORMULA in $FORMULAS; do

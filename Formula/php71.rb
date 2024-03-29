@@ -1,9 +1,10 @@
 require File.expand_path("../../Abstract/abstract-php", __FILE__)
 
 class Php71 < AbstractPhp
-  init
-  desc "PHP Version 7.1"
   include AbstractPhpVersion::Php71Defs
+  init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
+  desc "PHP " + PHP_VERSION
+  
   version PHP_VERSION
   revision PHP_REVISION
 
@@ -15,13 +16,8 @@ class Php71 < AbstractPhp
     sha256 cellar: :any_skip_relocation, ventura:       "a7536bf803731178521e4cd1f5d98b7be742149a90055be1e2f82db64c8d0057"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "867feb70f52dd3d8abdf59ee63aa0536289e6595f9da95db58d994e15400ceb5"
   end
+
   keg_only :versioned_formula
-  include AbstractPhpVersion::Php71Defs
-
-  url PHP_SRC_TARBALL
-  sha256 PHP_CHECKSUM[:sha256]
-
-  head PHP_GITHUB_URL, :branch => PHP_BRANCH
 
   def php_version
     "#{PHP_VERSION_MAJOR}"
@@ -30,6 +26,11 @@ class Php71 < AbstractPhp
   def php_version_path
     "#{PHP_BRANCH_NUM}"
   end
+
+  url PHP_SRC_TARBALL
+  sha256 PHP_CHECKSUM[:sha256]
+
+  head PHP_GITHUB_URL, :branch => PHP_BRANCH
 
   def config_path
     etc + "php" + php_version

@@ -1,9 +1,9 @@
 require File.expand_path("../../Abstract/abstract-php", __FILE__)
 
 class Php74 < AbstractPhp
-  init
-  desc "PHP Version 7.4"
   include AbstractPhpVersion::Php74Defs
+  init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
+  desc "PHP " + PHP_VERSION
   version PHP_VERSION
   revision PHP_REVISION
 
@@ -14,18 +14,8 @@ class Php74 < AbstractPhp
     sha256 cellar: :any_skip_relocation, sonoma:        "9631714d3fbe6e9c59edbb2ed5275be11fe6b9348978ae9e5e9ae33407a8abc0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1004f3ea30e05d2c3ef915b639fa1e412000c6e284ebbd8779a78d071dec7d45"
   end
+  
   keg_only :versioned_formula
-  depends_on "pkg-config" => :build
-  depends_on "krb5"
-  depends_on "oniguruma"
-  depends_on "libjpeg"
-
-  include AbstractPhpVersion::Php74Defs
-
-  url PHP_SRC_TARBALL
-  sha256 PHP_CHECKSUM[:sha256]
-
-  head PHP_GITHUB_URL, :branch => PHP_BRANCH
 
   def php_version
     "#{PHP_VERSION_MAJOR}"
@@ -34,6 +24,16 @@ class Php74 < AbstractPhp
   def php_version_path
     "#{PHP_BRANCH_NUM}"
   end
+  
+  depends_on "pkg-config" => :build
+  depends_on "krb5"
+  depends_on "oniguruma"
+  depends_on "libjpeg"
+
+  url PHP_SRC_TARBALL
+  sha256 PHP_CHECKSUM[:sha256]
+
+  head PHP_GITHUB_URL, :branch => PHP_BRANCH
 
   def install_args
     args = super

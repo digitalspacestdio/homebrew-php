@@ -10,7 +10,7 @@ brew tap digitalspacestdio/php
 brew tap digitalspacestdio/php
 cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path' | perl -pe 's/\+/\ /g;' -e 's/%(..)/chr(hex($1))/eg;')
 git stash
-git pull
+#git pull
 
 for ARG in "$@"
 do

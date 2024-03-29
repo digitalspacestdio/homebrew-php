@@ -10,7 +10,7 @@ brew tap digitalspacestdio/common
 brew tap digitalspacestdio/php
 cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
 git stash
-git pull
+#git pull
 
 BACKUP_ETC_PHP_DIR=$(brew --prefix)/etc/php.$(date +'%Y%m%d%H%M%S')
 if [[ -d $(brew --prefix)/etc/php ]]; then

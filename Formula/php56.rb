@@ -1,8 +1,11 @@
 require File.expand_path("../../Abstract/abstract-php", __FILE__)
 
 class Php56 < AbstractPhp
-  keg_only :versioned_formula
-  def self.init
+  include AbstractPhpVersion::Php56Defs
+  def self.init (php_version, php_version_full, php_version_path)
+      @@php_version = php_version
+      @@php_version_full = php_version_full
+      @@php_version_path = php_version_path
       homepage "https://php.net"
 
       # So PHP extensions don't report missing symbols
@@ -28,19 +31,15 @@ class Php56 < AbstractPhp
           depends_on "sqlite"
       end
       depends_on "digitalspacestdio/php/phpcurl"
-      depends_on "digitalspacestdio/common/libxslt"
       depends_on "enchant" => :optional
       depends_on "freetds" if build.with?("mssql")
       depends_on "freetype"
-      depends_on "digitalspacestdio/common/gettext"
       depends_on "gmp" => :optional
-      depends_on "digitalspacestdio/common/icu4c@69.1"
       depends_on "imap-uw" if build.with?("imap")
       depends_on "jpeg"
 #      depends_on "webp" => :optional if name.split("::")[2].downcase.start_with?("php7")
       depends_on "libvpx" => :optional
       depends_on "libpng"
-      depends_on "digitalspacestdio/common/libxml2@2.9"
       depends_on "unixodbc"
       depends_on "readline"
       depends_on "zlib"
@@ -52,6 +51,11 @@ class Php56 < AbstractPhp
   #    depends_on "gdbm"
       depends_on "libiconv" if OS.mac?
       depends_on "libzip"
+
+      depends_on "digitalspacestdio/common/icu4c@69.1"
+      depends_on "digitalspacestdio/common/gettext@0.22-icu4c.69.1"
+      depends_on "digitalspacestdio/common/libxml2@2.9-icu4c.69.1"
+      depends_on "digitalspacestdio/common/libxslt@1.10-icu4c.69.1"
 
       # ssl
       if build.with?("homebrew-libressl")
@@ -111,15 +115,16 @@ class Php56 < AbstractPhp
       option "without-pcntl", "Build without Process Control support"
   end
 
-  init
-  include AbstractPhpVersion::Php56Defs
-  desc "PHP Version #{PHP_VERSION_MAJOR}"
+  init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
+  desc "PHP " + PHP_VERSION
   version PHP_VERSION
   revision PHP_REVISION
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
+
+  keg_only :versioned_formula
 
   def php_version
     "#{PHP_VERSION_MAJOR}"
@@ -187,8 +192,6 @@ class Php56 < AbstractPhp
 #      "--enable-zip",
       "--with-freetype-dir=#{Formula["freetype"].opt_prefix}",
       "--with-gd",
-      "--with-gettext=#{Formula["digitalspacestdio/common/gettext"].opt_prefix}",
-      "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}",
       "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}",
       "--with-mhash",
       "--with-png-dir=#{Formula["libpng"].opt_prefix}",
@@ -198,7 +201,11 @@ class Php56 < AbstractPhp
       "--without-gmp",
       "--without-snmp",
     ]
-    args << "--with-libxml-dir=#{Formula["digitalspacestdio/common/libxml2@2.9"].opt_prefix}"
+
+    args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}"
+    args << "--with-libxml-dir=#{Formula["digitalspacestdio/common/libxml2@2.9-icu4c.69.1"].opt_prefix}"
+    args << "--with-xsl=#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.69.1"].opt_prefix}"
+    args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.69.1"].opt_prefix}"
     args << "--with-pdo-odbc=unixODBC,#{Formula["unixodbc"].opt_prefix}"
     args << "--with-unixODBC=#{Formula["unixodbc"].opt_prefix}"
 
@@ -257,16 +264,12 @@ class Php56 < AbstractPhp
       args << "--with-fpm-user=_www"
       args << "--with-fpm-group=_www"
       (prefix+"var/log/php").mkpath
-      touch prefix+"var/log/php/php#{php_version}-fpm.log"
+      touch prefix+"var/log/php/php#{@@php_version}-fpm.log"
 #       plist_path.write plist
 #       plist_path.chmod 0644
     elsif build.with? "cgi"
       args << "--enable-cgi"
     end
-
-    args << "--with-sqlite=#{Formula["sqlite"].opt_prefix}"
-    args << "--with-curl=#{Formula["digitalspacestdio/php/phpcurl"].opt_prefix}"
-    args << "--with-xsl=" + Formula["digitalspacestdio/common/libxslt"].opt_prefix.to_s
 
     if build.with? "imap"
       args << "--with-imap=#{Formula["imap-uw"].opt_prefix}"
@@ -282,12 +285,12 @@ class Php56 < AbstractPhp
     if build.with? "libmysql"
       args << "--with-mysql-sock=/tmp/mysql.sock"
       args << "--with-mysqli=#{HOMEBREW_PREFIX}/bin/mysql_config"
-      args << "--with-mysql=#{HOMEBREW_PREFIX}" unless (build.without? "legacy-mysql") || php_version.start_with?("7.")
+      args << "--with-mysql=#{HOMEBREW_PREFIX}" unless (build.without? "legacy-mysql") || @@php_version.start_with?("7.")
       args << "--with-pdo-mysql=#{HOMEBREW_PREFIX}"
     elsif build.with? "mysql"
       args << "--with-mysql-sock=/tmp/mysql.sock"
       args << "--with-mysqli=mysqlnd"
-      args << "--with-mysql=mysqlnd" unless (build.without? "legacy-mysql") || php_version.start_with?("7.")
+      args << "--with-mysql=mysqlnd" unless (build.without? "legacy-mysql") || @@php_version.start_with?("7.")
       args << "--with-pdo-mysql=mysqlnd"
     end
 
@@ -297,7 +300,7 @@ class Php56 < AbstractPhp
     end
 
     # Do not build opcache by default; use a "phpxx-opcache" formula
-    # args << "--disable-opcache" if php_version.start_with?("5.5", "5.6", "7.")
+    # args << "--disable-opcache" if @@php_version.start_with?("5.5", "5.6", "7.")
 
     if build.with? "pcntl"
       args << "--enable-pcntl"
@@ -325,7 +328,7 @@ class Php56 < AbstractPhp
       end
     end
 
-    unless php_version.start_with?("5.3")
+    unless @@php_version.start_with?("5.3")
       # dtrace is not compatible with phpdbg: https://github.com/krakjoe/phpdbg/issues/38
       if build.without? "phpdbg"
         args << "--enable-dtrace"

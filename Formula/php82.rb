@@ -1,23 +1,24 @@
 require File.expand_path("../../Abstract/abstract-php", __FILE__)
 
 class Php82 < AbstractPhp
-  init
-  desc "PHP Version 8.2"
   include AbstractPhpVersion::Php82Defs
+  init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
+  desc "PHP " + PHP_VERSION
   version PHP_VERSION
   revision PHP_REVISION
-  keg_only :versioned_formula
-  depends_on "pkg-config" => :build
-  depends_on "krb5"
-  depends_on "oniguruma"
-  depends_on "libjpeg"
 
-  include AbstractPhpVersion::Php82Defs
-
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b042c26e9564177af06e7baf09ec06418f3a6b43b17f1ffa4ffcf82a26cbba9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a5a81bbdf1513a33bd460ad66c91c1ea1ecff8d7d6ea87af20693fffa01deb22"
+    sha256 cellar: :any_skip_relocation, sonoma:        "743c09268b86ee6ec40868376743f7c10f7f4c690a963834a6fd47fbb5e64a4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6183dddec10591ec2af73bd5a91ff7328b9cc319f67be7fd9a557b0235507702"
+  end
+  
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
-
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
+  keg_only :versioned_formula
 
   def php_version
     "#{PHP_VERSION_MAJOR}"
@@ -27,13 +28,10 @@ class Php82 < AbstractPhp
     "#{PHP_BRANCH_NUM}"
   end
 
-  bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b042c26e9564177af06e7baf09ec06418f3a6b43b17f1ffa4ffcf82a26cbba9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a5a81bbdf1513a33bd460ad66c91c1ea1ecff8d7d6ea87af20693fffa01deb22"
-    sha256 cellar: :any_skip_relocation, sonoma:        "743c09268b86ee6ec40868376743f7c10f7f4c690a963834a6fd47fbb5e64a4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6183dddec10591ec2af73bd5a91ff7328b9cc319f67be7fd9a557b0235507702"
-  end
+  depends_on "pkg-config" => :build
+  depends_on "krb5"
+  depends_on "oniguruma"
+  depends_on "libjpeg"
 
   def install_args
     args = super
