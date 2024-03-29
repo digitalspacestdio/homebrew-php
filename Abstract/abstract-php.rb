@@ -13,7 +13,7 @@ class AbstractPhp < Formula
 
     #depends_on "gcc@9" => :build if OS.mac? && name.split("::")[2].downcase.start_with?("php56")
     #depends_on "gcc@11" => :build if OS.mac? && name.split("::")[2].downcase.start_with?("php7", "php8")
-    depends_on "autoconf" => :build
+    depends_on "autoconf@2.69" => :build
 
     # obtain list of php formulas
     php_formulas = Formula.names.grep(Regexp.new('^php\d\d$')).sort
@@ -33,11 +33,11 @@ class AbstractPhp < Formula
 
     depends_on "sqlite"
     depends_on "digitalspacestdio/php/phpcurl"
-    depends_on "libxslt"
+    depends_on "digitalspacestdio/common/libxslt"
     depends_on "enchant" => :optional
     depends_on "freetds" if build.with?("mssql")
     depends_on "freetype"
-    depends_on "gettext"
+    depends_on "digitalspacestdio/common/gettext"
     depends_on "gmp" => :optional
     depends_on "digitalspacestdio/common/icu4c@67.1" if name.split("::")[2].downcase.start_with?("php70", "php71", "php72")
     depends_on "digitalspacestdio/common/icu4c@69.1" if name.split("::")[2].downcase.start_with?("php56")
@@ -49,7 +49,7 @@ class AbstractPhp < Formula
     depends_on "webp" if name.split("::")[2].downcase.start_with?("php7", "php8")
     depends_on "libvpx" => :optional if name.split("::")[2].downcase.start_with?("php56")
     depends_on "libpng"
-    depends_on "libxml2"
+    depends_on "digitalspacestdio/common/libxml2"
     depends_on "unixodbc"
     depends_on "readline"
     depends_on "zlib"
@@ -161,8 +161,8 @@ class AbstractPhp < Formula
       ENV.append "CXXFLAGS", "-msse4.2"
     end
 
-    ENV.append "PHP_AUTOCONF", "#{Formula["autoconf"].opt_bin}/autoconf"
-    ENV.append "PHP_AUTOHEADER", "#{Formula["autoconf"].opt_bin}/autoheader"
+    ENV.append "PHP_AUTOCONF", "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
+    ENV.append "PHP_AUTOHEADER", "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
 
     if php_version.start_with?("7.", "8.")
       #ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11" if OS.mac?
@@ -268,7 +268,7 @@ INFO
       "--enable-sysvsem",
       "--enable-sysvshm",
       "--enable-wddx",
-      "--with-gettext=#{Formula["gettext"].opt_prefix}",
+      "--with-gettext=#{Formula["digitalspacestdio/common/gettext"].opt_prefix}",
       "--with-mhash",
       "--with-zlib=#{Formula["zlib"].opt_prefix}",
       "--with-xmlrpc",
@@ -288,10 +288,13 @@ INFO
     end
 
     if php_version.start_with?("7.0", "7.1", "7.2")
+      ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["icu4c@67.1"].opt_lib}/pkgconfig"
       args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@67.1"].opt_prefix}"
     elsif php_version.start_with?("5.6", "7.3")
+      ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["icu4c@69.1"].opt_lib}/pkgconfig"
       args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}"
     else
+      ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["icu4c@72.1"].opt_lib}/pkgconfig"
       args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@72.1"].opt_prefix}"
     end
 
@@ -312,7 +315,7 @@ INFO
       ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["webp"].opt_lib}/pkgconfig"
     end
 
-    args << "--with-libxml-dir=#{Formula["libxml2"].opt_prefix}"    
+    args << "--with-libxml-dir=#{Formula["digitalspacestdio/common/libxml2"].opt_prefix}"    
     args << "--with-pdo-odbc=unixODBC,#{Formula["unixodbc"].opt_prefix}"
     args << "--with-unixODBC=#{Formula["unixodbc"].opt_prefix}"
 
@@ -368,7 +371,7 @@ INFO
 
     args << "--with-sqlite=#{Formula["sqlite"].opt_prefix}"
     args << "--with-curl=#{Formula["digitalspacestdio/php/phpcurl"].opt_prefix}"
-    args << "--with-xsl=" + Formula["libxslt"].opt_prefix.to_s
+    args << "--with-xsl=" + Formula["digitalspacestdio/common/libxslt"].opt_prefix.to_s
 
     if build.with? "imap"
       args << "--with-imap=#{Formula["imap-uw"].opt_prefix}"
@@ -466,8 +469,8 @@ INFO
 
     ENV.append "CFLAGS", "-DDEBUG_ZEND=2" if build.with? "debug"
     
-    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
-    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
+    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
+    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
 
     system "./buildconf", "--force"
     system "./configure", *install_args

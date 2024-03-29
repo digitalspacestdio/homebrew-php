@@ -36,6 +36,8 @@ class Php56Intl < AbstractPhp56Extension
     ENV.append "CFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
     ENV.append "CXXFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
 
+    ENV.append "CFLAGS", "-fcommon"    
+
     Dir.chdir "ext/intl"
 
     safe_phpize

@@ -15,7 +15,7 @@ class Php56PdoPgsql < AbstractPhp56Extension
   end
 
 
-  depends_on "libpq"
+  depends_on "digitalspacestdio/common/libpq"
 
   def extension
     "pdo_pgsql"

@@ -7,8 +7,8 @@ class Php56 < AbstractPhp
 
       # So PHP extensions don't report missing symbols
       skip_clean "bin", "sbin"
-      depends_on "gcc@9" => :build if OS.linux?
-      depends_on "autoconf" => :build
+      #depends_on "gcc@11" => :build if OS.linux?
+      depends_on "autoconf@2.69" => :build
 
       # obtain list of php formulas
       php_formulas = Formula.names.grep(Regexp.new('^php\d\d$')).sort
@@ -28,11 +28,11 @@ class Php56 < AbstractPhp
           depends_on "sqlite"
       end
       depends_on "digitalspacestdio/php/phpcurl"
-      depends_on "libxslt"
+      depends_on "digitalspacestdio/common/libxslt"
       depends_on "enchant" => :optional
       depends_on "freetds" if build.with?("mssql")
       depends_on "freetype"
-      depends_on "gettext"
+      depends_on "digitalspacestdio/common/gettext"
       depends_on "gmp" => :optional
       depends_on "digitalspacestdio/common/icu4c@69.1"
       depends_on "imap-uw" if build.with?("imap")
@@ -40,7 +40,7 @@ class Php56 < AbstractPhp
 #      depends_on "webp" => :optional if name.split("::")[2].downcase.start_with?("php7")
       depends_on "libvpx" => :optional
       depends_on "libpng"
-      depends_on "libxml2"
+      depends_on "digitalspacestdio/common/libxml2@2.9"
       depends_on "unixodbc"
       depends_on "readline"
       depends_on "zlib"
@@ -157,7 +157,7 @@ class Php56 < AbstractPhp
     ENV["lt_cv_path_SED"] = "sed"
 
     # Ensure system dylibs can be found by linker on Sierra
-    ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
+    # ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
 
 #    libzip = Formula["libzip"]
     #ENV["CFLAGS"] = "-Wno-error -I#{libzip.opt_include}"
@@ -187,7 +187,7 @@ class Php56 < AbstractPhp
 #      "--enable-zip",
       "--with-freetype-dir=#{Formula["freetype"].opt_prefix}",
       "--with-gd",
-      "--with-gettext=#{Formula["gettext"].opt_prefix}",
+      "--with-gettext=#{Formula["digitalspacestdio/common/gettext"].opt_prefix}",
       "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}",
       "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}",
       "--with-mhash",
@@ -198,7 +198,7 @@ class Php56 < AbstractPhp
       "--without-gmp",
       "--without-snmp",
     ]
-    args << "--with-libxml-dir=#{Formula["libxml2"].opt_prefix}"
+    args << "--with-libxml-dir=#{Formula["digitalspacestdio/common/libxml2@2.9"].opt_prefix}"
     args << "--with-pdo-odbc=unixODBC,#{Formula["unixodbc"].opt_prefix}"
     args << "--with-unixODBC=#{Formula["unixodbc"].opt_prefix}"
 
@@ -266,7 +266,7 @@ class Php56 < AbstractPhp
 
     args << "--with-sqlite=#{Formula["sqlite"].opt_prefix}"
     args << "--with-curl=#{Formula["digitalspacestdio/php/phpcurl"].opt_prefix}"
-    args << "--with-xsl=" + Formula["libxslt"].opt_prefix.to_s
+    args << "--with-xsl=" + Formula["digitalspacestdio/common/libxslt"].opt_prefix.to_s
 
     if build.with? "imap"
       args << "--with-imap=#{Formula["imap-uw"].opt_prefix}"
@@ -370,14 +370,18 @@ class Php56 < AbstractPhp
     ENV.append "CFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
     ENV.append "CXXFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
 
+    ENV.append "CFLAGS", "-fcommon"
+
     # icu4c 61.1 compatability
     ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
 
     # Prevent homebrew from harcoding path to sed shim in phpize script
     ENV["lt_cv_path_SED"] = "sed"
     
-    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9" if OS.linux?
-    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9" if OS.linux?
+    # ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9" if OS.linux?
+    # ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9" if OS.linux?
+    #ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11" if OS.linux?
+    #ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11" if OS.linux?
     # buildconf required due to system library linking bug patch
     system "./buildconf", "--force"
     inreplace "configure" do |s|
