@@ -10,7 +10,7 @@ class Php56 < AbstractPhp
 
       # So PHP extensions don't report missing symbols
       skip_clean "bin", "sbin"
-      #depends_on "gcc@11" => :build if OS.linux?
+      depends_on "gcc@11"
       depends_on "autoconf@2.69" => :build
 
       # obtain list of php formulas
@@ -383,8 +383,8 @@ class Php56 < AbstractPhp
     
     # ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9" if OS.linux?
     # ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9" if OS.linux?
-    #ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11" if OS.linux?
-    #ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11" if OS.linux?
+    ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
+    ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
     # buildconf required due to system library linking bug patch
     system "./buildconf", "--force"
     inreplace "configure" do |s|

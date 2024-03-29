@@ -16,6 +16,7 @@ class AbstractPhp < Formula
 
     #depends_on "gcc@9" => :build if OS.mac? && name.split("::")[2].downcase.start_with?("php56")
     #depends_on "gcc@11" => :build if OS.mac? && name.split("::")[2].downcase.start_with?("php7", "php8")
+    depends_on "gcc@11"
     depends_on "autoconf@2.69" => :build
 
     # obtain list of php formulas
@@ -173,20 +174,17 @@ class AbstractPhp < Formula
       #cpu = Hardware.oldest_cpu
       #ENV.append "CFLAGS", "-march=#{cpu}"
       #ENV.append "CXXFLAGS", "-march=#{cpu}"
-      ENV.append "CFLAGS", "-march=nehalem"
-      ENV.append "CFLAGS", "-msse4.2"
-
-      ENV.append "CXXFLAGS", "-march=nehalem"
-      ENV.append "CXXFLAGS", "-msse4.2"
+      ENV.append "CFLAGS", "-march=ivybridge"
+      ENV.append "CXXFLAGS", "-march=ivybridge"
     end
 
     ENV.append "PHP_AUTOCONF", "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
     ENV.append "PHP_AUTOHEADER", "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
 
-    if @@php_version.start_with?("7.", "8.")
-      #ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11" if OS.mac?
-      #ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11" if OS.mac?
-    end
+    #if @@php_version.start_with?("7.", "8.")
+    ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
+    ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
+    #end
     
     if @@php_version.start_with?("7.1", "7.0")
         ENV.append "CFLAGS", "-DTRUE=1 -DFALSE=0"
