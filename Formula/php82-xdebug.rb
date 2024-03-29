@@ -8,7 +8,7 @@ class Php82Xdebug < AbstractPhp82Extension
   url "https://github.com/xdebug/xdebug/archive/refs/tags/3.2.2.tar.gz"
   sha256 "505b7b3bf5f47d1b72d18f064a8becb6854b8574195ca472e6f8da00bdc951a8"
   version "3.2.2"
-  evision PHP_REVISION
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
