@@ -7,7 +7,7 @@ class Php72Ref < AbstractPhp72Extension
   url "https://github.com/pinepain/php-ref/archive/v0.5.0.tar.gz"
   sha256 "0fd928fd8314f836a97e3833d6c5e15658202d05fe3a0725d793f6e06394cd97"
   head "https://github.com/pinepain/php-ref.git"
-
+  revision PHP_REVISION
 
   def install
     safe_phpize

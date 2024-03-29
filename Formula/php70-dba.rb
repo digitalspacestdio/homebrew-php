@@ -4,7 +4,7 @@ class Php70Dba < AbstractPhp70Extension
   init
   desc "Database (dbm-style) Abstraction Layer"
   homepage "https://www.php.net/manual/en/book.dba.php"
-  revision 1
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL

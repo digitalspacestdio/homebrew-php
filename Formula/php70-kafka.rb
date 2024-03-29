@@ -8,7 +8,8 @@ class Php70Kafka < AbstractPhp70Extension
   version "rev-6a09088"
   sha256 "f76933b8dea53f822028368380f83e3d4c13ef93811e2014e023408ce4920357"
   head "https://github.com/EVODelavega/phpkafka.git"
-
+  revision PHP_REVISION
+  
   depends_on "librdkafka" => :build
 
   def install

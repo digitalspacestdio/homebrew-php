@@ -6,7 +6,7 @@ class Php74Grpc < AbstractPhp74Extension
   homepage "https://grpc.io"
   url "https://pecl.php.net/get/grpc-1.6.0.tgz"
   sha256 "ded14216247457c04a5e5baf9d3cd44984f4f8042ea4677adfe432ae75c19f09"
-
+  revision PHP_REVISION
 
   def install
     Dir.chdir "grpc-#{version}"

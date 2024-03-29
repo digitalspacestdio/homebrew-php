@@ -7,7 +7,7 @@ class Php72Geoip < AbstractPhp72Extension
   url "https://pecl.php.net/get/geoip-1.1.1.tgz"
   sha256 "b2d05c03019d46135c249b5a7fa0dbd43ca5ee98aea8ed807bc7aa90ac8c0f06"
   head "https://svn.php.net/repository/pecl/geoip/trunk/"
-
+  revision PHP_REVISION
 
   depends_on "geoip"
 

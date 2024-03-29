@@ -7,7 +7,7 @@ class Php70Amqp < AbstractPhp70Extension
   url "https://pecl.php.net/get/amqp-1.9.3.tgz"
   sha256 "c79e52db33bf907dad7da8f350dbdf2937b0679a3dc44fb2a941efb6d4808da9"
   head "https://github.com/pdezwart/php-amqp.git"
-
+  revision PHP_REVISION
 
   depends_on "rabbitmq-c"
 

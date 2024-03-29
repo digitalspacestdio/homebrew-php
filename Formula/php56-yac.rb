@@ -6,7 +6,8 @@ class Php56Yac < AbstractPhp56Extension
   homepage "https://github.com/laruence/yac"
   url "https://github.com/laruence/yac/archive/yac-0.9.2.tar.gz"
   sha256 "d99023db0f73b0d3ba07b5ed1e9386182c5040202b1c2a4891e90df7b040afba"
-
+  revision PHP_REVISION
+  
   version_scheme 1
   head "https://github.com/laruence/yac/tree/php5"
 

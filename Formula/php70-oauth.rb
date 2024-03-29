@@ -7,7 +7,7 @@ class Php70Oauth < AbstractPhp70Extension
   url "https://pecl.php.net/get/oauth-2.0.0.tgz"
   sha256 "f223a166e82ea51a241c229c5788e19dcafd8a1886ce2b7635cae29cb33c4f0e"
   head "https://svn.php.net/repository/pecl/oauth/trunk"
-
+  revision PHP_REVISION
 
   depends_on "pcre"
 

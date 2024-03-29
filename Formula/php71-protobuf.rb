@@ -6,7 +6,7 @@ class Php71Protobuf < AbstractPhp71Extension
   homepage "https://pecl.php.net/package/protobuf"
   url "https://pecl.php.net/get/protobuf-3.4.0.tgz"
   sha256 "510d8ea544e3d5fc44fa5d13f6db5dd7af3e292aee66f90409f95f4450414a71"
-
+  revision PHP_REVISION
 
   depends_on "protobuf"
 

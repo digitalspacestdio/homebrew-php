@@ -11,7 +11,7 @@ class Php74Apcu < AbstractPhp74Extension
   sha256 "9f8ddc1232328108c29714fc7686db476dd630ffb94004f0fa055e1eae68dd26"
   head "https://github.com/krakjoe/apcu.git", :branch => "master"
   version "1f98e34"
-  revision 3
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"

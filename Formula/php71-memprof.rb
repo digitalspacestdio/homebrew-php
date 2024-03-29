@@ -8,7 +8,8 @@ class Php71Memprof < AbstractPhp71Extension
   sha256 "fed07166ab1ce81ecb16ddd586a6456c6b574b72e965d1a9d1c0debdef374db1"
   head "https://github.com/arnaud-lb/php-memory-profiler.git", :branch => "master"
   version "bc76256"
-
+  revision PHP_REVISION
+  
   depends_on "libjudy"
 
   def install

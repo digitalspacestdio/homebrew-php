@@ -6,7 +6,7 @@ class Php56Yaz < AbstractPhp56Extension
   homepage "http://www.indexdata.com/phpyaz"
   url "https://pecl.php.net/get/yaz-1.1.9.tgz"
   sha256 "9dd4da2fd6042b37a1811972134f852c94a6f6b85ca4ec5ed5d766eb27a6c401"
-  revision 1
+  revision PHP_REVISION
 
 
   depends_on "yaz"

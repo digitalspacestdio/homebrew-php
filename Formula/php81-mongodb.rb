@@ -8,7 +8,7 @@ class Php81Mongodb < AbstractPhp81Extension
   sha256 "b2038e778d71f45cadb8c93a30eb548e5c2c1e4f832807a775ed516b7816b749"
   head "https://github.com/mongodb/mongo-php-driver.git"
   version "1.15.1"
-  revision 2
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"

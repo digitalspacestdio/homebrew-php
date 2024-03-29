@@ -8,7 +8,7 @@ class Php81Igbinary < AbstractPhp81Extension
   sha256 "87cf65d8a003a3f972c0da08f9aec65b2bf3cb0dc8ac8b8cbd9524d581661250"
   head "https://github.com/igbinary/igbinary.git"
   version "3.2.6"
-  revision 1
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"

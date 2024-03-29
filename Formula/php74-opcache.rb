@@ -4,7 +4,7 @@ class Php74Opcache < AbstractPhp74Extension
   init
   desc "OPcache improves PHP performance"
   homepage "https://php.net/manual/en/book.opcache.php"
-  revision 19
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL

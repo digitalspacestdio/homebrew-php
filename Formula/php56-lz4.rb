@@ -6,7 +6,7 @@ class Php56Lz4 < AbstractPhp56Extension
   homepage "https://cyan4973.github.io/lz4/"
   url "https://github.com/kjdev/php-ext-lz4/archive/0.2.2.tar.gz"
   sha256 "9e37b1ca39013dacd392e31a0f037f9adf2b6f710a733166b0d0168f23f99c3a"
-
+  revision PHP_REVISION
 
   def install
     # ENV.universal_binary if build.universal?

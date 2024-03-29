@@ -7,7 +7,7 @@ class Php70Yaf < AbstractPhp70Extension
   url "https://github.com/laruence/yaf/archive/yaf-3.0.3.tar.gz"
   sha256 "6761e636d055ec6756759185e91cf9fd42ca3f59e36172d7773b8052a1fb4887"
   head "https://github.com/laruence/yaf.git"
-
+  revision PHP_REVISION
 
   depends_on "pcre"
 

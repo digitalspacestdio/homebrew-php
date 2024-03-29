@@ -17,7 +17,7 @@ class Php71Apcu < AbstractPhp71Extension
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bed9f103220a8b74cff69a9851d2b904aadd90a20e407d4dc4bf3728dc11af5f"
   end
   depends_on "pcre"
-  revision 2
+  revision PHP_REVISION
 
   def install
     # ENV.universal_binary if build.universal?

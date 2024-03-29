@@ -7,7 +7,7 @@ class Php56Yaml < AbstractPhp56Extension
   url "https://pecl.php.net/get/yaml-1.3.0.tgz"
   sha256 "bf4696386fbd4e8435628d84ccb8c261c9e481888c7e1ce537cccceadcb57500"
   head "https://github.com/php/pecl-file_formats-yaml.git"
-
+  revision PHP_REVISION
 
   depends_on "libyaml"
 

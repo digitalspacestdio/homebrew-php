@@ -7,7 +7,7 @@ class Php56Vld < AbstractPhp56Extension
   url "https://pecl.php.net/get/vld-0.13.0.tgz"
   sha256 "f61fe6501b6f30cf5628b7fd0e2c41185bb9bfac96b765c8b967a8ba01f7bf8b"
   head "https://github.com/derickr/vld.git"
-
+  revision PHP_REVISION
 
   def install
     Dir.chdir "vld-#{version}" unless build.head?

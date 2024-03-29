@@ -7,7 +7,7 @@ class Php83Ssh2 < AbstractPhp83Extension
   url "https://pecl.php.net/get/ssh2-1.1.2.tgz"
   sha256 "87618d6a0981afe8c24b36d6b38c21a0aa0237b62e60347d0170bd86b51f79fb"
   head "https://github.com/php/pecl-networking-ssh2.git"
-
+  revision PHP_REVISION
 
   depends_on "libssh2"
 

@@ -8,7 +8,7 @@ class Php56Htscanner < AbstractPhp56Extension
   sha256 "b014dafb36313c67f88b961799b9841e816de1fd3dc66bbf2ce5964c40f4e221"
   version "b62ad431"
   head "https://github.com/piannelli/htscanner-enhanced.git"
-
+  revision PHP_REVISION
 
   def install
     # ENV.universal_binary if build.universal?

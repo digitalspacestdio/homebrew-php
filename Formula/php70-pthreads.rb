@@ -7,7 +7,7 @@ class Php70Pthreads < AbstractPhp70Extension
   url "https://pecl.php.net/get/pthreads-3.1.6.tgz"
   sha256 "bb13da909a7a7ae1f9e499166103a2d24628993238ce03a8aae3eaa492c0b736"
   head "https://github.com/krakjoe/pthreads.git"
-
+  revision PHP_REVISION
 
   def install
     Dir.chdir "pthreads-#{version}" unless build.head?

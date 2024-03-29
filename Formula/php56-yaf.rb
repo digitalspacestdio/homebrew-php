@@ -7,7 +7,7 @@ class Php56Yaf < AbstractPhp56Extension
   url "https://pecl.php.net/get/yaf-2.3.3.tgz"
   sha256 "fb59db901008b157d11c255f1a1492ccd02df2e2ab9869aa4f9fa9fc73272298"
   head "https://svn.php.net/repository/pecl/yaf/trunk/"
-
+  revision PHP_REVISION
 
   depends_on "pcre"
 

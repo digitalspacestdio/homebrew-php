@@ -7,7 +7,7 @@ class Php72Gearman < AbstractPhp72Extension
   url "https://github.com/wcgallego/pecl-gearman/archive/gearman-2.0.3.tar.gz"
   sha256 "f71e8ff218f31e3b9a15534e18846b9f9526319daffcc12e76b545889e44e130"
   head "https://github.com/wcgallego/pecl-gearman.git"
-  revision 1
+  revision PHP_REVISION
 
 
   depends_on "gearman"

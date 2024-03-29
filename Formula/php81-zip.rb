@@ -4,7 +4,7 @@ class Php81Zip < AbstractPhp81Extension
   init
   desc "Zip"
   homepage "https://www.php.net/manual/ru/book.zip.php"
-  revision 1
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL

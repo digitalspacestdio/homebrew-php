@@ -7,7 +7,7 @@ class Php56Mecab < AbstractPhp56Extension
   url "https://github.com/downloads/rsky/php-mecab/php-mecab-0.5.0.tgz"
   sha256 "e5c84a8ffa39a8a0dd60424b879806382ec0f66d50007f6bfad6831074b3bcc5"
   head "https://github.com/rsky/php-mecab.git"
-
+  revision PHP_REVISION
 
   depends_on "mecab"
 

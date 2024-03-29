@@ -8,7 +8,7 @@ class Php82Memcached < AbstractPhp82Extension
   sha256 "ece328be2670e5a8f3393e07c801c0cfba914d4575b5f42cf906ac9d6068f519"
   head "https://github.com/php-memcached-dev/php-memcached.git"
   version "3.2.0"
-  revision 1
+  revision PHP_REVISION
 
 
   option "with-sasl", "Build with sasl support"

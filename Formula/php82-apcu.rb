@@ -8,7 +8,7 @@ class Php82Apcu < AbstractPhp82Extension
   sha256 "dfd3e1df434fe84439da499e06d0857fd06dea5572df910d830b1d6474393b08"
   head "https://github.com/krakjoe/apcu.git", :branch => "master"
   version "5.1.22"
-  revision 2
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"

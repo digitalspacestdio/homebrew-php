@@ -5,7 +5,7 @@ class Php71 < AbstractPhp
   desc "PHP Version 7.1"
   include AbstractPhpVersion::Php71Defs
   version PHP_VERSION
-  revision 32
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"

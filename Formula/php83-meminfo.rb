@@ -6,7 +6,7 @@ class Php83Meminfo < AbstractPhp83Extension
   homepage "https://github.com/BitOne/php-meminfo"
   url "https://github.com/BitOne/php-meminfo.git",
     :tag => "v1.1.1",
-    :revision => "8dfdb2a72d2fd984bfcec5596a1605d618d0f631"
+    :revision PHP_REVISION
   head "https://github.com/BitOne/php-meminfo.git"
 
 

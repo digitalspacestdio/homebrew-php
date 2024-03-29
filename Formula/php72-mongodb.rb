@@ -8,7 +8,7 @@ class Php72Mongodb < AbstractPhp72Extension
   sha256 "1a9e7117b749c2dd63bd3493bf38c24a9acd11646ec96a0d92ba6380eee0ab9a"
   head "https://github.com/mongodb/mongo-php-driver.git"
   version "1.9.0"
-  revision 3
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"

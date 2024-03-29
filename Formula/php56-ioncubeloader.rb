@@ -12,6 +12,7 @@ class Php56Ioncubeloader < AbstractPhp56Extension
     url "https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz"
   end
   version "10.4.5"
+  revision PHP_REVISION
   option "with-thread-safe", "Enable the thread-safe extenstion"
 
 

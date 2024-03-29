@@ -7,7 +7,7 @@ class Php56Xhprof < AbstractPhp56Extension
   url "https://github.com/tideways/php-xhprof-extension/archive/9b1c124a8cf75ed4ecf126c213b50c206df6a9db.tar.gz"
   sha256 "9f84f5e8dca4b38921343a6e389da101e7d1e83ee0077220fd3f747cb67945a4"
   version "4.1.7"
-  revision 1
+  revision PHP_REVISION
   depends_on "pcre"
 
   def install

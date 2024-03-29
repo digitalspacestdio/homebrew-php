@@ -7,7 +7,7 @@ class Php70Apcu < AbstractPhp70Extension
   url "https://github.com/krakjoe/apcu/archive/v5.1.8.tar.gz"
   sha256 "09848619674a0871053cabba3907d2aade395772d54464d3aee45f519e217128"
   head "https://github.com/krakjoe/apcu.git"
-  revision 2
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"

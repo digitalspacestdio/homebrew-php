@@ -7,7 +7,8 @@ class Php71Sodium < AbstractPhp71Extension
   url "https://github.com/jedisct1/libsodium-php/archive/2.0.10.tar.gz"
   sha256 "2eebf3772d7441449b47abfe8f52043b9c6d6b5aff66aebd339c5d459d7fca28"
   head "https://github.com/jedisct1/libsodium-php.git"
-
+  revision PHP_REVISION
+  
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aeadd1e2fbe938afa95ba288f1489609581b604b3fd2f65889bdd26932710063"

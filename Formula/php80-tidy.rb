@@ -4,7 +4,7 @@ class Php80Tidy < AbstractPhp80Extension
   init
   desc "Tidy HTML clean and repair utility"
   homepage "https://php.net/manual/en/book.tidy.php"
-  revision 19
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL

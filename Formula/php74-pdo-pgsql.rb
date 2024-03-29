@@ -4,7 +4,7 @@ class Php74PdoPgsql < AbstractPhp74Extension
   init
   desc "Unified PostgreSQL driver for PDO"
   homepage "https://github.com/php/php-src/tree/master/ext/pdo_pgsql"
-  revision 21
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL

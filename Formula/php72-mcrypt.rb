@@ -7,7 +7,7 @@ class Php72Mcrypt < AbstractPhp72Extension
   url "https://pecl.php.net/get/mcrypt-1.0.1.tgz"
   sha256 "a3b0e5493b5cd209ab780ee54733667293d369e6b7052b4a7dab9dd0def46ac6"
   head "https://github.com/chuan-yun/Molten.git"
-  revision 5
+  revision PHP_REVISION
 
   depends_on "digitalspacestdio/php/phpmcrypt" if OS.linux?
   depends_on "mcrypt" if OS.mac?

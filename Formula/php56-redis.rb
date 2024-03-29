@@ -7,7 +7,7 @@ class Php56Redis < AbstractPhp56Extension
   url "https://github.com/phpredis/phpredis/archive/3.1.4.tar.gz"
   sha256 "656cab2eb93bd30f30701c1280707c60e5736c5420212d5d547ebe0d3f4baf71"
   head "https://github.com/phpredis/phpredis.git"
-
+  revision PHP_REVISION
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "012159ded54f3ef80cd6ee22ea2055ce6c419e9d01b740fe068ad680be2de0bb"

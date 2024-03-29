@@ -7,7 +7,7 @@ class Php56Graphdat < AbstractPhp56Extension
   url "https://pecl.php.net/get/graphdat-1.0.3.tgz"
   sha256 "6b436c1f3f37d4d701f970a5d868e91711406b4b55bd78f79de916d21f8fb799"
   head "https://github.com/alphashack/graphdat-sdk-php.git"
-
+  revision PHP_REVISION
 
   def install
     Dir.chdir "graphdat-#{version}" unless build.head?

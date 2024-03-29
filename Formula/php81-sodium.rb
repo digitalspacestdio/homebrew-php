@@ -4,7 +4,7 @@ class Php81Sodium < AbstractPhp81Extension
   init
   desc "Sodium core php extension"
   homepage "https://php.net/manual/en/book.sodium.php"
-  revision 1
+  revision PHP_REVISION
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]

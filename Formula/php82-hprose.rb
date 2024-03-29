@@ -7,7 +7,7 @@ class Php82Hprose < AbstractPhp82Extension
   url "https://pecl.php.net/get/hprose-1.6.6.tgz"
   head "https://github.com/hprose/hprose-pecl.git"
   sha256 "29292d9ba15c3f838622bbf8f608a0fb4fb6bba6019f6e6bffe1eedb572881b8"
-
+  revision PHP_REVISION
 
   def install
     Dir.chdir "hprose-#{version}" unless build.head?

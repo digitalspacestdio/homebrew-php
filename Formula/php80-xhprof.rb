@@ -8,7 +8,7 @@ class Php80Xhprof < AbstractPhp80Extension
   sha256 "d9620cf3f1030b7da0390f4fd29161db18836541a866e6acde31c9e11a0ea04b"
   head "https://github.com/longxinH/xhprof.git", :branch => "master"
   version "2.3.5"
-  revision 1
+  revision PHP_REVISION
 
   def install
     Dir.chdir "extension"

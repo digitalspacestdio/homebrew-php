@@ -6,7 +6,7 @@ class Php56V8js < AbstractPhp56Extension
   homepage "http://pecl.php.net/package/v8js"
   url "https://pecl.php.net/get/v8js-0.6.4.tgz"
   sha256 "88af2c98482374a36b24e317df4684b9eecc92d4883022fc8036a16f2641ca43"
-
+  revision PHP_REVISION
 
   depends_on "v8"
 

@@ -7,8 +7,7 @@ class Php82Xxtea < AbstractPhp82Extension
   url "https://pecl.php.net/get/xxtea-1.0.11.tgz"
   sha256 "5b1e318d3e70b27ad017d125d09ba3cf7bb3859e11be864a7bc3ddba421108af"
   head "https://github.com/xxtea/xxtea-pecl.git"
-  revision 1
-
+  evision PHP_REVISION
 
   def install
     Dir.chdir "xxtea-#{version}" unless build.head?

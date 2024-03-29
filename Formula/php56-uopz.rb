@@ -7,7 +7,7 @@ class Php56Uopz < AbstractPhp56Extension
   url "https://github.com/krakjoe/uopz/archive/v2.0.7.tar.gz"
   sha256 "aca7dac96c00e5bd628625ad7372d733c8a40a48d4b143d7f001feea1c5fb3b1"
   head "https://github.com/krakjoe/uopz.git"
-
+  revision PHP_REVISION
 
   def install
     # ENV.universal_binary if build.universal?

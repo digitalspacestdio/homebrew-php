@@ -2,7 +2,8 @@ require File.expand_path("../../Abstract/abstract-php-common", __FILE__)
 
 class Php71Common < AbstractPhpCommon
   include AbstractPhpVersion::Php71Defs
-
+  revision PHP_REVISION
+  
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71-common"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c1fcf791b4c1f335ea6200df45663de350ed041857348a20988e9541396c62ef"

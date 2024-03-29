@@ -8,7 +8,7 @@ class Php73Xdebug < AbstractPhp73Extension
   url "https://github.com/xdebug/xdebug/archive/refs/tags/3.1.6.tar.gz"
   sha256 "217e05fbe43940fcbfe18e8f15e3e8ded7dd35926b0bee916782d0fffe8dcc53"
   version "3.1.6"
-  revision 1
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"

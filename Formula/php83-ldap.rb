@@ -4,7 +4,7 @@ class Php83Ldap < AbstractPhp83Extension
   init
   desc "LDAP Support"
   homepage "https://php.net/manual/en/book.ldap.php"
-  revision 1
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL

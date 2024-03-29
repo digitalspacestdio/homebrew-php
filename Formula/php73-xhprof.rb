@@ -8,7 +8,7 @@ class Php73Xhprof < AbstractPhp73Extension
   sha256 "1cfc8655b3561bd1b6ed778584f7e8ba36b7dac7cce1f3abb366093591dc526a"
   head "https://github.com/tideways/php-xhprof-extension.git", :branch => "master"
   version "5.0.4"
-
+  revision PHP_REVISION
   def install
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig

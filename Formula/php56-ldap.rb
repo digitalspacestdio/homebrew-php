@@ -4,7 +4,7 @@ class Php56Ldap < AbstractPhp56Extension
   init
   desc "LDAP Support"
   homepage "https://php.net/manual/en/book.ldap.php"
-  revision 26
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL

@@ -7,7 +7,7 @@ class Php71Uv < AbstractPhp71Extension
   url "https://github.com/bwoebi/php-uv/archive/v0.1.1.tar.gz"
   sha256 "e576df44997a0b656deb4a1c2bfd1879fb3647419b0724bd6e87c7ddf997e2c1"
   head "https://github.com/bwoebi/php-uv.git"
-
+  revision PHP_REVISION
 
   depends_on "libuv"
 

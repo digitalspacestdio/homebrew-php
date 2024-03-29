@@ -7,7 +7,7 @@ class Php74Msgpack < AbstractPhp74Extension
   url "https://pecl.php.net/get/msgpack-2.0.2.tgz"
   sha256 "b04980df250214419d9c3d9a5cb2761047ddf5effe5bc1481a19fee209041c01"
   head "https://github.com/msgpack/msgpack-php.git"
-  revision 1
+  revision PHP_REVISION
 
 
   def install

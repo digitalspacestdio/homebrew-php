@@ -7,7 +7,7 @@ class Php83Rdkafka < AbstractPhp83Extension
   url "https://github.com/arnaud-lb/php-rdkafka/archive/refs/tags/6.0.3.tar.gz"
   sha256 "058bac839a84f773c931776e7f6cbfdb76443849d3ea2b43ba43b80f64df7453"
   head "https://github.com/arnaud-lb/php-rdkafka.git"
-
+  revision PHP_REVISION
 
   depends_on "librdkafka"
 

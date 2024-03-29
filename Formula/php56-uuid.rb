@@ -6,7 +6,8 @@ class Php56Uuid < AbstractPhp56Extension
   homepage "https://pecl.php.net/package/uuid"
   url "https://pecl.php.net/get/uuid-1.0.3.tgz"
   sha256 "6832c6453efec9800d2dc0bb9786cea02888378e88c15851f79210ef78369ef1"
-
+  revision PHP_REVISION
+  
   stable do
     patch do
       url "https://gist.github.com/e-nomem/4958223/raw/4ad7ebf2bff53887f64ac5be802b85ea5856fa85/php-uuid.patch"

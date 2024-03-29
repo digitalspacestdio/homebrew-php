@@ -7,7 +7,7 @@ class Php56Httpparser < AbstractPhp56Extension
   url "https://github.com/dhotson/httpparser-php/archive/v0.1.0.tar.gz"
   sha256 "9ba699a116696bb3695b7bff7b5ffd2be4b5cbe6746d1814c628c141eb1ff381"
   head "https://github.com/dhotson/httpparser-php.git"
-
+  revision PHP_REVISION
 
   def extension
     "httpparser"

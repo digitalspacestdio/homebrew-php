@@ -6,7 +6,7 @@ class Php71Xdiff < AbstractPhp71Extension
   homepage "https://pecl.php.net/package/xdiff"
   url "https://pecl.php.net/get/xdiff-2.0.1.tgz"
   sha256 "b4ac96c33ec28a5471b6498d18c84a6ad0fe2e4e890c93df08e34061fba7d207"
-
+  revision PHP_REVISION
 
   depends_on "libxdiff"
 

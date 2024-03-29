@@ -6,7 +6,7 @@ class Php56Opcache < AbstractPhp56Extension
   homepage "https://php.net/manual/en/book.opcache.php"
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
-  revision 7
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"

@@ -8,7 +8,7 @@ class Php70Swoole < AbstractPhp70Extension
   version "2.0.7-stable"
   sha256 "d8370a5f959f2d4082f5b2cec2e3a5b294dd3d7f586a5c7a19e3d154b48c699b"
   head "https://github.com/swoole/swoole-src.git"
-
+  revision PHP_REVISION
 
   def install
     # ENV.universal_binary if build.universal?

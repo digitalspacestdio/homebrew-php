@@ -7,7 +7,7 @@ class Php56Binpack < AbstractPhp56Extension
   url "https://pecl.php.net/get/binpack-1.0.1.tgz"
   sha256 "70617a721df4f8c52b5b1b214c11e464f8c36915cc19a850f24fed500c61b297"
   head "http://binpack.liaohuqiu.net"
-
+  revision PHP_REVISION
 
   def install
     Dir.chdir "binpack-#{version}" unless build.head?

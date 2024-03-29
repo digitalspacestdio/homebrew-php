@@ -6,7 +6,7 @@ class Php74Trader < AbstractPhp74Extension
   homepage "https://pecl.php.net/package/trader"
   url "https://pecl.php.net/get/trader-0.4.0.tgz"
   sha256 "64400b2331cd843cd1bb684b5d02145ac6c00118565915fe592c6eee3c108784"
-
+  revision PHP_REVISION
 
   depends_on "ta-lib"
   depends_on "libtool" => :build

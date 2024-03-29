@@ -7,7 +7,8 @@ class Php56Apcu < AbstractPhp56Extension
   url "https://pecl.php.net/get/apcu-4.0.11.tgz"
   sha256 "454f302ec13a6047ca4c39e081217ce5a61bbea815aec9c1091fb849e70b4d00"
   head "https://github.com/krakjoe/apcu.git"
-
+  revision PHP_REVISION
+  
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "15e7e917e0a93bfb1da35b72d4cc976323ff33db768980a5ac7fae7dc73a90a3"

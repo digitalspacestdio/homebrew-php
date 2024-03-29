@@ -16,7 +16,7 @@ class Php72Igbinary < AbstractPhp72Extension
     sha256 cellar: :any_skip_relocation, ventura:       "7dd3ffb889984ee0d1296912d9cbf0095435abdca9f95b0bd7fae788aa3b4779"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "609bb79d9bbbf2cbf3d162ccedca8efc6aad37300c9a3945b82a27bfb7070608"
   end
-
+  revision PHP_REVISION
 
   depends_on "igbinary" => :build
 

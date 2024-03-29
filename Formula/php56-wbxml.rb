@@ -7,7 +7,7 @@ class Php56Wbxml < AbstractPhp56Extension
   url "https://pecl.php.net/get/wbxml-1.0.3.tgz"
   sha256 "8a2e36aa1e59712614734a150d4bc2c09c1e7d1f9b90404beeb99d32d19d15ae"
   head "https://svn.php.net/repository/pecl/wbxml/trunk/"
-
+  revision PHP_REVISION
 
   depends_on "libwbxml"
 

@@ -4,7 +4,7 @@ class Php73Gmp < AbstractPhp73Extension
   init
   desc "GMP core php extension"
   homepage "https://php.net/manual/en/book.gmp.php"
-  revision 1
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL

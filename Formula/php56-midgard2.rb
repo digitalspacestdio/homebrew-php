@@ -7,7 +7,7 @@ class Php56Midgard2 < AbstractPhp56Extension
   url "https://github.com/midgardproject/midgard-php5/archive/12.09.1.tar.gz"
   sha256 "633ed2dce0c43222c13b2be1d2d044343f37e69cbdf727abc78ac53b6d871fe3"
   head "https://github.com/midgardproject/midgard-php5.git", :branch => "ratatoskr"
-
+  revision PHP_REVISION
 
   depends_on "pkg-config" => :build
   depends_on "midgard2"

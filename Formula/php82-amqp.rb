@@ -7,7 +7,7 @@ class Php82Amqp < AbstractPhp82Extension
   url "https://github.com/php-amqp/php-amqp/archive/refs/tags/v1.11.0.tar.gz"
   sha256 "245afd68082438b994a0fab73c97f2ef42cc0acc4dbc387036e4f217d95abf8b"
   head "https://github.com/pdezwart/php-amqp.git"
-  revision 1
+  revision PHP_REVISION
 
 
   depends_on "rabbitmq-c"

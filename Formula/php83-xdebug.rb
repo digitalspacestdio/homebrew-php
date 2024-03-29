@@ -10,7 +10,7 @@ class Php83Xdebug < AbstractPhp83Extension
   sha256 "76d0467154d7f2714a07f88c7c17658e24dd58fb919a9aa08ab4bc23dccce76d"
   head "https://github.com/xdebug/xdebug.git"
   version "3.3.1"
-  revision 1
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"

@@ -7,7 +7,7 @@ class Php71Http < AbstractPhp71Extension
   url "https://github.com/m6w6/ext-http/archive/RELEASE_3_1_0.tar.gz"
   sha256 "6b931205c1af59bba227715dd846b1495b441b76dabd661054791ef21b719214"
   head "https://github.com/m6w6/ext-http.git"
-  revision 3
+  revision PHP_REVISION
 
 
   depends_on "digitalspacestdio/php/php71-raphf"

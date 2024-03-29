@@ -7,7 +7,7 @@ class Php56Mongo < AbstractPhp56Extension
   url "https://pecl.php.net/get/mongo-1.6.14.tgz"
   sha256 "586a0f55d29198010da5f4c932a183491f114db6e1b0ba8e40e7246b1a4a96d0"
   head "https://github.com/mongodb/mongo-php-driver-legacy.git"
-
+  revision PHP_REVISION
 
   def install
     Dir.chdir "mongo-#{version}" unless build.head?

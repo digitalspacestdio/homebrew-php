@@ -7,7 +7,7 @@ class Php56Pthreads < AbstractPhp56Extension
   url "https://pecl.php.net/get/pthreads-2.0.10.tgz"
   sha256 "8bdf8d8918680421ca0ced1e62292eeb626f800a808d0a3b6812841756588cf6"
   head "https://github.com/krakjoe/pthreads.git"
-
+  revision PHP_REVISION
 
   def install
     Dir.chdir "pthreads-#{version}" unless build.head?

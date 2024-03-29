@@ -4,7 +4,7 @@ class Php80Intl < AbstractPhp80Extension
   init
   desc "Wrapper for the ICU library"
   homepage "https://php.net/manual/en/book.intl.php"
-  revision 27
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL

@@ -8,7 +8,7 @@ class Php56Mongodb < AbstractPhp56Extension
   sha256 "e48a07618c0ae8be628299991b5f481861c891a22544a2365a63361cc181c379"
   head "https://github.com/mongodb/mongo-php-driver.git"
   version "1.7.5"
-  revision 2
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"

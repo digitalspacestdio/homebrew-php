@@ -8,7 +8,7 @@ class Php71Xdebug < AbstractPhp71Extension
   url "https://github.com/xdebug/xdebug/archive/refs/tags/2.7.2.tar.gz"
   sha256 "b2aeb55335c5649034fe936abb90f61df175c4f0a0f0b97a219b3559541edfbd"
   version "2.7.2"
-  revision 1
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"

@@ -4,7 +4,7 @@ class Php71Pspell < AbstractPhp71Extension
   init
   desc "Extension to check the spelling"
   homepage "https://php.net/manual/en/book.pspell.php"
-  revision 20
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL

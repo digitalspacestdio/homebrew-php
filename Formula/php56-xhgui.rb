@@ -10,7 +10,8 @@ class Php56Xhgui < AbstractPhp56Extension
   url "https://github.com/perftools/xhgui/archive/v0.4.0.tar.gz"
   sha256 "356e6fc46158d827aa6168d55e7de55ea16f539dbabeab5eb5085a9d03f7bb07"
   head "https://github.com/perftools/xhgui.git"
-
+  revision PHP_REVISION
+  
   depends_on "mongodb"
   depends_on "digitalspacestdio/php/php56-mcrypt"
   depends_on "digitalspacestdio/php/php56-mongo"

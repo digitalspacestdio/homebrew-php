@@ -4,7 +4,7 @@ class Php73Bz2 < AbstractPhp73Extension
   init
   desc "The bzip2 functions are used to transparently read and write bzip2 (.bz2) compressed files."
   homepage "https://www.php.net/manual/en/book.bzip2.php"
-  revision 1
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL

@@ -6,7 +6,7 @@ class Php56Gmp < AbstractPhp56Extension
   homepage "http://php.net/manual/en/book.gmp.php"
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
-  revision 6
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"

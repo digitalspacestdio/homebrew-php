@@ -7,7 +7,7 @@ class Php81Timezonedb < AbstractPhp81Extension
   url "https://pecl.php.net/get/timezonedb-2017.2.tgz"
   sha256 "e96ea4045a2886d68d15ad64e8d0ace1dd5287b08226e422bc7befb27944927a"
   head "https://svn.php.net/repository/pecl/timezonedb/trunk/"
-  revision 1
+  revision PHP_REVISION
 
 
   def install

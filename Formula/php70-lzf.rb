@@ -7,7 +7,7 @@ class Php70Lzf < AbstractPhp70Extension
   url "https://pecl.php.net/get/LZF-1.6.3.tgz"
   sha256 "42ec458ea10128a801e8d39736b519ba81fa75d2a617d2777b7d6b3276601a5d"
   head "http://svn.php.net/repository/pecl/lzf/trunk/"
-
+  revision PHP_REVISION
 
   def install
     Dir.chdir "LZF-#{version}" unless build.head?

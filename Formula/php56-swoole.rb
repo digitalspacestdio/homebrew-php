@@ -8,7 +8,7 @@ class Php56Swoole < AbstractPhp56Extension
   version "1.8.11-stable"
   sha256 "cf2d9ba2c85f29c4a9f5e963878db27fdf552be7a05ca1709b6ad6f294e12b8e"
   head "https://github.com/swoole/swoole-src.git"
-
+  revision PHP_REVISION
 
   def install
     # ENV.universal_binary if build.universal?

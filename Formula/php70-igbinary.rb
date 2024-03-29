@@ -7,7 +7,8 @@ class Php70Igbinary < AbstractPhp70Extension
   url "https://github.com/igbinary/igbinary/archive/2.0.5.tar.gz"
   sha256 "1d06fc3586d61fcffbae24a46649db54d938168586557965bc1346f6d6568555"
   head "https://github.com/igbinary/igbinary.git"
-
+  revision PHP_REVISION
+  
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9e03d6c2b49c5b920fb70ade2d3a575da047d2ad2ce3a9958ef685c21eb3b72"

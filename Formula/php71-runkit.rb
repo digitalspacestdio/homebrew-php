@@ -7,7 +7,7 @@ class Php71Runkit < AbstractPhp71Extension
   url "https://github.com/runkit7/runkit7/releases/download/1.0.9/runkit-1.0.9.tgz"
   sha256 "9d83e3c977d6dcc0c1182b82c901936aace2ba6a4716bb9021ff86725285771a"
   head "https://github.com/runkit7/runkit7"
-  revision 1
+  revision PHP_REVISION
 
 
   depends_on "libtool" => :build

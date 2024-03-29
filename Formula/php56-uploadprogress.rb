@@ -7,7 +7,7 @@ class Php56Uploadprogress < AbstractPhp56Extension
   url "https://pecl.php.net/get/uploadprogress-1.0.3.1.tgz"
   sha256 "30588b4589543bcf6371532546b1a8cee9da1086c206aca9f96ea1bd486bbab2"
   head "https://svn.php.net/repository/pecl/uploadprogress/trunk/"
-
+  revision PHP_REVISION
 
   depends_on "pcre"
 

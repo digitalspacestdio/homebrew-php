@@ -7,7 +7,7 @@ class Php56Mailparse < AbstractPhp56Extension
   url "https://pecl.php.net/get/mailparse-2.1.6.tgz"
   sha256 "73705197d2b2ee782efa5477eb2a21432f592c2cb05a72c3a037bbe39e02b5cc"
   head "https://svn.php.net/repository/pecl/mailparse/trunk"
-
+  revision PHP_REVISION
 
   depends_on "pcre"
 

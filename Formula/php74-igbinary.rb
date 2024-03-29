@@ -7,7 +7,7 @@ class Php74Igbinary < AbstractPhp74Extension
   url "https://github.com/igbinary/igbinary/archive/3.0.1.tar.gz"
   sha256 "a340f3fa3bb250a6353f3b90fb25c0b68fb1afad342d1031c65b69fcd995909d"
   head "https://github.com/igbinary/igbinary.git"
-  revision 2
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"

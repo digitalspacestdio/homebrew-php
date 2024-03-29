@@ -7,7 +7,7 @@ class Php71Mailparse < AbstractPhp71Extension
   url "https://pecl.php.net/get/mailparse-3.0.2.tgz"
   sha256 "d81a6f8a48e43fca1c0f0d6c90d666830c24d584a23a60add43062aaf221843b"
   head "https://github.com/php/pecl-mail-mailparse.git"
-
+  revision PHP_REVISION
 
   depends_on "pcre"
 

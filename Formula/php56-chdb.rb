@@ -6,7 +6,7 @@ class Php56Chdb < AbstractPhp56Extension
   homepage "https://pecl.php.net/package/chdb"
   url "https://pecl.php.net/get/chdb-1.0.2.tgz"
   sha256 "ac6360fd786fbbbe8b14c7e1943f2f64c1f9a86dd5a4c38ff4d5d65740e99e0b"
-
+  revision PHP_REVISION
   head "https://github.com/lcastelli/chdb", :using => :git
 
   depends_on "libcmph"

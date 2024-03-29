@@ -7,7 +7,7 @@ class Php73Apcu < AbstractPhp73Extension
   url "https://github.com/krakjoe/apcu/archive/v5.1.17.tar.gz"
   sha256 "e6f6405ec47c2b466c968ee6bb15fc3abccb590b5fd40f579fceebeb15da6c4c"
   head "https://github.com/krakjoe/apcu.git", :branch => "master"
-  revision 3
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"

@@ -4,7 +4,7 @@ class Php73PdoDblib < AbstractPhp73Extension
   init
   desc "Unified Sybase-DB style driver for PDO"
   homepage "https://github.com/php/php-src/tree/master/ext/pdo_dblib"
-  revision 20
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL

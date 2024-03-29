@@ -7,7 +7,7 @@ class Php56Yrmcds < AbstractPhp56Extension
   url "https://github.com/cybozu/php-yrmcds/archive/v1.0.4.tar.gz"
   sha256 "b509631c57d60d9003954164756448454f8a09e789dc67ce531363c6c08bc273"
   head "https://github.com/cybozu/php-yrmcds.git"
-
+  revision PHP_REVISION
 
   def install
     # ENV.universal_binary if build.universal?

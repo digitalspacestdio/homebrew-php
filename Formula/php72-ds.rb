@@ -7,7 +7,7 @@ class Php72Ds < AbstractPhp72Extension
   url "https://github.com/php-ds/extension/archive/v1.2.4.tar.gz"
   sha256 "c080bb08445fe690da2271ff866602cf27cadee529ab1a1edbf4aa7a1d6e104c"
   head "https://github.com/php-ds/extension.git"
-
+  revision PHP_REVISION
 
   def install
     safe_phpize

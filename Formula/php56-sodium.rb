@@ -7,7 +7,7 @@ class Php56Sodium < AbstractPhp56Extension
   url "https://github.com/aletheia7/php-sodium/archive/1.2.0.tar.gz"
   sha256 "cf8365e5d4862bfbd61783e0e8cdf4ddbf0124a1d93492c33a8a05919af08893"
   head "https://github.com/alethia7/php-sodium.git"
-  revision 3
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"

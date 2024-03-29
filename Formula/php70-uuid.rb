@@ -4,7 +4,8 @@ class Php70Uuid < AbstractPhp70Extension
   init
   desc "UUID extension"
   homepage "https://pecl.php.net/package/uuid"
-
+  revision PHP_REVISION
+  
   stable do
     url "https://pecl.php.net/get/uuid-1.0.4.tgz"
     sha256 "63079b6a62a9d43691ecbcd4eb52e5e5fe17b5a3d0f8e46e3c17ff265c06a11f"
