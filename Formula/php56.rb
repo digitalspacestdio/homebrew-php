@@ -2,127 +2,19 @@ require File.expand_path("../../Abstract/abstract-php", __FILE__)
 
 class Php56 < AbstractPhp
   include AbstractPhpVersion::Php56Defs
-  def self.init (php_version, php_version_full, php_version_path)
-      @@php_version = php_version
-      @@php_version_full = php_version_full
-      @@php_version_path = php_version_path
-      homepage "https://php.net"
-
-      # So PHP extensions don't report missing symbols
-      skip_clean "bin", "sbin"
-      depends_on "gcc@11"
-      depends_on "autoconf@2.69" => :build
-
-      # obtain list of php formulas
-      php_formulas = Formula.names.grep(Regexp.new('^php\d\d$')).sort
-
-      # remove our self from the list
-      php_formulas.delete(name.split("::")[2].downcase)
-
-      # Add homebrew-core as a conflicted formula
-      php_formulas << "php"
-
-      # conflict with out php versions
-      php_formulas.each do |php_formula_name|
-        conflicts_with php_formula_name, :because => "different php versions install the same binaries."
-      end
-
-      unless build.without? "sqlite"
-          depends_on "sqlite"
-      end
-      depends_on "digitalspacestdio/php/phpcurl"
-      depends_on "enchant" => :optional
-      depends_on "freetds" if build.with?("mssql")
-      depends_on "freetype"
-      depends_on "gmp" => :optional
-      depends_on "imap-uw" if build.with?("imap")
-      depends_on "jpeg"
-#      depends_on "webp" => :optional if name.split("::")[2].downcase.start_with?("php7")
-      depends_on "libvpx" => :optional
-      depends_on "libpng"
-      depends_on "unixodbc"
-      depends_on "readline"
-      depends_on "zlib"
-      depends_on "bzip2"
-  #    depends_on "berkeley-db"
-      depends_on "libedit"
-      depends_on "openldap"
-      depends_on "mysql" if build.with?("libmysql")
-  #    depends_on "gdbm"
-      depends_on "libiconv" if OS.mac?
-      depends_on "libzip"
-
-      depends_on "digitalspacestdio/common/icu4c@69.1"
-      depends_on "digitalspacestdio/common/gettext@0.22-icu4c.69.1"
-      depends_on "digitalspacestdio/common/libxml2@2.9-icu4c.69.1"
-      depends_on "digitalspacestdio/common/libxslt@1.10-icu4c.69.1"
-
-      # ssl
-      if build.with?("homebrew-libressl")
-        depends_on "libressl"
-      else
-        depends_on "openssl@1.1"
-      end
-      #argon for 7.2
-      depends_on "argon2" => :optional if build.with?("argon2")
-
-      depends_on "libsodium"
-
-      deprecated_option "with-pgsql" => "with-postgresql"
-      depends_on "postgresql" => :optional
-
-      # Sanity Checks
-
-      if build.with?("cgi") && build.with?("fpm")
-        raise "Cannot specify more than one CGI executable to build."
-      end
-
-      option "with-httpd", "Enable building of shared Apache Handler module"
-      deprecated_option "homebrew-apxs" => "with-homebrew-apxs"
-      deprecated_option "with-homebrew-apxs" => "with-httpd"
-      deprecated_option "with-apache" => "with-httpd"
-      deprecated_option "with-apache22" => "with-httpd"
-      deprecated_option "with-httpd22" => "with-httpd"
-      deprecated_option "with-httpd24" => "with-httpd"
-
-      depends_on "httpd" => :optional
-
-      # Argon2 option
-      if name.split("::")[2].downcase.start_with?("php72")
-        option "with-argon2", "Include libargon2 password hashing support"
-      end
-
-      option "with-cgi", "Enable building of the CGI executable (implies --without-fpm)"
-      option "with-debug", "Compile with debugging symbols"
-      option "with-embed", "Compile with embed support (built as a static library)"
-      option "without-homebrew-curl", "Not include Curl support via Homebrew"
-      option "with-homebrew-libressl", "Not include LibreSSL instead of OpenSSL via Homebrew"
-      option "without-homebrew-libxslt", "Include LibXSLT support via Homebrew"
-      option "with-imap", "Include IMAP extension"
-      option "with-libmysql", "Include (old-style) libmysql support instead of mysqlnd"
-      option "with-mssql", "Include MSSQL-DB support"
-      option "without-pear", "Build without PEAR"
-      option "with-pdo-oci", "Include Oracle databases (requries ORACLE_HOME be set)"
-      unless name.split("::")[2].casecmp("php53").zero?
-        option "with-phpdbg", "Enable building of the phpdbg SAPI executable"
-      end
-      option "with-thread-safety", "Build with thread safety"
-      option "without-fpm", "Disable building of the fpm SAPI executable"
-      option "without-ldap", "Build without LDAP support"
-      option "without-mysql", "Remove MySQL/MariaDB support"
-      option "without-sqlite", "Remove sqlite support"
-      option "without-legacy-mysql", "Do not include the deprecated mysql_ functions"
-      option "without-pcntl", "Build without Process Control support"
-  end
-
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
   desc "PHP " + PHP_VERSION
-  version PHP_VERSION
-  revision PHP_REVISION
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
-
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
+  version PHP_VERSION
+  revision PHP_REVISION
+
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7e109109925e9be5fe096fac49e7698630cc7892f8532011d5cda60fbb8f01b6"
+    sha256 cellar: :any_skip_relocation, ventura:       "430d1082a9256297a84192e82781b0555cc52e3d08b87dcd1340c2670cb819af"
+  end  
 
   keg_only :versioned_formula
 
@@ -132,12 +24,6 @@ class Php56 < AbstractPhp
 
   def php_version_path
     "#{PHP_BRANCH_NUM}"
-  end
-
-  bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7e109109925e9be5fe096fac49e7698630cc7892f8532011d5cda60fbb8f01b6"
-    sha256 cellar: :any_skip_relocation, ventura:       "430d1082a9256297a84192e82781b0555cc52e3d08b87dcd1340c2670cb819af"
   end
 
   if OS.mac?

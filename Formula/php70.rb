@@ -4,6 +4,9 @@ class Php70 < AbstractPhp
   include AbstractPhpVersion::Php70Defs
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
   desc "PHP " + PHP_VERSION
+  url PHP_SRC_TARBALL
+  sha256 PHP_CHECKSUM[:sha256]
+  head PHP_GITHUB_URL, :branch => PHP_BRANCH
   version PHP_VERSION
   revision PHP_REVISION
 
@@ -14,12 +17,8 @@ class Php70 < AbstractPhp
     sha256 cellar: :any_skip_relocation, sonoma:        "8969f978fcff025cf8b8ec411c905b454f95593eebaa2c295317396379739221"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "de65c088ab8adf31c2c6471a997c1817d391b4e1d43fb24a781cf4a92a797988"
   end
+
   keg_only :versioned_formula
-
-  url PHP_SRC_TARBALL
-  sha256 PHP_CHECKSUM[:sha256]
-
-  head PHP_GITHUB_URL, :branch => PHP_BRANCH
 
   def php_version
     "#{PHP_VERSION_MAJOR}"

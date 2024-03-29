@@ -4,6 +4,9 @@ class Php71 < AbstractPhp
   include AbstractPhpVersion::Php71Defs
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
   desc "PHP " + PHP_VERSION
+  url PHP_SRC_TARBALL
+  sha256 PHP_CHECKSUM[:sha256]
+  head PHP_GITHUB_URL, :branch => PHP_BRANCH
   
   version PHP_VERSION
   revision PHP_REVISION
@@ -26,11 +29,6 @@ class Php71 < AbstractPhp
   def php_version_path
     "#{PHP_BRANCH_NUM}"
   end
-
-  url PHP_SRC_TARBALL
-  sha256 PHP_CHECKSUM[:sha256]
-
-  head PHP_GITHUB_URL, :branch => PHP_BRANCH
 
   def config_path
     etc + "php" + php_version
