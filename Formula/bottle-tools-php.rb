@@ -1,6 +1,6 @@
 require 'formula'
 
-class BottlePhpTools < Formula
+class BottleToolsPhp < Formula
   url "https://github.com/digitalspacestdio/homebrew-php.git", :using => :git
   version "0.1.11"
 
