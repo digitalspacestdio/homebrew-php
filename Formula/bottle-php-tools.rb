@@ -2,7 +2,7 @@ require 'formula'
 
 class BottlePhpTools < Formula
   url "https://github.com/digitalspacestdio/homebrew-php.git", :using => :git
-  version "0.1.10"
+  version "0.1.11"
 
   depends_on "s3cmd"
   depends_on "jq"
