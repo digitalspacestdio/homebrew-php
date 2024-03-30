@@ -30,8 +30,8 @@ class Php70 < AbstractPhp
 
   if OS.mac?
     patch do
-      url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php72/80171.patch"
-      sha256 "4c51e35fd936a7f3f5613c72e6395b9afa8f569061c00849683e09e8fe986a0f"
+      url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/icufix/Patches/php70/Fix-Wimplicit-function-declaration_in_configure.patch"
+      sha256 "650193d19b0a033c33e9f420bb5a262699cb60d04d363c714858816ed33d281d"
     end
     patch do
       url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php72/macos.patch"
