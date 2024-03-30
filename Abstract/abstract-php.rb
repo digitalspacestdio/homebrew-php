@@ -69,7 +69,13 @@ class AbstractPhp < Formula
       depends_on "digitalspacestdio/common/libxslt@1.10-icu4c.73.2"
     elsif @@php_version.start_with?("7.")
       depends_on "digitalspacestdio/common/icu4c@69.1"
+      ENV['LDFLAGS'] = "-L#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}/lib"
+      ENV['CPPFLAGS'] = "-I#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}/include"
+
       depends_on "digitalspacestdio/common/gettext@0.22-icu4c.69.1"
+      ENV['LDFLAGS'] = "-L#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.69.1"].opt_prefix}/lib"
+      ENV['CPPFLAGS'] = "-I#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.69.1"].opt_prefix}/include"
+
       depends_on "digitalspacestdio/common/libxml2@2.12-icu4c.69.1" if OS.linux?
       depends_on "digitalspacestdio/common/libxslt@1.10-icu4c.69.1"
     elsif @@php_version.start_with?("5.")
@@ -320,13 +326,11 @@ INFO
     # START - Icu4c settings 
     if @@php_version.start_with?("8.")
       args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix}"
-      args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.74.2"].opt_prefix}"
       args << "--with-libxml-dir=#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.74.2"].opt_prefix}" if OS.linux?
       args << "--with-xsl=#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.74.2"].opt_prefix}"
       args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.74.2"].opt_prefix}"
     elsif @@php_version.start_with?("7.4")
       args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}"
-      args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.73.2"].opt_prefix}"
       args << "--with-libxml-dir=#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.73.2"].opt_prefix}" if OS.linux?
       args << "--with-xsl=#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.73.2"].opt_prefix}"
       args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.73.2"].opt_prefix}"
