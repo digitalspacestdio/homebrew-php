@@ -14,9 +14,9 @@ class AbstractPhp < Formula
     # So PHP extensions don't report missing symbols
     skip_clean "bin", "sbin"
 
-    #if Hardware::CPU.intel? && !@@php_version.start_with?("5.")
+    if Hardware::CPU.intel || !@@php_version.start_with?("5.")
       depends_on "gcc@11"
-    #end
+    end
 
     depends_on "autoconf" => :build if !@@php_version.start_with?("5.")
     depends_on "autoconf@2.69" => :build if @@php_version.start_with?("5.")
@@ -182,10 +182,10 @@ class AbstractPhp < Formula
       ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
     end
 
-    #if Hardware::CPU.intel? && !@@php_version.start_with?("5.6")
+    if Hardware::CPU.intel || !@@php_version.start_with?("5.")
       ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
       ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
-    #end
+    end
     
     if @@php_version.start_with?("7.1", "7.0")
       ENV.append "CFLAGS", "-DTRUE=1 -DFALSE=0"
@@ -504,6 +504,12 @@ INFO
     ENV.append "CFLAGS", "-DDEBUG_ZEND=2" if build.with? "debug"
     
     if @@php_version.start_with?("5.")
+      # Workaround for https://bugs.php.net/80310
+      ENV.append "CFLAGS", "-fcommon"
+      ENV.append "CFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
+      ENV.append "CXXFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
+      ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
+
       ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
       ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
     else
@@ -512,6 +518,21 @@ INFO
     end
 
     system "./buildconf", "--force"
+
+    if @@php_version.start_with?("5.")
+      inreplace "configure" do |s|
+        s.gsub! "APACHE_THREADED_MPM=`$APXS_HTTPD -V | grep 'threaded:.*yes'`",
+                "APACHE_THREADED_MPM="
+        s.gsub! "APXS_LIBEXECDIR='$(INSTALL_ROOT)'`$APXS -q LIBEXECDIR`",
+                "APXS_LIBEXECDIR='$(INSTALL_ROOT)#{lib}/httpd/modules'"
+        s.gsub! "-z `$APXS -q SYSCONFDIR`",
+                "-z ''"
+        # apxs will interpolate the @ in the versioned prefix: https://bz.apache.org/bugzilla/show_bug.cgi?id=61944
+        s.gsub! "LIBEXECDIR='$APXS_LIBEXECDIR'",
+                "LIBEXECDIR='" + "#{lib}/httpd/modules".gsub("@", "\\@") + "'"
+      end
+    end
+
     system "./configure", *install_args
 
     if build.with?("httpd")
