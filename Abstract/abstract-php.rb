@@ -53,6 +53,7 @@ class AbstractPhp < Formula
     depends_on "libedit"
     depends_on "openldap"
     depends_on "mysql" if build.with?("libmysql")
+    depends_on "libiconv" if OS.mac?
 
     if @@php_version.start_with?("8.")
       depends_on "digitalspacestdio/common/icu4c@74.2"
@@ -287,15 +288,23 @@ INFO
       "--enable-sysvsem",
       "--enable-sysvshm",
       "--enable-wddx",
-      "--with-mhash#{headers_path}",
       "--with-zlib=#{Formula["zlib"].opt_prefix}",
       "--with-xmlrpc",
       "--with-readline=#{Formula["readline"].opt_prefix}",
       "--without-gmp",
       "--without-snmp",
-      "--with-kerberos",
-      "--with-iconv#{headers_path}"
+      "--with-kerberos#{headers_path}",
+      "--with-mhash#{headers_path}",
+      "--with-iconv#{headers_path}",
     ]
+
+    if OS.mac?
+      args << "--with-iconv=#{Formula["libiconv"].opt_prefix}"
+      args << "--with-ndbm#{headers_path}"
+    else
+      args << "--without-ndbm"
+      args << "--without-gdbm"
+    end
 
     # START - Icu4c settings 
     if @@php_version.start_with?("8.")
@@ -460,7 +469,7 @@ INFO
       end
     end
 
-    unless @@php_version.start_with?("5.3")
+    if OS.mac?
       # dtrace is not compatible with phpdbg: https://github.com/krakjoe/phpdbg/issues/38
       if build.without? "phpdbg"
         args << "--enable-dtrace"
@@ -474,6 +483,8 @@ INFO
       end
 
       args << "--enable-zend-signals"
+    else
+      args << "--disable-dtrace"
     end
 
     if build.with? "thread-safety"
@@ -512,7 +523,7 @@ INFO
 
     system "./buildconf", "--force"
 
-    if @@php_version.start_with?("5.")
+    #if @@php_version.start_with?("5.")
       inreplace "configure" do |s|
         s.gsub! "APACHE_THREADED_MPM=`$APXS_HTTPD -V | grep 'threaded:.*yes'`",
                 "APACHE_THREADED_MPM="
@@ -524,7 +535,7 @@ INFO
         s.gsub! "LIBEXECDIR='$APXS_LIBEXECDIR'",
                 "LIBEXECDIR='" + "#{lib}/httpd/modules".gsub("@", "\\@") + "'"
       end
-    end
+    #end
 
     system "./configure", *install_args
 
