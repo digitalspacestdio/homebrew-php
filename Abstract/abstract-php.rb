@@ -496,10 +496,13 @@ INFO
   end
 
   def _install
-    ENV.cxx11 if @@php_version.start_with?("7.2", "7.1", "7.0")
+    ENV.cxx11 if @@php_version.start_with?("7.")
+
     # Work around configure issues with Xcode 12
     # See https://bugs.php.net/bug.php?id=80171
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration" if @@php_version.start_with?("7.2", "7.1", "7.0")
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration" if @@php_version.start_with?("7.", "5.")
+    ENV.append "CFLAGS", "-Wno-incompatible-pointer-types" if @@php_version.start_with?("7.", "5.")
+    ENV.append "CFLAGS", "-Wno-implicit-int" if @@php_version.start_with?("5.")
 
     ENV.append "CFLAGS", "-DDEBUG_ZEND=2" if build.with? "debug"
     
