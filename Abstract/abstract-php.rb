@@ -18,7 +18,7 @@ class AbstractPhp < Formula
       depends_on "gcc@11"
     end
 
-    depends_on "autoconf@2.69" => :build
+    depends_on "autoconf" => :build
 
     # obtain list of php formulas
     php_formulas = Formula.names.grep(Regexp.new('^php\d\d$')).sort
@@ -179,8 +179,8 @@ class AbstractPhp < Formula
       ENV.append "CXXFLAGS", "-march=ivybridge"
     end
 
-    ENV.append "PHP_AUTOCONF", "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
-    ENV.append "PHP_AUTOHEADER", "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
+    ENV.append "PHP_AUTOCONF", "#{Formula["autoconf"].opt_bin}/autoconf"
+    ENV.append "PHP_AUTOHEADER", "#{Formula["autoconf"].opt_bin}/autoheader"
 
     if Hardware::CPU.intel? && !@@php_version.start_with?("5.6")
       ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
@@ -300,9 +300,9 @@ INFO
       args << "--with-iconv=#{Formula["libiconv"].opt_prefix}"
     end
 
-    if @@php_version.start_with?("5.6", "7.0", "7.1")
-      args << "--enable-gd-native-ttf"
-    end
+    #if @@php_version.start_with?("5.6", "7.0", "7.1")
+    #  args << "--enable-gd-native-ttf"
+    #end
 
     if @@php_version.start_with?("8.")
       args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix}"
@@ -506,8 +506,8 @@ INFO
 
     ENV.append "CFLAGS", "-DDEBUG_ZEND=2" if build.with? "debug"
     
-    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
-    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
+    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
+    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
 
     system "./buildconf", "--force"
     system "./configure", *install_args
