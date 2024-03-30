@@ -14,9 +14,10 @@ class AbstractPhp < Formula
     # So PHP extensions don't report missing symbols
     skip_clean "bin", "sbin"
 
-    #depends_on "gcc@9" => :build if OS.mac? && name.split("::")[2].downcase.start_with?("php56")
-    #depends_on "gcc@11" => :build if OS.mac? && name.split("::")[2].downcase.start_with?("php7", "php8")
-    depends_on "gcc@11"
+    if Hardware::CPU.intel?
+      depends_on "gcc@11"
+    end
+    
     depends_on "autoconf@2.69" => :build
 
     # obtain list of php formulas
@@ -181,10 +182,10 @@ class AbstractPhp < Formula
     ENV.append "PHP_AUTOCONF", "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
     ENV.append "PHP_AUTOHEADER", "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
 
-    #if @@php_version.start_with?("7.", "8.")
-    ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
-    ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
-    #end
+    if Hardware::CPU.intel?
+      ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
+      ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
+    end
     
     if @@php_version.start_with?("7.1", "7.0")
         ENV.append "CFLAGS", "-DTRUE=1 -DFALSE=0"

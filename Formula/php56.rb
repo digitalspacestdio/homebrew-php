@@ -267,11 +267,10 @@ class Php56 < AbstractPhp
     # Prevent homebrew from harcoding path to sed shim in phpize script
     ENV["lt_cv_path_SED"] = "sed"
     
-    # ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9" if OS.linux?
-    # ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9" if OS.linux?
-    ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
-    ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
-    # buildconf required due to system library linking bug patch
+    if Hardware::CPU.intel?
+      ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
+      ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
+    end
     system "./buildconf", "--force"
     inreplace "configure" do |s|
       s.gsub! "APACHE_THREADED_MPM=`$APXS_HTTPD -V | grep 'threaded:.*yes'`",
