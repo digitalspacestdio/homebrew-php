@@ -18,14 +18,6 @@ class Php56 < AbstractPhp
 
   keg_only :versioned_formula
 
-  def php_version
-    "#{PHP_VERSION_MAJOR}"
-  end
-
-  def php_version_path
-    "#{PHP_BRANCH_NUM}"
-  end
-
   if OS.mac?
     patch do
       url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php#{PHP_BRANCH_NUM}/macos.patch"
@@ -77,7 +69,7 @@ class Php56 < AbstractPhp
       "--enable-wddx",
 #      "--enable-zip",
       "--with-freetype-dir=#{Formula["freetype"].opt_prefix}",
-      "--with-gd",
+      "--with-gd=#{Formula["gd"].opt_prefix}",
       "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}",
       "--with-mhash",
       "--with-png-dir=#{Formula["libpng"].opt_prefix}",
