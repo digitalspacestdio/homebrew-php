@@ -4,8 +4,8 @@ class Php83Uopz < AbstractPhp83Extension
   init
   desc "Exposes Zend Engine functionality."
   homepage "http://php.net/manual/en/book.uopz.php"
-  url "https://github.com/krakjoe/uopz/archive/v5.0.2.tar.gz"
-  sha256 "919f6d7873db89a2032e0145a8e7a355d111f9ab2651aa3fa78b636277034dab"
+  url "https://github.com/krakjoe/uopz/archive/v5.1.0.tar.gz"
+  sha256 "ca3637ff1b8371c952c87ab17465e6957792d716583aadf9c2916e524b77f745"
   head "https://github.com/krakjoe/uopz.git"
   revision PHP_REVISION
 

@@ -44,12 +44,8 @@ class AbstractPhp < Formula
     depends_on "freetype"
     depends_on "gmp" => :optional
     depends_on "imap-uw" if build.with?("imap")
-    #depends_on "jpeg" if name.split("::")[2].downcase.start_with?("php56", "php70", "php71")
-    #depends_on "libjpeg" if !name.split("::")[2].downcase.start_with?("php56", "php70", "php71")
     depends_on "pcre2"
-    #depends_on "webp" if name.split("::")[2].downcase.start_with?("php7", "php8")
     depends_on "libvpx" if @@php_version.start_with?("5.")
-    #depends_on "libpng"
     depends_on "unixodbc"
     depends_on "readline"
     depends_on "zlib"
@@ -90,9 +86,6 @@ class AbstractPhp < Formula
 
     #argon for 7.2
     depends_on "argon2" => :optional if build.with?("argon2")
-
-    # libsodium for 7.2
-    # depends_on "libsodium" => :recommended if name.split("::")[2].downcase.start_with?("php72")
 
     deprecated_option "with-pgsql" => "with-postgresql"
     depends_on "postgresql" => :optional
@@ -246,24 +239,33 @@ INFO
     build.without? "pear"
   end
 
-#   def patches
-#     # Bug in PHP 5.x causes build to fail on OSX 10.5 Leopard due to
-#     # outdated system libraries being first on library search path:
-#     # https://bugs.php.net/bug.php?id=44294
-#     "https://gist.github.com/ablyler/6579338/raw/5713096862e271ca78e733b95e0235d80fed671a/Makefile.global.diff" if MacOS.version == :leopard
-#   end
-
   def install_args
     # Prevent PHP from harcoding sed shim path
     ENV["lt_cv_path_SED"] = "sed"
 
-    if OS.mac? 
-      # Ensure system dylibs can be found by linker on Sierra
-      ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
+    # system pkg-config missing
+    ENV["KERBEROS_CFLAGS"] = " "
+    if OS.mac?
+      ENV["SASL_CFLAGS"] = "-I#{MacOS.sdk_path_if_needed}/usr/include/sasl"
+      ENV["SASL_LIBS"] = "-lsasl2"
+    else
+      ENV["SQLITE_CFLAGS"] = "-I#{Formula["sqlite"].opt_include}"
+      ENV["SQLITE_LIBS"] = "-lsqlite3"
+      ENV["BZIP_DIR"] = Formula["bzip2"].opt_prefix
     end
+
+    # if OS.mac? 
+    #   # Ensure system dylibs can be found by linker on Sierra
+    #   ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
+    # end
+
+    headers_path = "=#{MacOS.sdk_path_if_needed}/usr"
 
 #    libzip = Formula["libzip"]
     #ENV["CFLAGS"] = "-Wno-error -I#{libzip.opt_include}"
+
+    fpm_user = OS.mac? ? "_www" : "www-data"
+    fpm_group = OS.mac? ? "_www" : "www-data"
 
     args = [
       "--prefix=#{prefix}",
@@ -286,7 +288,7 @@ INFO
       "--enable-sysvsem",
       "--enable-sysvshm",
       "--enable-wddx",
-      "--with-mhash",
+      "--with-mhash#{headers_path}",
       "--with-zlib=#{Formula["zlib"].opt_prefix}",
       "--with-xmlrpc",
       "--with-readline=#{Formula["readline"].opt_prefix}",
@@ -296,14 +298,11 @@ INFO
 
     if OS.mac?
       args << "--without-pcre-jit"
-      args << "--with-kerberos=/usr"
+      args << "--with-kerberos=#{headers_path}"
       args << "--with-iconv=#{Formula["digitalspacestdio/common/libiconv@1.16"].opt_prefix}"
     end
 
-    #if @@php_version.start_with?("5.6", "7.0", "7.1")
-    #  args << "--enable-gd-native-ttf"
-    #end
-
+    # START - Icu4c settings 
     if @@php_version.start_with?("8.")
       args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix}"
       args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.74.2"].opt_prefix}"
@@ -327,6 +326,7 @@ INFO
       args << "--with-xsl=#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.69.1"].opt_prefix}"
       args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.69.1"].opt_prefix}"
     end
+    # END - Icu4c settings 
 
     # START - GD settings 
     if @@php_version.start_with?("7.4", "8.")
@@ -392,13 +392,15 @@ INFO
 
     # Build PHP-FPM by default
     if build_fpm?
+      fpm_user = OS.mac? ? "_www" : "www-data"
+      fpm_group = OS.mac? ? "_www" : "www-data"
+
       args << "--enable-fpm"
-      args << "--with-fpm-user=_www"
-      args << "--with-fpm-group=_www"
+      args << "--with-fpm-user=#{fpm_user}"
+      args << "--with-fpm-group=#{fpm_group}"
+
       (prefix+"var/log/php").mkpath
       touch prefix+"var/log/php/php#{php_version}-fpm.log"
-#       plist_path.write plist
-#       plist_path.chmod 0644
     elsif build.with? "cgi"
       args << "--enable-cgi"
     end
@@ -412,9 +414,9 @@ INFO
     end
 
     unless build.without? "ldap"
-      args << "--with-ldap-dir=#{Formula["openldap"].opt_prefix}"
-      #args << "--with-ldap"
-      #args << "--with-ldap-sasl=/usr"
+      args << "--with-ldap-dir=#{Formula["openldap"].opt_prefix}" if @@php_version.start_with?("5.")
+      args << "--with-ldap=#{Formula["openldap"].opt_prefix}" if !@@php_version.start_with?("5.")
+      args << "--with-ldap-sasl#{headers_path}"
     end
 
     if build.with? "libmysql"
@@ -482,10 +484,6 @@ INFO
     if build.with? "thread-safety"
       args << "--enable-maintainer-zts"
     end
-
-#     if build.with? "libsodium"
-#         args << "--with-sodium=#{Formula['libsodium'].opt_prefix}"
-#     end
 
     args
   end

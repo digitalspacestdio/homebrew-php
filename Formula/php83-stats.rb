@@ -4,11 +4,10 @@ class Php83Stats < AbstractPhp83Extension
   init
   desc "Extension with routines for statistical computation."
   homepage "https://pecl.php.net/package/stats"
-  url "https://pecl.php.net/get/stats-2.0.1.tgz"
-  sha256 "994da82975364773248091bb3f83cc5f101db70e88c79af8a60bea8ad054dd06"
-  head "https://git.php.net/repository/pecl/math/stats.git"
+  url "https://pecl.php.net/get/stats-2.0.3.tgz"
+  sha256 "7f2bc60136594cea27d9f997a6622270408ca90c4428f6f2e20938c88fab1b57"
+  head "https://github.com/php/pecl-math-stats.git"
   revision PHP_REVISION
-
 
   def install
     Dir.chdir "stats-#{version}" unless build.head?

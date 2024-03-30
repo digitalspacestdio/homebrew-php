@@ -4,8 +4,8 @@ class Php83Ssh2 < AbstractPhp83Extension
   init
   desc "Provides bindings to the functions of libssh2"
   homepage "https://pecl.php.net/package/ssh2"
-  url "https://pecl.php.net/get/ssh2-1.1.2.tgz"
-  sha256 "87618d6a0981afe8c24b36d6b38c21a0aa0237b62e60347d0170bd86b51f79fb"
+  url "https://pecl.php.net/get/ssh2-1.4.1.tgz"
+  sha256 "7bca5b23f731db9d8ed0aea5db9bb15da8ff133b0fbba96102b82e95da4d8764"
   head "https://github.com/php/pecl-networking-ssh2.git"
   revision PHP_REVISION
 

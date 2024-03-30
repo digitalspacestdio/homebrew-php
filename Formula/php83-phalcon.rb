@@ -4,8 +4,8 @@ class Php83Phalcon < AbstractPhp83Extension
   init
   desc "Full-stack PHP framework"
   homepage "https://phalconphp.com/"
-  url "https://github.com/phalcon/cphalcon/archive/v3.3.0.tar.gz"
-  sha256 "559211b861a71ae6032216b2dc41d085560354072c95d1000b13fd37b0e0e008"
+  url "https://github.com/phalcon/cphalcon/archive/v5.6.2.tar.gz"
+  sha256 "13685b9e99afee51ea771c4c59ec6d58713afa0fb862d8f073eeeb10117c7b12"
   head "https://github.com/phalcon/cphalcon.git"
   revision PHP_REVISION
 

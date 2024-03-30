@@ -4,8 +4,8 @@ class Php83Lz4 < AbstractPhp83Extension
   init
   desc "Handles LZ4 de/compression"
   homepage "https://github.com/kjdev/php-ext-lz4"
-  url "https://github.com/kjdev/php-ext-lz4/archive/0.2.3.tar.gz"
-  sha256 "f484c8229b3c5af1385ce11e4b37999702757bad9bdb2eab8bfe48fa3f159904"
+  url "https://github.com/kjdev/php-ext-lz4/archive/0.4.3.tar.gz"
+  sha256 "65f9b633a07d4cb356d4ed005878aec7788a1c62cb8e2a9038b18b486bb4fdb8"
   head "https://github.com/kjdev/php-ext-lz4.git"
   revision PHP_REVISION
 

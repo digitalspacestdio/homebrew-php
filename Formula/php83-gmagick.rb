@@ -4,8 +4,8 @@ class Php83Gmagick < AbstractPhp83Extension
   init
   desc "Provides a wrapper to the GraphicsMagick library."
   homepage "https://pecl.php.net/package/gmagick"
-  url "https://pecl.php.net/get/gmagick-2.0.4RC1.tgz"
-  sha256 "4ead19640bebebfa68be41dc0097a93a7bf9beb56ea82b27343dba8ea4c5ecfa"
+  url "https://pecl.php.net/get/gmagick-2.0.6RC1.tgz"
+  sha256 "350cb71a4fbd58e037c7182cafa14e6f6df952126869205918fcc9ec5798e2fa"
   revision PHP_REVISION
 
   depends_on "graphicsmagick"

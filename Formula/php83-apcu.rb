@@ -4,10 +4,9 @@ class Php83Apcu < AbstractPhp83Extension
   init
   desc "APC User Cache"
   homepage "https://github.com/krakjoe/apcu"
-  url "https://github.com/krakjoe/apcu/archive/v5.1.22.tar.gz"
-  sha256 "dfd3e1df434fe84439da499e06d0857fd06dea5572df910d830b1d6474393b08"
+  url "https://github.com/krakjoe/apcu/archive/v5.1.23.tar.gz"
+  sha256 "1adcb23bb04d631ee410529a40050cdd22afa9afb21063aa38f7b423f8a8335b"
   head "https://github.com/krakjoe/apcu.git", :branch => "master"
-  version "5.1.22"
   revision PHP_REVISION
 
   bottle do

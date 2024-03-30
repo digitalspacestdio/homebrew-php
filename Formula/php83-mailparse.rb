@@ -4,8 +4,8 @@ class Php83Mailparse < AbstractPhp83Extension
   init
   desc "Extension for parsing email messages."
   homepage "https://pecl.php.net/package/mailparse"
-  url "https://pecl.php.net/get/mailparse-3.0.1.tgz"
-  sha256 "42ee10de881a3739acf73ddef8800d80c3c57f70072f41bdb22e6e87ebc9cc62"
+  url "https://pecl.php.net/get/mailparse-3.1.6.tgz"
+  sha256 "a69f1605583eabdb59c2cd4c17334b3267398a1d47e1fd7edb92d8bef9dee008"
   head "https://github.com/php/pecl-mail-mailparse.git"
   revision PHP_REVISION
 

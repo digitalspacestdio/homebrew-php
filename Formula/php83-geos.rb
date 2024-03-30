@@ -3,7 +3,7 @@ require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 class Php83Geos < AbstractPhp83Extension
   init
   desc "PHP bindings for GEOS"
-  homepage "https://git.osgeo.org/gogs/geos/php-geos"
+  homepage "https://git.osgeo.org/gitea/geos/php-geos"
   url "https://git.osgeo.org/gogs/geos/php-geos/archive/1.0.0.tar.gz"
   sha256 "09cd4e7a3b026f65d86320b1250d6d6ceb8d78179cbfd480f622011d52f92035"
   head "https://git.osgeo.org/gogs/geos/php-geos.git"
