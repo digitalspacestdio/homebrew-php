@@ -35,7 +35,7 @@ class AbstractPhp < Formula
     end
 
     depends_on "digitalspacestdio/php/php-cli-wrapper"
-
+    depends_on "gd"
     depends_on "sqlite"
     depends_on "digitalspacestdio/php/phpcurl"
     depends_on "enchant" => :optional
@@ -43,12 +43,12 @@ class AbstractPhp < Formula
     depends_on "freetype"
     depends_on "gmp" => :optional
     depends_on "imap-uw" if build.with?("imap")
-    depends_on "jpeg" if name.split("::")[2].downcase.start_with?("php56", "php70", "php71")
-    depends_on "libjpeg" if !name.split("::")[2].downcase.start_with?("php56", "php70", "php71")
+    #depends_on "jpeg" if name.split("::")[2].downcase.start_with?("php56", "php70", "php71")
+    #depends_on "libjpeg" if !name.split("::")[2].downcase.start_with?("php56", "php70", "php71")
     depends_on "pcre2"
-    depends_on "webp" if name.split("::")[2].downcase.start_with?("php7", "php8")
-    depends_on "libvpx" => :optional if name.split("::")[2].downcase.start_with?("php56")
-    depends_on "libpng"
+    #depends_on "webp" if name.split("::")[2].downcase.start_with?("php7", "php8")
+    #depends_on "libvpx" => :optional if name.split("::")[2].downcase.start_with?("php56")
+    #depends_on "libpng"
     depends_on "unixodbc"
     depends_on "readline"
     depends_on "zlib"
@@ -335,20 +335,20 @@ INFO
     end
 
     if !@@php_version.start_with?("7.4", "8.")
-      args << "--with-gd"
-      args << "--with-freetype-dir=#{Formula["freetype"].opt_prefix}"
-      args << "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}"
-      args << "--with-png-dir=#{Formula["libpng"].opt_prefix}"
+      args << "--with-gd=#{Formula["gd"].opt_prefix}"
+      #args << "--with-freetype-dir=#{Formula["freetype"].opt_prefix}"
+      #args << "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}"
+      #args << "--with-png-dir=#{Formula["libpng"].opt_prefix}"
     end
 
     if @@php_version.start_with?("7.4", "8.")
-      args << "--enable-gd"
-      args << "--with-freetype=#{Formula["freetype"].opt_prefix}"
-      args << "--with-jpeg=#{Formula["jpeg"].opt_prefix}"
-      args << "--with-webp"
-      args << "--with-external-pcre" if !OS.mac? 
+      args << "--with-external-gd=#{Formula["gd"].opt_prefix}"
+      # args << "--with-freetype=#{Formula["freetype"].opt_prefix}"
+      # args << "--with-jpeg=#{Formula["jpeg"].opt_prefix}"
+      # args << "--with-webp"
+      args << "--with-external-pcre"
 
-      ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["webp"].opt_lib}/pkgconfig"
+      #ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["webp"].opt_lib}/pkgconfig"
     end
 
     args << "--with-pdo-odbc=unixODBC,#{Formula["unixodbc"].opt_prefix}"
