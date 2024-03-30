@@ -306,8 +306,7 @@ INFO
       "--without-gmp",
       "--without-snmp",
       "--with-kerberos#{headers_path}",
-      "--with-mhash#{headers_path}",
-      "--with-iconv#{headers_path}",
+      "--with-mhash#{headers_path}"
     ]
 
     if OS.mac?
