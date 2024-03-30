@@ -57,7 +57,7 @@ class AbstractPhp < Formula
     depends_on "libedit"
     depends_on "openldap"
     depends_on "mysql" if build.with?("libmysql")
-    depends_on "libiconv" if OS.mac?
+    depends_on "digitalspacestdio/common/libiconv@1.16" if OS.mac?
 
     if @@php_version.start_with?("8.")
       depends_on "digitalspacestdio/common/icu4c@74.2"
@@ -297,7 +297,7 @@ INFO
     if OS.mac?
       args << "--without-pcre-jit"
       args << "--with-kerberos=/usr"
-      args << "--with-iconv=#{Formula["libiconv"].opt_prefix}"
+      args << "--with-iconv=#{Formula["digitalspacestdio/common/libiconv@1.16"].opt_prefix}"
     end
 
     #if @@php_version.start_with?("5.6", "7.0", "7.1")
