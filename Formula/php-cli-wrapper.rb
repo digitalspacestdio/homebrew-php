@@ -3,7 +3,7 @@ require "formula"
 class PhpCliWrapper < Formula
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-  version "0.1.4"
+  version "0.1.5"
 
   def binary_dir
     buildpath / "bin"
@@ -53,7 +53,7 @@ class PhpCliWrapper < Formula
           >&2 echo "Can't find any installed php version!"
           exit 1
         fi
-        PHP_VERSION=$(${PHP_DIR}/bin/php --version 2>/dev/null | grep -o '^PHP [0-9]\\.[0-9]\\.[0-9]' | grep -o '[0-9]\\.[0-9]' 2>/dev/null)
+        PHP_VERSION=$(${PHP_DIR}/bin/php --version | grep -o '^PHP [0-9]\\.[0-9]\\.[0-9]' | grep -o '[0-9]\\.[0-9]' 2>/dev/null)
       fi
 
       if [[ -z $PHP_VERSION ]]; then
