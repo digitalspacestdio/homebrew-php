@@ -36,16 +36,18 @@ class AbstractPhp < Formula
     end
 
     depends_on "digitalspacestdio/php/php-cli-wrapper"
-    depends_on "gd"
     depends_on "sqlite"
     depends_on "digitalspacestdio/php/phpcurl"
     depends_on "enchant" => :optional
     depends_on "freetds" if build.with?("mssql")
-    depends_on "freetype"
     depends_on "gmp" => :optional
     depends_on "imap-uw" if build.with?("imap")
     depends_on "pcre2"
+    depends_on "freetype"
+    depends_on "jpeg"
+    depends_on "libpng"
     depends_on "libvpx" if @@php_version.start_with?("5.")
+    depends_on "webp" if !@@php_version.start_with?("5.")
     depends_on "unixodbc"
     depends_on "readline"
     depends_on "zlib"
@@ -80,12 +82,27 @@ class AbstractPhp < Formula
     # ssl
     if build.with?("homebrew-libressl")
       depends_on "libressl"
+      # Use LibreSSL cert bundle
+      openssl = Formula["libressl"]
+      %w[development production].each do |mode|
+        inreplace "php.ini-#{mode}", /; ?openssl\.cafile=/,
+          "openssl.cafile = \"#{libressl.pkgetc}/cert.pem\""
+        inreplace "php.ini-#{mode}", /; ?openssl\.capath=/,
+          "openssl.capath = \"#{libressl.pkgetc}/certs\""
+      end
     else
       depends_on "openssl@1.1"
+      # Use OpenSSL cert bundle
+      openssl = Formula["openssl@1.1"]
+      %w[development production].each do |mode|
+        inreplace "php.ini-#{mode}", /; ?openssl\.cafile=/,
+          "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\""
+        inreplace "php.ini-#{mode}", /; ?openssl\.capath=/,
+          "openssl.capath = \"#{openssl.pkgetc}/certs\""
+      end
     end
 
-    #argon for 7.2
-    depends_on "argon2" => :optional if build.with?("argon2")
+    depends_on "argon2" if @@php_version.start_with?("8.", "7.4", "7.3", "7.2")
 
     deprecated_option "with-pgsql" => "with-postgresql"
     depends_on "postgresql" => :optional
@@ -105,11 +122,6 @@ class AbstractPhp < Formula
     deprecated_option "with-httpd24" => "with-httpd"
 
     depends_on "httpd" => :optional
-
-    # Argon2 option
-    if name.split("::")[2].downcase.start_with?("php72")
-      option "with-argon2", "Include libargon2 password hashing support"
-    end
 
     option "with-cgi", "Enable building of the CGI executable (implies --without-fpm)"
     option "with-debug", "Compile with debugging symbols"
@@ -356,9 +368,8 @@ INFO
 
     args << "--with-pdo-odbc=unixODBC,#{Formula["unixodbc"].opt_prefix}"
     args << "--with-unixODBC=#{Formula["unixodbc"].opt_prefix}"
-
-    # Build with argon2 support (Password Hashing API)
-    if build.with?("argon2")
+    
+    if @@php_version.start_with?("8.", "7.4", "7.3", "7.2")
       args << "--with-password-argon2=#{Formula["argon2"].opt_prefix}"
     end
 
@@ -507,13 +518,16 @@ INFO
 
     ENV.append "CFLAGS", "-DDEBUG_ZEND=2" if build.with? "debug"
     
-    if @@php_version.start_with?("5.")
-      # Workaround for https://bugs.php.net/80310
+    if @@php_version.start_with?("7.2", "7.1", "7.0", "5.")
       ENV.append "CFLAGS", "-fcommon"
       ENV.append "CFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
       ENV.append "CXXFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
+      
+      # Workaround for https://bugs.php.net/80310
       ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
+    end
 
+    if @@php_version.start_with?("5.")
       ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
       ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
     else
