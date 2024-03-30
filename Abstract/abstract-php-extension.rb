@@ -19,8 +19,9 @@ class AbstractPhpExtension < Formula
   keg_only :versioned_formula
   def self.init (php_version)
     @@php_version = php_version
-    depends_on "autoconf@2.69" => :build
-    if Hardware::CPU.intel? && !@@php_version.start_with?("5.6")
+    depends_on "autoconf" => :build if !@@php_version.start_with?("5.")
+    depends_on "autoconf@2.69" => :build if @@php_version.start_with?("5.")
+    if !@@php_version.start_with?("5.")
       depends_on "gcc@11" => :build
     end
     option "without-config-file", "Do not install extension config file"
@@ -41,12 +42,27 @@ class AbstractPhpExtension < Formula
   end
 
   def safe_phpize
-    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
-    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
-    if Hardware::CPU.intel? && !@@php_version.start_with?("5.6")
+    @@php_version
+    @@php_version_path
+
+    if Hardware::CPU.intel?
+      ENV.append "CFLAGS", "-march=ivybridge"
+      ENV.append "CXXFLAGS", "-march=ivybridge"
+    end
+
+    if @@php_version.start_with?("5.")
+      ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
+      ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
+    else
+      ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
+      ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
+    end
+
+    if !@@php_version.start_with?("5.")
       ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
       ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
     end
+    
     system phpize
   end
 
@@ -153,8 +169,6 @@ end
 
 class AbstractPhp56Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php56Defs
-  ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
-  ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
   def self.init(opts = [])
     super(PHP_VERSION)
     depends_on "digitalspacestdio/php/php56"
@@ -163,45 +177,22 @@ end
 
 class AbstractPhp70Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php70Defs
-  ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
-  ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
-  
   def self.init(opts = [])
-    super(super(PHP_VERSION))
+    super(PHP_VERSION)
     depends_on "digitalspacestdio/php/php70"
-  end
-
-  def safe_phpize
-    ENV.append "CFLAGS", "-DTRUE=1 -DFALSE=0"
-    ENV.append "CXXFLAGS", "-DTRUE=1 -DFALSE=0"
-    super()
   end
 end
 
 class AbstractPhp71Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php71Defs
-  ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
-  ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
-
-
   def self.init(opts = [])
     super(PHP_VERSION)
     depends_on "digitalspacestdio/php/php71"
-  end
-
-
-  def safe_phpize
-    ENV.append "CFLAGS", "-DTRUE=1 -DFALSE=0"
-    ENV.append "CXXFLAGS", "-DTRUE=1 -DFALSE=0"
-    super()
   end
 end
 
 class AbstractPhp72Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php72Defs
-  ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
-  ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
-
   def self.init(opts = [])
     super(PHP_VERSION)
     depends_on "digitalspacestdio/php/php72"
