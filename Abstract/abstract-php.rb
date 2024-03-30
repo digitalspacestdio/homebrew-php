@@ -491,10 +491,10 @@ INFO
   end
 
   def _install
-    if php_version.start_with?("7.2", "7.1", "7.0", "5.")
-      ENV.cxx11
-    end
-    
+    #if php_version.start_with?("7.2", "7.1", "7.0", "5.")
+    ENV.cxx11
+    #end
+
     # Work around configure issues with Xcode 12
     # See https://bugs.php.net/bug.php?id=80171
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration" if @@php_version.start_with?("7.2", "7.1", "7.0", "5.")
