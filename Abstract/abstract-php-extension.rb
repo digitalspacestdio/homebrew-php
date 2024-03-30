@@ -16,8 +16,9 @@ class InvalidPhpizeError < RuntimeError
 end
 
 class AbstractPhpExtension < Formula
-    keg_only :versioned_formula
-    def self.init
+  keg_only :versioned_formula
+  def self.init (php_version)
+    @@php_version = php_version
     depends_on "autoconf@2.69" => :build
     if Hardware::CPU.intel? && !@@php_version.start_with?("5.6")
       depends_on "gcc@11" => :build
@@ -155,7 +156,7 @@ class AbstractPhp56Extension < AbstractPhpExtension
   ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
   ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
   def self.init(opts = [])
-    super()
+    super(PHP_VERSION)
     depends_on "digitalspacestdio/php/php56"
   end
 end
@@ -164,14 +165,16 @@ class AbstractPhp70Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php70Defs
   ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
   ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
+  
+  def self.init(opts = [])
+    super(super(PHP_VERSION))
+    depends_on "digitalspacestdio/php/php70"
+  end
+
   def safe_phpize
     ENV.append "CFLAGS", "-DTRUE=1 -DFALSE=0"
     ENV.append "CXXFLAGS", "-DTRUE=1 -DFALSE=0"
     super()
-  end
-  def self.init(opts = [])
-    super()
-    depends_on "digitalspacestdio/php/php70"
   end
 end
 
@@ -180,15 +183,17 @@ class AbstractPhp71Extension < AbstractPhpExtension
   ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
   ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
 
+
+  def self.init(opts = [])
+    super(PHP_VERSION)
+    depends_on "digitalspacestdio/php/php71"
+  end
+
+
   def safe_phpize
     ENV.append "CFLAGS", "-DTRUE=1 -DFALSE=0"
     ENV.append "CXXFLAGS", "-DTRUE=1 -DFALSE=0"
     super()
-  end
-
-  def self.init(opts = [])
-    super()
-    depends_on "digitalspacestdio/php/php71"
   end
 end
 
@@ -198,7 +203,7 @@ class AbstractPhp72Extension < AbstractPhpExtension
   ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
 
   def self.init(opts = [])
-    super()
+    super(PHP_VERSION)
     depends_on "digitalspacestdio/php/php72"
   end
 end
@@ -206,7 +211,7 @@ end
 class AbstractPhp73Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php73Defs
   def self.init(opts = [])
-    super()
+    super(PHP_VERSION)
     depends_on "digitalspacestdio/php/php73"
   end
 end
@@ -215,7 +220,7 @@ class AbstractPhp74Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php74Defs
 
   def self.init(opts = [])
-    super()
+    super(PHP_VERSION)
     depends_on "digitalspacestdio/php/php74"
   end
 end
@@ -224,7 +229,7 @@ class AbstractPhp80Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php80Defs
 
   def self.init(opts = [])
-    super()
+    super(PHP_VERSION)
     depends_on "digitalspacestdio/php/php80"
   end
 end
@@ -233,7 +238,7 @@ class AbstractPhp81Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php81Defs
 
   def self.init(opts = [])
-    super()
+    super(PHP_VERSION)
     depends_on "digitalspacestdio/php/php81"
   end
 end
@@ -242,7 +247,7 @@ class AbstractPhp82Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php82Defs
 
   def self.init(opts = [])
-    super()
+    super(PHP_VERSION)
     depends_on "digitalspacestdio/php/php82"
   end
 end
@@ -251,7 +256,7 @@ class AbstractPhp83Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php83Defs
 
   def self.init(opts = [])
-    super()
+    super(PHP_VERSION)
     depends_on "digitalspacestdio/php/php83"
   end
 end
