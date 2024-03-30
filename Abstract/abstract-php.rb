@@ -53,7 +53,6 @@ class AbstractPhp < Formula
     depends_on "libedit"
     depends_on "openldap"
     depends_on "mysql" if build.with?("libmysql")
-    depends_on "digitalspacestdio/common/libiconv@1.16" if OS.mac?
 
     if @@php_version.start_with?("8.")
       depends_on "digitalspacestdio/common/icu4c@74.2"
@@ -294,13 +293,9 @@ INFO
       "--with-readline=#{Formula["readline"].opt_prefix}",
       "--without-gmp",
       "--without-snmp",
+      "--with-kerberos",
+      "--with-iconv#{headers_path}"
     ]
-
-    if OS.mac?
-      args << "--without-pcre-jit"
-      args << "--with-kerberos=#{headers_path}"
-      args << "--with-iconv=#{Formula["digitalspacestdio/common/libiconv@1.16"].opt_prefix}"
-    end
 
     # START - Icu4c settings 
     if @@php_version.start_with?("8.")
