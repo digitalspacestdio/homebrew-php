@@ -48,7 +48,7 @@ class AbstractPhp < Formula
     #depends_on "libjpeg" if !name.split("::")[2].downcase.start_with?("php56", "php70", "php71")
     depends_on "pcre2"
     #depends_on "webp" if name.split("::")[2].downcase.start_with?("php7", "php8")
-    depends_on "libvpx" if !@@php_version.start_with?("5.")
+    depends_on "libvpx" if @@php_version.start_with?("5.")
     #depends_on "libpng"
     depends_on "unixodbc"
     depends_on "readline"
