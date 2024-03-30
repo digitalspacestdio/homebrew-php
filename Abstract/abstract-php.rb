@@ -14,11 +14,12 @@ class AbstractPhp < Formula
     # So PHP extensions don't report missing symbols
     skip_clean "bin", "sbin"
 
-    if Hardware::CPU.intel? && !@@php_version.start_with?("5.6")
+    if Hardware::CPU.intel? && !@@php_version.start_with?("5.")
       depends_on "gcc@11"
     end
 
-    depends_on "autoconf" => :build
+    depends_on "autoconf" => :build if !@@php_version.start_with?("5.")
+    depends_on "autoconf@2.69" => :build if @@php_version.start_with?("5.")
 
     # obtain list of php formulas
     php_formulas = Formula.names.grep(Regexp.new('^php\d\d$')).sort
@@ -63,23 +64,17 @@ class AbstractPhp < Formula
       depends_on "digitalspacestdio/common/gettext@0.22-icu4c.74.2"
       depends_on "digitalspacestdio/common/libxml2@2.12-icu4c.74.2" if OS.linux?
       depends_on "digitalspacestdio/common/libxslt@1.10-icu4c.74.2"
-    end
-
-    if @@php_version.start_with?("7.4")
+    elsif @@php_version.start_with?("7.4")
       depends_on "digitalspacestdio/common/icu4c@73.2"
       depends_on "digitalspacestdio/common/gettext@0.22-icu4c.73.2"
       depends_on "digitalspacestdio/common/libxml2@2.12-icu4c.73.2" if OS.linux?
       depends_on "digitalspacestdio/common/libxslt@1.10-icu4c.73.2"
-    end
-  
-    if @@php_version.start_with?("7.0", "7.1", "7.2", "7.3")
+    elsif @@php_version.start_with?("7.")
       depends_on "digitalspacestdio/common/icu4c@69.1"
       depends_on "digitalspacestdio/common/gettext@0.22-icu4c.69.1"
       depends_on "digitalspacestdio/common/libxml2@2.12-icu4c.69.1" if OS.linux?
       depends_on "digitalspacestdio/common/libxslt@1.10-icu4c.69.1"
-    end
-
-    if @@php_version.start_with?("5.6")
+    elsif @@php_version.start_with?("5.")
       depends_on "digitalspacestdio/common/icu4c@69.1"
       depends_on "digitalspacestdio/common/gettext@0.22-icu4c.69.1"
       depends_on "digitalspacestdio/common/libxml2@2.9-icu4c.69.1" if OS.linux?
@@ -179,8 +174,8 @@ class AbstractPhp < Formula
       ENV.append "CXXFLAGS", "-march=ivybridge"
     end
 
-    ENV.append "PHP_AUTOCONF", "#{Formula["autoconf"].opt_bin}/autoconf"
-    ENV.append "PHP_AUTOHEADER", "#{Formula["autoconf"].opt_bin}/autoheader"
+    ENV.append "PHP_AUTOCONF", "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
+    ENV.append "PHP_AUTOHEADER", "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
 
     if Hardware::CPU.intel? && !@@php_version.start_with?("5.6")
       ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
@@ -310,45 +305,29 @@ INFO
       args << "--with-libxml-dir=#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.74.2"].opt_prefix}" if OS.linux?
       args << "--with-xsl=#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.74.2"].opt_prefix}"
       args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.74.2"].opt_prefix}"
-    end
-
-    if @@php_version.start_with?("7.4")
+    elsif @@php_version.start_with?("7.4")
       args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}"
       args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.73.2"].opt_prefix}"
       args << "--with-libxml-dir=#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.73.2"].opt_prefix}" if OS.linux?
       args << "--with-xsl=#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.73.2"].opt_prefix}"
       args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.73.2"].opt_prefix}"
-    end
-  
-    if @@php_version.start_with?("7.0", "7.1", "7.2", "7.3")
+    elsif @@php_version.start_with?("7.")
       args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}"
       args << "--with-libxml-dir=#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.69.1"].opt_prefix}" if OS.linux?
       args << "--with-xsl=#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.69.1"].opt_prefix}"
       args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.69.1"].opt_prefix}"
-    end
-
-    if @@php_version.start_with?("5.6")
+    elsif @@php_version.start_with?("5.")
       args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}"
       args << "--with-libxml-dir=#{Formula["digitalspacestdio/common/libxml2@2.9-icu4c.69.1"].opt_prefix}" if OS.linux?
       args << "--with-xsl=#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.69.1"].opt_prefix}"
       args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.69.1"].opt_prefix}"
     end
 
-    if !@@php_version.start_with?("7.4", "8.")
-      args << "--with-gd=#{Formula["gd"].opt_prefix}"
-      #args << "--with-freetype-dir=#{Formula["freetype"].opt_prefix}"
-      #args << "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}"
-      #args << "--with-png-dir=#{Formula["libpng"].opt_prefix}"
-    end
-
     if @@php_version.start_with?("7.4", "8.")
       args << "--with-external-gd=#{Formula["gd"].opt_prefix}"
-      # args << "--with-freetype=#{Formula["freetype"].opt_prefix}"
-      # args << "--with-jpeg=#{Formula["jpeg"].opt_prefix}"
-      # args << "--with-webp"
       args << "--with-external-pcre"
-
-      #ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["webp"].opt_lib}/pkgconfig"
+    else 
+      args << "--with-gd=#{Formula["gd"].opt_prefix}"
     end
 
     args << "--with-pdo-odbc=unixODBC,#{Formula["unixodbc"].opt_prefix}"
@@ -506,8 +485,13 @@ INFO
 
     ENV.append "CFLAGS", "-DDEBUG_ZEND=2" if build.with? "debug"
     
-    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
-    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
+    if @@php_version.start_with?("5.")
+      ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
+      ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
+    else
+      ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
+      ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
+    end
 
     system "./buildconf", "--force"
     system "./configure", *install_args
