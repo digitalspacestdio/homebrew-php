@@ -14,7 +14,7 @@ class AbstractPhp < Formula
     # So PHP extensions don't report missing symbols
     skip_clean "bin", "sbin"
 
-    if Hardware::CPU.intel || !@@php_version.start_with?("5.")
+    if Hardware::CPU.intel? || !@@php_version.start_with?("5.")
       depends_on "gcc@11"
     end
 
@@ -182,7 +182,7 @@ class AbstractPhp < Formula
       ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
     end
 
-    if Hardware::CPU.intel || !@@php_version.start_with?("5.")
+    if Hardware::CPU.intel? || !@@php_version.start_with?("5.")
       ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
       ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
     end
