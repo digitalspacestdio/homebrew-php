@@ -84,22 +84,22 @@ class AbstractPhp < Formula
       depends_on "libressl"
       # Use LibreSSL cert bundle
       openssl = Formula["libressl"]
-      %w[development production].each do |mode|
-        inreplace "php.ini-#{mode}", /; ?openssl\.cafile=/,
-          "openssl.cafile = \"#{libressl.pkgetc}/cert.pem\""
-        inreplace "php.ini-#{mode}", /; ?openssl\.capath=/,
-          "openssl.capath = \"#{libressl.pkgetc}/certs\""
-      end
+      # %w[development production].each do |mode|
+      #   inreplace "php.ini-#{mode}", /; ?openssl\.cafile=/,
+      #     "openssl.cafile = \"#{libressl.pkgetc}/cert.pem\""
+      #   inreplace "php.ini-#{mode}", /; ?openssl\.capath=/,
+      #     "openssl.capath = \"#{libressl.pkgetc}/certs\""
+      # end
     else
       depends_on "openssl@1.1"
       # Use OpenSSL cert bundle
       openssl = Formula["openssl@1.1"]
-      %w[development production].each do |mode|
-        inreplace "php.ini-#{mode}", /; ?openssl\.cafile=/,
-          "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\""
-        inreplace "php.ini-#{mode}", /; ?openssl\.capath=/,
-          "openssl.capath = \"#{openssl.pkgetc}/certs\""
-      end
+      # %w[development production].each do |mode|
+      #   inreplace "php.ini-#{mode}", /; ?openssl\.cafile=/,
+      #     "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\""
+      #   inreplace "php.ini-#{mode}", /; ?openssl\.capath=/,
+      #     "openssl.capath = \"#{openssl.pkgetc}/certs\""
+      # end
     end
 
     depends_on "argon2" if @@php_version.start_with?("8.", "7.4", "7.3", "7.2")
@@ -537,7 +537,7 @@ INFO
 
     system "./buildconf", "--force"
 
-    #if @@php_version.start_with?("5.")
+    if @@php_version.start_with?("5.")
       inreplace "configure" do |s|
         s.gsub! "APACHE_THREADED_MPM=`$APXS_HTTPD -V | grep 'threaded:.*yes'`",
                 "APACHE_THREADED_MPM="
@@ -549,7 +549,7 @@ INFO
         s.gsub! "LIBEXECDIR='$APXS_LIBEXECDIR'",
                 "LIBEXECDIR='" + "#{lib}/httpd/modules".gsub("@", "\\@") + "'"
       end
-    #end
+    end
 
     system "./configure", *install_args
 
