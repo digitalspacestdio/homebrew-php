@@ -188,8 +188,8 @@ class AbstractPhp < Formula
     end
     
     if @@php_version.start_with?("7.1", "7.0")
-        ENV.append "CFLAGS", "-DTRUE=1 -DFALSE=0"
-        ENV.append "CXXFLAGS", "-DTRUE=1 -DFALSE=0"
+      ENV.append "CFLAGS", "-DTRUE=1 -DFALSE=0"
+      ENV.append "CXXFLAGS", "-DTRUE=1 -DFALSE=0"
     end
 
     # Not removing all pear.conf and .pearrc files from PHP path results in
@@ -491,12 +491,14 @@ INFO
   end
 
   def _install
-    ENV.cxx11 if @@php_version.start_with?("7.")
-
+    if php_version.start_with?("7.2", "7.1", "7.0", "5.")
+      ENV.cxx11
+    end
+    
     # Work around configure issues with Xcode 12
     # See https://bugs.php.net/bug.php?id=80171
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration" if @@php_version.start_with?("7.", "5.")
-    ENV.append "CFLAGS", "-Wno-incompatible-pointer-types" if @@php_version.start_with?("7.", "5.")
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration" if @@php_version.start_with?("7.2", "7.1", "7.0", "5.")
+    ENV.append "CFLAGS", "-Wno-incompatible-pointer-types" if @@php_version.start_with?("7.2", "7.1", "7.0", "5.")
     ENV.append "CFLAGS", "-Wno-implicit-int" if @@php_version.start_with?("5.")
 
     ENV.append "CFLAGS", "-DDEBUG_ZEND=2" if build.with? "debug"
