@@ -251,10 +251,19 @@ class Php56 < AbstractPhp
 
   def install
     ENV.cxx11
+
+    if Hardware::CPU.intel?
+      #cpu = Hardware.oldest_cpu
+      #ENV.append "CFLAGS", "-march=#{cpu}"
+      #ENV.append "CXXFLAGS", "-march=#{cpu}"
+      ENV.append "CFLAGS", "-march=ivybridge"
+      ENV.append "CXXFLAGS", "-march=ivybridge"
+    end
+
     # Work around configure issues with Xcode 12
     # See https://bugs.php.net/bug.php?id=80171
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
-    ENV.append "CFLAGS", "-Wno-error=incompatible-function-pointer-type"
+    ENV.append "CFLAGS", "-Wno-incompatible-pointer-types"
 
     # Workaround for https://bugs.php.net/80310
     ENV.append "CFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
@@ -268,10 +277,10 @@ class Php56 < AbstractPhp
     # Prevent homebrew from harcoding path to sed shim in phpize script
     ENV["lt_cv_path_SED"] = "sed"
     
-    if Hardware::CPU.intel?
+    #if Hardware::CPU.intel?
       ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
       ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
-    end
+    #end
     system "./buildconf", "--force"
     inreplace "configure" do |s|
       s.gsub! "APACHE_THREADED_MPM=`$APXS_HTTPD -V | grep 'threaded:.*yes'`",
