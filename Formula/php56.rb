@@ -50,8 +50,8 @@ class Php56 < AbstractPhp
     # Ensure system dylibs can be found by linker on Sierra
     # ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
 
-#    libzip = Formula["libzip"]
-    #ENV["CFLAGS"] = "-Wno-error -I#{libzip.opt_include}"
+    # libzip = Formula["libzip"]
+    # ENV["CFLAGS"] = "-Wno-error -I#{libzip.opt_include}"
 
     args = [
       "--prefix=#{prefix}",
@@ -254,6 +254,7 @@ class Php56 < AbstractPhp
     # Work around configure issues with Xcode 12
     # See https://bugs.php.net/bug.php?id=80171
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+    ENV.append "CFLAGS", "-Wno-error=incompatible-function-pointer-type"
 
     # Workaround for https://bugs.php.net/80310
     ENV.append "CFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
