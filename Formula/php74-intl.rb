@@ -19,7 +19,7 @@ class Php74Intl < AbstractPhp74Extension
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4324e8377e1ea790a41e9eed6dda1b189347899fd7392f8e130f1f7eadbe24e6"
   end
 
-  depends_on "digitalspacestdio/common/icu4c@72.1"
+  depends_on "digitalspacestdio/common/icu4c@73.2"
   depends_on "pkg-config" => :build
 
   def install
@@ -33,7 +33,7 @@ class Php74Intl < AbstractPhp74Extension
                           phpconfig,
                           "--disable-dependency-tracking",
                           "--enable-intl",
-                          "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@72.1"].opt_prefix}"
+                          "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}"
     system "make"
     prefix.install "modules/intl.so"
     write_config_file if build.with? "config-file"

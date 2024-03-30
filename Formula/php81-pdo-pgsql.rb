@@ -18,7 +18,7 @@ class Php81PdoPgsql < AbstractPhp81Extension
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d9cca8ba90d73c147073d1f56e471a5ca456ddc4a6076ae40be53b587468c07"
   end
 
-  depends_on "libpq"
+  depends_on "digitalspacestdio/common/libpq@16.2-icu4c.74.2"
 
   def extension
     "pdo_pgsql"
@@ -28,7 +28,7 @@ class Php81PdoPgsql < AbstractPhp81Extension
     Dir.chdir "ext/pdo_pgsql"
 
     safe_phpize
-    system "./configure", "--prefix=#{prefix}", "--with-pdo-pgsql=#{Formula["libpq"].prefix}", phpconfig
+    system "./configure", "--prefix=#{prefix}", "--with-pdo-pgsql=#{Formula["digitalspacestdio/common/libpq@16.2-icu4c.74.2"].prefix}", phpconfig
     system "make"
     prefix.install "modules/pdo_pgsql.so"
     write_config_file if build.with? "config-file"

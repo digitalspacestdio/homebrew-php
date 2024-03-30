@@ -18,7 +18,7 @@ class Php83Intl < AbstractPhp83Extension
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab6bfd2ef4c58782574349141c5fef9b67db78fa0d8a21605042f66831ebe31b"
   end
 
-  depends_on "digitalspacestdio/common/icu4c@72.1"
+  depends_on "digitalspacestdio/common/icu4c@74.2"
   depends_on "pkg-config" => :build
 
   def install
@@ -35,7 +35,7 @@ class Php83Intl < AbstractPhp83Extension
                           phpconfig,
                           "--disable-dependency-tracking",
                           "--enable-intl",
-                          "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@72.1"].opt_prefix}"
+                          "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix}"
     system "make"
     prefix.install "modules/intl.so"
     write_config_file if build.with? "config-file"

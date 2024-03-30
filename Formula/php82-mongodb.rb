@@ -20,6 +20,7 @@ class Php82Mongodb < AbstractPhp82Extension
   end
 
   depends_on "openssl"
+  depends_on "digitalspacestdio/common/icu4c@74.2"
 
   def install
     Dir.chdir "mongodb-#{version}" unless build.head?
@@ -27,7 +28,7 @@ class Php82Mongodb < AbstractPhp82Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
-                          "--with-mongodb-ssl=openssl --with-mongodb-icu=#{Formula["digitalspacestdio/common/icu4c@72.1"].opt_prefix} --with-openssl-dir=#{Formula["openssl"].opt_prefix}"
+                          "--with-mongodb-ssl=openssl --with-mongodb-icu=#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix} --with-openssl-dir=#{Formula["openssl"].opt_prefix}"
     system "make"
     prefix.install "modules/mongodb.so"
     write_config_file if build.with? "config-file"

@@ -19,7 +19,7 @@ class Php70Intl < AbstractPhp70Extension
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5586b0f4941f1083363e62ed376376d6f76359252072e6e5158e125bb3c5698b"
   end
 
-  depends_on "digitalspacestdio/common/icu4c@67.1"
+  depends_on "digitalspacestdio/common/icu4c@69.1"
 
   def install
     # Required due to icu4c dependency
@@ -35,7 +35,7 @@ class Php70Intl < AbstractPhp70Extension
                           phpconfig,
                           "--disable-dependency-tracking",
                           "--enable-intl",
-                          "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@67.1"].opt_prefix}"
+                          "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}"
     system "make"
     prefix.install "modules/intl.so"
     write_config_file if build.with? "config-file"
