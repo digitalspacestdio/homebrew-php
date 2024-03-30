@@ -174,8 +174,13 @@ class AbstractPhp < Formula
       ENV.append "CXXFLAGS", "-march=ivybridge"
     end
 
-    ENV.append "PHP_AUTOCONF", "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
-    ENV.append "PHP_AUTOHEADER", "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
+    if @@php_version.start_with?("5.")
+      ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
+      ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
+    else
+      ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
+      ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
+    end
 
     if Hardware::CPU.intel? && !@@php_version.start_with?("5.6")
       ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
