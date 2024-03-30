@@ -18,6 +18,14 @@ class Php56 < AbstractPhp
 
   keg_only :versioned_formula
 
+  def php_version
+    "#{PHP_VERSION_MAJOR}"
+  end
+
+  def php_version_path
+    "#{PHP_BRANCH_NUM}"
+  end
+
   if OS.mac?
     patch do
       url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php#{PHP_BRANCH_NUM}/macos.patch"
