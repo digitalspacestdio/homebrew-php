@@ -48,7 +48,7 @@ class AbstractPhp < Formula
     #depends_on "libjpeg" if !name.split("::")[2].downcase.start_with?("php56", "php70", "php71")
     depends_on "pcre2"
     #depends_on "webp" if name.split("::")[2].downcase.start_with?("php7", "php8")
-    #depends_on "libvpx" => :optional if name.split("::")[2].downcase.start_with?("php56")
+    depends_on "libvpx" if !@@php_version.start_with?("5.")
     #depends_on "libpng"
     depends_on "unixodbc"
     depends_on "readline"
@@ -323,12 +323,27 @@ INFO
       args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.69.1"].opt_prefix}"
     end
 
+    # START - GD settings 
     if @@php_version.start_with?("7.4", "8.")
-      args << "--with-external-gd=#{Formula["gd"].opt_prefix}"
-      args << "--with-external-pcre"
-    else 
-      args << "--with-gd=#{Formula["gd"].opt_prefix}"
+      args << "--enable-gd"
+      args << "--with-freetype"
+      args << "--with-jpeg"
+      args << "--with-png"
+      args << "--with-webp"
+    elsif @@php_version.start_with?("7.")
+      args << "--with-gd"
+      args << "--with-freetype"
+      args << "--with-jpeg"
+      args << "--with-png"
+      args << "--with-webp"
+    elsif @@php_version.start_with?("5.")
+      args << "--with-gd"
+      args << "--with-freetype"
+      args << "--with-jpeg"
+      args << "--with-png"
+      args << "--with-vpx-dir=#{Formula['libvpx'].opt_prefix}"
     end
+    # END - GD settings 
 
     args << "--with-pdo-odbc=unixODBC,#{Formula["unixodbc"].opt_prefix}"
     args << "--with-unixODBC=#{Formula["unixodbc"].opt_prefix}"
@@ -457,10 +472,6 @@ INFO
       end
 
       args << "--enable-zend-signals"
-    end
-
-    if build.with? "libvpx"
-      args << "--with-vpx-dir=#{Formula['libvpx'].opt_prefix}"
     end
 
     if build.with? "thread-safety"
