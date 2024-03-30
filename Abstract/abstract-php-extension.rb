@@ -19,9 +19,9 @@ class AbstractPhpExtension < Formula
     keg_only :versioned_formula
     def self.init
     depends_on "autoconf@2.69" => :build
-    #if Hardware::CPU.intel?
+    if Hardware::CPU.intel? && !@@php_version.start_with?("5.6")
       depends_on "gcc@11" => :build
-    #end
+    end
     option "without-config-file", "Do not install extension config file"
   end
 
@@ -42,10 +42,10 @@ class AbstractPhpExtension < Formula
   def safe_phpize
     ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
     ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
-    #if Hardware::CPU.intel?
+    if Hardware::CPU.intel? && !@@php_version.start_with?("5.6")
       ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
       ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
-    #end
+    end
     system phpize
   end
 
