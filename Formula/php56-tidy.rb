@@ -9,6 +9,11 @@ class Php56Tidy < AbstractPhp56Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fc7c771d8a022ec3e0857e4e52240adaa4f7b6c79fb756c719387947024d0f12"
+  end
+
   depends_on "tidy-html5"
 
   def install

@@ -11,8 +11,7 @@ class Php56Zip < AbstractPhp56Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4af058469fc5012c5ac780c894b78648db35265075975b127025e96cb75d7675"
-    sha256 cellar: :any_skip_relocation, ventura:       "892f53a7a36ada70e0418c2b175f891cf632980748b6441154be99d470d8ec68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3f7c5d3d6296e1f30aa7ce4c43a21b039669fce319a63f2949ad5b780f2139cc"
   end
 
   depends_on "zlib"

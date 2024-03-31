@@ -12,8 +12,7 @@ class Php56Ldap < AbstractPhp56Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4e116f34a6d8f3980a0900cdd5144a71655a1185b0ad09c588ff324a31349cae"
-    sha256 cellar: :any_skip_relocation, ventura:       "e97147f98631ecc7a3c50edf81a0ee44d7833ac3943ffcd6ff334379d4b8f030"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e28535496160402e9b25bec558366fe32143816485b7cc9b2f97f333e3e90719"
   end
 
   depends_on "openldap"

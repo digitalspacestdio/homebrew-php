@@ -7,6 +7,11 @@ class Php56Xdebug < AbstractPhp56Extension
   url "https://pecl.php.net/get/xdebug-2.5.5.tgz"
   sha256 "72108bf2bc514ee7198e10466a0fedcac3df9bbc5bd26ce2ec2dafab990bf1a4"
   head "https://github.com/xdebug/xdebug.git"
+
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "069c62fba70b4dc5e03fd10c44da7c65519a655c73e5df4f656bec90e1432659"
+  end
   depends_on :arch => :x86_64 if OS.linux?
   revision PHP_REVISION
   

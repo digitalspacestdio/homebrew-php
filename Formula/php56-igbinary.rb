@@ -10,8 +10,7 @@ class Php56Igbinary < AbstractPhp56Extension
   revision PHP_REVISION
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9f22913beb2619356e6aa97d5bcd81f0381bf38b1cacc9dbaf562bb1a5118858"
-    sha256 cellar: :any_skip_relocation, ventura:       "5d19955d25f3bdb230e8e12da36e662f4762c280443e3521e3fb69ff3e54e156"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4a677fab3f6c52a9ccf92478eebd6dc95c6e56bfb84d200244e8a1f583ca3c96"
   end
 
 
