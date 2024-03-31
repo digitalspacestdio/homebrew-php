@@ -172,11 +172,18 @@ class AbstractPhp < Formula
     @@php_version_path
 
     if Hardware::CPU.intel?
-      #cpu = Hardware.oldest_cpu
-      #ENV.append "CFLAGS", "-march=#{cpu}"
-      #ENV.append "CXXFLAGS", "-march=#{cpu}"
-      ENV.append "CFLAGS", "-march=ivybridge"
-      ENV.append "CXXFLAGS", "-march=ivybridge"
+      if OS.mac?
+        ENV.append "CFLAGS", "-march=ivybridge"
+        ENV.append "CXXFLAGS", "-march=ivybridge"
+      else
+        ENV.append "CFLAGS", "-march=#{Hardware.oldest_cpu}"
+        ENV.append "CFLAGS", "-msse4.2"
+        ENV.append "CFLAGS", "-mavx"
+
+        ENV.append "CXXFLAGS", "-march=#{Hardware.oldest_cpu}"
+        ENV.append "CXXFLAGS", "-msse4.2"
+        ENV.append "CXXFLAGS", "-mavx"
+      end
     end
 
     if @@php_version.start_with?("5.")
