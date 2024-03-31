@@ -21,7 +21,7 @@ fi
 
 FORMULAS=${@:-$(brew search digitalspacestdio/php | grep 'php[7-9]\{1\}[0-9]\{1\}$' | awk -F'/' '{ print $3 }' | sort)}
 for PHP_FORMULA in $FORMULAS; do
-    echo "==> Ceating bottles for $PHP_FORMULA ..."
+    echo "==> Creating bottles for $PHP_FORMULA ..."
     rm -rf ${HOME}/.bottles/$PHP_FORMULA.bottle
     mkdir -p ${HOME}/.bottles/$PHP_FORMULA.bottle
     cd ${HOME}/.bottles/$PHP_FORMULA.bottle
