@@ -50,6 +50,15 @@ class AbstractPhpExtension < Formula
       ENV.append "CXXFLAGS", "-march=ivybridge"
     end
 
+    if @@php_version.start_with?("7.2", "7.1", "7.0", "5.")
+      ENV.append "CFLAGS", "-fcommon"
+      ENV.append "CFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
+      ENV.append "CXXFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
+      
+      # Workaround for https://bugs.php.net/80310
+      ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
+    end
+
     if @@php_version.start_with?("5.")
       ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
       ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
