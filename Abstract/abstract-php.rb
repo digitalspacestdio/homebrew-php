@@ -53,7 +53,7 @@ class AbstractPhp < Formula
     depends_on "zlib"
     depends_on "bzip2"
     depends_on "libedit"
-    depends_on "openldap"
+    #depends_on "openldap"
     depends_on "mysql" if build.with?("libmysql")
     depends_on "digitalspacestdio/common/libiconv@1.16" if OS.mac?
 
@@ -138,7 +138,7 @@ class AbstractPhp < Formula
     option "with-thread-safety", "Build with thread safety"
 #    option "without-bz2", "Build without bz2 support"
     option "without-fpm", "Disable building of the fpm SAPI executable"
-    option "without-ldap", "Build without LDAP support"
+    #option "without-ldap", "Build without LDAP support"
     option "without-mysql", "Remove MySQL/MariaDB support"
     option "without-legacy-mysql", "Do not include the deprecated mysql_ functions"
     option "without-pcntl", "Build without Process Control support"
@@ -434,11 +434,11 @@ INFO
       args << "--with-imap-ssl=" + Formula[php_open_ssl_formula].opt_prefix.to_s
     end
 
-    unless build.without? "ldap"
-      args << "--with-ldap-dir=#{Formula["openldap"].opt_prefix}" if @@php_version.start_with?("5.")
-      args << "--with-ldap=#{Formula["openldap"].opt_prefix}" if !@@php_version.start_with?("5.")
-      args << "--with-ldap-sasl#{headers_path}"
-    end
+    # unless build.without? "ldap"
+    #   args << "--with-ldap-dir=#{Formula["openldap"].opt_prefix}" if @@php_version.start_with?("5.")
+    #   args << "--with-ldap=#{Formula["openldap"].opt_prefix}" if !@@php_version.start_with?("5.")
+    #   args << "--with-ldap-sasl#{headers_path}"
+    # end
 
     if build.with? "libmysql"
       args << "--with-mysql-sock=/tmp/mysql.sock"

@@ -22,12 +22,13 @@ class Php83Ldap < AbstractPhp83Extension
 
   def install
     Dir.chdir "ext/ldap"
-
+    headers_path = "=#{MacOS.sdk_path_if_needed}/usr"
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
                           "--disable-dependency-tracking",
-                          "--with-ldap=#{Formula["openldap"].opt_prefix}"
+                          "--with-ldap=#{Formula["openldap"].opt_prefix}",
+                          "--with-ldap-sasl#{headers_path}"
     system "make"
     prefix.install "modules/ldap.so"
     write_config_file if build.with? "config-file"
