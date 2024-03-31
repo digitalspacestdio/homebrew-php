@@ -11,7 +11,7 @@ class Php56Igbinary < AbstractPhp56Extension
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "8487bbbe1e97189ad85f0e92ff6b025d2220b06a1cd1ea744e449fa662e43eee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4a677fab3f6c52a9ccf92478eebd6dc95c6e56bfb84d200244e8a1f583ca3c96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "870269f31d2e526f31a621259ac3f6a89e1909b7292f4dbf132590dceadffecb"
   end
 
 

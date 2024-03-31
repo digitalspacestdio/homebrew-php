@@ -13,7 +13,7 @@ class Php56Mongodb < AbstractPhp56Extension
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "ed1121dc2b97fa0f12d733feba9fcfb8cfba1ed76a1e73b0806100cdbdf640a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "22676722f7abedb9470b2620fb618335f65e93f60e0fbf605712919c458f7ae0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "58bbf5ecc9b916d414063986f2b57af6ccc6108140b922b0fc74766da235b816"
   end
 
   depends_on "openssl@1.1"
