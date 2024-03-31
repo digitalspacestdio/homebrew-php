@@ -55,15 +55,14 @@ class AbstractPhp < Formula
     depends_on "libedit"
     #depends_on "openldap"
     depends_on "mysql" if build.with?("libmysql")
-    depends_on "digitalspacestdio/common/libiconv@1.16" if OS.mac?
 
     if @@php_version.start_with?("8.")
-      depends_on "digitalspacestdio/common/icu4c@74.2"
+      #depends_on "digitalspacestdio/common/icu4c@74.2"
       depends_on "digitalspacestdio/common/gettext@0.22-icu4c.74.2"
       depends_on "digitalspacestdio/common/libxml2@2.12-icu4c.74.2" if OS.linux?
       depends_on "digitalspacestdio/common/libxslt@1.10-icu4c.74.2"
     elsif @@php_version.start_with?("7.4")
-      depends_on "digitalspacestdio/common/icu4c@73.2"
+      #depends_on "digitalspacestdio/common/icu4c@73.2"
       depends_on "digitalspacestdio/common/gettext@0.22-icu4c.73.2"
       depends_on "digitalspacestdio/common/libxml2@2.12-icu4c.73.2" if OS.linux?
       depends_on "digitalspacestdio/common/libxslt@1.10-icu4c.73.2"
@@ -72,11 +71,13 @@ class AbstractPhp < Formula
       depends_on "digitalspacestdio/common/gettext@0.22-icu4c.69.1"
       depends_on "digitalspacestdio/common/libxml2@2.12-icu4c.69.1" if OS.linux?
       depends_on "digitalspacestdio/common/libxslt@1.10-icu4c.69.1"
+      depends_on "digitalspacestdio/common/libiconv@1.16" if OS.mac?
     elsif @@php_version.start_with?("5.")
       depends_on "digitalspacestdio/common/icu4c@69.1"
       depends_on "digitalspacestdio/common/gettext@0.22-icu4c.69.1"
       depends_on "digitalspacestdio/common/libxml2@2.9-icu4c.69.1" if OS.linux?
       depends_on "digitalspacestdio/common/libxslt@1.10-icu4c.69.1"
+      depends_on "digitalspacestdio/common/libiconv@1.16" if OS.mac?
     end
 
     # ssl
@@ -306,6 +307,7 @@ INFO
       "--enable-sysvsem",
       "--enable-sysvshm",
       "--enable-wddx",
+      "--with-external-pcre",
       "--with-zlib=#{Formula["zlib"].opt_prefix}",
       "--with-xmlrpc",
       "--with-readline=#{Formula["readline"].opt_prefix}",
@@ -316,15 +318,16 @@ INFO
     ]
 
     if OS.mac?
-      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libiconv@1.16"].opt_prefix}/lib"
-      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/libiconv@1.16"].opt_prefix}/include"
-
-      args << "--with-iconv=#{Formula["digitalspacestdio/common/libiconv@1.16"].opt_prefix}"
+      #zargs << "--with-iconv=#{Formula["digitalspacestdio/common/libiconv@1.16"].opt_prefix}"
       args << "--with-ndbm#{headers_path}"
       
       if @@php_version.start_with?("7.4", "8.")
+        args << "--with-iconv=#{headers_path}"
         args << "--without-pcre-jit"
-        args << "--with-external-pcre" if !OS.mac? 
+      else
+        ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libiconv@1.16"].opt_prefix}/lib"
+        ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/libiconv@1.16"].opt_prefix}/include"
+        args << "--with-iconv=#{Formula["digitalspacestdio/common/libiconv@1.16"].opt_prefix}"
       end
       
     else
@@ -334,27 +337,33 @@ INFO
 
     # START - Icu4c settings 
     if @@php_version.start_with?("8.")
-      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix}/lib"
-      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix}/include"
+      #ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix}/lib"
+      #ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix}/include"
 
       ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.74.2"].opt_prefix}/lib"
       ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.74.2"].opt_prefix}/include"
 
-      args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix}"
+      #args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix}"
       args << "--with-libxml-dir=#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.74.2"].opt_prefix}" if OS.linux?
       args << "--with-xsl=#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.74.2"].opt_prefix}"
       args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.74.2"].opt_prefix}"
     elsif @@php_version.start_with?("7.4")
-      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}/lib"
-      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}/include"
+      #ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}/lib"
+      #ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}/include"
 
       ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.73.2"].opt_prefix}/lib"
       ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.73.2"].opt_prefix}/include"
 
-      args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}"
-      args << "--with-libxml-dir=#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.73.2"].opt_prefix}" if OS.linux?
       args << "--with-xsl=#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.73.2"].opt_prefix}"
       args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.73.2"].opt_prefix}"
+      args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}"
+
+      if OS.linux?
+        #ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.73.2"].opt_prefix}/lib"
+        #ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.73.2"].opt_prefix}/include"
+        args << "--with-libxml=#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.73.2"].opt_prefix}"
+      end
+
     elsif @@php_version.start_with?("7.")
       ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}/lib"
       ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}/include"

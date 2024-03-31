@@ -25,6 +25,8 @@ class Php74Intl < AbstractPhp74Extension
   def install
     # icu4c 61.1 compatability
     ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
+    ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}/include"
     
     Dir.chdir "ext/intl"
 
@@ -32,8 +34,7 @@ class Php74Intl < AbstractPhp74Extension
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
                           "--disable-dependency-tracking",
-                          "--enable-intl",
-                          "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}"
+                          "--enable-intl"
     system "make"
     prefix.install "modules/intl.so"
     write_config_file if build.with? "config-file"
