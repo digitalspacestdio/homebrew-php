@@ -549,6 +549,7 @@ INFO
 
     # Work around configure issues with Xcode 12
     # See https://bugs.php.net/bug.php?id=80171
+    ENV.append "CFLAGS", "-Wno-array-bound" if @@php_version.start_with?("8.")
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration" if @@php_version.start_with?("7.2", "7.1", "7.0", "5.")
     ENV.append "CFLAGS", "-Wno-incompatible-pointer-types" if @@php_version.start_with?("7.2", "7.1", "7.0", "5.")
     ENV.append "CFLAGS", "-Wno-implicit-int" if @@php_version.start_with?("5.")
