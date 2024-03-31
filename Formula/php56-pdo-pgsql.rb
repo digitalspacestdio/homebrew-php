@@ -11,6 +11,7 @@ class Php56PdoPgsql < AbstractPhp56Extension
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "ed0c055f0d9221f83b3137819a6ab093dccd19b99c97dbdc89972ca54270c76a"
+    sha256 cellar: :any_skip_relocation, sonoma:       "bcd4c8d003080051586f1a2737f5cf9649335356e4fbdc3fad6840d5575a7d43"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "eba6a9eec9602f690d68024c9b14d37f7f1202f90e4f5d1fe6ca54c9c182be93"
   end
 

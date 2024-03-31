@@ -11,6 +11,7 @@ class Php56Gmp < AbstractPhp56Extension
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "c197383fa6727490415c1afb4a719d84a1179322ef95e13eee5ffcf71e1cfc8d"
+    sha256 cellar: :any_skip_relocation, sonoma:       "282cc16d6629330fc1a788476e88cff0fa30b857f0e2b5b4d85c1dda34c5b498"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "e839cf6c480fc97dfac633a021ce55444415fe6c5a524fe585a122db7263df1d"
   end
 
