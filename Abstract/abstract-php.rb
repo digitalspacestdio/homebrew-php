@@ -37,7 +37,7 @@ class AbstractPhp < Formula
 
     depends_on "digitalspacestdio/php/php-cli-wrapper"
     depends_on "sqlite"
-    depends_on "digitalspacestdio/php/phpcurl"
+    depends_on "digitalspacestdio/common/curl@7"
     depends_on "enchant" => :optional
     depends_on "freetds" if build.with?("mssql")
     depends_on "gmp" => :optional
@@ -433,7 +433,7 @@ INFO
     end
 
     args << "--with-sqlite=#{Formula["sqlite"].opt_prefix}"
-    args << "--with-curl=#{Formula["digitalspacestdio/php/phpcurl"].opt_prefix}"
+    args << "--with-curl=#{Formula["digitalspacestdio/common/curl@7"].opt_prefix}"
 
     if build.with? "imap"
       args << "--with-imap=#{Formula["imap-uw"].opt_prefix}"
