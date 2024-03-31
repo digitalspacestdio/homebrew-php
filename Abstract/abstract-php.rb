@@ -322,7 +322,7 @@ INFO
       args << "--with-ndbm#{headers_path}"
       
       if @@php_version.start_with?("7.4", "8.")
-        args << "--with-iconv=#{headers_path}"
+        args << "--with-iconv#{headers_path}"
         args << "--without-pcre-jit"
       else
         ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libiconv@1.16"].opt_prefix}/lib"
