@@ -21,7 +21,6 @@ class Php70Redis < AbstractPhp70Extension
 
   depends_on "digitalspacestdio/php/php70-igbinary"
   depends_on "igbinary"
-  depends_on "libsodium"
 
   def install
     args = []

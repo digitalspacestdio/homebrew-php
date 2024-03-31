@@ -21,6 +21,9 @@ class Php70Sodium < AbstractPhp70Extension
   depends_on "libsodium"
 
   def install
+    ENV.append "LDFLAGS", "-L#{Formula["libsodium"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["libsodium"].opt_prefix}/include"
+
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                               "--with-sodium=#{Formula['libsodium'].opt_prefix}",
