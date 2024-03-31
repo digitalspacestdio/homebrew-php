@@ -26,11 +26,12 @@ class Php70 < AbstractPhp
     "#{PHP_BRANCH_NUM}"
   end
 
+  patch do
+    url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/icufix/Patches/php70/Fix-Wimplicit-function-declaration_in_configure.patch"
+    sha256 "650193d19b0a033c33e9f420bb5a262699cb60d04d363c714858816ed33d281d"
+  end
+
   if OS.mac?
-    patch do
-      url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/icufix/Patches/php70/Fix-Wimplicit-function-declaration_in_configure.patch"
-      sha256 "650193d19b0a033c33e9f420bb5a262699cb60d04d363c714858816ed33d281d"
-    end
     patch do
       url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php72/macos.patch"
       sha256 "cf28218565c07b26d0764e903b24421b8095a6bbc68aded050b9fe0cc421729d"

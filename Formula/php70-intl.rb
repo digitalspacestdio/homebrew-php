@@ -1,11 +1,10 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
 class Php70Intl < AbstractPhp70Extension
-  init
+  init PHP_VERSION, false
   desc "Wrapper for the ICU library"
   homepage "https://php.net/manual/en/book.intl.php"
   revision PHP_REVISION
-
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]

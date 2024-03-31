@@ -17,12 +17,13 @@ end
 
 class AbstractPhpExtension < Formula
   keg_only :versioned_formula
-  def self.init (php_version)
+  def self.init (php_version, use_gcc = true)
     @@php_version = php_version
+    @@use_gcc = use_gcc
     depends_on "autoconf" => :build if !@@php_version.start_with?("5.")
     depends_on "autoconf@2.69" => :build if @@php_version.start_with?("5.")
-    if OS.mac? && !@@php_version.start_with?("5.")
-      depends_on "gcc@11"
+    if OS.mac? && !@@php_version.start_with?("5.") && @@use_gcc
+      #depends_on "gcc@11"
     end
     option "without-config-file", "Do not install extension config file"
   end
@@ -55,7 +56,7 @@ class AbstractPhpExtension < Formula
       ENV.append "CXXFLAGS", "-mavx"
     end
 
-    if OS.mac? && !@@php_version.start_with?("5.")
+    if OS.mac? && !@@php_version.start_with?("5.") && @@use_gcc
       ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
       ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
     end
@@ -184,84 +185,79 @@ end
 class AbstractPhp56Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php56Defs
   def self.init(opts = [])
-    super(PHP_VERSION)
+    super(php_version)
     depends_on "digitalspacestdio/php/php56"
   end
 end
 
 class AbstractPhp70Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php70Defs
-  def self.init(opts = [])
-    super(PHP_VERSION)
+  def self.init(php_version = PHP_VERSION, use_gcc = true)
+    super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php70"
   end
 end
 
 class AbstractPhp71Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php71Defs
-  def self.init(opts = [])
-    super(PHP_VERSION)
+  def self.init(php_version = PHP_VERSION, use_gcc = true)
+    super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php71"
   end
 end
 
 class AbstractPhp72Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php72Defs
-  def self.init(opts = [])
-    super(PHP_VERSION)
+  def self.init(php_version = PHP_VERSION, use_gcc = true)
+    super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php72"
   end
 end
 
 class AbstractPhp73Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php73Defs
-  def self.init(opts = [])
-    super(PHP_VERSION)
+  def self.init(php_version = PHP_VERSION, use_gcc = true)
+    super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php73"
   end
 end
 
 class AbstractPhp74Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php74Defs
-
-  def self.init(opts = [])
-    super(PHP_VERSION)
+  def self.init(php_version = PHP_VERSION, use_gcc = true)
+    super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php74"
   end
 end
 
 class AbstractPhp80Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php80Defs
-
-  def self.init(opts = [])
-    super(PHP_VERSION)
+  def self.init(php_version = PHP_VERSION, use_gcc = true)
+    super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php80"
   end
 end
 
 class AbstractPhp81Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php81Defs
-
-  def self.init(opts = [])
-    super(PHP_VERSION)
+  def self.init(php_version = PHP_VERSION, use_gcc = true)
+    super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php81"
   end
 end
 
 class AbstractPhp82Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php82Defs
-
-  def self.init(opts = [])
-    super(PHP_VERSION)
+  def self.init(php_version = PHP_VERSION, use_gcc = true)
+    super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php82"
   end
 end
 
 class AbstractPhp83Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php83Defs
-
-  def self.init(opts = [])
-    super(PHP_VERSION)
+  def self.init(php_version = PHP_VERSION, use_gcc = true)
+    super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php83"
   end
 end
