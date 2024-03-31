@@ -11,11 +11,7 @@ class Php70Opcache < AbstractPhp70Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ddbfd0aee87b0c0b3f73852bfe4529edd06fe071bda6ff9c510ac5fd17e383c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9cd1df8783409a57c173ad93579d4d2019a98ed69f5f8f3fe21857a7d4f63a02"
-    sha256 cellar: :any_skip_relocation, sonoma:        "296b7e723d8f40a0a5debc49a063db72364e7ee33f20c5b6c3ed0a8a8b9d8b6c"
-    sha256 cellar: :any_skip_relocation, ventura:       "377bac8b204d9e0b45302e379070c4bdee3d0474f68df0b5b4bdeb0596a6caca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c814e39847385f64e6d1d18366c7c33125be00c3e08d378a800d7d1bb01261f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e75befe4341583e5fcc33fa688eb4223697f58ba322fbc0d386a5fe9ee4b8a7e"
   end
 
   depends_on "pcre"
