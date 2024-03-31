@@ -12,6 +12,7 @@ class Php70Mongodb < AbstractPhp70Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
+    sha256 cellar: :any_skip_relocation, sonoma:       "9100582b7e8f0777bdb21b4045c41ab11d0bbf6f7a71922896ecf0e6e052abea"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "560742341a85eb882cd41a5d361b97d0c70e747f61d5b44b642d42cc42ef3c92"
   end
   depends_on "openssl@1.1"
