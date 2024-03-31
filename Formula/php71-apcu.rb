@@ -10,11 +10,7 @@ class Php71Apcu < AbstractPhp71Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8adf9a1eae073d7382193df38c19e0290f9839b9559975d11dc8428dda57c67"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d0286f03e4dcf435f9f08cfc47e0333fd65ae84274579b8edc57d1cae299c309"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f05a5fa8179e0db1a735a86ca913d4dcbaba12266f5a738c8f52550142c9c9e6"
-    sha256 cellar: :any_skip_relocation, ventura:       "4e84d8262dc3f24691dfa1236bf0c86600a71d073b5713511ec9cde2cdbdb9b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bed9f103220a8b74cff69a9851d2b904aadd90a20e407d4dc4bf3728dc11af5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "14fd9010d31c26e9cd9ae3ec1febebe079b4afbf9afe4b6a6be3ae7b738d93d0"
   end
   depends_on "pcre"
   revision PHP_REVISION

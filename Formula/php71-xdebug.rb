@@ -12,10 +12,7 @@ class Php71Xdebug < AbstractPhp71Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9689a4d054a0c9c9069f165e1bd1fd7d65d8c84833eb531318a50a9164fc183e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "dbd491327db52a9a44aa74d12c07ee9f5c0f667af3d71d6c2f22e644fbdff379"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dd904d06ca5c062937052cec9d90cd7adc06f3d65edd7fb8cc0def8859a836ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef767759447fd0349e94387369f0731e3092821087efa0afa86ed4376f8a195d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "137b08e546675712f10a17cb46d275b43032a5316e2dbf16f17ab81b9dac4a72"
   end
 
 
