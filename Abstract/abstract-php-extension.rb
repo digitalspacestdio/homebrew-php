@@ -21,7 +21,7 @@ class AbstractPhpExtension < Formula
     @@php_version = php_version
     depends_on "autoconf" => :build if !@@php_version.start_with?("5.")
     depends_on "autoconf@2.69" => :build if @@php_version.start_with?("5.")
-    if OS.mac? && !@@php_version.start_with?("5.")
+    if Hardware::CPU.intel? || !@@php_version.start_with?("5.")
       depends_on "gcc@11" => :build
     end
     option "without-config-file", "Do not install extension config file"
@@ -55,7 +55,7 @@ class AbstractPhpExtension < Formula
       ENV.append "CXXFLAGS", "-mavx"
     end
 
-    if OS.mac? && !@@php_version.start_with?("5.")
+    if Hardware::CPU.intel? || !@@php_version.start_with?("5.")
       ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
       ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
     end
