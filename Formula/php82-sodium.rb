@@ -21,7 +21,9 @@ class Php82Sodium < AbstractPhp82Extension
   depends_on "libsodium"
 
   def install
-    Dir.chdir "ext/sodium"
+    #Dir.chdir "ext/sodium"
+    ENV.append "LDFLAGS", "-L#{Formula["libsodium"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["libsodium"].opt_prefix}/include"
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
