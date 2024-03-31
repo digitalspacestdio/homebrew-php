@@ -19,7 +19,7 @@ if [[ -d $(brew --prefix)/etc/php ]]; then
     mv "$(brew --prefix)/etc/php" "${BACKUP_ETC_PHP_DIR}";
 fi
 
-FORMULAS=${@:-$(brew search digitalspacestdio/php | grep 'php[7-9]\{1\}[0-9]\{1\}$' | awk -F'/' '{ print $3 }' | sort)}
+FORMULAS=${@:-$(brew search digitalspacestdio/php | grep 'php[5-9]\{1\}[0-9]\{1\}$' | awk -F'/' '{ print $3 }' | sort)}
 for PHP_FORMULA in $FORMULAS; do
     echo "==> Creating bottles for $PHP_FORMULA ..."
     rm -rf ${HOME}/.bottles/$PHP_FORMULA.bottle

@@ -12,7 +12,7 @@ cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
 git stash
 #git pull
 
-FORMULAS=${@:-$(brew search digitalspacestdio/php | grep 'php[7-9]\{1\}[0-9]\{1\}$' | awk -F'/' '{ print $3 }' | sort)}
+FORMULAS=${@:-$(brew search digitalspacestdio/php | grep 'php[5-9]\{1\}[0-9]\{1\}$' | awk -F'/' '{ print $3 }' | sort)}
 for PHP_FORMULA in $FORMULAS; do
     echo "Upload bottles for $PHP_FORMULA ..."
     s3cmd info "s3://homebrew-bottles" > /dev/null
