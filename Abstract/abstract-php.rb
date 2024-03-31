@@ -271,7 +271,11 @@ INFO
     #   ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
     # end
 
-    headers_path = "=#{MacOS.sdk_path_if_needed}/usr"
+    if OS.mac? 
+      headers_path = "=#{MacOS.sdk_path_if_needed}/usr"
+    else
+      headers_path = ""
+    end
 
 #    libzip = Formula["libzip"]
     #ENV["CFLAGS"] = "-Wno-error -I#{libzip.opt_include}"
