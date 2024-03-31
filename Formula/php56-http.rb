@@ -13,7 +13,7 @@ class Php56Http < AbstractPhp56Extension
   depends_on "digitalspacestdio/php/php56-raphf"
   depends_on "digitalspacestdio/php/php56-propro"
   depends_on "libevent" => :optional
-  depends_on "digitalspacestdio/common/icu4c@67.1"
+  depends_on "digitalspacestdio/common/icu4c@69.1"
 
   # overwrite the config file name to ensure extension is loaded after dependencies
   def config_filename
@@ -39,7 +39,7 @@ class Php56Http < AbstractPhp56Extension
     args << "--with-http-libcurl-dir"
     args << "--with-http-zlib-dir"
     args << "--with-http-libevent-dir=#{Formula["libevent"].opt_prefix}" if build.with? "libevent"
-    args << "--with-http-libicu-dir=#{Formula["icu4c"].opt_prefix}"
+    args << "--with-http-libicu-dir=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}"
 
     system "./configure", *args
     system "make"
