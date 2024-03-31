@@ -14,7 +14,7 @@ class AbstractPhp < Formula
     # So PHP extensions don't report missing symbols
     skip_clean "bin", "sbin"
 
-    if !@@php_version.start_with?("5.")
+    if OS.mac? && !@@php_version.start_with?("5.")
       depends_on "gcc@11"
     end
 
@@ -190,7 +190,7 @@ class AbstractPhp < Formula
       ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
     end
 
-    if !@@php_version.start_with?("5.")
+    if OS.mac? && !@@php_version.start_with?("5.")
       ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
       ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
     end
@@ -356,7 +356,7 @@ INFO
 
       args << "--with-xsl=#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.73.2"].opt_prefix}"
       args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.73.2"].opt_prefix}"
-      args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}"
+      args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}" if OS.mac?
 
       if OS.linux?
         #ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.73.2"].opt_prefix}/lib"
