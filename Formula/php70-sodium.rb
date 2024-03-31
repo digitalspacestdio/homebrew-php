@@ -13,7 +13,7 @@ class Php70Sodium < AbstractPhp70Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "07ca8abdd152c6375e0c9e519df40b55272f20b67bfe5df62ca884fd812d0dee"
     sha256 cellar: :any_skip_relocation, sonoma:       "e2e7830cb2c64bea8e497c359cddf3f0fd543eb2c0b2ee205c1aad767f1f531d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "48d2357a7601ad50aaeef57026cfc6d421adfc1b8933441354e76b8df96d9299"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6fb1145e1fc8b2ca803a0fb2dcd0f08f853363e5ecb6a28486c0736c013d3b7f"
   end
 
   depends_on "libsodium"

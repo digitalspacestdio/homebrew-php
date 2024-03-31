@@ -13,7 +13,7 @@ class Php70Redis < AbstractPhp70Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "54df01faba6be09b9b415ae36ae94e433d1ec4f055129249578820db26f83f64"
     sha256 cellar: :any_skip_relocation, sonoma:       "a64d7b7040c68bbc212a433d7b09a32005b61c49a80e30847e3ad7ede26eb928"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "cc24712076ff2212cfa4b545d7edbd19937aff84507e4bad5b9f19b7a99f17d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2cb95624a5ade38cba81a9abd018681b78aa85a640c771f53618501eb1f01765"
   end
 
 

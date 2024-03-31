@@ -13,7 +13,7 @@ class Php70Zip < AbstractPhp70Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "1b48d7a152c552da539bed68189fedfb4ace27aeac2f4166dee282d7d4c7f6b5"
     sha256 cellar: :any_skip_relocation, sonoma:       "8efcb629df2b899fabff235fa641dc18390862660fb27783e2907fa7fd564939"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0a5f6dddd402032fc15d1c66ee41a8e839ca4623bc99483a19e89a915066d5df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a29c7acefa601184341a49a1900e0b11cd8ae1c90605c29a78109b5412f81e3a"
   end
 
   depends_on "libzip"
