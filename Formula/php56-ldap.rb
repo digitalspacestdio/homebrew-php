@@ -21,19 +21,18 @@ class Php56Ldap < AbstractPhp56Extension
   def install
     Dir.chdir "ext/ldap"
     safe_phpize
-
     if OS.mac?
       headers_path = "=#{MacOS.sdk_path_if_needed}/usr"
       system "./configure", "--prefix=#{prefix}",
-                            phpconfig,
-                            "--disable-dependency-tracking",
-                            "--with-ldap-dir=#{Formula["openldap"].opt_prefix}",
-                            "--with-ldap-sasl#{headers_path}"
+                          phpconfig,
+                          "--disable-dependency-tracking",
+                          "--with-ldap=#{Formula["openldap"].opt_prefix}",
+                          "--with-ldap-sasl#{headers_path}"
     else
       system "./configure", "--prefix=#{prefix}",
                           phpconfig,
                           "--disable-dependency-tracking",
-                          "--with-ldap-dir=#{Formula["openldap"].opt_prefix}"
+                          "--with-ldap=#{Formula["openldap"].opt_prefix}"
     end
     system "make"
     prefix.install "modules/ldap.so"

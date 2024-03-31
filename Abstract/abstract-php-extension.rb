@@ -50,6 +50,11 @@ class AbstractPhpExtension < Formula
       ENV.append "CXXFLAGS", "-march=ivybridge"
     end
 
+    if Hardware::CPU.intel? || !@@php_version.start_with?("5.")
+      ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
+      ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
+    end
+
     if @@php_version.start_with?("7.2", "7.1", "7.0", "5.")
       ENV.append "CFLAGS", "-fcommon"
       ENV.append "CFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
@@ -65,11 +70,6 @@ class AbstractPhpExtension < Formula
     else
       ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
       ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
-    end
-
-    if OS.mac? && !@@php_version.start_with?("5.")
-      ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
-      ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
     end
     
     system phpize
