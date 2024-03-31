@@ -1,7 +1,7 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
 class Php70Mongodb < AbstractPhp70Extension
-  init
+  init PHP_VERSION, false
   desc "MongoDB driver for PHP."
   homepage "https://pecl.php.net/package/mongodb"
   url "https://github.com/mongodb/mongo-php-driver/releases/download/1.9.0/mongodb-1.9.0.tgz"
@@ -15,7 +15,7 @@ class Php70Mongodb < AbstractPhp70Extension
     sha256 cellar: :any_skip_relocation, sonoma:       "9100582b7e8f0777bdb21b4045c41ab11d0bbf6f7a71922896ecf0e6e052abea"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "560742341a85eb882cd41a5d361b97d0c70e747f61d5b44b642d42cc42ef3c92"
   end
-  
+
   depends_on "openssl@1.1"
   depends_on "digitalspacestdio/common/icu4c@69.1"
 
