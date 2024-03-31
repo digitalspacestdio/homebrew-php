@@ -1,7 +1,7 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
 class Php83Mongodb < AbstractPhp83Extension
-  init
+  init PHP_VERSION, false
   desc "MongoDB driver for PHP."
   homepage "https://github.com/mongodb/mongo-php-driver"
   url "https://github.com/mongodb/mongo-php-driver/releases/download/1.16.2/mongodb-1.16.2.tgz"
