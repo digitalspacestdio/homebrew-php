@@ -12,6 +12,7 @@ class Php70Gmp < AbstractPhp70Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "117a2bdb3ae6dc524e591434d8ff76d814c56f439f372966f84cc513b308f08c"
     sha256 cellar: :any_skip_relocation, sonoma:       "d3e7def3748863b91085b4a74a09d48250d5b92a47708c0299e09fd0dcd42372"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "c02c9f03be1a118f7bf243ff73277cf66884871aede364486ee29d231e241e15"
   end
