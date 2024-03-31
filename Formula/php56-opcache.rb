@@ -10,6 +10,7 @@ class Php56Opcache < AbstractPhp56Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "3b4fc8dbbe67b3f3da091c812b8dff784685f00809d112a25078ed37b6d5c565"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "6d53df97ac1d36502d29288b3d5a8e2bc9783392b4681f14cba6e03b4e2801cf"
   end
 
