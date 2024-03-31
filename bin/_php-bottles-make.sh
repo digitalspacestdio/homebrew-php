@@ -35,8 +35,8 @@ for PHP_FORMULA in $FORMULAS; do
     echo "==> Building bottles for $PHP_FORMULA ..."
     brew install --quiet --build-bottle $(brew deps --direct $PHP_FORMULA-common | grep $PHP_FORMULA) 2>&1
     brew bottle --skip-relocation --no-rebuild --root-url 'https://f003.backblazeb2.com/file/homebrew-bottles/'$PHP_FORMULA --json $(brew deps --direct $PHP_FORMULA-common)
-    ls | grep $PHP_FORMULA'.*--.*.gz$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
-    ls | grep $PHP_FORMULA'.*--.*.json$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
+    ls | grep $PHP_FORMULA'.*--.*.gz$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf -- '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
+    ls | grep $PHP_FORMULA'.*--.*.json$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf -- '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
     cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
 done
 
