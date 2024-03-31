@@ -60,7 +60,7 @@ class AbstractPhpExtension < Formula
       end
     end
 
-    if Hardware::CPU.intel? || !@@php_version.start_with?("5.")
+    if OS.mac? && !@@php_version.start_with?("5.")
       ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
       ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
     end
