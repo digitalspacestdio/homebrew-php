@@ -11,7 +11,7 @@ class Php56Redis < AbstractPhp56Extension
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e6ffacb695d13b0da2a4da544f0ab3841986ba959aef5318edcaf31765a87188"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5e470e7cf2bc3c31b630be109957f43776186c284671f9f93865c04736ca2cbb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cee3d6d0b8cb86ba35dc1f298ad303696c9a79d470d0720781defc964101762c"
     sha256 cellar: :any_skip_relocation, sonoma:        "68b60eb90404d1e8e43a46badc66740e9934d6ce1391b188ccb56bd4b2dd4326"
     sha256 cellar: :any_skip_relocation, monterey:      "b44ab29e9fcf48c32a0219c70ed3495e1e034ece73855e393f26e7ece8e0a785"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "346dbb4428914472e038e69690f6f99fcb1a79f714ce7ac1fc5d43b98395e56c"
