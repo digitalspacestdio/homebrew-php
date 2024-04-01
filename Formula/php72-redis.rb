@@ -11,7 +11,7 @@ class Php72Redis < AbstractPhp72Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "175024460add3144d13a452ca8e421657ce83eda46432d8d920f0953fec66d78"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "04f04e94fa972eaa67b4b1d58941441c2054f5dc82e5f4a52a690f02f75e7851"
   end
 
   depends_on "digitalspacestdio/php/php72-igbinary"
