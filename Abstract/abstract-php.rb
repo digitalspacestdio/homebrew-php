@@ -307,7 +307,7 @@ INFO
       "--enable-sysvsem",
       "--enable-sysvshm",
       "--enable-wddx",
-      "--with-external-pcre",
+      "--with-external-pcre=#{Formula["pcre2"].opt_prefix}",
       "--with-zlib=#{Formula["zlib"].opt_prefix}",
       "--with-xmlrpc",
       "--with-readline=#{Formula["readline"].opt_prefix}",
@@ -316,6 +316,9 @@ INFO
       "--with-kerberos#{headers_path}",
       "--with-mhash#{headers_path}"
     ]
+
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
 
     if OS.mac?
       #zargs << "--with-iconv=#{Formula["digitalspacestdio/common/libiconv@1.16"].opt_prefix}"
