@@ -12,6 +12,7 @@ class Php80Ldap < AbstractPhp80Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "5baa24fe5a904a42ccfc719c7452fceda97d65605ebe15437636503e9dfec02e"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "c412af52eca4aec540ef6ae91d284c7eb56a36179d420f03907a389b22c0c243"
   end
 
