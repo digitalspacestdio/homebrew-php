@@ -10,6 +10,7 @@ class Php74Redis < AbstractPhp74Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "f6074e0996fcefccdcc3ac182e8af1678a43512f086a63c3a73efeee0c3e5e8c"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "1d37958f02a387b6871a6c85555af3633c1d7ecc6c6c375b1d54d46a77416426"
   end
 
