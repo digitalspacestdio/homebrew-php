@@ -13,7 +13,7 @@ class Php56Apcu < AbstractPhp56Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "abd2b44b6960b7447a666e9ed1dfaf68bfdc0bb928751156594f00e7de3ac506"
     sha256 cellar: :any_skip_relocation, sonoma:       "3c1114eee264e0176ec7620a1dd15d5239ac1c7ccf74a93c8d1b4317f954a906"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f567f92355ba271e42585851a89fcf34e6dd4f6ef7c11e0ae4a6856e798944ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6211425e43bf146f37f9d070ca7f439431830d92fb88579823388e51357c8d9c"
   end
 
 
