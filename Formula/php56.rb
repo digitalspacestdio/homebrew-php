@@ -15,6 +15,7 @@ class Php56 < AbstractPhp
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e41bd73ba9a688d6ba50fc0a63af4e0c1c670c76e53a5a955c53a8b346b52a00"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "acfcfe81e79312b463a708026a771432c9597821d940b2c1a3ae6224c63f2970"
     sha256 cellar: :any_skip_relocation, sonoma:        "0dedccd6b09e4172a2d931bdf7f4d61dc66e64ce7a6e96ca6ec0700c017bcd73"
+    sha256 cellar: :any_skip_relocation, monterey:      "2f6d91a62ff9b7ea21e921db45d3a8fb3da6bf957b84855716b4cdbb2770087e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "efcdfbf78dfa019f3fc1a2a36d19ee2169940f1d57e14e89d3d373bb39a82141"
   end  
 
