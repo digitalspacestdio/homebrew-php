@@ -15,6 +15,7 @@ class Php70PdoPgsql < AbstractPhp70Extension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "51ebcc3317e0474792bf6ea940b550cadb96191c06ade7d575c67a304bdfc41a"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d7ee864eab708bd0c17791ab7b665d4a4612a414f205fa553edb6f4693f7c771"
     sha256 cellar: :any_skip_relocation, sonoma:        "bf812dee52a48bdf8493dd40b2625beb33c782fcccea0b60c4ebf1206ef90bcf"
+    sha256 cellar: :any_skip_relocation, monterey:      "41f3634399d7acba8760a59fead053aba4c77a462611f64e3a1ea7cb193e1fab"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5328bb25251418826174df0e35d8f6d74fda887234ea862ebc6fb4f38820ee8e"
   end
 

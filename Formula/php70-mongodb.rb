@@ -15,6 +15,7 @@ class Php70Mongodb < AbstractPhp70Extension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0aefdbd49115ef2740ff6f5930ab0f1214e5b88fa567ef33b013197afc56159"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e0775a061d4e92686ab7b8b24df8719038c5d423334fba90c9118da99c5249a8"
     sha256 cellar: :any_skip_relocation, sonoma:        "6d47d97f34b76ee97fbc1ff1398399e5b72653b76f1efeadcdc46da92d0038b2"
+    sha256 cellar: :any_skip_relocation, monterey:      "489b094aeb9e1d4a2dcf7e621090a0648b07ab8165b745b6abaf5b9289d115d7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f403d4341772410a899a4c575b092f4e295ec9ede3cab20f7cddc0e37b870547"
   end
 
