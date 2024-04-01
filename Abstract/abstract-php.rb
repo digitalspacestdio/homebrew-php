@@ -550,13 +550,13 @@ INFO
     # Work around configure issues with Xcode 12
     # See https://bugs.php.net/bug.php?id=80171
     ENV.append "CFLAGS", "-Wno-array-bound" if @@php_version.start_with?("8.")
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration" if @@php_version.start_with?("7.2", "7.1", "7.0", "5.")
-    ENV.append "CFLAGS", "-Wno-incompatible-pointer-types" if @@php_version.start_with?("7.2", "7.1", "7.0", "5.")
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration" if @@php_version.start_with?("7.3", "7.2", "7.1", "7.0", "5.")
+    ENV.append "CFLAGS", "-Wno-incompatible-pointer-types" if @@php_version.start_with?("7.3", "7.2", "7.1", "7.0", "5.")
     ENV.append "CFLAGS", "-Wno-implicit-int" if @@php_version.start_with?("5.")
 
     ENV.append "CFLAGS", "-DDEBUG_ZEND=2" if build.with? "debug"
     
-    if @@php_version.start_with?("7.2", "7.1", "7.0", "5.")
+    if @@php_version.start_with?("7.3", "7.2", "7.1", "7.0", "5.")
       ENV.append "CFLAGS", "-fcommon"
       ENV.append "CFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
       ENV.append "CXXFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
