@@ -11,9 +11,10 @@ class Php83Apcu < AbstractPhp83Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "860ab5ce8951a49d42280179094a22397803cd884baa01c1c525d54c98ddcb69"
-    sha256 cellar: :any_skip_relocation, sonoma:       "bf53452676b6fcbc0e3972c074c626856a57ea6b496bec283940eb2a59155933"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e33fcb2cd55fe8d42c64c8cda1888f219b3baceae7c2fe0a1160ee872b65a5e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "860ab5ce8951a49d42280179094a22397803cd884baa01c1c525d54c98ddcb69"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a1b9f04414f019717fc52140e48ef0bd99112b630dd7b037ec7a0e1a137d1d0c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bf53452676b6fcbc0e3972c074c626856a57ea6b496bec283940eb2a59155933"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e33fcb2cd55fe8d42c64c8cda1888f219b3baceae7c2fe0a1160ee872b65a5e5"
   end
 
   depends_on "pcre2"
