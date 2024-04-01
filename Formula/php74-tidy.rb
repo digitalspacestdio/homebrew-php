@@ -9,6 +9,11 @@ class Php74Tidy < AbstractPhp74Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "924a06cf25d5676709540b046042b67e729af3218ced8371dfe6221b2960c1a2"
+  end
+
   depends_on "tidy-html5"
 
   def install
