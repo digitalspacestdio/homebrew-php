@@ -11,10 +11,10 @@ class Php72Tidy < AbstractPhp72Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a360c2e6ac0a0f40b3fd30a318b6e0b3cbea5ec4817cf2c39730b57992b17c8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "25ffd3b17f6aa6de1948c27755f46f7dac92f7cc504b6f18bf11a6011d0d034f"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d24c8047e1383d145c9aaa5fcf4d20f2e02bfe9f5e5dbe7ff8ea834cc3c207fb"
     sha256 cellar: :any_skip_relocation, sonoma:        "239674e30b4af9904aea84c04b1bdb68eba7906c5f08ee7e74ab2b6f045fc84a"
-    sha256 cellar: :any_skip_relocation, monterey:      "f8de5a252990f741201c0521dc6d6033949fe64ea46fafa3a88f59d4f52f8d74"
+    sha256 cellar: :any_skip_relocation, monterey:      "183f9e0fdecc101fa5a7ef61bb280256e7463544945822d288a413daee3380d3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3266c21cbf2fd26e8c5f61506588e49754f9e44e8a6fd579bab376b072db0597"
   end
 
