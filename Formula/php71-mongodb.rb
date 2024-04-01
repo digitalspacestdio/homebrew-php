@@ -12,7 +12,7 @@ class Php71Mongodb < AbstractPhp71Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d62a2643d9a05a817d226d26d90f798a075973c1f4caf95ec98755844e67709e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "87cbab953ab336989ef7f4bc052f28b90be7448607a424806660f497bd78ee96"
   end
 
   depends_on "openssl@1.1"
