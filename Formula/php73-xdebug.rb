@@ -16,7 +16,7 @@ class Php73Xdebug < AbstractPhp73Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0fff453fccadbe3175436d5e0c0f3d11e69e8804db593531dfa132142a33d49b"
     sha256 cellar: :any_skip_relocation, sonoma:        "a21ede0c046121eb2b201fa4a9c9047e3dc0f5a9491902472f2a47a8cae52f89"
     sha256 cellar: :any_skip_relocation, monterey:      "9a81059bd043bedcf683d827612305abfc52daf9f7083f22c9892dd2fc622dbf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "157c66875e07d80505677fcee2aa556e5ecb637e4d2bf0df59696e51fdf8bfc4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97be5a12cf9c6ad872efdb721632bd78d7315a71b973a9c30c5c20409e1b5c21"
   end
 
   def extension_type

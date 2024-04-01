@@ -15,7 +15,7 @@ class Php73Tidy < AbstractPhp73Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e38a728bacd49b7a2bebdbcd9ae3e01088118a6ea3e8c3e59e08ca4a901fbabd"
     sha256 cellar: :any_skip_relocation, sonoma:        "fd0eecd94d810028cb03830e8dfde5825514be8205c59b8a8a9ddc0c22daf859"
     sha256 cellar: :any_skip_relocation, monterey:      "74a6de421156df37a653fa65012530eaf0061db612e7a1d69a1629d5abd9766e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5be9e59a8d4a74576f17b040bb201da40533fdb571e61c758a1d5492c47cf67"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "affbb4b59a86fc9ac9ee817918faed64a26e71173a4c15e150c5fedc80305cda"
   end
 
   depends_on "tidy-html5"
