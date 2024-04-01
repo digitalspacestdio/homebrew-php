@@ -14,7 +14,7 @@ class Php71Sodium < AbstractPhp71Extension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42435e6a2c6f8315827b3dcd3c1afbd7830bb7717785d9bf547df5cbf1747977"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "924492dda135826fee92bc937299580cc85ad77c2c8205cbd7cc8945363366f9"
     sha256 cellar: :any_skip_relocation, sonoma:        "65aea33bf22fd110c6dcfe9b92dde34c0288354c3595a245ea9b68da968480d1"
-    sha256 cellar: :any_skip_relocation, monterey:      "8c7fdddf87c0cf27819ecfdea1b7086808931079f3e0b936c180d1896480283c"
+    sha256 cellar: :any_skip_relocation, monterey:      "0164993d0c6185fdd61a53478679555b7f1e21e4fbb30d3b435cd6de98bd8c8d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0590a5ac0e5b19bef39d1336914db17bda736ce04f1bbad8b706fea91dd1a16d"
   end
 
