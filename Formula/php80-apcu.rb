@@ -12,7 +12,7 @@ class Php80Apcu < AbstractPhp80Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1dcaa1e572a692d3355f0a9279cef0acbe4d9030f6213ee6cb0c8150bfb25d57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9254003cd005be05ae5d9e38099d3f8c0dfc70c61a635d3e969f77d5237d3894"
   end
 
   depends_on "pcre2"

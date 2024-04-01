@@ -11,7 +11,7 @@ class Php80Tidy < AbstractPhp80Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f17ddb6061522ac0841c50cdc518184f3a07fae1329d9ef24c36aa19d7341192"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a7973483d7bcb545fb7457b601000a9d29cbd52b5e32e08a2d928298f0566caf"
   end
 
   depends_on "tidy-html5"

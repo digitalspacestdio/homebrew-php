@@ -12,7 +12,7 @@ class Php80PdoPgsql < AbstractPhp80Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3be1257dfb1e91a29584261510a700f3b4dcb3e46ace16fd2834de68ffe04e87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b1a4bf578179c2428499819f3d2e97d2b93e08888525c3a5ce03366289e5fc09"
   end
 
   depends_on "digitalspacestdio/common/libpq@16.2-icu4c.74.2"
