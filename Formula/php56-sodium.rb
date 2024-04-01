@@ -11,7 +11,7 @@ class Php56Sodium < AbstractPhp56Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83c480808a5e3c4770f7ac87d2c04d127d2d650e4738964943b5036c9cc6f8f5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39ea9e37b81cf156a9c3f5a7061c01d32f311f3512d4a2a286dcc862d633f02c"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a9802c807e8b9404ac92fd632fc2d67b3fef78f95635c48230b8bf20f71378dd"
     sha256 cellar: :any_skip_relocation, sonoma:        "fd860e78506e94c06f9b8bdecc57ee847062a1fe28fa85b8b78eacbdd833f62e"
     sha256 cellar: :any_skip_relocation, monterey:      "df371c47e1a690111e86ba0f7a253a5178d7ecfce419936c39ae5e45c96ef1dd"
