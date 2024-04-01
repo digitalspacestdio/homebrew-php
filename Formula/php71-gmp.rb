@@ -12,7 +12,8 @@ class Php71Gmp < AbstractPhp71Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "789b170c29c2e0e0930cda85193c22afbe7fb64ad96252b72c4711af7b373afb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "23d5fe14d134f841479c940363a7fb68977ca2dfdef7f476a6f4457883f18506"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "492799098275bc8411271c9116d497dc3d23324765f21ac882a90b9d34c8c870"
   end
 
   depends_on "gmp"
