@@ -9,7 +9,7 @@ class Php74 < AbstractPhp
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "305d55bfef8f806eaedab2b843e91a8f06d69a264f2e9c6752c110ee25645ae1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f1f75c1a20a9aeeab5e6356375855797e35bfa37591e9a01a83d999f5f0426c9"
   end
   
   keg_only :versioned_formula

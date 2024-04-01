@@ -15,7 +15,7 @@ class Php74Apcu < AbstractPhp74Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a426ddb7fcc02b8592504bfa41ecdd0267f2f9faa26529c09044cec2ddf123fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e1da6bfe94f0fded8971f2082136d9d9e0d23a64aafa00a89d1bb17f64d542ca"
   end
 
   depends_on "pcre2"
