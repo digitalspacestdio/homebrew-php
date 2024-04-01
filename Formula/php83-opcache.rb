@@ -12,6 +12,7 @@ class Php83Opcache < AbstractPhp83Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "d8d28e72c0ec5723b7792f577859710f02e11888091eef38f603152772e75b81"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "023bff499a25e755bc25ec3415d92d1534ab5449d2d4955dfb2c64c93c23d29f"
   end
 
