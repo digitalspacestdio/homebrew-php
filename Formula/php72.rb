@@ -13,7 +13,7 @@ class Php72 < AbstractPhp
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e0ed040d4a418103b35aeee6bfe04350e68e3c8268f6a1d49450db4f8efce7f6"
     sha256 cellar: :any_skip_relocation, sonoma:        "31c0f879deb642582e7c49162cb7252993c3412a8427408fdcdab6849005e2be"
     sha256 cellar: :any_skip_relocation, monterey:      "1b777c73344ea280ad832140bd1fc51427f730c09329b7cb34f5806a6522b461"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c49ba67e24c48c4f2fe12e3dcf797051bee2bdd6d3ccca5ee527716a8d95955"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0bf0970eae57e32194384d3b85c736cfdf4288091afa97b46a5481e22e0adb8"
   end
   
   depends_on "libjpeg"
