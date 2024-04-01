@@ -11,7 +11,7 @@ class Php56Tidy < AbstractPhp56Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "c5bc08df024a812e24cd8e1f839f4a7a55decf26165dd4eea8fc2ef8f705b581"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "e147fc1b9f32ebd1b1b3c53b726d24e477d59ab97c4e1caba6f4ccbed5fd3a5c"
     sha256 cellar: :any_skip_relocation, sonoma:       "fae4b0d22442eb9f0cabd9afe509363c2463cba04dfcff16504dfce55bfe2971"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "f0b4590a6ac8ad118fa840c1c4483ff6fbeabc612a8cb5c5be7fefff7d825c0a"
   end
