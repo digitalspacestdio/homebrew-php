@@ -16,7 +16,7 @@ class Php80Gmp < AbstractPhp80Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "4729e8d7d90f33e05beb51383f725df870ae02cb18f419b11031352d6f60006c"
     sha256 cellar: :any_skip_relocation, sonoma:        "94833c197106526e4c884082909b80303c2802ce2d41f16737f50e4a25062998"
     sha256 cellar: :any_skip_relocation, monterey:      "d4badd2dc6e903e898cb4181ab4ace8111702dcf6589fa8acfc7aad7804c4da7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83d6c174da6ebe60dadbe2e61482343c3969e6db35a38b73cd0db44a6acd127a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4728c50fa499fb6c042b7121de1a2db8013940b6f4d3fe64ced46759267b7136"
   end
 
   depends_on "gmp"

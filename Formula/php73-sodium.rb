@@ -15,7 +15,7 @@ class Php73Sodium < AbstractPhp73Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d0db8ad47e8c7218821b7b2345bdf56c02a8edd3c2b2d4b3bde53cbffe98eb0d"
     sha256 cellar: :any_skip_relocation, sonoma:        "edfdf3214ef19dee916bfc0acb48e828a25e5efe20d311917840051c477538ca"
     sha256 cellar: :any_skip_relocation, monterey:      "bb3310e5a6683771e2771c80fd21ba507a22123bc124284540c797aa6f9d168f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b643ee2924c9135124292dce753056edcb2bb1b62da0815bbc2e9def787963e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b098c088a6a2a9e1c6ceed5b9fa0ff421cf46c0bdeea2e2b6e16ddedcb8ff60f"
   end
 
   depends_on "libsodium"

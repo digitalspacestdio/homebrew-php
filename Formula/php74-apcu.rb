@@ -18,7 +18,7 @@ class Php74Apcu < AbstractPhp74Extension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc99f823f198411c444ef4e291c77431aac54e432ae33c70b3b519722289cfa9"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d14284d4de4a68006168c53b442f10f6798af894437c3b97a62017d8ac72cf23"
     sha256 cellar: :any_skip_relocation, monterey:      "728039b60e43621665da41199153d02c491c7b821d6fbed98557f6565c04fb86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1da6bfe94f0fded8971f2082136d9d9e0d23a64aafa00a89d1bb17f64d542ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afdbb45b57564d1e1df978737fc58ba2e0b2dbc1c02023f78ebf75159dfb3139"
   end
 
   depends_on "pcre2"

@@ -13,7 +13,7 @@ class Php73 < AbstractPhp
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9ffeb13233fc227a5cfe5bf05a74346a4da696de3613f9303ebf2c2492cceca1"
     sha256 cellar: :any_skip_relocation, sonoma:        "f31e69e44a6356f1b9c9076db33e915307a8b276029be30f6bd8f63bc9eb6764"
     sha256 cellar: :any_skip_relocation, monterey:      "3b4d61bb117e733271b127c2bb9a48d5b1ebbe8221cd3ce1fa1a19aa1765e9c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aab55eb759e0f8a4fdc01506e39eb75393d80a63dbb527426334a5736960c1c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e145d069556a58a48dbe37626a2d43c9e396505594a169fda13e10274f82f9d3"
   end
   keg_only :versioned_formula
 

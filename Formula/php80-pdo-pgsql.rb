@@ -16,7 +16,7 @@ class Php80PdoPgsql < AbstractPhp80Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "345a89fb448935d7de63b04d12ab574988cec7f513dc2ea8bf604e8ce87f9557"
     sha256 cellar: :any_skip_relocation, sonoma:        "ff96324b19f609082cc304bd0f8405baa146a8d1cb7d70e5aa197860b2da7e3e"
     sha256 cellar: :any_skip_relocation, monterey:      "f79833147fd3f3023ccb6efa1bedb02a730b6a185859f102b31b478cfe591be8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1a4bf578179c2428499819f3d2e97d2b93e08888525c3a5ce03366289e5fc09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bec7c7aebeea5484e012b1b495514a1f9bc901a488a8848551db6cbe191e61a"
   end
 
   depends_on "digitalspacestdio/common/libpq@16.2-icu4c.74.2"
