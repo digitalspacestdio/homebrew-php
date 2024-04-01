@@ -174,11 +174,11 @@ class AbstractPhp < Formula
       ENV.append "CFLAGS", "-march=ivybridge"
       ENV.append "CXXFLAGS", "-march=ivybridge"
       # ENV.append "CFLAGS", "-march=#{Hardware.oldest_cpu}"
-      # ENV.append "CFLAGS", "-msse4.2"
+      ENV.append "CFLAGS", "-msse4.2"
       # ENV.append "CFLAGS", "-mavx"
 
       # ENV.append "CXXFLAGS", "-march=#{Hardware.oldest_cpu}"
-      # ENV.append "CXXFLAGS", "-msse4.2"
+      ENV.append "CXXFLAGS", "-msse4.2"
       # ENV.append "CXXFLAGS", "-mavx"
     end
 
