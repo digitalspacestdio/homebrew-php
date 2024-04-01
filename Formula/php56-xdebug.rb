@@ -13,7 +13,7 @@ class Php56Xdebug < AbstractPhp56Extension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "28572ee24ec46a1c26dff4817d965afe35f0c27042bd039afea4e28e38dd97b8"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3b752e71d8bd614ecc88c21c43bfbf0e097649d67d4bdbac256340f132177297"
     sha256 cellar: :any_skip_relocation, sonoma:        "018e80291e20db988d40c74aeeae202bf9e77942a0542523fa9a31a062da89d1"
-    sha256 cellar: :any_skip_relocation, monterey:      "58c928891a117ba1561b9124f43a30f2d02230c0004a8b9c698f370f14a179b0"
+    sha256 cellar: :any_skip_relocation, monterey:      "0ed4a534667e0da8d8fd29d85f5451de60dffae8de39aa68499c9b53cc590ee7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c04812d46064adab5a4168900b6ec11b775cd52a220a58cf01154a0238308d5"
   end
   depends_on :arch => :x86_64 if OS.linux?

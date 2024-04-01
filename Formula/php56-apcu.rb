@@ -14,7 +14,7 @@ class Php56Apcu < AbstractPhp56Extension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a337b24da6e44601e6f3aa475501be258c25e086b4bcd35abd36477e77315120"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "62fbd173e587fec1545d2debb37daf266654bc2427161a1a6428dba4ea71dc0e"
     sha256 cellar: :any_skip_relocation, sonoma:        "6bc391b3c6e3cd4e01d59e5a670644336636d17d02953cb034e458cca85681a1"
-    sha256 cellar: :any_skip_relocation, monterey:      "1bc8b58129aecb75b91cbb6fbd15f88df31e6e3be9a651d1d22bf219007890d6"
+    sha256 cellar: :any_skip_relocation, monterey:      "3dde01798efc719ce60667392d568b596067db07f4c391243558e14c1477457a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "408243a28ab85a39f017b22dfa88b0c5de1ba47d73a5f76781b9ad306a9d8914"
   end
 

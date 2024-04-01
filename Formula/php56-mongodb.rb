@@ -15,7 +15,7 @@ class Php56Mongodb < AbstractPhp56Extension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ceb37b908d6f4fed3af4ac65fa0326d5ff0d126cedcc592fe0b406b82df7d7da"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "408717f6ef2e8c5d1de6d523963945f2799af569a3f19919b40acbb3e59f5a41"
     sha256 cellar: :any_skip_relocation, sonoma:        "3d526ffa7a96e09dfde85be4732f00af2233c40c90cd275bd37248b8bc1f7a12"
-    sha256 cellar: :any_skip_relocation, monterey:      "d68c1f7e9f683f41d32dd183e1092d31fa09cc8b9983f9209675b942a34ed0ff"
+    sha256 cellar: :any_skip_relocation, monterey:      "226b893129354a5b56ca69be09c6edc0adc889044cbda062b0a08c69fc16e161"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cb3d9a790e042f25c278ec7d9b2369bbd4b414c42d0cba384e4d935b27e4b77"
   end
 
