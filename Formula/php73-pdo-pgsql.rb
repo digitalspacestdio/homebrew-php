@@ -12,6 +12,7 @@ class Php73PdoPgsql < AbstractPhp73Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "26bbb14c432bc193d213d8d143a1ce91c7937f2bc3b3118e18d155a7aacb2932"
     sha256 cellar: :any_skip_relocation, sonoma:       "28a39de6167f8dc108e5c67fa58459f875eff3aabe902d129d6f0c95b4acfa15"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "79cf56db07b4df2bbca7277a35102119cf263eddd63a6a62314b41f0a93f7482"
   end

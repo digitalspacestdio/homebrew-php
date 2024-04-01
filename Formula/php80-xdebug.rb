@@ -12,7 +12,7 @@ class Php80Xdebug < AbstractPhp80Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8a364202ed8bb9fc35d12c145f883a90a1fec5753f095059dadd3533f0ceb57e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1c8368907a8a12b9faf9b2e8c8e178c87f1dcebb02ab46ec3e9739271903e315"
   end
 
   def extension_type
