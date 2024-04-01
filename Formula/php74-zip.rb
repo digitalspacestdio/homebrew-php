@@ -22,7 +22,7 @@ class Php74Zip < AbstractPhp74Extension
   depends_on "pcre2"
 
   def install
-        # Required due to icu4c dependency
+    # Required due to icu4c dependency
     ENV.cxx11
 
     ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"

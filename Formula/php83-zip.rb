@@ -17,13 +17,14 @@ class Php83Zip < AbstractPhp83Extension
 
   depends_on "libzip"
   depends_on "pkg-config" => :build
+  depends_on "pcre2"
 
   def install
     # Required due to icu4c dependency
     ENV.cxx11
 
-    # icu4c 61.1 compatability
-    #ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
     
     Dir.chdir "ext/zip"
 
@@ -32,7 +33,8 @@ class Php83Zip < AbstractPhp83Extension
                           phpconfig,
                           "--disable-dependency-tracking",
                           "--enable-zip",
-                          "--with-libzip=#{Formula["libzip"].opt_prefix}"
+                          "--with-libzip=#{Formula["libzip"].opt_prefix}",
+                          "--with-external-pcre=#{Formula["pcre2"].opt_prefix}"
     system "make"
     prefix.install "modules/zip.so"
     write_config_file if build.with? "config-file"
