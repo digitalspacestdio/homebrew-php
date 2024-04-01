@@ -13,7 +13,7 @@ class Php73Opcache < AbstractPhp73Extension
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "24a58301ca3383443f6ecf860b1949fee72873b44c529d52e0db7a9d45f56cac"
-    sha256 cellar: :any_skip_relocation, sonoma:       "52b0cc63e49f7650631e1a8d2f7649f9edae2f2edc684366909a7a97394227b9"
+    sha256 cellar: :any_skip_relocation, sonoma:       "ce69276e442b55f2bae48c5b5b4753d0eb9ecedef082675869173157291ff7f1"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "4b91013326d8c9e0775878233b3052ed8f0d434e25b0dfe2baf9411f2e32c08e"
   end
 
