@@ -10,6 +10,7 @@ class Php72Igbinary < AbstractPhp72Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "b87a6bcdc127648df296d732dfcae7ad7b8654665b5987222218bebe76fc8063"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "65a7321799f1a820c52b0384d8fd7c0323eacde4fd48c320ef13e95fda72a7ce"
   end
   revision PHP_REVISION
