@@ -11,9 +11,10 @@ class Php71Intl < AbstractPhp71Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "a9f0cdc12fb0e6d3f6866784883809fd1a533b2c00745d844cfcfa3af68c42e3"
-    sha256 cellar: :any_skip_relocation, sonoma:       "232de6c16c0c94b28288af7db5825ca44c8bf640fb57ff501791c94ea5e40adb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4bdee9ea1b419b702330b76c1536382aed5d4fb6d2387fbfe49f9d4acc73d377"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9f0cdc12fb0e6d3f6866784883809fd1a533b2c00745d844cfcfa3af68c42e3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2ce3fa4f95b3483e51ea5a2fc529d11115e50f8d7c67b361fec5c1e6c1fabb4b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "232de6c16c0c94b28288af7db5825ca44c8bf640fb57ff501791c94ea5e40adb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bdee9ea1b419b702330b76c1536382aed5d4fb6d2387fbfe49f9d4acc73d377"
   end
 
   depends_on "digitalspacestdio/common/icu4c@69.1"
