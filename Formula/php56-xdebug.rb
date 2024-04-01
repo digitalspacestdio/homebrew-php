@@ -14,7 +14,7 @@ class Php56Xdebug < AbstractPhp56Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "092aaf000b6bd0d4b023cf20a4e67fab7130c80fbafb2453fdfb646e06739259"
     sha256 cellar: :any_skip_relocation, sonoma:        "78c6a470f1d59942ead7e85d5b22c4d3ec435b6786b404be6edaf825dfff90ad"
     sha256 cellar: :any_skip_relocation, monterey:      "58c928891a117ba1561b9124f43a30f2d02230c0004a8b9c698f370f14a179b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e3495ffbcffdf31db7f12abb72de2fbbd97bd5286b0f96268a4a8b1b6c2f1b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c04812d46064adab5a4168900b6ec11b775cd52a220a58cf01154a0238308d5"
   end
   depends_on :arch => :x86_64 if OS.linux?
   revision PHP_REVISION
