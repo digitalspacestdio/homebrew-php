@@ -12,6 +12,7 @@ class Php72Gmp < AbstractPhp72Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "36795fbd0c2aae538f98ae2a651b66787b5bd6bb862a407d253c22eb8bfca2ef"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "86a527b66f7e7b5301e01125d80e80484a1fdd8f46066d35c867098b5200982b"
   end
 
