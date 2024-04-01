@@ -40,7 +40,7 @@ for PHP_FORMULA in $FORMULAS; do
     cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
 done
 
-if [[ -d $(brew --prefix)/etc/php ]]; then
+if [[ -d "${BACKUP_ETC_PHP_DIR}" ]]; then
     echo "Restoring the etc folder from: ${BACKUP_ETC_PHP_DIR}"
     mv "${BACKUP_ETC_PHP_DIR}" "$(brew --prefix)/etc/php";
 fi
