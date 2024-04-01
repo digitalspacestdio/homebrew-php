@@ -22,6 +22,8 @@ class Php81Ldap < AbstractPhp81Extension
     safe_phpize
 
     if OS.mac?
+      ENV["SASL_CFLAGS"] = "-I#{MacOS.sdk_path_if_needed}/usr/include/sasl"
+      ENV["SASL_LIBS"] = "-lsasl2"
       headers_path = "=#{MacOS.sdk_path_if_needed}/usr"
       system "./configure", "--prefix=#{prefix}",
                             phpconfig,
