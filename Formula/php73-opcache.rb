@@ -13,10 +13,10 @@ class Php73Opcache < AbstractPhp73Extension
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "24a58301ca3383443f6ecf860b1949fee72873b44c529d52e0db7a9d45f56cac"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f9a8f3e0affec889f63cc716f05241b089aa137ab24e7bee19c7e7abdf79e302"
-    sha256 cellar: :any_skip_relocation, sonoma:        "10b47b8a5283e3b42a021d9dcd63e333721680ce82d0273d64fb51821c2481bc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1151003309ec8f4098b309ee1820a2cd0fa6697acfa4decff0948f0b445935ce"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ce69276e442b55f2bae48c5b5b4753d0eb9ecedef082675869173157291ff7f1"
     sha256 cellar: :any_skip_relocation, monterey:      "5a3e4a7d248e9ff37737f60bb553785c14b41154b791276158834c72ba63c3dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfaeaf4a108c39d75d6e61266dc813cf05c23177d5cc071f8f94ea62be768380"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b91013326d8c9e0775878233b3052ed8f0d434e25b0dfe2baf9411f2e32c08e"
   end
 
   depends_on "pcre2"
