@@ -14,7 +14,7 @@ class Php82Sodium < AbstractPhp82Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "cae67974758c23134f2775f9adfba1d27e87cae6df6bfeff1ac168819614bdde"
     sha256 cellar: :any_skip_relocation, sonoma:        "93ecb7e71daad04b92fe4f781da367a1431998bf91ecc94113e080f5572edf5d"
     sha256 cellar: :any_skip_relocation, monterey:      "2092b590131bb0f8fd2386fcf67e5ab77844f1c61a40ce27de6062b170afb606"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b62d1e61e08a0d71934cd68f66b4cd0a1253a76cbdb3bb3b01b6b496a50b1fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f01ec7ccecbe9c23476c797a318cc71a8af74aafd7007a8e3673b411976bb2fa"
   end
 
   depends_on "pkg-config" => :build
