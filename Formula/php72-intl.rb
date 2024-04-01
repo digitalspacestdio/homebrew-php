@@ -11,7 +11,7 @@ class Php72Intl < AbstractPhp72Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b3d53db6cb7d178685d14736baa87bee35ddef99e5c08064423e8fd1414de5fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0329f22e3ccf63f5f386a5859346959f99c35974defc48afc65c09d0f78564f6"
   end
 
   depends_on "digitalspacestdio/common/icu4c@69.1"
