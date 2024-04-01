@@ -12,7 +12,7 @@ class Php73Xdebug < AbstractPhp73Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
-    sha256 cellar: :any_skip_relocation, sonoma:       "24ea0ebe2564debf7b8d9e09046901d0130a9f6a3ca151b34dc6c595d8b423ea"
+    sha256 cellar: :any_skip_relocation, sonoma:       "4f49212cf10cc9588ced6b7520aaa69ff982ea5b6f0399429b021ee8cf2b945d"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "157c66875e07d80505677fcee2aa556e5ecb637e4d2bf0df59696e51fdf8bfc4"
   end
 

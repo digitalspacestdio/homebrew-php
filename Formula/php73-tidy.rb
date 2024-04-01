@@ -11,7 +11,7 @@ class Php73Tidy < AbstractPhp73Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
-    sha256 cellar: :any_skip_relocation, sonoma:       "3d2f3b7225aa8b09e7e52532028c495e601e532b3345cd227e96ea05277156a1"
+    sha256 cellar: :any_skip_relocation, sonoma:       "a9090992fa1794eab9837890aa43a7cd59a54ce0f71fbf61d91a1618b3b20f9d"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "e5be9e59a8d4a74576f17b040bb201da40533fdb571e61c758a1d5492c47cf67"
   end
 

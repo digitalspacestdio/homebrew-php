@@ -11,7 +11,7 @@ class Php73Sodium < AbstractPhp73Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
-    sha256 cellar: :any_skip_relocation, sonoma:       "efef8c9a44182f9d468e26297285ab6885d4b0826dcafd5c1012ec42f0e28bba"
+    sha256 cellar: :any_skip_relocation, sonoma:       "668740b238ff20f30cd79758f8aaa3c9cd0d09b25405105e4939476e4184284f"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "b643ee2924c9135124292dce753056edcb2bb1b62da0815bbc2e9def787963e3"
   end
 
