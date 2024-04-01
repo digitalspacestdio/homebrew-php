@@ -16,7 +16,7 @@ class Php83PdoPgsql < AbstractPhp83Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "bafd9f7652a84c3328b8d4f1183b05d0d9c25fa9cb4cd62e6f49a0c762a39f89"
     sha256 cellar: :any_skip_relocation, sonoma:        "d07bd6506357b96ae38b8ddec520c0f433111d4d702415db29120a3e386dbddf"
     sha256 cellar: :any_skip_relocation, monterey:      "252794ebf8bd6922395921777fd54f5bc260aaa33615b46e77624f7417487826"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06d5545c03eff07d0c60059c8294bc530fba27fe7e506de6953f13f8111b00ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "097a6a9837b9f5cb5993a45b45f8bd7717baaee3ef58d1ba8c502438084a1f6b"
   end
 
   depends_on "digitalspacestdio/common/libpq@16.2-icu4c.74.2"
