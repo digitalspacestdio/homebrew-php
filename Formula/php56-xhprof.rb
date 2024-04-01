@@ -8,9 +8,11 @@ class Php56Xhprof < AbstractPhp56Extension
   sha256 "9f84f5e8dca4b38921343a6e389da101e7d1e83ee0077220fd3f747cb67945a4"
   version "4.1.7"
   revision PHP_REVISION
-  depends_on "pcre"
+  depends_on "pcre2"
 
   def install
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig
     system "make"

@@ -16,7 +16,7 @@ class Php73Opcache < AbstractPhp73Extension
     sha256 cellar: :any_skip_relocation, x86_64_linux: "4b91013326d8c9e0775878233b3052ed8f0d434e25b0dfe2baf9411f2e32c08e"
   end
 
-  depends_on "pcre"
+  depends_on "pcre2"
 
   def extension_type
     "zend_extension"
@@ -24,6 +24,9 @@ class Php73Opcache < AbstractPhp73Extension
 
   def install
     Dir.chdir "ext/opcache"
+
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",

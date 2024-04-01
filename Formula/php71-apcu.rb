@@ -12,11 +12,12 @@ class Php71Apcu < AbstractPhp71Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "14fd9010d31c26e9cd9ae3ec1febebe079b4afbf9afe4b6a6be3ae7b738d93d0"
   end
-  depends_on "pcre"
+  depends_on "pcre2"
   revision PHP_REVISION
 
   def install
-    # ENV.universal_binary if build.universal?
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
 
     args = []
     args << "--enable-apcu"

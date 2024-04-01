@@ -18,18 +18,15 @@ class Php74Apcu < AbstractPhp74Extension
     sha256 cellar: :any_skip_relocation, x86_64_linux: "a426ddb7fcc02b8592504bfa41ecdd0267f2f9faa26529c09044cec2ddf123fe"
   end
 
-  depends_on "pcre"
+  depends_on "pcre2"
 
   def install
 
-    pcre = Formula["pcre"]
-    cc_opt = "-I#{pcre.opt_include}"
-    ld_opt = "-L#{pcre.opt_lib}"
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
 
     args = []
     args << "--enable-apcu"
-    args << "--with-cc-opt=#{cc_opt}"
-    args << "--with-ld-opt=#{ld_opt}"
 
     safe_phpize
 

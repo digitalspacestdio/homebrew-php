@@ -9,10 +9,13 @@ class Php74Phalcon < AbstractPhp74Extension
   head "https://github.com/phalcon/cphalcon.git"
   revision PHP_REVISION
 
-  depends_on "pcre"
+  depends_on "pcre2"
 
   def install
     Dir.chdir "build/php7/64bits"
+
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, "--enable-phalcon"

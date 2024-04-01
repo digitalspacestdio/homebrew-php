@@ -16,10 +16,11 @@ class Php70Apcu < AbstractPhp70Extension
     sha256 cellar: :any_skip_relocation, x86_64_linux: "1aacd250659fea17244cbf88758adc21c3bce5b96692e2618f09975d8e0d0ab4"
   end
 
-  depends_on "pcre"
+  depends_on "pcre2"
 
   def install
-    # ENV.universal_binary if build.universal?
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
 
     args = []
     args << "--enable-apcu"

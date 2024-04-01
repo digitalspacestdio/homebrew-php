@@ -15,18 +15,14 @@ class Php80Apcu < AbstractPhp80Extension
     sha256 cellar: :any_skip_relocation, x86_64_linux: "1dcaa1e572a692d3355f0a9279cef0acbe4d9030f6213ee6cb0c8150bfb25d57"
   end
 
-  depends_on "pcre"
+  depends_on "pcre2"
 
   def install
-
-    pcre = Formula["pcre"]
-    cc_opt = "-I#{pcre.opt_include}"
-    ld_opt = "-L#{pcre.opt_lib}"
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
 
     args = []
     args << "--enable-apcu"
-    args << "--with-cc-opt=#{cc_opt}"
-    args << "--with-ld-opt=#{ld_opt}"
 
     safe_phpize
 

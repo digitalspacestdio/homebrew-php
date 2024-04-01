@@ -18,12 +18,13 @@ class Php56Apcu < AbstractPhp56Extension
 
 
   option "with-apc-bc", "Whether APCu should provide APC full compatibility support"
-  depends_on "pcre"
+  depends_on "pcre2"
 
   def install
     Dir.chdir "apcu-#{version}" unless build.head?
 
-    # ENV.universal_binary if build.universal?
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
 
     args = []
     args << "--enable-apcu"

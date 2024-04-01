@@ -9,12 +9,13 @@ class Php70Oauth < AbstractPhp70Extension
   head "https://svn.php.net/repository/pecl/oauth/trunk"
   revision PHP_REVISION
 
-  depends_on "pcre"
+  depends_on "pcre2"
 
   def install
     Dir.chdir "oauth-#{version}" unless build.head?
 
-    # ENV.universal_binary if build.universal?
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
