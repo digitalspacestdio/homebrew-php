@@ -11,7 +11,7 @@ class Php56Xdebug < AbstractPhp56Extension
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "28572ee24ec46a1c26dff4817d965afe35f0c27042bd039afea4e28e38dd97b8"
-    sha256 cellar: :any_skip_relocation, sonoma:       "8b2e2f248f203964a2b428614ae4b264dec59c163b8c46af1ad1cb7d87dcd07f"
+    sha256 cellar: :any_skip_relocation, sonoma:       "78c6a470f1d59942ead7e85d5b22c4d3ec435b6786b404be6edaf825dfff90ad"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "0e3495ffbcffdf31db7f12abb72de2fbbd97bd5286b0f96268a4a8b1b6c2f1b1"
   end
   depends_on :arch => :x86_64 if OS.linux?
