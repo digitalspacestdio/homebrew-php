@@ -15,6 +15,7 @@ class Php80Opcache < AbstractPhp80Extension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45eeaaac7e6c6fb9e6bc797dee13bc708f91c8f0ba77b6d6fe0f1a4e9207111c"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "849b041a288389e28746953e5b4b17f3ac796c9d3ca9408fa0726b24c2bd5709"
     sha256 cellar: :any_skip_relocation, sonoma:        "e8c88a4b04b1307e8595575545a85ad523d38ce06db85dad1608689980515e9f"
+    sha256 cellar: :any_skip_relocation, monterey:      "f6c688d78a56f5b52cf0142ec5455fb837573aecb9db2af83bf4855d1f6e74bc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "02a2317815186fc30123558874d5b8bfe8859ba841dca672a664db25fbbfea39"
   end
 

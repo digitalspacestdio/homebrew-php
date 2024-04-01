@@ -14,6 +14,7 @@ class Php72Apcu < AbstractPhp72Extension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f89bd881c69cd8027956f896db2b1585e6202316b04b28e75cfb8921665e8af"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "821c7280716dec63b018c59651e5fce5bd7a5066705cdfd932070ee087e09232"
     sha256 cellar: :any_skip_relocation, sonoma:        "17bcc714172157658936145c905efc0d5d6c3cfbcc5e30c168cf9c7b698b81cc"
+    sha256 cellar: :any_skip_relocation, monterey:      "25536a49e47add96422409f11fc25f21fe3f808b1287d51b6b0d4d11effd5179"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e1428e7476cb958dbbc0ad7ab67e8a3d0f401a91ab8ee0b5c0d60cdd64e6fbd"
   end
 
