@@ -12,7 +12,7 @@ class Php56PdoPgsql < AbstractPhp56Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9ece62733d78c36cc30ff91d6595f3a8b1ed7357e8569333da5e12047dc4343"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9f20042cec0609895971eb753237e7c8d152b4debcc55be9ed303cbc6271d7f6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "623470ebd05e7ec5d4d09f84f38a138d4d0f81f85e4844cf4f79600efd46cd42"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ee09af8e43b5f5679f5d8fe66c621c614171393c8d6acf3ff2b7ca88e05d2807"
     sha256 cellar: :any_skip_relocation, monterey:      "db3b62fb3ebd73e8eea75d9be86aa045f6c7048a1e612d6fb99d0e896958457a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "75f8976e71d657afb5b02946da461e29bd189e9c3b339762ee864e0d5fe0f9c6"
   end
