@@ -15,7 +15,7 @@ class Php82Intl < AbstractPhp82Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5580c1f89ff3e65dc91b583322e2191d2f9a76e644f1efab1402b7acb9ee1ff6"
     sha256 cellar: :any_skip_relocation, sonoma:        "752dfb8d6e86bc8fb5f2e532e2adaddd7d8c32d9587a4eb0f5531cbfd73cc6e2"
     sha256 cellar: :any_skip_relocation, monterey:      "e4ffc3eec04739eec6d84fbaff1cead09f156d9a90a9d00c4ff69b9e5f09b428"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1a719767cfa39c1ccd24b56e350faf46cd652fc71b8bae7d21799276053f1a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f5ff98ff53ca894524fd4ad37486fb0d6c5c65cc177e30f5092d60bfd2a3d3a"
   end
 
   depends_on "digitalspacestdio/common/icu4c@74.2"
