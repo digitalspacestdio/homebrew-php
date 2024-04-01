@@ -13,6 +13,7 @@ class Php71Mongodb < AbstractPhp71Extension
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "8c9352a9c102fd03b675fb2ee86dcde7e1ac4fb590a6b7e04af0c06ecabf9bd9"
+    sha256 cellar: :any_skip_relocation, sonoma:       "82f3201201532a41cb828e915eb7898e07df5fb711c8542a309e0f701fcb7733"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "87cbab953ab336989ef7f4bc052f28b90be7448607a424806660f497bd78ee96"
   end
 
