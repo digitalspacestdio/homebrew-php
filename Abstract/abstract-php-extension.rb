@@ -48,16 +48,14 @@ class AbstractPhpExtension < Formula
 
     if Hardware::CPU.intel?
       ENV.append "CFLAGS", "-march=ivybridge"
+      ENV.append "CFLAGS", "-msse4.2"
+
       ENV.append "CXXFLAGS", "-march=ivybridge"
-
-      # ENV.append "CFLAGS", "-march=#{Hardware.oldest_cpu}"
-      # ENV.append "CFLAGS", "-msse4.2"
-      # ENV.append "CFLAGS", "-mavx"
-
-      # ENV.append "CXXFLAGS", "-march=#{Hardware.oldest_cpu}"
-      # ENV.append "CXXFLAGS", "-msse4.2"
-      # ENV.append "CXXFLAGS", "-mavx"
+      ENV.append "CXXFLAGS", "-msse4.2"
     end
+
+    ENV.append "CFLAGS", "-O2"
+    ENV.append "CXXFLAGS", "-O2"
 
     if OS.mac? && !@@php_version.start_with?("5.") && @@use_gcc
       ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"

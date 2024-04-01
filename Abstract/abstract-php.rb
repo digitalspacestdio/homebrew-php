@@ -172,15 +172,14 @@ class AbstractPhp < Formula
 
     if Hardware::CPU.intel?
       ENV.append "CFLAGS", "-march=ivybridge"
-      ENV.append "CXXFLAGS", "-march=ivybridge"
-      # ENV.append "CFLAGS", "-march=#{Hardware.oldest_cpu}"
       ENV.append "CFLAGS", "-msse4.2"
-      # ENV.append "CFLAGS", "-mavx"
 
-      # ENV.append "CXXFLAGS", "-march=#{Hardware.oldest_cpu}"
+      ENV.append "CXXFLAGS", "-march=ivybridge"
       ENV.append "CXXFLAGS", "-msse4.2"
-      # ENV.append "CXXFLAGS", "-mavx"
     end
+
+    ENV.append "CFLAGS", "-O2"
+    ENV.append "CXXFLAGS", "-O2"
 
     if @@php_version.start_with?("5.")
       ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
