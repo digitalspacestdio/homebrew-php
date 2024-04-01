@@ -14,7 +14,7 @@ class Php70 < AbstractPhp
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "4531422312e9924c4c0e7e6ccac0b2ce0795521a768b604bd4b4a6343e3d914c"
     sha256 cellar: :any_skip_relocation, sonoma:       "5157be152f5c6843915b1dbce713852d8461b458e477816d1a7825cff939557b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "67d9b37416c174bb2beceed3f66ee96a0b0f8b45477f67df81a490f127261a8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c33b44eefdafa71068031e2225cb71563ea3c16706750831a9bcdd42fbb16858"
   end
 
   keg_only :versioned_formula

@@ -13,7 +13,7 @@ class Php70Igbinary < AbstractPhp70Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "086727a5240e11c97362eab9bd87554a8f8eeb853e03ad1a47f64fc923e7522a"
     sha256 cellar: :any_skip_relocation, sonoma:       "e9417a03f2657aad3ab442f5611b8f9b4cb4deabbec19da90e493ef93434ae58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8c1eb9f6850da7fe31781d6b829fa025be8b07e684e9721abd7757dcd60a3b92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "124757c4f9edb7475cd4af824feefcf4d8fef7aa7765e8d462d43922ba79ef3a"
   end
 
 

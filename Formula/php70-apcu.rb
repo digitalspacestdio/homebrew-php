@@ -13,7 +13,7 @@ class Php70Apcu < AbstractPhp70Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "071d7eb2e4d5ef47ab32efb7d538598462c8a3bdfbe643815b93a8b9dc24500f"
     sha256 cellar: :any_skip_relocation, sonoma:       "6903a9238261b60a903cc9b8b06620c5fcdc77b85c7f1d7ab75f32118d6af895"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f07e9b8789ce3a1649f99ec9bdcd4fabd5acab84f77326d055a67f6ccea9fa96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "54dd59e4dab86caadd882bb75fa7ab7d3044fdb899259ce1ae66eaa61eb7c1cd"
   end
 
   depends_on "pcre2"
