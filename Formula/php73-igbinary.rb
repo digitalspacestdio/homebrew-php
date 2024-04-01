@@ -11,9 +11,11 @@ class Php73Igbinary < AbstractPhp73Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "38fd8d23a0a67da28286f0e7437aba305e852193efc747c45f13f9dd74736cf6"
-    sha256 cellar: :any_skip_relocation, sonoma:       "87e1556a35f97b5fefd1bf643cdf7eff9608cac7f6bce9c91f627b9cedfa2ae3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "6a006d72d576e950ea4a52afc3af27b5db55833e0127f48e66a40d09a160521d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "38fd8d23a0a67da28286f0e7437aba305e852193efc747c45f13f9dd74736cf6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c4fba5f1185e04a176813e7803e0184b096e580f8cf915ecd99742dc387a1cfb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f94efb16828b0f668f369e089fdc81738f635ce9d18b01bacef9d767ee4db931"
+    sha256 cellar: :any_skip_relocation, monterey:      "019f88c12d1dd0ec22a5a57ba648dc5be964683bbb305339d0858eb717db5bff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a006d72d576e950ea4a52afc3af27b5db55833e0127f48e66a40d09a160521d"
   end
 
 
