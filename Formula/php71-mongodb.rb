@@ -16,7 +16,7 @@ class Php71Mongodb < AbstractPhp71Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "819a2166f7f1c66245140408dee5b28847c2eadedf377044eebbc0d6c6788f1d"
     sha256 cellar: :any_skip_relocation, sonoma:        "82f3201201532a41cb828e915eb7898e07df5fb711c8542a309e0f701fcb7733"
     sha256 cellar: :any_skip_relocation, monterey:      "2562189df228f82301370457894def5e04f067d1bf75992e43ca9454ca3d677f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87cbab953ab336989ef7f4bc052f28b90be7448607a424806660f497bd78ee96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a86da16ff44f94bc705b0781dec64c0eb66cd2117709e3d37f0ff603a8bb6e4"
   end
 
   depends_on "openssl@1.1"
