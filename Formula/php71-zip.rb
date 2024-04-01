@@ -12,7 +12,7 @@ class Php71Zip < AbstractPhp71Extension
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae2c63ac52722607aa092272cb5c1e35fc7ea9533915bb5b694d9fac210fcd88"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "73830109da2b5eeb4297bb60ac80b263aa59c8eaa38bc925d9a9702d30574a38"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b4fa379b4c22f34d47a4345c9ca971bbf44b9dd076a1e4f8b01e6fc6626c0008"
     sha256 cellar: :any_skip_relocation, sonoma:        "fb188245250172fa1a69de533fd321a74a1a2f47b66f348f9761fb08a3d3152e"
     sha256 cellar: :any_skip_relocation, monterey:      "ab8e76694464ba0403fd9abd87161490b56da6a40d4e085bd3253d981de185e6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "da20c74e303afaad23332afba54eef39137a81ad6290e8640d23216426993e60"
