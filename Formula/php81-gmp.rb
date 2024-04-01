@@ -12,6 +12,7 @@ class Php81Gmp < AbstractPhp81Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "8487ffbd8b51abc40ac94428d71723c5443fd55880e365b52716491dd2959ddf"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "8402e4772f3ad2487fc4f8a3ad9353a2aaed1bc5a0ce5e77866a7934e1545476"
   end
 
