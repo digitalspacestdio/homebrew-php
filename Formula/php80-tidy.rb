@@ -9,6 +9,11 @@ class Php80Tidy < AbstractPhp80Extension
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f17ddb6061522ac0841c50cdc518184f3a07fae1329d9ef24c36aa19d7341192"
+  end
+
   depends_on "tidy-html5"
 
   def install
