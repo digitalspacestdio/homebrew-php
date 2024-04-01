@@ -13,7 +13,7 @@ class Php73Ldap < AbstractPhp73Extension
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
     sha256 cellar: :any_skip_relocation, sonoma:       "a5b9d78fd9506eac55f88d1e7f7664a3fe0674e193739bcdc7c0372df8f33e41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b3b32a0e409177577245ff35f0ebc9ef13bffa060d6c9b3ac73bc52a9441452e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4c0b70a2782a529e7b05c692b5f6f1c798901b765f2889c2a37a0062e89cd69d"
   end
 
   depends_on "openldap"

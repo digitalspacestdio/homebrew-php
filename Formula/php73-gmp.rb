@@ -13,7 +13,7 @@ class Php73Gmp < AbstractPhp73Extension
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
     sha256 cellar: :any_skip_relocation, sonoma:       "aed4f5c2b51ddb05d14db42912f8945b0c3463141fd07e43e23ac7ef40099e21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ca581c5f217ac773eef8494a17d90fbd3b6fec7592c952577e717d82a0e0b7d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c8c459ce484878fd3d5fdf417867484ad462cf17b4bdd7b77e5ca7d45b5ddaec"
   end
 
   depends_on "gmp"
