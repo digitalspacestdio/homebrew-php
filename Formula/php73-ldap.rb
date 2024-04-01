@@ -13,10 +13,10 @@ class Php73Ldap < AbstractPhp73Extension
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc4e4fdde2618e53c887d720b835d83c6177fe2dfe28dde8d6f819a8fce9cd4d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d2fea195990689ab4c8b6d4e28ca172bed2250454d7fcae537fb5894efe7166f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8f33b3d847d8e19f9d12da4878003103f646ccc2aeecab6fd36f5c24497783ac"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c9c2e15c4dafb89fa71a0404b225cec73cdeff85da4ec64a8800c1546eec6ae4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7efa3e32c31072c5f3e830e8c981f2a09a893017b260a37cfe85ca8ee05f7e29"
     sha256 cellar: :any_skip_relocation, monterey:      "660cfbf2b7926d1f081c74d402b21e0cec54c5f9d9f290d9393a14a6793ad803"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36fecf47a6643bca187cd116458363e850365a5397a871bd83e836cb55f6fecb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c0b70a2782a529e7b05c692b5f6f1c798901b765f2889c2a37a0062e89cd69d"
   end
 
   depends_on "openldap"
