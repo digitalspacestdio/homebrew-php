@@ -13,7 +13,7 @@ class Php72Apcu < AbstractPhp72Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f89bd881c69cd8027956f896db2b1585e6202316b04b28e75cfb8921665e8af"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7f9c124c5164ecca7169daad0edb5648064bc9dc54fb7804dfecdaf6633c2503"
-    sha256 cellar: :any_skip_relocation, sonoma:        "17bcc714172157658936145c905efc0d5d6c3cfbcc5e30c168cf9c7b698b81cc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9b9c6e1583653ba5569c6b7ee2fe83e1562cbcecc6ec2fb4dedf7086c90281a9"
     sha256 cellar: :any_skip_relocation, monterey:      "25536a49e47add96422409f11fc25f21fe3f808b1287d51b6b0d4d11effd5179"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6e48b115f30672dbbcdf15c812f75a92f8bfc90247a95105ee7ffb32d8e6f75"
   end

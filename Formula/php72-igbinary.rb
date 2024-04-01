@@ -12,7 +12,7 @@ class Php72Igbinary < AbstractPhp72Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b87a6bcdc127648df296d732dfcae7ad7b8654665b5987222218bebe76fc8063"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "12a67cc046dac5c1a2e8f7d62616d5fe9a4980e6470735611251de3149d361fd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d2ef96c1d50c375e4f58a016fb940ad35767e87e95dd1d1585199c35bce30a8b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b8767cf1648efe66735cd109251656e8d063b9555a1de4325b59565797131754"
     sha256 cellar: :any_skip_relocation, monterey:      "83f9e62db561aa4a6ff498b4779d3d6ef9ee51fc02141ab27784ca4045694519"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "505e517e4836f1460dc0a18f56ee8ab0ff6a32df9ff270be235e0d26296fff88"
   end
