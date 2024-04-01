@@ -15,7 +15,7 @@ class Php83Sodium < AbstractPhp83Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2ab598329be04ed488be7933cff663167c06bc784d77bdcbe519c4f09afe6bc4"
     sha256 cellar: :any_skip_relocation, sonoma:        "706d8f8cd238c4ba27bd1fe6233ccf38821818b723acf708c908f3f241be719d"
     sha256 cellar: :any_skip_relocation, monterey:      "5cd920424ef71758dba76e2d6cd60fa7ba0d182ea7a1a82195aeb81c46c2a6d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b09d01e34f229769b263c0579a2535a97b71c8fbd6fa5de54cdb71b70fae1d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3babdd3856e2ab7f443e25533f145236fe85f00b304d6654e5a2bc2acb416aca"
   end
 
   depends_on "pkg-config" => :build

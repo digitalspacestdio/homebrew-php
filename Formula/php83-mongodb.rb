@@ -16,7 +16,7 @@ class Php83Mongodb < AbstractPhp83Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura: "559f72fd87b0d342edbc7529bdbb46b14e7bfbe31bf2c6ab631bb916c3c1ac03"
     sha256 cellar: :any_skip_relocation, sonoma:        "d7df2c5820209641a5728d9d4239dcf1a6706270518c9a2cdd59e5e5a368e542"
     sha256 cellar: :any_skip_relocation, monterey:      "a5fc7c134566bc3fa7904e5e7d4d21276c2b869fb4cbf871c0408f456a2f7065"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d89e42d7adb96369a575f2b553a408f792859d909701bfc4da05ce8135c892d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa5316d1c766b3dfc833646e47f9145f387c6924ad32bf57cf0d5bbc309fd4fb"
   end
 
   depends_on "openssl"
