@@ -32,7 +32,7 @@ class Php73 < AbstractPhp
   def install_args
     args = super
     if !build.without? "pear"
-    args << "--with-pear"
+      args << "--with-pear"
     end
     args
   end
