@@ -11,7 +11,7 @@ class Php70Opcache < AbstractPhp70Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f72010d0fd1cf05d50b04707021a4cff438110ea788cb6416be7c53dcc356df4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff328e3fa311a31934e773e42b8a5019a80645f309192decd5437b590455950d"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "43df993e222c76275c8975bc650a71c218dcf831df2010ba688a36176293f411"
     sha256 cellar: :any_skip_relocation, sonoma:        "e50bd331819b72a8b8d481218274946547f1a29a2455ba9e8c2b11d75e60295f"
     sha256 cellar: :any_skip_relocation, monterey:      "c0b3a1908a27b618c2e0c222fa57ec920fbc7bba17720133adbe7466f734a944"
