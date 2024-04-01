@@ -13,6 +13,7 @@ class Php72Xdebug < AbstractPhp72Extension
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "2475a9e66e10236ccc1dc2f8b8c1c6ea6f04733685f7375da09813f4e16f1731"
+    sha256 cellar: :any_skip_relocation, sonoma:       "ecd738ba774ca23a7cbfa5d93f39dff4fdb751326c70ebae0b0c2b9ebac6b9e9"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "e90aa021414a1cbf08d4a7c1a71e918a48d3961858a9175e546de9288e8eecc6"
   end
 
