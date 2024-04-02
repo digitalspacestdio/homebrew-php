@@ -14,7 +14,7 @@ class Php73Redis < AbstractPhp73Extension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad17c480f7302140ea10d93e642287e9e0e20aba3863bac5fe8921df67242b9d"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7cfc9344044cc5a9354b1b2c153b1b814db63c1c86b27b06a92b4969c4a0e455"
     sha256 cellar: :any_skip_relocation, sonoma:        "389e0e719498800f81ddb43d19181605af8903b5ca8cfb917c26484af2b79618"
-    sha256 cellar: :any_skip_relocation, monterey:      "628689cdaf6140fb10ffbc2a2d941a2fc7ee26769875f9053313577b3f194df5"
+    sha256 cellar: :any_skip_relocation, monterey:      "ae552550401bbc9ef21a16a6fa2a5258ca157f8ef5ff68527722d8e87e2246c4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c127f6770110d47ec927d410326673f4917f0e5033373722c557f8012a071ad0"
   end
 

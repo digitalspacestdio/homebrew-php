@@ -15,7 +15,7 @@ class Php73Ldap < AbstractPhp73Extension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e600bf4710bd35966a1ff420992ca76ee41276be29fdd725df3572171c30d5a"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d2fea195990689ab4c8b6d4e28ca172bed2250454d7fcae537fb5894efe7166f"
     sha256 cellar: :any_skip_relocation, sonoma:        "69ef88030c69836ff5e809a73caf56c7a8c08605205dccc5db21f05332210739"
-    sha256 cellar: :any_skip_relocation, monterey:      "660cfbf2b7926d1f081c74d402b21e0cec54c5f9d9f290d9393a14a6793ad803"
+    sha256 cellar: :any_skip_relocation, monterey:      "bdc120d63efa4c2acbaa8d9009fbbe47adb338f7644b3e46052163a6dd6f169b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "08ca454545275ebb0094a92267a3b82a1d385d5f38df0414dae15f4f7d7db212"
   end
 
