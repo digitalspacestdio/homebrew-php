@@ -1,10 +1,10 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
 class Php74Intl < AbstractPhp74Extension
-  init
+  init PHP_VERSION, false
   desc "Wrapper for the ICU library"
   homepage "https://php.net/manual/en/book.intl.php"
-  revision 27
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL
@@ -12,19 +12,21 @@ class Php74Intl < AbstractPhp74Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e802380bd2320e1d67af95dddd4570f237a987f3cff71fce3bf668bdfd793c3c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6aba42dc4df8c05076968b33e5a3d640f18d8d7d8768e3631a568a71fdd6414b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8bc2944db5485373fb350c7042d9f8f133df3a1aadf90ba746c51c66d0155924"
-    sha256 cellar: :any_skip_relocation, ventura:       "c07f54365a059b7616b6442c0e234ded3ca197ed410f7bea4299f25c3d9d1989"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4324e8377e1ea790a41e9eed6dda1b189347899fd7392f8e130f1f7eadbe24e6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13082bed8d8222b6dd1b09379a6eb3a8526af61a93c6f0438379c75dd008095b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b5606cfcd1c5ded4c95b76da3d14f874d229b82c3552d9a07060b691bbff773f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "45ae4fe82eda4dd14490769181bef88e938281ddf8f2a42aae1c0f58eba78dc1"
+    sha256 cellar: :any_skip_relocation, monterey:      "b5d4ea8dda038cfc99351065cd9471e3897d0852a24c98ee3a5eaf7ae9b36f6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cdb24f0de5e3bc496fb809ef73d3ae90ac79b6a58a893fd25f644a0489e27273"
   end
 
-  depends_on "digitalspacestdio/common/icu4c@72.1"
+  depends_on "digitalspacestdio/common/icu4c@73.2"
   depends_on "pkg-config" => :build
 
   def install
     # icu4c 61.1 compatability
     ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
+    ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}/include"
     
     Dir.chdir "ext/intl"
 
@@ -32,8 +34,7 @@ class Php74Intl < AbstractPhp74Extension
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
                           "--disable-dependency-tracking",
-                          "--enable-intl",
-                          "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@72.1"].opt_prefix}"
+                          "--enable-intl"
     system "make"
     prefix.install "modules/intl.so"
     write_config_file if build.with? "config-file"

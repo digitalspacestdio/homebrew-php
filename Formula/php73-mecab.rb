@@ -7,7 +7,7 @@ class Php73Mecab < AbstractPhp73Extension
   url "https://github.com/rsky/php-mecab/archive/v0.6.0.tar.gz"
   sha256 "8ec57164dd208f700ca16853f07fb62f111e16b025ca1ab5d4100aaaa9aa7c58"
   head "https://github.com/rsky/php-mecab.git"
-  revision 1
+  revision PHP_REVISION
 
 
   depends_on "mecab"

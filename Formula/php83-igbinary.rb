@@ -4,19 +4,18 @@ class Php83Igbinary < AbstractPhp83Extension
   init
   desc "Igbinary is a replacement for the standard php serializer."
   homepage "https://pecl.php.net/package/igbinary"
-  url "https://github.com/igbinary/igbinary/archive/3.2.14.tar.gz"
-  sha256 "3dd62637667bee9328b3861c7dddc754a08ba95775d7b57573eadc5e39f95ac6"
+  url "https://github.com/igbinary/igbinary/archive/3.2.15.tar.gz"
+  sha256 "6fcbd7813eea1dfe00ec72a672cedb1d1cce06b2f23ab3cb148fa5e3edfa3994"
   head "https://github.com/igbinary/igbinary.git"
-  version "3.2.14"
-  revision 1
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26f2b94a5ac8dd3f02a205fc6f44832462b409ad1bb28ea1ae56ad062aaa7f0a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "75631816a448d3484a132153e7119cd4799706f24d802d201a0bed6c7a2bec9f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9280ae8358e4f6e1390584f206714a21c831d31f268484607cb90ac7adfc2e69"
-    sha256 cellar: :any_skip_relocation, ventura:       "12a559cfbf887085ca3852d451b57f27731360ff29ecea68b416c910b931e911"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4ad39ecfce4da933e62dad1b2be836bf5c6d7166fd81a19a265af87e0bb181b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f174ee4ee39c9509c79184160fac2cca6d2205a5fd9cf9afae7f9bf843e3074"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cd9e35a67e2a16daba65cfc952f5403a4bc6fc4d48bde98248914783589a546b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "53097b354ee8ed0808b8de78c872ac084653152fea8dad04986b3379504c500e"
+    sha256 cellar: :any_skip_relocation, monterey:      "865ae9809ec99bee5c89f054ff7ff63f0de7f37b9bc9b104c3169c6a6d18eefb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22687f3a879016ac8a6cd22fa1a7f7373094d6aaae765679dde8ce3535a6298c"
   end
 
 

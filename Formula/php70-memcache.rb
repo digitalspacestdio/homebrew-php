@@ -8,7 +8,7 @@ class Php70Memcache < AbstractPhp70Extension
   version "3.0.9.20160311"
   sha256 "498ae2f3fde66b471eb8662efedfe5cb2f89f5fff725791ffddbcc7d94b7bf21"
   head "https://github.com/websupport-sk/pecl-memcache.git", :branch => "NON_BLOCKING_IO_php7"
-
+  revision PHP_REVISION
 
   def install
     # ENV.universal_binary if build.universal?

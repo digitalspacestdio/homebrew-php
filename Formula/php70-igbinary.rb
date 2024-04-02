@@ -7,14 +7,15 @@ class Php70Igbinary < AbstractPhp70Extension
   url "https://github.com/igbinary/igbinary/archive/2.0.5.tar.gz"
   sha256 "1d06fc3586d61fcffbae24a46649db54d938168586557965bc1346f6d6568555"
   head "https://github.com/igbinary/igbinary.git"
-
+  revision PHP_REVISION
+  
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9e03d6c2b49c5b920fb70ade2d3a575da047d2ad2ce3a9958ef685c21eb3b72"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "27cc237cf3a60cd39d8f21d8c96687aeb7e3212821ba38d44fbbe4d6d68cee8c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "081dd93088e2ce0e92a96b3209874c190c7adc310515e09387254c1dd30daa32"
-    sha256 cellar: :any_skip_relocation, ventura:       "04c0ef50da42f0078930b6e23f513c3da951e12f7dc7489a174f84aa0c1abc62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e3cb745d9199b3f777703ea9d9dd36ccf48c5f351aee75ead8a2ebf65988b57"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00ec166b50b903729d59bb2d8a45278c66cf185450b392a9708dbe7a37cbfe26"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "890c69a31e0ea524040bda6cba66a7bcf847b346f49238b33fc071cdce2dd464"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6dadad286646e86dc98c65ddb7b87784a8d015d3a55ae7fa38d62baf19cbff3c"
+    sha256 cellar: :any_skip_relocation, monterey:      "6519764e71c8da12dfb5a3d80d34db0011d1c89f6f3d649477b4b3393479cdc9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "441b97b9e9627a78380534b7b3773654b47322b0599c15b64149a1f1a5d60bb4"
   end
 
 

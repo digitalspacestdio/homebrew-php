@@ -6,7 +6,7 @@ class Php56Varnish < AbstractPhp56Extension
   homepage "https://pecl.php.net/package/varnish"
   url "https://pecl.php.net/get/varnish-1.2.1.tgz"
   sha256 "13d2a4b63197d66854850c5aef50353d87ce3ed95798ba179fb59e289030183a"
-
+  revision PHP_REVISION
 
   depends_on "varnish"
 

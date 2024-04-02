@@ -7,8 +7,7 @@ class Php82Stats < AbstractPhp82Extension
   url "https://pecl.php.net/get/stats-2.0.1.tgz"
   sha256 "994da82975364773248091bb3f83cc5f101db70e88c79af8a60bea8ad054dd06"
   head "https://git.php.net/repository/pecl/math/stats.git"
-  revision 1
-
+  revision PHP_REVISION
 
   def install
     Dir.chdir "stats-#{version}" unless build.head?

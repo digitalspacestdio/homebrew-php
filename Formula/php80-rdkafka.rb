@@ -7,7 +7,7 @@ class Php80Rdkafka < AbstractPhp80Extension
   url "https://pecl.php.net/get/rdkafka-3.0.4.tgz"
   sha256 "4cb0a37664810d2a338cf5351e357be7294d99458f76435801e0ed5e328dc5ee"
   head "https://github.com/arnaud-lb/php-rdkafka.git"
-
+  revision PHP_REVISION
 
   depends_on "librdkafka"
 

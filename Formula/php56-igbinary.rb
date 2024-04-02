@@ -7,11 +7,14 @@ class Php56Igbinary < AbstractPhp56Extension
   url "https://github.com/igbinary/igbinary/archive/2.0.5.tar.gz"
   sha256 "1d06fc3586d61fcffbae24a46649db54d938168586557965bc1346f6d6568555"
   head "https://github.com/igbinary/igbinary.git"
-
+  revision PHP_REVISION
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9f22913beb2619356e6aa97d5bcd81f0381bf38b1cacc9dbaf562bb1a5118858"
-    sha256 cellar: :any_skip_relocation, ventura:       "5d19955d25f3bdb230e8e12da36e662f4762c280443e3521e3fb69ff3e54e156"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a08ac0e3c4134583ab1378bf03bbf715717b498382df242372a1174489cf180f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2b8f41532b7baa417055e037cd694a67cf784bf519bb8c530bea55b06c9f5900"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ef5278285180c566e634a8655b74dbdfe2b47906b9c2da5699349293d7ada7c7"
+    sha256 cellar: :any_skip_relocation, monterey:      "f7d657cf995034b9781a942bfcd9562e3ae393083af0cc9aa072fe7407b2403b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9dff8ffcc4fac3447fcfdd66a0830e1741dd333d3dd434bfde29a4eb5e66d653"
   end
 
 

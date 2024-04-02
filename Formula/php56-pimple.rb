@@ -7,7 +7,7 @@ class Php56Pimple < AbstractPhp56Extension
   url "https://github.com/silexphp/Pimple/archive/v3.0.0.tar.gz"
   sha256 "591e706f5cdce06bdd17d306db3fe9df521bee0ef4fcb0ee56524ff258ef66ba"
   head "https://github.com/silexphp/Pimple.git"
-
+  revision PHP_REVISION
 
   def install
     # ENV.universal_binary if build.universal?

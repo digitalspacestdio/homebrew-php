@@ -6,7 +6,7 @@ class Php71Gnupg < AbstractPhp71Extension
   homepage "https://pecl.php.net/package/gnupg"
   url "https://pecl.php.net/get/gnupg-1.4.0.tgz"
   sha256 "35e16bee11345a7d6bf57bea3cadf45e371ad1ed4e0218b0c06f6f637e4e1772"
-
+  revision PHP_REVISION
 
   depends_on "gpgme"
 

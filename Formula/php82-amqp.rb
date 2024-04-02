@@ -4,17 +4,15 @@ class Php82Amqp < AbstractPhp82Extension
   init
   desc "Communicates with any AMQP compatible server."
   homepage "https://github.com/php-amqp/php-amqp"
-  url "https://github.com/php-amqp/php-amqp/archive/refs/tags/v1.11.0.tar.gz"
-  sha256 "245afd68082438b994a0fab73c97f2ef42cc0acc4dbc387036e4f217d95abf8b"
+  url "https://github.com/php-amqp/php-amqp/archive/refs/tags/v2.1.2.tar.gz"
+  sha256 "5eebe1d0414af8e4c1e1b5040be68168a533704f09f6f66e4d48ab78edd1d8d2"
   head "https://github.com/pdezwart/php-amqp.git"
-  revision 1
+  revision PHP_REVISION
 
 
   depends_on "rabbitmq-c"
 
   def install
-    Dir.chdir "amqp-#{version}" unless build.head?
-
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig

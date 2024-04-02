@@ -7,7 +7,7 @@ class Php56Dbase < AbstractPhp56Extension
   url "https://pecl.php.net/get/dbase-5.1.0.tgz"
   sha256 "20d6a40fb2efe4a06f503ec53512d02d71ceda87eac1f55208d7b5398f287a97"
   head "https://svn.php.net/repository/pecl/dbase/trunk/"
-
+  revision PHP_REVISION
 
   def install
     Dir.chdir "dbase-5.1.0"

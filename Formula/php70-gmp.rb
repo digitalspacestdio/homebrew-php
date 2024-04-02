@@ -4,7 +4,7 @@ class Php70Gmp < AbstractPhp70Extension
   init
   desc "GMP core php extension"
   homepage "https://php.net/manual/en/book.gmp.php"
-  revision 18
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL
@@ -12,11 +12,11 @@ class Php70Gmp < AbstractPhp70Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c65d6504a6413ec9499a534a9f6c93ecc0ede831901a13ee16e6c15fc8a4d54e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5c9585f171cf601054e3ad6aaac64b90f39ca970eecff0d0eb62b38d2c56a4ab"
-    sha256 cellar: :any_skip_relocation, sonoma:        "72d3b6b74a131fca0a8c457afff9cf0505cd648a1f865be98f86c2b64d476d28"
-    sha256 cellar: :any_skip_relocation, ventura:       "61182ed029a159879b252f9b3f57819916c8713acbd6a8e5b326f91322511ae4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2388555c8ee967ec8becf2cdd4336b6fb242e1b072f0338da3df373dcebd6403"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "600f89db0d1d21d13487e1abb0554461fd3e78a7a45c846b8905aa0cacb8da90"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "88f6ae18567f7a8c091ef03bd343d9143f0b851d4ff7ab77a23aaeb78fc23465"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3b1f6c7745226cdb39ed5b6d503100f18187f64bf418f4ae1a934aea8a6ac84c"
+    sha256 cellar: :any_skip_relocation, monterey:      "895115bb3cf126d44b7278b6ad28a089fe8c0a12da8812dd70b299e6162a0121"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a73d7e9cf1d78490346c9bd479bb00884835d4374bbd4972766a681e129ba6c6"
   end
 
   depends_on "gmp"

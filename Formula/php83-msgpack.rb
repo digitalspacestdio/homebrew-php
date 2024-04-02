@@ -4,11 +4,10 @@ class Php83Msgpack < AbstractPhp83Extension
   init
   desc "MessagePack serialization"
   homepage "https://pecl.php.net/package/msgpack"
-  url "https://pecl.php.net/get/msgpack-2.0.2.tgz"
-  sha256 "b04980df250214419d9c3d9a5cb2761047ddf5effe5bc1481a19fee209041c01"
+  url "https://pecl.php.net/get/msgpack-2.2.0.tgz"
+  sha256 "82aa1e404c5ff54ec41d2a201305cd6594ed14a7529e9119fa7ca457e4bbd12a"
   head "https://github.com/msgpack/msgpack-php.git"
-  revision 1
-
+  revision PHP_REVISION
 
   def install
     Dir.chdir "msgpack-#{version}" unless build.head?

@@ -6,12 +6,15 @@ class Php56Gmp < AbstractPhp56Extension
   homepage "http://php.net/manual/en/book.gmp.php"
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
-  revision 6
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e17dd15ee9eba95d196a761b1fa640905729c1d0a80585de006d5b62e63e73c5"
-    sha256 cellar: :any_skip_relocation, ventura:       "c10136f6c523875feef8e9a2fc788d2cdde113d32f9fc1c7809619f9d472a292"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "06e6f9bd69710f0895cad5c57736ee9e81848276fc28bb3c638ce0d6aaa2bfca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "37b8a909c01eb84eccedfb80af74354a2a8c3fd939313517f9dc4b76b69ea819"
+    sha256 cellar: :any_skip_relocation, sonoma:        "744804ef31ed700a05904c2e35c3397bbb27e7fba1492c49a40487b3c6ef07f4"
+    sha256 cellar: :any_skip_relocation, monterey:      "717d55779568ab3f98437e202858d2543aa967a2747650f86138237bf8387446"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "547b25ad6ba11d24701fa687dea792653d99f5d75832b6dbb6a23ee225a5d6e4"
   end
 
 

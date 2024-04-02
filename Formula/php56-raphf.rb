@@ -6,7 +6,7 @@ class Php56Raphf < AbstractPhp56Extension
   homepage "https://pecl.php.net/package/raphf"
   url "https://github.com/m6w6/ext-raphf/archive/release-1.1.2.tar.gz"
   sha256 "b5386eff888e2c06951b4fa65a3d0b536775e35a8afc2db323a3129685f7c2bf"
-  revision 2
+  revision PHP_REVISION
 
 
   def install

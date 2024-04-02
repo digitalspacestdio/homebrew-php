@@ -7,6 +7,7 @@ class Php56MysqlndMs < AbstractPhp56Extension
   url "https://pecl.php.net/get/mysqlnd_ms-1.5.2.tgz"
   sha256 "22b9ba1afb36b3df11c1051c813bc07889c815d1d9993bb07ffda182665b472f"
   head "https://svn.php.net/repository/pecl/mysqlnd_ms/trunk/"
+  revision PHP_REVISION
 
   stable do
     patch :DATA

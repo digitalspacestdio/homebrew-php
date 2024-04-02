@@ -8,29 +8,25 @@ class Php80Apcu < AbstractPhp80Extension
   sha256 "0ffae84b607bf3bfb87a0ab756b7712a93c3de2be20177b94ebf845c3d94f117"
   head "https://github.com/krakjoe/apcu.git", :branch => "master"
   version "5.1.18"
-  revision 2
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1439c829251fb0f7ae9bd0666830d966bdf94497d33d1dc3fdd331d8a49bfea9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bef7c60b1085bc96192d8bbcc71ada7c361395dd085feb64b18d35471aa7b5f8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a1bc19c32480b34f7f4edb6a594944289ff899930525e2852a5cf2336186cdac"
-    sha256 cellar: :any_skip_relocation, ventura:       "67a1d5900e1bd4ace7b04e81d5c92addd2e570d7a8451457264668f37d419d8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1568ab9cb18e668d8adb5746d2edba0d34a31d70c81f7cf3a819cea45da4a78"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa47dc1f5aaa0e74724027e740d4006e41f10c20ca99fe70f1591cc7ed82ec92"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0b341b6065cbc47b92be45d674144d24e848c2119198bcb96cd8cdb0493d70de"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1d17c621b89763fd110b4f83a2efe00c3f4c1478e8b97b9310753aef2be8eb82"
+    sha256 cellar: :any_skip_relocation, monterey:      "c93d1eb0eaa8129e5124ab24b7c03f529bdbb0e6018a676f34eb231f687aa938"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53ce50728830c3ea5b3e5f60f04b32b6172b591535a60efaaf00d1a6f819966c"
   end
 
-  depends_on "pcre"
+  depends_on "pcre2"
 
   def install
-
-    pcre = Formula["pcre"]
-    cc_opt = "-I#{pcre.opt_include}"
-    ld_opt = "-L#{pcre.opt_lib}"
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
 
     args = []
     args << "--enable-apcu"
-    args << "--with-cc-opt=#{cc_opt}"
-    args << "--with-ld-opt=#{ld_opt}"
 
     safe_phpize
 

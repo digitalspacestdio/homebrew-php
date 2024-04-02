@@ -12,6 +12,7 @@ class Php81Ioncubeloader < AbstractPhp81Extension
     url "https://f001.backblazeb2.com/file/php-homebrew/ioncubeloader/12.0.5/ioncube_loaders_lin_x86-64.tar.gz"
   end
   version "12.0.5"
+  revision PHP_REVISION
   option "with-thread-safe", "Enable the thread-safe extenstion"
 
 

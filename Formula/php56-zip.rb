@@ -4,15 +4,18 @@ class Php56Zip < AbstractPhp56Extension
   init
   desc "Zip"
   homepage "https://www.php.net/manual/ru/book.zip.php"
-  revision 1
+  revision PHP_REVISION
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4af058469fc5012c5ac780c894b78648db35265075975b127025e96cb75d7675"
-    sha256 cellar: :any_skip_relocation, ventura:       "892f53a7a36ada70e0418c2b175f891cf632980748b6441154be99d470d8ec68"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8971c535906dc9b60b714fd6c8fa9f65cdbd932e7ec596091e4d20bd4429a88"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d3a7b87f8743eaac116bf04c63569c2149c91fd7a161cfe0a4497a9f0e8c49ad"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bf033a167e7a7c6a10cb539bfca66aa22cd174cf6cfdb2dfca46c69f4f5107f6"
+    sha256 cellar: :any_skip_relocation, monterey:      "627b0c6fea080a9ec2cf4f9a44b836453125445753c78fb57138118c8515557e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bcee4614a1752acddd9902da45a1158298567b592cf22c06d9e3dd503fcfdaf"
   end
 
   depends_on "zlib"

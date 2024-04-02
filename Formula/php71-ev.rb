@@ -7,7 +7,7 @@ class Php71Ev < AbstractPhp71Extension
   url "https://pecl.php.net/get/ev-1.0.3.tgz"
   sha256 "3c03fde9e72745e6ce6c32d680218389e0f4310908187f1529b7f227b295aeee"
   head "https://bitbucket.org/osmanov/pecl-ev.git"
-
+  revision PHP_REVISION
 
   depends_on "libev"
 

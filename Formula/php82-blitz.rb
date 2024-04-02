@@ -8,7 +8,7 @@ class Php82Blitz < AbstractPhp82Extension
   version "0.10.2"
   sha256 "202752e825ae035989cbcb0094ef7ec8e0791d0741d36c4b14077b155310597f"
   head "https://github.com/alexeyrybak/blitz.git"
-
+  revision PHP_REVISION
 
   def install
     safe_phpize

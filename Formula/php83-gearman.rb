@@ -4,10 +4,10 @@ class Php83Gearman < AbstractPhp83Extension
   init
   desc "PHP wrapper to libgearman"
   homepage "https://github.com/wcgallego/pecl-gearman"
-  url "https://github.com/wcgallego/pecl-gearman/archive/gearman-2.0.3.tar.gz"
-  sha256 "f71e8ff218f31e3b9a15534e18846b9f9526319daffcc12e76b545889e44e130"
+  url "https://github.com/wcgallego/pecl-gearman/archive/gearman-2.0.6.tar.gz"
+  sha256 "3f5fe79905fce8ae4eeaf125aa4b5cdd55d3d134112f035ddbb30722897a912e"
   head "https://github.com/wcgallego/pecl-gearman.git"
-  revision 1
+  revision PHP_REVISION
 
 
   depends_on "gearman"

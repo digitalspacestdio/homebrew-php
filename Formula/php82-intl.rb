@@ -1,10 +1,10 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
 class Php82Intl < AbstractPhp82Extension
-  init
+  init PHP_VERSION, false
   desc "Wrapper for the ICU library"
   homepage "https://php.net/manual/en/book.intl.php"
-  revision 2
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL
@@ -12,13 +12,13 @@ class Php82Intl < AbstractPhp82Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2544ee7e398a6060d580738f2ae60d31ad45769a38de39d324f8a69258c815ac"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "89dbb1aba7b23886ae9db23923320ad524d96e453f79a488a934c25f216f9ebf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e35dfcee430d5fa5caef8f4a4087803e78ea58ed61d27acb5e049c9613be637a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db21962331ab56464e308a61bf145f2aafb30cbf60abd25b5db7f79aee9c809b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "86162e3af51cad16e73830ffc9d212dc8a5d756b009724985335914fb3f782ae"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ae5dfd4ea3528e4330e80cadabf952fe90cbecaba650fb818448ee6a91671e14"
+    sha256 cellar: :any_skip_relocation, monterey:      "e4ffc3eec04739eec6d84fbaff1cead09f156d9a90a9d00c4ff69b9e5f09b428"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f5ff98ff53ca894524fd4ad37486fb0d6c5c65cc177e30f5092d60bfd2a3d3a"
   end
 
-  depends_on "digitalspacestdio/common/icu4c@72.1"
+  depends_on "digitalspacestdio/common/icu4c@74.2"
   depends_on "pkg-config" => :build
 
   def install
@@ -35,7 +35,7 @@ class Php82Intl < AbstractPhp82Extension
                           phpconfig,
                           "--disable-dependency-tracking",
                           "--enable-intl",
-                          "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@72.1"].opt_prefix}"
+                          "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix}"
     system "make"
     prefix.install "modules/intl.so"
     write_config_file if build.with? "config-file"

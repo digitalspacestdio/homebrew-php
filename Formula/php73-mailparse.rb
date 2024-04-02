@@ -7,13 +7,16 @@ class Php73Mailparse < AbstractPhp73Extension
   url "https://pecl.php.net/get/mailparse-3.0.1.tgz"
   sha256 "42ee10de881a3739acf73ddef8800d80c3c57f70072f41bdb22e6e87ebc9cc62"
   head "https://github.com/php/pecl-mail-mailparse.git"
-  revision 1
+  revision PHP_REVISION
 
 
-  depends_on "pcre"
+  depends_on "pcre2"
 
   def install
     Dir.chdir "mailparse-#{version}" unless build.head?
+
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",

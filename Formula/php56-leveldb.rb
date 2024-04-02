@@ -7,7 +7,7 @@ class Php56Leveldb < AbstractPhp56Extension
   url "https://pecl.php.net/get/leveldb-0.1.4.tgz"
   sha256 "b0d2485e7f1353a794cd58bbaf331154723cda98ae41757f1167e1661bd78eef"
   head "https://github.com/reeze/php-leveldb.git"
-
+  revision PHP_REVISION
 
   depends_on "leveldb"
 

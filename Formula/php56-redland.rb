@@ -6,7 +6,7 @@ class Php56Redland < AbstractPhp56Extension
   homepage "http://librdf.org"
   url "http://download.librdf.org/source/redland-bindings-1.0.17.1.tar.gz"
   sha256 "ff72b587ab55f09daf81799cb3f9d263708fad5df7a5458f0c28566a2563b7f5"
-
+  revision PHP_REVISION
 
   depends_on "pkg-config" => :build
   depends_on "redland"

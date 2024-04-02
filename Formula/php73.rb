@@ -1,28 +1,21 @@
 require File.expand_path("../../Abstract/abstract-php", __FILE__)
 
 class Php73 < AbstractPhp
-  init
-  desc "PHP Version 7.3"
   include AbstractPhpVersion::Php73Defs
+  init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
+  desc "PHP " + PHP_VERSION
   version PHP_VERSION
   revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22e09b560f9111ba0cd0492ac5e11cee3fc9a4e6d09c2b84a6121822b605571a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bb2727578c878b3162b27d7cb636c5b22672d8c0b0c89cfdc8c986b43e28998a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "964605761822bd91d9bcc1a8d2e212274181bb7c1f0ec116a3300d1211445ef0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "328bda8fb809eb904564b68de12a7f130c6b87206e7a0aa29057772a9517ed22"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b7e163f1262322678e6ea09fd1c83000a40c3c608be54cde8d677ac90b4698c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cfe01b8b9bdd07427fdb840a0fc8754baea979c41423a80db20d26f3bd2ada0a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "611580bdb2b8720ac9a6b5154d0fd52af73f33c112ac8b59bf5e3f5ed8519f56"
+    sha256 cellar: :any_skip_relocation, monterey:      "6f479531efec59afafb1f51eb430f4f59461d738cf7d999037ef40450f1075ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "601771f06432d88a85afc8636cc9ed067be627f25c32e391c560712cf0479246"
   end
   keg_only :versioned_formula
-  depends_on "libjpeg"
-
-  include AbstractPhpVersion::Php73Defs
-
-  url PHP_SRC_TARBALL
-  sha256 PHP_CHECKSUM[:sha256]
-
-  head PHP_GITHUB_URL, :branch => PHP_BRANCH
 
   def php_version
     "#{PHP_VERSION_MAJOR}"
@@ -31,11 +24,18 @@ class Php73 < AbstractPhp
   def php_version_path
     "#{PHP_BRANCH_NUM}"
   end
+  
+  depends_on "libjpeg"
+
+  url PHP_SRC_TARBALL
+  sha256 PHP_CHECKSUM[:sha256]
+
+  head PHP_GITHUB_URL, :branch => PHP_BRANCH
 
   def install_args
     args = super
     if !build.without? "pear"
-    args << "--with-pear"
+      args << "--with-pear"
     end
     args
   end

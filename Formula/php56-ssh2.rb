@@ -7,7 +7,7 @@ class Php56Ssh2 < AbstractPhp56Extension
   url "https://pecl.php.net/get/ssh2-0.12.tgz"
   sha256 "600c82d2393acf3642f19914f06a7afea57ee05cb8c10e8a5510b32188b97f99"
   head "https://github.com/php/pecl-networking-ssh2.git", :branch => "php5"
-
+  revision PHP_REVISION
 
   depends_on "libssh2"
 

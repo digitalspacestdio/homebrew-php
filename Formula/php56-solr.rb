@@ -7,7 +7,7 @@ class Php56Solr < AbstractPhp56Extension
   url "https://pecl.php.net/get/solr-2.4.0.tgz"
   sha256 "22865dafb76fc5839e84a5bd423bb37d5062883e5dfc4d064b43129ac9f2752c"
   head "https://git.php.net/repository/pecl/search_engine/solr.git"
-
+  revision PHP_REVISION
 
   def install
     Dir.chdir "solr-#{version}" unless build.head?

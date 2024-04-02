@@ -6,15 +6,14 @@ class Php82Redis < AbstractPhp82Extension
   url "https://github.com/phpredis/phpredis/archive/5.3.7.tar.gz"
   sha256 "6f5cda93aac8c1c4bafa45255460292571fb2f029b0ac4a5a4dc66987a9529e6"
   head "https://github.com/phpredis/phpredis.git"
-  revision 1
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49a0ffd5d14c4a875014f7ffccf66d88515bc90cc166958dc4412d32a264a8fd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "12bc351832110a2a1c5ab43f49d81e105178c0314e6d84586dc150a24e462ad7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ff67a420f72045f990fba5c7c022ac2eafa618c42d05517b9cd8dd5ca7333746"
-    sha256 cellar: :any_skip_relocation, ventura:       "1442ffa5fed1b273e51c749a852ff9d0f83f6cc8bb71ae9b816b5566e01a746e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "558ff6f28f32e43500029b71322d3c983cb2f077bd999f9a069a4915f1fdb7a6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b1b8c28ab5edc321517e9b4fbf8a1fce2d814e24f9e7a709469f25c9c943265b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f6948a556739aa5c0470b7e0765a57725768a4f2d8da20aeba4df8f98d90be75"
+    sha256 cellar: :any_skip_relocation, monterey:      "f0ef056bb33a5c046c9a188435c967955170787a3c3173bc2a5fe31c0cbf74df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a79317bd202adc64acd9c98591f9262602617471e66a44fde2d8e3394e080a1"
   end
 
   depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-igbinary"

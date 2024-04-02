@@ -6,7 +6,7 @@ class Php70Gmagick < AbstractPhp70Extension
   homepage "https://pecl.php.net/package/gmagick"
   url "https://pecl.php.net/get/gmagick-2.0.2RC2.tgz"
   sha256 "7656bd9042c2aae1325b1cb49e55d9e8ec31b911decec33b6f176195ee1d515a"
-
+  revision PHP_REVISION
 
   depends_on "graphicsmagick"
 

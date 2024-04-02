@@ -8,15 +8,15 @@ class Php80Igbinary < AbstractPhp80Extension
   sha256 "86079a3a0e0ea46292ed0ebe69748c5e09c68fe5b0e274d0dd45f3d9c80f61a8"
   head "https://github.com/igbinary/igbinary.git"
   version "3.1.6"
-  revision 1
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb6ed7efca362065edd7c32d91ce4dc300bb8dd0b8c3d3afc91bfec78fb2eddd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ada48da2fa96c2796f6ca1e4fce6aa228daf373ed9347bcb0348826eaf7e39ac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9a85e7dd48c7c1a679ebbede31405331b2a9107f921b84ffb2f9164fad7ea1d4"
-    sha256 cellar: :any_skip_relocation, ventura:       "8f07063c30850e791e69a98fc658d34e158de0538d53cc50b0e9db7dce68f674"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7c438102cb95692ed979088cb3acc6088836992fc0a86226b3882e52a9d0b8f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e23c0ad57790d61795efa93bc844a9a8e7f92bbfae00b483ef6cffefc9d7dcf2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "504d1bafc71d10c40e3bc900a6447c5a6f6a3eccb818d66d76687051c97e3d28"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cb1be7b79d6c6466fbe7bdbc75cdcc55665fb0be3afbdbe27e1d203894c8f60c"
+    sha256 cellar: :any_skip_relocation, monterey:      "2937175dcf559957be3ce8fa5dd3b37b7dad5968fd9ce2561928ef3495b10250"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e0fe2c206b6eb2fd8989daf739484987f157d90b17a290da7b9683d9642c6c7"
   end
 
 

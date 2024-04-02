@@ -7,7 +7,7 @@ class Php56Zmq < AbstractPhp56Extension
   url "https://github.com/mkoppanen/php-zmq/archive/1.1.2.tar.gz"
   sha256 "2ae77e90e0ed8112b11e838d6303940bbcae39e8d37683632a299db881bdb217"
   head "https://github.com/mkoppanen/php-zmq.git"
-
+  revision PHP_REVISION
 
   depends_on "pkg-config" => :build
   depends_on "zeromq"

@@ -4,18 +4,18 @@ class Php74Sodium < AbstractPhp74Extension
   init
   desc "Sodium core php extension"
   homepage "https://php.net/manual/en/book.sodium.php"
-  revision 1
+  revision PHP_REVISION
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "54dbb15c01c5d0802c2ad8d74878633c08292a6e0d6a4fb7594a708327664b1f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "07463ebc213902c018adfcbf4b004b8269287dbbe3842df2aff9582e23612823"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8b55166b8c955c3fe4e0bb3a476fd14690b51e66a7b8417c9b2ae8b08e6423a8"
-    sha256 cellar: :any_skip_relocation, ventura:       "dacc1966d6227c1e41e2c146eae68ad3bc9a6db1ab7d92b4a725f6fedca990f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51b99853099961ed74f4a53c678f6e97974ffa2198fa0945f32a1647b31c37fb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec53ac064fd44a600a682ce49124b13684ab228762aa0a220672c7cfd7d2a118"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c9fc155c5e01c8a16860ec1051afec0a41dfdf4732f21acc67fe434f0ae95a87"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5b89d01f9fdf9f6bb233ff295d15a3f32c0d94cbd6dc378b32c0b85d45c0e39e"
+    sha256 cellar: :any_skip_relocation, monterey:      "6e9dcc6168332a6b3073c276ac86a9ea9be97d7bc4ba60ce3dfc496c3fc1952e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62af6bb6d80c96a4b3feba21e3db5eb763c6f0c1bf9ac9debab533a28f9c9f4b"
   end
 
   depends_on "pkg-config" => :build
@@ -23,6 +23,8 @@ class Php74Sodium < AbstractPhp74Extension
 
   def install
     Dir.chdir "ext/sodium"
+    ENV.append "LDFLAGS", "-L#{Formula["libsodium"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["libsodium"].opt_prefix}/include"
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",

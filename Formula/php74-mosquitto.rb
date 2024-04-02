@@ -7,7 +7,7 @@ class Php74Mosquitto < AbstractPhp74Extension
   url "https://pecl.php.net/get/Mosquitto-0.4.0.tgz"
   sha256 "eec599110f733afe5e0331a85d8feb354ec079b088bdca2dd81a587c5b50f8e4"
   head "https://github.com/mgdm/Mosquitto-PHP.git"
-
+  revision PHP_REVISION
 
   depends_on "mosquitto"
 

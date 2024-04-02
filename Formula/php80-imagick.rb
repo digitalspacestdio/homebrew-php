@@ -9,7 +9,7 @@ class Php80Imagick < AbstractPhp80Extension
   sha256 "5cf964a7a5ba6e28d81507638f41a10d88070f0ee1b8019a650e2a4490609c2a"
 
   version "132a11f"
-  revision 1
+  revision PHP_REVISION
 
 
   depends_on "pkg-config" => :build

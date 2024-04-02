@@ -7,7 +7,7 @@ class Php56Libevent < AbstractPhp56Extension
   url "https://pecl.php.net/get/libevent-0.0.5.tgz"
   sha256 "04c6ebba72a70694a68141a897e347a7f23e57117bffb80ac21e524529b6af78"
   head "http://svn.php.net/repository/pecl/libevent/trunk/"
-
+  revision PHP_REVISION
 
   depends_on "libevent"
 

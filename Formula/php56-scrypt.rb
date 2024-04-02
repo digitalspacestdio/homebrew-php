@@ -7,7 +7,7 @@ class Php56Scrypt < AbstractPhp56Extension
   url "https://github.com/DomBlack/php-scrypt/archive/v1.2.tar.gz"
   sha256 "80de804217c5ed5dff189c82771d055a13e6abc64db35cbe6e29878cbc0eb827"
   head "https://github.com/DomBlack/php-scrypt.git"
-
+  revision PHP_REVISION
 
   def install
     # ENV.universal_binary if build.universal?

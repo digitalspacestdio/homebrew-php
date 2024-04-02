@@ -7,6 +7,7 @@ class Php56Memcache < AbstractPhp56Extension
   url "https://pecl.php.net/get/memcache-2.2.7.tgz"
   sha256 "73006c02194a5a7c196c6488d449e5f8c75573a73568fe1a94b15157c147305d"
   head "https://svn.php.net/repository/pecl/memcache/trunk/"
+  revision PHP_REVISION
 
 #
 #   devel do

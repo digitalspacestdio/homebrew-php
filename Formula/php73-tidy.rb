@@ -4,22 +4,21 @@ class Php73Tidy < AbstractPhp73Extension
   init
   desc "Tidy HTML clean and repair utility"
   homepage "https://php.net/manual/en/book.tidy.php"
-  revision 19
-
+  revision PHP_REVISION
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b909af73a58b1a94ffb7c0daf3dc653ffeac7037473b47af796975a1745b4de"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ffd9fc46b78d9c720ae6b735dd82f21e89e196877fa4fe38413af72afb91e5b4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a9c214a9ba8295fda9bcca3f232f387023a2aef123b97c61cc99f74ae1c7dad0"
-    sha256 cellar: :any_skip_relocation, ventura:       "4e4d5f0b3dcc3599915962b5822a9992adbcd6340e9fd6c691d9df0f8f6414eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be940a8df6eb5cde07b547a5e078e776357fa5d1ca8fcbd7fa38067a93097114"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b71842da0e3fbf400639b0a93e4a29fd50d8ea4b1a3b4d77c0618f4b922b1813"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0ab9a9da555765f62a878c4ebae3b2f81f35b3f534eda034a8c640a6e2c540bf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ddc423562302a3fef74fb37af127647f448aafabe921a7c255e4b15e7ba00629"
+    sha256 cellar: :any_skip_relocation, monterey:      "be4f9f14112ea95c1e27af29f14eec3bca203b55f96c2cf0f49e5b4f58aa570f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fbff0a00ed31537585598846d53ff4012b3ab3a770c9cb46cde51652331cb31"
   end
 
-  depends_on "digitalspacestdio/php/php-tidy-html5"
+  depends_on "tidy-html5"
 
   def install
     Dir.chdir "ext/tidy"
@@ -28,7 +27,7 @@ class Php73Tidy < AbstractPhp73Extension
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
                           "--disable-dependency-tracking",
-                          "--with-tidy=#{Formula["digitalspacestdio/php/php-tidy-html5"].opt_prefix}"
+                          "--with-tidy=#{Formula["tidy-html5"].opt_prefix}"
     system "make"
     prefix.install "modules/tidy.so"
     write_config_file if build.with? "config-file"

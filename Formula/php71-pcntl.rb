@@ -4,7 +4,7 @@ class Php71Pcntl < AbstractPhp71Extension
   init
   desc "Process Control support"
   homepage "https://php.net/manual/en/book.pcntl.php"
-  revision 20
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL

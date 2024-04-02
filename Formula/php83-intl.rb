@@ -1,10 +1,10 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
 class Php83Intl < AbstractPhp83Extension
-  init
+  init PHP_VERSION, false
   desc "Wrapper for the ICU library"
   homepage "https://php.net/manual/en/book.intl.php"
-  revision 2
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL
@@ -12,13 +12,14 @@ class Php83Intl < AbstractPhp83Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ec1f5518605a69a3efbf50256bd5ac81a37ffb1add41a6fee5467cf3cc3b118"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c324e69c038b54d4dd8c27f7930048167b47bcafa800ac3423ade44faaf2630c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cec70e216fb3f9915a907db1ac31e3297ded5a03b0035ea186a3bf2056135b18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab6bfd2ef4c58782574349141c5fef9b67db78fa0d8a21605042f66831ebe31b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f10055c7a3c3b19e13b69405666d160d2b59483148c5700dba735962402ced8a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "948e4d0dcb3a493ea953c6cfd639436f593b68d9782a61c9a4bcd2a434de75f9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b595e74cd7e4833ba6641bea2d2b1ffe016623e2b3c9db3ff69def362b3bede8"
+    sha256 cellar: :any_skip_relocation, monterey:      "c1db27ab61dacf0cd29448e03d4f14d2b34fd0efdc269476190708114678981a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d226a22909e3194f5cbacd4c6bd4f826c57e490ba92259047b4e5662d8854593"
   end
 
-  depends_on "digitalspacestdio/common/icu4c@72.1"
+  depends_on "digitalspacestdio/common/icu4c@74.2"
   depends_on "pkg-config" => :build
 
   def install
@@ -35,7 +36,7 @@ class Php83Intl < AbstractPhp83Extension
                           phpconfig,
                           "--disable-dependency-tracking",
                           "--enable-intl",
-                          "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@72.1"].opt_prefix}"
+                          "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix}"
     system "make"
     prefix.install "modules/intl.so"
     write_config_file if build.with? "config-file"

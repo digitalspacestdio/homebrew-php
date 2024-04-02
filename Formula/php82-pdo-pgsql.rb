@@ -4,21 +4,20 @@ class Php82PdoPgsql < AbstractPhp82Extension
   init
   desc "Unified PostgreSQL driver for PDO"
   homepage "https://github.com/php/php-src/tree/master/ext/pdo_pgsql"
-  revision 1
-
+  revision PHP_REVISION
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b20240c2c8a32e5b19de0b205a0ce9f6745ef11b0f2c26d27021632c84d8b4ff"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "991052832573ad801efc38f491f2afda68000942a756e516ee24962d3ff40447"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f1f90137266f0dd4cae1a52bcb05df09fe768a22069b8d200f91d1ec32fd4b4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "314d2b8efba26fb297309f1548982e388cd071e737f3b1724d9fd53b5cc5ef99"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bb962d000c6ba7c78ff8a80d713ec30896f61da5646b3aebc948e74cb80bd89c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e3a852cc317064ecc7a4ce8d18164ccf1a4df13d3e428fc3648511a9abadfd37"
+    sha256 cellar: :any_skip_relocation, monterey:      "ac8caf5fd336e72315e767d37d5e153c4d0e8ec8b9a402027121bc51735a8c21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcbde018571702781915b44c200cdee6250aa31e45b67f8aa16b7f9a7d44fae9"
   end
 
-  depends_on "libpq"
+  depends_on "digitalspacestdio/common/libpq@16.2-icu4c.74.2"
 
   def extension
     "pdo_pgsql"
@@ -28,7 +27,7 @@ class Php82PdoPgsql < AbstractPhp82Extension
     Dir.chdir "ext/pdo_pgsql"
 
     safe_phpize
-    system "./configure", "--prefix=#{prefix}", "--with-pdo-pgsql=#{Formula["libpq"].prefix}", phpconfig
+    system "./configure", "--prefix=#{prefix}", "--with-pdo-pgsql=#{Formula["digitalspacestdio/common/libpq@16.2-icu4c.74.2"].prefix}", phpconfig
     system "make"
     prefix.install "modules/pdo_pgsql.so"
     write_config_file if build.with? "config-file"

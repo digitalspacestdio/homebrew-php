@@ -10,13 +10,13 @@ class Php72Igbinary < AbstractPhp72Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1534e96d04f1e42c057478153ae5c013ea74acbc73ad50952bea8793862c68f6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1cac83b817ba7d7aebaf3f4d120d2417736b044df2757fb3563bf7ce3a08cf7d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "87b66f0a20bc47006276514d99914c98e8e15b3c5be56cb91026777b694e53d2"
-    sha256 cellar: :any_skip_relocation, ventura:       "7dd3ffb889984ee0d1296912d9cbf0095435abdca9f95b0bd7fae788aa3b4779"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "609bb79d9bbbf2cbf3d162ccedca8efc6aad37300c9a3945b82a27bfb7070608"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ba52e860bc6f3a2821980c72efe7ea6f502cfd89f4ba0882c81d5923d8842ba"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "12a67cc046dac5c1a2e8f7d62616d5fe9a4980e6470735611251de3149d361fd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b8767cf1648efe66735cd109251656e8d063b9555a1de4325b59565797131754"
+    sha256 cellar: :any_skip_relocation, monterey:      "ea77e941564700756812d3fc7f2c50422a2896097268cbe438127a6ecef4f45d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "505e517e4836f1460dc0a18f56ee8ab0ff6a32df9ff270be235e0d26296fff88"
   end
-
+  revision PHP_REVISION
 
   depends_on "igbinary" => :build
 

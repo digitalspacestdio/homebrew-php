@@ -7,7 +7,7 @@ class Php56Proctitle < AbstractPhp56Extension
   url "https://pecl.php.net/get/proctitle-0.1.2.tgz"
   sha256 "b9f84b1aebbee31cee627356438def1321d1f3bcd480341501315f35f0f9e272"
   head "https://github.com/MagicalTux/proctitle.git"
-
+  revision PHP_REVISION
 
   def install
     Dir.chdir "proctitle-#{version}" unless build.head?

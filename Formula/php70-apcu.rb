@@ -7,21 +7,22 @@ class Php70Apcu < AbstractPhp70Extension
   url "https://github.com/krakjoe/apcu/archive/v5.1.8.tar.gz"
   sha256 "09848619674a0871053cabba3907d2aade395772d54464d3aee45f519e217128"
   head "https://github.com/krakjoe/apcu.git"
-  revision 2
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae519604379ff074c915b52cc578ae09319d5266a4f7c3df2192e04ff6f99f03"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4b9bf2844d085e026a0a0adcb2fb70cb69478426280fab47e65a2011542b53f7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "858405b8ffd3fa34051e8a9c9fe4dc5144008297888a7ced8245582f6b98c845"
-    sha256 cellar: :any_skip_relocation, ventura:       "b3ce533f9902dff46fdc6a93206c3f7e1f1c211fb1222da0c16e18f8cf00175e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0903132cff1ed41e7778e757ac47a67c3bd9aba040dc0eaf49a810775ec44fd5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "beee2719bdb6d7f646889417a61b3bcc8f3d30c0a02944ee529b187e35283f6c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "df8df75a15986d1f64fa82db7288773e670a4b405ab47807eeb9fd6d8890e9a4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3c3336eaf43ad087d72ef14e669286ef27a9f448aaa53e0bcc33a7f21e0d771f"
+    sha256 cellar: :any_skip_relocation, monterey:      "ca4b463caa3536831dd7a3cd9be29193ea1e6d0a45771024898c301ed29b34b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d25c70b6b0c6f1c88479b431b24b7ee060405655598d7bff0d37e7f635b3a86"
   end
 
-  depends_on "pcre"
+  depends_on "pcre2"
 
   def install
-    # ENV.universal_binary if build.universal?
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
 
     args = []
     args << "--enable-apcu"

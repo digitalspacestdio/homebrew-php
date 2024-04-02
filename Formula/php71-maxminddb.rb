@@ -6,7 +6,7 @@ class Php71Maxminddb < AbstractPhp71Extension
   homepage "https://github.com/maxmind/libmaxminddb"
   url "https://github.com/maxmind/MaxMind-DB-Reader-php/archive/v1.2.0.tar.gz"
   sha256 "b1d0166ac9d7a2df2ec33c2fd3e2ccfcb556f013c8f58df3610e08bbf7e9c383"
-
+  revision PHP_REVISION
 
   depends_on "libmaxminddb"
 

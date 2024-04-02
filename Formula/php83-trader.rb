@@ -4,9 +4,10 @@ class Php83Trader < AbstractPhp83Extension
   init
   desc "Technical Analysis for traders"
   homepage "https://pecl.php.net/package/trader"
-  url "https://pecl.php.net/get/trader-0.4.0.tgz"
-  sha256 "64400b2331cd843cd1bb684b5d02145ac6c00118565915fe592c6eee3c108784"
-
+  url "https://pecl.php.net/get/trader-0.5.1.tgz"
+  sha256 "3e99cf1066bfb43f026451f343ee81004f231540e7cef5e2574d410b9910de32"
+  head "https://github.com/php/pecl-math-trader.git"
+  revision PHP_REVISION
 
   depends_on "ta-lib"
   depends_on "libtool" => :build

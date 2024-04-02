@@ -6,7 +6,7 @@ class Php70V8js < AbstractPhp70Extension
   homepage "https://pecl.php.net/package/v8js"
   url "https://pecl.php.net/get/v8js-2.1.1.tgz"
   sha256 "0bed0cd24b3c2701d38773636f43dc2d8a8ff243ea220be3e427b8c8f5af3c8b"
-  revision 1
+  revision PHP_REVISION
 
   depends_on "v8"
 

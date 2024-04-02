@@ -4,7 +4,7 @@ class Php73Ldap < AbstractPhp73Extension
   init
   desc "LDAP Support"
   homepage "https://php.net/manual/en/book.ldap.php"
-  revision 26
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL
@@ -12,23 +12,34 @@ class Php73Ldap < AbstractPhp73Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "108c9a8e8bc3413744208abc4f665e73368bbf407f574f03477ecc40645d137c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "10f6040bdcbdf003b298933ab442632143bb5e0d0731f2216afc6387ba48ad23"
-    sha256 cellar: :any_skip_relocation, sonoma:        "56f70d07c70a84ba7f7b3f6cf8d412e693aaac6af1298c29fb11b0b73343e80c"
-    sha256 cellar: :any_skip_relocation, ventura:       "14d20ddbf9b61f4d6fc34a673015893c4114f1e436e4a6dfe6f82ce9fdc2aef9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df5bdbb5a3e7e4b98003002707f996bb8884c6e5e8975b4c3926372981836094"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e600bf4710bd35966a1ff420992ca76ee41276be29fdd725df3572171c30d5a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d2fea195990689ab4c8b6d4e28ca172bed2250454d7fcae537fb5894efe7166f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "69ef88030c69836ff5e809a73caf56c7a8c08605205dccc5db21f05332210739"
+    sha256 cellar: :any_skip_relocation, monterey:      "bdc120d63efa4c2acbaa8d9009fbbe47adb338f7644b3e46052163a6dd6f169b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08ca454545275ebb0094a92267a3b82a1d385d5f38df0414dae15f4f7d7db212"
   end
 
   depends_on "openldap"
 
   def install
     Dir.chdir "ext/ldap"
-
     safe_phpize
-    system "./configure", "--prefix=#{prefix}",
+
+    if OS.mac?
+      ENV["SASL_CFLAGS"] = "-I#{MacOS.sdk_path_if_needed}/usr/include/sasl"
+      ENV["SASL_LIBS"] = "-lsasl2"
+      headers_path = "=#{MacOS.sdk_path_if_needed}/usr"
+      system "./configure", "--prefix=#{prefix}",
+                            phpconfig,
+                            "--disable-dependency-tracking",
+                            "--with-ldap=#{Formula["openldap"].opt_prefix}",
+                            "--with-ldap-sasl#{headers_path}"
+    else
+      system "./configure", "--prefix=#{prefix}",
                           phpconfig,
                           "--disable-dependency-tracking",
                           "--with-ldap=#{Formula["openldap"].opt_prefix}"
+    end
     system "make"
     prefix.install "modules/ldap.so"
     write_config_file if build.with? "config-file"

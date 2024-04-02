@@ -4,7 +4,7 @@ class Php74Zip < AbstractPhp74Extension
   init
   desc "Zip"
   homepage "https://www.php.net/manual/ru/book.zip.php"
-  revision 1
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL
@@ -12,23 +12,24 @@ class Php74Zip < AbstractPhp74Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3cf1a6d6c61c10eec0b734cf326b87f3b2c304ac839a5f3cc2a9734b5950136"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0a469fa8e2a423b1b5a126bb9315483e979f0cbc4c5e66fedd007d3470c1f73e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "08af733dbc2e1de267a7e2f252d2a6650e5d117226bb944108df3fa48071f6ea"
-    sha256 cellar: :any_skip_relocation, ventura:       "ed2866f062820b5df4e7952508c753c8d3553120e185c3a09c91f4a021ea00db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7797d82dc83232d8e106f38a143b40b78a94a3bb8d1739cb3dc440f3afa9444b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "028422f706d5d64bd79d535c1cc6d5122d39c56c1a0f86fd59fdb784ef0bf1bb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d29c54213e3d05c7c32c5b99153e92b082585ca4a7d68b2b6ba698937e6e3d3e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d424216c51afdc6ae8d33f60a433ee6440aa74afb613e56928acc5393d35a44b"
+    sha256 cellar: :any_skip_relocation, monterey:      "00fe2397f87e3bb30c578936a68d85ecdd86db9e097aad2ec9182c2d60e1cfab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f0cb25cf1a94a57b85b3a681b31b9a3bf7e8450692bd173cc3cf6354ecbb97b"
   end
 
   depends_on "libzip"
   depends_on "zlib"
   depends_on "pkg-config" => :build
+  depends_on "pcre2"
 
   def install
-        # Required due to icu4c dependency
+    # Required due to icu4c dependency
     ENV.cxx11
 
-    # icu4c 61.1 compatability
-    #ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
     
     Dir.chdir "ext/zip"
 
@@ -38,7 +39,8 @@ class Php74Zip < AbstractPhp74Extension
                           "--disable-dependency-tracking",
                           "--enable-zip",
                           "--with-libzip=#{Formula["libzip"].opt_prefix}",
-                          "--with-zlib-dir=#{Formula["zlib"].opt_prefix}"
+                          "--with-zlib-dir=#{Formula["zlib"].opt_prefix}",
+                          "--with-external-pcre=#{Formula["pcre2"].opt_prefix}"
     system "make"
     prefix.install "modules/zip.so"
     write_config_file if build.with? "config-file"

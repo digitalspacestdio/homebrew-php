@@ -7,7 +7,8 @@ class Php56FastAssert < AbstractPhp56Extension
   url "https://github.com/box/fast_assert/archive/v0.1.1.tar.gz"
   sha256 "f8bdd0dc3c6a76e492047016a62aaf0cfe3d3394b4495c3e4cfee75d74ef5e77"
   head "https://github.com/box/fast_assert.git"
-
+  revision PHP_REVISION
+  
   def extension
     "fast_assert"
   end

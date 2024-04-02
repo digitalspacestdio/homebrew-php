@@ -7,7 +7,7 @@ class Php71Couchbase < AbstractPhp71Extension
   url "https://pecl.php.net/get/couchbase-2.4.3.tgz"
   sha256 "98c0d7acf6dd1b3930c25f8902decc98a334891736e460124557065e720d7a96"
   head "https://github.com/couchbase/php-couchbase.git"
-
+  revision PHP_REVISION
 
   depends_on "digitalspacestdio/php/php71-igbinary"
   depends_on "igbinary" => :build

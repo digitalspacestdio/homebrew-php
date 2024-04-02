@@ -1,22 +1,22 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
 class Php73Mongodb < AbstractPhp73Extension
-  init
+  init PHP_VERSION, false
   desc "MongoDB driver for PHP."
   homepage "https://pecl.php.net/package/mongodb"
   url "https://github.com/mongodb/mongo-php-driver/releases/download/1.9.0/mongodb-1.9.0.tgz"
   sha256 "1a9e7117b749c2dd63bd3493bf38c24a9acd11646ec96a0d92ba6380eee0ab9a"
   head "https://github.com/mongodb/mongo-php-driver.git"
   version "1.9.0"
-  revision 2
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3ee90c452a59fbf58a8676d88e4a6bf03070b4e6fab50068c06041b16b82968"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "264de1cd4e1e6e72e812de736a674a5cf803b5d04e48d630f4998f0313332551"
-    sha256 cellar: :any_skip_relocation, sonoma:        "16af49b4c916ac8702a6dd60fca89db2536a291d851b2ea2804e1b13c97fadee"
-    sha256 cellar: :any_skip_relocation, ventura:       "33a1ab693bfb45ac317506efde4c4686fc6832820ce07bce1f6abd1c3a47a2ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7f522c4ff96b83af13f06d0108cf4e28666e71de0fa320f88caa60af4ce491a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7bd3d9bf50765afd4ae2b4c2d21c06924123efbb70cdc28c477637e7dea0537a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1588e36485805a0b17134df403ea59926ff18f6491c084d06668d904934bc054"
+    sha256 cellar: :any_skip_relocation, sonoma:        "50931140dd7d03460e804d39c7d58c5efc0f5c6c452265c28cf420be8bd8120d"
+    sha256 cellar: :any_skip_relocation, monterey:      "bfdf0a4b961981532c8449dd33c771a70d205b7bc0e92278039bbfbe6da16082"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e5e73dc69e4f5fc52a8cd0663b0f160154c75e562bb3bd2714d236da0cc96ec"
   end
 
   depends_on "openssl"

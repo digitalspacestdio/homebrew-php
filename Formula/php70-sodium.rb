@@ -7,19 +7,23 @@ class Php70Sodium < AbstractPhp70Extension
   url "https://github.com/jedisct1/libsodium-php/archive/2.0.10.tar.gz"
   sha256 "2eebf3772d7441449b47abfe8f52043b9c6d6b5aff66aebd339c5d459d7fca28"
   head "https://github.com/jedisct1/libsodium-php.git"
-
+  revision PHP_REVISION
+  
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2a7382f59ea6d734b52b2be74b5920afb4048772de87e8dfaf8a0e815e55e88d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "df615a45361ced9a6c6990c4c2256e532d152f2134eb6cdc727962e91a104a66"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bd88fa262697e8fb0b8c216457e649368e2f889110af9bfa9c599e24a295beb0"
-    sha256 cellar: :any_skip_relocation, ventura:       "bd1938aaa9d0374be6a40dd9aa06ef0af06fe597839b4c3d11f5a160c938b9f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c36faf20a67378ec32bcccc8e0b95bd2f0f9afdb1b65e0ca11114166dbfecde1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "54a28baeaef31ff1fdade9b98c2c91371531360acd0bd55877ee6bedd6e55c08"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "683e85beffa565d6549f912dbe684419d8dcbfe65222a4ea7eb1e41e6814c7dc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bc232673d65559a598729e688d6aa68f14d9820ceac0c6c61e818c2a567c72a9"
+    sha256 cellar: :any_skip_relocation, monterey:      "d069968379d81c939249f0d07ccecb2ee496a251963a3cfc139fa2520a296e52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2bc9549a9a2cdc74ba036e9ce643425f85e4065431496c8cf448f6fc39b555f"
   end
 
   depends_on "libsodium"
 
   def install
+    ENV.append "LDFLAGS", "-L#{Formula["libsodium"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["libsodium"].opt_prefix}/include"
+
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                               "--with-sodium=#{Formula['libsodium'].opt_prefix}",

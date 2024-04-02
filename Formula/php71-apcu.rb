@@ -10,17 +10,18 @@ class Php71Apcu < AbstractPhp71Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8adf9a1eae073d7382193df38c19e0290f9839b9559975d11dc8428dda57c67"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d0286f03e4dcf435f9f08cfc47e0333fd65ae84274579b8edc57d1cae299c309"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f05a5fa8179e0db1a735a86ca913d4dcbaba12266f5a738c8f52550142c9c9e6"
-    sha256 cellar: :any_skip_relocation, ventura:       "4e84d8262dc3f24691dfa1236bf0c86600a71d073b5713511ec9cde2cdbdb9b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bed9f103220a8b74cff69a9851d2b904aadd90a20e407d4dc4bf3728dc11af5f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45ba6f8e077b452ab90984287f0bbcf34bdb2f7105edd7dbdd4ab911587c9195"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b319cd52dea028cf99d5594d50928c179da15540cdf32dfa01b5379a7d7cc318"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aa534be574cf0f9c578aa87b434501618cc2db4171f58e48725c985a1e6cf858"
+    sha256 cellar: :any_skip_relocation, monterey:      "b32cf737ca6bfb1138f6c1a2197928743c9b24333fc8fcb950500fb16c859e9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8af31db021f572f2a486d099afb9e1edab1e75378534f3cb428f6c972be98b0c"
   end
-  depends_on "pcre"
-  revision 2
+  depends_on "pcre2"
+  revision PHP_REVISION
 
   def install
-    # ENV.universal_binary if build.universal?
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
 
     args = []
     args << "--enable-apcu"

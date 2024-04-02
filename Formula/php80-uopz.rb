@@ -7,7 +7,7 @@ class Php80Uopz < AbstractPhp80Extension
   url "https://github.com/krakjoe/uopz/archive/v5.0.2.tar.gz"
   sha256 "919f6d7873db89a2032e0145a8e7a355d111f9ab2651aa3fa78b636277034dab"
   head "https://github.com/krakjoe/uopz.git"
-
+  revision PHP_REVISION
 
   def install
     safe_phpize

@@ -8,7 +8,7 @@ class Php81Memprof < AbstractPhp81Extension
   sha256 "2f9f3e2c6f3adefd370082d548c97b66f51191424c9a7a1697ed82273ff9a325"
   head "https://github.com/arnaud-lb/php-memory-profiler.git", :branch => "master"
   version "9a47f88"
-
+  revision PHP_REVISION
   depends_on "libjudy"
 
   def install

@@ -1,31 +1,25 @@
 require File.expand_path("../../Abstract/abstract-php", __FILE__)
 
 class Php80 < AbstractPhp
-  init
-  desc "PHP Version 8"
   include AbstractPhpVersion::Php80Defs
+  init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
+  desc "PHP " + PHP_VERSION
   version PHP_VERSION
   revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "630d0beaee314cf7e98ba422e3bfc5e394e8f625ec8b599ba921e96cf9c6ec6b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "70bf34b067f008e3ddaa37c5ab332cc97fe5452ebf82bb94dfa12d1f85fbebcf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f6ba35401f42f4ee60de0768f5ee5b432b5fdbf5e2ea5a0d173aae6c2912a8ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bda7c383d3a4655ad85251614b6f628ac27851970a0e14cb06f1880e3553b6ac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd67b38f28eae46b278600f1aa4b703effb707be0959ed4c76adf0b64389f43a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cff0d78c605b2b630e538cd55905999df9920c1da835380353777d07edf69db5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "44e3cb1611f76945717a2aadda0ba4ef5912818ad15404236b1b33733f5801e4"
+    sha256 cellar: :any_skip_relocation, monterey:      "cddfbcad6aca6a28ce4bd913a6d61e4a1d503b139db034dac903cc4beac3e97c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "870138fd1be22a43606eac609864abfbf975f8af12459dda8f4a589c068d1872"
   end
-  keg_only :versioned_formula
-  depends_on "pkg-config" => :build
-  depends_on "krb5"
-  depends_on "oniguruma"
-  depends_on "libjpeg"
-
-  include AbstractPhpVersion::Php80Defs
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
-
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
+  keg_only :versioned_formula
 
   def php_version
     "#{PHP_VERSION_MAJOR}"
@@ -34,6 +28,11 @@ class Php80 < AbstractPhp
   def php_version_path
     "#{PHP_BRANCH_NUM}"
   end
+  
+  depends_on "pkg-config" => :build
+  depends_on "krb5"
+  depends_on "oniguruma"
+  depends_on "libjpeg"
 
   def install_args
     args = super

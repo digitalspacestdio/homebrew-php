@@ -4,7 +4,7 @@ class Php81PdoPgsql < AbstractPhp81Extension
   init
   desc "Unified PostgreSQL driver for PDO"
   homepage "https://github.com/php/php-src/tree/master/ext/pdo_pgsql"
-  revision 1
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL
@@ -12,13 +12,14 @@ class Php81PdoPgsql < AbstractPhp81Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f9967a4fe0a397ff7f6ce57b41a5a2b16e11aa6c5a6841dd26a76dd36a130f2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "12d0dcee643b324b4fa7052aff0d906f687a8a04aa12cfaa2f8bdfceb1c573d1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6efe5fd263ccb44f08fdf7fead845c9a3261ab7f43df53bb4d3b1c023ffa6306"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d9cca8ba90d73c147073d1f56e471a5ca456ddc4a6076ae40be53b587468c07"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b25d04cf18c3e5353ae64b95229ea47c324e113f8cb9fc13b964e9e462501a3a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9f859180ec6ce66cd8fc53921c22381b48cdbbe7e493235bb306007297c6f4aa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "40d29abd994d41cf073ab04444d6b1eec8deb47692fa070fa9458cd421de4599"
+    sha256 cellar: :any_skip_relocation, monterey:      "1fe4667c5690692be929be00bd8c85e6e35af0c1caf7fc4935c3ea7b80a4684d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "486f26fe864dee312e5c1273e010432e31a63441c586c350ee5c5dabd2e8989e"
   end
 
-  depends_on "libpq"
+  depends_on "digitalspacestdio/common/libpq@16.2-icu4c.74.2"
 
   def extension
     "pdo_pgsql"
@@ -28,7 +29,7 @@ class Php81PdoPgsql < AbstractPhp81Extension
     Dir.chdir "ext/pdo_pgsql"
 
     safe_phpize
-    system "./configure", "--prefix=#{prefix}", "--with-pdo-pgsql=#{Formula["libpq"].prefix}", phpconfig
+    system "./configure", "--prefix=#{prefix}", "--with-pdo-pgsql=#{Formula["digitalspacestdio/common/libpq@16.2-icu4c.74.2"].prefix}", phpconfig
     system "make"
     prefix.install "modules/pdo_pgsql.so"
     write_config_file if build.with? "config-file"

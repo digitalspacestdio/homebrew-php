@@ -6,7 +6,7 @@ class Php56PdoDblib < AbstractPhp56Extension
   homepage "https://github.com/php/php-src/tree/master/ext/pdo_dblib"
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
-  revision 6
+  revision PHP_REVISION
 
 
   depends_on "freetds"

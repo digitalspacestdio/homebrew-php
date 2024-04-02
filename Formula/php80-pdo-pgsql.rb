@@ -4,7 +4,7 @@ class Php80PdoPgsql < AbstractPhp80Extension
   init
   desc "Unified PostgreSQL driver for PDO"
   homepage "https://github.com/php/php-src/tree/master/ext/pdo_pgsql"
-  revision 21
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL
@@ -12,14 +12,14 @@ class Php80PdoPgsql < AbstractPhp80Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b627eb864a52f53c1bc8469bcff4c5e4084c6919cbf9fb3332ac80f5ce4f8a95"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9e4c65b42a97199b9b1e1dac8acc3a04076d53258c33dc0b8aec0aad46a0cdae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "939321c551db02fe509b93f15c73d25324630bc23ca2579e67f743d429729ee8"
-    sha256 cellar: :any_skip_relocation, ventura:       "93f6b00d84b6e2523762b774d1af673a6b27939a32ab17589cb4d39dd2fab2bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "360e02d843bba742b6ff7b5678b4e780828110a081886209aa0d5d2adceee715"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7537016473c289cdd45429a4be5cb164b5e5d10d25dc8b1d4816918269431b71"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4c4a4670494cc0494ea8f7867abaff3f306b7a2e0066e8429aa2253ebe10510c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "896342c029548bb8c60c303e46687ba882ce3802a0f1df693690da8dad441ccc"
+    sha256 cellar: :any_skip_relocation, monterey:      "91f780c4a88986f647e184749e7fd5d96b95376796c98daa556687f71761cba7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bec7c7aebeea5484e012b1b495514a1f9bc901a488a8848551db6cbe191e61a"
   end
 
-  depends_on "libpq"
+  depends_on "digitalspacestdio/common/libpq@16.2-icu4c.74.2"
 
   def extension
     "pdo_pgsql"
@@ -29,7 +29,7 @@ class Php80PdoPgsql < AbstractPhp80Extension
     Dir.chdir "ext/pdo_pgsql"
 
     safe_phpize
-    system "./configure", "--prefix=#{prefix}", "--with-pdo-pgsql=#{Formula["libpq"].prefix}", phpconfig
+    system "./configure", "--prefix=#{prefix}", "--with-pdo-pgsql=#{Formula["digitalspacestdio/common/libpq@16.2-icu4c.74.2"].prefix}", phpconfig
     system "make"
     prefix.install "modules/pdo_pgsql.so"
     write_config_file if build.with? "config-file"

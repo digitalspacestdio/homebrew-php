@@ -1,22 +1,22 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
 class Php81Mongodb < AbstractPhp81Extension
-  init
+  init PHP_VERSION, false
   desc "MongoDB driver for PHP."
   homepage "https://github.com/mongodb/mongo-php-driver"
   url "https://github.com/mongodb/mongo-php-driver/releases/download/1.15.1/mongodb-1.15.1.tgz"
   sha256 "b2038e778d71f45cadb8c93a30eb548e5c2c1e4f832807a775ed516b7816b749"
   head "https://github.com/mongodb/mongo-php-driver.git"
   version "1.15.1"
-  revision 2
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d7223d2195d145eb00b49ae4b10a25b0174eaefa63b740e00335eca65ce3c5b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7a59cdea587e7ab156e7cda60ea4136c6ecc33134e52992948f780c1f877ed55"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5233594492028b04258b90a59ef3b140e1f5ba8ca1152dbf233000396a9732cd"
-    sha256 cellar: :any_skip_relocation, ventura:       "a5a49b294a89d782ef73f7df83bcfbf2c56457d800b5cd8424ac542288eaab0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62e438d0e6756226b12aab461b7a4b951ee6518f61aead2b5559c3bf3a6aa832"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f202c64f5498d2e6f887c7655a0cdd6a70128aed6164860d8834442fb04c17eb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2cc6fa9f9f77dfedcf6fb561faf1b041abbea946c8c2f05f8e5f9e28d49127ec"
+    sha256 cellar: :any_skip_relocation, sonoma:        "75781f80eaaf64a15bbcf8454228443872e99df403fa80a0e2215634996eea05"
+    sha256 cellar: :any_skip_relocation, monterey:      "ace4d6b7eddbd3ba3bf028b5abaeb969e6437bd96dd883ab34297cfc48bbba83"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a36f51c46d03e6251e9199a17af43170f0ed8486a0cdc521efd8a825fbe3f56"
   end
 
   depends_on "openssl"

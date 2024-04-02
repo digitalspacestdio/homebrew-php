@@ -7,7 +7,7 @@ class Php71Zmq < AbstractPhp71Extension
   url "https://pecl.php.net/get/zmq-1.1.3.tgz"
   sha256 "c492375818bd51b355352798fb94f04d6828c6aeda41ba813849624af74144ce"
   head "https://github.com/mkoppanen/php-zmq.git"
-
+  revision PHP_REVISION
 
   depends_on "pkg-config" => :build
   depends_on "zeromq"

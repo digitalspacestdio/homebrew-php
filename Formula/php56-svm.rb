@@ -7,7 +7,7 @@ class Php56Svm < AbstractPhp56Extension
   url "https://github.com/ianbarber/php-svm/archive/0.1.9.tar.gz"
   sha256 "c3dabf7220766193fcb87514559e89c1a9ec0017f510fc58cb98b3ac52819734"
   head "https://github.com/ianbarber/php-svm.git"
-
+  revision PHP_REVISION
 
   depends_on "libsvm"
 

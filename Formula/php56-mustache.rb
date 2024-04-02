@@ -8,7 +8,7 @@ class Php56Mustache < AbstractPhp56Extension
   sha256 "5eb0a25d42532db98e2e9087e49db060369651b16ac1accd61415424a47561f7"
   head "https://github.com/jbboehr/php-mustache.git"
 
-
+  revision PHP_REVISION
   depends_on "libmustache"
 
   def install

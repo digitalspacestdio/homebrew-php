@@ -1,28 +1,24 @@
 require File.expand_path("../../Abstract/abstract-php", __FILE__)
 
 class Php72 < AbstractPhp
-  init
-  desc "PHP Version 7.2"
   include AbstractPhpVersion::Php72Defs
+  init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
+  desc "PHP " + PHP_VERSION
   version PHP_VERSION
   revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "289c0831f47294a7d26d95f8c2c91dd5420db6a96d2632fd56bc97d0aad1590b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a5b69fc3b0a64613813f51cb14b4673cce585d528ca1ba02a384744b03f60843"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cd278124e224e3eafab58a8b1aca6b3b50c4ad6e42aaacc89ebfc4cf2b772f67"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cda7b9693fddb1ad19a28f2e4f10f1b77deb67741503b33d537c8552ae75a5c1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ec1ca7eb8dfdd60fcd77b16539ce39bda1dfc97a649eb11cb86418b9a4c8ad2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e8fb44265105b31695b618bda91fb9f23155f211aaff86a2a781a241845ecbdf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "936bc5a29e14c864204c89e3bb695ec4d79f86865b87b512bb4715567954e139"
+    sha256 cellar: :any_skip_relocation, monterey:      "d68ae4c3f30430454dd5304cc6b8abc12ea238e911771e510517e2d1416a761a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0bf0970eae57e32194384d3b85c736cfdf4288091afa97b46a5481e22e0adb8"
   end
-  keg_only :versioned_formula
+  
   depends_on "libjpeg"
 
-  include AbstractPhpVersion::Php72Defs
-
-  url PHP_SRC_TARBALL
-  sha256 PHP_CHECKSUM[:sha256]
-
-  head PHP_GITHUB_URL, :branch => PHP_BRANCH
+  keg_only :versioned_formula
 
   def php_version
     "#{PHP_VERSION_MAJOR}"
@@ -31,6 +27,10 @@ class Php72 < AbstractPhp
   def php_version_path
     "#{PHP_BRANCH_NUM}"
   end
+  
+  url PHP_SRC_TARBALL
+  sha256 PHP_CHECKSUM[:sha256]
+  head PHP_GITHUB_URL, :branch => PHP_BRANCH
 
   def install_args
     args = super

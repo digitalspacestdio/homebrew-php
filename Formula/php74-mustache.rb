@@ -7,7 +7,7 @@ class Php74Mustache < AbstractPhp74Extension
   url "https://github.com/jbboehr/php-mustache/archive/v0.7.2.tar.gz"
   sha256 "5eb0a25d42532db98e2e9087e49db060369651b16ac1accd61415424a47561f7"
   head "https://github.com/jbboehr/php-mustache.git"
-
+  revision PHP_REVISION
 
   depends_on "libmustache"
 

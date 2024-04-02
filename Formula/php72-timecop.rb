@@ -7,7 +7,7 @@ class Php72Timecop < AbstractPhp72Extension
   url "https://github.com/hnw/php-timecop/archive/v1.2.10.tar.gz"
   sha256 "43318cca7022783b1f815466e8e447cbcf0afa9f3bef008caee8446fad7f34c4"
   head "https://github.com/hnw/php-timecop.git"
-
+  revision PHP_REVISION
 
   def install
     safe_phpize

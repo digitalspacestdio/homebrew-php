@@ -6,7 +6,7 @@ class Php56Thrift < AbstractPhp56Extension
   homepage "https://thrift.apache.org/"
   url "https://github.com/apache/thrift/archive/0.9.2.tar.gz"
   sha256 "1eacc3d65b910fadf7969326285170d33cbe9fe30cc7bf421916f753edb3dabb"
-
+  revision PHP_REVISION
 
   def module_path
     prefix / "thrift_protocol.so"

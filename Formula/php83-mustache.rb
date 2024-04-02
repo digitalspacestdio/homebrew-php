@@ -4,10 +4,10 @@ class Php83Mustache < AbstractPhp83Extension
   init
   desc "Mustache PHP Extension"
   homepage "https://github.com/jbboehr/php-mustache#mustache"
-  url "https://github.com/jbboehr/php-mustache/archive/v0.7.2.tar.gz"
-  sha256 "5eb0a25d42532db98e2e9087e49db060369651b16ac1accd61415424a47561f7"
+  url "https://github.com/jbboehr/php-mustache/archive/v0.9.3.tar.gz"
+  sha256 "310f7b29c359fd7af00704bfdbaa9d22b11ff947a12231d2e16a1a7e886d88a5"
   head "https://github.com/jbboehr/php-mustache.git"
-
+  revision PHP_REVISION
 
   depends_on "libmustache"
 

@@ -7,28 +7,25 @@ class Php73Apcu < AbstractPhp73Extension
   url "https://github.com/krakjoe/apcu/archive/v5.1.17.tar.gz"
   sha256 "e6f6405ec47c2b466c968ee6bb15fc3abccb590b5fd40f579fceebeb15da6c4c"
   head "https://github.com/krakjoe/apcu.git", :branch => "master"
-  revision 3
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44de94eafe978481aaccf7eef0df948e638287e11cd0bea309eeeb57c9ef186f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "76ac3c15041ba8a2594a1946eb4d3c85ab32799e0e8ca132dd334578dff79b4f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5b4dfd43afba31ec06f3e689f53f4ac7f33c84ccdc7513eec121538f70dd1929"
-    sha256 cellar: :any_skip_relocation, ventura:       "253ceb4bd887f1996c3c119906b16206cd872a98f5f967d4cd1d5ca86ff635c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11bf8546ad5ff69543794a4c0a25de2938c574aab090752f3986dbe5d4e02004"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f4408edc447d77e376139e4e88a733c0ceba467c5c52a7900aca4f73ef81137"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9e98e9381d0c6872392e8635912cdcd974f4af263e79b5c5da7f89949134cf04"
+    sha256 cellar: :any_skip_relocation, sonoma:        "588e57751822e7dc72e296e0776c03ed6e4fced44a01dacc2f091b5962db857c"
+    sha256 cellar: :any_skip_relocation, monterey:      "cdd1874d87f5e0b242f49f8a9fdec65e936b09f87b7859e5cb0aa64ec671d198"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df67de3cad5c551416f2cc22112856dac73d4275ee9e7e0b171eb4db01f2a6a2"
   end
 
-  depends_on "pcre"
+  depends_on "pcre2"
 
   def install
-    pcre = Formula["pcre"]
-    cc_opt = "-I#{pcre.opt_include}"
-    ld_opt = "-L#{pcre.opt_lib}"
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
 
     args = []
     args << "--enable-apcu"
-    args << "--with-cc-opt=#{cc_opt}"
-    args << "--with-ld-opt=#{ld_opt}"
 
     safe_phpize
 

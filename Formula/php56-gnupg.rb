@@ -6,7 +6,7 @@ class Php56Gnupg < AbstractPhp56Extension
   homepage "https://pecl.php.net/package/gnupg"
   url "https://pecl.php.net/get/gnupg-1.3.6.tgz"
   sha256 "50065cb81f1ac3ec5fcd796e58c8433071ff24cc14900e6077682717f5239307"
-
+  revision PHP_REVISION
 
   depends_on "gpgme"
 

@@ -6,7 +6,7 @@ class Php56Qr < AbstractPhp56Extension
   homepage "http://pecl.opendogs.org/"
   url "http://pecl.opendogs.org/get/qr-0.4.0.tgz"
   sha256 "0d628741d77f34207a00cc0b84967ecf4ccb38f03e65105573ecfead8c76f114"
-
+  revision PHP_REVISION
 
   patch :DATA
 

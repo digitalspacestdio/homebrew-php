@@ -6,7 +6,7 @@ class Php56Sphinx < AbstractPhp56Extension
   homepage "https://pecl.php.net/package/sphinx"
   url "https://pecl.php.net/get/sphinx-1.3.2.tgz"
   sha256 "0c3ada36833a44a8147d2dd1b907548010ae53de0a05041a77e68dee036130e6"
-
+  revision PHP_REVISION
 
   depends_on "libsphinxclient"
 

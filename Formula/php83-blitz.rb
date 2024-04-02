@@ -4,11 +4,11 @@ class Php83Blitz < AbstractPhp83Extension
   init
   desc "Blitz, the fasted template engine for PHP!"
   homepage "http://alexeyrybak.com/blitz/blitz_en.html"
-  url "https://github.com/alexeyrybak/blitz/archive/0.10.2-PHP7.tar.gz"
-  version "0.10.2"
-  sha256 "202752e825ae035989cbcb0094ef7ec8e0791d0741d36c4b14077b155310597f"
+  url "https://github.com/alexeyrybak/blitz/archive/blitz-v0.10.6-PHP8.tar.gz"
+  version "0.10.6"
+  sha256 "28718ec87f869edc48618547b36145b3e5ff477a5d70708384e0356eae3f3fd1"
   head "https://github.com/alexeyrybak/blitz.git"
-
+  revision PHP_REVISION
 
   def install
     safe_phpize

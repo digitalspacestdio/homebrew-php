@@ -4,11 +4,10 @@ class Php83Swoole < AbstractPhp83Extension
   init
   desc "Event-driven asynchronous & concurrent networking engine for PHP."
   homepage "https://pecl.php.net/package/swoole"
-  url "https://github.com/swoole/swoole-src/archive/v2.0.7.tar.gz"
-  sha256 "d8370a5f959f2d4082f5b2cec2e3a5b294dd3d7f586a5c7a19e3d154b48c699b"
+  url "https://github.com/swoole/swoole-src/archive/v5.1.2.tar.gz"
+  sha256 "89d88ef2f7dfca96d4ff74febc62ec78ccbf92996176107cf30d538b30dee1ba"
   head "https://github.com/swoole/swoole-src.git"
-  revision 1
-
+  revision PHP_REVISION
 
   def install
     safe_phpize

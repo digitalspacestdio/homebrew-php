@@ -11,29 +11,26 @@ class Php74Apcu < AbstractPhp74Extension
   sha256 "9f8ddc1232328108c29714fc7686db476dd630ffb94004f0fa055e1eae68dd26"
   head "https://github.com/krakjoe/apcu.git", :branch => "master"
   version "1f98e34"
-  revision 3
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d289b8d1654fbb318f2d72d24c522533ecd50ea9cc90300604fa76a4b2bf0f84"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "364c71a90859925c651e4e1ed92d7d6f3187bdf8376813fa1d67a6fbe4248380"
-    sha256 cellar: :any_skip_relocation, sonoma:        "49bcee57b5912bbcc3ddd28fb5201d53cf499902b9e662d4df3e75b19d8cfb8e"
-    sha256 cellar: :any_skip_relocation, ventura:       "5dcc64569188193e8b9183bf1ef17769ec045283f5cb1c97ca16dfbef542a63d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fd377327cfdd027113c0baf2183ecd153191095724592c9d0a141937e3abacc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a57a6405c50c99cf064cbc4fd49d130b4ae4197b2870814766eb8fa63e270e2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "549aeb587dbbd5f39f44027f434a12c9748b1a73d5530e63f634397041f89fdb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4220af5e74274b49c979f839a8ed9135e1a11c680ebc8731e6cc82ec1660eeba"
+    sha256 cellar: :any_skip_relocation, monterey:      "a43dc9d8cda72194896e20080c502e131fcbbb4ab63dbff26e76cf987a0c3bae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afdbb45b57564d1e1df978737fc58ba2e0b2dbc1c02023f78ebf75159dfb3139"
   end
 
-  depends_on "pcre"
+  depends_on "pcre2"
 
   def install
 
-    pcre = Formula["pcre"]
-    cc_opt = "-I#{pcre.opt_include}"
-    ld_opt = "-L#{pcre.opt_lib}"
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
 
     args = []
     args << "--enable-apcu"
-    args << "--with-cc-opt=#{cc_opt}"
-    args << "--with-ld-opt=#{ld_opt}"
 
     safe_phpize
 

@@ -4,10 +4,10 @@ class Php83Ast < AbstractPhp83Extension
   init
   desc "Exposing PHP 7 abstract syntax tree"
   homepage "https://github.com/nikic/php-ast"
-  url "https://github.com/nikic/php-ast/archive/v0.1.5.tar.gz"
-  sha256 "a1fcc1c9a2c48a1bda5d3f18a8616e3964c25d4d10a23d9f97fb2af46712e42e"
+  url "https://github.com/nikic/php-ast/archive/v1.1.1.tar.gz"
+  sha256 "88ba775e88b420b8ceb8d6ab5695653dfad4aaf440332927ca43dbf9355caae3"
   head "https://github.com/nikic/php-ast.git"
-  revision 1
+  revision PHP_REVISION
 
 
   def install

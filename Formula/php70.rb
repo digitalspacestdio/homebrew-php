@@ -1,26 +1,25 @@
 require File.expand_path("../../Abstract/abstract-php", __FILE__)
 
 class Php70 < AbstractPhp
-  init
-  desc "PHP Version 7.0"
   include AbstractPhpVersion::Php70Defs
+  init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
+  desc "PHP " + PHP_VERSION
+  url PHP_SRC_TARBALL
+  sha256 PHP_CHECKSUM[:sha256]
+  head PHP_GITHUB_URL, :branch => PHP_BRANCH
   version PHP_VERSION
   revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04bc19cbb806ca9d33da5dd047406b3e2b56da4ce9db29e3477c724ccbd01c43"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7a73d0a6bc99317bc524c90799b88a05d62fa86e8ed3d3eda152e25ed99705c6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8969f978fcff025cf8b8ec411c905b454f95593eebaa2c295317396379739221"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de65c088ab8adf31c2c6471a997c1817d391b4e1d43fb24a781cf4a92a797988"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "557aabffa6b4db2f42c72b56c4fe69908e60a85ad2aa0c5a2a251cd38b66b2ab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "20c356baff68735e7e9ea8d44bf79e76db498dfce173ae8428e7f0c0baedba09"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bc9843291433def17d6d81feb39b7464b288c9dfd928cc2e78df1b5c5a6d7bfc"
+    sha256 cellar: :any_skip_relocation, monterey:      "7994564af64d8c8184b21e2c8781413445c9aaade76ca78615227f379620b331"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32b0483d1d4e9e1d73a442555a9ac62283ef98ab8f52808b0b70598f2b39b09f"
   end
+
   keg_only :versioned_formula
-  include AbstractPhpVersion::Php70Defs
-
-  url PHP_SRC_TARBALL
-  sha256 PHP_CHECKSUM[:sha256]
-
-  head PHP_GITHUB_URL, :branch => PHP_BRANCH
 
   def php_version
     "#{PHP_VERSION_MAJOR}"
@@ -28,6 +27,18 @@ class Php70 < AbstractPhp
 
   def php_version_path
     "#{PHP_BRANCH_NUM}"
+  end
+
+  patch do
+    url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/icufix/Patches/php70/Fix-Wimplicit-function-declaration_in_configure.patch"
+    sha256 "650193d19b0a033c33e9f420bb5a262699cb60d04d363c714858816ed33d281d"
+  end
+
+  if OS.mac?
+    patch do
+      url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php72/macos.patch"
+      sha256 "cf28218565c07b26d0764e903b24421b8095a6bbc68aded050b9fe0cc421729d"
+    end
   end
 
   service do

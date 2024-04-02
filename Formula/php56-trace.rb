@@ -7,7 +7,7 @@ class Php56Trace < AbstractPhp56Extension
   url "https://pecl.php.net/get/trace-1.0.0.tgz"
   sha256 "068a5c168ee3fd4249cb41ea98a84affc1f8023d3b5745c0d8f9a305c2d672b1"
   head "https://github.com/Qihoo360/phptrace.git"
-
+  revision PHP_REVISION
 
   def install
     Dir.chdir "trace-#{version}/extension" unless build.head?

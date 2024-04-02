@@ -4,7 +4,7 @@ class Php71Opcache < AbstractPhp71Extension
   init
   desc "OPcache improves PHP performance"
   homepage "https://php.net/manual/en/book.opcache.php"
-  revision 20
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL
@@ -12,14 +12,14 @@ class Php71Opcache < AbstractPhp71Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "167930cf81c4450cc037d34066c3abf3896d94ec21b33f72c846b300f6c2e70e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3c61cc8d7427d18d08c396be767d2a9adc39e849aef2e82622134c950b7c9319"
-    sha256 cellar: :any_skip_relocation, sonoma:        "30b75a3be58831293ec90e3f0560823b5e84943be86d4a14f752b15dd1f3a125"
-    sha256 cellar: :any_skip_relocation, ventura:       "d7f3551ed368bb48c751605abdc7dca155c7d0f654c06472d32422bf0684993c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "827e7fcf484d7f7a8ba97cc74e0d49d85d7faa7e3ca84c94a14a720f40ac8ecf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c828571c87fe9d3db4f527c6a2e6d5ebf2ed0db85b1a5a6dc471abb06c2ce85e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8657538fe299c2dbb061698870db6fad411311f452c13d7dfc343b9c056fdaa7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "10970f8377d910caf12f00ee536001c41e43a6d9fe9dbdcb498b647432708148"
+    sha256 cellar: :any_skip_relocation, monterey:      "4ddcbce23cff83c126bd188367ee267175991bd43807609d1058c0694a1d8b50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb88596185520adb3d1149ff96f96a56dc468551e6654d398b90a52177fe5fea"
   end
 
-  depends_on "pcre"
+  depends_on "pcre2"
 
   def extension_type
     "zend_extension"
@@ -27,6 +27,9 @@ class Php71Opcache < AbstractPhp71Extension
 
   def install
     Dir.chdir "ext/opcache"
+
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",

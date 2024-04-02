@@ -4,7 +4,7 @@ class Php83Zip < AbstractPhp83Extension
   init
   desc "Zip"
   homepage "https://www.php.net/manual/ru/book.zip.php"
-  revision 1
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL
@@ -12,21 +12,23 @@ class Php83Zip < AbstractPhp83Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1684d8181827cfa6ce878d04b27b0b6862389183f706ebc898a265e3e78c7b23"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0f17f06286dd1629db801e797963517c011afd4cbe412686ed172364d675530e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "61d052f59a58866a9f64a9edc978ce3af8bcc2ee1244916d4a3f24d654cf84ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23ce26ad7969816f688b33d7743ce052a735a88a3405fb33f0063466cc124a24"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e672ca8814891a806a706d1e47dae797462dd0941c3d96159d18fd0bb7e74b7f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "101cbf222d42ebf6b277ec84e0d1f8c350aa278a6d212f63c5dc4f67dcc06616"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9c56c58d37629eb138d7ee10a396620da058a939021f94e4e8629918f6c51cd4"
+    sha256 cellar: :any_skip_relocation, monterey:      "477540a6ef74e8d7eadb6d84514bb6372a56c5c64c29c1bbc40f819686002c89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40ef3b6961e227d90070014544f46f21bde950c40872695c3ea7862c775e992a"
   end
 
   depends_on "libzip"
   depends_on "pkg-config" => :build
+  depends_on "pcre2"
 
   def install
     # Required due to icu4c dependency
     ENV.cxx11
 
-    # icu4c 61.1 compatability
-    #ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
     
     Dir.chdir "ext/zip"
 
@@ -35,7 +37,8 @@ class Php83Zip < AbstractPhp83Extension
                           phpconfig,
                           "--disable-dependency-tracking",
                           "--enable-zip",
-                          "--with-libzip=#{Formula["libzip"].opt_prefix}"
+                          "--with-libzip=#{Formula["libzip"].opt_prefix}",
+                          "--with-external-pcre=#{Formula["pcre2"].opt_prefix}"
     system "make"
     prefix.install "modules/zip.so"
     write_config_file if build.with? "config-file"

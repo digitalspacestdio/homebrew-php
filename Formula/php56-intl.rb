@@ -6,12 +6,15 @@ class Php56Intl < AbstractPhp56Extension
   homepage "https://php.net/manual/en/book.intl.php"
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
-  revision 17
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "17362f2e563b1eb6b2f65717b5f8a41934c342fb914538e2b2d2209bc79ea20b"
-    sha256 cellar: :any_skip_relocation, ventura:       "289c6c662814b91392e342b3dcaee02fb9af541aea13b4dfffa923ec90056732"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "219c3a2dd00d711ab305de13dda4545dcc1f33495b981b512563040eb66d0d3b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cffe5476fa8f3a477b372169481320306774a2aa0df0a162940be946598ec9e0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c9f0372a615adb0bac5b9d05d9607d41f06f2424940156781cc81841f8a87f6e"
+    sha256 cellar: :any_skip_relocation, monterey:      "c7e388e853965097f1dbad5d2899305e72e9eaf464425823936729e58bed0fde"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1f7215897680944ef11873bd70b36def7cfa2b7607a65eb099a128289e5107f"
   end
 
   depends_on "digitalspacestdio/common/icu4c@69.1"
@@ -35,6 +38,8 @@ class Php56Intl < AbstractPhp56Extension
     # Workaround for https://bugs.php.net/80310
     ENV.append "CFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
     ENV.append "CXXFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
+
+    ENV.append "CFLAGS", "-fcommon"    
 
     Dir.chdir "ext/intl"
 

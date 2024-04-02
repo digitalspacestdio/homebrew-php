@@ -8,7 +8,8 @@ class Php82Memprof < AbstractPhp82Extension
   sha256 "c2532df14e1c60307a43ef5e180d29eee08bc81e98faee10b5909e19ecc777ca"
   head "https://github.com/arnaud-lb/php-memory-profiler.git", :branch => "master"
   version "3.0.2"
-
+  revision PHP_REVISION
+  
   depends_on "libjudy"
 
   def install

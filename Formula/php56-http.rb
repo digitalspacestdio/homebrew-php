@@ -7,13 +7,13 @@ class Php56Http < AbstractPhp56Extension
   url "https://github.com/m6w6/ext-http/archive/RELEASE_2_6_0.tar.gz"
   sha256 "1ff7c8d9cbeae67837033ddff7032f4acdd0c7bda3e3f12a1ca80620d949a775"
   head "https://github.com/m6w6/ext-http.git"
-  revision 2
+  revision PHP_REVISION
 
 
   depends_on "digitalspacestdio/php/php56-raphf"
   depends_on "digitalspacestdio/php/php56-propro"
   depends_on "libevent" => :optional
-  depends_on "digitalspacestdio/common/icu4c@67.1"
+  depends_on "digitalspacestdio/common/icu4c@69.1"
 
   # overwrite the config file name to ensure extension is loaded after dependencies
   def config_filename
@@ -39,7 +39,7 @@ class Php56Http < AbstractPhp56Extension
     args << "--with-http-libcurl-dir"
     args << "--with-http-zlib-dir"
     args << "--with-http-libevent-dir=#{Formula["libevent"].opt_prefix}" if build.with? "libevent"
-    args << "--with-http-libicu-dir=#{Formula["icu4c"].opt_prefix}"
+    args << "--with-http-libicu-dir=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}"
 
     system "./configure", *args
     system "make"

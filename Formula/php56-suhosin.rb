@@ -7,7 +7,7 @@ class Php56Suhosin < AbstractPhp56Extension
   url "https://github.com/sektioneins/suhosin/archive/0.9.38.tar.gz"
   sha256 "c02d76c4e7ce777910a37c18181cb67fd9e90efe0107feab3de3131b5f89bcea"
   head "https://github.com/stefanesser/suhosin.git"
-
+  revision PHP_REVISION
 
   def install
     safe_phpize

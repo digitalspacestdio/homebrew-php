@@ -7,13 +7,13 @@ class Php80Http < AbstractPhp80Extension
   url "https://github.com/m6w6/ext-http/archive/RELEASE_3_1_0.tar.gz"
   sha256 "6b931205c1af59bba227715dd846b1495b441b76dabd661054791ef21b719214"
   head "https://github.com/m6w6/ext-http.git"
-  revision 2
+  revision PHP_REVISION
 
 
   depends_on "digitalspacestdio/php/php80-raphf"
   depends_on "digitalspacestdio/php/php80-propro"
   depends_on "libevent" => :optional
-  depends_on "icu4c" => :optional
+  depends_on "digitalspacestdio/common/icu4c@74.2" => :optional
 
   def config_filename
     "zzz_ext-" + extension + ".ini"
@@ -40,7 +40,7 @@ class Php80Http < AbstractPhp80Extension
     args << "--with-http-libcurl-dir"
     args << "--with-http-zlib-dir"
     args << "--with-http-libevent-dir=#{Formula["libevent"].opt_prefix}" if build.with? "libevent"
-    args << "--with-http-libicu-dir=#{Formula["icu4c"].opt_prefix}" if build.with? "icu4c"
+    args << "--with-http-libicu-dir=#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix}" if build.with? "icu4c"
 
     system "./configure", *args
     system "make"

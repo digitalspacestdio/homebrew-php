@@ -8,7 +8,7 @@ class Php83Runkit < AbstractPhp83Extension
   sha256 "b692faeb45553b5abfb167ae94a843a358bb90a578095fb24cff911ac3ca5425"
   head "https://github.com/runkit7/runkit7"
   version "4.0.0a6"
-  revision 1
+  revision PHP_REVISION
 
 
   depends_on "libtool" => :build

@@ -7,7 +7,7 @@ class Php56Oauth < AbstractPhp56Extension
   url "https://pecl.php.net/get/oauth-1.2.3.tgz"
   sha256 "86bb5ee37afe672d4532ad784c7f711855c79f0dabf0acacafd5344ab6cf0195"
   head "https://svn.php.net/repository/pecl/oauth/trunk"
-
+  revision PHP_REVISION
 
   def install
     Dir.chdir "oauth-#{version}" unless build.head?

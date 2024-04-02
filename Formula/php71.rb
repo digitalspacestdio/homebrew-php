@@ -1,27 +1,26 @@
 require File.expand_path("../../Abstract/abstract-php", __FILE__)
 
 class Php71 < AbstractPhp
-  init
-  desc "PHP Version 7.1"
   include AbstractPhpVersion::Php71Defs
+  init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
+  desc "PHP " + PHP_VERSION
+  url PHP_SRC_TARBALL
+  sha256 PHP_CHECKSUM[:sha256]
+  head PHP_GITHUB_URL, :branch => PHP_BRANCH
+  
   version PHP_VERSION
-  revision 32
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c628b8390bc681f2bd5fad661625474a649b6961a1b86dbbba5332343ad468b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bf1bf0f506a5ed55ecf76524486fd25ba021e8a812bb20df37091a6bfcdef1cd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "df28ec13fca0b80d850616155ccd9a639a368313b57689cb1a36c7517225ef82"
-    sha256 cellar: :any_skip_relocation, ventura:       "a7536bf803731178521e4cd1f5d98b7be742149a90055be1e2f82db64c8d0057"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "867feb70f52dd3d8abdf59ee63aa0536289e6595f9da95db58d994e15400ceb5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ebe231b0e2b3e0dde115cab597f74865aca846489bd023906779677aa4ebb3e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1d0345a82c060eb99ad3461486c10b59edab2b196ae8993b05afbc316a2a8789"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5b5f531930474c870bfabb53da0588276ac58a8686090a2c0e64624097466b28"
+    sha256 cellar: :any_skip_relocation, monterey:      "b65f4013c38d52b5308f8fa430006d2d7097f2d6beaf0ec0281017edb19ab25e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "652527002eba50a0d7a5b039dfe57f80e215e4b6ff31de0934c5320c1568a8a6"
   end
+
   keg_only :versioned_formula
-  include AbstractPhpVersion::Php71Defs
-
-  url PHP_SRC_TARBALL
-  sha256 PHP_CHECKSUM[:sha256]
-
-  head PHP_GITHUB_URL, :branch => PHP_BRANCH
 
   def php_version
     "#{PHP_VERSION_MAJOR}"
@@ -35,10 +34,12 @@ class Php71 < AbstractPhp
     etc + "php" + php_version
   end
 
-  service do
-    run [opt_sbin/"php-fpm", "--nodaemonize", "--fpm-config", etc + "php/7.1/php-fpm.conf"]
-    keep_alive true
-  end
+  if OS.mac?
+    patch do
+      url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php72/macos.patch"
+      sha256 "cf28218565c07b26d0764e903b24421b8095a6bbc68aded050b9fe0cc421729d"
+    end
+end
 
   service do
     name macos: "php#{PHP_VERSION_MAJOR}-fpm", linux: "php#{PHP_VERSION_MAJOR}-fpm"

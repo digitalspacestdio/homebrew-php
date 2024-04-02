@@ -8,7 +8,7 @@ class Php56Memprof < AbstractPhp56Extension
   sha256 "6976d1c0e82f9eb0ec859fcd6fe927b099c2186136efec34014331a3487844e7"
   head "https://github.com/arnaud-lb/php-memory-profiler.git", :branch => "php5"
   version "ad6d84b"
-
+  revision PHP_REVISION
   depends_on "libjudy"
 
   def install

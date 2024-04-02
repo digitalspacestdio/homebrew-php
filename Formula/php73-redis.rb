@@ -7,15 +7,15 @@ class Php73Redis < AbstractPhp73Extension
   url "https://github.com/phpredis/phpredis/archive/5.3.7.tar.gz"
   sha256 "6f5cda93aac8c1c4bafa45255460292571fb2f029b0ac4a5a4dc66987a9529e6"
   head "https://github.com/phpredis/phpredis.git"
-  revision 1
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1641882b4d2474103fb784463faf6db9caff174ee6356ef515ac858eb6a2ad1c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5e5d169c03f3c80b84aa599025b203926db4c0d386630fd26150e58fe79b3f3a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5f080e287e4eef09ad17b8cb934a013b4a2181030683fca1a45bc4202f4017a2"
-    sha256 cellar: :any_skip_relocation, ventura:       "04b2f203f03f080113a1832112c212f4bc3cb6bf40d1a26255f1a21caf25d9a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19a1f01e5652eacb2541338e221d0e69082ac547d972923ee271961c57ad1a9b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad17c480f7302140ea10d93e642287e9e0e20aba3863bac5fe8921df67242b9d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7cfc9344044cc5a9354b1b2c153b1b814db63c1c86b27b06a92b4969c4a0e455"
+    sha256 cellar: :any_skip_relocation, sonoma:        "389e0e719498800f81ddb43d19181605af8903b5ca8cfb917c26484af2b79618"
+    sha256 cellar: :any_skip_relocation, monterey:      "ae552550401bbc9ef21a16a6fa2a5258ca157f8ef5ff68527722d8e87e2246c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c127f6770110d47ec927d410326673f4917f0e5033373722c557f8012a071ad0"
   end
 
   depends_on "digitalspacestdio/php/php73-igbinary"

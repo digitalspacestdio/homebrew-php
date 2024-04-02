@@ -6,7 +6,7 @@ class Php71Translit < AbstractPhp71Extension
   homepage "https://github.com/derickr/pecl-translit"
   url "https://github.com/derickr/pecl-translit/archive/RELEASE_0_6_2.tar.gz"
   sha256 "863ba3793d09776c309ae1a46af2826f8acf855db10ba8d976716ec6ab2ea3a5"
-
+  revision PHP_REVISION
 
   def install
     safe_phpize

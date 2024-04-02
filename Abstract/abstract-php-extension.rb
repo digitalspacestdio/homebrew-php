@@ -16,10 +16,15 @@ class InvalidPhpizeError < RuntimeError
 end
 
 class AbstractPhpExtension < Formula
-    keg_only :versioned_formula
-    def self.init
-    depends_on "autoconf" => :build
-    # depends_on "gcc@11" => :build if OS.mac?
+  keg_only :versioned_formula
+  def self.init (php_version, use_gcc = true)
+    @@php_version = php_version
+    @@use_gcc = use_gcc
+    depends_on "autoconf" => :build if !@@php_version.start_with?("5.")
+    depends_on "autoconf@2.69" => :build if @@php_version.start_with?("5.")
+    if OS.mac? && !@@php_version.start_with?("5.") && @@use_gcc
+      #depends_on "gcc@11"
+    end
     option "without-config-file", "Do not install extension config file"
   end
 
@@ -38,10 +43,42 @@ class AbstractPhpExtension < Formula
   end
 
   def safe_phpize
-    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
-    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
-    #ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11" if OS.mac?
-    #ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11" if OS.mac?
+    @@php_version
+    @@php_version_path
+
+    if Hardware::CPU.intel?
+      ENV.append "CFLAGS", "-march=ivybridge"
+      ENV.append "CFLAGS", "-msse4.2"
+
+      ENV.append "CXXFLAGS", "-march=ivybridge"
+      ENV.append "CXXFLAGS", "-msse4.2"
+    end
+
+    ENV.append "CFLAGS", "-O2"
+    ENV.append "CXXFLAGS", "-O2"
+
+    if OS.mac? && !@@php_version.start_with?("5.") && @@use_gcc
+      ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
+      ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
+    end
+
+    if @@php_version.start_with?("7.2", "7.1", "7.0", "5.")
+      ENV.append "CFLAGS", "-fcommon"
+      ENV.append "CFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
+      ENV.append "CXXFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
+      
+      # Workaround for https://bugs.php.net/80310
+      ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
+    end
+
+    if @@php_version.start_with?("5.")
+      ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
+      ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
+    else
+      ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
+      ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
+    end
+    
     system phpize
   end
 
@@ -148,135 +185,80 @@ end
 
 class AbstractPhp56Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php56Defs
-  depends_on "gcc@9" => :build if OS.linux?
-  ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
-  ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
-
-  def safe_phpize
-    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9" if OS.linux?
-    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9" if OS.linux?
-    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
-    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
-    system phpize
-  end
-  def self.init(opts = [])
-    super()
+  def self.init(php_version = PHP_VERSION, use_gcc = true)
+    super(php_version)
     depends_on "digitalspacestdio/php/php56"
   end
 end
 
 class AbstractPhp70Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php70Defs
-  # depends_on "gcc@11" => :build if OS.mac?
-  ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
-  ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
-
-  def safe_phpize
-    # ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
-    # ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
-    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
-    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
-    system phpize
-  end
-  def self.init(opts = [])
-    super()
+  def self.init(php_version = PHP_VERSION, use_gcc = true)
+    super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php70"
   end
 end
 
 class AbstractPhp71Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php71Defs
-  # depends_on "gcc@11" => :build if OS.mac?
-  ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
-  ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
-
-  def safe_phpize
-    # ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
-    # ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
-    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
-    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
-    system phpize
-  end
-  def safe_phpize
-    ENV.append "CFLAGS", "-DTRUE=1 -DFALSE=0"
-    ENV.append "CXXFLAGS", "-DTRUE=1 -DFALSE=0"
-    super()
-  end
-
-  def self.init(opts = [])
-    super()
+  def self.init(php_version = PHP_VERSION, use_gcc = true)
+    super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php71"
   end
 end
 
 class AbstractPhp72Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php72Defs
-  # depends_on "gcc@11" => :build if OS.mac?
-  ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
-  ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
-
-  def safe_phpize
-    # ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
-    # ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
-    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
-    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
-    system phpize
-  end
-  def self.init(opts = [])
-    super()
+  def self.init(php_version = PHP_VERSION, use_gcc = true)
+    super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php72"
   end
 end
 
 class AbstractPhp73Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php73Defs
-  def self.init(opts = [])
-    super()
+  def self.init(php_version = PHP_VERSION, use_gcc = true)
+    super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php73"
   end
 end
 
 class AbstractPhp74Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php74Defs
-
-  def self.init(opts = [])
-    super()
+  def self.init(php_version = PHP_VERSION, use_gcc = true)
+    super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php74"
   end
 end
 
 class AbstractPhp80Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php80Defs
-
-  def self.init(opts = [])
-    super()
+  def self.init(php_version = PHP_VERSION, use_gcc = true)
+    super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php80"
   end
 end
 
 class AbstractPhp81Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php81Defs
-
-  def self.init(opts = [])
-    super()
+  def self.init(php_version = PHP_VERSION, use_gcc = true)
+    super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php81"
   end
 end
 
 class AbstractPhp82Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php82Defs
-
-  def self.init(opts = [])
-    super()
+  def self.init(php_version = PHP_VERSION, use_gcc = true)
+    super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php82"
   end
 end
 
 class AbstractPhp83Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php83Defs
-
-  def self.init(opts = [])
-    super()
+  def self.init(php_version = PHP_VERSION, use_gcc = true)
+    super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php83"
   end
 end

@@ -6,7 +6,7 @@ class Php56Xdiff < AbstractPhp56Extension
   homepage "https://pecl.php.net/package/xdiff"
   url "https://pecl.php.net/get/xdiff-1.5.2.tgz"
   sha256 "ebe72b887fcd2296f1e4032d476a8a463803ccfb0b34b403be8433daf3cfd81d"
-
+  revision PHP_REVISION
 
   depends_on "libxdiff"
 

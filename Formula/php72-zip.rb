@@ -4,18 +4,18 @@ class Php72Zip < AbstractPhp72Extension
   init
   desc "Zip"
   homepage "https://www.php.net/manual/ru/book.zip.php"
-  revision 1
+  revision PHP_REVISION
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ee6a0bf9eb1b59c48a8312462a58cc9bdd53f51643d4ee40609dae28a25699e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "16ed759e5195d3e67a176a5824e75dd64329cccc9dde07fa912dc813f73ec8b4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6c460ac9e7eb07f889db2bf24b1bacad1731306ba3219ad6fde960158d4fdba6"
-    sha256 cellar: :any_skip_relocation, ventura:       "ebc03346c05ccfbb955ca560942d77dd35b1f2964034903f341c3265c3401dd3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a57896903e9aa08835ae9748a4dd25071dfbd4580935c35ea542dbd53522b97"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3e0f96271f9b6e7e6790106246afe879e60af6c31be0fbbadd3774d5d72f18b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "012c4ccce1277b19e40178d422dca31955817ed9d5a56630a095b13dc539925a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cc3744a464d7f5068d6f715910ddc2fbd69f3d75bbabcc499c096887fad1660b"
+    sha256 cellar: :any_skip_relocation, monterey:      "cf959cf70810a06517136c839fce6a09e90da3bf2ab97a61c239c0fbf0a2d7dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "835738425028ca8aaa5b2703a96f81151c5e76674e659c3916dec93e774c1fd5"
   end
 
   depends_on "libzip"

@@ -7,7 +7,7 @@ class Php56Eio < AbstractPhp56Extension
   url "https://pecl.php.net/get/eio-1.2.5.tgz"
   sha256 "ee7b21aa413cbe39caaef1d2eb893fa3bcb9a278b5665c28d179a83a4a1bdb51"
   head "https://bitbucket.org/osmanov/pecl-eio.git"
-
+  revision PHP_REVISION
 
   depends_on "libevent" => :build
 

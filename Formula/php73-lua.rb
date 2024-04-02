@@ -7,7 +7,7 @@ class Php73Lua < AbstractPhp73Extension
   url "https://pecl.php.net/get/lua-2.0.5.tgz"
   sha256 "bb49431ce5494ebebba98d9c477537df97234e13d4bd46529809ca1a2b8c287e"
   head "https://github.com/laruence/php-lua.git"
-
+  revision PHP_REVISION
 
   depends_on "lua"
 

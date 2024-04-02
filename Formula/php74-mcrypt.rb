@@ -7,9 +7,9 @@ class Php74Mcrypt < AbstractPhp74Extension
   url "https://pecl.php.net/get/mcrypt-1.0.1.tgz"
   sha256 "a3b0e5493b5cd209ab780ee54733667293d369e6b7052b4a7dab9dd0def46ac6"
   head "https://github.com/chuan-yun/Molten.git"
-  revision 6
+  revision PHP_REVISION
 
-  depends_on "digitalspacestdio/php/phpmcrypt" if OS.linux?
+  depends_on "digitalspacestdio/common/mcrypt@2.6"
   depends_on "mcrypt" if OS.mac?
   depends_on "libtool" => :build
 
@@ -19,8 +19,7 @@ class Php74Mcrypt < AbstractPhp74Extension
     args = []
     args << "--prefix=#{prefix}"
     args << "--disable-dependency-tracking"
-    args << "--with-mcrypt=#{Formula["digitalspacestdio/php/phpmcrypt"].opt_prefix}" if OS.linux?
-    args << "--with-mcrypt=#{Formula["mcrypt"].opt_prefix}" if OS.mac?
+    args << "--with-mcrypt=#{Formula["digitalspacestdio/common/mcrypt@2.6"].opt_prefix}"
     args << phpconfig
 
     safe_phpize

@@ -1,33 +1,25 @@
 require File.expand_path("../../Abstract/abstract-php", __FILE__)
 
 class Php83 < AbstractPhp
-  init
-  desc "PHP Version 8.3"
   include AbstractPhpVersion::Php83Defs
+  init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
+  desc "PHP " + PHP_VERSION
   version PHP_VERSION
   revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac62a148adc3fbaa2f4e8c913613e0616e7885b6e8c2182a4163d35f76c3907c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c53673b896c445cb46785a4cf20702a87081e297269ec0af78c907e33db5cacb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c35efa27e64562309462c469afe0ad7130370f07768da89ca7b2eb87fe2e5968"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d4c1cd98f6a8be27e391b3a68b22b443234fc9b838c2fe6af94c4a8132661b1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9ab0b81467e7188f1c41262cbd2d3be828d87af4997f0ac08b34ffc5730f78b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "314766204c47b5e4c05742270abf620ad2a32e143b678a1eabb1f91e21257f2d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a5b9449e1b4ae566c77c6d4006a70d34abe1c2d36abe29f42e3ad892fd3c5062"
+    sha256 cellar: :any_skip_relocation, monterey:      "c0f6facc28ea53869999726c1403cb8af5d0792435eb5f1b85ff1de7c0648b4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4e961e3142111724586663265e7ce5633ce0b6e56918d751462d57a96ec4d60"
   end
-  keg_only :versioned_formula
-  depends_on "pkg-config" => :build
-  depends_on "krb5"
-  depends_on "oniguruma"
-  depends_on "libjpeg"
-  depends_on "bison"
-  depends_on "re2c"
-
-  include AbstractPhpVersion::Php83Defs
-
+  
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
-
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
+  keg_only :versioned_formula
 
   def php_version
     "#{PHP_VERSION_MAJOR}"
@@ -36,6 +28,13 @@ class Php83 < AbstractPhp
   def php_version_path
     "#{PHP_BRANCH_NUM}"
   end
+
+  depends_on "pkg-config" => :build
+  depends_on "krb5"
+  depends_on "oniguruma"
+  depends_on "libjpeg"
+  depends_on "bison"
+  depends_on "re2c"
 
   def install_args
     args = super

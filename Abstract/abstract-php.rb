@@ -4,16 +4,22 @@ require "formula"
 require File.join(File.dirname(__FILE__), "abstract-php-version")
 
 class AbstractPhp < Formula
-  keg_only :versioned_formula
-  def self.init
+  def self.init (php_version, php_version_full, php_version_path)
+    @@php_version = php_version
+    @@php_version_full = php_version_full
+    @@php_version_path = php_version_path
+
     homepage "https://php.net"
 
     # So PHP extensions don't report missing symbols
     skip_clean "bin", "sbin"
 
-    #depends_on "gcc@9" => :build if OS.mac? && name.split("::")[2].downcase.start_with?("php56")
-    #depends_on "gcc@11" => :build if OS.mac? && name.split("::")[2].downcase.start_with?("php7", "php8")
-    depends_on "autoconf" => :build
+    if OS.mac? && !@@php_version.start_with?("5.")
+      depends_on "gcc@11"
+    end
+
+    depends_on "autoconf" => :build if !@@php_version.start_with?("5.")
+    depends_on "autoconf@2.69" => :build if @@php_version.start_with?("5.")
 
     # obtain list of php formulas
     php_formulas = Formula.names.grep(Regexp.new('^php\d\d$')).sort
@@ -30,47 +36,72 @@ class AbstractPhp < Formula
     end
 
     depends_on "digitalspacestdio/php/php-cli-wrapper"
-
     depends_on "sqlite"
-    depends_on "digitalspacestdio/php/phpcurl"
-    depends_on "libxslt"
+    depends_on "digitalspacestdio/common/curl@7"
     depends_on "enchant" => :optional
     depends_on "freetds" if build.with?("mssql")
-    depends_on "freetype"
-    depends_on "gettext"
     depends_on "gmp" => :optional
-    depends_on "digitalspacestdio/common/icu4c@67.1" if name.split("::")[2].downcase.start_with?("php70", "php71", "php72")
-    depends_on "digitalspacestdio/common/icu4c@69.1" if name.split("::")[2].downcase.start_with?("php56")
-    depends_on "digitalspacestdio/common/icu4c@72.1" if name.split("::")[2].downcase.start_with?("php74", "php80", "php81", "php82")
     depends_on "imap-uw" if build.with?("imap")
-    depends_on "jpeg" if name.split("::")[2].downcase.start_with?("php56", "php70", "php71")
-    depends_on "libjpeg" if !name.split("::")[2].downcase.start_with?("php56", "php70", "php71")
     depends_on "pcre2"
-    depends_on "webp" if name.split("::")[2].downcase.start_with?("php7", "php8")
-    depends_on "libvpx" => :optional if name.split("::")[2].downcase.start_with?("php56")
+    depends_on "freetype"
+    depends_on "jpeg"
     depends_on "libpng"
-    depends_on "libxml2"
+    depends_on "libvpx" if @@php_version.start_with?("5.")
+    depends_on "webp" if !@@php_version.start_with?("5.")
     depends_on "unixodbc"
     depends_on "readline"
     depends_on "zlib"
     depends_on "bzip2"
     depends_on "libedit"
-    depends_on "openldap"
+    #depends_on "openldap"
     depends_on "mysql" if build.with?("libmysql")
-    depends_on "libiconv" if OS.mac?
+
+    if @@php_version.start_with?("8.")
+      depends_on "digitalspacestdio/common/gettext@0.22-icu4c.74.2"
+      depends_on "digitalspacestdio/common/libxml2@2.12-icu4c.74.2" if OS.linux?
+      depends_on "digitalspacestdio/common/libxslt@1.10-icu4c.74.2"
+    elsif @@php_version.start_with?("7.4", "7.3")
+      depends_on "digitalspacestdio/common/gettext@0.22-icu4c.73.2"
+      depends_on "digitalspacestdio/common/libxml2@2.12-icu4c.73.2" if OS.linux?
+      depends_on "digitalspacestdio/common/libxslt@1.10-icu4c.73.2"
+    elsif @@php_version.start_with?("7.")
+      depends_on "digitalspacestdio/common/icu4c@69.1"
+      depends_on "digitalspacestdio/common/gettext@0.22-icu4c.69.1"
+      depends_on "digitalspacestdio/common/libxml2@2.12-icu4c.69.1" if OS.linux?
+      depends_on "digitalspacestdio/common/libxslt@1.10-icu4c.69.1"
+      depends_on "digitalspacestdio/common/libiconv@1.16" if OS.mac?
+    elsif @@php_version.start_with?("5.")
+      depends_on "digitalspacestdio/common/icu4c@69.1"
+      depends_on "digitalspacestdio/common/gettext@0.22-icu4c.69.1"
+      depends_on "digitalspacestdio/common/libxml2@2.9-icu4c.69.1" if OS.linux?
+      depends_on "digitalspacestdio/common/libxslt@1.10-icu4c.69.1"
+      depends_on "digitalspacestdio/common/libiconv@1.16" if OS.mac?
+    end
 
     # ssl
     if build.with?("homebrew-libressl")
       depends_on "libressl"
+      # Use LibreSSL cert bundle
+      openssl = Formula["libressl"]
+      # %w[development production].each do |mode|
+      #   inreplace "php.ini-#{mode}", /; ?openssl\.cafile=/,
+      #     "openssl.cafile = \"#{libressl.pkgetc}/cert.pem\""
+      #   inreplace "php.ini-#{mode}", /; ?openssl\.capath=/,
+      #     "openssl.capath = \"#{libressl.pkgetc}/certs\""
+      # end
     else
       depends_on "openssl@1.1"
+      # Use OpenSSL cert bundle
+      openssl = Formula["openssl@1.1"]
+      # %w[development production].each do |mode|
+      #   inreplace "php.ini-#{mode}", /; ?openssl\.cafile=/,
+      #     "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\""
+      #   inreplace "php.ini-#{mode}", /; ?openssl\.capath=/,
+      #     "openssl.capath = \"#{openssl.pkgetc}/certs\""
+      # end
     end
 
-    #argon for 7.2
-    depends_on "argon2" => :optional if build.with?("argon2")
-
-    # libsodium for 7.2
-    # depends_on "libsodium" => :recommended if name.split("::")[2].downcase.start_with?("php72")
+    depends_on "argon2" if @@php_version.start_with?("8.", "7.4", "7.3", "7.2")
 
     deprecated_option "with-pgsql" => "with-postgresql"
     depends_on "postgresql" => :optional
@@ -91,11 +122,6 @@ class AbstractPhp < Formula
 
     depends_on "httpd" => :optional
 
-    # Argon2 option
-    if name.split("::")[2].downcase.start_with?("php72")
-      option "with-argon2", "Include libargon2 password hashing support"
-    end
-
     option "with-cgi", "Enable building of the CGI executable (implies --without-fpm)"
     option "with-debug", "Compile with debugging symbols"
     option "with-embed", "Compile with embed support (built as a static library)"
@@ -111,11 +137,13 @@ class AbstractPhp < Formula
     option "with-thread-safety", "Build with thread safety"
 #    option "without-bz2", "Build without bz2 support"
     option "without-fpm", "Disable building of the fpm SAPI executable"
-    option "without-ldap", "Build without LDAP support"
+    #option "without-ldap", "Build without LDAP support"
     option "without-mysql", "Remove MySQL/MariaDB support"
     option "without-legacy-mysql", "Do not include the deprecated mysql_ functions"
     option "without-pcntl", "Build without Process Control support"
   end
+
+  keg_only :versioned_formula
 
   # Fixes the pear .lock permissions issue that keeps it from operating correctly.
   # Thanks mistym & #machomebrew
@@ -125,16 +153,8 @@ class AbstractPhp < Formula
     "openssl@1.1"
   end
 
-  def php_version
-    raise "Unspecified php version"
-  end
-
-  def php_version_path
-    raise "Unspecified php version path"
-  end
-
   def config_path
-    etc / "php" / php_version
+    etc / "php" / @@php_version
   end
 
   def home_path
@@ -147,31 +167,36 @@ class AbstractPhp < Formula
 
   def install
     # Ensure this php has a version specified
-    php_version
-    php_version_path
+    @@php_version
+    @@php_version_path
 
     if Hardware::CPU.intel?
-      #cpu = Hardware.oldest_cpu
-      #ENV.append "CFLAGS", "-march=#{cpu}"
-      #ENV.append "CXXFLAGS", "-march=#{cpu}"
-      ENV.append "CFLAGS", "-march=nehalem"
+      ENV.append "CFLAGS", "-march=ivybridge"
       ENV.append "CFLAGS", "-msse4.2"
 
-      ENV.append "CXXFLAGS", "-march=nehalem"
+      ENV.append "CXXFLAGS", "-march=ivybridge"
       ENV.append "CXXFLAGS", "-msse4.2"
     end
 
-    ENV.append "PHP_AUTOCONF", "#{Formula["autoconf"].opt_bin}/autoconf"
-    ENV.append "PHP_AUTOHEADER", "#{Formula["autoconf"].opt_bin}/autoheader"
+    ENV.append "CFLAGS", "-O2"
+    ENV.append "CXXFLAGS", "-O2"
 
-    if php_version.start_with?("7.", "8.")
-      #ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11" if OS.mac?
-      #ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11" if OS.mac?
+    if @@php_version.start_with?("5.")
+      ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
+      ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
+    else
+      ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
+      ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
+    end
+
+    if OS.mac? && !@@php_version.start_with?("5.")
+      ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
+      ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
     end
     
-    if php_version.start_with?("7.1", "7.0")
-        ENV.append "CFLAGS", "-DTRUE=1 -DFALSE=0"
-        ENV.append "CXXFLAGS", "-DTRUE=1 -DFALSE=0"
+    if @@php_version.start_with?("7.1", "7.0")
+      ENV.append "CFLAGS", "-DTRUE=1 -DFALSE=0"
+      ENV.append "CXXFLAGS", "-DTRUE=1 -DFALSE=0"
     end
 
     # Not removing all pear.conf and .pearrc files from PHP path results in
@@ -228,24 +253,37 @@ INFO
     build.without? "pear"
   end
 
-#   def patches
-#     # Bug in PHP 5.x causes build to fail on OSX 10.5 Leopard due to
-#     # outdated system libraries being first on library search path:
-#     # https://bugs.php.net/bug.php?id=44294
-#     "https://gist.github.com/ablyler/6579338/raw/5713096862e271ca78e733b95e0235d80fed671a/Makefile.global.diff" if MacOS.version == :leopard
-#   end
-
   def install_args
     # Prevent PHP from harcoding sed shim path
     ENV["lt_cv_path_SED"] = "sed"
 
+    # system pkg-config missing
+    ENV["KERBEROS_CFLAGS"] = " "
+    if OS.mac?
+      ENV["SASL_CFLAGS"] = "-I#{MacOS.sdk_path_if_needed}/usr/include/sasl"
+      ENV["SASL_LIBS"] = "-lsasl2"
+    else
+      ENV["SQLITE_CFLAGS"] = "-I#{Formula["sqlite"].opt_include}"
+      ENV["SQLITE_LIBS"] = "-lsqlite3"
+      ENV["BZIP_DIR"] = Formula["bzip2"].opt_prefix
+    end
+
+    # if OS.mac? 
+    #   # Ensure system dylibs can be found by linker on Sierra
+    #   ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
+    # end
+
     if OS.mac? 
-      # Ensure system dylibs can be found by linker on Sierra
-      ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
+      headers_path = "=#{MacOS.sdk_path_if_needed}/usr"
+    else
+      headers_path = ""
     end
 
 #    libzip = Formula["libzip"]
     #ENV["CFLAGS"] = "-Wno-error -I#{libzip.opt_include}"
+
+    fpm_user = OS.mac? ? "_www" : "www-data"
+    fpm_group = OS.mac? ? "_www" : "www-data"
 
     args = [
       "--prefix=#{prefix}",
@@ -268,57 +306,125 @@ INFO
       "--enable-sysvsem",
       "--enable-sysvshm",
       "--enable-wddx",
-      "--with-gettext=#{Formula["gettext"].opt_prefix}",
-      "--with-mhash",
+      "--with-external-pcre=#{Formula["pcre2"].opt_prefix}",
       "--with-zlib=#{Formula["zlib"].opt_prefix}",
       "--with-xmlrpc",
       "--with-readline=#{Formula["readline"].opt_prefix}",
       "--without-gmp",
       "--without-snmp",
+      "--with-kerberos#{headers_path}",
+      "--with-mhash#{headers_path}"
     ]
 
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
+
     if OS.mac?
-      args << "--without-pcre-jit"
-      args << "--with-kerberos=/usr"
-      args << "--with-iconv=#{Formula["libiconv"].opt_prefix}"
+      #zargs << "--with-iconv=#{Formula["digitalspacestdio/common/libiconv@1.16"].opt_prefix}"
+      args << "--with-ndbm#{headers_path}"
+      
+      if @@php_version.start_with?("7.3", "7.4", "8.")
+        args << "--with-iconv#{headers_path}"
+        args << "--without-pcre-jit"
+      else
+        ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libiconv@1.16"].opt_prefix}/lib"
+        ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/libiconv@1.16"].opt_prefix}/include"
+        args << "--with-iconv=#{Formula["digitalspacestdio/common/libiconv@1.16"].opt_prefix}"
+      end
+      
+    else
+      args << "--without-ndbm"
+      args << "--without-gdbm"
     end
 
-    if php_version.start_with?("5.6", "7.0", "7.1")
-      args << "--enable-gd-native-ttf"
-    end
+    # START - Icu4c settings 
+    if @@php_version.start_with?("8.")
+      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.74.2"].opt_prefix}/lib"
+      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.74.2"].opt_prefix}/include"
 
-    if php_version.start_with?("7.0", "7.1", "7.2")
-      args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@67.1"].opt_prefix}"
-    end
+      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.74.2"].opt_prefix}/lib" if OS.linux?
+      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.74.2"].opt_prefix}/include" if OS.linux?
 
-    if php_version.start_with?("5.6", "7.3")
+      args << "--with-xsl=#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.74.2"].opt_prefix}"
+      args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.74.2"].opt_prefix}"
+      args << "--with-libxml=#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.74.2"].opt_prefix}" if OS.linux?
+
+      args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}" if OS.mac?
+
+    elsif @@php_version.start_with?("7.4")
+      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.73.2"].opt_prefix}/lib"
+      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.73.2"].opt_prefix}/include"
+
+      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.73.2"].opt_prefix}/lib" if OS.linux?
+      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.73.2"].opt_prefix}/include" if OS.linux?
+
+      args << "--with-xsl=#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.73.2"].opt_prefix}"
+      args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.73.2"].opt_prefix}"
+      args << "--with-libxml=#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.73.2"].opt_prefix}" if OS.linux?
+
+      args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}" if OS.mac?
+
+    elsif @@php_version.start_with?("7.3")
+      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}/lib"
+      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}/include"
+
+      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.73.2"].opt_prefix}/lib"
+      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.73.2"].opt_prefix}/include"
+
+      args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}"
+      args << "--with-libxml-dir=#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.73.2"].opt_prefix}" if OS.linux?
+      args << "--with-xsl=#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.73.2"].opt_prefix}"
+      args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.73.2"].opt_prefix}"
+
+      args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}" if OS.mac?
+
+    elsif @@php_version.start_with?("7.")
+      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}/lib"
+      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}/include"
+
+      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.69.1"].opt_prefix}/lib"
+      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.69.1"].opt_prefix}/include"
+
       args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}"
-    end
+      args << "--with-libxml-dir=#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.69.1"].opt_prefix}" if OS.linux?
+      args << "--with-xsl=#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.69.1"].opt_prefix}"
+      args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.69.1"].opt_prefix}"
 
-    if !php_version.start_with?("7.4", "8.")
+    elsif @@php_version.start_with?("5.")
+      args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}"
+      args << "--with-libxml-dir=#{Formula["digitalspacestdio/common/libxml2@2.9-icu4c.69.1"].opt_prefix}" if OS.linux?
+      args << "--with-xsl=#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.69.1"].opt_prefix}"
+      args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.69.1"].opt_prefix}"
+      
+    end
+    # END - Icu4c settings 
+
+    # START - GD settings 
+    if @@php_version.start_with?("7.4", "8.")
+      args << "--enable-gd"
+      args << "--with-freetype-dir=#{Formula["freetype"].opt_prefix}"
+      args << "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}"
+      args << "--with-png-dir=#{Formula["libpng"].opt_prefix}"
+      args << "--with-webp"
+    elsif @@php_version.start_with?("7.")
       args << "--with-gd"
       args << "--with-freetype-dir=#{Formula["freetype"].opt_prefix}"
       args << "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}"
-      args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@72.1"].opt_prefix}"
       args << "--with-png-dir=#{Formula["libpng"].opt_prefix}"
-    end
-
-    if php_version.start_with?("7.4", "8.")
-      args << "--enable-gd"
-      args << "--with-freetype=#{Formula["freetype"].opt_prefix}"
-      args << "--with-jpeg=#{Formula["jpeg"].opt_prefix}"
       args << "--with-webp"
-      args << "--with-external-pcre" if !OS.mac? 
-
-      ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["webp"].opt_lib}/pkgconfig"
+    elsif @@php_version.start_with?("5.")
+      args << "--with-gd"
+      args << "--with-freetype-dir=#{Formula["freetype"].opt_prefix}"
+      args << "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}"
+      args << "--with-png-dir=#{Formula["libpng"].opt_prefix}"
+      args << "--with-vpx-dir=#{Formula['libvpx'].opt_prefix}"
     end
+    # END - GD settings 
 
-    args << "--with-libxml-dir=#{Formula["libxml2"].opt_prefix}"    
     args << "--with-pdo-odbc=unixODBC,#{Formula["unixodbc"].opt_prefix}"
     args << "--with-unixODBC=#{Formula["unixodbc"].opt_prefix}"
-
-    # Build with argon2 support (Password Hashing API)
-    if build.with?("argon2")
+    
+    if @@php_version.start_with?("8.", "7.4", "7.3", "7.2")
       args << "--with-password-argon2=#{Formula["argon2"].opt_prefix}"
     end
 
@@ -356,41 +462,42 @@ INFO
 
     # Build PHP-FPM by default
     if build_fpm?
+      fpm_user = OS.mac? ? "_www" : "www-data"
+      fpm_group = OS.mac? ? "_www" : "www-data"
+
       args << "--enable-fpm"
-      args << "--with-fpm-user=_www"
-      args << "--with-fpm-group=_www"
+      args << "--with-fpm-user=#{fpm_user}"
+      args << "--with-fpm-group=#{fpm_group}"
+
       (prefix+"var/log/php").mkpath
       touch prefix+"var/log/php/php#{php_version}-fpm.log"
-#       plist_path.write plist
-#       plist_path.chmod 0644
     elsif build.with? "cgi"
       args << "--enable-cgi"
     end
 
     args << "--with-sqlite=#{Formula["sqlite"].opt_prefix}"
-    args << "--with-curl=#{Formula["digitalspacestdio/php/phpcurl"].opt_prefix}"
-    args << "--with-xsl=" + Formula["libxslt"].opt_prefix.to_s
+    args << "--with-curl=#{Formula["digitalspacestdio/common/curl@7"].opt_prefix}"
 
     if build.with? "imap"
       args << "--with-imap=#{Formula["imap-uw"].opt_prefix}"
       args << "--with-imap-ssl=" + Formula[php_open_ssl_formula].opt_prefix.to_s
     end
 
-    unless build.without? "ldap"
-      args << "--with-ldap-dir=#{Formula["openldap"].opt_prefix}"
-      #args << "--with-ldap"
-      #args << "--with-ldap-sasl=/usr"
-    end
+    # unless build.without? "ldap"
+    #   args << "--with-ldap-dir=#{Formula["openldap"].opt_prefix}" if @@php_version.start_with?("5.")
+    #   args << "--with-ldap=#{Formula["openldap"].opt_prefix}" if !@@php_version.start_with?("5.")
+    #   args << "--with-ldap-sasl#{headers_path}"
+    # end
 
     if build.with? "libmysql"
       args << "--with-mysql-sock=/tmp/mysql.sock"
       args << "--with-mysqli=#{HOMEBREW_PREFIX}/bin/mysql_config"
-      args << "--with-mysql=#{HOMEBREW_PREFIX}" unless (build.without? "legacy-mysql") || php_version.start_with?("7.")
+      args << "--with-mysql=#{HOMEBREW_PREFIX}" unless (build.without? "legacy-mysql") || @@php_version.start_with?("7.")
       args << "--with-pdo-mysql=#{HOMEBREW_PREFIX}"
     elsif build.with? "mysql"
       args << "--with-mysql-sock=/tmp/mysql.sock"
       args << "--with-mysqli=mysqlnd"
-      args << "--with-mysql=mysqlnd" unless (build.without? "legacy-mysql") || php_version.start_with?("7.")
+      args << "--with-mysql=mysqlnd" unless (build.without? "legacy-mysql") || @@php_version.start_with?("7.")
       args << "--with-pdo-mysql=mysqlnd"
     end
 
@@ -400,7 +507,7 @@ INFO
     end
 
     # Do not build opcache by default; use a "phpxx-opcache" formula
-    # args << "--disable-opcache" if php_version.start_with?("5.5", "5.6", "7.")
+    # args << "--disable-opcache" if @@php_version.start_with?("5.5", "5.6", "7.")
 
     if build.with? "pcntl"
       args << "--enable-pcntl"
@@ -428,7 +535,7 @@ INFO
       end
     end
 
-    unless php_version.start_with?("5.3")
+    if OS.mac?
       # dtrace is not compatible with phpdbg: https://github.com/krakjoe/phpdbg/issues/38
       if build.without? "phpdbg"
         args << "--enable-dtrace"
@@ -442,35 +549,64 @@ INFO
       end
 
       args << "--enable-zend-signals"
-    end
-
-    if build.with? "libvpx"
-      args << "--with-vpx-dir=#{Formula['libvpx'].opt_prefix}"
+    else
+      args << "--disable-dtrace"
     end
 
     if build.with? "thread-safety"
       args << "--enable-maintainer-zts"
     end
 
-#     if build.with? "libsodium"
-#         args << "--with-sodium=#{Formula['libsodium'].opt_prefix}"
-#     end
-
     args
   end
 
   def _install
-    ENV.cxx11 if php_version.start_with?("7.2", "7.1", "7.0")
+    #if php_version.start_with?("7.2", "7.1", "7.0", "5.")
+    ENV.cxx11
+    #end
+
     # Work around configure issues with Xcode 12
     # See https://bugs.php.net/bug.php?id=80171
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration" if php_version.start_with?("7.2", "7.1", "7.0")
+    ENV.append "CFLAGS", "-Wno-array-bound" if @@php_version.start_with?("8.")
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration" if @@php_version.start_with?("7.3", "7.2", "7.1", "7.0", "5.")
+    ENV.append "CFLAGS", "-Wno-incompatible-pointer-types" if @@php_version.start_with?("7.3", "7.2", "7.1", "7.0", "5.")
+    ENV.append "CFLAGS", "-Wno-implicit-int" if @@php_version.start_with?("5.")
 
     ENV.append "CFLAGS", "-DDEBUG_ZEND=2" if build.with? "debug"
     
-    ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
-    ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
+    if @@php_version.start_with?("7.3", "7.2", "7.1", "7.0", "5.")
+      ENV.append "CFLAGS", "-fcommon"
+      ENV.append "CFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
+      ENV.append "CXXFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
+      
+      # Workaround for https://bugs.php.net/80310
+      ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
+    end
+
+    if @@php_version.start_with?("5.")
+      ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
+      ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
+    else
+      ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
+      ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
+    end
 
     system "./buildconf", "--force"
+
+    if @@php_version.start_with?("5.")
+      inreplace "configure" do |s|
+        s.gsub! "APACHE_THREADED_MPM=`$APXS_HTTPD -V | grep 'threaded:.*yes'`",
+                "APACHE_THREADED_MPM="
+        s.gsub! "APXS_LIBEXECDIR='$(INSTALL_ROOT)'`$APXS -q LIBEXECDIR`",
+                "APXS_LIBEXECDIR='$(INSTALL_ROOT)#{lib}/httpd/modules'"
+        s.gsub! "-z `$APXS -q SYSCONFDIR`",
+                "-z ''"
+        # apxs will interpolate the @ in the versioned prefix: https://bz.apache.org/bugzilla/show_bug.cgi?id=61944
+        s.gsub! "LIBEXECDIR='$APXS_LIBEXECDIR'",
+                "LIBEXECDIR='" + "#{lib}/httpd/modules".gsub("@", "\\@") + "'"
+      end
+    end
+
     system "./configure", *install_args
 
     if build.with?("httpd")

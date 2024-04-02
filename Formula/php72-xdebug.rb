@@ -8,14 +8,15 @@ class Php72Xdebug < AbstractPhp72Extension
   url "https://github.com/xdebug/xdebug/archive/refs/tags/3.1.6.tar.gz"
   sha256 "217e05fbe43940fcbfe18e8f15e3e8ded7dd35926b0bee916782d0fffe8dcc53"
   version "3.1.6"
-  revision 1
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f73ca580e090bd19450a0e99235ee6ff46baef0738dbcd712ae181993d005ca"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7d3853ffb3b7c348c3b40d490e8e7258e8f61c8799256c384760288aa4a5bcd9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "34271f707359c4821fa72c40215a0a7baadd2cefa78cea290f0f640d3bb5dc94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03ba2f897f6a8da4bd5de7f17824f2afbd2b7486d7b35d8852e98b9409cde214"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7363bcfdc8aa96bcb717611e649093aad21a51c993d7603a503cb5b20df764ca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ec919cb9494548212bf25f9b956f30da7f79150c5af4a0bac70bd345f7bf0edb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aaed07daf0c2aaa8a68d0818231c86c5f8c14f83606c6aae2b77c63ba77db0ac"
+    sha256 cellar: :any_skip_relocation, monterey:      "7b67620e6c6dcd6980e8e1b4a1d8b87c35285d0e5604843402cc37853f7d7a86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "079c583703f3bb55f5127f2b20efd12d9e2c2b3198c5a95c0769a5766463eab7"
   end
 
   def extension_type

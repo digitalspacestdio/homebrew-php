@@ -13,7 +13,7 @@ class Php71Ioncubeloader < AbstractPhp71Extension
   end
   version "10.4.5"
   option "with-thread-safe", "Enable the thread-safe extenstion"
-
+  revision PHP_REVISION
 
   def extension_type
     "zend_extension"

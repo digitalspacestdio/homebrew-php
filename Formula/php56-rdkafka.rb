@@ -7,7 +7,7 @@ class Php56Rdkafka < AbstractPhp56Extension
   url "https://pecl.php.net/get/rdkafka-1.0.0.tgz"
   sha256 "3a8957c618f9f4093c8258621841c543270f4c4cbfd8ee687ca1dc270b244f87"
   head "https://github.com/arnaud-lb/php-rdkafka.git"
-
+  revision PHP_REVISION
 
   depends_on "librdkafka"
 

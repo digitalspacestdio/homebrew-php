@@ -7,7 +7,7 @@ class Php56Blitz < AbstractPhp56Extension
   url "https://github.com/alexeyrybak/blitz/archive/0.9.1.tar.gz"
   sha256 "f2f9364509bf078e322f1cd8d6d2eece4cb73416a8a987f583464757fce79317"
   head "https://github.com/alexeyrybak/blitz.git"
-
+  revision PHP_REVISION
 
   def install
     safe_phpize

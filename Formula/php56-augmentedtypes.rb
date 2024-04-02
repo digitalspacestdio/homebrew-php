@@ -7,7 +7,7 @@ class Php56Augmentedtypes < AbstractPhp56Extension
   url "https://github.com/box/augmented_types/archive/v0.6.6.tar.gz"
   sha256 "54b295f902e56daf1347b1e1f7d633a84c3e03aacac78424e6314adfd922e4db"
   head "https://github.com/box/augmented_types.git"
-
+  revision PHP_REVISION
 
   option "without-default-enforcement", "Turn off Augmented Types enforcement by default"
 

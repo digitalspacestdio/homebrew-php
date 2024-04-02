@@ -10,15 +10,15 @@ brew tap digitalspacestdio/common
 brew tap digitalspacestdio/php
 cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
 git stash
-git pull
+#git pull
 
-FORMULAS=${@:-$(brew search digitalspacestdio/php | grep 'php[7-9]\{1\}[0-9]\{1\}$' | awk -F'/' '{ print $3 }' | sort)}
+FORMULAS=${@:-$(brew search digitalspacestdio/php | grep 'php[5-9]\{1\}[0-9]\{1\}$' | awk -F'/' '{ print $3 }' | sort)}
 for PHP_FORMULA in $FORMULAS; do
     echo "Upload bottles for $PHP_FORMULA ..."
     s3cmd info "s3://homebrew-bottles" > /dev/null
     cd ${HOME}/.bottles/$PHP_FORMULA.bottle
-    ls | grep $PHP_FORMULA'.*--.*.gz$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
-    ls | grep $PHP_FORMULA'.*--.*.json$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
+    ls | grep $PHP_FORMULA'.*--.*.gz$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf -- '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
+    ls | grep $PHP_FORMULA'.*--.*.json$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf -- '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
     for jsonfile in ./*.json; do
         jsonfile=$(basename $jsonfile)
         JSON_FORMULA_NAME=$(jq -r '.[].formula.name' "$jsonfile")
@@ -52,6 +52,6 @@ done
 cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
 git add .
 git commit -m "bottles update"
-git pull --rebase
+echo "merge" | git pull --no-rebase
 git push
 cd -

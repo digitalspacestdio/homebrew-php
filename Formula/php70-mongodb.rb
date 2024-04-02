@@ -1,24 +1,26 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
 class Php70Mongodb < AbstractPhp70Extension
-  init
+  init PHP_VERSION, false
   desc "MongoDB driver for PHP."
   homepage "https://pecl.php.net/package/mongodb"
   url "https://github.com/mongodb/mongo-php-driver/releases/download/1.9.0/mongodb-1.9.0.tgz"
   sha256 "1a9e7117b749c2dd63bd3493bf38c24a9acd11646ec96a0d92ba6380eee0ab9a"
   head "https://github.com/mongodb/mongo-php-driver.git"
   version "1.9.0"
-  revision 2
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dfc9046a629b0d65ac6616d8f86e6c7bae86c7b48ba92f98dbbf3d8127d58474"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "916b95d49a4d362b3dba2d4f629c3f30c1d52e7832f32feda7a2dbc1ec211228"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ad466742d4d2800dfe34e9f8fbd86f9d6643f668e1b934cc0353a08ff015170e"
-    sha256 cellar: :any_skip_relocation, ventura:       "132b0e140225555692fcf9c8199c704893ebbad8254e9199bceb7467b42d0226"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98dc5bfb01e17cb3722c8992d8d0491de0e2f1cf504781e15dcc4e723d37e744"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff55f3e8d81b00d3b5feec7f16cc90b66b7b4aa3c0d572b2f19f7840f54f60e1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e9222b8db8c05169ee13b4ce21b519d6b2e89168beb2f4a05cdc2aab86bacca2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5e381d6806869e12fa18c6cd62bb2381f017aed177c0730daee0f5d09324bf75"
+    sha256 cellar: :any_skip_relocation, monterey:      "37fc0d4c90253749e6348ca2d137fcd228107dedec752cd37dfc07ac9860315a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8bda4fef46aa7cf9a2ddcec171d6488f5898205fcfb948ec17b4861821f8487b"
   end
+
   depends_on "openssl@1.1"
+  depends_on "digitalspacestdio/common/icu4c@69.1"
 
   def install
     Dir.chdir "mongodb-#{version}" unless build.head?
@@ -26,7 +28,7 @@ class Php70Mongodb < AbstractPhp70Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
-                          "--with-mongodb-ssl=openssl --with-openssl-dir=#{Formula["openssl"].opt_prefix}"
+                          "--with-mongodb-ssl=openssl --with-mongodb-icu=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix} --with-openssl-dir=#{Formula["openssl"].opt_prefix}"
     system "make"
     prefix.install "modules/mongodb.so"
     write_config_file if build.with? "config-file"

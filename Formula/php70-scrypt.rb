@@ -7,7 +7,7 @@ class Php70Scrypt < AbstractPhp70Extension
   url "https://github.com/DomBlack/php-scrypt/archive/v1.4.2.tar.gz"
   sha256 "f187076caa8eeb0f5d9992fbc2045b5dff11652f5ce93ccdf3a792ac98b43622"
   head "https://github.com/DomBlack/php-scrypt.git"
-
+  revision PHP_REVISION
 
   def install
     # ENV.universal_binary if build.universal?

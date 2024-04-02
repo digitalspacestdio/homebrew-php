@@ -6,7 +6,7 @@ class Php71Xmldiff < AbstractPhp71Extension
   homepage "https://pecl.php.net/package/xmldiff"
   url "https://pecl.php.net/get/xmldiff-1.1.2.tgz"
   sha256 "03b6c4831122e2d8cf97cb9890f8e2b6ac2106861c908d411025de6f07f7abb1"
-
+  revision PHP_REVISION
 
   def install
     Dir.chdir "xmldiff-#{version}"
