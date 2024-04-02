@@ -12,7 +12,7 @@ class Php81Ldap < AbstractPhp81Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a33f64288674f762f4de73b482cb1c9596e166d3aba8a0858b23af9b0f30b4ef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a108d2d8d44740bd035f9ec45add4b0c1aa4723d682442ff3ad36f1f524b1bd"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d00962d8758060b9de61f3390105b0be988449da7e6235da3ce703cea00d52ee"
     sha256 cellar: :any_skip_relocation, sonoma:        "111278c8ba9b9d92dfc4034ede9773fe49c62fa5b4313bf699b58e73ac4d3865"
     sha256 cellar: :any_skip_relocation, monterey:      "1dd551a41abde74ea5becab802a00c12ee4deb94b08735a80fa424fcd3e69ded"
