@@ -13,7 +13,7 @@ class Php80Redis < AbstractPhp80Extension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59e813b46d9845aab71893ae4fbd65b7a38b1cdba55b636c1d2f54bb393db7f9"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "582561a6a80c3847dc8a180fb8f448c91af62489f9d71336e6a0b7eb3c47ef12"
     sha256 cellar: :any_skip_relocation, sonoma:        "32ca8c7a75263d71bf4761d342870e3567ad09e2483a8825e83af7e2bb19a9ea"
-    sha256 cellar: :any_skip_relocation, monterey:      "20d2e7afeec6138c1c6a2892a341d2888975756f48aad57ccda330eab502f55c"
+    sha256 cellar: :any_skip_relocation, monterey:      "3710cf31360e8ab846dc50baa500f471dfc74680280c02f4a0d78d6ac7a93e8b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a0f2e069dbc0de1a61b2cbfaf7c177ca9561823487a05ef489dd1b6eb571740"
   end
 

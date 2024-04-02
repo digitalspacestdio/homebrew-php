@@ -14,7 +14,7 @@ class Php80Tidy < AbstractPhp80Extension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "11a62b524e7ab59f9c824fc678e570c4e13850323366cfecb93c4064847e8aae"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "048b6581ebb3acd8812635ca45c6b2be50f79c798c1bcc6a7ec49788e887a6e2"
     sha256 cellar: :any_skip_relocation, sonoma:        "0328788b7fa9098452a4fb3edc66b0ce4c69538a36b7228d23f5e9f816985140"
-    sha256 cellar: :any_skip_relocation, monterey:      "e769b4ba679c8f0a26626c0f134498f193a920bec9dcd983c97f67f6fb0265af"
+    sha256 cellar: :any_skip_relocation, monterey:      "2096213225be2ba8c76d85309cbd4dc730ab5792ef46dde06ac508632031bb7e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2b2f925df64b79433a304c1a3e2ede4fd9234a9919c2ce01f351afaf0a43e19"
   end
 

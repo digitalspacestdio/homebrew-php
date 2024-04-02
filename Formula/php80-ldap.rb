@@ -15,7 +15,7 @@ class Php80Ldap < AbstractPhp80Extension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d83eab1e8b60aee8d1ffdea8a488f8a53991ab5bb0c3505bb11a3d89581297db"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d4810a7aad2b28eee1e8eb29eda0437ad2c0e015e5706f2917576ab8a48a2d90"
     sha256 cellar: :any_skip_relocation, sonoma:        "f3c712196a11fc850eddedc82fcf48c69fd31e7ef3592f9f05510b7b7215cc4d"
-    sha256 cellar: :any_skip_relocation, monterey:      "ee23c0ad1bf7b2c13fa305a2c7109c1e4a87d712df6a4b09e412b0ad0ed0a51d"
+    sha256 cellar: :any_skip_relocation, monterey:      "1e297256ab5a5e197bb5870c2829351f2402a59ea15c0829afc260bbef5956b4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5728a722b06cab20a135f2ec91a70ad762b4176e1931ae47ab069c98fb7ba42"
   end
 
