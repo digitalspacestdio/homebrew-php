@@ -12,7 +12,7 @@ class Php74PdoPgsql < AbstractPhp74Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "69aa51b6405fb6095fe6372da688789c6fcf01f37c530f8f97ddb45e2c110107"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec2c559e810fb5e531f7c6520478495d7e7722009fb508ad9411628af9a1bf92"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d3bdc8af56dcb8e417a60fe5d3d9c39079bfb66c655a2d3d2b241f9994a8238a"
     sha256 cellar: :any_skip_relocation, sonoma:        "69ec314600876358a88e6ca6807834bd491d96c495c878b5c19d744383c2c194"
     sha256 cellar: :any_skip_relocation, monterey:      "f30dff1b37329556beca26bf3b3e805e6f5ebf086b9829d30527025ea86fea00"
