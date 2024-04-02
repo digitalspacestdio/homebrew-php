@@ -5,6 +5,7 @@ class Php82Opcache < AbstractPhp82Extension
   desc "OPcache improves PHP performance"
   homepage "https://php.net/manual/en/book.opcache.php"
   revision PHP_REVISION
+  revision PHP_REVISION
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
@@ -17,6 +18,7 @@ class Php82Opcache < AbstractPhp82Extension
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c695e7e9a7e9e584e4090927743183facad29b84bddac8290493560be6a86f6"
   end
 
+  depends_on "pcre2"
   depends_on "pcre2"
 
   def extension_type

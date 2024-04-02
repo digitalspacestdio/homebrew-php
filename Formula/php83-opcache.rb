@@ -5,6 +5,7 @@ class Php83Opcache < AbstractPhp83Extension
   desc "OPcache improves PHP performance"
   homepage "https://php.net/manual/en/book.opcache.php"
   revision PHP_REVISION
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL
@@ -20,6 +21,7 @@ class Php83Opcache < AbstractPhp83Extension
   end
 
   depends_on "pcre2"
+  depends_on "pcre2"
 
   def extension_type
     "zend_extension"
@@ -27,6 +29,9 @@ class Php83Opcache < AbstractPhp83Extension
 
   def install
     Dir.chdir "ext/opcache"
+
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
 
     ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
     ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"

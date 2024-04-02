@@ -5,6 +5,7 @@ class Php82PdoPgsql < AbstractPhp82Extension
   desc "Unified PostgreSQL driver for PDO"
   homepage "https://github.com/php/php-src/tree/master/ext/pdo_pgsql"
   revision PHP_REVISION
+  revision PHP_REVISION
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
@@ -17,6 +18,7 @@ class Php82PdoPgsql < AbstractPhp82Extension
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcbde018571702781915b44c200cdee6250aa31e45b67f8aa16b7f9a7d44fae9"
   end
 
+  depends_on "digitalspacestdio/common/libpq@16.2-icu4c.74.2"
   depends_on "digitalspacestdio/common/libpq@16.2-icu4c.74.2"
 
   def extension

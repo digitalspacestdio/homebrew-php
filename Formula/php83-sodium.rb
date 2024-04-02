@@ -5,6 +5,7 @@ class Php83Sodium < AbstractPhp83Extension
   desc "Sodium core php extension"
   homepage "https://php.net/manual/en/book.sodium.php"
   revision PHP_REVISION
+  revision PHP_REVISION
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
@@ -23,6 +24,8 @@ class Php83Sodium < AbstractPhp83Extension
 
   def install
     Dir.chdir "ext/sodium"
+    ENV.append "LDFLAGS", "-L#{Formula["libsodium"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["libsodium"].opt_prefix}/include"
     ENV.append "LDFLAGS", "-L#{Formula["libsodium"].opt_prefix}/lib"
     ENV.append "CPPFLAGS", "-I#{Formula["libsodium"].opt_prefix}/include"
 

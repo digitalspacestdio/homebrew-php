@@ -5,6 +5,7 @@ class Php83PdoPgsql < AbstractPhp83Extension
   desc "Unified PostgreSQL driver for PDO"
   homepage "https://github.com/php/php-src/tree/master/ext/pdo_pgsql"
   revision PHP_REVISION
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL
@@ -20,6 +21,7 @@ class Php83PdoPgsql < AbstractPhp83Extension
   end
 
   depends_on "digitalspacestdio/common/libpq@16.2-icu4c.74.2"
+  depends_on "digitalspacestdio/common/libpq@16.2-icu4c.74.2"
 
   def extension
     "pdo_pgsql"
@@ -29,6 +31,7 @@ class Php83PdoPgsql < AbstractPhp83Extension
     Dir.chdir "ext/pdo_pgsql"
 
     safe_phpize
+    system "./configure", "--prefix=#{prefix}", "--with-pdo-pgsql=#{Formula["digitalspacestdio/common/libpq@16.2-icu4c.74.2"].prefix}", phpconfig
     system "./configure", "--prefix=#{prefix}", "--with-pdo-pgsql=#{Formula["digitalspacestdio/common/libpq@16.2-icu4c.74.2"].prefix}", phpconfig
     system "make"
     prefix.install "modules/pdo_pgsql.so"

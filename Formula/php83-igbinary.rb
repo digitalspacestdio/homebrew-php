@@ -6,7 +6,10 @@ class Php83Igbinary < AbstractPhp83Extension
   homepage "https://pecl.php.net/package/igbinary"
   url "https://github.com/igbinary/igbinary/archive/3.2.15.tar.gz"
   sha256 "6fcbd7813eea1dfe00ec72a672cedb1d1cce06b2f23ab3cb148fa5e3edfa3994"
+  url "https://github.com/igbinary/igbinary/archive/3.2.15.tar.gz"
+  sha256 "6fcbd7813eea1dfe00ec72a672cedb1d1cce06b2f23ab3cb148fa5e3edfa3994"
   head "https://github.com/igbinary/igbinary.git"
+  revision PHP_REVISION
   revision PHP_REVISION
 
   bottle do

@@ -9,6 +9,7 @@ class Php82Xdebug < AbstractPhp82Extension
   sha256 "505b7b3bf5f47d1b72d18f064a8becb6854b8574195ca472e6f8da00bdc951a8"
   version "3.2.2"
   revision PHP_REVISION
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"

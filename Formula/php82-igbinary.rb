@@ -9,6 +9,7 @@ class Php82Igbinary < AbstractPhp82Extension
   head "https://github.com/igbinary/igbinary.git"
   version "3.2.14"
   revision PHP_REVISION
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"

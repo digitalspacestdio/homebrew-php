@@ -9,6 +9,7 @@ class Php82Apcu < AbstractPhp82Extension
   head "https://github.com/krakjoe/apcu.git", :branch => "master"
   version "5.1.22"
   revision PHP_REVISION
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"

@@ -11,6 +11,7 @@ class Php83Xdebug < AbstractPhp83Extension
   head "https://github.com/xdebug/xdebug.git"
   version "3.3.1"
   revision PHP_REVISION
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"

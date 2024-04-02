@@ -5,6 +5,7 @@ class Php83Gmp < AbstractPhp83Extension
   desc "GMP core php extension"
   homepage "https://php.net/manual/en/book.gmp.php"
   revision PHP_REVISION
+  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL

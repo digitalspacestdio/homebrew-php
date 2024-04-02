@@ -5,6 +5,7 @@ class Php82Ldap < AbstractPhp82Extension
   desc "LDAP Support"
   homepage "https://php.net/manual/en/book.ldap.php"
   revision PHP_REVISION
+  revision PHP_REVISION
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
