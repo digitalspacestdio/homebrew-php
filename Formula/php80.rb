@@ -12,7 +12,7 @@ class Php80 < AbstractPhp
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd67b38f28eae46b278600f1aa4b703effb707be0959ed4c76adf0b64389f43a"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "cff0d78c605b2b630e538cd55905999df9920c1da835380353777d07edf69db5"
     sha256 cellar: :any_skip_relocation, sonoma:        "44e3cb1611f76945717a2aadda0ba4ef5912818ad15404236b1b33733f5801e4"
-    sha256 cellar: :any_skip_relocation, monterey:      "1a7d75a87f5b05d7f14f5fcf3010f2e8c2f4c3c51e0b73b6400a2114944708af"
+    sha256 cellar: :any_skip_relocation, monterey:      "cddfbcad6aca6a28ce4bd913a6d61e4a1d503b139db034dac903cc4beac3e97c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "870138fd1be22a43606eac609864abfbf975f8af12459dda8f4a589c068d1872"
   end
 

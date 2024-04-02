@@ -15,7 +15,7 @@ class Php80Zip < AbstractPhp80Extension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7e33030b4d55d225bd98c9a5d0ef7c6e4582355da0a4a50dc93b824fbd04018"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b34050893959eab640a4a12b67807665229efd6462f6171d87ba956d98d73437"
     sha256 cellar: :any_skip_relocation, sonoma:        "0c4e9b55b73b6b8db5e843c9f4c28c900c6762517dc11a7c8deb923a8d3f900e"
-    sha256 cellar: :any_skip_relocation, monterey:      "8f03b389440d40187d5e03c668aaf19d21307030bc4646c715d6bbac5e8cfc3d"
+    sha256 cellar: :any_skip_relocation, monterey:      "237055c96472b8b1cd8ed6b0129fbcd59619201d624f0323d1c6bb49be2e6073"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fca1eb6d6479f107d3790df398e2580896fb607e3b70b09e582d900a48c13b36"
   end
 

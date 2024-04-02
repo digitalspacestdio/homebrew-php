@@ -14,7 +14,7 @@ class Php80Sodium < AbstractPhp80Extension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc1bbc7a419782e3da121f01c38c95a409b48cd184fde5b767d5fc7470f909c1"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "cef72b893727b807f5928b59aa527f965baf5df4fd1025e0c9c28a57ffd0feb0"
     sha256 cellar: :any_skip_relocation, sonoma:        "fbe92e1ed1c83c008d7c714303320b3d46ef0805263b0caadd708cabc6bd2c2b"
-    sha256 cellar: :any_skip_relocation, monterey:      "201d968fddf366f3e3d1006758c37ec176a007ca5b0d57e93c58f4a0ecc181f8"
+    sha256 cellar: :any_skip_relocation, monterey:      "90fc6123b2b557a45eaeb4e2b49589bd0e3da248e62924546e7183dc35fc4c13"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "204ada28b6bbe611930b06f7946ec52910539706bd95c94c1e9766a0853db7be"
   end
 
