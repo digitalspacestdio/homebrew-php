@@ -4,8 +4,6 @@ class Php83 < AbstractPhp
   include AbstractPhpVersion::Php83Defs
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
   desc "PHP " + PHP_VERSION
-  init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
-  desc "PHP " + PHP_VERSION
   version PHP_VERSION
   revision PHP_REVISION
 
