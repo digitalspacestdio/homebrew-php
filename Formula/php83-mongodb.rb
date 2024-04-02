@@ -12,8 +12,8 @@ class Php83Mongodb < AbstractPhp83Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1595ffa935e8936f6fc9df28208b454fe843f56e42f01388accd192d9f9a068"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "559f72fd87b0d342edbc7529bdbb46b14e7bfbe31bf2c6ab631bb916c3c1ac03"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ef48f2924219007246f0e3ccb20a9b66d23b94ebd82b49efa4d3460d1fd515f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9703e108a31aea8406b35dfb79fdc7ad1de349a3e6141c12e868fdbfde16933b"
     sha256 cellar: :any_skip_relocation, sonoma:        "5e93a10a0b55aa68988a5bdc9c8129c4bdba8b790019ecb56a72be431df94dcb"
     sha256 cellar: :any_skip_relocation, monterey:      "a5fc7c134566bc3fa7904e5e7d4d21276c2b869fb4cbf871c0408f456a2f7065"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa5316d1c766b3dfc833646e47f9145f387c6924ad32bf57cf0d5bbc309fd4fb"
