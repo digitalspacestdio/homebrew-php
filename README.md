@@ -7,9 +7,9 @@ A centralized repository for PHP-related brews.
 * [Homebrew](https://brew.sh/). 
 * macOS (Intel): High Sierra, Mojave, Catalina, BigSur, Monterey, Ventura, Sonoma.
 * macOS (Apple Silicon): Monterey, Ventura, Sonoma.  
-* Linux (Arm64 or Amd64): Debian Based (with installed: `systemtap-sdt-dev` `build-essential`)
-* Linux (Arm64 or Amd64): OpenSUSE (with installed: `systemtap-sdt-devel` `gcc-c++` `make` `patch`)
-* Windows (Amd64): via WSL2
+* Linux (arm64/x86_64): Debian Based (with installed: `systemtap-sdt-dev` `build-essential`)
+* Linux (arm64/x86_64): OpenSUSE (with installed: `systemtap-sdt-devel` `gcc-c++` `make` `patch`)
+* Windows (x86_64): 10/11 with Ubuntu via WSL2
 
 ## Installation
 
