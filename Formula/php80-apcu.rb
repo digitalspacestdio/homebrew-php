@@ -12,7 +12,7 @@ class Php80Apcu < AbstractPhp80Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de2aadfb2c66e6938f92ecbd4a8e8c52dd6a118d44cccf0ec9a928bc21830bcc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa47dc1f5aaa0e74724027e740d4006e41f10c20ca99fe70f1591cc7ed82ec92"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0b341b6065cbc47b92be45d674144d24e848c2119198bcb96cd8cdb0493d70de"
     sha256 cellar: :any_skip_relocation, sonoma:        "1d17c621b89763fd110b4f83a2efe00c3f4c1478e8b97b9310753aef2be8eb82"
     sha256 cellar: :any_skip_relocation, monterey:      "aef025635844fb3342ad9400d9506dc2212052944b443243eeb252b1a8842161"
