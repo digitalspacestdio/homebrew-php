@@ -14,7 +14,7 @@ class Php81Tidy < AbstractPhp81Extension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c970f60ef3ff9261f9181de00747eb7f4fc11d55314f1eef165e88816e365c2"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "18fb45df3acd9b89d316672f4c46914629e92031a061e129acafe5817025732f"
     sha256 cellar: :any_skip_relocation, sonoma:        "5905f311fb42ca88dc2dcdbe0229ee7ec965e38254da4793da7b8fde3cabd972"
-    sha256 cellar: :any_skip_relocation, monterey:      "7fe2a08f61a8d23ed51d044d3235437c97fb9e2c308a1b30110febf62579051f"
+    sha256 cellar: :any_skip_relocation, monterey:      "bc728109a4ef8161ae5e8526746aa56220ea672b5b8b4c167f653ef7ee100c45"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ad962d892051922382dd9f5a4c7d50402710788db871ab6b260a40c920d04a5"
   end
 

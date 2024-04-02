@@ -15,7 +15,7 @@ class Php81Xdebug < AbstractPhp81Extension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "17384a80836ffc776545f9b0d35c95f2ea6115df3caa1d8ccc9dad68b244e176"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "53e95cbee9ac29f2d1d45d0d014b09e67b8eb839ce4a0e40142aa4fd9c0e5e67"
     sha256 cellar: :any_skip_relocation, sonoma:        "09014fa57eecb5e106a11d93ff96edd43612dd2f16abe7ccfb506ce1ea414300"
-    sha256 cellar: :any_skip_relocation, monterey:      "5e436b1a63ebe82562a89d4c3eabdd09b72a5cd69e5d6a0b4fed2ab001e5fde9"
+    sha256 cellar: :any_skip_relocation, monterey:      "1e2e9131fd9aa2837bf09355a151f6cae80a8ebd9086def9c60e0c1513bdb672"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "944b1bdcb166455ac77ccba19d357593317d997a662e3829f6d198db7b41c7e6"
   end
 

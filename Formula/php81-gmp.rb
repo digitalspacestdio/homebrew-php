@@ -15,7 +15,7 @@ class Php81Gmp < AbstractPhp81Extension
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a9a90b8aae7bec6039b287815d8ce5d06f84acc943cba6deb510d35f4fd65a5"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "414c562d000eff382773311dc3e421bc871ab51cf8ab993820833d4c265e0c0d"
     sha256 cellar: :any_skip_relocation, sonoma:        "9afa5603508a33696fe734adda3a1863ce5592bc699f3bf8b91728e1294573a1"
-    sha256 cellar: :any_skip_relocation, monterey:      "28c5b70a17d051acaf0ebce7cb702e064b529d9fc2c8e1f37c42e81041e438a4"
+    sha256 cellar: :any_skip_relocation, monterey:      "087de8158cb4532dcbbc7207ed167fee074bb9102610054afbb2c0f6c4602a29"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "50848d7c594d0f8d6ef3caef302f7f1b209ed66c9f0824eeca56d02efea56902"
   end
 
