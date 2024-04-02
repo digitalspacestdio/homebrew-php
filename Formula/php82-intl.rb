@@ -2,8 +2,10 @@ require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
 class Php82Intl < AbstractPhp82Extension
   init PHP_VERSION, false
+  init PHP_VERSION, false
   desc "Wrapper for the ICU library"
   homepage "https://php.net/manual/en/book.intl.php"
+  revision PHP_REVISION
   revision PHP_REVISION
 
 
@@ -14,7 +16,7 @@ class Php82Intl < AbstractPhp82Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "86162e3af51cad16e73830ffc9d212dc8a5d756b009724985335914fb3f782ae"
     sha256 cellar: :any_skip_relocation, sonoma:        "ae5dfd4ea3528e4330e80cadabf952fe90cbecaba650fb818448ee6a91671e14"
-    sha256 cellar: :any_skip_relocation, monterey:      "e4ffc3eec04739eec6d84fbaff1cead09f156d9a90a9d00c4ff69b9e5f09b428"
+    sha256 cellar: :any_skip_relocation, monterey:      "3961dd2df9783be4a378a9978c9cf01fe8f244dec5b0d61557c9a2f9a6dca787"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f5ff98ff53ca894524fd4ad37486fb0d6c5c65cc177e30f5092d60bfd2a3d3a"
   end
 

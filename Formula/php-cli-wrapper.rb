@@ -3,7 +3,7 @@ require "formula"
 class PhpCliWrapper < Formula
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-  version "0.1.5"
+  version "0.1.6"
 
   def binary_dir
     buildpath / "bin"
@@ -38,6 +38,10 @@ class PhpCliWrapper < Formula
         PHP_RC_PATH=$(find-up .php-version $(pwd))
         if [[ ! -z $PHP_RC_PATH ]]; then
           PHP_RC_PATH="${PHP_RC_PATH}/.php-version"
+        else
+          if [[ -f #{HOMEBREW_PREFIX}/etc/php/.phprc ]]; then
+            PHP_RC_PATH="#{HOMEBREW_PREFIX}/etc/php/.phprc"
+          fi
         fi
       fi
 

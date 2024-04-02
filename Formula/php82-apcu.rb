@@ -9,12 +9,13 @@ class Php82Apcu < AbstractPhp82Extension
   head "https://github.com/krakjoe/apcu.git", :branch => "master"
   version "5.1.22"
   revision PHP_REVISION
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3f477f79d09c7474e505595dde5f334a808d6feba5165f8fd6a62bb8be6b5c2a"
     sha256 cellar: :any_skip_relocation, sonoma:        "aff6f39b046e99f5d4875e7f3019ee9ba8f8343adf41d4cf9c5d7b5750170934"
-    sha256 cellar: :any_skip_relocation, monterey:      "a82b4a66268610400467c15c953db3e65edbcbb0b6b06449914e7da6507c311d"
+    sha256 cellar: :any_skip_relocation, monterey:      "23f6a3f673df0206d37ec28646bbad2f21ee33b2d13581d47234c02c8f27ba42"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1105c9813343af757e7c5d8e31bccfa1538aa1e65d2fb21dd26abaadbb4b5648"
   end
 
