@@ -9,13 +9,12 @@ class Php82Igbinary < AbstractPhp82Extension
   head "https://github.com/igbinary/igbinary.git"
   version "3.2.14"
   revision PHP_REVISION
-  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "815c2ee64357db06e8766441e23d219f113055fb55cbc85e90dd8171f4682d2e"
     sha256 cellar: :any_skip_relocation, sonoma:        "9258c3fa3509c2acb8f781a58845cb770e5eab11fb4aa011890a62c7c6ebc2e2"
-    sha256 cellar: :any_skip_relocation, monterey:      "28ccc511f5cc8ab895b3f8996dff7d71be119454a30b52fa9267dc06db18f1a6"
+    sha256 cellar: :any_skip_relocation, monterey:      "5b409ef50c9cde782e8c67f501fe9594e6c04217ddfafc1ad761487a45ba61df"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a175cabaa1e281323ef9af32ee9c7b97cc30c49273f0833351e5bfa0bb83783"
   end
 

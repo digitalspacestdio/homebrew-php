@@ -4,8 +4,6 @@ class Php82 < AbstractPhp
   include AbstractPhpVersion::Php82Defs
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
   desc "PHP " + PHP_VERSION
-  init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
-  desc "PHP " + PHP_VERSION
   version PHP_VERSION
   revision PHP_REVISION
 
@@ -13,14 +11,13 @@ class Php82 < AbstractPhp
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "37fdfbb0a9dd6f2b354ddbf0dafd3d0305af369ec30fa8de4cb66a78185992c5"
     sha256 cellar: :any_skip_relocation, sonoma:        "1b37069874e64326f1aaf795e7538b85984e24d8b18719d7a4da92a34ee34700"
-    sha256 cellar: :any_skip_relocation, monterey:      "1f432e6de16eefad538e0b7fe9b3c909821be148e7ea5f7da259dac291be70b7"
+    sha256 cellar: :any_skip_relocation, monterey:      "d2a87044abc055cb93340cb97213142f03285377ff74ea7dcd5cb5e43d4ceacb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9c63252441d03f87f8a8ddd8a83d935ff89ffa339f1ebc5f60f3d487c443a53"
   end
   
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
-  keg_only :versioned_formula
   keg_only :versioned_formula
 
   def php_version
@@ -31,10 +28,6 @@ class Php82 < AbstractPhp
     "#{PHP_BRANCH_NUM}"
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "krb5"
-  depends_on "oniguruma"
-  depends_on "libjpeg"
   depends_on "pkg-config" => :build
   depends_on "krb5"
   depends_on "oniguruma"

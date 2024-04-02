@@ -5,7 +5,6 @@ class Php82Ldap < AbstractPhp82Extension
   desc "LDAP Support"
   homepage "https://php.net/manual/en/book.ldap.php"
   revision PHP_REVISION
-  revision PHP_REVISION
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
@@ -14,7 +13,7 @@ class Php82Ldap < AbstractPhp82Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "df3fae54c79c2519ee0c5f6ec50e16846b577d722b2172ed68932665bcd33208"
     sha256 cellar: :any_skip_relocation, sonoma:        "0850065bcb8ca0e82f16d7c550aa4713ef51527593ae9e7db958441ade84c904"
-    sha256 cellar: :any_skip_relocation, monterey:      "62a06824bf470b9516362c23dcb47f722f6599ba2362769a645dc05a4b92f56b"
+    sha256 cellar: :any_skip_relocation, monterey:      "c041dae1e8244e4fb17509e93c045a42f6dd612482f62a8f4769b600e51ba735"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd3ec0dafd05e18e528291c771c91d9370017e1648c3a144a6f532bf7517a220"
   end
 
