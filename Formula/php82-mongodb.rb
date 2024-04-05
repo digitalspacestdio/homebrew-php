@@ -1,14 +1,12 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
 class Php82Mongodb < AbstractPhp82Extension
-  init PHP_VERSION, false
-  init PHP_VERSION, false
+  init PHP_VERSION, true
   desc "MongoDB driver for PHP."
   homepage "https://github.com/mongodb/mongo-php-driver"
   url "https://github.com/mongodb/mongo-php-driver/releases/download/1.15.1/mongodb-1.15.1.tgz"
   sha256 "b2038e778d71f45cadb8c93a30eb548e5c2c1e4f832807a775ed516b7816b749"
   head "https://github.com/mongodb/mongo-php-driver.git"
-  version "1.15.1"
   revision PHP_REVISION
 
   bottle do
@@ -20,7 +18,6 @@ class Php82Mongodb < AbstractPhp82Extension
   end
 
   depends_on "openssl"
-  depends_on "digitalspacestdio/common/icu4c@74.2"
   depends_on "digitalspacestdio/common/icu4c@74.2"
 
   def install

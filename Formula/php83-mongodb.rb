@@ -1,13 +1,12 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
 class Php83Mongodb < AbstractPhp83Extension
-  init PHP_VERSION, false
+  init PHP_VERSION, true
   desc "MongoDB driver for PHP."
   homepage "https://github.com/mongodb/mongo-php-driver"
-  url "https://github.com/mongodb/mongo-php-driver/releases/download/1.16.2/mongodb-1.16.2.tgz"
-  sha256 "d630cf32a73b6e5e05d2806782d35e06d24b7d5c83cfec08239549e6b6a600b2"
+  url "https://github.com/mongodb/mongo-php-driver/releases/download/1.15.1/mongodb-1.15.1.tgz"
+  sha256 "b2038e778d71f45cadb8c93a30eb548e5c2c1e4f832807a775ed516b7816b749"
   head "https://github.com/mongodb/mongo-php-driver.git"
-  version "1.16.2"
   revision PHP_REVISION
 
   bottle do
