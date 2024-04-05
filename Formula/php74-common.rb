@@ -6,7 +6,7 @@ class Php74Common < AbstractPhpCommon
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74-common"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c2b4f1ad7745c7dd1cbe4641c5b7fc8f4c29cbab93550f58be8c3ca9c45cea07"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "38f576bc348a6268b6265cb79357b5cc1ca4f9778efb161d9d1870c33bc25c95"
     sha256 cellar: :any_skip_relocation, sonoma:        "3477b4b03c5684b13226dcf46c7e809becdfbc33fa790178599bbe097be77e4c"
     sha256 cellar: :any_skip_relocation, monterey:      "77816aa02112db6b05dc5b271ef8207d0efed28e1576b99d964d97de33a48a69"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "442a5c6fd13fcf1def2e2974afcadae9d2496c8017cbf91d0abdcecef50c2e11"
