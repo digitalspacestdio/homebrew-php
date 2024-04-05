@@ -6,7 +6,7 @@ class Php56Common < AbstractPhpCommon
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56-common"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d4184143a57c444c7b7e83e999f55ab3f49c32f7a07ed1f062a2321d7da159f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "370faaa69cc40373380df8fbe95226d46710d7e3168766e8a0d06d5fb752ab03"
   end
 
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
