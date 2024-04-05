@@ -14,6 +14,7 @@ class Php82Mongodb < AbstractPhp82Extension
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "22d02d25468acb4cc9a4f073438d80a780da65eb94de405166a9d040ecae0fa9"
     sha256 cellar: :any_skip_relocation, sonoma:       "c6e12b366af1e9ac9b44d73fcb14c9c80669f827336ee2a80ed6565fe5bfa393"
     sha256 cellar: :any_skip_relocation, monterey:     "99e387a05eee86c2a7e50825dedad0dea1d406097f251a046ef73f6d8152d46d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ae30a673e0b2e81b6e4d6403b839858997ccd1e04afafe2dff5e7383d451d931"
   end
 
   depends_on "openssl"
