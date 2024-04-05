@@ -5,8 +5,6 @@ class Php83Zip < AbstractPhp83Extension
   desc "Zip"
   homepage "https://www.php.net/manual/ru/book.zip.php"
   revision PHP_REVISION
-  revision PHP_REVISION
-
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
@@ -22,7 +20,6 @@ class Php83Zip < AbstractPhp83Extension
 
   depends_on "libzip"
   depends_on "pkg-config" => :build
-  depends_on "pcre2"
   depends_on "pcre2"
 
   def install
@@ -41,8 +38,6 @@ class Php83Zip < AbstractPhp83Extension
                           phpconfig,
                           "--disable-dependency-tracking",
                           "--enable-zip",
-                          "--with-libzip=#{Formula["libzip"].opt_prefix}",
-                          "--with-external-pcre=#{Formula["pcre2"].opt_prefix}"
                           "--with-libzip=#{Formula["libzip"].opt_prefix}",
                           "--with-external-pcre=#{Formula["pcre2"].opt_prefix}"
     system "make"

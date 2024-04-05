@@ -39,13 +39,6 @@ class Php83 < AbstractPhp
   depends_on "bison"
   depends_on "re2c"
 
-  depends_on "pkg-config" => :build
-  depends_on "krb5"
-  depends_on "oniguruma"
-  depends_on "libjpeg"
-  depends_on "bison"
-  depends_on "re2c"
-
   def install_args
     args = super
     if !build.without? "pear"

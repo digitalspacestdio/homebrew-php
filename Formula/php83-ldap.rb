@@ -5,8 +5,6 @@ class Php83Ldap < AbstractPhp83Extension
   desc "LDAP Support"
   homepage "https://php.net/manual/en/book.ldap.php"
   revision PHP_REVISION
-  revision PHP_REVISION
-
 
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
@@ -37,22 +35,9 @@ class Php83Ldap < AbstractPhp83Extension
                             "--with-ldap-sasl#{headers_path}"
     else
       system "./configure", "--prefix=#{prefix}",
-
-    if OS.mac?
-      ENV["SASL_CFLAGS"] = "-I#{MacOS.sdk_path_if_needed}/usr/include/sasl"
-      ENV["SASL_LIBS"] = "-lsasl2"
-      headers_path = "=#{MacOS.sdk_path_if_needed}/usr"
-      system "./configure", "--prefix=#{prefix}",
-                            phpconfig,
-                            "--disable-dependency-tracking",
-                            "--with-ldap=#{Formula["openldap"].opt_prefix}",
-                            "--with-ldap-sasl#{headers_path}"
-    else
-      system "./configure", "--prefix=#{prefix}",
                           phpconfig,
                           "--disable-dependency-tracking",
                           "--with-ldap=#{Formula["openldap"].opt_prefix}"
-    end
     end
     system "make"
     prefix.install "modules/ldap.so"

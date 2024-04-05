@@ -10,7 +10,6 @@ class Php83Apcu < AbstractPhp83Extension
   sha256 "1adcb23bb04d631ee410529a40050cdd22afa9afb21063aa38f7b423f8a8335b"
   head "https://github.com/krakjoe/apcu.git", :branch => "master"
   revision PHP_REVISION
-  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
@@ -22,12 +21,9 @@ class Php83Apcu < AbstractPhp83Extension
   end
 
   depends_on "pcre2"
-  depends_on "pcre2"
 
   def install
 
-    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
-    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
     ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
     ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
 

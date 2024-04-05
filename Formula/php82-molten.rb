@@ -8,7 +8,6 @@ class Php82Molten < AbstractPhp82Extension
   sha256 "9502d915c406326ce16fc2bc428a04188c7d03da2fc95772baed0c6e284f1397"
   head "https://github.com/chuan-yun/Molten.git"
   revision PHP_REVISION
-  revision PHP_REVISION
 
   option "without-zipkin", "Disable zipkin headers"
 

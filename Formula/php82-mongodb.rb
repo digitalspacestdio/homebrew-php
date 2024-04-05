@@ -10,7 +10,6 @@ class Php82Mongodb < AbstractPhp82Extension
   head "https://github.com/mongodb/mongo-php-driver.git"
   version "1.15.1"
   revision PHP_REVISION
-  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"

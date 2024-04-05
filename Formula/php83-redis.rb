@@ -7,7 +7,6 @@ class Php83Redis < AbstractPhp83Extension
   sha256 "786944f1c7818cc7fd4289a0d0a42ea630a07ebfa6dfa9f70ba17323799fc430"
   head "https://github.com/phpredis/phpredis.git"
   revision PHP_REVISION
-  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"

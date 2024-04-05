@@ -6,7 +6,6 @@ class Php83Intl < AbstractPhp83Extension
   desc "Wrapper for the ICU library"
   homepage "https://php.net/manual/en/book.intl.php"
   revision PHP_REVISION
-  revision PHP_REVISION
 
 
   url PHP_SRC_TARBALL
@@ -21,7 +20,6 @@ class Php83Intl < AbstractPhp83Extension
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d226a22909e3194f5cbacd4c6bd4f826c57e490ba92259047b4e5662d8854593"
   end
 
-  depends_on "digitalspacestdio/common/icu4c@74.2"
   depends_on "digitalspacestdio/common/icu4c@74.2"
   depends_on "pkg-config" => :build
 
