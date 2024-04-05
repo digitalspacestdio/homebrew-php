@@ -4,5 +4,12 @@ class Php80Common < AbstractPhpCommon
   include AbstractPhpVersion::Php80Defs
   revision PHP_REVISION
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80-common"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8379088b341ccb738dd363c5ab0da999146d58f79cafb5b5dd4db5f3c14f5473"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d7d03e36cadf3acd5396216bb9569a6c9b533a4f4231e915619db29a7d76c845"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f36fdc13abcc5c16c506f46ae7152ae0029e7dfb869641aa5f890828eb2274f"
+  end
+
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
 end

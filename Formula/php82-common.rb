@@ -4,5 +4,10 @@ class Php82Common < AbstractPhpCommon
   include AbstractPhpVersion::Php82Defs
   revision PHP_REVISION
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82-common"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "601c1df38bae2f57ae3debe5bf7a686a99bbb6236a4d4d8f122365eb29e73740"
+  end
+
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
 end
