@@ -1,9 +1,6 @@
 {
   "php70-libsodium": "php70-libsodium@1.0",
   "php71-libsodium": "php71-libsodium@1.0",
-  "digitalspacestdio/common/curl": "digitalspacestdio/common/curl@7",
-  "phpcurl": "digitalspacestdio/common/curl@7",
-  "phpmcrypt": "digitalspacestdio/common/mcrypt@2.6",
   "homebrew-php-tools" : "bottle-php-tools",
   "bottle-php-tools" : "bottle-tools-php"
 }
