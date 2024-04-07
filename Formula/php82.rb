@@ -4,8 +4,6 @@ class Php82 < AbstractPhp
   include AbstractPhpVersion::Php82Defs
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
   desc "PHP " + PHP_VERSION
-  init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
-  desc "PHP " + PHP_VERSION
   version PHP_VERSION
   revision PHP_REVISION
 
@@ -21,7 +19,6 @@ class Php82 < AbstractPhp
   sha256 PHP_CHECKSUM[:sha256]
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
   keg_only :versioned_formula
-  keg_only :versioned_formula
 
   def php_version
     "#{PHP_VERSION_MAJOR}"
@@ -31,10 +28,6 @@ class Php82 < AbstractPhp
     "#{PHP_BRANCH_NUM}"
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "krb5"
-  depends_on "oniguruma"
-  depends_on "libjpeg"
   depends_on "pkg-config" => :build
   depends_on "krb5"
   depends_on "oniguruma"

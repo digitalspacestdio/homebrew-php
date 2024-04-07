@@ -27,8 +27,6 @@ class Php82Zip < AbstractPhp82Extension
 
     ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
     ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
-    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
-    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
     
     Dir.chdir "ext/zip"
 
