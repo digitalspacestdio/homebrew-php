@@ -10,8 +10,9 @@ class Php80Redis < AbstractPhp80Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, monterey:     "092e9eecd16653334f31a94d668f3e04282c872656d2316ab627d4eb90f2bfe0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5c769feb3217ddf50255d89138cc46eadb64b7f9df78507f74102913f5fe4571"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5da2d329539bdbfa09ac7d54aaaf1888a4a7bc4dc51dc71d16a84b72a0d59ce4"
+    sha256 cellar: :any_skip_relocation, monterey:      "092e9eecd16653334f31a94d668f3e04282c872656d2316ab627d4eb90f2bfe0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c769feb3217ddf50255d89138cc46eadb64b7f9df78507f74102913f5fe4571"
   end
 
   depends_on "digitalspacestdio/php/php80-igbinary"
