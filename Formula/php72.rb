@@ -9,6 +9,7 @@ class Php72 < AbstractPhp
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
+    sha256 cellar: :any_skip_relocation, monterey:     "cb10a0dde42c3b5b14d90fb3f54c70372fe9df05bac50807f09526957ebe4ac5"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "35893920f379f2a48bfa7fec9ec68c6a70026d33029ab56dc63f10f485d805de"
   end
   

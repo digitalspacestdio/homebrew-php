@@ -11,6 +11,7 @@ class Php72Tidy < AbstractPhp72Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
+    sha256 cellar: :any_skip_relocation, monterey:     "97cb186cdb5533a27058636f20454446ccd422a7c265a24ebccf165c6b8d5618"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "8e6b05b3c58fb6f6476cc3e4f7578a20a5b058b81d69f62c6b92ed138c0d212c"
   end
 
