@@ -24,6 +24,7 @@ class AbstractPhpCommon < Formula
 
     depends_on "digitalspacestdio/php/php#{@@php_version_path}"
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-apcu"
+    depends_on "digitalspacestdio/php/php#{@@php_version_path}-amqp"
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-gmp"
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-igbinary"
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-intl"
