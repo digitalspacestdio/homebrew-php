@@ -12,6 +12,7 @@ class Php73Mongodb < AbstractPhp73Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
+    sha256 cellar: :any_skip_relocation, monterey:     "b38d9c7978489409f801bf8dc61952d8c108f72bbf151393f5cd63c4a53703e8"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "9fad56a4a86c59a8f3bccde9783d4bdacb40bcbd7a0052cc9898a583323d1c66"
   end
 
