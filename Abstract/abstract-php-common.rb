@@ -132,7 +132,11 @@ class AbstractPhpCommon < Formula
     begin
         inreplace config_path_php_fpm do |s|
             s.sub!(/^.*?error_log\s*=.+$/, "error_log = /dev/stdout")
-        end
+            s.sub!(/^.*?user\s*=.+$/, "; user = #{user}") if @@php_version.start_with?("5.")
+            s.sub!(/^.*?group\s*=.+$/, "; group = #{user_group}") if @@php_version.start_with?("5.")
+            s.sub!(/^.*?listen\s*=.+$/, "listen = #{var}/run/php#{@@php_version}-fpm.sock") if @@php_version.start_with?("5.")
+            s.sub!(/^.*?catch_workers_output\s=.+$/, "catch_workers_output = yes") if @@php_version.start_with?("5.")
+        end        
     rescue StandardError
         nil
     end
@@ -142,6 +146,7 @@ class AbstractPhpCommon < Formula
             s.sub!(/^.*?user\s*=.+$/, "; user = #{user}")
             s.sub!(/^.*?group\s*=.+$/, "; group = #{user_group}")
             s.sub!(/^.*?listen\s*=.+$/, "listen = #{var}/run/php#{@@php_version}-fpm.sock")
+            s.sub!(/^.*?catch_workers_output\s=.+$/, "catch_workers_output = yes")
         end
     rescue StandardError
         nil
