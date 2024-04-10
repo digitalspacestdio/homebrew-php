@@ -11,6 +11,7 @@ class Php71Sodium < AbstractPhp71Extension
   
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
+    sha256 cellar: :any_skip_relocation, monterey:     "c862350587bf7751d6fbe77cf266c52149a87896facdae89164c84996be952b4"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "1fd58689f9a48e8ed0a05c621e181cec637fbf40b4c716439f72f5e0b2763cee"
   end
 

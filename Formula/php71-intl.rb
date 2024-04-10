@@ -11,6 +11,7 @@ class Php71Intl < AbstractPhp71Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
+    sha256 cellar: :any_skip_relocation, monterey:     "8f9bcd5ac903b06c5a577cf31fb86cfef911a5bd711414fdbd14d580fe0f2bdd"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "10b064082e2980e83d928033ff0150c764cc34aa5f07c98aad8bb4b56b842b7e"
   end
 

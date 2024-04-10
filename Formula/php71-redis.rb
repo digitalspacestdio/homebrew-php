@@ -11,6 +11,7 @@ class Php71Redis < AbstractPhp71Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
+    sha256 cellar: :any_skip_relocation, monterey:     "6b457b2a62f3b3e05330519eacff53600bd6b60e4d771378619ffe5b81b3d719"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "918a1b35c79c2daaa4c4c260b0b061f06cd71da44e454b0b06d95191c8ea2322"
   end
 
