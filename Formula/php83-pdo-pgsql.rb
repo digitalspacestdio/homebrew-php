@@ -11,6 +11,7 @@ class Php83PdoPgsql < AbstractPhp83Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
+    sha256 cellar: :any_skip_relocation, monterey:     "31ebc203a68671783afcc712e63aa95643a0b129c2c3301bf75fa9c4e7a04422"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "76dd703754048fe301f2044db70686335d29764d317a2a39ad01a2d6eafa3846"
   end
 
