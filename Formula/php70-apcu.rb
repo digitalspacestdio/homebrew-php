@@ -11,7 +11,8 @@ class Php70Apcu < AbstractPhp70Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
-    sha256 cellar: :any_skip_relocation, monterey: "dbbdfdc1bf6687099f8b568aed019cc804a1e75873f1304ef8a2b97dbfb39d2e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b3bfb29828504394a4bb8f597578276fe29981c1132a6affe56c57f93f49dc20"
+    sha256 cellar: :any_skip_relocation, monterey:      "dbbdfdc1bf6687099f8b568aed019cc804a1e75873f1304ef8a2b97dbfb39d2e"
   end
 
   depends_on "pcre2"
