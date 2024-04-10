@@ -9,6 +9,11 @@ class Php72Amqp < AbstractPhp72Extension
   head "https://github.com/pdezwart/php-amqp.git"
   revision PHP_REVISION
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72-amqp"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d238899cf150e2e06f188b08cfb70ecba3f5d4707aa12d64c0298d0bf0a3c407"
+  end
+
   depends_on "rabbitmq-c"
 
   def install
