@@ -12,6 +12,7 @@ class Php74Intl < AbstractPhp74Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
+    sha256 cellar: :any_skip_relocation, monterey:     "1d6491b5e3cdc88836ebf0fbe21d9f3697a16c4feecb274c7d8d3cb4bd9b1338"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ed053c600800e61bc321eaaa0b0900721ee87acf5f04375712e65ebd5215ed0b"
   end
 
