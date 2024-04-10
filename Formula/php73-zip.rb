@@ -11,11 +11,9 @@ class Php73Zip < AbstractPhp73Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f1109378f7da60f93619aada71b89edd18e97aac4a9d20c4d2fdf4bcde9e381"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "02eb881b19474949204ebdda718645a8c50fe592d9a7769ba5f46073fc4f5d0d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b7ec11b40f68ac03fb1b10b914acdbf2ad3f1a076449ef838c9cf41789450a55"
-    sha256 cellar: :any_skip_relocation, monterey:      "9f48334e81686704cb257573625cfe525daff20c0c8ca7947548bb27dab03160"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ce9725682d9b5085aab9cee15aec14cad9c030d59b0f2583b3a1fa0e4f40448"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c62c3c65a24df46963362e36f9565b6a502f1c40ad1195b1785450754f244258"
+    sha256 cellar: :any_skip_relocation, monterey:      "bf89712d95c82fde8dfdfdea7bd71475ac25ff4c2ff6c07a01d155d84310702d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64dac577439a1d3d3a25ebf816a3bbcddad1d41b279d876b9f8f88cdaaa03acd"
   end
 
   depends_on "libzip"

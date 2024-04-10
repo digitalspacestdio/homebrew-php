@@ -14,7 +14,7 @@ git stash
 
 for ARG in "$@"
 do
-    FORMULAS=$(brew search digitalspacestdio/php | grep "\($ARG\|$ARG@[0-9]\+\)\$" | awk -F'/' '{ print $3 }' | sort)
+    FORMULAS=$(brew search digitalspacestdio/php | awk -F'/' '{print $3}' | grep "^\($ARG\|$ARG@[0-9]\+\)" | sort)
     for FORMULA in $FORMULAS; do
         echo "Uploading bottle for $FORMULA ..."
         s3cmd info "s3://homebrew-bottles" > /dev/null
@@ -57,7 +57,7 @@ done
 
 cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path' | perl -pe 's/\+/\ /g;' -e 's/%(..)/chr(hex($1))/eg;')
 git add .
-git commit -m "bottles update"
+git commit -m "bottles update: $@"
 echo "merge" | git pull --no-rebase
 git push
 cd -

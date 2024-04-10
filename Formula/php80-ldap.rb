@@ -12,11 +12,9 @@ class Php80Ldap < AbstractPhp80Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d83eab1e8b60aee8d1ffdea8a488f8a53991ab5bb0c3505bb11a3d89581297db"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d4810a7aad2b28eee1e8eb29eda0437ad2c0e015e5706f2917576ab8a48a2d90"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f3c712196a11fc850eddedc82fcf48c69fd31e7ef3592f9f05510b7b7215cc4d"
-    sha256 cellar: :any_skip_relocation, monterey:      "1e297256ab5a5e197bb5870c2829351f2402a59ea15c0829afc260bbef5956b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5728a722b06cab20a135f2ec91a70ad762b4176e1931ae47ab069c98fb7ba42"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a6e3514481a44dd0990a79381093cb0001ad055106cd7b1339dbe78ffac4b155"
+    sha256 cellar: :any_skip_relocation, monterey:      "b71a823f6993ba52b70217ca928641117e8996b9afac10233442f5f5b2a6ec48"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ee2cf45f7c9944d55a66bb4d9726c446aab93e5bb095fc17597ca70a0e5e074"
   end
 
   depends_on "openldap"

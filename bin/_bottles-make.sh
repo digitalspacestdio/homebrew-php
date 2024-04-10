@@ -14,7 +14,7 @@ brew tap digitalspacestdio/php
 
 for ARG in "$@"
 do
-    FORMULAS=$(brew search digitalspacestdio/php | grep "\($ARG\|$ARG@[0-9]\+\)\$" | awk -F'/' '{ print $3 }' | sort)
+    FORMULAS=$(brew search digitalspacestdio/php | awk -F'/' '{print $3}' | grep "^\($ARG\|$ARG@[0-9]\+\)\$" | sort)
     echo "==> Next formulas found:"
     echo -e "\033[33m==> The following formulas are matched:\033[0m"
     echo "$FORMULAS"

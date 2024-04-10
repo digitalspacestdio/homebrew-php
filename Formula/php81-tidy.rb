@@ -11,11 +11,9 @@ class Php81Tidy < AbstractPhp81Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c970f60ef3ff9261f9181de00747eb7f4fc11d55314f1eef165e88816e365c2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "18fb45df3acd9b89d316672f4c46914629e92031a061e129acafe5817025732f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5905f311fb42ca88dc2dcdbe0229ee7ec965e38254da4793da7b8fde3cabd972"
-    sha256 cellar: :any_skip_relocation, monterey:      "bc728109a4ef8161ae5e8526746aa56220ea672b5b8b4c167f653ef7ee100c45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ad962d892051922382dd9f5a4c7d50402710788db871ab6b260a40c920d04a5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a33c3e35ed0ad5ded7b14849d3b2a1640717e9d81d50c0a3923110936fe4762f"
+    sha256 cellar: :any_skip_relocation, monterey:      "5f09d5c3b8fd8e6a9a5d4cff8598dc65c167662ef8f7080c9ccc9d270910b0d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3957a2cb0079c1e0658243a942a8c47d9774b5627e5d6fc0197bb4b7540f0a6a"
   end
 
   depends_on "tidy-html5"

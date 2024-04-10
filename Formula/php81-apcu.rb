@@ -12,11 +12,9 @@ class Php81Apcu < AbstractPhp81Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "086690d056f9883aa2bd79834340ee2c9d322f1e5c67c9c78553e23abff89404"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "49b3048f7b0ba5060c629b65bd8233094fb7b3678bb3c30121a76e7d701154b6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "05eabd40d3d1f4ecad487c6db89560358830dd279f52ffd4d8f24fd1f9061d34"
-    sha256 cellar: :any_skip_relocation, monterey:      "e7533cc7c897de760eb70f7457c6347f4f08d0858ce1349f97f1054930fd4857"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eed3c4ba87d04807d7ee7b882ebdcdc2f2b7cfd8aae343ae725041228b9841ae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "016bb4549ab3e9123b025ac555ab8116709cca44cf12ab590e88fc0054093f78"
+    sha256 cellar: :any_skip_relocation, monterey:      "33972f1e2008646b606787dc0b3f04355e57efbac6b0f6626836aaf7848730fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c8d01883deb171e3f77b21268dbab065a055d7c5e0540201078bf1a4afc10e8"
   end
 
   depends_on "pcre2"

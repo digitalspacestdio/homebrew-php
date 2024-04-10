@@ -12,11 +12,9 @@ class Php80Intl < AbstractPhp80Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e6194883d3cac530ea5d283d2c7149726956d5d65e064283ecf5a4fba3f8c65b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0baa1df0c4ad0465d8ecb46693f034e0545bbec84985e15f7d7120b4ce23c77d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0d3d94e83e587a327310db4d8644f8fc1fd0a87d9a3175b5dcf64a075b69407d"
-    sha256 cellar: :any_skip_relocation, monterey:      "bc30c747805d97fe2e9bd2fbf5ebbbd576f3002317fba4ba01a18a016440322b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67ac4a805114040109f9ee89fc4ca340a986d0032504b285470ef16cfdfdde68"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b078721601cb8ba2ea5b2b1bde75567bb0e864b0f23008e7276efcc20e8809a3"
+    sha256 cellar: :any_skip_relocation, monterey:      "ca0a9ae67cb63f6abf6ed8f6e71043368d0a2a7df6f902c91daeedb9bc6a2fe5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f26a84ff30ff68aa1eb2eb60d4b471628b2cb0497d2a4b0a6380eb42e637fc6"
   end
 
   depends_on "digitalspacestdio/common/icu4c@74.2"

@@ -12,11 +12,9 @@ class Php80Gmp < AbstractPhp80Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7cce299650bbeeeb646368d1e4bd2f3ce30d7ef051866f917a78d7e37a67443e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "01ef4528d82c1af7f6fb79329b35b20bd8bec13cbe14825b384272d91aab0267"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2f322fe4e33b524cbc6556d8448837f57504da019eb15b0cf1450028aa994e8d"
-    sha256 cellar: :any_skip_relocation, monterey:      "95b88ef303e0378e27102dd6649afef63c8c332be2edaf948231a284943f1e96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4728c50fa499fb6c042b7121de1a2db8013940b6f4d3fe64ced46759267b7136"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "96e896c950425a4243323a74b9277aab105234b8b1196f5190d4492680e73e1e"
+    sha256 cellar: :any_skip_relocation, monterey:      "dbb9db51887a79d668c4455626b3e311ab20b3b1f850604ffceac04fb531e4fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2abe6695118657c2ff7f9d408ca813f95179b10e1aa3d117100afa29ce4a924e"
   end
 
   depends_on "gmp"

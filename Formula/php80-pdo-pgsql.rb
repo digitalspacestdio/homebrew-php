@@ -12,11 +12,9 @@ class Php80PdoPgsql < AbstractPhp80Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7537016473c289cdd45429a4be5cb164b5e5d10d25dc8b1d4816918269431b71"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4c4a4670494cc0494ea8f7867abaff3f306b7a2e0066e8429aa2253ebe10510c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "896342c029548bb8c60c303e46687ba882ce3802a0f1df693690da8dad441ccc"
-    sha256 cellar: :any_skip_relocation, monterey:      "91f780c4a88986f647e184749e7fd5d96b95376796c98daa556687f71761cba7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bec7c7aebeea5484e012b1b495514a1f9bc901a488a8848551db6cbe191e61a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f6cd8f2e5c83537d7353574affe3cb743a4351d482aee288165cb77681936db9"
+    sha256 cellar: :any_skip_relocation, monterey:      "292d28481730ada60d158a27d5c81c8b821faa5652c652371507ee39f8b507c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c52b1c6c48a74afb2818ee0a3cd2a6ea4e7d46c14c029beee4d0096584ce563"
   end
 
   depends_on "digitalspacestdio/common/libpq@16.2-icu4c.74.2"

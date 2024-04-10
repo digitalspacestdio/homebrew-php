@@ -12,11 +12,9 @@ class Php71PdoPgsql < AbstractPhp71Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55eec8cd5611d031cd918079a5f4ac596291939411cd4fbe1c01fff8a369c66f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "36ff0c89d12c63a7e2f94e6825f5a9e3619932273711800bfdf3936e465df65d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "715d37a119f1476d8b75f733a16f52da2a58c4d2286fdc619b47e5b59552c129"
-    sha256 cellar: :any_skip_relocation, monterey:      "2306aba9b0cb35631ad128fd7ee1122c0a707ce49d7a92529038218f07f6661a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf6de6b01849d5c121fd70579ef4366ca88ca511136583ac8a5c0da9678fc893"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9ff0a83695d2e72c045692be592aab09c99c9f0943f797fe228323316989a4a6"
+    sha256 cellar: :any_skip_relocation, monterey:      "d3fd83aa5b16375e1ee87d79cec26a23cf13ec534afbf9957f88e1abf57cf145"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "668adeddbe9fb02ebda1208c12e5326570ebef6a2ef9b8db9b3dcee52ffff540"
   end
 
   depends_on "digitalspacestdio/common/libpq@16.2-icu4c.69.1"

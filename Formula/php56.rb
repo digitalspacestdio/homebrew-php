@@ -12,11 +12,10 @@ class Php56 < AbstractPhp
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "713a2d1f213639d73badbbdfd5ef8b164236d08871c88e852aeaf36dddd67055"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "16c7915182017441d141cb013ad855fb071bace0f27e2aa67485f2a0459d8265"
-    sha256 cellar: :any_skip_relocation, sonoma:        "aa4f19c3eb41dec7aff5260f7d8da2e8afb2a3031ca3aaf4c418745d930589bd"
-    sha256 cellar: :any_skip_relocation, monterey:      "b11f5772d18024c53fc007cd8f1e102e418bbd9bcdc3d3b93fe776a535f04f6e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c8df8f1757fdd8e5124df8a47e17e832b186c8fb1b769cefda1df94195dc377"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "93a22f4a824ff1cc0feededcb90009239437a254b30decb3615021557807cf15"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0d8c90452dd1c22b009324660acd3a9a83a3d7ac3d704aa0c397dd24ea244de2"
+    sha256 cellar: :any_skip_relocation, monterey:      "fcae1456efb6f532394f0898d2fc6b8d268f7e0ac350d6ba320c522553168833"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d48b066ec8d830ae7b48271473bd1cfd21224c89e6a8f2a1f9929e5acb7fb03a"
   end  
 
   keg_only :versioned_formula

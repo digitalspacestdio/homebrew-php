@@ -12,11 +12,9 @@ class Php81Zip < AbstractPhp81Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57c39ad4621c435a93a83850c3aef1fa4a0abdb97cb3bf5257c506f518af5166"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7843bc6ec85f435b2e18c3c3ac286f1cd4b29740d393497a2d0ecccad62882ce"
-    sha256 cellar: :any_skip_relocation, sonoma:        "28657d225d235e88d4b3c4a1a4a7c095b0d774fe4b1a303b2ffc9a216467a6d6"
-    sha256 cellar: :any_skip_relocation, monterey:      "50d94365ba332ab5963266ff0e6a395a581f85665380c7c594103ad6aab4cbfb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b76145f6adda6dcb1518c6ffb7d57737b71914d5d9f8fc55813bb85811f4c098"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "be0d1ed951e3acc0211b0142fa9c0909632ab47bdd39cb7a9919ba9e7587578e"
+    sha256 cellar: :any_skip_relocation, monterey:      "da59c93468613792c3f038f3a5c49ef64459e22346b095cedb6a0c84eaaac6d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d5a6766fbdabcf8c1d8cf4a86242437757f45ece331c2369cf6c2e8e7e7e05e"
   end
 
   depends_on "libzip"

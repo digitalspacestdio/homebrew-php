@@ -10,11 +10,9 @@ class Php72Igbinary < AbstractPhp72Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ba52e860bc6f3a2821980c72efe7ea6f502cfd89f4ba0882c81d5923d8842ba"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "12a67cc046dac5c1a2e8f7d62616d5fe9a4980e6470735611251de3149d361fd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b8767cf1648efe66735cd109251656e8d063b9555a1de4325b59565797131754"
-    sha256 cellar: :any_skip_relocation, monterey:      "ea77e941564700756812d3fc7f2c50422a2896097268cbe438127a6ecef4f45d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "505e517e4836f1460dc0a18f56ee8ab0ff6a32df9ff270be235e0d26296fff88"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "89037201b9e33871d1422480b184975f0b1100d9d6b4fce1b0780cccccedeb1f"
+    sha256 cellar: :any_skip_relocation, monterey:      "be7dfa834b23f836c81490e37070454b57d0bc11a0dfe361c16c15cc0322d890"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d9dd06c34a1342c7d571d1d6c8851ce8787034941be11a82302404d43dfd1df"
   end
   revision PHP_REVISION
 

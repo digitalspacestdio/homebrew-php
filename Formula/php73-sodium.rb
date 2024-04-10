@@ -11,11 +11,9 @@ class Php73Sodium < AbstractPhp73Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ffc9105e3266a29b76f1f8c50418be806e899e0ddb6b9b196f53a60a10bc4c1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "239f0e51043cedb357c4841cdc0e18ab83067658eb0d1ef0f96a189f166fe06f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5e4c46bad56b6ae90b95177d5116fc3a4f01cdae989abd6f2043d79915441513"
-    sha256 cellar: :any_skip_relocation, monterey:      "4a1492a106999bbe875719f6a3417ebb83f07d372dc4ef076a530c52e04a9c33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0e1ecd5f0ad3b5daaeb2394f74483e8046f81f7bfa3fa7ab5815f2b8976c58a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6cb47fe41ea37b46192fc4c430f7bbae738c0972751c59bba5252221987e61de"
+    sha256 cellar: :any_skip_relocation, monterey:      "2bc98a852c290378d9d83a59ec2dcb27d06d4aa6534de5e4a546b575b5fa591b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce0af634dbfc8e0a5ad5aa6f7676c2365d4f10728218a69d5c478e075810cbb1"
   end
 
   depends_on "libsodium"

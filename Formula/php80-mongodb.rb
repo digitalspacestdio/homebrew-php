@@ -12,11 +12,9 @@ class Php80Mongodb < AbstractPhp80Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7864871893344e6e0d30aefe78ec4afe42b4fcd87011fbff89ec28d018298e47"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f3b0b4a05537888cc943f8441b976d5c5ed22642cee3cc799b28efc37fa27efc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0aed99fc1116cdd0b1e0bd3c4f6ea876494a2fab676b9c72d01ad693071eb4fa"
-    sha256 cellar: :any_skip_relocation, monterey:      "3e455f62e686e575b18e833ca10075b640196aa6d3a83069bfaf7916a3a3311b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30c3a378a1307e3070ebfb025d8586b08958cc654acbda1c2de9fef519ff5969"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "aad3ad6ce89e8a8a17e745dd51494cb4df34336d52c1277fd1b363b05eca0d50"
+    sha256 cellar: :any_skip_relocation, monterey:      "a889a08ac68a2232e2cbb7d3bb276409ba1ab97b8e414a1c0ec27350e54cbd47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df2d252e54fece9739e0d5fc696b44a2a4ac6e5985546b72cdee712994bccf6c"
   end
 
   depends_on "openssl"

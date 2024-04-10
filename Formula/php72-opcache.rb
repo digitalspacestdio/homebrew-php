@@ -12,11 +12,9 @@ class Php72Opcache < AbstractPhp72Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cde837c03addd9ef3eeda0d5809912c2ee175b81977390c67094fb15043ca777"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b458ba39e79d8327d5d85656941f3050d9d4123d0da3097c261c8579773e9c91"
-    sha256 cellar: :any_skip_relocation, sonoma:        "aec8f1bb0b202349decdf0645b3c809151eb5167de8e2bcb472db1497ff12208"
-    sha256 cellar: :any_skip_relocation, monterey:      "2ba21e05f7a455373ea2b5aba5b65e297ac6af26276dd4d3199a33c706d26153"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f301f9177f6ab63e6263415d55b4d5da6d1bf2ee74bfc09b6d2c51a28e36f6f3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ed45ee8c8e9bec22a73e7bb8c1169457031e3d8525c46be56a5f62faf516d93d"
+    sha256 cellar: :any_skip_relocation, monterey:      "7f0ab32cb5fdf98a62e65bbb92ace476aa3e098353f5ced3984572492d77b6fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcb30e985740d20415b1d231dba2314439a9aeb51bda01f1470712bdce9792fa"
   end
 
   depends_on "pcre2"

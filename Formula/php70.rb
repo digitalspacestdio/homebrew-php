@@ -12,11 +12,9 @@ class Php70 < AbstractPhp
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "557aabffa6b4db2f42c72b56c4fe69908e60a85ad2aa0c5a2a251cd38b66b2ab"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "20c356baff68735e7e9ea8d44bf79e76db498dfce173ae8428e7f0c0baedba09"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bc9843291433def17d6d81feb39b7464b288c9dfd928cc2e78df1b5c5a6d7bfc"
-    sha256 cellar: :any_skip_relocation, monterey:      "7994564af64d8c8184b21e2c8781413445c9aaade76ca78615227f379620b331"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32b0483d1d4e9e1d73a442555a9ac62283ef98ab8f52808b0b70598f2b39b09f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9d773f4b21cae01ab227599fd1ab10aa48b2807cd2a0e8f4aa1525f7912617a9"
+    sha256 cellar: :any_skip_relocation, monterey:      "9b2fe7eec89dddd5ff295187b78f6c1c4df87cb2b0bf20a5e6622617862d4979"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d71a07d11278360c07089345779cd9e37c3efd92517601b7d0ec3587c56388f"
   end
 
   keg_only :versioned_formula
@@ -30,7 +28,7 @@ class Php70 < AbstractPhp
   end
 
   patch do
-    url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/icufix/Patches/php70/Fix-Wimplicit-function-declaration_in_configure.patch"
+    url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php70/Fix-Wimplicit-function-declaration_in_configure.patch"
     sha256 "650193d19b0a033c33e9f420bb5a262699cb60d04d363c714858816ed33d281d"
   end
 

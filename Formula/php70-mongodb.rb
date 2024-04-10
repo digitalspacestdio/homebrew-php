@@ -12,11 +12,9 @@ class Php70Mongodb < AbstractPhp70Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff55f3e8d81b00d3b5feec7f16cc90b66b7b4aa3c0d572b2f19f7840f54f60e1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e9222b8db8c05169ee13b4ce21b519d6b2e89168beb2f4a05cdc2aab86bacca2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5e381d6806869e12fa18c6cd62bb2381f017aed177c0730daee0f5d09324bf75"
-    sha256 cellar: :any_skip_relocation, monterey:      "37fc0d4c90253749e6348ca2d137fcd228107dedec752cd37dfc07ac9860315a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8bda4fef46aa7cf9a2ddcec171d6488f5898205fcfb948ec17b4861821f8487b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d6a91a0251773ad245196247f3c00326fe749457334c044c7166fa3fcaa5d3fb"
+    sha256 cellar: :any_skip_relocation, monterey:      "1697133e878634f1f1107159f6d5d47cb6acc2518d1df9fc63ceddafa10c5b0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee240dc92cf782f5e6460ffddfe22298f23c6e50222fc4bd91c34603b5f381f5"
   end
 
   depends_on "openssl@1.1"

@@ -12,11 +12,9 @@ class Php80Apcu < AbstractPhp80Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa47dc1f5aaa0e74724027e740d4006e41f10c20ca99fe70f1591cc7ed82ec92"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0b341b6065cbc47b92be45d674144d24e848c2119198bcb96cd8cdb0493d70de"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1d17c621b89763fd110b4f83a2efe00c3f4c1478e8b97b9310753aef2be8eb82"
-    sha256 cellar: :any_skip_relocation, monterey:      "c93d1eb0eaa8129e5124ab24b7c03f529bdbb0e6018a676f34eb231f687aa938"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53ce50728830c3ea5b3e5f60f04b32b6172b591535a60efaaf00d1a6f819966c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f2a42c5c870fd422a9d675651ce07467a28571449588ffd27fb8dcd6ba88096e"
+    sha256 cellar: :any_skip_relocation, monterey:      "c87eae35d6c99d2e8c47c5a18fcd48f78a22784e9569072e38083107f73493c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46089015e7191fc294a852f2f0e2e6c90653577b1f663c99fba949135ebdc4a8"
   end
 
   depends_on "pcre2"

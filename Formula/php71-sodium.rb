@@ -11,11 +11,9 @@ class Php71Sodium < AbstractPhp71Extension
   
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42435e6a2c6f8315827b3dcd3c1afbd7830bb7717785d9bf547df5cbf1747977"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "924492dda135826fee92bc937299580cc85ad77c2c8205cbd7cc8945363366f9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "65aea33bf22fd110c6dcfe9b92dde34c0288354c3595a245ea9b68da968480d1"
-    sha256 cellar: :any_skip_relocation, monterey:      "0164993d0c6185fdd61a53478679555b7f1e21e4fbb30d3b435cd6de98bd8c8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0590a5ac0e5b19bef39d1336914db17bda736ce04f1bbad8b706fea91dd1a16d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "afebce8fa27442a3391417476c581c19c2be8521fbe935d3e1f66c026fec68b0"
+    sha256 cellar: :any_skip_relocation, monterey:      "c862350587bf7751d6fbe77cf266c52149a87896facdae89164c84996be952b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fd58689f9a48e8ed0a05c621e181cec637fbf40b4c716439f72f5e0b2763cee"
   end
 
   depends_on "libsodium"

@@ -12,11 +12,9 @@ class Php72Gmp < AbstractPhp72Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c300217c8a2fc1b9d82e7fb17be963a79569641901cf54efbb1d59e6e3a58aee"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b68266c7463fc9eae1ab2edf82ecb867dea350296c8b88184fa085d26b41a433"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4e1e0d1e3220028e022f11ff6193448586dcd92eae57d40e22508e31e42fea58"
-    sha256 cellar: :any_skip_relocation, monterey:      "1015630f2125cd2f40cf86e8ef0aff766a57f70c17bee385f48e48e60a96fa70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13d7de06a2eac209a03015ee9b785cd85358bff81810a1d84f859cc9de6aae97"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a90a60557a907b5610fed7fda7b20b3f0f37be95a4a018409f8c0bda7108a810"
+    sha256 cellar: :any_skip_relocation, monterey:      "8a1e32913f4504f9f64e7e7fd7658801b439a2f2b2b56d5246ce18147d4dbb4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89b7f19ec29106f689ddb4d7b3e138ed83a9b275ebe9a5e22050d4839ab214b8"
   end
 
   depends_on "gmp"

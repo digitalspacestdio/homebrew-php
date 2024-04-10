@@ -12,11 +12,9 @@ class Php72Ldap < AbstractPhp72Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3135057da7eff29cd9fea8eee0d68650b77f12ed1ad3e4ccc74fcaf470c5a81"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "862f50f451206ad17fa357bfd37a5c01a38abaae90d09e5b0d3d9c20e733090c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6dd0d3543ab7c3995be7eafdc5eac4b65fd9332e2564d450926cdb67e6c59642"
-    sha256 cellar: :any_skip_relocation, monterey:      "4c983c029b754a3bb6a832940c369297f339e3241a2b1d271379458cfa54b2a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31bbb757da663a0934ff8057635e7cfbbc94ea67080833e1e2b91acd496216ed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "46472c7ea73fc9cbecd0218708a632ad5370cfa6b69203a9770a64ddfb248ac4"
+    sha256 cellar: :any_skip_relocation, monterey:      "2986948d32b0b378f5fe13d48b04c9da5f506b4bf62d76f21619c4564a038be2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0743fc9120fd4f5e6315f60949425a09baceaa661d6d7442e2be3766b52e06a5"
   end
 
   depends_on "openldap"

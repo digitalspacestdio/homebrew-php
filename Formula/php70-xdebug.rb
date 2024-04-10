@@ -12,11 +12,9 @@ class Php70Xdebug < AbstractPhp70Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "175d5cc35aa850e1e5b83a27c858b25f4b32f32ea0d1fd95f010da4060a55860"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a4cb51ad776afb552886260f38683945bda35c729d4ee2a7e2b41a5bddb9c553"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e042f9a3dad624f7e977424f7180cba7492bc4bd3cf885e99a0c72cf16d16b92"
-    sha256 cellar: :any_skip_relocation, monterey:      "fddbd8be21ea2e7806709c31e23e6f6491bbd7c8e3ed358eaa411e3cac96e667"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8b4caf7913a724b8aaaaf992e7d47ba3fc9121ae4464fe2238b3b3c3addc18f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ba2bd46b1c0b50f0f5e2f85dfc94cb6269de84421e946482f3d23418bb3344f9"
+    sha256 cellar: :any_skip_relocation, monterey:      "613d77ed663c7c56a0b82f97e09559e03602968d58cc3c7ae38fd6368b527b7f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e74b0deee43490f9c065c349512b27bbfd012e7346d43b62ee7f2cdcc054e79"
   end
 
 

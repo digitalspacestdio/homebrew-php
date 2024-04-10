@@ -12,11 +12,9 @@ class Php80Igbinary < AbstractPhp80Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e23c0ad57790d61795efa93bc844a9a8e7f92bbfae00b483ef6cffefc9d7dcf2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "504d1bafc71d10c40e3bc900a6447c5a6f6a3eccb818d66d76687051c97e3d28"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cb1be7b79d6c6466fbe7bdbc75cdcc55665fb0be3afbdbe27e1d203894c8f60c"
-    sha256 cellar: :any_skip_relocation, monterey:      "2937175dcf559957be3ce8fa5dd3b37b7dad5968fd9ce2561928ef3495b10250"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e0fe2c206b6eb2fd8989daf739484987f157d90b17a290da7b9683d9642c6c7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8a743002dd90fc79852807f92baf40286fd69e3a751dd81154bbe32242a973ff"
+    sha256 cellar: :any_skip_relocation, monterey:      "38483780bb1b3b744343d1662645d69731a2cb90bd1c64c24a3c0f763597918b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "637730a086c8ac79a7a94075bb0dfaed1aa83fc293fab5b56aa41a00a1d0e962"
   end
 
 
