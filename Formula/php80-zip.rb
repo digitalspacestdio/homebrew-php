@@ -12,6 +12,7 @@ class Php80Zip < AbstractPhp80Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
+    sha256 cellar: :any_skip_relocation, monterey:     "9caaa64d725a15217fda5f96e5c7c4ae8c8a89a7647b8027e4f90f081d25a876"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "38bc7fe9274ab21ef8cbd6ee31280b00ee776ca17a2f969749b2679a6d691fb0"
   end
 
