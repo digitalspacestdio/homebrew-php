@@ -1,11 +1,10 @@
 #!/bin/bash
 set -e
-set -x
 if [[ ! -z $DEBUG ]]; then set -x; fi
 pushd `dirname $0` > /dev/null;DIR=`pwd -P`;popd > /dev/null
 cd "${DIR}"
 
-FORMULAS=$(brew search digitalspacestdio/php | awk -F'/' '{print $3}' | grep "^($1\|$1@[0-9]\+)" | awk -F'/' '{ print $3 }' | sort)
+FORMULAS=$(brew search digitalspacestdio/php | awk -F'/' '{print $3}' | grep "^($1\|$1@[0-9]\+)" | sort)
 
 for FORMULA in $FORMULAS; do
     echo "---> Starting $FORMULA"
