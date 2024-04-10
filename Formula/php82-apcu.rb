@@ -12,8 +12,9 @@ class Php82Apcu < AbstractPhp82Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
-    sha256 cellar: :any_skip_relocation, monterey:     "abf67b599976839ef320ddbfca68a65868b99e4793f801f1d21b46d290a04aa3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5ddaae2d77fdc5559af835ab592a30e2527869bdf5cb29b91ad29a989af8be3b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6988751e4d5f1a4965aca2fe1439acb1529603c0921fba2ee53f7f4884af477b"
+    sha256 cellar: :any_skip_relocation, monterey:      "abf67b599976839ef320ddbfca68a65868b99e4793f801f1d21b46d290a04aa3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ddaae2d77fdc5559af835ab592a30e2527869bdf5cb29b91ad29a989af8be3b"
   end
 
   depends_on "pcre2"
