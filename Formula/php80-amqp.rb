@@ -9,6 +9,11 @@ class Php80Amqp < AbstractPhp80Extension
   head "https://github.com/pdezwart/php-amqp.git"
   revision PHP_REVISION
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e23ca457ef78b2862e1708fde08329bf17da0e2751968f003e1be2629fac5337"
+  end
+
   depends_on "rabbitmq-c"
 
   def install
