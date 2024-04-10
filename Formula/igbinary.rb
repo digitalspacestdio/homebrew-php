@@ -5,6 +5,11 @@ class Igbinary < Formula
   sha256 "1d06fc3586d61fcffbae24a46649db54d938168586557965bc1346f6d6568555"
   head "https://github.com/igbinary/igbinary.git"
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/igbinary"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "dbaa1abde454ace7a50b4094f47ed373a2a973af180ed80bbd65cad43d1ace70"
+  end
+
 
   def install
     include.install Dir["src/*"]
