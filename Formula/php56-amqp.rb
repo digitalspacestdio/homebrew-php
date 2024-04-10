@@ -9,6 +9,11 @@ class Php56Amqp < AbstractPhp56Extension
   head "https://github.com/pdezwart/php-amqp.git"
   revision PHP_REVISION
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "90b33b8b0b2f33fce8c680aa16b8877068f405fb2db7093271a41dc13734e71b"
+  end
+
   depends_on "rabbitmq-c"
 
   def install
