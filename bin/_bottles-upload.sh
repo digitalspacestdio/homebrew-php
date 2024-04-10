@@ -14,7 +14,7 @@ git stash
 
 for ARG in "$@"
 do
-    FORMULAS=$(brew search digitalspacestdio/php | grep "\($ARG\|$ARG@[0-9]\+\)\$" | awk -F'/' '{ print $3 }' | sort)
+    FORMULAS=$(brew search digitalspacestdio/php | grep "^digitalspacestdio/php/\($ARG\|$ARG@[0-9]\+\)" | sort)
     for FORMULA in $FORMULAS; do
         echo "Uploading bottle for $FORMULA ..."
         s3cmd info "s3://homebrew-bottles" > /dev/null
