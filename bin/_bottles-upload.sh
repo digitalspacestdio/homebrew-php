@@ -57,7 +57,7 @@ done
 
 cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path' | perl -pe 's/\+/\ /g;' -e 's/%(..)/chr(hex($1))/eg;')
 git add .
-git commit -m "bottles update"
+git commit -m "bottles update: $@"
 echo "merge" | git pull --no-rebase
 git push
 cd -
