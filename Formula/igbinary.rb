@@ -7,6 +7,7 @@ class Igbinary < Formula
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/igbinary"
+    sha256 cellar: :any_skip_relocation, sonoma:       "1af76283ec83881413a4ed756782f77ff6afdcc1574ed7b57bb7ca1cfbaca64c"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "dbaa1abde454ace7a50b4094f47ed373a2a973af180ed80bbd65cad43d1ace70"
   end
 
