@@ -12,6 +12,8 @@ class Php56Ldap < AbstractPhp56Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
+    sha256 cellar: :any_skip_relocation, sonoma:       "ac2de4ede838b38fd86dbc6e23f57b53c3f1ac4d086a2b12b33d0bdcbf67b627"
+    sha256 cellar: :any_skip_relocation, monterey:     "f56a194df4a7c6ab0d1de7fae718d55a8537d97d34cdc2c8d0f755cc4b1d8d01"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "eaef5d3af9345045c6a2ec06782338104debfee5a38032af36d4760ae85b922d"
   end
 
