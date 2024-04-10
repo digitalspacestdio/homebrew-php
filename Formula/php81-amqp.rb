@@ -9,6 +9,11 @@ class Php81Amqp < AbstractPhp81Extension
   head "https://github.com/pdezwart/php-amqp.git"
   revision PHP_REVISION
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fafdcc8bf52f4a4a1ddd3e6b2779148dabb80346071dff7a30c07fa500699e43"
+  end
+
   depends_on "rabbitmq-c"
 
   def install
