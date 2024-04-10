@@ -402,7 +402,7 @@ INFO
     # START - GD settings 
     if @@php_version.start_with?("7.4", "8.")
       args << "--enable-gd"
-      args << "--with-freetype-dir=#{Formula["freetype"].opt_prefix}"
+      args << "--with-freetype=#{Formula["freetype"].opt_prefix}"
       args << "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}"
       args << "--with-png-dir=#{Formula["libpng"].opt_prefix}"
       args << "--with-webp"
