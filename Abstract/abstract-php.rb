@@ -35,6 +35,8 @@ class AbstractPhp < Formula
       conflicts_with php_formula_name, :because => "different php versions install the same binaries."
     end
 
+    uses_from_macos "cyrus-sasl"
+
     depends_on "digitalspacestdio/php/php-cli-wrapper"
     depends_on "sqlite"
     depends_on "digitalspacestdio/common/curl@7"
