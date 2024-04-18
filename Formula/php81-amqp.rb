@@ -11,9 +11,7 @@ class Php81Amqp < AbstractPhp81Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "17444f6b5eb3177478005b59d5e5906276419e46aee00fb10d56a68d2cb83876"
-    sha256 cellar: :any_skip_relocation, monterey:      "25d0a4591a5f81e053802fd832653eda7e94ed8462082e1f0d901931b6ef3039"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fafdcc8bf52f4a4a1ddd3e6b2779148dabb80346071dff7a30c07fa500699e43"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "df23f369b9377919383f08cc0fe65036b386ff39882531d8fe4e21c2f50de7b6"
   end
 
   depends_on "rabbitmq-c"

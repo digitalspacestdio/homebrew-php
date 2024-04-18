@@ -9,6 +9,12 @@ class AbstractPhp < Formula
     @@php_version_full = php_version_full
     @@php_version_path = php_version_path
 
+    if @@php_version.start_with?("5.", "7.", "8.0")
+      @@php_open_ssl_formula = "openssl@1.1"
+    else
+      @@php_open_ssl_formula = "openssl@3"
+    end
+
     homepage "https://php.net"
 
     # So PHP extensions don't report missing symbols
@@ -80,27 +86,15 @@ class AbstractPhp < Formula
       depends_on "digitalspacestdio/common/libiconv@1.16" if OS.mac?
     end
 
-    # ssl
-    if build.with?("homebrew-libressl")
-      depends_on "libressl"
-      # Use LibreSSL cert bundle
-      openssl = Formula["libressl"]
-      # %w[development production].each do |mode|
-      #   inreplace "php.ini-#{mode}", /; ?openssl\.cafile=/,
-      #     "openssl.cafile = \"#{libressl.pkgetc}/cert.pem\""
-      #   inreplace "php.ini-#{mode}", /; ?openssl\.capath=/,
-      #     "openssl.capath = \"#{libressl.pkgetc}/certs\""
-      # end
-    else
-      depends_on "openssl@1.1"
-      # Use OpenSSL cert bundle
-      openssl = Formula["openssl@1.1"]
-      # %w[development production].each do |mode|
-      #   inreplace "php.ini-#{mode}", /; ?openssl\.cafile=/,
-      #     "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\""
-      #   inreplace "php.ini-#{mode}", /; ?openssl\.capath=/,
-      #     "openssl.capath = \"#{openssl.pkgetc}/certs\""
-      # end
+    depends_on @@php_open_ssl_formula
+
+    # Use OpenSSL cert bundle
+    openssl = Formula[@@php_open_ssl_formula]
+    %w[development production].each do |mode|
+      inreplace "php.ini-#{mode}", /; ?openssl\.cafile=/,
+        "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\""
+      inreplace "php.ini-#{mode}", /; ?openssl\.capath=/,
+        "openssl.capath = \"#{openssl.pkgetc}/certs\""
     end
 
     depends_on "argon2" if @@php_version.start_with?("8.", "7.4", "7.3", "7.2")
@@ -127,7 +121,6 @@ class AbstractPhp < Formula
     option "with-cgi", "Enable building of the CGI executable (implies --without-fpm)"
     option "with-debug", "Compile with debugging symbols"
     option "with-embed", "Compile with embed support (built as a static library)"
-    option "with-homebrew-libressl", "Not include LibreSSL instead of OpenSSL via Homebrew"
     option "with-imap", "Include IMAP extension"
     option "with-libmysql", "Include (old-style) libmysql support instead of mysqlnd"
     option "with-mssql", "Include MSSQL-DB support"
@@ -150,10 +143,6 @@ class AbstractPhp < Formula
   # Fixes the pear .lock permissions issue that keeps it from operating correctly.
   # Thanks mistym & #machomebrew
   skip_clean "lib/php/.lock"
-
-  def php_open_ssl_formula
-    "openssl@1.1"
-  end
 
   def config_path
     etc / "php" / @@php_version
@@ -256,6 +245,8 @@ INFO
   end
 
   def install_args
+    ENV["PKG_CONFIG_PATH"] = "#{Formula[@@php_open_ssl_formula].opt_prefix}/lib/pkgconfig:#{ENV["PKG_CONFIG_PATH"]}"
+
     # Prevent PHP from harcoding sed shim path
     ENV["lt_cv_path_SED"] = "sed"
 
@@ -405,8 +396,7 @@ INFO
     if @@php_version.start_with?("7.4", "8.")
       args << "--enable-gd"
       args << "--with-freetype=#{Formula["freetype"].opt_prefix}"
-      args << "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}"
-      args << "--with-png-dir=#{Formula["libpng"].opt_prefix}"
+      args << "--with-jpeg=#{Formula["jpeg"].opt_prefix}"
       args << "--with-webp"
     elsif @@php_version.start_with?("7.")
       args << "--with-gd"
@@ -456,11 +446,7 @@ INFO
       args << "--with-enchant=#{Formula["enchant"].opt_prefix}"
     end
 
-    if build.with?("homebrew-libressl")
-      args << "--with-openssl=" + Formula["libressl"].opt_prefix.to_s
-    else
-      args << "--with-openssl=" + Formula[php_open_ssl_formula].opt_prefix.to_s
-    end
+    args << "--with-openssl=" + Formula[@@php_open_ssl_formula].opt_prefix.to_s    
 
     # Build PHP-FPM by default
     if build_fpm?
@@ -482,7 +468,7 @@ INFO
 
     if build.with? "imap"
       args << "--with-imap=#{Formula["imap-uw"].opt_prefix}"
-      args << "--with-imap-ssl=" + Formula[php_open_ssl_formula].opt_prefix.to_s
+      args << "--with-imap-ssl=" + Formula[@@php_open_ssl_formula].opt_prefix.to_s
     end
 
     # unless build.without? "ldap"

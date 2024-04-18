@@ -3,13 +3,11 @@ require "formula"
 class PhpCliWrapper < Formula
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-  version "0.1.6"
+  version "0.1.7"
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php-cli-wrapper"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e06fb292dcbf90f61f7b881b5a29687fcafb02ed99c52a143025cf4c1932cea2"
-    sha256 cellar: :any_skip_relocation, monterey:      "99d0293dbe3b9414bf6fa29deacd5008cce549d70348e3d6b2f5d915217233e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f99bd8889fae28f76600ce5f21d9a6db5f6be00a441cb99efc83d812a341a92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7e0fa95c2b8fba211a9b8d3f7f924f8a3515786ad1712a53553ecb5c12403ba2"
   end
 
   def binary_dir
@@ -77,7 +75,7 @@ class PhpCliWrapper < Formula
 
       if [[ -z $PHP_EXECUTABLE ]] || [[ ! -e "$PHP_EXECUTABLE" ]] > /dev/null 2>&1; then
         >&2 echo "Cant find a php executable for the version: $PHP_VERSION"
-        >&2 echo "You can try to install it by following command: brew install ${PHP_EXECUTABLE}-common"
+        >&2 echo "You can try to install it by following command: brew install php${PHP_VER}-common"
         exit 1
       fi
       
