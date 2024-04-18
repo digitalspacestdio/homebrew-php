@@ -10,7 +10,7 @@ class Php80Msmtp < AbstractPhp80Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, monterey:     "7ef2117a2a863c36a3513994010dfc49489ca78375baeac4801b86ba8d36ca0b"
+    sha256 cellar: :any_skip_relocation, monterey:     "cdfa02fdd6b56eba5553211327005d656ad5da7b77bb70277698a910cabd0601"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "3899654b5956ff10017971bc0264e19ada27f82a78bd1cbe6c04f88ad86b281c"
   end
 

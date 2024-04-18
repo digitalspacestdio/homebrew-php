@@ -12,7 +12,7 @@ class Php80Mongodb < AbstractPhp80Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, monterey:     "a8b8d19f7b81402e281b9c2c37be521b3179864679a036b4c5d950d61bdf16b9"
+    sha256 cellar: :any_skip_relocation, monterey:     "878452d667e06930dc84b0c351a1b330ae2e61fad301af0e163dd113ad9c9b5c"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "0fbebf78267d082149001f7afaa489d33bb432ef9e46dcb01ce96d110562d5bc"
   end
 
