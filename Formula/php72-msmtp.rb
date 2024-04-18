@@ -10,7 +10,8 @@ class Php72Msmtp < AbstractPhp72Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72-msmtp"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1e5cd4ed2c41802afc304a175cb150970a2d51ed014498333f2d0ba5822acad8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d4f71c8e01bc04ffa71461f51891842f90162711bdf2b75922d186f1cfd10efe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e5cd4ed2c41802afc304a175cb150970a2d51ed014498333f2d0ba5822acad8"
   end
 
   depends_on "msmtp"
