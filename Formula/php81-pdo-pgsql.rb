@@ -12,7 +12,8 @@ class Php81PdoPgsql < AbstractPhp81Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "04c95b50fb0e0f74c8c23a5571d1eb89bae38ffcf0a375b22f3c92905c82c9fd"
+    sha256 cellar: :any_skip_relocation, monterey:     "d7051342d01db981c343c287035837de458b10e67bb808e30708c9e6d689ef12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6914a13675a4bf303c133d4653ce4b0ff48f3c65fe535518ad79215c65f6ceee"
   end
 
   depends_on "digitalspacestdio/common/libpq@16.2-icu4c.74.2"
