@@ -1,7 +1,7 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
 class Php83Opcache < AbstractPhp83Extension
-  init
+  init PHP_VERSION, false
   desc "OPcache improves PHP performance"
   homepage "https://php.net/manual/en/book.opcache.php"
   revision PHP_REVISION
