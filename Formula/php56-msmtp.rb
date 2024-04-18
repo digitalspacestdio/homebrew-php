@@ -10,7 +10,8 @@ class Php56Msmtp < AbstractPhp56Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56-msmtp"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e8cb3b1659dcd76471d17ba3b473102681fc43e54209130f20fe826e091e9632"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ce412b6fa93a4d52085f1754cb3a1c7300d916dce931a5c019b7736c2b28d308"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8cb3b1659dcd76471d17ba3b473102681fc43e54209130f20fe826e091e9632"
   end
 
   depends_on "msmtp"
