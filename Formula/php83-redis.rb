@@ -10,7 +10,9 @@ class Php83Redis < AbstractPhp83Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "24ff689e0fe5d08bd341c2512c0e6220e07461e878c9cf03720b81e6fb327880"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "84b033b7e5f8e5787d050a8f0ff571c2c4b724d12a11636ba121d52abf46a9d8"
+    sha256 cellar: :any_skip_relocation, monterey:      "201446fe8d10bec0e5c03c7a64830de6262930cdd95043750ec3c0c92944fe0d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c967e94313a0fe3efbcd2249bf5fcbd10fcdf9900ff6eb245edf3e82a505c992"
   end
 
   depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-igbinary"
