@@ -88,15 +88,6 @@ class AbstractPhp < Formula
 
     depends_on @@php_open_ssl_formula
 
-    # Use OpenSSL cert bundle
-    openssl = Formula[@@php_open_ssl_formula]
-    %w[development production].each do |mode|
-      inreplace "php.ini-#{mode}", /; ?openssl\.cafile=/,
-        "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\""
-      inreplace "php.ini-#{mode}", /; ?openssl\.capath=/,
-        "openssl.capath = \"#{openssl.pkgetc}/certs\""
-    end
-
     depends_on "argon2" if @@php_version.start_with?("8.", "7.4", "7.3", "7.2")
 
     deprecated_option "with-pgsql" => "with-postgresql"
@@ -611,6 +602,15 @@ INFO
     system "make"
     ENV.deparallelize # parallel install fails on some systems
     system "make install"
+
+    # Use OpenSSL cert bundle
+    openssl = Formula[@@php_open_ssl_formula]
+    %w[development production].each do |mode|
+      inreplace "php.ini-#{mode}", /; ?openssl\.cafile=/,
+        "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\""
+      inreplace "php.ini-#{mode}", /; ?openssl\.capath=/,
+        "openssl.capath = \"#{openssl.pkgetc}/certs\""
+    end
 
     # Prefer relative symlink instead of absolute for relocatable bottles
     ln_s "phar.phar", bin+"phar", :force => true if File.exist? bin+"phar.phar"
