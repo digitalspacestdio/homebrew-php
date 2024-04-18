@@ -12,6 +12,7 @@ class Php82Opcache < AbstractPhp82Extension
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1d08d302ebab9424dc9e377430d4209cb3d2edd673fd569e2e34857200880670"
+    sha256 cellar: :any_skip_relocation, monterey:      "5c32cbb86a95e2954f8dc47deeee9df43a504cbc8b6f0c7b17e6d3468426a46e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4298fadf7dbdaa4b5b0f1eddbc20a71f9c283f193ac9775cd033521ec534a1f"
   end
 
