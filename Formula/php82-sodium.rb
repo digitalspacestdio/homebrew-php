@@ -11,7 +11,8 @@ class Php82Sodium < AbstractPhp82Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "785addee56ed4b4e222b01054bef28c0f8337f2873163be782896c8429b8a1e6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ef33fcb5db2a67b803820ef12b37310d447f7a01cae05dbb50df309eab73ee33"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b28e5554f28b9214f4b02c5c6c6b215a1657a3c483efce538c014c2ae0f7e29"
   end
 
   depends_on "pkg-config" => :build
