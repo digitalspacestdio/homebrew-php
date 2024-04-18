@@ -11,7 +11,7 @@ class Php74Sodium < AbstractPhp74Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
-    sha256 cellar: :any_skip_relocation, monterey:     "28249c3046724d682f25da48aed24fe3521d46d6f6295a2978a902377f9504d8"
+    sha256 cellar: :any_skip_relocation, monterey:     "90262c5a56748ef4f40acbe3390c33d2a957b1398dab194f935c99970f4f5111"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "01e030c74ea531068a3b73222e64ddbc35a45d0e3996ca5a42079b492217a480"
   end
 
