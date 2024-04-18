@@ -12,9 +12,9 @@ class Php81Mongodb < AbstractPhp81Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d895b475c62961d6adc55bf6fec39875886b20e3a5184b0a80cc08e067b552cc"
-    sha256 cellar: :any_skip_relocation, monterey:      "3d95488a1f36fc3e23b6f6611bf5fd2af8148169b86a5a5e05c847f928a71245"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bf81be2b7519fd7e87555e2878c8a3f1229e95054b89983c6124e65378bd08f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d385730849ce22c8b09c39f9c73df74e9c2a0011fb8d5955421cc8a11aaff7d0"
+    sha256 cellar: :any_skip_relocation, monterey:      "bdc246a811347bbfd838d6d451511e06b29609f9a85d549905ef780f1ac9b887"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e2285be1ed2b0c7b4bcff35172e2d09e8d50347bf43ff2c1fe14b41b93cebcd"
   end
 
   depends_on "openssl"

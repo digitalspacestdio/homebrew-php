@@ -11,9 +11,9 @@ class Php74Tidy < AbstractPhp74Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "92802e4c84c9cff1940b4fee6e507cb8e103191db4fa0c6523fbb174b6f222f5"
-    sha256 cellar: :any_skip_relocation, monterey:      "9f8755d531e5edf10bbb846584fcdd91e119defe3b7baa95c85fa92c6d1d47d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc762e3f075274ba99e4db0945048e13c65663a994f7b42f86e055b4e4ef9e38"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f6df3e48751859293daa04a098d7348d9311cabc9dbe8934512850a0155064dd"
+    sha256 cellar: :any_skip_relocation, monterey:      "05a326f335d1e0b54714ab6c2b1e2fdbe8840ec343b3837b44c4860fbd80656d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a43448d9b752514418bfe23801c1551829f17ade42293257cde1a001d73968d"
   end
 
   depends_on "tidy-html5"

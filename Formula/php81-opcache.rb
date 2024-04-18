@@ -1,7 +1,7 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
 class Php81Opcache < AbstractPhp81Extension
-  init
+  init PHP_VERSION, false
   desc "OPcache improves PHP performance"
   homepage "https://php.net/manual/en/book.opcache.php"
   revision PHP_REVISION
@@ -12,9 +12,9 @@ class Php81Opcache < AbstractPhp81Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "121619f32fa877f3ee078d59b453ef46cd12a495110eccce2b105c2aa6fbde23"
-    sha256 cellar: :any_skip_relocation, monterey:      "ea70728ebc87c1a38a6bc87d2e1db8553bbea651bbd4dae4f0e2f09f3073a64d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b55159a273ede3b9b70e16c0eb0405213f9da76601ee1cb7fd9192f0f06a1ef"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6713287ad245c8876997f8bc3f78e36ad8d0661f3b1d689cd1da2fddb5a6dd7d"
+    sha256 cellar: :any_skip_relocation, monterey:      "8ed6b01932926f0c9b106ea82bdd83b024b7d2c4811611cf36c12a1c2f90d7ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19aa63a61486f96dce6ec417fdc78310738443af0b0911874fb464f5eddea01f"
   end
 
   depends_on "pcre2"

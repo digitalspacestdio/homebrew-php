@@ -12,9 +12,9 @@ class Php80Opcache < AbstractPhp80Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c4e8eaec9d05d66734de2c0b7002de9b7109d19229f69ef68332e8c7b6241359"
-    sha256 cellar: :any_skip_relocation, monterey:      "7b23145f5d6ea216f91076b6be265295a36db42a1d49561c4057b3f1aa12d015"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60f1a96d368394c86dfad0783d432a96fe9e218cb3bd9d4c278aaf45f96031d2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fbcfbc0b61b892e37f6f27fbc1210bb4f2d24a461811e5f6be8e78d10b96dacd"
+    sha256 cellar: :any_skip_relocation, monterey:      "c5564ea8caa0bd837586d289e52e618d6eaaebc7466048eda95e50a78d9735c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f0e6c618414873092fc931beeb55a3898cc58a3974df895be2fe3cd03b57e14"
   end
 
   depends_on "pcre2"

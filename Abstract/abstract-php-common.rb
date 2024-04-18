@@ -29,6 +29,7 @@ class AbstractPhpCommon < Formula
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-igbinary"
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-intl"
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-mongodb"
+    depends_on "digitalspacestdio/php/php#{@@php_version_path}-msmtp"
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-opcache"
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-pdo-pgsql"
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-sodium"

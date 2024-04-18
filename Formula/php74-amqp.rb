@@ -11,9 +11,9 @@ class Php74Amqp < AbstractPhp74Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "48667300738e31030a724e6f3fad59dfa1584e38d001dcc447c42c9fb9fddf20"
-    sha256 cellar: :any_skip_relocation, monterey:      "73fe3360d5e678752cc38c187532069a0c1b3e5bc8862457bfa0cfd909a2f1dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16b16ab776d77c14002224d8cd74f77ef4d01a246e3bf85039d66a814b8f5808"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f5ffcdc118374f012c91e31bdf8690fd7d3093eb25e3f78c15a17a70a6864101"
+    sha256 cellar: :any_skip_relocation, monterey:      "8602747705000cd21f96e538e15e1327a13eff0f84931370d5593a3460b1feec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "921937c298e817f8994d388c93f61971ce706a778c3dc3ce734474065d9df7b6"
   end
 
   depends_on "rabbitmq-c"

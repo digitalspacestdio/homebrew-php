@@ -12,9 +12,9 @@ class Php81Igbinary < AbstractPhp81Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c1c5207627beab88d0e68b3d91cb67080671bc3815b89dbbbf720061f957c7f9"
-    sha256 cellar: :any_skip_relocation, monterey:      "68a43434439a25e62b766b95191ba0e00d4a70f6406a5fffd996eb434879dfeb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f02403174e1f10ca54a4cd14faf137d1f26c645311f840fd2ff9f5885f7cd04"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "187b4aa309e38b5e3243c9b1b7472359a4c71578ccfb4bdfba2bf5b2f456cccb"
+    sha256 cellar: :any_skip_relocation, monterey:      "9888850c11dc48a442ec57fa7b57e7a53227eb399f7a4b7f24f53cb2fe9148aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8d8113c8a17c38baab8ce451988dd6e6e0082d5dfbbee3ea41861c06d46293e"
   end
 
 

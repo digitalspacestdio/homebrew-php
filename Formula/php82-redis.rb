@@ -10,9 +10,9 @@ class Php82Redis < AbstractPhp82Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "05a260c7fffaa407fc923038b72b2a194fac4b1039c52db73c54783e926f38c1"
-    sha256 cellar: :any_skip_relocation, monterey:      "43bdbaa169a43024d7068fc8c6e6e705eb251a494af0b01b1757b0462e514a04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cc950a03e3e7b8f0a7a52b4561f7535306f19379be1320ac04b18499f4c86b4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "456fd31ade86ce3c0398ce1e8aee966af2014d9da5a3a4c4160a057aed3ac07b"
+    sha256 cellar: :any_skip_relocation, monterey:      "5e836be1f984b113789ac59c236043e9241cbce5d87c5b26558dfc5125655256"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "163a0e592c05bed6790ed7db9d05fd0b6714c7315ca918f239ddf2eb3de62667"
   end
 
   depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-igbinary"
