@@ -13,7 +13,8 @@ class Php83Intl < AbstractPhp83Extension
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5490960eacc44c297ec623d92afd820d18faf924593b15d33ac20fb8e1fc593b"
-    sha256 cellar: :any_skip_relocation, monterey:      "a9d9b4106161a85d9c805ca2da21e341407b60196a94889d6d759f65abcf5974"
+    sha256 cellar: :any_skip_relocation, ventura:       "11cef29747c25891a5ec4cc0263977254918a1635919b7fb964394e1d5e7bad8"
+    sha256 cellar: :any_skip_relocation, monterey:      "8f2c255b19986e4b31a675ece0d47aa35b0e912f1ca275860804688726dd756e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "10ce006f80ddde82ba24f19c9fdca18d8221186fee14af3a5a9210fd7e0d26ee"
   end
 
