@@ -51,7 +51,7 @@ for PHP_FORMULA in $FORMULAS; do
 done
 cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
 git add .
-git commit -m "bottles update"
+git commit -m "bottles update: $FORMULAS"
 echo "merge" | git pull --no-rebase
 git push
 cd -
