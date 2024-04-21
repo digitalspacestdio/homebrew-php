@@ -11,8 +11,10 @@ class AbstractPhp < Formula
 
     if @@php_version.start_with?("5.", "7.", "8.0")
       @@php_open_ssl_formula = "openssl@1.1"
+      @@php_curl_formula = "digitalspacestdio/common/curl@7"
     else
       @@php_open_ssl_formula = "openssl@3"
+      @@php_curl_formula = "digitalspacestdio/common/curl@8"
     end
 
     homepage "https://php.net"
@@ -45,7 +47,7 @@ class AbstractPhp < Formula
 
     depends_on "digitalspacestdio/php/php-cli-wrapper"
     depends_on "sqlite"
-    depends_on "digitalspacestdio/common/curl@7"
+    depends_on @@php_curl_formula
     depends_on "enchant" => :optional
     depends_on "freetds" if build.with?("mssql")
     depends_on "gmp" => :optional
@@ -455,7 +457,7 @@ INFO
     end
 
     args << "--with-sqlite=#{Formula["sqlite"].opt_prefix}"
-    args << "--with-curl=#{Formula["digitalspacestdio/common/curl@7"].opt_prefix}"
+    args << "--with-curl=#{Formula[@@php_curl_formula].opt_prefix}"
 
     if build.with? "imap"
       args << "--with-imap=#{Formula["imap-uw"].opt_prefix}"
