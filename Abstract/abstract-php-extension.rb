@@ -23,7 +23,7 @@ class AbstractPhpExtension < Formula
     depends_on "autoconf" => :build if !@@php_version.start_with?("5.")
     depends_on "autoconf@2.69" => :build if @@php_version.start_with?("5.")
     if OS.mac? && !@@php_version.start_with?("5.") && @@use_gcc
-      #depends_on "gcc@11"
+      depends_on "gcc@11"
     end
     option "without-config-file", "Do not install extension config file"
   end
