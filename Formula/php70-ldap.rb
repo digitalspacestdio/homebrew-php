@@ -14,7 +14,7 @@ class Php70Ldap < AbstractPhp70Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae9ac189541ed1a8938046498963e2fe29284ef8006b751bd07ac837e1c82d28"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a051474e2626b9500b9a1d5b34d279c2c747a557bdbc61c14c79e0759e9e272b"
-    sha256 cellar: :any_skip_relocation, monterey:       "3afcdd5b426008cbd59099040e2c30776b673488fd89bba09b60d1835b0a7356"
+    sha256 cellar: :any_skip_relocation, monterey:       "9935f5064d057b464fec55da3cc3186b9baafe69573112a506ae0eab8982f24a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1eb2d1d01800260338de7de755b6229aa87d1ac8cdf1463d41f625d206a6f23b"
   end
 

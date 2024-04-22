@@ -13,7 +13,7 @@ class Php70Intl < AbstractPhp70Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7ba85ec4d9fb9cf885113808e80c6638457a3948ba5fa9d380afc6499ee437b9"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "eced9f1a9e254e21e9350a178720046521625b12fd92e12037103664f83f79ba"
-    sha256 cellar: :any_skip_relocation, monterey:       "3f929608817a61b04938cbb110d136625f9fe6b25e6b32f60388850fddea612a"
+    sha256 cellar: :any_skip_relocation, monterey:       "0de6964f74e0c5608982ef5752eca2e2379a3b495e73461e1b5295a1ccec6583"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "18fe4fcd233b7934ee91abadc11130ab8bb3938fe64f09441feadeb8966bcf8e"
   end
 

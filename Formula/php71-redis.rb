@@ -13,7 +13,7 @@ class Php71Redis < AbstractPhp71Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "89db490f637a898c94ebd6802ef12cb2ae3957e43669592847bab3657c41b70c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "9d6c4858a552d1ed1510529ef6f8b2f7256f41f545b1bfdc98b502fb820b8fa2"
-    sha256 cellar: :any_skip_relocation, monterey:       "6b457b2a62f3b3e05330519eacff53600bd6b60e4d771378619ffe5b81b3d719"
+    sha256 cellar: :any_skip_relocation, monterey:       "8c2e029c790991d540eac8d65a4a0124ca307eb0ec52923c88b67af312ef01d5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c5bf02ffc94877b729c2349c90e24aefe46d2945bca70047be94722dcb25ddd8"
   end
 

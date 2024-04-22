@@ -14,7 +14,7 @@ class Php56Tidy < AbstractPhp56Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3c8dadf48f006f99cd5a362bb4fb0fb87b749b39151903eac7bbc60ed867eeff"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ef1753d5ee537292de6a417caf3d20b157564a8c418eba43c987580e0320eb6b"
     sha256 cellar: :any_skip_relocation, sonoma:         "896f7979296ba36e9dc49cd99758ec5dc570457c0bbe91a9df07f8bbf4477737"
-    sha256 cellar: :any_skip_relocation, monterey:       "a046b41cf11257ea57232dbd3de26c3f0b2da4566fef9fb13ee95ef61f9b544f"
+    sha256 cellar: :any_skip_relocation, monterey:       "9c7aeca2acab895e8acbae42440756d1e3404f3fe13e8e1208479dd05d2b4b61"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "010bc7a9c536cade1e6de5fd202bdacadc45db3452f82838529b288e82955c4e"
   end
 

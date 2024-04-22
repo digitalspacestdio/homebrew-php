@@ -14,7 +14,7 @@ class Php72Mongodb < AbstractPhp72Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "56a98ee419346dbaad7a6c54b0483ee420ecfe4778b349090d6faa8aef3b6911"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "803900495bd876c46b079a11042a312ff660cd2b83bb0cfbf1900d3e011017ef"
-    sha256 cellar: :any_skip_relocation, monterey:       "b97743e26e809685aeb08598006bbcd72dec6d59b27efe983ad6c69775833e3c"
+    sha256 cellar: :any_skip_relocation, monterey:       "cd7a640140ebf5344d34d2b57b5079391dcdfefa90d2ab63c83d5b1f408db1e3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "56e471cbd174027568dbcbb5b5008e63e63e8f822cc09a35e9bb14a420499449"
   end
 

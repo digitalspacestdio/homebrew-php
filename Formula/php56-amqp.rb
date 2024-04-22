@@ -14,7 +14,7 @@ class Php56Amqp < AbstractPhp56Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "50d08c95e1990220612441f84390259d52562a5a10cacd925b43038c419763e6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "451832105781fbcfa111d8f0e4966122300a464668a66f153f58ed936620972a"
     sha256 cellar: :any_skip_relocation, sonoma:         "e9b34db3e73bb39836b2fb293ef88e9c1515fbb8e07af4ea6c83176f666bd496"
-    sha256 cellar: :any_skip_relocation, monterey:       "2069cb3d523ba301a08bcc93b3504825366dd5b124b8dacf92048dfdd5dfc046"
+    sha256 cellar: :any_skip_relocation, monterey:       "d643c66434bdf6442d8dade1fbf9188f8d5a0bcfc8624faff2ec680564989f2a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "871d8c12f5649b3147de9b3d89240d3551781f6610cd9ae8f01667d7f612c488"
   end
 

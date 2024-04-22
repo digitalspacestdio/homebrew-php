@@ -13,7 +13,7 @@ class Php56Opcache < AbstractPhp56Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a8bc1a69200f0004ffb616cfd82ade9dac1d4d76587563f28a8fc2caea181700"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ddb78de0782bdfe19c00a21c5dd0bc9d6c9d89a1b9065e944298b69cb20c3a9c"
     sha256 cellar: :any_skip_relocation, sonoma:         "425631e76e1f07799e5f8edea4505aaf0e061cdc080d862708147ffce1617fc2"
-    sha256 cellar: :any_skip_relocation, monterey:       "0069dd2908ded2e32a63964f7b055510084f9cb7b6f32945639ef0b96de5cdfe"
+    sha256 cellar: :any_skip_relocation, monterey:       "fc6dca7cdb3a8c3ec6a9312adf30f1e0d8e01e87e3482133f4ac67a4ea651b78"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "01a3a7d67510940dba35ee3968338b4e0ce7555aca230c9318e46cca77f0c678"
   end
 

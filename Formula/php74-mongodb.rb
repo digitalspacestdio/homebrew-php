@@ -14,7 +14,7 @@ class Php74Mongodb < AbstractPhp74Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "465e1f634550eed7004b2505857283ddf188a1e07a3eca3907f5b329caf3108b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7da62cba6239e75955f65863fba8c8d61b4e0a9147bae8dc0f0f589b96d7de6d"
-    sha256 cellar: :any_skip_relocation, monterey:       "19f5ed479238720653c06bde2ee622c0db982a30b52244e22a8be89925e43001"
+    sha256 cellar: :any_skip_relocation, monterey:       "7bf8328bde5187a067d00dcbf56cab9a0f8a8cec1409adfbbd73cfbf07013c9d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d21f68d65f7c9749c767fe8bf8d232dd7adb66592ff182751e5a8c3870537a9"
   end
 

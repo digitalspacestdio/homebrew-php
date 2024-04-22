@@ -12,7 +12,7 @@ class Php74Msmtp < AbstractPhp74Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d83f44ae896062d0f2e43b9771669d94082f0b28006c0b7b2f6934c3481f5cf9"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "cc9c25e065ab5cbb44b061e64d5ffee332d35e64cf440de141f5f271bc6698a1"
-    sha256 cellar: :any_skip_relocation, monterey:       "d4992d6d1a3d5df7d660274ae10416864fd9f5f37a78c8736eb9dd10492db54a"
+    sha256 cellar: :any_skip_relocation, monterey:       "12e0d930dc9f07f5a9da83e1867efbce84611ce8afbd957355c84089d79caa14"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b063eb6eecb36da0e100b32b0e845edd87382a411366c665f90b4e993db4e966"
   end
 
