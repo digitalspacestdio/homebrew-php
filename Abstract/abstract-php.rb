@@ -70,7 +70,7 @@ class AbstractPhp < Formula
       depends_on "digitalspacestdio/common/gettext@0.22-icu4c.74.2"
       depends_on "digitalspacestdio/common/libxml2@2.12-icu4c.74.2" if OS.linux?
       depends_on "digitalspacestdio/common/libxslt@1.10-icu4c.74.2"
-    elsif @@php_version.start_with?("7.4", "7.3")
+    elsif @@php_version.start_with?("7.4")
       depends_on "digitalspacestdio/common/gettext@0.22-icu4c.73.2"
       depends_on "digitalspacestdio/common/libxml2@2.12-icu4c.73.2" if OS.linux?
       depends_on "digitalspacestdio/common/libxslt@1.10-icu4c.73.2"
@@ -351,19 +351,16 @@ INFO
       args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}" if OS.mac?
 
     elsif @@php_version.start_with?("7.3")
-      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}/lib"
-      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}/include"
+      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}/lib"
+      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}/include"
 
-      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.73.2"].opt_prefix}/lib"
-      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.73.2"].opt_prefix}/include"
+      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.69.1"].opt_prefix}/lib"
+      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.69.1"].opt_prefix}/include"
 
-      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.73.2"].opt_prefix}/lib" if OS.linux?
-      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.73.2"].opt_prefix}/include" if OS.linux?
-
-      args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}"
-      args << "--with-libxml-dir=#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.73.2"].opt_prefix}" if OS.linux?
-      args << "--with-xsl=#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.73.2"].opt_prefix}"
-      args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.73.2"].opt_prefix}"
+      args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}"
+      args << "--with-libxml-dir=#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.69.1"].opt_prefix}" if OS.linux?
+      args << "--with-xsl=#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.69.1"].opt_prefix}"
+      args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.69.1"].opt_prefix}"
 
       args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}" if OS.mac?
 
