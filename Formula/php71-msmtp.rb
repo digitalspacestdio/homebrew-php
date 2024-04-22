@@ -9,10 +9,8 @@ class Php71Msmtp < AbstractPhp71Extension
   revision 1
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71-msmtp"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "abcc051bab81dca3e16a1ee002530629a804b5436c335bc6c490d6c5fa5ecbc8"
-    sha256 cellar: :any_skip_relocation, monterey:      "7eb84be518a49d4d2753b510729d770b59125aeedc64e093d866eb593b424fd1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "303b6d6d2d616d9ff15ae4d845c2b53f589b48496345dd2e88038444ad65b9fc"
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b7a0c3da24ffc1904e50a955f6b0d7371eb951eadaa4523e2f7907c82defbf13"
   end
 
   depends_on "msmtp"

@@ -11,9 +11,10 @@ class Php70Sodium < AbstractPhp70Extension
   
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "41c92a196b472a221093fb8c19bff133af47350ebc0b9886ce0f1a50a7385173"
-    sha256 cellar: :any_skip_relocation, monterey:      "62481e51c7dba996c80d900b62f24add1670fa0563393b184c3210e25fdfb9c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "461942b94806d9082d906acf0d638eb9d2c32f4323539d16c09db5e27f3d551c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "41c92a196b472a221093fb8c19bff133af47350ebc0b9886ce0f1a50a7385173"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f23df72a3a219e73af9a95cc64336599ae7b46a91faeca0288d27a73f709f355"
+    sha256 cellar: :any_skip_relocation, monterey:       "62481e51c7dba996c80d900b62f24add1670fa0563393b184c3210e25fdfb9c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "461942b94806d9082d906acf0d638eb9d2c32f4323539d16c09db5e27f3d551c"
   end
 
   depends_on "libsodium"

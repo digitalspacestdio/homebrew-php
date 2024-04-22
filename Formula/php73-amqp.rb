@@ -9,6 +9,11 @@ class Php73Amqp < AbstractPhp73Extension
   head "https://github.com/pdezwart/php-amqp.git"
   revision PHP_REVISION
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e08b327c5fab54392ad799b8211420191907a86f56e75776153567291685d1cd"
+  end
+
   depends_on "rabbitmq-c"
 
   def install
