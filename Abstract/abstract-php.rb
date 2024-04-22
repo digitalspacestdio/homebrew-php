@@ -357,8 +357,8 @@ INFO
       ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.73.2"].opt_prefix}/lib"
       ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.73.2"].opt_prefix}/include"
 
-      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.74.2"].opt_prefix}/lib" if OS.linux?
-      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.74.2"].opt_prefix}/include" if OS.linux?
+      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.73.2"].opt_prefix}/lib" if OS.linux?
+      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.73.2"].opt_prefix}/include" if OS.linux?
 
       args << "--with-icu-dir=#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}"
       args << "--with-libxml-dir=#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.73.2"].opt_prefix}" if OS.linux?
