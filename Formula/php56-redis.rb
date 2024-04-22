@@ -14,7 +14,7 @@ class Php56Redis < AbstractPhp56Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1fb8640736d7361826e0fbfbf8adeb5f36826fb7b9349c2c7a080f306f9c9236"
     sha256 cellar: :any_skip_relocation, sonoma:         "0d6ecd52d970b0d754fd5b6db7e46155b6b1df59dbfe42a3cb45c9f56a508e93"
     sha256 cellar: :any_skip_relocation, monterey:       "76cad966232ebb57a01177a9cf5221f35d6ba9742a95f961d3dddc9645e69525"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b458cfd348e9dcddc53b6952607c1facf021b630573d26d6962e736c8c19851e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "748f7c7cc36cb7b7d59b7fc9fff7367a4cff4cb9dd957b4f6f44399e7d33eb52"
   end
 
 

@@ -14,7 +14,7 @@ class Php56Gmp < AbstractPhp56Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b945fedcd588184eaf3f185e33c10ba7cb1eecfdd103e724fe0f17ff5edb2e9a"
     sha256 cellar: :any_skip_relocation, sonoma:         "82701c78c9a15c1093f68fac8e7f13f5edcecb6f1fd3a00b54045edd657c3bbc"
     sha256 cellar: :any_skip_relocation, monterey:       "631f6381b1aa4be8a54d0e14102d05a6933f8dc644f13a3d38a13310d5b945cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a4f27094e5a87d70e68b0e1da5e10eabb15bac0afd79028f11aa9161394b8cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee6b8708702ffd8caf4501803515bb4580bff76b29a153732dbc3149c7e5c9c9"
   end
 
 

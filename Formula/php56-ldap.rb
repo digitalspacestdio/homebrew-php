@@ -16,7 +16,7 @@ class Php56Ldap < AbstractPhp56Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "364fdc7cb213347a52e55545b8cefc64e83b135e16bf751b8b87ac169508c938"
     sha256 cellar: :any_skip_relocation, sonoma:         "ac2de4ede838b38fd86dbc6e23f57b53c3f1ac4d086a2b12b33d0bdcbf67b627"
     sha256 cellar: :any_skip_relocation, monterey:       "f56a194df4a7c6ab0d1de7fae718d55a8537d97d34cdc2c8d0f755cc4b1d8d01"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eaef5d3af9345045c6a2ec06782338104debfee5a38032af36d4760ae85b922d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d191b205eddb81596d47acc5c392bb1822618cc7ae4aa91333ab54c7fcca06a"
   end
 
   depends_on "openldap"

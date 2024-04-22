@@ -14,7 +14,7 @@ class Php70Apcu < AbstractPhp70Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b3bfb29828504394a4bb8f597578276fe29981c1132a6affe56c57f93f49dc20"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0fcbad52aac55bc96cfc90737342a67a2828576a0f188fec09862f7c37f28d86"
     sha256 cellar: :any_skip_relocation, monterey:       "dbbdfdc1bf6687099f8b568aed019cc804a1e75873f1304ef8a2b97dbfb39d2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32429e721a15a647edf1d3b026c2d902d82779a1935896f27ee07108d2f61024"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "11f62b7ba1d703fa1e132d810f287b5cbdd19cc136ec64fc0a57a1b2de6deb8b"
   end
 
   depends_on "pcre2"

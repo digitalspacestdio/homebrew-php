@@ -14,7 +14,7 @@ class Php56Intl < AbstractPhp56Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f3c712696588f04528a40540e50534536a78d8248ee516b46f5e1bc3cb111b0a"
     sha256 cellar: :any_skip_relocation, sonoma:         "5778bccedc2fd35dac274e6e49ea89aa32caa03d7439788e54d655b3a625e7a3"
     sha256 cellar: :any_skip_relocation, monterey:       "9c8b54d156ef8bafa52179921afe43f17fbd734eb1af5c9161d93d365a6274b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4918fff273f5f5212016b32c3b95fb57d871a7e6a3e9867a2d00fdb1df281d5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8e6d816441830e8bc8407fb82a42da1ec16dd0fff01ef3a3ccb419eb37938f6"
   end
 
   depends_on "digitalspacestdio/common/icu4c@69.1"

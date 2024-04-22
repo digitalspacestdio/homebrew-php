@@ -15,7 +15,7 @@ class Php56Amqp < AbstractPhp56Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "451832105781fbcfa111d8f0e4966122300a464668a66f153f58ed936620972a"
     sha256 cellar: :any_skip_relocation, sonoma:         "e9b34db3e73bb39836b2fb293ef88e9c1515fbb8e07af4ea6c83176f666bd496"
     sha256 cellar: :any_skip_relocation, monterey:       "2069cb3d523ba301a08bcc93b3504825366dd5b124b8dacf92048dfdd5dfc046"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90b33b8b0b2f33fce8c680aa16b8877068f405fb2db7093271a41dc13734e71b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "871d8c12f5649b3147de9b3d89240d3551781f6610cd9ae8f01667d7f612c488"
   end
 
   depends_on "rabbitmq-c"

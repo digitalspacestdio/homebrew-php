@@ -15,7 +15,7 @@ class Php71Ldap < AbstractPhp71Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "db1320b58fd3bca94cfc221751cb08f06cdbf09ae34222fe05802bbb8ed9280c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4e4f1e3c8f5ad7d466ed736b115071367d99bd6b3b5f4f65739c50e8ed962bac"
     sha256 cellar: :any_skip_relocation, monterey:       "1694cd299831eab0ec67f125c2aaadf6e11571a1ddc1941d63f3e530eac621d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5fcaa59773d84e952814da94ec8ca81956ece79181b57aac0eed74c8794bfb0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f055253ea897026dbf6609e9a502df3e476bf270a816db1f2e5cc22f83695da7"
   end
 
   depends_on "openldap"

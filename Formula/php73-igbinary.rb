@@ -14,7 +14,7 @@ class Php73Igbinary < AbstractPhp73Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c816c5a4d27655296e7426feec52b55659e5fb8ee0a9460e156f3a92e3625b8f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6882ab41311cc7c81bb35b23b6922594b03e423c0401b5c3430ef843545f1c34"
     sha256 cellar: :any_skip_relocation, monterey:       "e1b8b35e98798bdeafa4d495cb7733389ee873bfbe3f6e0042575cb320373daf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d2519e8501e22cef6928c9b39a48886d032a8a13aa61e95d8a3b2712c35c72a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c560c4ca01bb364ecbe555aa1f9071eacd1deac565c5a546a57e5c6283003680"
   end
 
 

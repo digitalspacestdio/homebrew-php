@@ -14,7 +14,7 @@ class Php56PdoPgsql < AbstractPhp56Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ddf6220e41ab99d30fa4aa6c185434ce119cb9e0dae23d0601b7dcefdeafdf30"
     sha256 cellar: :any_skip_relocation, sonoma:         "a4a8d0724c8b36be4c2cb4025579629ac312cee94bfd6c1f70686dc05d33ccac"
     sha256 cellar: :any_skip_relocation, monterey:       "ba3b98838f36a1cd3bfd24c5b73bde702ac8d70787dc2bb880703f203c30a6e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "afc9cb0813d151baa0dcfa3bf2fa7121a91b2fb79fe6da7e48b1652216026044"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c5eb4c02d2bff59848af7f754c2e0138698a2fe536db3f869f7ddcaea269690"
   end
 
 

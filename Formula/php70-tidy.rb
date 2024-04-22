@@ -14,7 +14,7 @@ class Php70Tidy < AbstractPhp70Extension
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "459b2f0179359290c7f909db1447a2adc39ac9d125602f5c065b86de3b63c584"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "41f4d448092f150726be31570cca7e06e6d684c4fcd5f9aada84313889127ee4"
     sha256 cellar: :any_skip_relocation, monterey:       "08ca391e081f88c18192ddd998419c6341121e65b2e2015072bec01077264825"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25bf7cc490d507acdbf2d5e258e34b289b24dd7ff32888e7e1715e1e13bef9c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a096fca194cf1fee431ece785ebb05abf3d565fbe076f6184bf913e469ed94cc"
   end
 
   depends_on "tidy-html5"
