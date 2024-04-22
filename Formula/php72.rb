@@ -11,7 +11,7 @@ class Php72 < AbstractPhp
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a69d5e77562a217be7426b5a0fc14a1a5d96d0603a239457a1546c2e3ef4500e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "614e3c2daff5608fbfa0c8a171061423e38ccc46f477869b82243763b680fc01"
-    sha256 cellar: :any_skip_relocation, monterey:       "cb10a0dde42c3b5b14d90fb3f54c70372fe9df05bac50807f09526957ebe4ac5"
+    sha256 cellar: :any_skip_relocation, monterey:       "c5da363403a1ff9b96281765dd0f8b95b433ca7be7a62bf23ed45ffa79f8c1d8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "069d638b5af919274b2b414e1b0e82ba983496d0b05ece05d2314a86d909b888"
   end
   

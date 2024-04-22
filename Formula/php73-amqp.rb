@@ -12,6 +12,7 @@ class Php73Amqp < AbstractPhp73Extension
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e08b327c5fab54392ad799b8211420191907a86f56e75776153567291685d1cd"
+    sha256 cellar: :any_skip_relocation, monterey:       "5bc8ddad1a0a1fb69e1933390765455bf4658a7f8b11a9d8c480ccc9a3f50fb4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a169e703389b6a7214e2a9735eabd99990aca684565e969b43b96f80e4f7913"
   end
 

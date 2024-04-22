@@ -14,7 +14,7 @@ class Php72Opcache < AbstractPhp72Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ed45ee8c8e9bec22a73e7bb8c1169457031e3d8525c46be56a5f62faf516d93d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "804958aef9f4eef3019c8c75ba416563316c27a6c9af24cc2fc2478439614edd"
-    sha256 cellar: :any_skip_relocation, monterey:       "7f0ab32cb5fdf98a62e65bbb92ace476aa3e098353f5ced3984572492d77b6fe"
+    sha256 cellar: :any_skip_relocation, monterey:       "80b28fa05394957dc44b3cf2b00b9bfbf7276783443dfc2f4e426ff1ca60d25a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f9e6f02a2e24e8b8a5acb763b16ee198f480a91f66110a46287a9f038887a02"
   end
 

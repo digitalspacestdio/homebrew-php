@@ -13,7 +13,7 @@ class Php70Amqp < AbstractPhp70Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a9814e9c03ba24a563e9a463ca5d78c9bf32d3d685eca906d32103e78d312656"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f9f45e0eda59812ccf8b6964428927771757577183dc36f12fc279de1ad45bf2"
-    sha256 cellar: :any_skip_relocation, monterey:       "4748ef88f73c381db1fc9714c00bc345bac8f56684fd3c7ef4d111869605b088"
+    sha256 cellar: :any_skip_relocation, monterey:       "30d8f6f9978eb69b878291d789820a6da73f0371e4b26e752061ef7e90e4ad47"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9691f1f34e2700dbb545a28ba86df72403b7a3e9b6a537925c72ae228074323"
   end
 

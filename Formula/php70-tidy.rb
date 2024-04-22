@@ -13,7 +13,7 @@ class Php70Tidy < AbstractPhp70Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "459b2f0179359290c7f909db1447a2adc39ac9d125602f5c065b86de3b63c584"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "41f4d448092f150726be31570cca7e06e6d684c4fcd5f9aada84313889127ee4"
-    sha256 cellar: :any_skip_relocation, monterey:       "08ca391e081f88c18192ddd998419c6341121e65b2e2015072bec01077264825"
+    sha256 cellar: :any_skip_relocation, monterey:       "7ecbf11fbb69f80f5871d0c7ebe4e7cd6c1913c86a910ee1012d048d810f3a87"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a096fca194cf1fee431ece785ebb05abf3d565fbe076f6184bf913e469ed94cc"
   end
 

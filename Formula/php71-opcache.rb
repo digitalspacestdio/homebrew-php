@@ -14,7 +14,7 @@ class Php71Opcache < AbstractPhp71Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ad2eaf60a53a5ed8c960996437258e3f8345ac7df4ef73f645a7ce6ef616327a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7cfb57e4b3946e17b2ae2bd139e2dfe1bb8e8cf3fd845ad4a4577a26f2e2d311"
-    sha256 cellar: :any_skip_relocation, monterey:       "da35ce6006eb40c0d8875f5ad8f5ac4e3da3117ef229faa6eb580280e1f67a63"
+    sha256 cellar: :any_skip_relocation, monterey:       "9fad7c2235c9aafa65be9fb644200f3b4505f59192a97651c25a3c0612fe46cb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f0f8f4ffc8c4e11d19454a4824bc691b3b93368750a63c6dd66c20776551731"
   end
 
