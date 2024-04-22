@@ -12,9 +12,9 @@ class Php83Gmp < AbstractPhp83Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9f2aba8c0a69a737b2c5e704d3ce935f60dacac3d1f18f60ae35a02b951f6d23"
-    sha256 cellar: :any_skip_relocation, monterey:      "11e06af4385a582f2fa0a06ff683caaa53fc570442e2da621ecade353346c75e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75782f4e1ea23de373ce30b96809b0e5b9a7377ac11f0a2968a436f9095adbb0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c434df81b99b57765ee483a258ea73b876dcb769e1d3e22aa97b6e8eac9ee691"
+    sha256 cellar: :any_skip_relocation, monterey:       "0d37107b4fc3459ad9a571199ccd1b3331c108b6af999f6689ae41bdfc0c77b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e724e36d0fad976e475866179dd63a5333f62ee03de816f4c01039359f547867"
   end
 
   depends_on "gmp"

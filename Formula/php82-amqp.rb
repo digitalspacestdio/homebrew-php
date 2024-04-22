@@ -11,9 +11,9 @@ class Php82Amqp < AbstractPhp82Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "92bd992fa45b441ce81e007fafbbbf1b89640d3af3044f56aa22b07aff30ef58"
-    sha256 cellar: :any_skip_relocation, monterey:      "67139a76115c4fd8e95a7c1a66c8a3338ae91ed3d97b86833191fc76b5e97a2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95d3f1dddb18928a424689eb7961b741a1c89e7afab1526e82e7f84af9ff08fe"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0dae9f172f89d7e7a248ddd421abdf5cc64a84a06e58abc9838c2dccc9066b2a"
+    sha256 cellar: :any_skip_relocation, monterey:       "28a00554558bab1a2c9c2aae9ccaa54b5aa785ab5661ef53952f99f3228d63e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "046366f62b2e755f16918af23cc00c244accac4744d75b27659bf12c99fc805b"
   end
 
   depends_on "rabbitmq-c"

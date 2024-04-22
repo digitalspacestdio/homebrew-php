@@ -9,9 +9,9 @@ class Php81 < AbstractPhp
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8a0b3c0c270317c15d0587e9d9b42135e3784e49c2094abff3ed16c1f19f0f81"
-    sha256 cellar: :any_skip_relocation, monterey:      "323a81b7fa5979d93d01e56dd3eec2bb8fab6f6594e7a358afb0f40d6be00571"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f652b2c542414ae4bed5f204ad2208d72bf8bf7d955f2432f935833e4c5fb9dc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "455f10b1085fa7d871dcfbe265a3005ce24d4eac582235cda3a7a6ef39babaf0"
+    sha256 cellar: :any_skip_relocation, monterey:       "193a7ccfc0f05dabbc1f86ed1d09f725e39063561b3441c0ae86bc59c39dc42e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df6fe9c5ece9ea621bb4c95ea38242978b25ae745261c74008ef056326ef5944"
   end
 
   url PHP_SRC_TARBALL

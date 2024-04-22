@@ -6,13 +6,13 @@ class Php83Msmtp < AbstractPhp83Extension
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   version PHP_VERSION
-  revision 1
+  revision PHP_REVISION
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0cfd25b698232554c2e9fb59c7a6d1bc18bb3ec8cffb9d6f1a7c9735360173a3"
-    sha256 cellar: :any_skip_relocation, monterey:      "b1f2322df7606afdc789327cd3b6572d15797299f8b9a872190e30c9b9b5d500"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e8bde4b9029f763fbc1493815223d2523e1ab89fb266cd8db72d24261709808"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "459badb0ecd7ebf2b9e563881a6ec668f3ebb41c571476a7fa1e7d82b005c1f2"
+    sha256 cellar: :any_skip_relocation, monterey:       "34801e48bb9a38b425c3b65625251cb90afb5dea6764eae021691f8995ee5e38"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b12e6d616f6fe28cff2193728495a7a5e9e179d46e802540afd87f71eb783c54"
   end
 
   depends_on "msmtp"

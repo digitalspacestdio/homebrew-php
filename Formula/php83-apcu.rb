@@ -13,9 +13,9 @@ class Php83Apcu < AbstractPhp83Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ce889fb01eaa714763674281471d1abfcb3ea7a7b828e80d95af758c6c63bedf"
-    sha256 cellar: :any_skip_relocation, monterey:      "d17d5d0d5a6bfacfa39e5a6d98a226272537005d49b3da5434135ce832db0d88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "650054fc0b79dfabdcc149084efd8eb15f5e8da7150d9eca2ba5045ee149f5c3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0b6edc8fcc3190bf8d644c4af094fa698147fe548cfb7f06b1699d7c11d678ac"
+    sha256 cellar: :any_skip_relocation, monterey:       "0321bbffa012f6cade9c3c1bdfb2ab44b481d96801c781625430c651f6a7efaa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "018609cec08b9d18aea1bf92b714deee6597268028700831bc3aa7034955b8e8"
   end
 
   depends_on "pcre2"

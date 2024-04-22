@@ -14,9 +14,9 @@ class Php83Xdebug < AbstractPhp83Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d483c86d0c7ac027f3d5dcfd6e12f6e1b9a332aaf68693f3cfb33e9f527f0f5c"
-    sha256 cellar: :any_skip_relocation, monterey:      "a957510a130311c1f64d48759c729ca9566f0f48fc0d466b7260607f55e39171"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53c4086bac94cecf36c0263670900652ab6963ace1c0539e359df9677910df80"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "095cccd344a0fe1a6c8c6575a968fd53251289733a2f28eb4d7ad5a8a5ac4b35"
+    sha256 cellar: :any_skip_relocation, monterey:       "5d0a1fc15582d90b3c0b37bd6dad01bcd5125f442cf20f2ef4e7f1e281ce6e4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab200d04e5c04e2dad9482b4e1a60654b4c5ccc21e14f926dc08bbbb3f900825"
   end
 
   def extension_type
