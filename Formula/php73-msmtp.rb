@@ -11,6 +11,7 @@ class Php73Msmtp < AbstractPhp73Extension
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "224949699cc7523adbca8d6d0ebf3b046c78cc8c100611ae632b3e692594217c"
+    sha256 cellar: :any_skip_relocation, monterey:       "152b08e9641c21862019ce392f2f829fba606735c75d463667bbad0ce58796dd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "28ee93e3a4fc28be389b777af0a52174135562a994dea4b692e126e7befa9552"
   end
 

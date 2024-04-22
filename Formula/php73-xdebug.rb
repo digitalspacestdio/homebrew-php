@@ -14,7 +14,7 @@ class Php73Xdebug < AbstractPhp73Extension
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "86cb7d82e20a2054b4c49bbe6bbaeb7f43f8888fe26aa92b0777b49888841b2d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "12d1834f5c100d5a77c05544ffb4dfaab613553e40162a5992589e7c2a325cad"
-    sha256 cellar: :any_skip_relocation, monterey:       "dae9ca79fd35caca4084167df0c918926c4fa24091b05252614eff6b827de781"
+    sha256 cellar: :any_skip_relocation, monterey:       "7b8200fe64ceecd1103a361a67d04c4080ea17a965ece1d80026203b39b2019d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d82ce7bebc05a61d22bdd54a4918ea85fe195c811bb897418bd2dbf3f2075964"
   end
 
