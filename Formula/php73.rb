@@ -9,9 +9,10 @@ class Php73 < AbstractPhp
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6e99e0a6aaf2287574d24854d5dd103c4e6d369dc62e9f7a6fa30a7d95b597f4"
-    sha256 cellar: :any_skip_relocation, monterey:      "c98417af41efba9a125e3f4695ec6ce47b14c90a2f257e99adb06690ca4c0fc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eebe5047d5cc05f9cba4325e1ea0e98d88d174e508805cb31f2ab81707d10d0b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e99e0a6aaf2287574d24854d5dd103c4e6d369dc62e9f7a6fa30a7d95b597f4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "17115b04c4293a7c1a4bbe7877af1889a21356af78fd580752056b43eaa4e5a9"
+    sha256 cellar: :any_skip_relocation, monterey:       "c98417af41efba9a125e3f4695ec6ce47b14c90a2f257e99adb06690ca4c0fc6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eebe5047d5cc05f9cba4325e1ea0e98d88d174e508805cb31f2ab81707d10d0b"
   end
   keg_only :versioned_formula
 

@@ -9,10 +9,8 @@ class Php70Msmtp < AbstractPhp70Extension
   revision 1
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70-msmtp"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "404c222df8b4172c4f8abc7f5dd39198bd9ada7a80e9f921f7d177d5f9e70de1"
-    sha256 cellar: :any_skip_relocation, monterey:      "7f14c55f1c71f66801a813f1741272beb529587e1a257d143721b54906d17331"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35d57bb8f3f870f9a626fbec40341578f1ffd703d4af65a946ff0b2f57dca35a"
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a41276b39b34329a5e14c7d33892105a5ef706c4841478d322e2d9d215cb2726"
   end
 
   depends_on "msmtp"
