@@ -11,9 +11,7 @@ class Php83Ldap < AbstractPhp83Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f6621f4db02ad69329f1b024cbaceafa71e7f154a61ef130209776c4bbdbe6d7"
-    sha256 cellar: :any_skip_relocation, monterey:       "a6f736fe9549361880b2b93013ab2aa09781e8f6ce2b1043a05cc68146a87309"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c47f384efc8716f45cfa5f1269441fc46b303566d15f6a3808a101d265cf6f81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "558d53a64ab83bfbe0822b7c3886961135886a92cc03533b3dc4c0f2b9d06665"
   end
 
   depends_on "openldap"
