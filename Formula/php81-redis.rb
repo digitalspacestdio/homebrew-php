@@ -10,9 +10,7 @@ class Php81Redis < AbstractPhp81Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1df0f52c3dfdf488e9cdfe682dcb8da472582dea90bde69d2ceef1b474f5ab31"
-    sha256 cellar: :any_skip_relocation, monterey:       "e3a86d69afd9d671b9201c1c0b51f22517ec88437193763ff6e7c035fcfe0d3d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "856011b13bc0b6bd856f8f20b350a622a36ce1d8b7be06ec867a8b8d346ed8c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f3b52d3280f8b70bfd3a470801b3c92b454c41bcdc6bc9760826811280f9459b"
   end
 
   depends_on "digitalspacestdio/php/php81-igbinary"
