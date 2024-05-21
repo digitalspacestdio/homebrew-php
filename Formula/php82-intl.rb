@@ -12,7 +12,7 @@ class Php82Intl < AbstractPhp82Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "619c87609b004286f59db90b5ea036841deaef521b85b53efacfff11facfe226"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3e04196efc576cbe85d5eb9ea0e77a986309315b7a770faf87e7b2700d8c161c"
   end
 
   depends_on "digitalspacestdio/common/icu4c@74.2"
