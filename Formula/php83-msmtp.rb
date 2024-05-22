@@ -10,7 +10,7 @@ class Php83Msmtp < AbstractPhp83Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e975464f8de4fb7d12f728e579dc5db799f97808ba5576a32fed518e6916016b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b3df27e247256726b8f72f89ac1bd6094b05ab51808d828dcbbffef567bbb2a9"
   end
 
   depends_on "msmtp"

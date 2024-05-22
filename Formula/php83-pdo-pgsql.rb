@@ -11,7 +11,7 @@ class Php83PdoPgsql < AbstractPhp83Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d5ded351bd97c2bab8aad2637ac163620f3547944813fedc031d30e3cd572d63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "10d7c1b2ef5f0bfc9c561c826fdd4f41a7d80584a8ee83db6eb660433c2ddad3"
   end
 
   depends_on "digitalspacestdio/common/libpq@16.2-icu4c.74.2"

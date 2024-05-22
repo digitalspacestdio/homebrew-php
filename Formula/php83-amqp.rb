@@ -11,9 +11,7 @@ class Php83Amqp < AbstractPhp83Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "adf51ddbd7fb686f341c72c858f4c8e467e1b3f0d4c4244c75a00398db3252ab"
-    sha256 cellar: :any_skip_relocation, monterey:       "9819adf4cf3df2a7da82b6421e05b12b04da5ea647efe0527a1e1ff05d500efc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45a2dcedb81cb8ac4bf5563e0c81e37d6fc7028b2493126e0d14144f9e2874d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "09b5967f825532e4e5779d60e8384fff867f7b0c1ad70ecc4498d90023b39413"
   end
 
   depends_on "rabbitmq-c"
