@@ -11,9 +11,7 @@ class Php81Sodium < AbstractPhp81Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "223313c548bcf0551312bb1b0d8c080c9dcd09a377542f807e05bb679ebf361e"
-    sha256 cellar: :any_skip_relocation, monterey:       "f461c97b8cae2bf03229ba603f2bd94211bc7afdca256486fbb887aa81655841"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "279534e42e41c677798c2fa07ee9fdf28c80209b6428aed93a3d1f2b9461c242"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c6d7e2a260504c3e31373c6f17564001efebe9bccdaa6aad7e3707369f6dc97a"
   end
 
   depends_on "pkg-config" => :build

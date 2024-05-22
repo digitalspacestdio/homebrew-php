@@ -11,9 +11,7 @@ class Php81Tidy < AbstractPhp81Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ad85d360d21d36f147e4417bdca5fddcfc6d0dac6097b7643cd137d0f80b356c"
-    sha256 cellar: :any_skip_relocation, monterey:       "619f710cb38b1cb832c808272f43e91b521f6bf009846c9274383914af612039"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0dc4be51ed52b85ad342f00af80e912d1131391228063121bd896664a159b3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "75255e3f32736836e147d57d598c554d235726b12ca3baefb068b17f47561f3e"
   end
 
   depends_on "tidy-html5"
