@@ -9,7 +9,7 @@ class Php82 < AbstractPhp
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2c77a2577340f955b1c38d08dc22699543b697bee1665c64d186847837384198"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f9ea072b2ac7ed57676779a6d8b4e0b36701e589a928ea322be2dc3cbd663abd"
   end
   
   url PHP_SRC_TARBALL

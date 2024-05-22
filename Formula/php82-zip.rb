@@ -11,7 +11,7 @@ class Php82Zip < AbstractPhp82Extension
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5c1cd6be36f612b522dcdbde87de6ffcdb0fbf6432079193bf0ca4beabba18a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "12c091b4b78c2316218c26d5e30347e601752d6d969e642343c078fb27eb1e3c"
   end
 
   depends_on "libzip"
