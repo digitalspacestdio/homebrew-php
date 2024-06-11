@@ -17,7 +17,6 @@ class ComposerAT110 < AbstractPhpPhar
 
   depends_on "gpatch"
   depends_on "git"
-  depends_on "curl"
 
   def phar_file
     "composer.phar"

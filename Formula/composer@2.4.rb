@@ -8,7 +8,6 @@ class ComposerAT24 < Formula
 
   depends_on "gpatch"
   depends_on "git"
-  depends_on "curl"
 
   livecheck do
     url "https://getcomposer.org/download/"
