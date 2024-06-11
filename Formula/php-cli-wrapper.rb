@@ -56,9 +56,10 @@ class PhpCliWrapper < Formula
           exit 1
         }
       else
-        PHP_DIR=$(#{HOMEBREW_PREFIX}/bin/brew --prefix $(#{HOMEBREW_PREFIX}/bin/brew list 2>/dev/null | grep -o 'php[0-9]\\{2\\}$' | sort | tail -1))
+        PHP_FORMULA=$(#{HOMEBREW_PREFIX}/bin/brew list 2>/dev/null | grep -o 'php[0-9]\\{2\\}$' | sort | tail -1)
+        PHP_DIR=$(#{HOMEBREW_PREFIX}/bin/brew --prefix $PHP_FORMULA)
         PHP_BIN="${PHP_DIR}/bin/php"
-        if [[ -z ${PHP_DIR} ]] || [[ ! -d "${PHP_DIR}" ]] || [[ ! -e ${PHP_BIN} ]]; then
+        if [[ -z $PHP_FORMULA ]] || [[ -z ${PHP_DIR} ]] || [[ ! -d "${PHP_DIR}" ]] || [[ ! -e ${PHP_BIN} ]]; then
           >&2 echo "Can't find any installed php version!"
           exit 1
         fi
