@@ -12,6 +12,7 @@ class Php81Zip < AbstractPhp81Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.1.29-106"
+    sha256 cellar: :any_skip_relocation, monterey:     "c99084df6cff33bd13d559d90ca87e3841274b3136afe3763123459840a09ee2"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "9b2aa75e5cde6e84d3f07a3ddc305787af96b237d2d62ea5902752060bc296da"
   end
 

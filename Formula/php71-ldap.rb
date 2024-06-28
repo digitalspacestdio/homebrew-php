@@ -12,6 +12,7 @@ class Php71Ldap < AbstractPhp71Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.1.33-103"
+    sha256 cellar: :any_skip_relocation, monterey:     "c5bbb90e2d5c6733f0b3d9e5d7bfc308f8ef4f002c20af5a5bcc8c56f3431c73"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "9e5a76d5fa609b687194660410afbafd62515c9dcf57a4579b431197668f96ef"
   end
 

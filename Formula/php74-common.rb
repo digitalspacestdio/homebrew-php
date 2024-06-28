@@ -6,6 +6,7 @@ class Php74Common < AbstractPhpCommon
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.4.33-104"
+    sha256 cellar: :any_skip_relocation, monterey:     "161892641f4d09fbb1e3afd0654712274b28355f0a6f53e48ed70d5cafc10ee0"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "123f2483349d703c97f486166bb078a493242f495f13332f1ebb4ac6a0298646"
   end
 

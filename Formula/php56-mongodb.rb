@@ -12,6 +12,7 @@ class Php56Mongodb < AbstractPhp56Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/5.6.40-103"
+    sha256 cellar: :any_skip_relocation, monterey:     "2f878c6bc89652e8e34634bf607b710ed46ff17d0baf5c947d5b178bcef53cb8"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "5b4b2acee139b926959408b7cb3d052ba179a0bf4339083753116bdadb55ae6b"
   end
 

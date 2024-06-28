@@ -11,6 +11,7 @@ class Php71Igbinary < AbstractPhp71Extension
   
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.1.33-103"
+    sha256 cellar: :any_skip_relocation, monterey:     "20154d675031d5a9e786a61c5cbacf330ddd6723ebbb8a677a33852e33e4a939"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "15db1f559bac38adc52da90902642af0855facb9c2f2c8a16ae6f80f0f6015c4"
   end
 

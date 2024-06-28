@@ -12,6 +12,7 @@ class Php82Xdebug < AbstractPhp82Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.2.20-106"
+    sha256 cellar: :any_skip_relocation, monterey:     "a20af92c72af2fb501016d07e870077a9baab5d30fbe1c614f03ba473f36c914"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "7b4973c3c61fceafbbd31179053c0826891746870dec904febe75351eb79b080"
   end
 

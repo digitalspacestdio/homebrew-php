@@ -11,6 +11,7 @@ class Php72Amqp < AbstractPhp72Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.2.34-103"
+    sha256 cellar: :any_skip_relocation, monterey:     "71afb891dc809d1c397e173417dc8756179865f5bdb94c0e625a254965c5a90c"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "227785f9580db13e70687b0a8b4d21c8d0ee59c57fb25b0e648824792f66e11e"
   end
 

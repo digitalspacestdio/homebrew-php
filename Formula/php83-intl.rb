@@ -12,6 +12,7 @@ class Php83Intl < AbstractPhp83Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.3.8-106"
+    sha256 cellar: :any_skip_relocation, monterey:     "4448526856b90ef95ce1fde4a2bf94cf232af3a93a4c13165effbb2fb77505fc"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "606a73b47733df668e482a2f8b3d1e9a8f4ae1bfb8a8a0e555fc155e5e88f88b"
   end
 

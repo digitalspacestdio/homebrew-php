@@ -11,6 +11,7 @@ class Php81Sodium < AbstractPhp81Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.1.29-106"
+    sha256 cellar: :any_skip_relocation, monterey:     "d082d9b75e373b9d007d84069b300d4c18d5ae5c2a4e39627c92629d56529a1c"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "6bec85d1b108f61fb9bcead83a8801a146d0678d3fadb1c8e687384f0ecb8383"
   end
 

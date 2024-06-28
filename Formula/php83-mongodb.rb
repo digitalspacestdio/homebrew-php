@@ -11,6 +11,7 @@ class Php83Mongodb < AbstractPhp83Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.3.8-106"
+    sha256 cellar: :any_skip_relocation, monterey:     "75e3991a0aa1bb7f759580b1bd6aec7c545aeedb9babc944f21e3e24b220ee95"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "815ebf7ec8fa7d7b9f075687de73c2bcb43cb884a9365830372ef8eeb7d56919"
   end
 

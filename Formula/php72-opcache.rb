@@ -12,6 +12,7 @@ class Php72Opcache < AbstractPhp72Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.2.34-103"
+    sha256 cellar: :any_skip_relocation, monterey:     "f387e35b3929b2291a4353f45551b743e52f86662bc1404216389c0bd5ae1b69"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "210df8f172d7ae3a6bcb80cc8cc3460f539c1e57be2e2b378d72f1228ac2b846"
   end
 

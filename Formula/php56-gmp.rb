@@ -10,6 +10,7 @@ class Php56Gmp < AbstractPhp56Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/5.6.40-103"
+    sha256 cellar: :any_skip_relocation, monterey:     "74a412f3dc9ea6966bd25e222a76eef540c7a9aaf3a596beaad3477a12586546"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "bbc9a034569a085ad3c98b53955a52df34a2b27f043717386d76a1bbce18e4d1"
   end
 

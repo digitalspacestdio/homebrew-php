@@ -11,6 +11,7 @@ class Php81Tidy < AbstractPhp81Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.1.29-106"
+    sha256 cellar: :any_skip_relocation, monterey:     "ce14e55b8a75800285f18a0b11d7343a00523affe74092c24818a437823cc77d"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ccbb037298f5ba38f4746fab252a67d208da932dbeeaaeca04ce5085119d4f7d"
   end
 

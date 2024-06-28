@@ -12,6 +12,7 @@ class Php70Mongodb < AbstractPhp70Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.0.33-103"
+    sha256 cellar: :any_skip_relocation, monterey:     "01cbd593e157b44489f0d8668038b66e4a766b87e07c428d872e35dea4cf5296"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "41f044a4a8be29089e03eeaa2306b1d36089276a81f16c1bd8ed7cf1e035f07a"
   end
 

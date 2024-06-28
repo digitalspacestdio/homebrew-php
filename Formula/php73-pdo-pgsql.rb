@@ -12,6 +12,7 @@ class Php73PdoPgsql < AbstractPhp73Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.3.33-103"
+    sha256 cellar: :any_skip_relocation, monterey:     "f15c60787fc04e0316e72177fad0000a9a8a728ecd2871de85b052e8a20759f7"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "6d39e5ce61f26782057b8fa31526472a9871e8e21b282252fc6d92d11422f8ac"
   end
 

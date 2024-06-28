@@ -10,6 +10,7 @@ class Php56Opcache < AbstractPhp56Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/5.6.40-103"
+    sha256 cellar: :any_skip_relocation, monterey:     "06494a04ee68f49a0535db022c3077aab137b2f7f4725351114c30182ece8b91"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "c2ed36f739e5ebff728adcb0fc273917763da2ffa338cceb378c7256eb707584"
   end
 

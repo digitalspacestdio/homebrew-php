@@ -12,6 +12,7 @@ class Php80Igbinary < AbstractPhp80Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.0.30-104"
+    sha256 cellar: :any_skip_relocation, monterey:     "5c6587fa9f38c090eff2c753f970efa7552e1c0ea302218cf1a321a5e4b54164"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "f344e9da96be44ebcc4804acebaf08e636bb15b4ffdacebd160856fe9090f0f8"
   end
 

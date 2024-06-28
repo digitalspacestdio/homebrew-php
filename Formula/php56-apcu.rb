@@ -11,6 +11,7 @@ class Php56Apcu < AbstractPhp56Extension
   
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/5.6.40-103"
+    sha256 cellar: :any_skip_relocation, monterey:     "bce858f40bcd70bd2f9e4d309052daba6dc6dc09ae2364a2869b103745bd1df0"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "e6559278098515874485a178ee6857dfba635f8037d52d522f963df76cffb3aa"
   end
 

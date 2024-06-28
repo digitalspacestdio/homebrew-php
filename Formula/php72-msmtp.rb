@@ -10,6 +10,7 @@ class Php72Msmtp < AbstractPhp72Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.2.34-103"
+    sha256 cellar: :any_skip_relocation, monterey:     "c5ddfeec251d7df0bfb63f78ac81c7f1d41091a199aeb62d46f53ba4aa349ad4"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "be33677692fd4c62b9a833afad13f8e520ffcf09a9e25d3b5d040426c380498f"
   end
 

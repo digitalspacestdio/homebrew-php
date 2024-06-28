@@ -12,6 +12,7 @@ class Php80Ldap < AbstractPhp80Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.0.30-104"
+    sha256 cellar: :any_skip_relocation, monterey:     "8cd8128ab1e13823f94243b5003e0327183ecd3051d72cf27aaef2b40e2f2273"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "967e77023939f107cf9309e0aa84846bce5b162129f43ff02aa5653ce5472ca4"
   end
 

@@ -11,6 +11,7 @@ class Php73Redis < AbstractPhp73Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.3.33-103"
+    sha256 cellar: :any_skip_relocation, monterey:     "a92c997283b800d384ea956f4266dac4ef8567c05b0538dd00bf84ebe2c4d8ae"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "c1df1482576b95eac648c1208714ebc1a5d09478d7f4f456b692a4eabee8a743"
   end
 

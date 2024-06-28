@@ -10,6 +10,7 @@ class Php56Igbinary < AbstractPhp56Extension
   revision PHP_REVISION
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/5.6.40-103"
+    sha256 cellar: :any_skip_relocation, monterey:     "043a555dc60013988a84470df5eedd5204eb1807c5dbe3a424ecab86e827b271"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "fbd82bdb3ad41beb503d4ffd3ccaafcb5d15bf5bd34ea3f938eb42b79f26d52a"
   end
 

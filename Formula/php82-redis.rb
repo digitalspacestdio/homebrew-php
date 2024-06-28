@@ -10,6 +10,7 @@ class Php82Redis < AbstractPhp82Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.2.20-106"
+    sha256 cellar: :any_skip_relocation, monterey:     "08529c98121aff8937a067352c92a9ea4cc320daa9c53699905a7ac5a188512f"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "19ceae04633817a2ede23bb43fbab59873d22877a153c547cb74e30c54bc6fdc"
   end
 

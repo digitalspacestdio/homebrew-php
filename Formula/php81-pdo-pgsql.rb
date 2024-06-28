@@ -12,6 +12,7 @@ class Php81PdoPgsql < AbstractPhp81Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.1.29-106"
+    sha256 cellar: :any_skip_relocation, monterey:     "be76f636d8b62e4be78838df8824e17c3e43f5c8683a264202985fd38aa2f335"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "4334f1eeb10d2902f1608a4b9abfb18e4757f7f907b5271e32ed4297a416d0ab"
   end
 

@@ -12,6 +12,7 @@ class Php82Gmp < AbstractPhp82Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.2.20-106"
+    sha256 cellar: :any_skip_relocation, monterey:     "8429afa9034f64157cb3ade94ff79c58fdc94d31ab1ae321032ee33aca23abb5"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "002db4559f53642b235b359683ebc69ce6127b2773165eac9f113c69dcee833b"
   end
 

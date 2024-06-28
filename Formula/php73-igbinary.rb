@@ -11,6 +11,7 @@ class Php73Igbinary < AbstractPhp73Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.3.33-103"
+    sha256 cellar: :any_skip_relocation, monterey:     "29e9a7bf8d238a77ba6f63936faec2f324ec4596535469fe14f7b7a8797705d0"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "5b02590f4808b13883e96709117364f6660d1d21e4b1969b34dbc064f589b819"
   end
 

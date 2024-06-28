@@ -11,6 +11,7 @@ class Php73Amqp < AbstractPhp73Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.3.33-103"
+    sha256 cellar: :any_skip_relocation, monterey:     "935480e3800fb235bcdd42a96ac816e9f0b8b978088228790ba42a8e98930dda"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "9a94f29382b60d6ad54fef8f6d28d0a1fff2121e77fca6e6ede1f8697ce69f2d"
   end
 

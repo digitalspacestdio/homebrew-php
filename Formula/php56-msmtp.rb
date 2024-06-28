@@ -10,6 +10,7 @@ class Php56Msmtp < AbstractPhp56Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/5.6.40-103"
+    sha256 cellar: :any_skip_relocation, monterey:     "aca1fb139e56469baa02bfd636aed2ae3a9018b070b0befa98843a34acf37736"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "9bbe862c03389db65968c5effb722e44df80900662187b8e768e1841052a266f"
   end
 
