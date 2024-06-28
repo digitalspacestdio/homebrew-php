@@ -10,8 +10,8 @@ class Php81Amqp < AbstractPhp81Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3d71ad40c5b621c75750c042919a03e220e07217e5e837045e23f679452d5071"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.1.29-106"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "79c4a693798e6109e09254d636eaa8290324584ccb2a395d8ddbbddb8e1fdb81"
   end
 
   depends_on "rabbitmq-c"

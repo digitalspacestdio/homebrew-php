@@ -11,8 +11,8 @@ class Php81Igbinary < AbstractPhp81Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "72184218d7d72adc7d535afd52d299de331ee932a045fede997ae1b65693bdf5"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.1.29-106"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9923c242bac59074fad75a825ba25b2addc50306b63e706bbcadb9002215e3ff"
   end
 
 

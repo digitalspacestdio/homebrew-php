@@ -9,8 +9,8 @@ class Php81Msmtp < AbstractPhp81Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "be6883dc4548e2a2c3cfb2721e9810244559262a9b97b12e29299ea153718e57"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.1.29-106"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ddd845c48d0615968235f3da776731141a4b380a43bc0a20ea77157bb473f07c"
   end
 
   depends_on "msmtp"

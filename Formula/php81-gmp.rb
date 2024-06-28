@@ -11,8 +11,8 @@ class Php81Gmp < AbstractPhp81Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "67a3311388e704c9beee6b7c1aa624b2cfab0816fec483f2a4d004df82c844aa"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.1.29-106"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d7f4580ac997114f221532f99e8f40b4b4c8d743a44bedea5a5c1cd3c3a5ed9e"
   end
 
   depends_on "gmp"

@@ -11,8 +11,8 @@ class Php81Ldap < AbstractPhp81Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e4ec33171fd2e58779f7c0be736800038ad7112d0654975f81a046c04517cbee"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.1.29-106"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "231a038cd454b1efa7bda727ace8d9d09b81c0803787a99f910015b54b4b945d"
   end
 
   depends_on "openldap"

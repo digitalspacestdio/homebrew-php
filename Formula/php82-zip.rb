@@ -10,8 +10,8 @@ class Php82Zip < AbstractPhp82Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "12c091b4b78c2316218c26d5e30347e601752d6d969e642343c078fb27eb1e3c"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.2.20-106"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2be6d1146c556c7085bce4cb6b086ec3d44f369955c8d94da495098e4716f7b6"
   end
 
   depends_on "libzip"

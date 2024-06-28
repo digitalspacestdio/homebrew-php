@@ -10,8 +10,8 @@ class Php82Amqp < AbstractPhp82Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "77a000df1cc9904362ee27d7c03a3c82a70ff872539c5388b95ae340dcfdb02c"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.2.20-106"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "682a1b6d32a524eb7ff9a881d65f90f4a4915a90da105d4d8701c726b897825a"
   end
 
   depends_on "rabbitmq-c"

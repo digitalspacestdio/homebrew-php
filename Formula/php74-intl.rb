@@ -11,11 +11,8 @@ class Php74Intl < AbstractPhp74Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d362ad58ace3bcc6803866458141d9f8db198e5ad5cfaa6accade365c2eff220"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5548c26d380584d32835f898e1d2f62b6b3d96502a98bead5003a4e100d49df5"
-    sha256 cellar: :any_skip_relocation, monterey:       "d65f7183dc6686ec160bda2b0c97b87276763d77c741d276648d520e839824c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "806f26ca9ea2cd2bb94dc6ee0669c636c400235760b2cf5158bac15a79ac5fa0"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.4.33-104"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2c7aaeda6e9f5e1f0975183e8b37a388789d71a2a131bdcdd621d71daa42c926"
   end
 
   depends_on "digitalspacestdio/common/icu4c@73.2"

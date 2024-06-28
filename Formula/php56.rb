@@ -11,12 +11,8 @@ class Php56 < AbstractPhp
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "93a22f4a824ff1cc0feededcb90009239437a254b30decb3615021557807cf15"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "325aa2bd3c47fd4bdcc2bdbdaf608e8733bb71eb747079625b6ad1963eeb3e6c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0d8c90452dd1c22b009324660acd3a9a83a3d7ac3d704aa0c397dd24ea244de2"
-    sha256 cellar: :any_skip_relocation, monterey:       "e626352a1a6193af68faefd43b69f7a69efd81a30aa7480ad11cae39d6a2fcf9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ddf0a0c56206bba16df4d6768aaf3a8c41a63a2cc8ed46349c688e6d0bb2dff"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/5.6.40-103"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "06230459ddd40a7d985b802aa6e4149e43a872397db09cddb27f4a4a24b569c9"
   end  
 
   keg_only :versioned_formula

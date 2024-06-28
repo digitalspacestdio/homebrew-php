@@ -8,8 +8,8 @@ class Php82 < AbstractPhp
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f9ea072b2ac7ed57676779a6d8b4e0b36701e589a928ea322be2dc3cbd663abd"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.2.20-106"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3b6c45200fbf98ba634d4bb07ab2f9195b16fed610fb1efeff3a14490c258513"
   end
   
   url PHP_SRC_TARBALL

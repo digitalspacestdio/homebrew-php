@@ -11,8 +11,8 @@ class Php81Xdebug < AbstractPhp81Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "fc299ad699fcdb2eb8e179a5984b2989236d98c1959fab0924d8122724259193"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.1.29-106"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3bdc61023dfb7b1e924dbd86cfe76aa15b6e52e8e65eeb1e8b16134cd3698b08"
   end
 
   def extension_type

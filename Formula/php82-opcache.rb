@@ -10,8 +10,8 @@ class Php82Opcache < AbstractPhp82Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c3a726b2afb8cae40f909671abcfc06d821683a6b97e1297074705bdcb14272d"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.2.20-106"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3df814c0fa50549c5be6e641eff26afc3931f60c53cfa8530e935d448f9dd86a"
   end
 
   depends_on "pcre2"

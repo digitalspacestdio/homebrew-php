@@ -11,8 +11,8 @@ class Php81PdoPgsql < AbstractPhp81Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f496f007c394099215b52439f6d7b464848096c3e14e34b62b8a65816422b381"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.1.29-106"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4334f1eeb10d2902f1608a4b9abfb18e4757f7f907b5271e32ed4297a416d0ab"
   end
 
   depends_on "digitalspacestdio/common/libpq@16.2-icu4c.74.2"

@@ -11,8 +11,8 @@ class Php83Intl < AbstractPhp83Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "43057516b9a7ce592ba5b66a397453b60cf68171a6d174d8d9f6ace2ac293889"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.3.8-106"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "606a73b47733df668e482a2f8b3d1e9a8f4ae1bfb8a8a0e555fc155e5e88f88b"
   end
 
   depends_on "digitalspacestdio/common/icu4c@74.2"

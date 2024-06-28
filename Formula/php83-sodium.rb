@@ -10,8 +10,8 @@ class Php83Sodium < AbstractPhp83Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8538bb012609d1b32a11cdb94e4ff944ee184ebace8289ec49d94c8d0143362d"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.3.8-106"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "691b0f3a0266380596e803d4ab13fdeaf38768d3feded1816a91c5630aec74ea"
   end
 
   depends_on "pkg-config" => :build

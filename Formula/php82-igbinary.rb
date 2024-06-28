@@ -11,8 +11,8 @@ class Php82Igbinary < AbstractPhp82Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ea2d89bdccc84b3b9786cec803542e75cfb79ecb9f597a19f7887f17fdf70b5c"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.2.20-106"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "acade2d630ea3d2970d5464bea9f405e4ab4f26c94ce8ac22c37dd86896ee9e0"
   end
 
 

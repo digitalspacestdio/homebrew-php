@@ -13,8 +13,8 @@ class Php83Xdebug < AbstractPhp83Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9873448d5423c77b25ac5a8b800885e4033aa610d63054414a59fccb2897ef70"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.3.8-106"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "74c9f789e6ac826094fc857e8d4369a7e2dc2180c60f671884c259d8c05547c3"
   end
 
   def extension_type

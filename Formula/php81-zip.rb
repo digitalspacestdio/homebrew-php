@@ -11,8 +11,8 @@ class Php81Zip < AbstractPhp81Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "236a028da23d4691db4ff5a6acc0439efa6e7d7b4fe95ceb923b0ee03130fdaf"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.1.29-106"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9b2aa75e5cde6e84d3f07a3ddc305787af96b237d2d62ea5902752060bc296da"
   end
 
   depends_on "libzip"

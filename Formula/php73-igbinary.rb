@@ -10,11 +10,8 @@ class Php73Igbinary < AbstractPhp73Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c816c5a4d27655296e7426feec52b55659e5fb8ee0a9460e156f3a92e3625b8f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6882ab41311cc7c81bb35b23b6922594b03e423c0401b5c3430ef843545f1c34"
-    sha256 cellar: :any_skip_relocation, monterey:       "f2ddc8dc4f4c1f8b4c5a554ac6e64d22e438a8763993361c33bc4a9fe244a7d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c560c4ca01bb364ecbe555aa1f9071eacd1deac565c5a546a57e5c6283003680"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.3.33-103"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5b02590f4808b13883e96709117364f6660d1d21e4b1969b34dbc064f589b819"
   end
 
 
