@@ -33,7 +33,7 @@ for PHP_FORMULA in $FORMULAS; do
                     }
                 fi
             done < <(jq -r '."digitalspacestdio/php/'$JSON_FORMULA_NAME'".bottle.tags[].filename' "$jsonfile")
-        done
+        fi
     done
 
     for jsonfile in ./*.json; do
