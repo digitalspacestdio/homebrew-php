@@ -5,11 +5,10 @@ class Php73Common < AbstractPhpCommon
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73-common"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ef4a859a1e1eea0153c01dd4a6f281d81dc0d25325b76c105a14c61810f0bfc6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f3a60b2d425ba9f0e5aa328782412c9f9127f492b5e25c2c5b8f3ddc5e1e5683"
-    sha256 cellar: :any_skip_relocation, monterey:      "c1e89421cae9477c2ad151c5eb7210738e7ec560bc8fe75042557a0e0ff86411"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eee7f02c33ce7546bb11c06daca51b9c0012b32d2b9ef97446e8819243f73057"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.3.33-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3ca5c45a0c5526f1f45264c858be84f7de8a5befd365b873a0dcef25e24087be"
+    sha256 cellar: :any_skip_relocation, monterey:       "b1712e2800bdd33be597993bc836fb1e166d6f428e6a101f0e3a74d6ab038d48"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dfe28c3bcf602bdc99fe363d9413e57bd7fa155b359e3216dab05fbac815c5bf"
   end
 
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM

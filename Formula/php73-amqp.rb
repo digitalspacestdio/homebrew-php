@@ -10,10 +10,10 @@ class Php73Amqp < AbstractPhp73Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e08b327c5fab54392ad799b8211420191907a86f56e75776153567291685d1cd"
-    sha256 cellar: :any_skip_relocation, monterey:       "5bc8ddad1a0a1fb69e1933390765455bf4658a7f8b11a9d8c480ccc9a3f50fb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a169e703389b6a7214e2a9735eabd99990aca684565e969b43b96f80e4f7913"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.3.33-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dfad5ca27821483ff361d3636961810e7a78495eee7d1d034703234e9cde8df4"
+    sha256 cellar: :any_skip_relocation, monterey:       "935480e3800fb235bcdd42a96ac816e9f0b8b978088228790ba42a8e98930dda"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a94f29382b60d6ad54fef8f6d28d0a1fff2121e77fca6e6ede1f8697ce69f2d"
   end
 
   depends_on "rabbitmq-c"

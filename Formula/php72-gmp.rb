@@ -11,11 +11,10 @@ class Php72Gmp < AbstractPhp72Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a90a60557a907b5610fed7fda7b20b3f0f37be95a4a018409f8c0bda7108a810"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "99783b2e8887ea7a73ca3890f83bb9170605e0e313a2dabfc1c370e863fa259a"
-    sha256 cellar: :any_skip_relocation, monterey:       "e08f3cf79405a5ecb01dae0ed627e2e8b9531befa548ba5f7e79d83b4c16f71d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "69171faba0edd288cd3127b1be2d9c3012667b328d03dd75c4cf4e743172d213"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.2.34-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "504a81dd62465e601ba98fc7d97afea5fcdbfbec75fdcf2ad7e75175b33087de"
+    sha256 cellar: :any_skip_relocation, monterey:       "886fc5d499593c82a0456381e727bf4872279cbe61454a2ac998d274b17e05a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "402d91793f5a9e79c16d0cb00bb3bd05f1e89778038523f5a6042ee57bcb011c"
   end
 
   depends_on "gmp"

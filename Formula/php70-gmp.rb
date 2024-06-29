@@ -11,11 +11,10 @@ class Php70Gmp < AbstractPhp70Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "201da371829729adea9658a59908a164579943e854702574aed2671412422dfa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "57e7f7b2b1c07f50c54d9ac2d15d03d6383ed2268b2e035009e83527a00096a9"
-    sha256 cellar: :any_skip_relocation, monterey:       "c4485c6c3827d70729a703b6fc6b3d555f8dfeed6a092659c98b0946a4fe855f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c0391aee659558fadcaa789a44fb42b59672494eb364bbad17247a37390535e"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.0.33-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2f236aedc3c8e310c5094194e9366a2bfc30c64fa647eba01bd173803f6a91d7"
+    sha256 cellar: :any_skip_relocation, monterey:       "c23b1a5faff3b79fd9e6843a397f08f13081eaa3e930234ee5fa5a80379aa795"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a293a72d0f2b90f5a08ea7abbec73c7b3bcb34ce62c626dfa804aa4990f0950"
   end
 
   depends_on "gmp"

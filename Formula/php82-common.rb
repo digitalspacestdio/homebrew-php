@@ -5,10 +5,10 @@ class Php82Common < AbstractPhpCommon
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82-common"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1f3738e4f40079d3d01c863be5bd98f301e55222852febfffded59e116a49422"
-    sha256 cellar: :any_skip_relocation, monterey:      "c95db9ef89979fa721605fc8792722a0c124142e1f8ff3e2f650d5e9d98316c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4f6de9c1c2d845dc542811bcec96569bfc1e835978718777d5d3d7aa54553ea"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.2.20-106"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f235d2f9c42120f0645de87c331504086ded204f3b2794c4b8121f009e965418"
+    sha256 cellar: :any_skip_relocation, monterey:       "e11cfd7a58ae70d03a8df2ae80cb8232a0d7a23a8db7deb8de955b3ddf3bf0e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b2895f1e1ed10a679135f274f8ad603b74ce41674b79b9dc943db51518a55c9"
   end
 
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM

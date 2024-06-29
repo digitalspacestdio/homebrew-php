@@ -10,11 +10,10 @@ class Php72Tidy < AbstractPhp72Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "36b533e617658b6cd77d38826413fdd571b3c25db1b7807667013e3c7eed23f3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "faba477ad7264ef4d59f7be364a4aeec4c1506bad72072aa97304ae62f5c2330"
-    sha256 cellar: :any_skip_relocation, monterey:       "5108303f6402dd610db6350a685a537e5460a7ca27c5992469307ef5cbfc6e1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15a2d26c0d9295c19e63bb70c14fd51af9eda986314fe4a408991f805354f750"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.2.34-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d02f5f7a43a6e7d93fbf549ffd0df1e99d31d59af4d357f2f2e17107dc8afc76"
+    sha256 cellar: :any_skip_relocation, monterey:       "0d097c4c0e9602e8ed0759a325f8bcd2c69cb6cd7a297720e0d9ee264bc2994c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "37e4be7819eaafb4c796003b8022c6498e32cca141cdeb9118346ff7df2fb512"
   end
 
   depends_on "tidy-html5"

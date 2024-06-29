@@ -10,12 +10,10 @@ class Php56Sodium < AbstractPhp56Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cfee4e2b1d20997ca6b4da558940cfe5ad48f147bf02bcb42b52c83b7d5713cf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8b68befc017de1230e814d24f7a85d364345a261610e0de7dcb289d719befe8a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8a1ce8e3dce730e65f2f525d3a55fad2c1a3805db415e9c22b67ffee05ae73f3"
-    sha256 cellar: :any_skip_relocation, monterey:       "e6b136d6bd1ed3e4f0ce6260fad1f9919b1f1ecbaff52bd9bad776c0b9f32671"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9b5152781d7fc17819915061dae0029c4a46fc8f0f0c7e5103594a25465cd24"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/5.6.40-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c456d4a14bc51163e01851bb9e523b90b669093e31f5c18613092c868d28d143"
+    sha256 cellar: :any_skip_relocation, monterey:       "5fb0c3265b7b224571ddfd2dc6a14852fd1f51048df57faab85139f32cdc1b74"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e04242368d4ba5b76f7044c8bee23b9217e85b815ef6ec0a39da087aa31a5c64"
   end
 
   depends_on "libsodium"

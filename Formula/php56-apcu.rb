@@ -10,12 +10,10 @@ class Php56Apcu < AbstractPhp56Extension
   revision PHP_REVISION
   
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8b8364699af7fb1e8a6ff1a1101b0cf1950075849ad65e9a3ec1fe7042b08795"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a92c88490831f4ba08b87fb8df5c2cc3182c6d9bf9ce53ed0bfee50e7a06adc9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f3facc85c43320eadb80fed100a26e2780e324929101f2817ca0d9db4fee153d"
-    sha256 cellar: :any_skip_relocation, monterey:       "89acb3c325dbf340802c201ed3af6625d914cc7ccc2d15dcf4a4984ba869ee15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df23581234e7fc41d17f6719056153135c89bbad39c9acad8faf3cb877141d4a"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/5.6.40-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1b45c4608930213459b85d47d28f46cf75b4d7f44970f305cafe34576086a6be"
+    sha256 cellar: :any_skip_relocation, monterey:       "bce858f40bcd70bd2f9e4d309052daba6dc6dc09ae2364a2869b103745bd1df0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6559278098515874485a178ee6857dfba635f8037d52d522f963df76cffb3aa"
   end
 
 

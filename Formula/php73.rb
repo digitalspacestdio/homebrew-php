@@ -8,12 +8,15 @@ class Php73 < AbstractPhp
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e99e0a6aaf2287574d24854d5dd103c4e6d369dc62e9f7a6fa30a7d95b597f4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "17115b04c4293a7c1a4bbe7877af1889a21356af78fd580752056b43eaa4e5a9"
-    sha256 cellar: :any_skip_relocation, monterey:       "d39e355f1eebb3a6fc68dad7d9913bea58f94fe0c395bcee66a70beb30402511"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "802aa3305d367fa5368c0f7138ed6a298f4762cd0754fa7edd7f77594a671839"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.3.33-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a6be16c869a273def3826dca672273547cddcda3e3c893c37ecd9c17c9830d68"
+    sha256 cellar: :any_skip_relocation, monterey:       "29c6b1417e28d0d9f05c8a11bad9ac3e689df857ff7ca314ee97bc121ca06c79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57f2e1df8ba8624257b4ddbb96351b87f61d50ed3fa2793e46a60543c762d227"
   end
+  
+  url PHP_SRC_TARBALL
+  sha256 PHP_CHECKSUM[:sha256]
+  head PHP_GITHUB_URL, :branch => PHP_BRANCH
   keg_only :versioned_formula
 
   def php_version
@@ -25,11 +28,6 @@ class Php73 < AbstractPhp
   end
   
   depends_on "libjpeg"
-
-  url PHP_SRC_TARBALL
-  sha256 PHP_CHECKSUM[:sha256]
-
-  head PHP_GITHUB_URL, :branch => PHP_BRANCH
 
   def install_args
     args = super

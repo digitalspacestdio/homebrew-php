@@ -8,11 +8,10 @@ class Php80 < AbstractPhp
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6d96699e5c22261932df440bc204ef43f585f737d529ae98ba54b30ea4da0ce0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5e00cb3d6a884cf1127c06a85003f2de8ce0e07e0ecfafc7587127e058f3a21e"
-    sha256 cellar: :any_skip_relocation, monterey:       "85f180dad82db2fbd21092f072487a0a11125ae5001b6a07da171793a6f97324"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c935c8dd1554dd304efffbef5828b3e7c44d2b4fc0b6d3eea628161f96446870"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.0.30-104"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6ae82abbde168fae442dedc6bca2e8043fbda9baa9d40de5e3a7d8967445ccfa"
+    sha256 cellar: :any_skip_relocation, monterey:       "659ab74f7e546884bf15fde8660c7205a19baf8cdb4d1bb48f2b0f6f17d7dc26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0246b613af87cc07ce5ae292d86d14f70a330b91ec470fb88a17f052587d8c5"
   end
 
   url PHP_SRC_TARBALL

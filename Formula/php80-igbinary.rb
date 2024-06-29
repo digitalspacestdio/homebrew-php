@@ -11,11 +11,10 @@ class Php80Igbinary < AbstractPhp80Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0f165d8adc97e579f2e2da6830f6b5549918a7978e73b73622044c6409685ab1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c21e1dc39cdafe9137aff4eafeaba650099c6356f361c05d32689cf43d2eaf5"
-    sha256 cellar: :any_skip_relocation, monterey:       "9c81a307165f9bf36539b3ce8bff0df0e5a14664cbf3aa7c139d467b4d477efa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c04c6486e4b0b3e220fb49b334e658f7d98c2fa64bcd11c8601c63cbc1fe77d"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.0.30-104"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1a0c9004d712faa63e53d14db78b9e3e1ca1c5851e72c9c03492393bba0eeedc"
+    sha256 cellar: :any_skip_relocation, monterey:       "5c6587fa9f38c090eff2c753f970efa7552e1c0ea302218cf1a321a5e4b54164"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f344e9da96be44ebcc4804acebaf08e636bb15b4ffdacebd160856fe9090f0f8"
   end
 
 

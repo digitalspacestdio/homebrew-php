@@ -11,11 +11,10 @@ class Php73Mongodb < AbstractPhp73Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce2074ce7bf773ffda92c22afe01ee36f86b22011f57896e1129baca6032dcf0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6a5915458315ad0af84b3d7c6a2e4cf4004417b961ceb6af9e32c177944836d6"
-    sha256 cellar: :any_skip_relocation, monterey:       "3db14d9b5e7a806ea9e43ddad421f09b191bd909b1b537a942e91d1c84fcda7a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ffc6862a81258687104318365aa66577364fa80eae5c4dd0ead1d05f8dda7080"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.3.33-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dc2689786fe5dd6a55c84734f9d94b9502281e0b014970719caadaa9887a8e66"
+    sha256 cellar: :any_skip_relocation, monterey:       "235e1355f6d55e1d289064409ed47b14cac1f1d059cff21739caf961a818572b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "397fab2990267071ca6d3f40e41f017669df2c48509fcfc8a50a4fe5b518759d"
   end
 
   depends_on "openssl"

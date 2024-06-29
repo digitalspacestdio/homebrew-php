@@ -10,11 +10,10 @@ class Php74Sodium < AbstractPhp74Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b62aacc380af17aff8217be1b877f56727ffa4e11ccd377687145eaf44c17f56"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3de96e3c1869b957dec8d1af858addbba16c9647a6ece4ae5e7d24611a1500c2"
-    sha256 cellar: :any_skip_relocation, monterey:       "45e73dfc773d0d9c6a0db7dbb65d234d258a8684d45389a4b6adfd0af77654e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1107c8cb501185f8ae5dcbc8c99c5d79c3ff5e90b94e26ad25e0b70930d0105"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.4.33-104"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0cf05aa140313f5074399f0d6fd59297f373897c497a104fb5526c7025228fe0"
+    sha256 cellar: :any_skip_relocation, monterey:       "f3bf6b29f35013b25e29221a36b5847e9b173dc586cf5ebbb3d25d3bfa67171d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b25229959174920b6213ccf1ecc8bd33b7f7328c88d7846466d41c463cce707"
   end
 
   depends_on "pkg-config" => :build

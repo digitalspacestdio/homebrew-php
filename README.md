@@ -1,6 +1,22 @@
 # Homebrew PHP (Linux/macOS/Windows)
 
-A centralized repository for PHP-related brews.
+A homebrew repository for PHP-related formulas with MacOS, Linux and Windows support.
+
+# Support Matrix
+Os | Arch | 5.6 | 7.0 | 7.1 | 7.2 | 7.3 | 7.4 | 8.0 | 8.1 | 8.2 | 8.3 
+--- | --- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- 
+MacOs | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes 
+MacOs | `arm64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes  
+Linux | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes   
+Linux | `arm64` | no | no  | no  | no  | no  | no  | no  | yes | yes | yes  
+
+# Bottle Matrix
+Os | Arch | 5.6 | 7.0 | 7.1 | 7.2 | 7.3 | 7.4 | 8.0 | 8.1 | 8.2 | 8.3 
+--- | --- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- 
+MacOs | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes 
+MacOs | `arm64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes  
+Linux | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes   
+Linux | `arm64` | no | no  | no  | no  | no  | no  | no  | no | no | no  
 
 ## Requirements
 
@@ -13,23 +29,30 @@ A centralized repository for PHP-related brews.
 
 ## Installation
 
-Run the following in your command-line:
-
-```sh
-brew tap digitalspacestdio/common
-```
-
+### Add required home brew tap
 ```sh
 brew tap digitalspacestdio/php
 ```
 
+### Install selected version
 ```sh
-# install 8.3 with common extensions
 brew install php83-common
-# check installation
+```
+
+### Verify version by php wrapper
+```sh
+php -v
+```
+### Verify version by verioned binary 
+```sh
 php83 -v
+```
+
+
+# Install all versions in one row
+```sh
 # install 8.2 with common extensions
-brew install php82-common
+brew install php83-common php82-common php81-common php80-common php74-common php73-common php72-common php71-common php70-common php56-common
 # check installation
 php82 -v
 # install 8.1 with common extensions

@@ -11,10 +11,10 @@ class Php81Xdebug < AbstractPhp81Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6bf35448e68800a998539e9fc29ea39fb9b14697b6e7dd95798da6a1c411f1e3"
-    sha256 cellar: :any_skip_relocation, monterey:       "dc9be81fa5c5de2e1926e276bda86a049adf0549076e1ff8db114d0a57a48361"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb0973c8946ad8cfeb5ce421653eaa2fda6440f09612640034f7c32cf0ad7d60"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.1.29-106"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c689ba9ebd8e3e2f0e4c9fbe31c5b8df23217e5a73399739eebb0d7113f6a2fe"
+    sha256 cellar: :any_skip_relocation, monterey:       "7f6b8ebf70d9fcfc69286492e7c18ebda5fe6e44723576a6633a34b3b0f85e15"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3bdc61023dfb7b1e924dbd86cfe76aa15b6e52e8e65eeb1e8b16134cd3698b08"
   end
 
   def extension_type

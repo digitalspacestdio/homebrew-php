@@ -4,20 +4,19 @@ class Php70 < AbstractPhp
   include AbstractPhpVersion::Php70Defs
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
   desc "PHP " + PHP_VERSION
-  url PHP_SRC_TARBALL
-  sha256 PHP_CHECKSUM[:sha256]
-  head PHP_GITHUB_URL, :branch => PHP_BRANCH
   version PHP_VERSION
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9d773f4b21cae01ab227599fd1ab10aa48b2807cd2a0e8f4aa1525f7912617a9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ebf13b5ea9d5c28c71995d2a203d7b1bdac39344c6b73235f7bb6658e10920b6"
-    sha256 cellar: :any_skip_relocation, monterey:       "e03bc11f06da39bca25847faca4dd821fd17577a7db7640a66b8be7b939c350c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1900e85e30278c9cfa48d03f688d0c5a0c43d09d89d24ebfb1af2babc405d8d5"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.0.33-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "34a6bc221e168ea9e76ba81c457e6ec7635a45ccd7ca82fb25695fc9c9c44ed6"
+    sha256 cellar: :any_skip_relocation, monterey:       "67a16e930acc4697c6b9582a8e12d224dd0336586d0f38c928cffc3d570554be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4593ef1ed4b4a4ef6d6932ea51cdc49fc62a40cf3d7e9c668096148149c9b9dd"
   end
 
+  url PHP_SRC_TARBALL
+  sha256 PHP_CHECKSUM[:sha256]
+  head PHP_GITHUB_URL, :branch => PHP_BRANCH
   keg_only :versioned_formula
 
   def php_version

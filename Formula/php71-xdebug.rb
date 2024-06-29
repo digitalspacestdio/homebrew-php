@@ -11,11 +11,10 @@ class Php71Xdebug < AbstractPhp71Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bb39d339904c54a3cbcababd2569e8540e9df0606835ba7bc3adc6f415f3da86"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "add320620f53e841ff90743a7f423774793bb581405b3fab898ca317793f6824"
-    sha256 cellar: :any_skip_relocation, monterey:       "b94c6ef903c80503f7b05c492de2133748ef956bcde8072e2bf907eb71588ee5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "399e0031f2215ef4e58252963b5b171f153cd174c78ec4c15762dc94faee6a90"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.1.33-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6f539b999eceae291cb2b690bcdc6f6557ad7d005d68c9921534c1a541a9ea73"
+    sha256 cellar: :any_skip_relocation, monterey:       "f2cfc96615921b47ac5e38c697d4440f017508c1104f5ffc9f138a6323b0924d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4af9b4e2bedf3fea4a86f7352740ba5ccaf409a415c42f0dedd7c824218b123b"
   end
 
 

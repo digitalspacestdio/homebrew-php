@@ -11,11 +11,10 @@ class Php74Zip < AbstractPhp74Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "48642f299b837787104c778ff2d8bc073db8a2e2353bc7963ef4b69d328e6ec6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0973a9c28555ed9dba5b64aa60c272afec3cbd63e9612f69088752f7776baddd"
-    sha256 cellar: :any_skip_relocation, monterey:       "f04114bed86983d56811687add9932e6adb155d3a0a416168b9094e65debf1a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d42dd3a52fc564dfa4a3a5d8806a2b205ce9be2a5dc4a6ffb726a9032609189"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.4.33-104"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e87b2d3a473d13732b5f192773de03a925993a82bfbbaafb8e678ccd254f1972"
+    sha256 cellar: :any_skip_relocation, monterey:       "fc339e9215829732aff606ab1f7900955b2aa4a62d51068e72d5edc08d2e8bf3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9528ae73242b60f0536fb4ecc51c214d5c2ccabb1bcdd0cfbfd1f2d0baf3e746"
   end
 
   depends_on "libzip"

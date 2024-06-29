@@ -10,11 +10,10 @@ class Php74Tidy < AbstractPhp74Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f6df3e48751859293daa04a098d7348d9311cabc9dbe8934512850a0155064dd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7981d899489bcbc098c7e8674283dd90509583308a240b17474aa723ebe2209d"
-    sha256 cellar: :any_skip_relocation, monterey:       "a421977763af18d6e01567ec4b3fdf60d761b8d9da1057c794875b739e7dac88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a43448d9b752514418bfe23801c1551829f17ade42293257cde1a001d73968d"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.4.33-104"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a05d24659c49894142abc5ee543d59dfebd358e1183fec6b4cd54fb015c90ebb"
+    sha256 cellar: :any_skip_relocation, monterey:       "c00532ffd3791f492e8b1a189ece4dba17f6a7ce95d0bdd406d3983895e0fba2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3cc9aebd267cc7d6abc662803b0f70af660d3b9fe5264913546bdc67ee0410d8"
   end
 
   depends_on "tidy-html5"

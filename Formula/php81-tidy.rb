@@ -10,10 +10,10 @@ class Php81Tidy < AbstractPhp81Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ad85d360d21d36f147e4417bdca5fddcfc6d0dac6097b7643cd137d0f80b356c"
-    sha256 cellar: :any_skip_relocation, monterey:       "619f710cb38b1cb832c808272f43e91b521f6bf009846c9274383914af612039"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1abbdec60fc3286f694c5628aad58a2f841c3aab511ba3972f9a63e16b356ca5"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.1.29-106"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fba034f06a543c16e0dca490ba50bb4d960f18462c88edba3c92defbfe9c8d55"
+    sha256 cellar: :any_skip_relocation, monterey:       "ce14e55b8a75800285f18a0b11d7343a00523affe74092c24818a437823cc77d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ccbb037298f5ba38f4746fab252a67d208da932dbeeaaeca04ce5085119d4f7d"
   end
 
   depends_on "tidy-html5"

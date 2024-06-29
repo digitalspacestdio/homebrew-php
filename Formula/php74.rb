@@ -8,11 +8,10 @@ class Php74 < AbstractPhp
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d1ef941373f1ce4208a09cfc0bc03f2ff14ae0f12ae410e82ca50d78281f0bb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "af6eedd27491b07d40b685d441cf8a82375f453babbb41e595d77dbc97623fe8"
-    sha256 cellar: :any_skip_relocation, monterey:       "35097e0adbe8a01d16c5e4e6bda7ac289de07625422be86a46562979b133d32f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9971f0922935639287495926cb7933dbe44b2d1ac2f3e8cf726512cac067623"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.4.33-104"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8f487cfdc46b1a1702480016a581a550dfebcad4d034172f3f1a986cb89178a4"
+    sha256 cellar: :any_skip_relocation, monterey:       "6e9e928182ade5e4c5f80bbba4f3960649c60a3a4ff368498f7386e1dc6f4da5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "391abea2fdf83c828ef456996872e3697fd2ec27bd96c184054261f9860b86b4"
   end
   
   keg_only :versioned_formula

@@ -11,11 +11,10 @@ class Php71Ldap < AbstractPhp71Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "db1320b58fd3bca94cfc221751cb08f06cdbf09ae34222fe05802bbb8ed9280c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4e4f1e3c8f5ad7d466ed736b115071367d99bd6b3b5f4f65739c50e8ed962bac"
-    sha256 cellar: :any_skip_relocation, monterey:       "40d70ebfbd7e4d0a19f5284bae752ad763bde0b8c6cfa2be5834c381196d2c93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f055253ea897026dbf6609e9a502df3e476bf270a816db1f2e5cc22f83695da7"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.1.33-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "55ccce073e639b5a9a36a201ca038c5cc5bffc4597a72d99e7031d4cbd42e6fb"
+    sha256 cellar: :any_skip_relocation, monterey:       "c5bbb90e2d5c6733f0b3d9e5d7bfc308f8ef4f002c20af5a5bcc8c56f3431c73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e5a76d5fa609b687194660410afbafd62515c9dcf57a4579b431197668f96ef"
   end
 
   depends_on "openldap"

@@ -10,11 +10,10 @@ class Php70Igbinary < AbstractPhp70Extension
   revision PHP_REVISION
   
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e1332617f05a2768c8dd992bd2cbc97edd4af612d0d00d78675b9901e1846fe9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "de4dd3ef7a6b921d027d9eb319b2f9e89d934a1de48693c4c5adbebde5cbe587"
-    sha256 cellar: :any_skip_relocation, monterey:       "e9d6973150f7e4f8ebb5db0a42f4e6ef1fa29cac2245895cba37da1cd8a40fb6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "899fbfacd4d78f7763071bd5569a89c679fc9f38b7ec47be191a40d43b8d2461"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.0.33-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "29d6d9df7ec62b562b9b67de23990ae6ea7c51012f1717bb572b994ec0a3bcad"
+    sha256 cellar: :any_skip_relocation, monterey:       "b163f4c303953fd12f399ce72863cb128540428411e93b16f569d44d1353a80c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "047e6e45af8de4c731903d541c44445d24effb91a480f5f3b6861b9f42bef8f2"
   end
 
 

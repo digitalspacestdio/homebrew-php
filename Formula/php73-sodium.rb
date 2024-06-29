@@ -10,11 +10,10 @@ class Php73Sodium < AbstractPhp73Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6cb47fe41ea37b46192fc4c430f7bbae738c0972751c59bba5252221987e61de"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "49be244a42aaf8972bf56371d3a70cef6b54fc7e2c38936c669d07a2d540b496"
-    sha256 cellar: :any_skip_relocation, monterey:       "b9a2ee2989c13540da6e6d36929357c540952ec9870ce1ad38b6cd6a3090432d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1bd0afb4c7c9c6f596398f19f7017f87f8597ea9ff922cc5b06e86b2a3ead41f"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.3.33-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "67792a31c36840a08f4aac959a299cf107c65e56b65d66ecae4346a2846fdf81"
+    sha256 cellar: :any_skip_relocation, monterey:       "e714b503c190ab3163eeec48cc7082151a43b70fae35784ce847f94306431fb8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f37379afe94c7294c0e9d51d4b56da264a62421e9d1ef869cb69df00611aab31"
   end
 
   depends_on "libsodium"

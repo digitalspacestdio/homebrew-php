@@ -105,44 +105,44 @@ class AbstractPhpVersion < Formula
   end
 
   module Php81Defs
-    PHP_SRC_TARBALL = "https://php.net/get/php-8.1.28.tar.bz2/from/this/mirror".freeze
+    PHP_SRC_TARBALL = "https://php.net/get/php-8.1.29.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "8.1".freeze
-    PHP_VERSION     = "8.1.28".freeze
-    PHP_REVISION    = 105.freeze
+    PHP_VERSION     = "8.1.29".freeze
+    PHP_REVISION    = 106.freeze
     PHP_BRANCH      = "PHP-8.1".freeze
     PHP_BRANCH_NUM  = "81".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "8be450096e0153c47d75384e7dd595cc897f1d53ce0060708ce9589bcc3141ee",
+      :sha256 => "87a60313263f2f533f180e719272ca5e47cd9884d4ec3c93720198eaffae0827",
     }.freeze
   end
 
   module Php82Defs
-    PHP_SRC_TARBALL = "https://php.net/get/php-8.2.18.tar.bz2/from/this/mirror".freeze
+    PHP_SRC_TARBALL = "https://php.net/get/php-8.2.20.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "8.2".freeze
-    PHP_VERSION     = "8.2.18".freeze
-    PHP_REVISION    = 105.freeze
+    PHP_VERSION     = "8.2.20".freeze
+    PHP_REVISION    = 106.freeze
     PHP_BRANCH      = "PHP-8.2".freeze
     PHP_BRANCH_NUM  = "82".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "ca0b07c254200320f518ac5b3df540a9cf14d866f3c93edc3013b52e06fac796",
+      :sha256 => "5dec6fa61c7b9c47aa1d76666be651f2642ed2bcf6cd8638c57e3571ce2aac61",
     }.freeze
   end
 
   module Php83Defs
-    PHP_SRC_TARBALL = "https://php.net/get/php-8.3.6.tar.bz2/from/this/mirror".freeze
+    PHP_SRC_TARBALL = "https://php.net/get/php-8.3.8.tar.bz2/from/this/mirror".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "8.3".freeze
-    PHP_VERSION     = "8.3.6".freeze
-    PHP_REVISION    = 105.freeze
+    PHP_VERSION     = "8.3.8".freeze
+    PHP_REVISION    = 106.freeze
     PHP_BRANCH      = "PHP-8.3".freeze
     PHP_BRANCH_NUM  = "83".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "6324b1ddd8eb3025b041034b88dc2bc0b4819b0022129eeaeba37e47803108bc",
+      :sha256 => "f4a6cb005ae117aba86c2044932cf563899a2e977ac09781aa74b2161ddc563b",
     }.freeze
   end
 end

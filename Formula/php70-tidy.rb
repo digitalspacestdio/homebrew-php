@@ -10,11 +10,10 @@ class Php70Tidy < AbstractPhp70Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "459b2f0179359290c7f909db1447a2adc39ac9d125602f5c065b86de3b63c584"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "41f4d448092f150726be31570cca7e06e6d684c4fcd5f9aada84313889127ee4"
-    sha256 cellar: :any_skip_relocation, monterey:       "7ecbf11fbb69f80f5871d0c7ebe4e7cd6c1913c86a910ee1012d048d810f3a87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a096fca194cf1fee431ece785ebb05abf3d565fbe076f6184bf913e469ed94cc"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.0.33-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3f42d26df3b2a9057ae432cabf3ef9333e63add5fb6ec95896711823fea599ce"
+    sha256 cellar: :any_skip_relocation, monterey:       "81df384c79f5c7c648cd5d193ac88ca4e44ae442f664595192b270ab110b3f80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0860dab4ece0b827c8931fd6875fd906e2dff4821737ddf889e26c480b96304"
   end
 
   depends_on "tidy-html5"

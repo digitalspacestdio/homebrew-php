@@ -10,11 +10,10 @@ class Php71Amqp < AbstractPhp71Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "56de19afbecc4bb1c12da939b7eb7c59a12b1a8876bfafec51ba1acaef63868b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a0a294736fbef96ecae29721d12343cf58f0add92ac3ae50920c40e5a409757f"
-    sha256 cellar: :any_skip_relocation, monterey:       "76ef7b77eb512d19f90ce35e0b98282ab320059972d679504e6bea540e05de8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "118f3a3fcbc2b79b8f460fc8691550dd33ada69072ae76ba9b318e4ea9c4a1ac"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.1.33-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "286b1c129f2733b6157c75e5f7332ce7cecab5eb91e2be412ff18e4fc9598296"
+    sha256 cellar: :any_skip_relocation, monterey:       "3f4e9e4770a5fa88c07f9cfda5fb42d2b165d546e4f8e6b9943fa68b1d220ac7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b450dd945eeb939781798268296835740d4d49ff1bbec7a8f5db88f50ff7b3d"
   end
 
   depends_on "rabbitmq-c"

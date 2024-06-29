@@ -10,14 +10,13 @@ class Php56Amqp < AbstractPhp56Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "50d08c95e1990220612441f84390259d52562a5a10cacd925b43038c419763e6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "451832105781fbcfa111d8f0e4966122300a464668a66f153f58ed936620972a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e9b34db3e73bb39836b2fb293ef88e9c1515fbb8e07af4ea6c83176f666bd496"
-    sha256 cellar: :any_skip_relocation, monterey:       "d643c66434bdf6442d8dade1fbf9188f8d5a0bcfc8624faff2ec680564989f2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "871d8c12f5649b3147de9b3d89240d3551781f6610cd9ae8f01667d7f612c488"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/5.6.40-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0b86e26c207eba921536eab54d570c0884d289bb8aac7686fb46b97f87860e41"
+    sha256 cellar: :any_skip_relocation, monterey:       "0e95604cc74e31c7c9bcc2e71e8ac43a510c33fddee598e689d36554ca185e2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "852234e5478612bf9fe1015931a4d1af610851203d709318260dd96192fd606e"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rabbitmq-c"
 
   def install

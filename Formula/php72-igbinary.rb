@@ -9,11 +9,10 @@ class Php72Igbinary < AbstractPhp72Extension
   head "https://github.com/igbinary/igbinary.git"
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89037201b9e33871d1422480b184975f0b1100d9d6b4fce1b0780cccccedeb1f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9e21120b67f7c3ff7d9ae480b9152d345583dab9bed5a4132360f1229b3e2431"
-    sha256 cellar: :any_skip_relocation, monterey:       "b0512bd08fb8ee66bda1837a5bcb3ca3767a2bd8c6e1ead61b77befacd595536"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "46d4cf42427142d9fa539792f5756969692f12b5ca705922de3ee7b3d6052342"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.2.34-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "21d4fddd794656c5364745b9b73bb491c1fbb43a204934f006c8b51173177ae2"
+    sha256 cellar: :any_skip_relocation, monterey:       "64c0ba9e616b1c46be3d3fd9ca155e0b8aec418d37a2b6cb3840b60409791e64"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac5639cda78e398f4e3a099f01c3db3dae818da22865f36bc62409d1fb4afb84"
   end
   revision PHP_REVISION
 

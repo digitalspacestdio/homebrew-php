@@ -11,11 +11,10 @@ class Php73PdoPgsql < AbstractPhp73Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b408b75715979c869aed4068b0f74ff3653a8d9fa3ef045db882298417b9f61"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ffbc562bf8e7b7d9c7bc1e952abd60a286618b0e007fc21562f6826ccd3393e1"
-    sha256 cellar: :any_skip_relocation, monterey:       "35bcf6d4da015a2081df6b31583a5788dca8327ee560d68ca0f62c932567be1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9ab3d85669255caa572d5a3ae5d0d1e7d4cfa62fc5246bca21d9c461ea1cb62"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.3.33-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "614c3585b8c8eab34334f3ee010e0b65d275da570384e19deb6c325aa0e6df74"
+    sha256 cellar: :any_skip_relocation, monterey:       "f15c60787fc04e0316e72177fad0000a9a8a728ecd2871de85b052e8a20759f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d39e5ce61f26782057b8fa31526472a9871e8e21b282252fc6d92d11422f8ac"
   end
 
   depends_on "digitalspacestdio/common/libpq@16.2-icu4c.69.1"

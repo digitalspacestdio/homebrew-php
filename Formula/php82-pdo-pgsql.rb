@@ -10,10 +10,10 @@ class Php82PdoPgsql < AbstractPhp82Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php82"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d1a39b34a08d806bd7d90e8baeb654337b759239d493bcf8cd1bcca6a9d562b7"
-    sha256 cellar: :any_skip_relocation, monterey:       "bec145017901ef69184d69417b485fff9bf8755cb34a26b4eb19adc557da287f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c94b63192c44dc5a5e15af898d7b0819f3dcd2aaea2676ac8f1babde6780e489"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.2.20-106"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9def358de3c1ca4f163f472f5a837518811e06565946e193fc800cae8770fabd"
+    sha256 cellar: :any_skip_relocation, monterey:       "d8570601302b92d4cf0e8ecc703b10921450d07c5d554d4c7d389fcd81bd6f1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b35ce7ad739d9258601af594d61d0f1353a05f4bd725dfbb2bc3d655f7e92de"
   end
 
   depends_on "digitalspacestdio/common/libpq@16.2-icu4c.74.2"

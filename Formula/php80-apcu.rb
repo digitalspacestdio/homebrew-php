@@ -11,11 +11,10 @@ class Php80Apcu < AbstractPhp80Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef4ae44ce54173df96c65b55de613ee24860a362f40b33efcaa7901519bb350e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a95d38dba3208eafc218dfde66a91a928b47a744d9c15a7599d965eb2108567e"
-    sha256 cellar: :any_skip_relocation, monterey:       "96f43286ee9506050ba0d4b7d10ac0fdbc962719522c66211c862dd3f033ef9a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1259765fa6748f2f0ffd6f19dd2703a913e750311e1da7bee7279f35bdeecfe"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.0.30-104"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1fdd4d5586b01005914566de060fbb474e5139752b7c63de9d4be37928c55517"
+    sha256 cellar: :any_skip_relocation, monterey:       "9f36a97b786150f3bd9c71ccf04a69ed3358d53a688ada76339b0e97c723b1e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4120884a41f7a80b988f8934b7b2e64a27b68dd4dd2f27dbc63f9a5a7b13271"
   end
 
   depends_on "pcre2"

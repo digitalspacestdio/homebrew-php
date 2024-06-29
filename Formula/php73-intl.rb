@@ -10,11 +10,10 @@ class Php73Intl < AbstractPhp73Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a60003b928a38655c13768bb4301bd116b7f4e8e290d7955c3c800fbbd34ca95"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0fe0ee5a0f664a35c548008d971c128af3b4484f355e1fffe05ce62f4c4f7248"
-    sha256 cellar: :any_skip_relocation, monterey:       "6e17e83d9c88c1dc818c4ed5d3f2e49a47a3d44157daf2d3a57cb703cf677c2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eea7bfe72d06e57cf23788400b243b95535d2757ead5c090228131d3f3013a1b"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.3.33-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c22d27fb9fe1c2bab0e93beb0c5c3014cfff870a33bddbd1eacb5efa7b7408d0"
+    sha256 cellar: :any_skip_relocation, monterey:       "ca6e2c049593734cd809de7c9e684563bab668566e97ec7f707df9675053e998"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "302970a06496f86db6a6ed73e5cc4df34e224f24c3d4112e714917c8dc2cd1d0"
   end
 
   depends_on "digitalspacestdio/common/icu4c@69.1"

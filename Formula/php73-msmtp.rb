@@ -9,10 +9,10 @@ class Php73Msmtp < AbstractPhp73Extension
   revision 1
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php73"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "224949699cc7523adbca8d6d0ebf3b046c78cc8c100611ae632b3e692594217c"
-    sha256 cellar: :any_skip_relocation, monterey:       "152b08e9641c21862019ce392f2f829fba606735c75d463667bbad0ce58796dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "28ee93e3a4fc28be389b777af0a52174135562a994dea4b692e126e7befa9552"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.3.33-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7a60cacd2899c889c38fbc8120f43844da49f8429cc70bab84de20cb35e3c18b"
+    sha256 cellar: :any_skip_relocation, monterey:       "fe12bc237ca83cf088d1f8c1a915466185bcab47028558f4498f558927890bd2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78e5f01c67aaa1ccc3573644484e46d56167da2dd42f4271758673a5f509a6c8"
   end
 
   depends_on "msmtp"

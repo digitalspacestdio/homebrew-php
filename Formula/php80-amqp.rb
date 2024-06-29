@@ -10,11 +10,10 @@ class Php80Amqp < AbstractPhp80Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "10ed79ecf47a213c521653f888da076ff0f80372ae95769b87e06b79fcae8554"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c8e8588f949b161b9d1117766141f2d37f89638a2e67c1550c5ca2a7e2402cfa"
-    sha256 cellar: :any_skip_relocation, monterey:       "37afb781f4ac6c088d5d26364c6d918bd53b5a43546d6401dc6c3cd59a5fface"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca1e98e42b4b3092b537c75a5bcbd7a0c8da01a6d66d31cc3ce42ddd108fc80b"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.0.30-104"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c3244613288a7b9da6ec614fdb14e442b24fa78676265fd74422397ee8de64b3"
+    sha256 cellar: :any_skip_relocation, monterey:       "0a8f95a7c0dcdff88c3be687169a288e6649bafeca03d0aac7a122aac61de198"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be2baee89217dfa52893744b005ea75ed9ea08d10a53cb19bfa4bcb8e06d83b2"
   end
 
   depends_on "rabbitmq-c"

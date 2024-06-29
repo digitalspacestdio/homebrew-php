@@ -3,16 +3,16 @@ require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 class Php81Redis < AbstractPhp81Extension
   init
   desc "PHP extension for Redis"
-  url "https://github.com/phpredis/phpredis/archive/5.3.7.tar.gz"
-  sha256 "6f5cda93aac8c1c4bafa45255460292571fb2f029b0ac4a5a4dc66987a9529e6"
+  url "https://github.com/phpredis/phpredis/archive/6.0.2.tar.gz"
+  sha256 "786944f1c7818cc7fd4289a0d0a42ea630a07ebfa6dfa9f70ba17323799fc430"
   head "https://github.com/phpredis/phpredis.git"
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php81"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1df0f52c3dfdf488e9cdfe682dcb8da472582dea90bde69d2ceef1b474f5ab31"
-    sha256 cellar: :any_skip_relocation, monterey:       "e3a86d69afd9d671b9201c1c0b51f22517ec88437193763ff6e7c035fcfe0d3d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "856011b13bc0b6bd856f8f20b350a622a36ce1d8b7be06ec867a8b8d346ed8c6"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.1.29-106"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5dd1eccf629caffeb4e15a5939952fdfdc35887f0c4859f3e4aa95d6c293fa1f"
+    sha256 cellar: :any_skip_relocation, monterey:       "fb797dc66028e0a24bacf83d28691909271eaa1545100756d9c3a31defc05790"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8dc9662977cd2d27e603d70ecf99638505a90bcc6acee17a2b4c886142e5a735"
   end
 
   depends_on "digitalspacestdio/php/php81-igbinary"

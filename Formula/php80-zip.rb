@@ -11,11 +11,10 @@ class Php80Zip < AbstractPhp80Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php80"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4555fccf08876c7e73bc1f7b313dd61373e9f6d30ee805fbef5916ce8925cc9e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e9e7ee21febe0e04013ff9aa1ce203b459166a47a53527f9aa86fec9ac247850"
-    sha256 cellar: :any_skip_relocation, monterey:       "1fdecc5fc668c8973327d48ae3b5a209383d5c6231cec51c8b326404a3d0359d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f45d32a50a3b1fd4279aef7230256fc142030c272587df8604898d5000c6c1b8"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.0.30-104"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0518fa7e1993eeb7cb94dce80bed8651bd621b7eb88fbffbddbf0c95cd7e3646"
+    sha256 cellar: :any_skip_relocation, monterey:       "9ae11d43639ea43e22234a6366c3565f9002928c3991307fd1820700e47bae2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8a1575d7f932cd1782329f867c2173d46bcd6d882c76703b4e47a90d6d4ea56"
   end
 
   depends_on "libzip"

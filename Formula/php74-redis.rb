@@ -9,11 +9,10 @@ class Php74Redis < AbstractPhp74Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e33f8b4721aa8349874265b48fe5d488b4bff1a6332191045a3f7711bd32a21"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f017993bc7976d37b7ff5446ca5e726567dfe9e50691c849fa24c29a8b2f15b1"
-    sha256 cellar: :any_skip_relocation, monterey:       "eedb43c4c6a4702c19c7698d2c38718e0397c51f4b4dbb31a48c261b1662fae7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "53bc3e49955840f66c74997d3b6b84261c3b2fa96c55aaa700f595dc8867c22f"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.4.33-104"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8ccab051189e7fe98073d779defc9fcdba9c9f8250ed1e9d86a8cd028a87ef19"
+    sha256 cellar: :any_skip_relocation, monterey:       "91b0e95c14eaf0c50421f340d80a4345c8d638b32c3c31b43f5c9dc05377ceda"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "848dfa547b8e36ba3e13d29f02fa775c2996b158203e5be330dabbfe3b24b168"
   end
 
   depends_on "digitalspacestdio/php/php74-igbinary"

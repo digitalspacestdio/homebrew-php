@@ -11,12 +11,10 @@ class Php56Mongodb < AbstractPhp56Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c3380563d96677d534fb024152c21cd3637b6589b48ef5af14daec05b7eeb94"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "621717528f9b206212e319446493de92774aaede467ae44eaf02bd154ca60fe3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d5062653b1a9e7c165240dad8ac62f25fe02e7b91fb9660957fb31b297c96a8c"
-    sha256 cellar: :any_skip_relocation, monterey:       "53cbd0177faed19981136ddaf2c1d63a2e3994fbf058553d7358ad43c4b1a97d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d74357985cb9640b48ac542e5f8324f9c4214840b46d24da5caffb8817a163c"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/5.6.40-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cdd01cda4d3f05f731f7c83f638f166f128276c46dfa8042b4e001eeee29488d"
+    sha256 cellar: :any_skip_relocation, monterey:       "2f878c6bc89652e8e34634bf607b710ed46ff17d0baf5c947d5b178bcef53cb8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b4b2acee139b926959408b7cb3d052ba179a0bf4339083753116bdadb55ae6b"
   end
 
   depends_on "openssl@1.1"

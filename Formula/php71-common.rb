@@ -5,11 +5,10 @@ class Php71Common < AbstractPhpCommon
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php71-common"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "34037616ff0170e0e6efb5d88cf0c14aaa9b5966f8999bf161f3625de4b304bf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bf5663406515cce57eb73853b146277cc6494a6cc2b5a6a9c923a56e50cbf441"
-    sha256 cellar: :any_skip_relocation, monterey:      "8e82bdc3234f1417bd641950054722b382c53ad749126725c2ae697080c5f406"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7a6e8022aa5a90ba8d786636294bc1c45aba2d09d39ffd782e56efc163b54a9"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.1.33-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c03ce5f63948c4a9d458e9768a6af689eb3466a4307a821cc9332b0091f78f4c"
+    sha256 cellar: :any_skip_relocation, monterey:       "4294d34f72fbcbc5e9859b229de0d212cf38a8240c9adabcf1f7b7238f921473"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9fb2a69c1f97b574de04dedfaf2d8a0f9bd760eb866f8c698f346db0381eb28"
   end
   
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM

@@ -9,12 +9,10 @@ class Php56Xdebug < AbstractPhp56Extension
   head "https://github.com/xdebug/xdebug.git"
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php56"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6625f8437c150d7da68b37735b36edf8e59ac11ec5b75c62534542124d34a54f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c0b49cad34152516686c778b548f9011942d300e824eb56036799fb0ba7e9937"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1b43ff2e0227bc30854424c3fd878299ff4391560230aee5a893e9aedcce71ae"
-    sha256 cellar: :any_skip_relocation, monterey:       "b462e627886fb0c6af190be0b94be50cb5b7341d1430c0cc575897148ee07863"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9da1a119d760fbcefa3fd1c4b581c5f0994e38a11fd3735ebec813c7f3ab118b"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/5.6.40-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "19189f4eaebb6caf325ec2aab3a48c5d609d6e19f1345ef4117a94337f8bb1de"
+    sha256 cellar: :any_skip_relocation, monterey:       "79ad6dc58c3f10fc100f5fee9fcc8049ad7ead0f4f777ae151067915f6e126b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a90ee86d1875280d7e516ab9a4206c502e9f28221b00f3b61bfc08f59d78517"
   end
   depends_on :arch => :x86_64 if OS.linux?
   revision PHP_REVISION

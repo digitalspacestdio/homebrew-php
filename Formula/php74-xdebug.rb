@@ -11,11 +11,10 @@ class Php74Xdebug < AbstractPhp74Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php74"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "80e01e58eb59fcdef03be6f2b741a47f92d82de656ff3eed3f86454b358db8a1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4fb5d8cb49e8bdfd6f3f78fce71f74dd236d505f91946c5218e090b522b811d9"
-    sha256 cellar: :any_skip_relocation, monterey:       "3f1baf567b4e82e99ccc5eb1371d63828842ee6ba0a235609693e41fbff0f70a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd78c3d2176c0d40cfb116b72a3cd6dc5b4b2ea73e8d9412ae18b64ea8864234"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.4.33-104"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f5b3c094337d40b954b027f634836863d5eecab8bc36d6d6b1517bf586e934c7"
+    sha256 cellar: :any_skip_relocation, monterey:       "7e9855bc2b3a7cfb72ec30453ed9d19e446813f2371047d8333786e7422187c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32e1ea699756f7b46885f82aeec6598ee55b4556ede99c698268b7af4e3ea2e1"
   end
 
   def extension_type

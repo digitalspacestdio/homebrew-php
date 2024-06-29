@@ -10,11 +10,10 @@ class Php70Sodium < AbstractPhp70Extension
   revision PHP_REVISION
   
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "41c92a196b472a221093fb8c19bff133af47350ebc0b9886ce0f1a50a7385173"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f23df72a3a219e73af9a95cc64336599ae7b46a91faeca0288d27a73f709f355"
-    sha256 cellar: :any_skip_relocation, monterey:       "c28eabe522b9acb7a0b4c48f91777f4c9ae5f8efc3ee0d723769f899f0d8c4e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9ceef56fbc8666a1034a2ba80d4f5b757b14f65900fde05ce3d35584bb236ba"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.0.33-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "26df748873ddfa31086cd68fd38b3f9804c95c8557e2fc72ae14791b4609ce94"
+    sha256 cellar: :any_skip_relocation, monterey:       "4dfc6a171d06c43f7ea227a931b8c1dd5c919fe53e87469658f19bc692ad9556"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "12ba47ead89e7580675ab5ec86e4ce9b7ccb9f0c92a0fb56bff233d70a5781f3"
   end
 
   depends_on "libsodium"

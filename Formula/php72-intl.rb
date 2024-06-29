@@ -10,11 +10,10 @@ class Php72Intl < AbstractPhp72Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b0b083da12f8564114cad5a400e5a3cb893234ff0e514177162d13d91b5da12"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "71c6f483653fce71945053a218b43afa197886f81cc2d415c529bc3bdaa6c9df"
-    sha256 cellar: :any_skip_relocation, monterey:       "3cce9b4a8b9a1153e9c7cf61d86f4e30a0d614733844b237b4178f5568227fd1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "837c0fc4ca7050d963df9a23901389d55590758617d001477236b076abb918d3"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.2.34-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "88b0fbbf2f991ec768a6079a2bac0ecc2e76c9b49db11958ccd564e73d90ae38"
+    sha256 cellar: :any_skip_relocation, monterey:       "76cdf3d31d2b07d08adf051f7352e42337137f4c299083f0fc08f0ede1c1885c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa2cad00a9e0ccc0febaa68d7df3d3de30179b3568f4918ff4ecd0d8ae204905"
   end
 
   depends_on "digitalspacestdio/common/icu4c@69.1"

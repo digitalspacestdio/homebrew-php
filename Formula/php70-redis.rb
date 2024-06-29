@@ -10,11 +10,10 @@ class Php70Redis < AbstractPhp70Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php70"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "54f9b08d0235d564d2e72f058a18f36eb52ab6cb7deb385809cb95021d39c580"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "80991c586329c3d8686812bfe819d0cc83141e263d6429bbdd5ad3a920150107"
-    sha256 cellar: :any_skip_relocation, monterey:       "00ecc974693112b2d13085176682e1825fc453c01a4caaddaefd9e93aa96b310"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "646d655705a107bb26c7cb48e3183e1a93af1695f8d01e4068784d422169fe46"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.0.33-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c8d503328fda5411301d54596f61193a25537f688704f5acfc86b1e87d615bed"
+    sha256 cellar: :any_skip_relocation, monterey:       "77a566b100d93a590e20a0e1e9e277903d71b8e84d784190f605986a3add5238"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b864e5b995cc5e49f15b1a5ac6e5a2d5c398e92463b5c9b7b470c88e5e25d73a"
   end
 
 

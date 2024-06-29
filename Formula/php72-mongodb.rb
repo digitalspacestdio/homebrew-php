@@ -11,11 +11,10 @@ class Php72Mongodb < AbstractPhp72Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/php72"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "56a98ee419346dbaad7a6c54b0483ee420ecfe4778b349090d6faa8aef3b6911"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "803900495bd876c46b079a11042a312ff660cd2b83bb0cfbf1900d3e011017ef"
-    sha256 cellar: :any_skip_relocation, monterey:       "cd7a640140ebf5344d34d2b57b5079391dcdfefa90d2ab63c83d5b1f408db1e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56e471cbd174027568dbcbb5b5008e63e63e8f822cc09a35e9bb14a420499449"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.2.34-103"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3786ed592d38efc8ee6f1cab83aa48c82f7cb0bee580a6603e25de63a93b62e0"
+    sha256 cellar: :any_skip_relocation, monterey:       "06ca24ab6f897ed8cd615e8bbcc8af6b76341b4ed5037eea56c63db3a3e115c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8aab3f5046c183e2fb378301256adf3d0fdeba05d883ce304c9037bae3228eb"
   end
 
   depends_on "openssl"
