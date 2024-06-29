@@ -13,6 +13,10 @@ class Php73 < AbstractPhp
     sha256 cellar: :any_skip_relocation, monterey:       "29c6b1417e28d0d9f05c8a11bad9ac3e689df857ff7ca314ee97bc121ca06c79"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "57f2e1df8ba8624257b4ddbb96351b87f61d50ed3fa2793e46a60543c762d227"
   end
+  
+  url PHP_SRC_TARBALL
+  sha256 PHP_CHECKSUM[:sha256]
+  head PHP_GITHUB_URL, :branch => PHP_BRANCH
   keg_only :versioned_formula
 
   def php_version
@@ -24,11 +28,6 @@ class Php73 < AbstractPhp
   end
   
   depends_on "libjpeg"
-
-  url PHP_SRC_TARBALL
-  sha256 PHP_CHECKSUM[:sha256]
-
-  head PHP_GITHUB_URL, :branch => PHP_BRANCH
 
   def install_args
     args = super

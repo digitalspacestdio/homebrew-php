@@ -14,8 +14,9 @@ class Php72 < AbstractPhp
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5963389c0035863ba1a083511d8997fc605c95c1d8eb50c7b31b5a9872046637"
   end
   
-  depends_on "libjpeg"
-
+  url PHP_SRC_TARBALL
+  sha256 PHP_CHECKSUM[:sha256]
+  head PHP_GITHUB_URL, :branch => PHP_BRANCH
   keg_only :versioned_formula
 
   def php_version
@@ -26,9 +27,7 @@ class Php72 < AbstractPhp
     "#{PHP_BRANCH_NUM}"
   end
   
-  url PHP_SRC_TARBALL
-  sha256 PHP_CHECKSUM[:sha256]
-  head PHP_GITHUB_URL, :branch => PHP_BRANCH
+  depends_on "libjpeg"
 
   def install_args
     args = super
