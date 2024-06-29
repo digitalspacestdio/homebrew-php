@@ -23,8 +23,8 @@ class AbstractPhp < Formula
     skip_clean "bin", "sbin"
 
     depends_on "pkg-config" => :build
-    if OS.mac? && @@php_version.start_with?("7.", "8.0")
-      depends_on "gcc@11"
+    if OS.mac? && @@php_version.start_with?("7.", "8.0") || OS.linux? && Hardware::CPU.arm? && @@php_version.start_with?("7.3", "7.2", "7.1", "7.0", "5.6")
+      depends_on "gcc@12"
     end
 
     depends_on "autoconf" => :build if !@@php_version.start_with?("5.")
@@ -174,9 +174,9 @@ class AbstractPhp < Formula
       ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
     end
 
-    if OS.mac? && @@php_version.start_with?("7.", "8.0")
-      ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
-      ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
+    if OS.mac? && @@php_version.start_with?("7.", "8.0") || OS.linux? && Hardware::CPU.arm? && @@php_version.start_with?("7.3", "7.2", "7.1", "7.0", "5.6")
+      ENV["CC"] = "#{Formula["gcc@12"].opt_prefix}/bin/gcc-12"
+      ENV["CXX"] = "#{Formula["gcc@12"].opt_prefix}/bin/g++-12"
     end
     
     if @@php_version.start_with?("7.1", "7.0")
