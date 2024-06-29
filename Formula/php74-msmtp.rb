@@ -10,8 +10,9 @@ class Php74Msmtp < AbstractPhp74Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.4.33-104"
-    sha256 cellar: :any_skip_relocation, monterey:     "e80bf69a6af2f5faf238f81f350e53f65f7312a958ea5507122dcdaade0f7297"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "dad573647d94185a179435de59c47cae59418fbc42a505ff1f5f172775d9fdec"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ec80875d070bc5eae3011e06ce359b91d8e5bdd98f6ce01668d7c0b5b8d72610"
+    sha256 cellar: :any_skip_relocation, monterey:       "e80bf69a6af2f5faf238f81f350e53f65f7312a958ea5507122dcdaade0f7297"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dad573647d94185a179435de59c47cae59418fbc42a505ff1f5f172775d9fdec"
   end
 
   depends_on "msmtp"

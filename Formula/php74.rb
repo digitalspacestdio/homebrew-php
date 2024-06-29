@@ -9,8 +9,9 @@ class Php74 < AbstractPhp
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.4.33-104"
-    sha256 cellar: :any_skip_relocation, monterey:     "6e9e928182ade5e4c5f80bbba4f3960649c60a3a4ff368498f7386e1dc6f4da5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "391abea2fdf83c828ef456996872e3697fd2ec27bd96c184054261f9860b86b4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8f487cfdc46b1a1702480016a581a550dfebcad4d034172f3f1a986cb89178a4"
+    sha256 cellar: :any_skip_relocation, monterey:       "6e9e928182ade5e4c5f80bbba4f3960649c60a3a4ff368498f7386e1dc6f4da5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "391abea2fdf83c828ef456996872e3697fd2ec27bd96c184054261f9860b86b4"
   end
   
   keg_only :versioned_formula

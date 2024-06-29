@@ -11,8 +11,9 @@ class Php71Zip < AbstractPhp71Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.1.33-103"
-    sha256 cellar: :any_skip_relocation, monterey:     "ce6b98832c3c0c9c1006de961dd0dd0f4c89c6b848a9f2cbd67bfc96cfedb9bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e8bb092bbcfb288cae03cf64b7df9c81c479203570fe74bb6d9bc12e72b71ee7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "57582c77839bf05ad858679c760bc5e09fd6463ea5e7d80f13ecaa344a16b365"
+    sha256 cellar: :any_skip_relocation, monterey:       "ce6b98832c3c0c9c1006de961dd0dd0f4c89c6b848a9f2cbd67bfc96cfedb9bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8bb092bbcfb288cae03cf64b7df9c81c479203570fe74bb6d9bc12e72b71ee7"
   end
   depends_on "libzip"
   depends_on "zlib"

@@ -11,8 +11,9 @@ class Php71Redis < AbstractPhp71Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.1.33-103"
-    sha256 cellar: :any_skip_relocation, monterey:     "44452e61bc331d1ec8d51bc133999e9321372b5724f2f2df1d80f7712c3f015e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "28a14b242c4deca7289a7ea10ab48594cec52836546bbc9608f5a3f985b241d3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "abc2cc2cc4909d58992669d4eebdcdf9a81ce8c6cf7edc1af4e17b0a78b7a08f"
+    sha256 cellar: :any_skip_relocation, monterey:       "44452e61bc331d1ec8d51bc133999e9321372b5724f2f2df1d80f7712c3f015e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "28a14b242c4deca7289a7ea10ab48594cec52836546bbc9608f5a3f985b241d3"
   end
 
   depends_on "digitalspacestdio/php/php71-igbinary"

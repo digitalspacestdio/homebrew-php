@@ -9,8 +9,9 @@ class Php80 < AbstractPhp
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.0.30-104"
-    sha256 cellar: :any_skip_relocation, monterey:     "659ab74f7e546884bf15fde8660c7205a19baf8cdb4d1bb48f2b0f6f17d7dc26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f0246b613af87cc07ce5ae292d86d14f70a330b91ec470fb88a17f052587d8c5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6ae82abbde168fae442dedc6bca2e8043fbda9baa9d40de5e3a7d8967445ccfa"
+    sha256 cellar: :any_skip_relocation, monterey:       "659ab74f7e546884bf15fde8660c7205a19baf8cdb4d1bb48f2b0f6f17d7dc26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0246b613af87cc07ce5ae292d86d14f70a330b91ec470fb88a17f052587d8c5"
   end
 
   url PHP_SRC_TARBALL

@@ -12,8 +12,9 @@ class Php73Xdebug < AbstractPhp73Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.3.33-103"
-    sha256 cellar: :any_skip_relocation, monterey:     "77dc3738ceba00dd8d802a3cb174514b3e881dd6d7218bca961ad489bc91a53d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ffc9a32739ce2c8c7ce5f7eb000586997801b2edbf53a6aac387096699d7d51a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "27a785c4d9458c86c0eed4f5b1869a2120f4797c92cbda69044e514eb71642d7"
+    sha256 cellar: :any_skip_relocation, monterey:       "77dc3738ceba00dd8d802a3cb174514b3e881dd6d7218bca961ad489bc91a53d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ffc9a32739ce2c8c7ce5f7eb000586997801b2edbf53a6aac387096699d7d51a"
   end
 
   def extension_type
