@@ -41,6 +41,7 @@ function uri_extract_path {
 FORMULAS=${@:-$(brew search digitalspacestdio/php | grep 'php[5-9]\{1\}[0-9]\{1\}$' | awk -F'/' '{ print $3 }' | sort)}
 for PHP_FORMULA in $FORMULAS; do
     echo "Upload bottles for $PHP_FORMULA ..."
+    echo "Checking nucket permissions 's3://$S3_BUCKET' ..."
     s3cmd info "s3://$S3_BUCKET" > /dev/null
     cd ${HOME}/.bottles/$PHP_FORMULA.bottle
     ls | grep $PHP_FORMULA'.*--.*.gz$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf -- '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
@@ -53,7 +54,8 @@ for PHP_FORMULA in $FORMULAS; do
         if ! [[ -z $JSON_FORMULA_NAME ]]; then
             while read tgzName; do
                 if [[ -f "$tgzName" ]]; then
-                    s3cmd info "s3://$S3_BASE_PATH/$tgzName" >/dev/null && {
+                    echo "Checking is file exists 's3://$S3_BASE_PATH/$tgzName' ..."
+                    s3cmd info "s3://$S3_BASE_PATH/$tgzName" > /dev/null 2>&1 && {
                         echo "File already exists on remote storage s3://$S3_BASE_PATH/$tgzName"
                         echo "Terminating..."
                         exit 1
@@ -74,7 +76,8 @@ for PHP_FORMULA in $FORMULAS; do
                     s3cmd put "$tgzName" "s3://$S3_BASE_PATH/$tgzName"
                 fi
             done < <(jq -r '."digitalspacestdio/php/'$JSON_FORMULA_NAME'".bottle.tags[].filename' "$jsonfile")
-            s3cmd info "s3://$S3_BASE_PATH/$mergedfile" >/dev/null && {
+            echo "Checking is file exists 's3://$S3_BASE_PATH/$mergedfile' ..."
+            s3cmd info "s3://$S3_BASE_PATH/$mergedfile" > /dev/null 2>&1 && {
                 s3cmd get "s3://$S3_BASE_PATH/$mergedfile" "$mergedfile".src
                 if [[ "object" != $(cat "$mergedfile".src| jq -r type) ]]; then
                     cp "$jsonfile" "$mergedfile".src
