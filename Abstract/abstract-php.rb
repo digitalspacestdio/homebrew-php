@@ -22,6 +22,7 @@ class AbstractPhp < Formula
     # So PHP extensions don't report missing symbols
     skip_clean "bin", "sbin"
 
+    depends_on "pkg-config" => :build
     if OS.mac? && @@php_version.start_with?("7.", "8.0")
       depends_on "gcc@11"
     end
@@ -306,12 +307,16 @@ INFO
     ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
 
     if OS.mac?
-      #zargs << "--with-iconv=#{Formula["digitalspacestdio/common/libiconv@1.16"].opt_prefix}"
       args << "--with-ndbm#{headers_path}"
-      
-      if @@php_version.start_with?("7.4", "8.")
-        args << "--with-iconv#{headers_path}"
+
+      # Workaround for the https://github.com/phpbrew/phpbrew/issues/1260
+      # Error: PHP_Archive not installed: generated phar will require PHP's phar extension be enabled.
+      if @@php_version.start_with?("7.3", "7.4", "8.") 
         args << "--without-pcre-jit"
+      end
+
+      if @@php_version.start_with?("7.4", "8.") 
+        args << "--with-iconv#{headers_path}"
       else
         ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libiconv@1.16"].opt_prefix}/lib"
         ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/libiconv@1.16"].opt_prefix}/include"

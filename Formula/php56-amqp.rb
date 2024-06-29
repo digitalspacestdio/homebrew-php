@@ -15,6 +15,7 @@ class Php56Amqp < AbstractPhp56Extension
     sha256 cellar: :any_skip_relocation, x86_64_linux: "852234e5478612bf9fe1015931a4d1af610851203d709318260dd96192fd606e"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rabbitmq-c"
 
   def install

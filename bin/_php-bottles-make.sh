@@ -7,8 +7,6 @@ export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
 brew tap digitalspacestdio/common
 brew tap digitalspacestdio/php
 cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
-#git stash
-#git pull
 
 BACKUP_ETC_PHP_DIR=$(brew --prefix)/etc/php.$(date +'%Y%m%d%H%M%S')
 if [[ -d $(brew --prefix)/etc/php ]]; then
@@ -40,7 +38,6 @@ for PHP_FORMULA in $FORMULAS; do
 
     ls | grep $PHP_FORMULA'.*--.*.gz$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf -- '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
     ls | grep $PHP_FORMULA'.*--.*.json$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf -- '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
-    #cd $(brew tap-info --json digitalspacestdio/php | jq -r '.[].path')
 done
 
 if [[ -d "${BACKUP_ETC_PHP_DIR}" ]]; then
