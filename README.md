@@ -24,8 +24,8 @@ Linux | `arm64` | no | no  | no  | no  | no  | no  | no  | no | no | no
 * macOS (Intel): High Sierra, Mojave, Catalina, BigSur, Monterey, Ventura, Sonoma.
 * macOS (Apple Silicon): Monterey, Ventura, Sonoma.  
 * Linux (arm64/x86_64): Debian Based (with installed: `systemtap-sdt-dev` `build-essential`)
-* Linux (arm64/x86_64): OpenSUSE (with installed: `systemtap-sdt-devel` `gcc-c++` `make` `patch`)
-* Windows (x86_64): 10/11 with Ubuntu via WSL2
+* Linux (arm64/x86_64): Fedora / OpenSUSE (with installed: `systemtap-sdt-devel` `gcc-c++` `make` `patch`)
+* Windows (x86_64): 10/11 with WSL2 and Debian/Ubuntu/Fedora Linux
 
 ## Installation
 
