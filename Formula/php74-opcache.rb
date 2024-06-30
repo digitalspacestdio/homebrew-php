@@ -12,7 +12,8 @@ class Php74Opcache < AbstractPhp74Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.4.33-105"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "061f820376832261625e54cf7c8d6d8f29b8e84996db93c51f1952098316e83d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "061f820376832261625e54cf7c8d6d8f29b8e84996db93c51f1952098316e83d"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "9b054f95b3a9d7359aeb83c71e2699e16df18066598bcdf1c79f6cd1aab3d6e2"
   end
 
   depends_on "pcre2"

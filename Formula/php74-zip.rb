@@ -12,7 +12,8 @@ class Php74Zip < AbstractPhp74Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.4.33-105"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ee36e20ea0a6a410e6f6198f5d33a646885fd39416e7c61995e1989910aae119"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee36e20ea0a6a410e6f6198f5d33a646885fd39416e7c61995e1989910aae119"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "ff2042b982e78f9b66f38f2d9cf15924d0915e6300aa7916461cbaa465406732"
   end
 
   depends_on "libzip"
