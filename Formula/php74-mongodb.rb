@@ -12,9 +12,10 @@ class Php74Mongodb < AbstractPhp74Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.4.33-105"
-    sha256 cellar: :any_skip_relocation, monterey:      "db379c82a78e80e8f58cf865e947866be9e318b3e1df541c656f8c8d47b86d37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32cabde63703612607fb7865e35d516b5a615e1ab36437d0277f35050538d8c5"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "1bf0b6b5a77e1ce71437d7702a6dc61ae900212f4aa6c867898ee002ee278be3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "00d545445968dc1ca3130b2da86aee2828cedcc5ee13e2cd15833f7363b8f4c9"
+    sha256 cellar: :any_skip_relocation, monterey:       "db379c82a78e80e8f58cf865e947866be9e318b3e1df541c656f8c8d47b86d37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32cabde63703612607fb7865e35d516b5a615e1ab36437d0277f35050538d8c5"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "1bf0b6b5a77e1ce71437d7702a6dc61ae900212f4aa6c867898ee002ee278be3"
   end
 
   depends_on "openssl"

@@ -15,9 +15,10 @@ class Php74Apcu < AbstractPhp74Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.4.33-105"
-    sha256 cellar: :any_skip_relocation, monterey:      "62df4ca0294d67719916a329f6d96fcf2d0c776f1e37f2b5677b362f46b7759f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9db557e3bd49381424578531c3672100e9a08df410929035a81e35a7769cfb83"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "b0dfefd2c43cbfdae62f3478ff16a46ebe9961ae2f8a9492439bc9c146e751cd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d2b4203751f46e91a782a512cf4c43f6550f8748a29174aaa3c0bb567e52bcaf"
+    sha256 cellar: :any_skip_relocation, monterey:       "62df4ca0294d67719916a329f6d96fcf2d0c776f1e37f2b5677b362f46b7759f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9db557e3bd49381424578531c3672100e9a08df410929035a81e35a7769cfb83"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "b0dfefd2c43cbfdae62f3478ff16a46ebe9961ae2f8a9492439bc9c146e751cd"
   end
 
   depends_on "pcre2"

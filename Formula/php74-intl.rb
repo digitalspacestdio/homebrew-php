@@ -12,9 +12,10 @@ class Php74Intl < AbstractPhp74Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.4.33-105"
-    sha256 cellar: :any_skip_relocation, monterey:      "97fbdec9a0011ba98248230f223cfbd4397249530ef15bc1f6f81acf1ecb677f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f652a70dc42146a9867e312922d245a8966e7799162f308b637aa65fa35ce7d5"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "410ad80860353f5ba6da989018a6e1b00ffa0420fb833d14e0c58ce2bc2a00a4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ec8838da00a29ff16f0985cda9c56fd0b6287396b5b28a885986d0bb80cf290"
+    sha256 cellar: :any_skip_relocation, monterey:       "97fbdec9a0011ba98248230f223cfbd4397249530ef15bc1f6f81acf1ecb677f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f652a70dc42146a9867e312922d245a8966e7799162f308b637aa65fa35ce7d5"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "410ad80860353f5ba6da989018a6e1b00ffa0420fb833d14e0c58ce2bc2a00a4"
   end
 
   depends_on "digitalspacestdio/common/icu4c@74.2"

@@ -11,9 +11,10 @@ class Php74Igbinary < AbstractPhp74Extension
 
   bottle do
     root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.4.33-105"
-    sha256 cellar: :any_skip_relocation, monterey:      "346ca05d3c3dae62fbe105a32def92f18dbc385feb6a869ae726f90de0d54783"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "833694177d385025e5987d8eab33c340d457b03bcfd536112fa6fd0b9be51124"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "a5af50910976ea3a0a42ba2477adade834391c7dedd4d9858a0036291d7d6c8e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d25ba069f537de67146c85c21915778f2fc151b1cd3aa01e001ef8d6aa5cd0aa"
+    sha256 cellar: :any_skip_relocation, monterey:       "346ca05d3c3dae62fbe105a32def92f18dbc385feb6a869ae726f90de0d54783"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "833694177d385025e5987d8eab33c340d457b03bcfd536112fa6fd0b9be51124"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "a5af50910976ea3a0a42ba2477adade834391c7dedd4d9858a0036291d7d6c8e"
   end
 
 
