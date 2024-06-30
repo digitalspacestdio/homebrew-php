@@ -11,21 +11,21 @@ class Php74Intl < AbstractPhp74Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.4.33-104"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a02e9007bab7bacea7b948a2c7030cb39eece8ae1e48ad842bb4b9965be3a122"
-    sha256 cellar: :any_skip_relocation, monterey:       "72d0262e38588bd98b65f240f6ac9da26f86dfe9c82e78afe016ce77068247ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c7aaeda6e9f5e1f0975183e8b37a388789d71a2a131bdcdd621d71daa42c926"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "33a0e4b210361bda84c3342956619cad3116b6570d4de72a4e7dec87ff3e1275"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.4.33-105"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ec8838da00a29ff16f0985cda9c56fd0b6287396b5b28a885986d0bb80cf290"
+    sha256 cellar: :any_skip_relocation, monterey:       "97fbdec9a0011ba98248230f223cfbd4397249530ef15bc1f6f81acf1ecb677f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f652a70dc42146a9867e312922d245a8966e7799162f308b637aa65fa35ce7d5"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "410ad80860353f5ba6da989018a6e1b00ffa0420fb833d14e0c58ce2bc2a00a4"
   end
 
-  depends_on "digitalspacestdio/common/icu4c@73.2"
+  depends_on "digitalspacestdio/common/icu4c@74.2"
   depends_on "pkg-config" => :build
 
   def install
     # icu4c 61.1 compatability
     ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
-    ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}/lib"
-    ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}/include"
+    ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix}/include"
     
     Dir.chdir "ext/intl"
 

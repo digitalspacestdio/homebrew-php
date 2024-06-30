@@ -23,7 +23,7 @@ class AbstractPhp < Formula
     skip_clean "bin", "sbin"
 
     depends_on "pkg-config" => :build
-    if OS.mac? && @@php_version.start_with?("7.", "8.0") || OS.linux? && Hardware::CPU.arm? && @@php_version.start_with?("7.3", "7.2", "7.1", "7.0", "5.6")
+    if OS.mac? && @@php_version.start_with?("7.", "8.0") || OS.linux?
       depends_on "gcc@12"
     end
 
