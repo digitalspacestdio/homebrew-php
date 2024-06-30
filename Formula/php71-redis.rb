@@ -14,6 +14,7 @@ class Php71Redis < AbstractPhp71Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "abc2cc2cc4909d58992669d4eebdcdf9a81ce8c6cf7edc1af4e17b0a78b7a08f"
     sha256 cellar: :any_skip_relocation, monterey:       "44452e61bc331d1ec8d51bc133999e9321372b5724f2f2df1d80f7712c3f015e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "28a14b242c4deca7289a7ea10ab48594cec52836546bbc9608f5a3f985b241d3"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "72125f790b05043d4869a3c0afe6cb9f7322248af39d2c29d3e458bc3d4bbf1d"
   end
 
   depends_on "digitalspacestdio/php/php71-igbinary"

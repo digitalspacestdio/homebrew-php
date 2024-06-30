@@ -15,6 +15,7 @@ class Php74Xdebug < AbstractPhp74Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f5b3c094337d40b954b027f634836863d5eecab8bc36d6d6b1517bf586e934c7"
     sha256 cellar: :any_skip_relocation, monterey:       "7e9855bc2b3a7cfb72ec30453ed9d19e446813f2371047d8333786e7422187c0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "32e1ea699756f7b46885f82aeec6598ee55b4556ede99c698268b7af4e3ea2e1"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "012c3fb74130cbfa581963df07dcac8e774d784962d9d048afeb2da9acb02c78"
   end
 
   def extension_type

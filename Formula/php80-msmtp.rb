@@ -13,6 +13,7 @@ class Php80Msmtp < AbstractPhp80Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0e15dd7c0bd1ed4ca36c7e47c74e8dc2c1d418574747800f020ebdcc29f019e6"
     sha256 cellar: :any_skip_relocation, monterey:       "39712d51fe497e78e605dfde44d8edcfb07bfb45d4467259a08c8ede52eb5028"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa746bc8b64525adf524b62454eb97223b8c7bbb3ece6490285ea0d9b6564631"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "66d9105483d2b4cb4871a667478832c7dc78fc8a2d5a1a6e6062650addb05750"
   end
 
   depends_on "msmtp"

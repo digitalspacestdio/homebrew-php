@@ -14,6 +14,7 @@ class Php72Amqp < AbstractPhp72Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e52a3722613c03de15ecb69522ca305daacaf5a3dbc86ead5bca65f5d7272c52"
     sha256 cellar: :any_skip_relocation, monterey:       "71afb891dc809d1c397e173417dc8756179865f5bdb94c0e625a254965c5a90c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "227785f9580db13e70687b0a8b4d21c8d0ee59c57fb25b0e648824792f66e11e"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "63c317a40250d525d5ff1615d7b047156dc6fdac41a44514dcc4e7321ede31d3"
   end
 
   depends_on "rabbitmq-c"

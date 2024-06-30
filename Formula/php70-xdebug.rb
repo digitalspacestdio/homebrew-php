@@ -15,6 +15,7 @@ class Php70Xdebug < AbstractPhp70Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8d3d2ca03245b516cf499f6cfc82d2e351cffa05dd8d78ed57d555eb7fb13c51"
     sha256 cellar: :any_skip_relocation, monterey:       "6b8a67b62689dd809d7b7c00cfab8f66f1915540f8094e6cee0b0130987b18c4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "938e0d1862f3df1fef06bb88aefe3e674e00ba255b07b1c7217f2831461cec02"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "4772b3a8d459e95432b507aff10bac1036eb97e6a0dab68d2c9ab3fcc8c552c4"
   end
 
 

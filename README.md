@@ -8,7 +8,7 @@ Os | Arch | 5.6 | 7.0 | 7.1 | 7.2 | 7.3 | 7.4 | 8.0 | 8.1 | 8.2 | 8.3
 MacOs | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes 
 MacOs | `arm64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes  
 Linux | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes   
-Linux | `arm64` | no | no  | no  | no  | no  | no  | no  | yes | yes | yes  
+Linux | `arm64` | no | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes  
 
 # Bottle Matrix
 Os | Arch | 5.6 | 7.0 | 7.1 | 7.2 | 7.3 | 7.4 | 8.0 | 8.1 | 8.2 | 8.3 
@@ -16,7 +16,7 @@ Os | Arch | 5.6 | 7.0 | 7.1 | 7.2 | 7.3 | 7.4 | 8.0 | 8.1 | 8.2 | 8.3
 MacOs | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes 
 MacOs | `arm64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes  
 Linux | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes   
-Linux | `arm64` | no | no  | no  | no  | no  | no  | no  | no | no | no  
+Linux | `arm64` | no | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes  
 
 ## Requirements
 

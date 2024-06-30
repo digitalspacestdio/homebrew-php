@@ -15,6 +15,7 @@ class Php82Xdebug < AbstractPhp82Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "55f177434049625199e492b0cebdb000991b437e9a93a5b77e5466527e5117fa"
     sha256 cellar: :any_skip_relocation, monterey:       "a20af92c72af2fb501016d07e870077a9baab5d30fbe1c614f03ba473f36c914"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b4973c3c61fceafbbd31179053c0826891746870dec904febe75351eb79b080"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "cceebdc2065ae60489edec2ce4451265ee5d039518e2399aaa3ff08f7afac22f"
   end
 
   def extension_type

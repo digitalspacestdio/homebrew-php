@@ -14,6 +14,7 @@ class Php74Sodium < AbstractPhp74Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0cf05aa140313f5074399f0d6fd59297f373897c497a104fb5526c7025228fe0"
     sha256 cellar: :any_skip_relocation, monterey:       "f3bf6b29f35013b25e29221a36b5847e9b173dc586cf5ebbb3d25d3bfa67171d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b25229959174920b6213ccf1ecc8bd33b7f7328c88d7846466d41c463cce707"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "88307ce144318fcd9a404ae9ecb772ff75ff5ae8416ec2f8126d657080ee0a56"
   end
 
   depends_on "pkg-config" => :build

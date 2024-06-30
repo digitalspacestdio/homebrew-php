@@ -15,6 +15,7 @@ class Php80Mongodb < AbstractPhp80Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "08df4942cc7269311613f76c59c9763c3516a90626f7c2403ac780f2f37f33b3"
     sha256 cellar: :any_skip_relocation, monterey:       "b6738d995d5ba2db6931f6d39d4d453342debe671287c8e54fdc7ad2171e0133"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "694e07e023c6218f242ea32c50bbc0ab7247a71280b01e22bf18f0e8ccf879dc"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "4af713db519f32df64820bc04e79cac71ab4699b69c6c6b804323199b15baff5"
   end
 
   depends_on "openssl"

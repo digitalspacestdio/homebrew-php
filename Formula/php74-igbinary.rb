@@ -14,6 +14,7 @@ class Php74Igbinary < AbstractPhp74Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3489295f168458e6664ebb9a0ccc452ebe045f56493a8fc915e6b9858079cf4b"
     sha256 cellar: :any_skip_relocation, monterey:       "88712048dfb93013eee020dcc6973eca3710bbf128069b7f38458715315224c5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "05f761a5921533e740150d8a9db9dae923fffbd159a04ffc348a8bc85bae833f"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "94477a8996cad5336d7b0b0c0765a52c54324fd890e73487c74460f52fb67358"
   end
 
 

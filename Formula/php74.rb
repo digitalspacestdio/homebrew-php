@@ -12,6 +12,7 @@ class Php74 < AbstractPhp
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8f487cfdc46b1a1702480016a581a550dfebcad4d034172f3f1a986cb89178a4"
     sha256 cellar: :any_skip_relocation, monterey:       "6e9e928182ade5e4c5f80bbba4f3960649c60a3a4ff368498f7386e1dc6f4da5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "391abea2fdf83c828ef456996872e3697fd2ec27bd96c184054261f9860b86b4"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "b97c9d4cc0ff646100c19eca8031f188580a50ed219391cd62525eb4bb654e72"
   end
   
   keg_only :versioned_formula

@@ -12,6 +12,7 @@ class Php83 < AbstractPhp
     sha256 cellar: :any_skip_relocation, arm64_monterey: "05700e5164488c3b50e5fab65e54e198dd39e13e330432d78900958e57684610"
     sha256 cellar: :any_skip_relocation, monterey:       "8bf5061c26218306499b39803274fca7ad0f57ce835baad55aa904b21c77127f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "97383cdfbc48edb5c9b6c7b441d0102e3d388d9cb98e94b9369055d61f40381a"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "93c99d76576ec2f8dfc6e267e5b18ea4bd906f0dbe0ac75e9cbf5c33dc4dc531"
   end
   
   url PHP_SRC_TARBALL

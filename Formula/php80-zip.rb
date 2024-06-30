@@ -15,6 +15,7 @@ class Php80Zip < AbstractPhp80Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0518fa7e1993eeb7cb94dce80bed8651bd621b7eb88fbffbddbf0c95cd7e3646"
     sha256 cellar: :any_skip_relocation, monterey:       "9ae11d43639ea43e22234a6366c3565f9002928c3991307fd1820700e47bae2f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8a1575d7f932cd1782329f867c2173d46bcd6d882c76703b4e47a90d6d4ea56"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "45f144402de66a05de82817ddb1071219b577a99795554a194bd8643c33440af"
   end
 
   depends_on "libzip"

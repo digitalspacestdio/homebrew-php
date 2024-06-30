@@ -13,6 +13,7 @@ class Php83Redis < AbstractPhp83Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b873846bcae7b66223066bf27a3f29441ed9afcefd426e5abb732275388000d7"
     sha256 cellar: :any_skip_relocation, monterey:       "334d0385ff9731c4319d27bfe4ccb550d2b577e204c625f72a75b7d60806f809"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "36320397efe73ac1d78a9c5d96a595e4c8a1006e180a1d65a2fcae0c789eb72b"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "fd2f642843d44619c0cfc176affe6462e898d1435d2e1a10ba9664d20cb70a6b"
   end
 
   depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-igbinary"

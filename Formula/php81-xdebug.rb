@@ -15,6 +15,7 @@ class Php81Xdebug < AbstractPhp81Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c689ba9ebd8e3e2f0e4c9fbe31c5b8df23217e5a73399739eebb0d7113f6a2fe"
     sha256 cellar: :any_skip_relocation, monterey:       "7f6b8ebf70d9fcfc69286492e7c18ebda5fe6e44723576a6633a34b3b0f85e15"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3bdc61023dfb7b1e924dbd86cfe76aa15b6e52e8e65eeb1e8b16134cd3698b08"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "0f4b6a7de32a41251532fd239708bb6ba7a21f248f0d3f3375d18bcff3641042"
   end
 
   def extension_type
