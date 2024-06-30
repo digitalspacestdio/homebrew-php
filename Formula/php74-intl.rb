@@ -18,14 +18,14 @@ class Php74Intl < AbstractPhp74Extension
     sha256 cellar: :any_skip_relocation, aarch64_linux:  "33a0e4b210361bda84c3342956619cad3116b6570d4de72a4e7dec87ff3e1275"
   end
 
-  depends_on "digitalspacestdio/common/icu4c@73.2"
+  depends_on "digitalspacestdio/common/icu4c@74.2"
   depends_on "pkg-config" => :build
 
   def install
     # icu4c 61.1 compatability
     ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
-    ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}/lib"
-    ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/icu4c@73.2"].opt_prefix}/include"
+    ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix}/include"
     
     Dir.chdir "ext/intl"
 
