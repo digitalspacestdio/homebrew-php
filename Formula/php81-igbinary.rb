@@ -15,6 +15,7 @@ class Php81Igbinary < AbstractPhp81Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ebf133162a6b5ca8ce26009c1c9419292cad7d4c4e49e6fd547cc1b50ab2ea87"
     sha256 cellar: :any_skip_relocation, monterey:       "15939b3d811f02cb9a5d4c07f636550491953cfe577f9c6ae4dd3f8fe02a024c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9923c242bac59074fad75a825ba25b2addc50306b63e706bbcadb9002215e3ff"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "8d33263fdaf990c906390305154a9d565828055ff232e3cae54d5aae77612d93"
   end
 
 

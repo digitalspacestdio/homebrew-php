@@ -15,6 +15,7 @@ class Php73Gmp < AbstractPhp73Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a57953be37eed1546d6b621cfa7909cbd0806bcfa81ef7fb7a4881e7834e5975"
     sha256 cellar: :any_skip_relocation, monterey:       "5eb4d2bba55bb31bdae3007218f8828821d23f966001c7428132e9d877277440"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "44386034628c76ae9ed40a902ab8a4e517be171438429a0b06723ca867ae6202"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "110edb7011f93939302937afb839ebf572a98b0384b3b3c5d1975cf13cc6a5a6"
   end
 
   depends_on "gmp"

@@ -14,6 +14,7 @@ class Php74Tidy < AbstractPhp74Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a05d24659c49894142abc5ee543d59dfebd358e1183fec6b4cd54fb015c90ebb"
     sha256 cellar: :any_skip_relocation, monterey:       "c00532ffd3791f492e8b1a189ece4dba17f6a7ce95d0bdd406d3983895e0fba2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3cc9aebd267cc7d6abc662803b0f70af660d3b9fe5264913546bdc67ee0410d8"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "5f95f02c4ba8c2e036cb5c9e20b45e36c6f4fbf0c8ddf2296c473464878bb811"
   end
 
   depends_on "tidy-html5"

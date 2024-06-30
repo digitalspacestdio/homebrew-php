@@ -14,6 +14,7 @@ class Php72Intl < AbstractPhp72Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "88b0fbbf2f991ec768a6079a2bac0ecc2e76c9b49db11958ccd564e73d90ae38"
     sha256 cellar: :any_skip_relocation, monterey:       "76cdf3d31d2b07d08adf051f7352e42337137f4c299083f0fc08f0ede1c1885c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa2cad00a9e0ccc0febaa68d7df3d3de30179b3568f4918ff4ecd0d8ae204905"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "51b313a73f6ea303ccdabae7e8a890ecc5d2fd294c11149f99afd571ab7943e5"
   end
 
   depends_on "digitalspacestdio/common/icu4c@69.1"

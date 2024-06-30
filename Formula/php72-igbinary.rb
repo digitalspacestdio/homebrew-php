@@ -13,6 +13,7 @@ class Php72Igbinary < AbstractPhp72Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "21d4fddd794656c5364745b9b73bb491c1fbb43a204934f006c8b51173177ae2"
     sha256 cellar: :any_skip_relocation, monterey:       "64c0ba9e616b1c46be3d3fd9ca155e0b8aec418d37a2b6cb3840b60409791e64"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac5639cda78e398f4e3a099f01c3db3dae818da22865f36bc62409d1fb4afb84"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "16dddb874b21b836f60ac37e5db8302f64cbd13a814830136c17d40670bcb400"
   end
   revision PHP_REVISION
 

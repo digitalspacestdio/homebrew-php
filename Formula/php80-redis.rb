@@ -13,6 +13,7 @@ class Php80Redis < AbstractPhp80Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "86ea5778fbf0b2ee76bdf37df3ad4b5f3bea4a780592839b684b404b0fff0236"
     sha256 cellar: :any_skip_relocation, monterey:       "88aa1e2e62678446f819beafc51471089d1fc315a42453ddba843b1d37c17a82"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "55c86f5f53dcca0a7196d4999c8a5d1adeb8192476dbf4bf01a54fd5e3c920e3"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "4f4d41b347f741542dc97c07335b27892acca2db379647c1cd7e91e2cd4946ca"
   end
 
   depends_on "digitalspacestdio/php/php80-igbinary"

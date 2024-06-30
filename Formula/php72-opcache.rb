@@ -15,6 +15,7 @@ class Php72Opcache < AbstractPhp72Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "dcd56034016c29f4c94c1154b14a3b3e3923e2016c4f3efcfb99b89bf94920b2"
     sha256 cellar: :any_skip_relocation, monterey:       "f387e35b3929b2291a4353f45551b743e52f86662bc1404216389c0bd5ae1b69"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "210df8f172d7ae3a6bcb80cc8cc3460f539c1e57be2e2b378d72f1228ac2b846"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "cd863f4a9c07653e67cd5e55b3543e4574b02efd5edfcf70a3c35d8b32220a35"
   end
 
   depends_on "pcre2"

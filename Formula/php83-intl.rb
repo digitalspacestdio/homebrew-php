@@ -15,6 +15,7 @@ class Php83Intl < AbstractPhp83Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "406a747dd3bd17895c63eae4f42fe49cb88f1e0a83fc926a3732c192815b8437"
     sha256 cellar: :any_skip_relocation, monterey:       "4448526856b90ef95ce1fde4a2bf94cf232af3a93a4c13165effbb2fb77505fc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "606a73b47733df668e482a2f8b3d1e9a8f4ae1bfb8a8a0e555fc155e5e88f88b"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "25d69a04904284648f3bbd68213c4ed3877c08855ebba1731d351541a23ce727"
   end
 
   depends_on "digitalspacestdio/common/icu4c@74.2"

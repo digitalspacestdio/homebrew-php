@@ -15,6 +15,7 @@ class Php82Igbinary < AbstractPhp82Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0d67f743644e5721b240680c38a92636bcb57ac8abef69202a8bbf61a62faf1e"
     sha256 cellar: :any_skip_relocation, monterey:       "fd66e47dc04caaefb0e46efbddbaf615d5def21b0938fbdb4a321c5fc1fdd2ab"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "acade2d630ea3d2970d5464bea9f405e4ab4f26c94ce8ac22c37dd86896ee9e0"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "6395a8607c88ed0034eb5cadee3bfe681bfc3e5d04ec7747e918780564613bb9"
   end
 
 

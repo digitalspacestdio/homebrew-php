@@ -16,6 +16,7 @@ class Php83Apcu < AbstractPhp83Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1dda3033db7f8334e6edf87a54c0967b2ff7b0fad59e626fae251b6aeefba148"
     sha256 cellar: :any_skip_relocation, monterey:       "09d794456a07105b6638ca344c4b9b1fc9e2ba65f5c51d8e4385e8597ecc80fa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3760f242a16967b385c6cd51e0ab1240f9ceddd57f264c2feb1d69237edcc6db"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "feb4769910443e2171b1c3dcdd0c6391823f9b8859df8d7e7d3b9de4a76b799d"
   end
 
   depends_on "pcre2"

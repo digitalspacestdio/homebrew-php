@@ -13,6 +13,7 @@ class Php72Msmtp < AbstractPhp72Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d7f2e0355f95331a4d742c301ecd7bfe361b804a5fae4479c042a9d1ab83bd29"
     sha256 cellar: :any_skip_relocation, monterey:       "c5ddfeec251d7df0bfb63f78ac81c7f1d41091a199aeb62d46f53ba4aa349ad4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "be33677692fd4c62b9a833afad13f8e520ffcf09a9e25d3b5d040426c380498f"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "0582215132ff8bbca73934c20d3abfec59ecc15ed038b74333ba90ffabfe6609"
   end
 
   depends_on "msmtp"

@@ -14,6 +14,7 @@ class Php82Zip < AbstractPhp82Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "449b73120f2da826abdd74a671805ae07bb85b2efaf470e5259bd348e73defe1"
     sha256 cellar: :any_skip_relocation, monterey:       "e0fd8f31bc480e4be2d16235ea739778c68f3678009f4e7b769eeb7c81aa8c82"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2be6d1146c556c7085bce4cb6b086ec3d44f369955c8d94da495098e4716f7b6"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "f489b6feb050369d27e777079c3e04379c6c1151c8d99b61f0f2cf3a585ad5cd"
   end
 
   depends_on "libzip"
