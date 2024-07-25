@@ -10,7 +10,7 @@ class Php70Amqp < AbstractPhp70Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.0.33-103"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-103"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e1b46b23cee0ee738476bb7e79b78c0409cde68b9ed7cde842cd69fe586972cc"
     sha256 cellar: :any_skip_relocation, monterey:       "aa6211a56f4682565c111cdc25051a9b69db2c84f9451fe1641a0059976b7da3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c46272b9ef10e6ce1bc59a5dce35cb642496c07395fdffab639ab32a16450370"

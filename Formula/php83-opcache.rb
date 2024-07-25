@@ -10,7 +10,7 @@ class Php83Opcache < AbstractPhp83Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.3.8-106"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.8-106"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "72da01ba576011a41f07bad117a5e19515ba5be50134edf6e63e5ea8094c6fac"
     sha256 cellar: :any_skip_relocation, monterey:       "ce8cb7fb781dec33765e1fdd19259e9b654940177ae0a443412bb5e658544f80"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e096a7dd826ed2bfca1f01604710d28d0f887916be8ead1ede5092c8e597067"

@@ -8,7 +8,7 @@ class Php82 < AbstractPhp
   revision PHP_REVISION
 
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.2.20-106"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.20-106"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6d8850a753a238f036cabe0e119ab52966149730b2394714100283fe9ad0771c"
     sha256 cellar: :any_skip_relocation, monterey:       "889e5018f34ddefa56fac51ebb63fdecf80b08e04dc35cc1b3183091ea0624b3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b6c45200fbf98ba634d4bb07ab2f9195b16fed610fb1efeff3a14490c258513"

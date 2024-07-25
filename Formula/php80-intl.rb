@@ -11,7 +11,7 @@ class Php80Intl < AbstractPhp80Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.0.30-104"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-104"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1604a4de8f2737aa2f30a19e805b4a17d1382fa8cace662bb2788e32f890f643"
     sha256 cellar: :any_skip_relocation, monterey:       "4f427c3e3d852aa9b9d496d7f4581d8730f24147ac2b841d176ff8891849e695"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf6071e53fe34b73c50f8484510512107ffc2d7cfbe089ce4a5dfe6fa6499915"

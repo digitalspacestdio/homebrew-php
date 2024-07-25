@@ -10,7 +10,7 @@ class Php83Mongodb < AbstractPhp83Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.3.8-106"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.8-106"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "fd1ff356c6a6c98b57cc2121870da3d6517bc776a8cc9b5d771b59fa222de4db"
     sha256 cellar: :any_skip_relocation, monterey:       "75e3991a0aa1bb7f759580b1bd6aec7c545aeedb9babc944f21e3e24b220ee95"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "815ebf7ec8fa7d7b9f075687de73c2bcb43cb884a9365830372ef8eeb7d56919"

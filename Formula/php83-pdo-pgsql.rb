@@ -10,7 +10,7 @@ class Php83PdoPgsql < AbstractPhp83Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.3.8-106"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.8-106"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a1805c9a3f2879397cf7cbeb6323ad86c430818c0bf399f3be4001c59a712350"
     sha256 cellar: :any_skip_relocation, monterey:       "a7ba77d64fabf22664c9c555a4af86af4b1ada7d285057570c037e4af431210c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "799acc9e3e642f685e3e48dfda2962274a248bdb06578d0196fbd2e572baca94"
