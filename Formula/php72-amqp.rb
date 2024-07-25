@@ -10,7 +10,7 @@ class Php72Amqp < AbstractPhp72Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-103"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.2.34-103"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e52a3722613c03de15ecb69522ca305daacaf5a3dbc86ead5bca65f5d7272c52"
     sha256 cellar: :any_skip_relocation, monterey:       "71afb891dc809d1c397e173417dc8756179865f5bdb94c0e625a254965c5a90c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "227785f9580db13e70687b0a8b4d21c8d0ee59c57fb25b0e648824792f66e11e"

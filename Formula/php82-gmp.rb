@@ -11,7 +11,7 @@ class Php82Gmp < AbstractPhp82Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.20-106"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.2.20-106"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "005b1389c6edcef3454ea913898ed721a8f5d37d8d66c67b084b046d84539105"
     sha256 cellar: :any_skip_relocation, monterey:       "8429afa9034f64157cb3ade94ff79c58fdc94d31ab1ae321032ee33aca23abb5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "002db4559f53642b235b359683ebc69ce6127b2773165eac9f113c69dcee833b"

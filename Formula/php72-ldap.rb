@@ -11,7 +11,7 @@ class Php72Ldap < AbstractPhp72Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-103"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.2.34-103"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e6957e2a3cc323db3a2530343b016589c979f3dc8f8c427bcff42d04c622f0b8"
     sha256 cellar: :any_skip_relocation, monterey:       "1a80841cb1621db1b60299fbd442aa5bf4cb9e55aa8824152984368bb0276469"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e50efd734638a14dc5499c9bda8e976498455ef7a596c017b2bccf8849ae305f"

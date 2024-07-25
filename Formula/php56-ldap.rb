@@ -11,7 +11,7 @@ class Php56Ldap < AbstractPhp56Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/5.6.40-103"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/5.6.40-103"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4f03e4bddf02ca2b2002330fa7adc9474cfad981282dd188fd4b6c4bf40cb536"
     sha256 cellar: :any_skip_relocation, monterey:       "c32d3d6a3695e2727a0b114e5d5fb9e24dc6a18f7533bf5b62d2c2529f4f7c23"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4338d6c62f6eb7613d3a53348722f0b88bd408e9676f82ca9961cb547e97263"

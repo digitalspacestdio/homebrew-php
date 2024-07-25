@@ -9,7 +9,7 @@ class Php81Redis < AbstractPhp81Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.29-106"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.1.29-106"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5dd1eccf629caffeb4e15a5939952fdfdc35887f0c4859f3e4aa95d6c293fa1f"
     sha256 cellar: :any_skip_relocation, monterey:       "fb797dc66028e0a24bacf83d28691909271eaa1545100756d9c3a31defc05790"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8dc9662977cd2d27e603d70ecf99638505a90bcc6acee17a2b4c886142e5a735"
