@@ -10,7 +10,7 @@ class Php73Sodium < AbstractPhp73Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.3.33-103"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.3.33-103"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "67792a31c36840a08f4aac959a299cf107c65e56b65d66ecae4346a2846fdf81"
     sha256 cellar: :any_skip_relocation, monterey:       "e714b503c190ab3163eeec48cc7082151a43b70fae35784ce847f94306431fb8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f37379afe94c7294c0e9d51d4b56da264a62421e9d1ef869cb69df00611aab31"

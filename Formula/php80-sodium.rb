@@ -10,7 +10,7 @@ class Php80Sodium < AbstractPhp80Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-104"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.0.30-104"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "00e054a8808163910e92e2eb8f9f520a3cf69421f0b1edbb4c50ac94b7f4ae2b"
     sha256 cellar: :any_skip_relocation, monterey:       "67650e95d64d6010b3b6aa69822f8fec7b4376270272534e75299a6056b513b0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "03671d2edeefaf55f20e6cb1889a6490016bc16cd74f046d20b12f5f6717df7c"

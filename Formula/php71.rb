@@ -12,7 +12,7 @@ class Php71 < AbstractPhp
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-103"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.1.33-103"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e673bc934c7a4bae17945b79555ceae4aa8b63a192fa114c4b9158517f667f2c"
     sha256 cellar: :any_skip_relocation, monterey:       "f3fb64a5b7c274a283c240a1018e1003bacb844eda84003c77f2e2cfb7d1584c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e08a071047427c28d5e74e21c7999ddddff0c0571923c00ab4859d5aa251adcc"

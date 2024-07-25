@@ -9,7 +9,7 @@ class Php56Redis < AbstractPhp56Extension
   head "https://github.com/phpredis/phpredis.git"
   revision PHP_REVISION
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/5.6.40-103"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/5.6.40-103"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e44560835f0fba239cd24fc271cb485f3ce4443d10946d659d82bcdd831db609"
     sha256 cellar: :any_skip_relocation, monterey:       "cfbb158cc90327ddf0fa7f7499c9540930ffc0ba147740bc235e1f50e2d65e0e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "48720c05f56b5ed2339f9276d69d222f7c8ff583205746af609f7fd4d033b137"

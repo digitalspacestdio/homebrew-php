@@ -9,7 +9,7 @@ class Php56Gmp < AbstractPhp56Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/5.6.40-103"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/5.6.40-103"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c68b158fe0895c112ff0c20fda507f582f9dbebce47b0e6272f86c084dafb1e9"
     sha256 cellar: :any_skip_relocation, monterey:       "74a412f3dc9ea6966bd25e222a76eef540c7a9aaf3a596beaad3477a12586546"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bbc9a034569a085ad3c98b53955a52df34a2b27f043717386d76a1bbce18e4d1"

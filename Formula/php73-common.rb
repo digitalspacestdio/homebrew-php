@@ -5,7 +5,7 @@ class Php73Common < AbstractPhpCommon
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.3.33-103"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.3.33-103"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3ca5c45a0c5526f1f45264c858be84f7de8a5befd365b873a0dcef25e24087be"
     sha256 cellar: :any_skip_relocation, monterey:       "b1712e2800bdd33be597993bc836fb1e166d6f428e6a101f0e3a74d6ab038d48"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "dfe28c3bcf602bdc99fe363d9413e57bd7fa155b359e3216dab05fbac815c5bf"

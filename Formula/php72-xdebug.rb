@@ -11,7 +11,7 @@ class Php72Xdebug < AbstractPhp72Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-103"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.2.34-103"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f738edb6532faf8296b99b29d748561a0cf2f38a5b8774279083b842b2c089aa"
     sha256 cellar: :any_skip_relocation, monterey:       "5b464241b6627d4a3f2d989474142cc1be389a537f9a03c763c5dce5af264b47"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fea037e95daa3c169ddad3e1422099683f69ad81ab2363ff0d2d025ce9927377"

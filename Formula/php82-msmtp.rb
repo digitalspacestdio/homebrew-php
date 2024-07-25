@@ -9,7 +9,7 @@ class Php82Msmtp < AbstractPhp82Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.20-106"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.2.20-106"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "9e8cd8977edbc775f02a3b747368bc32c24d81f252f0e292535cb51d48e272ad"
     sha256 cellar: :any_skip_relocation, monterey:       "545f4e648134eccff623158c70c4e81e532651ecc6e5550e1630c4e76848a55b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7435e32a9890f07e977028049c6f04993462292202e951a7da3ae66ce6f1ad8"

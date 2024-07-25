@@ -9,7 +9,7 @@ class Php83Msmtp < AbstractPhp83Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.8-106"
+    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.3.8-106"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "76fcb28fdc917adebbe4b9248b6a726e8ad0f11da6b20a850e1a4f89cd036a4a"
     sha256 cellar: :any_skip_relocation, monterey:       "5fd4d27ff956bed2e2a7a4a2aff3a3d76f03d2877ad7115823f1004bfec3ef63"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "69c068a384a47ca0de8d4978bd56b251a598ec5c1115e7616ec8a934255eb0ee"
