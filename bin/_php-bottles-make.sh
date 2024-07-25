@@ -33,8 +33,8 @@ for PHP_FORMULA in $FORMULAS; do
     brew install --quiet --build-bottle $(brew info --json=v1 $PHP_FORMULA-common | jq -r '.[].full_name') 2>&1
 
     echo "==> Bottling $PHP_BOTTLES_FOLDER ..."
-    brew bottle --skip-relocation --no-rebuild --root-url 'https://l2i5.c19.e2-3.dev/homebrew/php/'$PHP_BOTTLES_FOLDER --json $(brew deps --direct $PHP_FORMULA-common)
-    brew bottle --skip-relocation --no-rebuild --root-url 'https://l2i5.c19.e2-3.dev/homebrew/php/'$PHP_BOTTLES_FOLDER --json $(brew info --json=v1 $PHP_FORMULA-common | jq -r '.[].full_name')
+    brew bottle --skip-relocation --no-rebuild --root-url 'https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/'$PHP_BOTTLES_FOLDER --json $(brew deps --direct $PHP_FORMULA-common)
+    brew bottle --skip-relocation --no-rebuild --root-url 'https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/'$PHP_BOTTLES_FOLDER --json $(brew info --json=v1 $PHP_FORMULA-common | jq -r '.[].full_name')
 
     ls | grep $PHP_FORMULA'.*--.*.gz$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf -- '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
     ls | grep $PHP_FORMULA'.*--.*.json$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf -- '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'

@@ -10,7 +10,7 @@ class Php80Amqp < AbstractPhp80Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.0.30-104"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-104"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c3244613288a7b9da6ec614fdb14e442b24fa78676265fd74422397ee8de64b3"
     sha256 cellar: :any_skip_relocation, monterey:       "0a8f95a7c0dcdff88c3be687169a288e6649bafeca03d0aac7a122aac61de198"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "be2baee89217dfa52893744b005ea75ed9ea08d10a53cb19bfa4bcb8e06d83b2"

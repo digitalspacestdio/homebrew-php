@@ -9,7 +9,7 @@ class Php70Msmtp < AbstractPhp70Extension
   revision 1
 
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.0.33-103"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-103"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0f4fe38db965fd83029a08847f4fdcdbfdbd2ad1d0b845b2219c03b6d09f962b"
     sha256 cellar: :any_skip_relocation, monterey:       "151a55635235c5c1949c5eb8b0cb8cbc4b80c84e195b705445ab80b420f612f8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c5fe86aa0d0c67504e819c2853f22acca9ac5b809571f5107f29b841add68193"

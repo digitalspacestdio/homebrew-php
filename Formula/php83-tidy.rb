@@ -10,7 +10,7 @@ class Php83Tidy < AbstractPhp83Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.3.8-106"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.8-106"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "cc144bae7e6662e37e76cb2a0e2d78f79619a787b08c68832f92794a2e6d2b81"
     sha256 cellar: :any_skip_relocation, monterey:       "a7554b88ee12c3aca45f39a5220d26fd49e27f2e66c407b1676470195db6053b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ddf3c2e46ce1aeefdb31691e349560cfccd4ae3163adf399c76730a0691ef2f2"
