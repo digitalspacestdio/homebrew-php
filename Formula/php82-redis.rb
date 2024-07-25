@@ -9,11 +9,11 @@ class Php82Redis < AbstractPhp82Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.2.20-106"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b9a1a35e480408ad57f06f3b2813b55fca3c1e6a724f6af1a6eedff2d4a5c232"
-    sha256 cellar: :any_skip_relocation, monterey:       "08529c98121aff8937a067352c92a9ea4cc320daa9c53699905a7ac5a188512f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "19ceae04633817a2ede23bb43fbab59873d22877a153c547cb74e30c54bc6fdc"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "1cdd88f093c2a4b6181c40b334bc73e982465dd18a864e1d15a0e7ec62572b59"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.21-106"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9543684448511e0425714413140fdf8f65e51603455150a5cc0d52a5b292bc01"
+    sha256 cellar: :any_skip_relocation, monterey:       "1bfe613614a76f4dd8c518bb3c956bfb882a1e421d4277371fa9f446b6f9ad63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5c07d9015f14f8c7cedf73799d6a4ee4077878c3aa5a0bd60793c964b5bace3"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "e3c302a4710faed08ea503a9288e0fbbbcbe2df49539ab03db6db08cb6f9e565"
   end
 
   depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-igbinary"

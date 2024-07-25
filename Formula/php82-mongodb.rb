@@ -10,11 +10,11 @@ class Php82Mongodb < AbstractPhp82Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.2.20-106"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "213754aad4390b41388f068469cc5de141b25c9217bcff6696bd4a8031961c3e"
-    sha256 cellar: :any_skip_relocation, monterey:       "608bcdc2ca2661e20fbd0776ad5249597995feb4f18525b64fbb8e0ec2e9d19b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf4707636656a1e77317660d132df7b5f89226a5252ba210194f4d3d490a9502"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "215960d616e3b34ad762c86982c274ebab5be1cb6cfdeaa45402e40f0d740491"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.21-106"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c154fd2eb05b5b52ca407514ec416251e3aa9ccaa3a639ba95d37dc6f68329aa"
+    sha256 cellar: :any_skip_relocation, monterey:       "66dcb0ec647660ec6983e1a394a6d615cabb701a72eadfb6041c11ffddad7052"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f5a42c4833bb274ea65ceb34386e67f22a7b9f1e31bc2d88da460527059ee4b"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "93b4b34baeaec1be6b9e0274fd6a95be87cb149c5d3c7c25aa9f94ec66a3caf3"
   end
 
   depends_on "openssl"

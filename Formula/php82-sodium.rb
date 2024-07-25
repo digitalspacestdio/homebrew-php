@@ -10,11 +10,11 @@ class Php82Sodium < AbstractPhp82Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.2.20-106"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6ff34a815d712119cad2952c630ed9d080c8195aaf30b508535db0e707faef96"
-    sha256 cellar: :any_skip_relocation, monterey:       "2a192657ef24a68c5672068c327b94f64daccf8f38965baa31a2ec2cdfbf71bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1641e17b5e40efebbe616c577f5943fdaa727acbb4aa548b0aabd8bae433bbe4"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "5da381c22934bd9dd378ba442e9897b4a4589cce6190622299c01b2b59e8e2e4"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.21-106"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e34e133950eaf8f597e872b50d0050fea793370599cd47c6750667a59006cd3c"
+    sha256 cellar: :any_skip_relocation, monterey:       "7497533169a974a44c63d3e3ba90cb93bbe3ab68e4924d8a151aabe63787ab18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d79a162c9d49cdae369841fef7767aaf177c7d08cdcbc82313352aac9f48b30a"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "706c9be3054076a5eba5319a7c6fa3c3504de2f2bdce8964b980e0800153c6e9"
   end
 
   depends_on "pkg-config" => :build

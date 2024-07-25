@@ -10,11 +10,11 @@ class Php82Opcache < AbstractPhp82Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.2.20-106"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d5106145cc16906ffd2d480cab6a988281d10ea1c3ae41b314225f6257d37ca0"
-    sha256 cellar: :any_skip_relocation, monterey:       "35cd2605bf86980a47c359215091880f937381c1dee80a6e369a8385e1a61921"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3df814c0fa50549c5be6e641eff26afc3931f60c53cfa8530e935d448f9dd86a"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "4340c912c4b091c2086b277713bb58fc777788a6385bd5e54e6e77d1cbe65f84"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.21-106"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d8b607bf7039590c6765349f8e5c1fc71b2171f70b662a488e7cd8ff022ce122"
+    sha256 cellar: :any_skip_relocation, monterey:       "8f5a098cde3b94adb45e452b15dfb7bc57f3ca3183b969a864e5136fee344d88"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4367c8e5a70efe0f991d91a5a9d3ccad818442ddc611146b9de65cca279811f1"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "a5d5110ba520d0306841e493b3da6b48229c1a097365c7350bcb019e4eebe953"
   end
 
   depends_on "pcre2"

@@ -9,11 +9,11 @@ class Php74Redis < AbstractPhp74Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.4.33-105"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b57e759a56ec5543578d384138bb8d849317ad65c84164359a486d6f091c4195"
-    sha256 cellar: :any_skip_relocation, monterey:       "15abbe59b591cb0d47bf68c6ee279b778daccf26afb47cc08ee5dad86ebad2aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb4adb1a8b45c0fa60f3a881ea9169442e472d0e9aeb7bbefdf89b2a3bd42177"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "f080ae85829cd2829a890a35daa3c6faff223992307d669ceefe1d2758be7a22"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-106"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "72ae3e4e91f625d4c6a7b1379d0570479748f2580d2d210248c719b1269234d8"
+    sha256 cellar: :any_skip_relocation, monterey:       "fab128780a80b7f49d7e7b3b4d1caa9bdb96cf183ad180e9962134bc6127d194"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "92566a6ee0f2cb653407063f318c0f74d71bccfa8437856e7c804fd72c6218c8"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "67250007065f6930a569d11d4676c7c60afe8bb5601268e087b905a7d5c03a62"
   end
 
   depends_on "digitalspacestdio/php/php74-igbinary"

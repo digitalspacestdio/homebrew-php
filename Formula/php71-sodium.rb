@@ -10,7 +10,7 @@ class Php71Sodium < AbstractPhp71Extension
   revision PHP_REVISION
   
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.1.33-103"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-103"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "46d0629c1296d51f38b5a0d6fc4fbe84bc35147f9a938fb86d72403c208bae97"
     sha256 cellar: :any_skip_relocation, monterey:       "951c73ccf207a753b98926d65ea46db7e718855ec6c8b875696d53959e26b7f1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "748abb46c439651ecba896cb580d4194cbc97bcfcf838695329a8b0409600367"

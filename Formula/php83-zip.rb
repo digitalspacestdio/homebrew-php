@@ -10,11 +10,11 @@ class Php83Zip < AbstractPhp83Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.3.8-106"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c68d7fa2c806303783b43515cc31bd075bd42e59bcfc113b001edeaef6fc2d76"
-    sha256 cellar: :any_skip_relocation, monterey:       "399f78d75884a96baf35c4702ed214c5fa4b61e313cd94229d4ebc0633e29362"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2364c3f8722ad2a3e096632ce9bae7050deb092d6d4f1a0ec04d46509b1cb764"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "aaa02dd0d1d42cd259759c5ada4be40f7630274c5aabd2dd9a9987dcbb844d49"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.9-106"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "21cb8c781744ae27322fdb803a2962226494759bced217ef7593b0df2cc907d2"
+    sha256 cellar: :any_skip_relocation, monterey:       "013ae5553737f603316e0fb0dd6fd0f4c7508790b9583f563ae1a6f525c61995"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb2537d89c791da63d746975fd3c7a42212ed8c6df88ca38db234038041d6a35"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "2753714ba34b2c815fa92499512819afe7d81d9d52672bc7256c5d7ac6e1ca4c"
   end
 
   depends_on "libzip"

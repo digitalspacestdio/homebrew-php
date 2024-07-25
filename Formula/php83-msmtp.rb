@@ -9,11 +9,11 @@ class Php83Msmtp < AbstractPhp83Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.3.8-106"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "76fcb28fdc917adebbe4b9248b6a726e8ad0f11da6b20a850e1a4f89cd036a4a"
-    sha256 cellar: :any_skip_relocation, monterey:       "5fd4d27ff956bed2e2a7a4a2aff3a3d76f03d2877ad7115823f1004bfec3ef63"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "69c068a384a47ca0de8d4978bd56b251a598ec5c1115e7616ec8a934255eb0ee"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "d309518b8dcfa53d76a13f48c8ba34ea657d1085db468027873f5cd5cefc2207"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.9-106"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3542bdfb1201437b36dedc613af12e9f43d5df93461718166cf4ba8ebc525f9c"
+    sha256 cellar: :any_skip_relocation, monterey:       "2109c85fdd7a01e536af758b2465aba248d4adc48fc88914aa005655e04f3efe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f9e66a9a5b2a4f73a44876876e2a4a4c4104063ff19c91f8683b2852278defc"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "abf43a7a312ff446d877c0031e999dff16af42bdd2deb7d4fa16bf3d09631c68"
   end
 
   depends_on "msmtp"

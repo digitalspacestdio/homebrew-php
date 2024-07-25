@@ -10,11 +10,11 @@ class Php83Ldap < AbstractPhp83Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.3.8-106"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d9283e21c4f6780489f883d79032bfe8e686b62dc7b1b7206508b50adb000917"
-    sha256 cellar: :any_skip_relocation, monterey:       "fe55a7cdb1e596ad615ba93eb172d79819532ff8ec015f58bdcab6daaffbcd9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bfb6a2c16483fb8b5ec0fefdbf473fd178a6168d631c99a06d2f668af86c3d16"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "3d513dbe2d2679ca0cb27e5b0a21006aeffbefb65b0d8fad20e2001590565559"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.9-106"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a1fb581f36c63bc933e57eb7e8df3093505e38d8c83b361510ab32f5f4281952"
+    sha256 cellar: :any_skip_relocation, monterey:       "0ab3ac4608483a089da54a2ab976aa652cfebc0624c330abdb0d13ced9037957"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3226b67e978fce079a385b5962b1adcf0c7ad2faa6f8befd40950ac7c69d7275"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "8c975f6734f83801f7bd0f66965b3ea911643aecd795a14cea836b062aa51412"
   end
 
   depends_on "openldap"

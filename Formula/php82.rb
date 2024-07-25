@@ -8,11 +8,11 @@ class Php82 < AbstractPhp
   revision PHP_REVISION
 
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.2.20-106"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6d8850a753a238f036cabe0e119ab52966149730b2394714100283fe9ad0771c"
-    sha256 cellar: :any_skip_relocation, monterey:       "889e5018f34ddefa56fac51ebb63fdecf80b08e04dc35cc1b3183091ea0624b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b6c45200fbf98ba634d4bb07ab2f9195b16fed610fb1efeff3a14490c258513"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "a2966065a53f3ec0ad7e41115b29a91c91f8f9658bd3a156153ffab4aa79aa32"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.21-106"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "eac5d124e0e852e48215b001bc124c0e4e00368e95a04f9bcb45623656387c8b"
+    sha256 cellar: :any_skip_relocation, monterey:       "f5baa99f0449740b92e54b0b5af56f3fc08defab6bef06c00cd823babdfdd2f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5428bfca6f75aceb25bc2c1219f68fc4b74a6078b65b66012f1b239e0cdc99b5"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "b8490d56312e42be074c976d8064beecc163ad9bdde2e5a853581aba276d6d4d"
   end
   
   url PHP_SRC_TARBALL

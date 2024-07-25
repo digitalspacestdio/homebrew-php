@@ -10,11 +10,11 @@ class Php74Amqp < AbstractPhp74Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.4.33-105"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "847438769cd8d94b9ca1ec4fc5a79721686a26aaf0bb8c0f7692e047f775390d"
-    sha256 cellar: :any_skip_relocation, monterey:       "9eee22699a370840cc13451b374bac26b266e65acdcbc29a27dce98bee07d33a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "97ca3a5d2ff66acdbf280aa84d9c5f68ff8559b59da369dc693105a653081d81"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "2d77e2393054a8a8da42d076de1c1675d021846cae98b2c5815aaa80058d996a"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-106"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2718da60ec328f1c5c82c90d9dd2ff97b3819b223c841c64f16e034e96451b1c"
+    sha256 cellar: :any_skip_relocation, monterey:       "105ea08305c4ee1e53729638f6955880271bad70b1500390ebaeb795e403b4fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eacc299b97b948009c886d1b1a283258e948c73bf7be38c59ec97d32a374d3b0"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "ed7f181ce56f4349a9ad11f75a3d2b50f4e261829bbb6a90f19f09f2272210f8"
   end
 
   depends_on "rabbitmq-c"

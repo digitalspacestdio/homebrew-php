@@ -10,11 +10,11 @@ class Php83Tidy < AbstractPhp83Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/8.3.8-106"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cc144bae7e6662e37e76cb2a0e2d78f79619a787b08c68832f92794a2e6d2b81"
-    sha256 cellar: :any_skip_relocation, monterey:       "a7554b88ee12c3aca45f39a5220d26fd49e27f2e66c407b1676470195db6053b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ddf3c2e46ce1aeefdb31691e349560cfccd4ae3163adf399c76730a0691ef2f2"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "d88fdf6e33474511197914b48e40810723804bf6c85f739e964d8b4a1c1c2d48"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.9-106"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a6afd62e0c3afc5616614c41e13de299271a09d0548107071bc876a2a9ec3a26"
+    sha256 cellar: :any_skip_relocation, monterey:       "a3b5897a18f551038062423bac03f6b32696e1621ff40a0b82c73e53bdbea258"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d46690f3f97ee3e42a4515a1256e38a348dd6ba3512f981c939c3ef44c9f1d06"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "8d8f51116baa2a221dcd5b07b43c7c4dc370dd6ac07ff5508190fff73d4d55a7"
   end
 
   depends_on "tidy-html5"

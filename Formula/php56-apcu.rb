@@ -10,7 +10,7 @@ class Php56Apcu < AbstractPhp56Extension
   revision PHP_REVISION
   
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/5.6.40-103"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/5.6.40-103"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1b45c4608930213459b85d47d28f46cf75b4d7f44970f305cafe34576086a6be"
     sha256 cellar: :any_skip_relocation, monterey:       "bce858f40bcd70bd2f9e4d309052daba6dc6dc09ae2364a2869b103745bd1df0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6559278098515874485a178ee6857dfba635f8037d52d522f963df76cffb3aa"

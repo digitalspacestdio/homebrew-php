@@ -11,11 +11,11 @@ class Php74Mongodb < AbstractPhp74Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://l2i5.c19.e2-3.dev/homebrew/php/7.4.33-105"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "00d545445968dc1ca3130b2da86aee2828cedcc5ee13e2cd15833f7363b8f4c9"
-    sha256 cellar: :any_skip_relocation, monterey:       "db379c82a78e80e8f58cf865e947866be9e318b3e1df541c656f8c8d47b86d37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32cabde63703612607fb7865e35d516b5a615e1ab36437d0277f35050538d8c5"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "1bf0b6b5a77e1ce71437d7702a6dc61ae900212f4aa6c867898ee002ee278be3"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-106"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "69337f6693f8a056358348adf4b8d8eb66b19930f454c1cb1ca14568dea44529"
+    sha256 cellar: :any_skip_relocation, monterey:       "2bd8dbaddcf4ef4c89ef86aae4fa1295ed9739ba6bd7e430b7725d15dbd38a1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "400d57a259a40b59496acd5179f9f8aa7430a06cee3bd79e07d2ae2e4ed5e169"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "c8e9c29bb5d20dbdc4b20a2003dd5f9f5c000d438adbbe3bbcb4fa4491ab6988"
   end
 
   depends_on "openssl"
