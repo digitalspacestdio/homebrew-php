@@ -145,4 +145,18 @@ class AbstractPhpVersion < Formula
       :sha256 => "96edc6d82b7503a6650541fc477abd5456df28dfaa8c9388ff9e31d9fe1e3112",
     }.freeze
   end
+
+  module Php84Defs
+    PHP_SRC_TARBALL = "https://github.com/php/php-src/archive/refs/tags/php-8.4.0alpha2.tar.gz".freeze
+    PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
+    PHP_VERSION_MAJOR = "8.4".freeze
+    PHP_VERSION     = "8.4.0".freeze
+    PHP_REVISION    = 100.freeze
+    PHP_BRANCH      = "php-8.4.0alpha2".freeze
+    PHP_BRANCH_NUM  = "84".freeze
+
+    PHP_CHECKSUM    = {
+      :sha256 => "aaae1c71a0ee8eab9dfbc90e15d4a3ac1c5326edf21cc1ace0e687f103d4ecd8",
+    }.freeze
+  end
 end

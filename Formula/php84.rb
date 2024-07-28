@@ -1,19 +1,18 @@
 require File.expand_path("../../Abstract/abstract-php", __FILE__)
 
-class Php83 < AbstractPhp
-  include AbstractPhpVersion::Php83Defs
+class Php84 < AbstractPhp
+  include AbstractPhpVersion::Php84Defs
+
+  bottle do
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.0-100"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c75c8884f8f922eb79892b4f6f4e26dfdd5adb016668f4ca14b2749a576b001"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "ed1d891c88edb6ff1dca78fd03ca14a2208fcee0506cdc581cb7f4d33b756fff"
+  end
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
   desc "PHP " + PHP_VERSION
   version PHP_VERSION
   revision PHP_REVISION
-
-  bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.9-106"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ac0c0ad9fa2a15705becbbb3b405d1baa5cc0a240673cfcc3b30a10f7ec2ccdf"
-    sha256 cellar: :any_skip_relocation, monterey:       "693dd0c75d4e266f2f966eea7c8e4e9d98b0a66252c20ca893985138a1490c22"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "747dbcf6b39bd8661cfcbb8af1ba69d2f99ee77e9f7fd38c5d4b426407f3514f"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "37c26011d87a7608a0edf9f20daa77be060d8bfbd53463342b865043c718db7a"
-  end
+  head "https://github.com/php/php-src.git", branch: "php-8.4.0alpha2"
   
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
@@ -29,19 +28,18 @@ class Php83 < AbstractPhp
   end
 
   depends_on "pkg-config" => :build
+  depends_on "bison" => :build
+  depends_on "re2c" => :build
+
   depends_on "krb5"
   depends_on "oniguruma"
   depends_on "libjpeg"
-  depends_on "bison"
-  depends_on "re2c" => :build
 
   def install_args
     args = super
     if !build.without? "pear"
       args << "--with-pear"
     end
-    args << "--with-bison=#{Formula["bison"].opt_prefix}"
-    args << "--with-re2c=#{Formula["re2c"].opt_prefix}"
     args
   end
 

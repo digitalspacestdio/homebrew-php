@@ -69,6 +69,11 @@ for PHP_FORMULA in $FORMULAS; do
         jsonfile=$(basename $jsonfile)
         JSON_FORMULA_NAME=$(jq -r '.[].formula.name' "$jsonfile")
         S3_BASE_PATH=$(uri_extract_path $(jq -r '.[].bottle.root_url' "$jsonfile"))
+
+        # If the bucket is absent in the base url we need to add it for s3cmd
+        if [[ $S3_BASE_PATH != "${S3_BUCKET}/*" ]]; then
+            S3_BASE_PATH=${S3_BUCKET}/${S3_BASE_PATH}
+        fi
         if ! [[ -z $JSON_FORMULA_NAME ]]; then
             mergedfile=$(jq -r '.["digitalspacestdio/php/'$JSON_FORMULA_NAME'"].formula.name + "-" + ."digitalspacestdio/php/'$JSON_FORMULA_NAME'".formula.pkg_version + ".json"' "$jsonfile")
             while read tgzName; do

@@ -25,6 +25,9 @@ class AbstractPhpExtension < Formula
     depends_on "autoconf@2.69" => :build if @@php_version.start_with?("5.")
     depends_on "pkg-config" => :build
 
+    depends_on "bison" => :build if !@@php_version.start_with?("5.")
+    depends_on "re2c" => :build if !@@php_version.start_with?("5.")
+
     if OS.linux? || OS.mac? && !@@php_version.start_with?("5.") && @@use_gcc
       depends_on "gcc@12" => :build
     end
@@ -59,6 +62,8 @@ class AbstractPhpExtension < Formula
 
     ENV.append "CFLAGS", "-O2"
     ENV.append "CXXFLAGS", "-O2"
+    
+    ENV["RE2C"] = "#{Formula["re2c"].opt_prefix}/bin/re2c"
 
     if OS.linux? || OS.mac? && !@@php_version.start_with?("5.") && @@use_gcc
       ENV["CC"] = "#{Formula["gcc@12"].opt_prefix}/bin/gcc-12"
@@ -263,5 +268,13 @@ class AbstractPhp83Extension < AbstractPhpExtension
   def self.init(php_version = PHP_VERSION, use_gcc = true)
     super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php83"
+  end
+end
+
+class AbstractPhp84Extension < AbstractPhpExtension
+  include AbstractPhpVersion::Php84Defs
+  def self.init(php_version = PHP_VERSION, use_gcc = true)
+    super(php_version, use_gcc)
+    depends_on "digitalspacestdio/php/php84"
   end
 end
