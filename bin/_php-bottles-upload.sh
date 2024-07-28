@@ -40,8 +40,8 @@ function uri_extract_path {
 
 FORMULAS=${@:-$(brew search digitalspacestdio/php | grep 'php[5-9]\{1\}[0-9]\{1\}$' | awk -F'/' '{ print $3 }' | sort)}
 for PHP_FORMULA in $FORMULAS; do
-    echo "Upload bottles for $PHP_FORMULA ..."
-    echo "Checking nucket permissions 's3://$S3_BUCKET' ..."
+    echo "Uploading bottles for $PHP_FORMULA ..."
+    echo "Checking permissions 's3://$S3_BUCKET' ..."
     s3cmd info "s3://$S3_BUCKET" > /dev/null
     cd ${HOME}/.bottles/$PHP_FORMULA.bottle
     ls | grep $PHP_FORMULA'.*--.*.gz$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf -- '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
@@ -54,7 +54,7 @@ for PHP_FORMULA in $FORMULAS; do
         if ! [[ -z $JSON_FORMULA_NAME ]]; then
             while read tgzName; do
                 if [[ -f "$tgzName" ]]; then
-                    echo "Checking is file exists 's3://$S3_BASE_PATH/$tgzName' ..."
+                    echo "Checking is file does not exists 's3://$S3_BASE_PATH/$tgzName' ..."
                     s3cmd info "s3://$S3_BASE_PATH/$tgzName" > /dev/null 2>&1 && {
                         echo "File already exists on remote storage s3://$S3_BASE_PATH/$tgzName"
                         echo "Terminating..."

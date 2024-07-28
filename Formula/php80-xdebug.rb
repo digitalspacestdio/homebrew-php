@@ -1,21 +1,21 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
 class Php80Xdebug < AbstractPhp80Extension
-  init
+  init PHP_VERSION, false
   desc "Provides debugging and profiling capabilities."
   homepage "https://xdebug.org"
   head "https://github.com/xdebug/xdebug.git"
   url "https://github.com/xdebug/xdebug/archive/refs/tags/3.2.2.tar.gz"
   sha256 "505b7b3bf5f47d1b72d18f064a8becb6854b8574195ca472e6f8da00bdc951a8"
   version "3.2.2"
-  revision PHP_REVISION
+  revision PHP_REVISION+1
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-104"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7234a01857397f4448056dc33bb88c3cabdfba9f28cf071a63764f0f3ca8e0cc"
-    sha256 cellar: :any_skip_relocation, monterey:       "3fa9ada334f7ca508ca9466f4d7c39fc5552323fe3791cedc4d7a1705a546784"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bacebfff0f43d634c61581ddc2786cc692c4b52b0f65a71ebfde629bc8d76715"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "b03389416a2eb3e24ae64bdfb6a7902c411457df2e20104bd8412baaebda3780"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7332d27dca0ae5d31bd3c31bab43628fcc49888d4c7ef45483b0ea5a16b38619"
+    sha256 cellar: :any_skip_relocation, monterey:       "ed64d8938bc992aea078ea89fbcac4264c369108f151bf034e61663a1cf909d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "affa4ee5439875e811f374b0e556e3926a4cd6ef2bd7857a0509eaa809ce6442"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "db9751b1a846adf316045cdfa1c406d6de849f429b16c781b1a8e55773176e21"
   end
 
   def extension_type

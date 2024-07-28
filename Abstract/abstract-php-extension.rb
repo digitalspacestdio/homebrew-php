@@ -20,11 +20,13 @@ class AbstractPhpExtension < Formula
   def self.init (php_version, use_gcc = true)
     @@php_version = php_version
     @@use_gcc = use_gcc
+    
     depends_on "autoconf" => :build if !@@php_version.start_with?("5.")
     depends_on "autoconf@2.69" => :build if @@php_version.start_with?("5.")
     depends_on "pkg-config" => :build
-    if OS.mac? && !@@php_version.start_with?("5.") && @@use_gcc
-      depends_on "gcc@11"
+
+    if OS.linux? || OS.mac? && !@@php_version.start_with?("5.") && @@use_gcc
+      depends_on "gcc@12" => :build
     end
     option "without-config-file", "Do not install extension config file"
   end
@@ -58,9 +60,9 @@ class AbstractPhpExtension < Formula
     ENV.append "CFLAGS", "-O2"
     ENV.append "CXXFLAGS", "-O2"
 
-    if OS.mac? && !@@php_version.start_with?("5.") && @@use_gcc
-      ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
-      ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
+    if OS.linux? || OS.mac? && !@@php_version.start_with?("5.") && @@use_gcc
+      ENV["CC"] = "#{Formula["gcc@12"].opt_prefix}/bin/gcc-12"
+      ENV["CXX"] = "#{Formula["gcc@12"].opt_prefix}/bin/g++-12"
     end
 
     if @@php_version.start_with?("7.2", "7.1", "7.0", "5.")
