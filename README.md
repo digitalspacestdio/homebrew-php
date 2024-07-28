@@ -18,15 +18,18 @@ MacOs | `arm64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | ye
 Linux | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes   
 Linux | `arm64` | no | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes  
 
+## Supported Platform and Systems 
+
+* macOS (`x86_64`): `High Sierra` / `Mojave` / `Catalina` / `BigSur` / `Monterey` / `Ventura` / `Sonoma`
+* macOS (`ARM64`): `Monterey` / `Ventura` / `Sonoma`
+* Linux (`ARM64` / `x86_64`): `Debian` Based / `Fedora` / `OpenSUSE`
+* Windows 10/11 (`x86_64`) via WSL2
+
 ## Requirements
-
-* [Homebrew](https://brew.sh/). 
-* macOS (Intel): High Sierra, Mojave, Catalina, BigSur, Monterey, Ventura, Sonoma.
-* macOS (Apple Silicon): Monterey, Ventura, Sonoma.  
-* Linux (arm64/x86_64): Debian Based (with installed: `systemtap-sdt-dev` `build-essential`)
-* Linux (arm64/x86_64): Fedora / OpenSUSE (with installed: `systemtap-sdt-devel` `gcc-c++` `make` `patch`)
-* Windows (x86_64): 10/11 with WSL2 and Debian/Ubuntu/Fedora Linux
-
+* [Homebrew](https://brew.sh/)
+* `Debian` / `Ubuntu` / `Mint`: `systemtap-sdt-dev` `build-essential`
+* `Fedora` / `CentOS` / `OpenSUSE`: `systemtap-sdt-devel` `gcc-c++` `make` `patch`
+  
 ## Installation
 
 ### Add required home brew tap
@@ -38,6 +41,21 @@ brew tap digitalspacestdio/php
 ```sh
 brew install php83-common
 ```
+> The common formula will install a main php formula and next extensions: `amqp`
+`apcu`
+`gmp`
+`igbinary`
+`intl`
+`ldap`
+`mongodb`
+`msmtp`
+`opcache`
+`pdo-pgsql`
+`redis`
+`sodium`
+`tidy`
+`xdebug`
+`zip`
 
 ### Verify version by php wrapper
 ```sh
