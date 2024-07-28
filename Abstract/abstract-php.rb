@@ -30,6 +30,9 @@ class AbstractPhp < Formula
     depends_on "autoconf" => :build if !@@php_version.start_with?("5.")
     depends_on "autoconf@2.69" => :build if @@php_version.start_with?("5.")
 
+    depends_on "bison" => :build if !@@php_version.start_with?("5.")
+    depends_on "re2c" => :build if !@@php_version.start_with?("5.")
+
     # obtain list of php formulas
     php_formulas = Formula.names.grep(Regexp.new('^php\d\d$')).sort
 
@@ -173,6 +176,8 @@ class AbstractPhp < Formula
       ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
       ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
     end
+
+    ENV["RE2C"] = "#{Formula["re2c"].opt_prefix}/bin/re2c"
 
     if OS.mac? && @@php_version.start_with?("7.", "8.0") || OS.linux?
       ENV["CC"] = "#{Formula["gcc@12"].opt_prefix}/bin/gcc-12"

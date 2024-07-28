@@ -5,7 +5,7 @@ class Php83Redis < AbstractPhp83Extension
   desc "PHP extension for Redis"
   url "https://github.com/phpredis/phpredis/archive/6.0.2.tar.gz"
   sha256 "786944f1c7818cc7fd4289a0d0a42ea630a07ebfa6dfa9f70ba17323799fc430"
-  head "https://github.com/phpredis/phpredis.git"
+  head "https://github.com/phpredis/phpredis.git", branch: "develop"
   revision PHP_REVISION
 
   bottle do
