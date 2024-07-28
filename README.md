@@ -3,20 +3,20 @@
 A **Homebrew** tap repository for PHP-related formulas with **MacOS** (`Apple silicon`, `Intel`), **Linux** (`AMD64`, `ARM64`) and **Windows** (`AMD64`) support.
 
 # Support Matrix
-Os | Arch | 5.6 | 7.0 | 7.1 | 7.2 | 7.3 | 7.4 | 8.0 | 8.1 | 8.2 | 8.3 
---- | --- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- 
-MacOs | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes 
-MacOs | `arm64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes  
-Linux | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes   
-Linux | `arm64` | no | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes  
+Os | Arch | 5.6 | 7.0 | 7.1 | 7.2 | 7.3 | 7.4 | 8.0 | 8.1 | 8.2 | 8.3 | 8.4
+--- | --- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
+MacOs | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | TBA
+MacOs | `arm64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | TBA
+Linux | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | TBA
+Linux | `arm64` | no | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | TBA
 
 # Bottle Matrix
-Os | Arch | 5.6 | 7.0 | 7.1 | 7.2 | 7.3 | 7.4 | 8.0 | 8.1 | 8.2 | 8.3 
---- | --- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- 
-MacOs | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes 
-MacOs | `arm64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes  
-Linux | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes   
-Linux | `arm64` | no | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes  
+Os | Arch | 5.6 | 7.0 | 7.1 | 7.2 | 7.3 | 7.4 | 8.0 | 8.1 | 8.2 | 8.3 | 8.4
+--- | --- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
+MacOs | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | TBA
+MacOs | `arm64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | TBA
+Linux | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | TBA
+Linux | `arm64` | no | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | TBA
 
 ## Supported Platform and Systems 
 
