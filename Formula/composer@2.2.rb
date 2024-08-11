@@ -8,7 +8,7 @@ class ComposerAT22 < Formula
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/composer@2.2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3188b3705e6e8d618da8930e05631469792aa59f6fe6772f2c9dbd96906c1bde"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "850c50e877efbecb78267abbbbcce7ea3c7337811ba11723625d86b8a0c41307"
   end
 
   depends_on "gpatch"

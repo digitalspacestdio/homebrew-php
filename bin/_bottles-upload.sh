@@ -42,7 +42,7 @@ function uri_extract_path {
 
 for ARG in "$@"
 do
-    FORMULAS=$(brew search digitalspacestdio/php | awk -F'/' '{print $3}' | grep "^\($ARG\|$ARG@[0-9]\+\)" | sort)
+    FORMULAS=$(brew search digitalspacestdio/php | awk -F'/' '{print $3}' | grep "^\($ARG\|$ARG@[0-9\.]\+\)" | sort)
     for FORMULA in $FORMULAS; do
         echo "Uploading bottle for $FORMULA ..."
         cd ${HOME}/.bottles/$FORMULA.bottle

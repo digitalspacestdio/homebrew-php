@@ -7,9 +7,8 @@ class ComposerAT26 < Formula
   version "2.6.6"
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/composer@2.6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "48e384e2f230841d0f3e9f3e8399340900f1d6ffc6cfb9365b5cacec7e741925"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58c971caad51b8ffb8909b83b83099a18737cf3082242f97cf1b9519069ef32e"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/composer@2.6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b67eac43c76dd73ad6f17680f70ac7af4d017564af0feef34036c254e45189d1"
   end
 
   depends_on "gpatch"

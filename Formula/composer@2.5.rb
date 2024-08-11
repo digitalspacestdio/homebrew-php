@@ -6,6 +6,11 @@ class ComposerAT25 < Formula
   license "MIT"
   version "2.5.5"
 
+  bottle do
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/composer@2.5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "67ce9c55f210e98e31558e13b6e4916ad7f076dca2f8e12394f13b206dac1e1d"
+  end
+
   depends_on "gpatch"
   depends_on "git"
 
