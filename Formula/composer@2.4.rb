@@ -11,6 +11,7 @@ class ComposerAT24 < Formula
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6d48e89536460c76de0f6827fae0e807370fcd86f50bac8211112f0fc1346f34"
     sha256 cellar: :any_skip_relocation, monterey:       "2080abc98c62f24188593f06eb7f8090856d43429d0897297637bfa3948aec97"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3309a330cb5130fe45a4c912fac6116a5f0258e7f46dfef0b432b5d57e41886"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "53e592b3deaf2f2cf41083f922302aa074ebfdcaaf18242c1c3dc2012c1c70d1"
   end
 
   depends_on "gpatch"

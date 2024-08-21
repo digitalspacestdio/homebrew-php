@@ -10,6 +10,7 @@ class PhpCliWrapper < Formula
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1e3d79d45b007c8c72802c5fbe8b90f9bd03c02ceffcdfec2e0f1c192a88c223"
     sha256 cellar: :any_skip_relocation, monterey:       "0fb9cd727872e202604dea3bc1f47702e5dc4225bf297be143f7555690c49948"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "104ae69ffa6ff654df2017cdf5cc43bbf71c4eedaf9a3256c89f1814a670423e"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "a98c6d31f0918f5fe48456fe33e67552b5751fb6a66fe2aca60711cd58b1b76a"
   end
 
   def binary_dir
