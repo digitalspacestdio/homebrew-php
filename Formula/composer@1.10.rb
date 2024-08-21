@@ -10,7 +10,8 @@ class ComposerAT110 < AbstractPhpPhar
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/composer@1.10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "06655ff6bb797bc4bbdcafd568ebe9ea9f28faf360432c2a8d8f762bb30b9f67"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e820670faccfb2839f2ea42227804676f8bc74c453bbd190568b04feaed802b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06655ff6bb797bc4bbdcafd568ebe9ea9f28faf360432c2a8d8f762bb30b9f67"
   end
 
   depends_on "gpatch"

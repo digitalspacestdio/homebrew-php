@@ -7,7 +7,8 @@ class PhpCliWrapper < Formula
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/php-cli-wrapper"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "104ae69ffa6ff654df2017cdf5cc43bbf71c4eedaf9a3256c89f1814a670423e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1e3d79d45b007c8c72802c5fbe8b90f9bd03c02ceffcdfec2e0f1c192a88c223"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "104ae69ffa6ff654df2017cdf5cc43bbf71c4eedaf9a3256c89f1814a670423e"
   end
 
   def binary_dir
