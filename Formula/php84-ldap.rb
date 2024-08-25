@@ -10,9 +10,8 @@ class Php84Ldap < AbstractPhp84Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.0-100"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d386db94fa5424fba8bb1a38e6d3b9fb24d36d17788015fb522053609243800"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "aa150877ff88a614501d4c58a4296b517bce89c9cfc3cb52ff94c43a933d2183"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.0beta3-100"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3c294af0306ea611ed69178b562424214753f4391645412b252ff5e304c0a951"
   end
 
   depends_on "openldap"
