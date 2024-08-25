@@ -150,7 +150,7 @@ class AbstractPhpVersion < Formula
     PHP_SRC_TARBALL = "https://github.com/php/php-src/archive/refs/tags/php-8.4.0beta3.tar.gz".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "8.4".freeze
-    PHP_VERSION     = "8.4.0".freeze
+    PHP_VERSION     = "8.4.0beta3".freeze
     PHP_REVISION    = 100.freeze
     PHP_BRANCH      = "php-8.4.0beta3".freeze
     PHP_BRANCH_NUM  = "84".freeze
