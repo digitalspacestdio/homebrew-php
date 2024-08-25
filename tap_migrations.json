@@ -1,6 +1,0 @@
-{
-  "php-cs-fixer": "homebrew/core",
-  "wp-cli": "homebrew/core",
-  "phpcurl": "digitalspacestdio/common",
-  "phpmcrypt": "digitalspacestdio/common"
-}
