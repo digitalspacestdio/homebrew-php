@@ -2,6 +2,8 @@
 
 A **Homebrew** tap repository for PHP-related formulas with **MacOS** (`Apple silicon`, `Intel`), **Linux** (`AMD64`, `ARM64`) and **Windows** (`AMD64`) support.
 
+If you looking for Linux, Nginx, MySQL, PHP (LEMP stack) development environment just review this https://github.com/digitalspacestdio/homebrew-ngdev
+
 # Support Matrix
 Os | Arch | 5.6 | 7.0 | 7.1 | 7.2 | 7.3 | 7.4 | 8.0 | 8.1 | 8.2 | 8.3 | 8.4
 --- | --- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
