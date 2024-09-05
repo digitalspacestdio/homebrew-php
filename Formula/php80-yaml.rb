@@ -2,12 +2,17 @@ require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
 class Php80Yaml < AbstractPhp80Extension
   init
-  desc "YAML-1.1 parser and emitter"
+  desc "YAML parser and emitter"
   homepage "https://pecl.php.net/package/yaml"
-  url "https://pecl.php.net/get/yaml-2.0.4.tgz"
-  sha256 "9786b0386e648f12cc18a038358bd57bee4906e350a2e9ab776d6a5f18fc6680"
+  url "https://pecl.php.net/get/yaml-2.2.3.tgz"
+  sha256 "5937eb9722ddf6d64626799cfa024598ff2452ea157992e4e67331a253f90236"
   head "https://github.com/php/pecl-file_formats-yaml.git", :branch => "php7"
   revision PHP_REVISION
+
+  bottle do
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-104"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "55c7d035b67e6791b6f5c33950b4dea677738231f33d0ffdd6dd8d153fb07b00"
+  end
 
 
   depends_on "libyaml"
