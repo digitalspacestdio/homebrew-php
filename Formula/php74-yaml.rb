@@ -11,6 +11,7 @@ class Php74Yaml < AbstractPhp74Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-106"
+    sha256 cellar: :any_skip_relocation, monterey:     "4fffe7bedbf87024d404bf0729c80d378133060ceff00c69aa7fee3172830418"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "f4e931ada94b10c7fe851d0412d726dfeadca274866c45169b04cbc1061d2c6e"
   end
 

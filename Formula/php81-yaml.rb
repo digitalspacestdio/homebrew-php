@@ -11,6 +11,7 @@ class Php81Yaml < AbstractPhp81Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.29-106"
+    sha256 cellar: :any_skip_relocation, monterey:     "9b96e888893a396cc252aa8dbc2e9ba38a999af297c4ae37204eebc828f7fa5a"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "28a7474f91300fdb6d4959666851d35cd12076823d02a73cedc8071cf7ea7624"
   end
 
