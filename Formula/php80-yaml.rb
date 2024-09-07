@@ -11,8 +11,9 @@ class Php80Yaml < AbstractPhp80Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-104"
-    sha256 cellar: :any_skip_relocation, monterey:     "b661c45f572c56fb81e0d040da4daad98b27202087555d0755529297d8d78040"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "55c7d035b67e6791b6f5c33950b4dea677738231f33d0ffdd6dd8d153fb07b00"
+    sha256 cellar: :any_skip_relocation, monterey:      "b661c45f572c56fb81e0d040da4daad98b27202087555d0755529297d8d78040"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55c7d035b67e6791b6f5c33950b4dea677738231f33d0ffdd6dd8d153fb07b00"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "ecf1a3e0a489f806b477dfeaa8cb49ed938dd65910e3a15bb20febe0aa4b9758"
   end
 
 

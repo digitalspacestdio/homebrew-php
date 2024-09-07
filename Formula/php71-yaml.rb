@@ -11,8 +11,9 @@ class Php71Yaml < AbstractPhp71Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-103"
-    sha256 cellar: :any_skip_relocation, monterey:     "ccd5344fb5df765c1ac68be214a0a4ea4dadba1ffd9d8612f0bafaa55a5b88ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ccf04ff07b14e206d1e7cf933f91ea112fe2d4b031538f79a59c89fb037a1e32"
+    sha256 cellar: :any_skip_relocation, monterey:      "ccd5344fb5df765c1ac68be214a0a4ea4dadba1ffd9d8612f0bafaa55a5b88ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ccf04ff07b14e206d1e7cf933f91ea112fe2d4b031538f79a59c89fb037a1e32"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "20274ee459e5b655a01d301cdd2ec0fa73016b20b8659e0d8b72d3a393c93132"
   end
 
   depends_on "libyaml"
