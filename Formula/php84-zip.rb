@@ -11,6 +11,7 @@ class Php84Zip < AbstractPhp84Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.0beta5-100"
+    sha256 cellar: :any_skip_relocation, ventura:      "3071e42a5dda428f21ef38d6ecc90c74dd3f48b9b0071b816e6a37766329a112"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "fb16553492db3b5c7f4d72d0be12a38ceff90e75c53b9355ec483b4e600388d8"
   end
 
