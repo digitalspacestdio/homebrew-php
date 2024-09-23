@@ -9,6 +9,8 @@ class Php80Rdkafka < AbstractPhp80Extension
   head "https://github.com/arnaud-lb/php-rdkafka.git"
   revision PHP_REVISION
 
+  depends_on "pcre2"
+
   resource "librdkafka" do
     url "https://github.com/confluentinc/librdkafka/archive/refs/tags/v2.5.3.tar.gz"
     sha256 "eaa1213fdddf9c43e28834d9a832d9dd732377d35121e42f875966305f52b8ff"
