@@ -17,6 +17,7 @@ class Php83Rdkafka < AbstractPhp83Extension
   def install
     resource("librdkafka").stage do
       ENV.append "CFLAGS", "-Wno-incompatible-pointer-types"
+      ENV.append "CFLAGS", "-Wno-deprecated-declarations"
       args = []
       args << "--prefix=#{prefix}/librdkafka"
       args << "--mandir=#{man}"
