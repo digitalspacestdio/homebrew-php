@@ -14,6 +14,7 @@ class Php84Mongodb < AbstractPhp84Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "901f39f7eb3fec22adf49fb4c292aca92a6b1b6f87fc7cde1b9e0d5c6085bfa6"
     sha256 cellar: :any_skip_relocation, ventura:        "d37fc4c5ff89292f54afaf3f46003b1c63f591d999b5588b5c1e80436c5442de"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b79abc3a90aabad6ff5b4d52fab0fddb2c888cf59cf389e6aafd228e68e1964a"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "cc14777d298fe18f403c6aebf6b48845ce1ce62ddce3eeb768a6ac2b26645a69"
   end
 
   depends_on "openssl"

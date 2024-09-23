@@ -14,6 +14,7 @@ class Php84Zip < AbstractPhp84Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8b308d4c1dac6a36532b079b21a448fce89c3015bc728e15779ad45d0ed089ee"
     sha256 cellar: :any_skip_relocation, ventura:        "3071e42a5dda428f21ef38d6ecc90c74dd3f48b9b0071b816e6a37766329a112"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb16553492db3b5c7f4d72d0be12a38ceff90e75c53b9355ec483b4e600388d8"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "cf7a22b5db1da1901350ae4ce9f4f3f87d6c5c016ae6f04df03475a3e9af04a1"
   end
 
   depends_on "libzip"

@@ -14,6 +14,7 @@ class Php84Rdkafka < AbstractPhp84Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "89c0e5db2c741bc722fa528f2f5a687629b61a4322f7bb0c2917086bada21f7b"
     sha256 cellar: :any_skip_relocation, ventura:        "5a13943a9ad59e03491d0263e295dbd7b9b6bbcfb9a536b1ed4a84f65019d514"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5da4262a13b4222dcbb9d5caaff2099c65574ebd8deb012f821dabed6f2f1f5e"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "4deddf5833de9703aad8ab7e0d201593eae94bd1b5034c4df2a64e09df8b76e1"
   end
 
   depends_on "pcre2"
