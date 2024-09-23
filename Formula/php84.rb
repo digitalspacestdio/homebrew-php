@@ -4,14 +4,14 @@ class Php84 < AbstractPhp
   include AbstractPhpVersion::Php84Defs
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.0beta3-100"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0fbc9bec0998f668c3ed47e9cefe80c347f0503dcc6b95017ce3e404859b959d"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.0beta5-100"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "40668812c2ed5d9325face93c61bd1a77fd16fc6dc1d9b405694462abd18cb8c"
   end
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
   desc "PHP " + PHP_VERSION
   version PHP_VERSION
   revision PHP_REVISION
-  head "https://github.com/php/php-src.git", branch: "php-8.4.0alpha2"
+  head "https://github.com/php/php-src.git", branch: "php-8.4.0beta5"
   
   url PHP_SRC_TARBALL
   sha256 PHP_CHECKSUM[:sha256]
@@ -44,8 +44,8 @@ class Php84 < AbstractPhp
 
   if OS.mac?
       patch do
-        url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php74/macos.patch"
-        sha256 "53de4079666daabac28358b8a025e3c60103e5b1230c66860c8e0b7414c0fec1"
+        url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php84/macos.patch"
+        sha256 "e8a7f6350103f6aa0dbe9ba6871e813973cfeb489f3594ef46271b0487ac3f65"
       end
   end
 

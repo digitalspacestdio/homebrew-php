@@ -10,8 +10,8 @@ class Php84Sodium < AbstractPhp84Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.0beta3-100"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "fe900118d7b69129a355e9be62331618b3cdaaed464627357f01635a35803f62"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.0beta5-100"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cdfbd3f3aad610395ba966e744179e19a50a302789143816814c8e923e0c7f28"
   end
 
   depends_on "pkg-config" => :build

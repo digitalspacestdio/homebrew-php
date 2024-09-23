@@ -4,16 +4,14 @@ class Php84Apcu < AbstractPhp84Extension
   init
   desc "APC User Cache"
   homepage "https://github.com/krakjoe/apcu"
-  url "https://github.com/krakjoe/apcu/archive/v5.1.23.tar.gz"
-  sha256 "1adcb23bb04d631ee410529a40050cdd22afa9afb21063aa38f7b423f8a8335b"
-  url "https://github.com/krakjoe/apcu/archive/v5.1.23.tar.gz"
-  sha256 "1adcb23bb04d631ee410529a40050cdd22afa9afb21063aa38f7b423f8a8335b"
+  url "https://github.com/krakjoe/apcu/archive/v5.1.24.tar.gz"
+  sha256 "8b16f76dba51ec14263212ee1f618b06e132246a98ce3ed6961104585b773c94"
   head "https://github.com/krakjoe/apcu.git", :branch => "master"
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.0beta3-100"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "32d5e5249ce122e94aaa8b19befea64c585b892710caca3bc1070b8bc69f4272"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.0beta5-100"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2117da839e2103ba41b83fd7c98d97e025d691c6d2e0569b8717ee22e23e75d8"
   end
 
   depends_on "pcre2"

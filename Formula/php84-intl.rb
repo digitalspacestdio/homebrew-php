@@ -11,8 +11,8 @@ class Php84Intl < AbstractPhp84Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.0beta3-100"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "10fa5304e8091b4762055ab5a8238699a9b3838e2b896a472a5f759e3c6bb8d9"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.0beta5-100"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "838e3f8fd83f84a4dcf7755ce7b366b3483577686018788d6958d78729f8db1e"
   end
 
   depends_on "digitalspacestdio/common/icu4c@74.2"
