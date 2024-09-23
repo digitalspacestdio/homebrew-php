@@ -28,6 +28,10 @@ class Php70Rdkafka < AbstractPhp70Extension
       system "make"
       system "make", "install"
     end
+
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
+
     Dir.chdir "rdkafka-#{version}" unless build.head?
     safe_phpize
     system "./configure", "--prefix=#{prefix}", "--with-rdkafka=#{prefix}/librdkafka", phpconfig
