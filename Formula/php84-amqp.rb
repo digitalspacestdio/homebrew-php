@@ -11,8 +11,9 @@ class Php84Amqp < AbstractPhp84Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.0beta5-100"
-    sha256 cellar: :any_skip_relocation, ventura:      "c1c8811209ffbea787356767e50b7892867a23b6a844be509ba760a25ebd3286"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c93081b1c34360c49434dcb5b8dc30dfd6ffdd8f5cb935f7599803938e7f4ad7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "98ddd27c7a826b20239d9eda5ab49a0ccea44cabd98bae46483bba567a82e797"
+    sha256 cellar: :any_skip_relocation, ventura:        "c1c8811209ffbea787356767e50b7892867a23b6a844be509ba760a25ebd3286"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c93081b1c34360c49434dcb5b8dc30dfd6ffdd8f5cb935f7599803938e7f4ad7"
   end
 
   depends_on "rabbitmq-c"
