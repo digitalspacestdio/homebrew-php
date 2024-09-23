@@ -55,6 +55,7 @@ The common formula will install php and next extensions:
 * `mongodb`
 * `msmtp`
 * `opcache`
+* `pdo-mysql`
 * `pdo-pgsql`
 * `redis`
 * `sodium`
@@ -62,6 +63,7 @@ The common formula will install php and next extensions:
 * `xdebug`
 * `zip`
 * `yaml`
+* `xdebug`
 
 ### Verify version by php wrapper
 ```sh
