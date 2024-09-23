@@ -1,6 +1,22 @@
 # PHP Homebrew Tap (Linux / macOS / Windows)
 
-A **Homebrew** tap repository for PHP-related formulas with **MacOS** (`Apple silicon`, `Intel`), **Linux** (`AMD64`, `ARM64`) and **Windows** (`AMD64`) support.
+<p align="center">
+  <a href="https://github.com/shivammathur/homebrew-php/blob/master/LICENSE" title="license">
+    <img alt="LICENSE" src="https://img.shields.io/badge/license-BSD%203-428f7e.svg?logo=open%20source%20initiative&logoColor=white&labelColor=555555">
+  </a>
+  <a href="https://github.com/shivammathur/homebrew-php/tree/master/Formula" title="Formulae for PHP versions">
+    <img alt="PHP Versions Supported" src="https://img.shields.io/badge/php-5.6%20to%208.4.0beta5-777bb3.svg?logo=php&logoColor=white&labelColor=555555">
+  </a>
+</p>
+<p align="center">
+  <img alt="Linux x86_64 Supported" src="https://img.shields.io/badge/Linux-x86__64%20-007DC3?logo=linux&logoColor=555555&labelColor=ffffff"/>
+  <img alt="Linux aarch64 Supported" src="https://img.shields.io/badge/Linux-aarch64%20-007DC3?logo=linux&logoColor=555555&labelColor=ffffff"/>
+  <img alt="macOS Intel Supported" src="https://img.shields.io/badge/macOS-Intel-c0476d?logo=apple&logoColor=555555&labelColor=ffffff"/>
+  <img alt="macOS Apple Silicon Supported" src="https://img.shields.io/badge/macOS-Apple%20Silicon-c0476d?logo=apple&logoColor=555555&labelColor=ffffff"/>
+  <img alt="WSL x86_64 Supported" src="https://img.shields.io/badge/WSL-x86__64%20-007DC3?logo=gnometerminal&logoColor=555555&labelColor=ffffff"/>
+</p>
+
+A **Homebrew** tap repository for PHP-related formulas with **MacOS** (`Apple silicon`, `Intel`), **Linux** (`AMD64`, `ARM64`) and **WSL** (`AMD64`) support.
 
 If you looking for Linux, Nginx, MySQL, PHP (LEMP stack) development environment just review this https://github.com/digitalspacestdio/homebrew-ngdev
 
@@ -20,17 +36,10 @@ MacOs | `arm64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | ye
 Linux | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | TBA
 Linux | `arm64` | no | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | TBA
 
-## Supported Platform and Systems 
-
-* macOS (`x86_64`): `High Sierra` / `Mojave` / `Catalina` / `BigSur` / `Monterey` / `Ventura` / `Sonoma`
-* macOS (`ARM64`): `Monterey` / `Ventura` / `Sonoma`
-* Linux (`ARM64` / `x86_64`): `Debian` Based / `Fedora` / `OpenSUSE`
-* Windows 10/11 (`x86_64`) via WSL2
-
 ## Requirements
-* [Homebrew](https://brew.sh/)
-* `Debian` / `Ubuntu` / `Mint`: `systemtap-sdt-dev` `build-essential`
-* `Fedora` / `CentOS` / `OpenSUSE`: `systemtap-sdt-devel` `gcc-c++` `make` `patch`
+* **[Homebrew](https://brew.sh/)**
+* **Debian** / **Ubuntu** / **Mint**: `systemtap-sdt-dev` `build-essential`
+* **Fedora** / **CentOS** / **OpenSUSE**: `systemtap-sdt-devel` `gcc-c++` `make` `patch`
   
 ## Installation
 
@@ -43,21 +52,23 @@ brew tap digitalspacestdio/php
 ```sh
 brew install php83-common
 ```
-> The common formula will install a main php formula and next extensions: `amqp`
-`apcu`
-`gmp`
-`igbinary`
-`intl`
-`ldap`
-`mongodb`
-`msmtp`
-`opcache`
-`pdo-pgsql`
-`redis`
-`sodium`
-`tidy`
-`xdebug`
-`zip`
+The common formula will install php and next extensions:
+* `amqp`
+* `apcu`
+* `gmp`
+* `igbinary`
+* `intl`
+* `ldap`
+* `mongodb`
+* `msmtp`
+* `opcache`
+* `pdo-pgsql`
+* `redis`
+* `sodium`
+* `tidy`
+* `xdebug`
+* `zip`
+* `yaml`
 
 ### Verify version by php wrapper
 ```sh
