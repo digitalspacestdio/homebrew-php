@@ -16,6 +16,7 @@ class Php73Rdkafka < AbstractPhp73Extension
 
   def install
     resource("librdkafka").stage do
+      ENV.append "CFLAGS", "-Wno-incompatible-pointer-types"
       args = []
       args << "--prefix=#{prefix}/librdkafka"
       args << "--mandir=#{man}"
