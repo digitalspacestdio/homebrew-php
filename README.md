@@ -42,15 +42,8 @@ Linux | `arm64` | no | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes
 * **Fedora** / **CentOS** / **OpenSUSE**: `systemtap-sdt-devel` `gcc-c++` `make` `patch`
   
 ## Installation
-
-### Add required home brew tap
 ```sh
-brew tap digitalspacestdio/php
-```
-
-### Install selected version
-```sh
-brew install php83-common
+brew install digitalspacestdio/php/php83-common
 ```
 The common formula will install php and next extensions:
 * `amqp`
