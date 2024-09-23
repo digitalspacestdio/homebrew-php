@@ -8,6 +8,7 @@ class Php84 < AbstractPhp
     sha256 cellar: :any_skip_relocation, arm64_monterey: "19a5cb228bc945125972563d578ec577ccbad64f7438424c5a594ea978e15c1d"
     sha256 cellar: :any_skip_relocation, ventura:        "479467664cfde238f171d372bfc0d41064ab018eda6ddefcac024d6008f1fe60"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "40668812c2ed5d9325face93c61bd1a77fd16fc6dc1d9b405694462abd18cb8c"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "57a33fcfbc5aeab57c3ebf70df6fd032551e5e75cb18a8a024b1fbb8f2c189ed"
   end
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
   desc "PHP " + PHP_VERSION

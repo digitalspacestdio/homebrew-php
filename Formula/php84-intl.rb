@@ -15,6 +15,7 @@ class Php84Intl < AbstractPhp84Extension
     sha256 cellar: :any_skip_relocation, arm64_monterey: "961648fa4999c133fe330be7eb7ee0b4b46175ec5da87de8e53c45a021e84a15"
     sha256 cellar: :any_skip_relocation, ventura:        "adf8836e673a178b4e7c84af50330e1e0f0273ba5aa79ee5aef4d8329955ad9e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "838e3f8fd83f84a4dcf7755ce7b366b3483577686018788d6958d78729f8db1e"
+    sha256 cellar: :any_skip_relocation, aarch64_linux:  "9113b9e7c5a322e54e4ad24051cb0bd559107c69da25121659653bb6f70acee5"
   end
 
   depends_on "digitalspacestdio/common/icu4c@74.2"
