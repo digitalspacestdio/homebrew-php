@@ -38,7 +38,7 @@ class AbstractPhpCommon < Formula
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-zip"
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-ldap"
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-xdebug"
-    depends_on "digitalspacestdio/php/php#{@@php_version_path}-rdkafka" if @@php_version.start_with?("8.4")
+    # depends_on "digitalspacestdio/php/php#{@@php_version_path}-rdkafka"
     # depends_on "digitalspacestdio/php/php#{@@php_version_path}-ioncubeloader"
 
     # keg_only "this package contains dependency only"
