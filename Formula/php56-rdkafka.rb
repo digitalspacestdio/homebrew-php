@@ -11,6 +11,7 @@ class Php56Rdkafka < AbstractPhp56Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/5.6.40-103"
+    sha256 cellar: :any_skip_relocation, ventura:      "b4944f76f08a77145749e2c975ffff50379ea0a0fcccaceda435ec6e83b59f04"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "595a645639a693b11ef993473addb3310887ec9c7e46f4b89fdb4ea4e0f981b7"
   end
 
