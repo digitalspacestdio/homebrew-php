@@ -11,6 +11,7 @@ class Php82Rdkafka < AbstractPhp82Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.21-106"
+    sha256 cellar: :any_skip_relocation, ventura:      "ece95d6dae730fb066037a87d0f485ec7958d40abe2921cbd018ff7f971c5a63"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "7ead72f2fb8a92492669ee0e8ca92c451b6873e4c1eebcfc8f886b4ea97a4f3e"
   end
 
