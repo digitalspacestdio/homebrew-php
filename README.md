@@ -37,14 +37,27 @@ Linux | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | y
 Linux | `arm64` | no | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | TBA
 
 ## Requirements
-* **[Homebrew](https://brew.sh/)**
+* **macOS** / **Linux**: **[Homebrew](https://brew.sh/)**
+
+## Build Requirements
+* **macOS**: `xcode-select --install`
 * **Debian** / **Ubuntu** / **Mint**: `systemtap-sdt-dev` `build-essential`
 * **Fedora** / **CentOS** / **OpenSUSE**: `systemtap-sdt-devel` `gcc-c++` `make` `patch`
   
 ## Installation
+To install latest release version with common extensions
 ```sh
-brew install digitalspacestdio/php/php83-common
+brew install digitalspacestdio/php/php-common
 ```
+To install specific version  with common extensions
+```sh
+brew install digitalspacestdio/php/php81-common
+```
+To install specific php version without extra extensions
+```sh
+brew install digitalspacestdio/php/php81
+```
+
 The common formula will install php and next extensions:
 * `amqp`
 * `apcu`
