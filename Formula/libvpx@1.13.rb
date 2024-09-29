@@ -1,4 +1,4 @@
-class LibvpxAT13 < Formula
+class LibvpxAT113 < Formula
   desc "VP8/VP9 video codec"
   homepage "https://www.webmproject.org/code/"
   url "https://github.com/webmproject/libvpx/archive/refs/tags/v1.13.1.tar.gz"
