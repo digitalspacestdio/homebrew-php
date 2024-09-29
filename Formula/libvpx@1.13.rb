@@ -8,6 +8,7 @@ class LibvpxAT113 < Formula
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/libvpx@1.13"
+    sha256 cellar: :any_skip_relocation, ventura:       "d1135d8b64d761c12b4e8c3a47f06055e03a6ee14975e6ad42fce4cb3b8ceb4e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "89f29efaa63ca54e3b5bac9a729ce4a083fbeefa5c4f55fc1422f8523149ddc0"
     sha256 cellar: :any_skip_relocation, aarch64_linux: "5fa82de77bfe6c34874ff476cbeede455a3596307602f48f3c07206b5ddfcee4"
   end
