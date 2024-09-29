@@ -11,7 +11,7 @@ class AbstractPhpVersion < Formula
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "5.6".freeze
     PHP_VERSION     = "5.6.40".freeze
-    PHP_REVISION    = 103.freeze
+    PHP_REVISION    = 104.freeze
     PHP_BRANCH      = "PHP-5.6".freeze
     PHP_BRANCH_NUM  = "56".freeze
 

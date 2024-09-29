@@ -60,7 +60,7 @@ class AbstractPhp < Formula
     depends_on "freetype"
     depends_on "jpeg"
     depends_on "libpng"
-    depends_on "libvpx" if @@php_version.start_with?("5.")
+    depends_on "digitalspacestdio/php/libvpx@1.13" if @@php_version.start_with?("5.")
     depends_on "webp" if !@@php_version.start_with?("5.")
     depends_on "unixodbc"
     depends_on "readline"
