@@ -11,6 +11,7 @@ class Php56Apcu < AbstractPhp56Extension
   
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/5.6.40-104"
+    sha256 cellar: :any_skip_relocation, ventura:       "faba6fe22deb218af622011173961d5dace40c64140c6f6cb4a3321a538ae6a2"
     sha256 cellar: :any_skip_relocation, aarch64_linux: "3adbbab97be550ea63dd9d27dae870d5556e860d7780409a870fb3b03e5a7457"
   end
 

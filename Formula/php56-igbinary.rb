@@ -10,6 +10,7 @@ class Php56Igbinary < AbstractPhp56Extension
   revision PHP_REVISION
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/5.6.40-104"
+    sha256 cellar: :any_skip_relocation, ventura:       "ed43e30e0dedf1a9775a0065d4b9281548946a6b1c5fbd4f38e3d6c7a721d500"
     sha256 cellar: :any_skip_relocation, aarch64_linux: "a6ed24b8075a29b0628f5a6e6f997ba82e493031acbc5e5d8b3a47939bd09417"
   end
 

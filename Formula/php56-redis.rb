@@ -10,6 +10,7 @@ class Php56Redis < AbstractPhp56Extension
   revision PHP_REVISION
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/5.6.40-104"
+    sha256 cellar: :any_skip_relocation, ventura:       "5d272568c243de1c64a2410dcf40daaf3bacff21b9651f6815757f8b9be38832"
     sha256 cellar: :any_skip_relocation, aarch64_linux: "ed84bdca1cb045d9e0f5c45294770ca5fb2ec58d19c13cc6f8f5ad9b1fcfbd9b"
   end
 

@@ -10,6 +10,7 @@ class Php56Xdebug < AbstractPhp56Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/5.6.40-104"
+    sha256 cellar: :any_skip_relocation, ventura:       "6d1b7c157dba35dc0804f1e1fe70b6d38ce9eb7a9b1b46e6a5331f2992fedb98"
     sha256 cellar: :any_skip_relocation, aarch64_linux: "f208361914bbae836706d1c949a2e9461ad49e2f3e23376715800d6349c735cb"
   end
   #depends_on :arch => :x86_64 if OS.linux?
