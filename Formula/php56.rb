@@ -44,6 +44,9 @@ class Php56 < AbstractPhp
     sha256 "92d9746508a98b5871a4645b59aa95a364aae63705aa9e184da829eedb6c74a9"
   end
 
+  # https://bugs.php.net/bug.php?id=70015
+  patch :DATA
+
   service do
     name macos: "php#{PHP_VERSION_MAJOR}-fpm", linux: "php#{PHP_VERSION_MAJOR}-fpm"
     run [opt_sbin/"php-fpm", "--nodaemonize", "--fpm-config", "#{etc}/php/#{PHP_VERSION_MAJOR}/php-fpm.conf"]
@@ -54,3 +57,20 @@ class Php56 < AbstractPhp
     error_log_path var/"log/service-php-#{PHP_VERSION_MAJOR}-error.log"
   end
 end
+
+__END__
+diff --git a/Zend/zend_multiply.h b/Zend/zend_multiply.h
+index 078cb439d76c0..e40cb463281bf 100644
+--- a/Zend/zend_multiply.h
++++ b/Zend/zend_multiply.h
+@@ -75,8 +75,8 @@
+ 	__asm__("mul %0, %2, %3\n"										\
+ 		"smulh %1, %2, %3\n"										\
+ 		"sub %1, %1, %0, asr #63\n"									\
+-			: "=X"(__tmpvar), "=X"(usedval)							\
+-			: "X"(a), "X"(b));										\
++			: "=&r"(__tmpvar), "=&r"(usedval)						\
++			: "r"(a), "r"(b));										\
+ 	if (usedval) (dval) = (double) (a) * (double) (b);				\
+ 	else (lval) = __tmpvar;											\
+ } while (0)
