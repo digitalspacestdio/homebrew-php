@@ -14,7 +14,7 @@ class Php56Xdebug < AbstractPhp56Extension
     sha256 cellar: :any_skip_relocation, monterey:       "79ad6dc58c3f10fc100f5fee9fcc8049ad7ead0f4f777ae151067915f6e126b1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a90ee86d1875280d7e516ab9a4206c502e9f28221b00f3b61bfc08f59d78517"
   end
-  depends_on :arch => :x86_64 if OS.linux?
+  #depends_on :arch => :x86_64 if OS.linux?
   revision PHP_REVISION
   
   resource "linux_compiled" do

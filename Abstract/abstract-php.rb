@@ -412,7 +412,7 @@ INFO
       args << "--with-freetype-dir=#{Formula["freetype"].opt_prefix}"
       args << "--with-jpeg-dir=#{Formula["jpeg"].opt_prefix}"
       args << "--with-png-dir=#{Formula["libpng"].opt_prefix}"
-      args << "--with-vpx-dir=#{Formula['libvpx'].opt_prefix}"
+      args << "--with-vpx-dir=#{Formula['digitalspacestdio/php/libvpx@1.13'].opt_prefix}"
     end
     # END - GD settings 
 
