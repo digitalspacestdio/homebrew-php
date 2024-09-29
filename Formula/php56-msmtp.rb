@@ -10,6 +10,7 @@ class Php56Msmtp < AbstractPhp56Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/5.6.40-104"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "eca4be4bf28dd706cf9bd6ffc8b982a9c7c6945e69196dbee4479a7fb6e84c13"
     sha256 cellar: :any_skip_relocation, ventura:       "f2d06a6478c11c2a6633e919ed0b57cb2342ea9f3af6b59e09d06ce93147cd10"
     sha256 cellar: :any_skip_relocation, aarch64_linux: "780e54cebd5e706f5b05b04d40b4c803f6f02410d2de172222b98be01d0ad263"
   end

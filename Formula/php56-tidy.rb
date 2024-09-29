@@ -11,6 +11,7 @@ class Php56Tidy < AbstractPhp56Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/5.6.40-104"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "59cd70152f292300dc114415969337f1fdd3e1a9093e29c5b74be2ce62353380"
     sha256 cellar: :any_skip_relocation, ventura:       "5e066a0972367916b7e17857c9c76ef30e8e6a671d4e408fa64b5d05f6cf7f8e"
     sha256 cellar: :any_skip_relocation, aarch64_linux: "1bda378e4e99d1d9459fd41eb7ab51d926b051c1de2b918146041175e208b17a"
   end
