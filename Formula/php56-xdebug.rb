@@ -9,10 +9,8 @@ class Php56Xdebug < AbstractPhp56Extension
   head "https://github.com/xdebug/xdebug.git"
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/5.6.40-103"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "19189f4eaebb6caf325ec2aab3a48c5d609d6e19f1345ef4117a94337f8bb1de"
-    sha256 cellar: :any_skip_relocation, monterey:       "79ad6dc58c3f10fc100f5fee9fcc8049ad7ead0f4f777ae151067915f6e126b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a90ee86d1875280d7e516ab9a4206c502e9f28221b00f3b61bfc08f59d78517"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/5.6.40-104"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "f208361914bbae836706d1c949a2e9461ad49e2f3e23376715800d6349c735cb"
   end
   #depends_on :arch => :x86_64 if OS.linux?
   revision PHP_REVISION

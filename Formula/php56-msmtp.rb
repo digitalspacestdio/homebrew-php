@@ -9,10 +9,8 @@ class Php56Msmtp < AbstractPhp56Extension
   revision 1
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/5.6.40-103"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "78bf22d2177aca19f32df50a5e947dd8607f3a1a4bcccc9c5dc4ee509c65123a"
-    sha256 cellar: :any_skip_relocation, monterey:       "aca1fb139e56469baa02bfd636aed2ae3a9018b070b0befa98843a34acf37736"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9bbe862c03389db65968c5effb722e44df80900662187b8e768e1841052a266f"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/5.6.40-104"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "780e54cebd5e706f5b05b04d40b4c803f6f02410d2de172222b98be01d0ad263"
   end
 
   depends_on "msmtp"

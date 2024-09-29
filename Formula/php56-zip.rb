@@ -10,10 +10,8 @@ class Php56Zip < AbstractPhp56Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/5.6.40-103"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "198d1a01ea482167e0fa1d85634db116fc2845915f47a7f826fb587f89f38c03"
-    sha256 cellar: :any_skip_relocation, monterey:       "3b3318fc17c48382e6e960cca2ac395cc0d2608ef8f89f6ffc5aead699ee8748"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "adae559a699f1ef2eacf0ea813ad75070a5d64bbb3f9b876bbe55b2e5603acbf"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/5.6.40-104"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "be54e5b74d9bb7b6bd84919c137983b971381912f8e938a3c58a713965b969ca"
   end
 
   depends_on "zlib"

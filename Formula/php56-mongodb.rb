@@ -11,10 +11,8 @@ class Php56Mongodb < AbstractPhp56Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/5.6.40-103"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cdd01cda4d3f05f731f7c83f638f166f128276c46dfa8042b4e001eeee29488d"
-    sha256 cellar: :any_skip_relocation, monterey:       "2f878c6bc89652e8e34634bf607b710ed46ff17d0baf5c947d5b178bcef53cb8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b4b2acee139b926959408b7cb3d052ba179a0bf4339083753116bdadb55ae6b"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/5.6.40-104"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "65fba3faad4c0c5fc7eb62be9ff376835922ee51970c8e0c12fc23d9601e8873"
   end
 
   depends_on "openssl@1.1"

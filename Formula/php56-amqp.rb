@@ -10,10 +10,8 @@ class Php56Amqp < AbstractPhp56Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/5.6.40-103"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0b86e26c207eba921536eab54d570c0884d289bb8aac7686fb46b97f87860e41"
-    sha256 cellar: :any_skip_relocation, monterey:       "0e95604cc74e31c7c9bcc2e71e8ac43a510c33fddee598e689d36554ca185e2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "852234e5478612bf9fe1015931a4d1af610851203d709318260dd96192fd606e"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/5.6.40-104"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "3892044d9d82cf6f4e1dc8242c0887ac616f3030e658fd40cdd8e9cff68e5647"
   end
 
   depends_on "pkg-config" => :build
