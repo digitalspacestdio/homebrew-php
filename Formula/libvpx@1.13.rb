@@ -6,6 +6,11 @@ class LibvpxAT113 < Formula
   license "BSD-3-Clause"
   head "https://chromium.googlesource.com/webm/libvpx.git", branch: "main"
 
+  bottle do
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/libvpx@1.13"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "5fa82de77bfe6c34874ff476cbeede455a3596307602f48f3c07206b5ddfcee4"
+  end
+
 
   on_intel do
     depends_on "yasm" => :build
