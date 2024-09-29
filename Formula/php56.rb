@@ -74,3 +74,4 @@ index 078cb439d76c0..e40cb463281bf 100644
  	if (usedval) (dval) = (double) (a) * (double) (b);				\
  	else (lval) = __tmpvar;											\
  } while (0)
+ 
