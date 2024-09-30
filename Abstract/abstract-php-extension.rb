@@ -21,6 +21,7 @@ class AbstractPhpExtension < Formula
     @@php_version = php_version
     @@use_gcc = use_gcc
     
+    depends_on "pcre2"
     depends_on "autoconf" => :build if !@@php_version.start_with?("5.")
     depends_on "autoconf@2.69" => :build if @@php_version.start_with?("5.")
     depends_on "pkg-config" => :build

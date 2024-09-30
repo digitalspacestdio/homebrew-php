@@ -3,15 +3,15 @@ require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 class Php74Imagick < AbstractPhp74Extension
   init
   desc "Provides a wrapper to the ImageMagick library."
-  homepage "https://pecl.php.net/package/imagick"
-  url "https://pecl.php.net/get/imagick-3.4.3.tgz"
-  sha256 "1f3c5b5eeaa02800ad22f506cd100e8889a66b2ec937e192eaaa30d74562567c"
+  homepage "https://github.com/Imagick/imagick"
   head "https://github.com/mkoppanen/imagick.git"
+  url "https://github.com/Imagick/imagick/archive/refs/tags/3.7.0.tar.gz"
+  sha256 "aa2e311efb7348350c7332876252720af6fb71210d13268de765bc41f51128f9"
+
   revision PHP_REVISION
 
-
   depends_on "pkg-config" => :build
-  depends_on "imagemagick6"
+  depends_on "digitalspacestdio/common/imagemagick7"
 
   def install
     Dir.chdir "imagick-#{version}" unless build.head?
