@@ -14,14 +14,13 @@ class Php74Imagick < AbstractPhp74Extension
   depends_on "digitalspacestdio/common/imagemagick7"
 
   def install
-    Dir.chdir "imagick-#{version}" unless build.head?
-
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
-                          "--with-imagick=#{Formula["imagemagick6"].opt_prefix}"
+                          "--with-imagick=#{Formula["digitalspacestdio/common/imagemagick7"].opt_prefix}"
     system "make"
     prefix.install "modules/imagick.so"
     write_config_file if build.with? "config-file"
   end
+end
 end
