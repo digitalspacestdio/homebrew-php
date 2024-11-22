@@ -12,6 +12,7 @@ class Php84Xdebug < AbstractPhp84Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.1-106"
+    sha256 cellar: :any_skip_relocation, ventura:      "a2fe12047a13c99eac2bfa94590d21a32afaa739f24bd023a41b06f467301761"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "23e1c96839387f054cc319e17eda249c9e7d7acffa20e1f296ab86f473f11bab"
   end
 

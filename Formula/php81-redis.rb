@@ -10,6 +10,7 @@ class Php81Redis < AbstractPhp81Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-106"
+    sha256 cellar: :any_skip_relocation, ventura:      "a261c526007e24c26fe1c29b22e278dfca16569cfc9f9e57207b14afcd104058"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "6be55db74d54ac85bbd3bc55b1f0e58758f327aa117b6d31af320b1970573d51"
   end
 

@@ -9,6 +9,7 @@ class Php83 < AbstractPhp
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.14-106"
+    sha256 cellar: :any_skip_relocation, ventura:      "0bf31137f6ffcc81386e9fb1f45635077d2e6b905f42ca3b5879b55b3d1e3ea2"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ec9031b3f7ec515b535c822a582b85b44f724738579cb25d5e703cdc0fb6719d"
   end
   

@@ -12,6 +12,7 @@ class Php81Mongodb < AbstractPhp81Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-106"
+    sha256 cellar: :any_skip_relocation, ventura:      "6ee03b35ed25e1a2bf430185d8a106bc1876aeda79a658e13a26b5b1dafebeda"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "b815a5fd2c0a9b3213786fbe47884d12dbfe4539e29e944059d3de7423e2b469"
   end
 

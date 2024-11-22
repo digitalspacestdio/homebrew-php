@@ -11,6 +11,7 @@ class Php81Amqp < AbstractPhp81Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-106"
+    sha256 cellar: :any_skip_relocation, ventura:      "1b14e42036c690cdb6f53f2746f7ec4fff05c892401e366cf25d4c265e87f742"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "3ab76581999b6f03a17b208ac76a49262e75b99de9b1b65884ed17961fddc6a6"
   end
 

@@ -10,6 +10,7 @@ class Php81Msmtp < AbstractPhp81Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-106"
+    sha256 cellar: :any_skip_relocation, ventura:      "03d9d8609f6e25c045d4e939bfff3227617019d14918210ef4d3a5e7e2c5346a"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "cacd7bd6003cafaf1345d27583da85a8df9c437614db9f285dc0d271c76d1b2a"
   end
 

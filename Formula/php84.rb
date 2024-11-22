@@ -5,6 +5,7 @@ class Php84 < AbstractPhp
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.1-106"
+    sha256 cellar: :any_skip_relocation, ventura:      "effc15018455c5ab979b3502bcf73f15a36d34ca8d54fef8f00b9afd9c67cb03"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "5aac32e8059e3942df1c38451be56f6a99424a11f579d568fff1a6b0f29c578b"
   end
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM

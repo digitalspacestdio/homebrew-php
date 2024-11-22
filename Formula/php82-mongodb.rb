@@ -11,6 +11,7 @@ class Php82Mongodb < AbstractPhp82Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.26-106"
+    sha256 cellar: :any_skip_relocation, ventura:      "609745e4ee4f7eec03cd3800aec7927060adb6946a1b0c4137800b03b8671cb9"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "2cafde464e89e8b662587f5e71982594e5c5763dc5aefceb21ad592881991010"
   end
 

@@ -11,6 +11,7 @@ class Php84Tidy < AbstractPhp84Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.1-106"
+    sha256 cellar: :any_skip_relocation, ventura:      "4ed83aa5f1db140f561e98d18228cfa7954b450481787b76ef9dae5895bbcd16"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "b22e4edd4ec991dec327ee1d70292c0cba0642764e4c9ab815d87d86154206ed"
   end
 

@@ -12,6 +12,7 @@ class Php82Xdebug < AbstractPhp82Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.26-106"
+    sha256 cellar: :any_skip_relocation, ventura:      "599ea29ea592137954e7e575dd5bb5387da199e6abd6c3541fc7cc697f586e31"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "f360d7b2cc9c8e84e57959bc7c61ff54961810fdf96d687f2f895163657c4413"
   end
 
