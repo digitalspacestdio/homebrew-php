@@ -4,11 +4,8 @@ class Php84 < AbstractPhp
   include AbstractPhpVersion::Php84Defs
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.0beta5-100"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "19a5cb228bc945125972563d578ec577ccbad64f7438424c5a594ea978e15c1d"
-    sha256 cellar: :any_skip_relocation, ventura:        "479467664cfde238f171d372bfc0d41064ab018eda6ddefcac024d6008f1fe60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "40668812c2ed5d9325face93c61bd1a77fd16fc6dc1d9b405694462abd18cb8c"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "57a33fcfbc5aeab57c3ebf70df6fd032551e5e75cb18a8a024b1fbb8f2c189ed"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.1-106"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5aac32e8059e3942df1c38451be56f6a99424a11f579d568fff1a6b0f29c578b"
   end
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
   desc "PHP " + PHP_VERSION

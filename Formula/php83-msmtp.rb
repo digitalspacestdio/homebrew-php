@@ -9,11 +9,8 @@ class Php83Msmtp < AbstractPhp83Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.9-106"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3542bdfb1201437b36dedc613af12e9f43d5df93461718166cf4ba8ebc525f9c"
-    sha256 cellar: :any_skip_relocation, monterey:       "2109c85fdd7a01e536af758b2465aba248d4adc48fc88914aa005655e04f3efe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f9e66a9a5b2a4f73a44876876e2a4a4c4104063ff19c91f8683b2852278defc"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "abf43a7a312ff446d877c0031e999dff16af42bdd2deb7d4fa16bf3d09631c68"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.14-106"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "de8c6ead0d637c12322453960c8d665625a992b818fc6f9a3ee9e9a2c649b755"
   end
 
   depends_on "msmtp"

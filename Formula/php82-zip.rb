@@ -10,11 +10,8 @@ class Php82Zip < AbstractPhp82Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.21-106"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e07fcbdd5ab67193f0fd3aa6d9af030ab47ca64dd4e13c36fd97e7c4a4feadee"
-    sha256 cellar: :any_skip_relocation, monterey:       "479643ea859c355ace41ad8c5c8d384150803ff5356067ff5c1746e8db23ba42"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "467c282475c82be426f4b3c5e5d5a546f1e814c22f6596824e819a0ecbbb6375"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "0f70d8a99a1904ab7b2168dcc9e1d97b496061e6bbf81b218a193b7fd2adca86"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.26-106"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "57554dd77b9c3fdf55c0d8b785b6eb1ba7ae7cff92ad6ea596806a56eef1170b"
   end
 
   depends_on "libzip"
