@@ -23,7 +23,7 @@ do
 # PHP_BRANCH_NUM=$(echo $PHP_VERSION | awk -F. '{ print $1 $2 }')
 # PHP_REVISION=$(bash -c 'echo $PHP_REVISION_'$PHP_BRANCH_NUM)
 
-PHP_VERSION=$(curl -L --silent https://phpreleases.com/api/releases/5.6 | jq '(.[0].major|tostring) + "." + (.[0].minor|tostring) + "." + (.[0].release|tostring)')
+PHP_VERSION=$(curl -L --silent "https://phpreleases.com/api/releases/$VERSION" | jq '(.[0].major|tostring) + "." + (.[0].minor|tostring) + "." + (.[0].release|tostring)' --raw-output)
 PHP_VERSION_MINOR=$(echo $PHP_VERSION | awk -F. '{ print $1 "." $2 }')
 PHP_TARGZ_FILENAME=$(echo ${RELEASES} | jq -r '.source[] | select(.filename | contains("tar.bz2")) | .filename')
 PHP_TARGZ_SHA256=$(curl -s -L "https://github.com/php/php-src/archive/refs/tags/php-${PHP_VERSION}.tar.gz" | sha256sum | awk '{ print $1 }')
