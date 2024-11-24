@@ -16,7 +16,6 @@ class Php80 < AbstractPhp
   end
 
   url PHP_SRC_URL
-  mirror PHP_SRC_URL_MIRROR
   sha256 PHP_CHECKSUM[:sha256]
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
   keg_only :versioned_formula

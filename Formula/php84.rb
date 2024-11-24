@@ -15,7 +15,6 @@ class Php84 < AbstractPhp
   head "https://github.com/php/php-src.git", branch: "php-8.4.0beta5"
   
   url PHP_SRC_URL
-  mirror PHP_SRC_URL_MIRROR
   sha256 PHP_CHECKSUM[:sha256]
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
   keg_only :versioned_formula
