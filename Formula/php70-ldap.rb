@@ -7,7 +7,7 @@ class Php70Ldap < AbstractPhp70Extension
   revision PHP_REVISION
 
 
-  url PHP_SRC_TARBALL
+  url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do

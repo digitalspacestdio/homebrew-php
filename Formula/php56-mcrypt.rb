@@ -4,7 +4,7 @@ class Php56Mcrypt < AbstractPhp56Extension
   init
   desc "Interface to the mcrypt library"
   homepage "http://php.net/manual/en/book.mcrypt.php"
-  url PHP_SRC_TARBALL
+  url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
   revision PHP_REVISION
 

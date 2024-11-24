@@ -6,7 +6,7 @@ class Php80Sodium < AbstractPhp80Extension
   homepage "https://php.net/manual/en/book.sodium.php"
   revision PHP_REVISION
 
-  url PHP_SRC_TARBALL
+  url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do

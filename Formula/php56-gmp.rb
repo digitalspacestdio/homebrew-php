@@ -4,7 +4,7 @@ class Php56Gmp < AbstractPhp56Extension
   init
   desc "GMP core php extension"
   homepage "http://php.net/manual/en/book.gmp.php"
-  url PHP_SRC_TARBALL
+  url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
   revision PHP_REVISION
 

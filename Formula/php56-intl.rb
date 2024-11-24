@@ -4,7 +4,7 @@ class Php56Intl < AbstractPhp56Extension
   init
   desc "Wrapper for the ICU library"
   homepage "https://php.net/manual/en/book.intl.php"
-  url PHP_SRC_TARBALL
+  url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
   revision PHP_REVISION
 

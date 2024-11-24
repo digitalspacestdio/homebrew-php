@@ -6,7 +6,7 @@ class Php70Opcache < AbstractPhp70Extension
   homepage "https://php.net/manual/en/book.opcache.php"
   revision PHP_REVISION
 
-  url PHP_SRC_TARBALL
+  url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do

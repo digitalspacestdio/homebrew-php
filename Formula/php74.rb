@@ -30,7 +30,7 @@ class Php74 < AbstractPhp
   depends_on "oniguruma"
   depends_on "libjpeg"
 
-  url PHP_SRC_TARBALL
+  url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
 
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
