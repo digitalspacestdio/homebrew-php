@@ -8,14 +8,7 @@ class Php72Yaml < AbstractPhp72Extension
   sha256 "9786b0386e648f12cc18a038358bd57bee4906e350a2e9ab776d6a5f18fc6680"
   head "https://github.com/php/pecl-file_formats-yaml.git", :branch => "php7"
   revision PHP_REVISION
-
-  bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-103"
-    sha256 cellar: :any_skip_relocation, monterey:     "7256206989cb37fe95885915a29bdf0562e2648ae34fb384214673f1c813d04f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b71a06957fe6a22b0c151f8a30f8604a37b9ec59dd731802337bccfe8aad38f5"
-  end
-
-
+  
   depends_on "libyaml"
 
   def install

@@ -9,12 +9,6 @@ class Php56Yaml < AbstractPhp56Extension
   head "https://github.com/php/pecl-file_formats-yaml.git"
   revision PHP_REVISION
 
-  bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/5.6.40-103"
-    sha256 cellar: :any_skip_relocation, monterey:     "28300be8722466fa30175b1f126c7972941fa32a28d504c1428213f6d916b0a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b6f3dab9b29ba759f2b8a79ee67ee0c944ddfa5c8ef034bbc806bb8feb7370f7"
-  end
-
   depends_on "libyaml"
 
   def install
