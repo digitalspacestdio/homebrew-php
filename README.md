@@ -5,7 +5,7 @@
     <img alt="LICENSE" src="https://img.shields.io/badge/license-BSD%203-428f7e.svg?logo=open%20source%20initiative&logoColor=white&labelColor=555555">
   </a>
   <a href="https://github.com/shivammathur/homebrew-php/tree/master/Formula" title="Formulae for PHP versions">
-    <img alt="PHP Versions Supported" src="https://img.shields.io/badge/php-5.6%20to%208.4.0beta5-777bb3.svg?logo=php&logoColor=white&labelColor=555555">
+    <img alt="PHP Versions Supported" src="https://img.shields.io/badge/php-5.6%20to%208.4-777bb3.svg?logo=php&logoColor=white&labelColor=555555">
   </a>
 </p>
 <p align="center">
@@ -23,18 +23,18 @@ If you looking for Linux, Nginx, MySQL, PHP (LEMP stack) development environment
 # Support Matrix
 Os | Arch | 5.6 | 7.0 | 7.1 | 7.2 | 7.3 | 7.4 | 8.0 | 8.1 | 8.2 | 8.3 | 8.4
 --- | --- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-MacOs | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | TBA
-MacOs | `arm64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | TBA
-Linux | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | TBA
-Linux | `arm64` | no | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | TBA
+MacOs | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | yes
+MacOs | `arm64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | yes
+Linux | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | yes
+Linux | `arm64` | no | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | yes
 
 # Bottle Matrix
 Os | Arch | 5.6 | 7.0 | 7.1 | 7.2 | 7.3 | 7.4 | 8.0 | 8.1 | 8.2 | 8.3 | 8.4
 --- | --- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-MacOs | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | TBA
-MacOs | `arm64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | TBA
-Linux | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | TBA
-Linux | `arm64` | no | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | TBA
+MacOs | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | yes
+MacOs | `arm64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | yes
+Linux | `x86_64` | yes | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | yes
+Linux | `arm64` | no | yes  | yes  | yes  | yes  | yes  | yes  | yes | yes | yes | yes
 
 ## Requirements
 * **macOS** / **Linux**: **[Homebrew](https://brew.sh/)**
