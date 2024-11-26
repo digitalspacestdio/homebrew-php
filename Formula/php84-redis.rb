@@ -11,8 +11,9 @@ class Php84Redis < AbstractPhp84Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.1-106"
-    sha256 cellar: :any_skip_relocation, ventura:      "0311787838185cdcbe268641a218942f296b3589bc5880d08892053dca0be9c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "834132d92cc8f1b6dd024a5e0b60f08dd16405de915836a31852c1433579a569"
+    sha256 cellar: :any_skip_relocation, ventura:       "0311787838185cdcbe268641a218942f296b3589bc5880d08892053dca0be9c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "834132d92cc8f1b6dd024a5e0b60f08dd16405de915836a31852c1433579a569"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "bf089f57f5e42405da8d7989a9d7de4128fabe79cc2347e5e5c1375b6b723a67"
   end
 
   depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-igbinary"

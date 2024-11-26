@@ -12,8 +12,9 @@ class Php82Intl < AbstractPhp82Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.26-106"
-    sha256 cellar: :any_skip_relocation, ventura:      "2383b0d4d1e60fe85062756f07aefa359e2fe0ef1d6501039a3cba872e172c10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d1e654dbec6b3687935aea221a11881899cdd57d5657798596ae2ff35b71133a"
+    sha256 cellar: :any_skip_relocation, ventura:       "2383b0d4d1e60fe85062756f07aefa359e2fe0ef1d6501039a3cba872e172c10"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1e654dbec6b3687935aea221a11881899cdd57d5657798596ae2ff35b71133a"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "6b618a9820ba14b8ebc91e7a15bc8d41594ee9c34e1a60a77e6568d82719e194"
   end
 
   depends_on "digitalspacestdio/common/icu4c@74.2"

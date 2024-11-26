@@ -12,8 +12,9 @@ class Php81Xdebug < AbstractPhp81Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-106"
-    sha256 cellar: :any_skip_relocation, ventura:      "29aff04e2941ef5eed5a9ef0eb2e000cfe6203da248b667f0c0239d50381489d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4114343b2d256ab07773340aa781a042ee6bba1e506aa4cda7783cad2482ad58"
+    sha256 cellar: :any_skip_relocation, ventura:       "29aff04e2941ef5eed5a9ef0eb2e000cfe6203da248b667f0c0239d50381489d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4114343b2d256ab07773340aa781a042ee6bba1e506aa4cda7783cad2482ad58"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "b549dc0f7f81060e9679f8b43f8e2169d25c12b7d66dfc6c60373e040c9f1b5d"
   end
 
   def extension_type

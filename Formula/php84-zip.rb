@@ -11,8 +11,9 @@ class Php84Zip < AbstractPhp84Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.1-106"
-    sha256 cellar: :any_skip_relocation, ventura:      "6c00ef1c3064738cf0a782fddacf9ad22f1deec35e1214d0fa3b504b1bb24991"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "783b817270d0f706e457dfd1c0b80d76835f45c5c521f4dbdcc3e92087dc841a"
+    sha256 cellar: :any_skip_relocation, ventura:       "6c00ef1c3064738cf0a782fddacf9ad22f1deec35e1214d0fa3b504b1bb24991"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "783b817270d0f706e457dfd1c0b80d76835f45c5c521f4dbdcc3e92087dc841a"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "943d8771b633351204461e6530ba580607cd1c9c734dc21c6e9b6dab6a2c7937"
   end
 
   depends_on "libzip"
