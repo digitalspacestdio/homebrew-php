@@ -10,11 +10,8 @@ class Php84Redis < AbstractPhp84Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.0beta5-100"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "76b2fe8f7366f60dd5eb653ac74d93bf8080263a299ff232230b10ab6fc8e6bc"
-    sha256 cellar: :any_skip_relocation, ventura:        "01d8ce37aee3656a052badb65c1608f00ec47786276ea02ec6a47f37aa871b4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "38225f3403cef20a7c6fd7058ee8077419e1bd7250b35ff8e9f10d9354e31d92"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "4540b3a28b50abc9b9cbbeb8671604291d3219a6dc9997b5b9986192c4525afd"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.1-106"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "deae322a1ba562f518c49f4d3376858043a2fdd31ad73934689836bb5204851e"
   end
 
   depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-igbinary"

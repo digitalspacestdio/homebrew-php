@@ -7,15 +7,15 @@ class Php83Gmp < AbstractPhp83Extension
   revision PHP_REVISION
 
 
-  url PHP_SRC_TARBALL
+  url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.9-106"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e911998530f90fa7c2c29a9489c2c456eb8d949d55e4cac17efcf87149799ca0"
-    sha256 cellar: :any_skip_relocation, monterey:       "5e42efe0437da92eb724749f86e0f486e04a34c88be9ce36b1e829663d949802"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f06890b0193b8e55ba7bea341e50fce93888bb13ea9cf07fd86702daabb02c98"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "ea096fcc98b8799e4c0458ee6ba97a58387ef0c0a9b088a0ace8a432b42370df"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.14-106"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8d4c68db8263c6dfe8295eda3f11582737eab8800c8efb89610994967ee71d0b"
+    sha256 cellar: :any_skip_relocation, ventura:       "539759024bf95b21bab8fb30b4af701e03c0b7f1eb704b012dd6b18461254196"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4a5a41d5478bdd7af818414711b62bf34a7ccecc5a31f18e6d6307654bd90b3"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "4a297b6882b93b3765ea89dcd3458cb20fa1afc856e876d7e28bc12cf424d84e"
   end
 
   depends_on "gmp"

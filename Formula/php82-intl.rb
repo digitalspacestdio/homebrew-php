@@ -7,15 +7,15 @@ class Php82Intl < AbstractPhp82Extension
   revision PHP_REVISION
 
 
-  url PHP_SRC_TARBALL
+  url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.21-106"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a7c2b64984ff29e4d1c7a75bc5ba1bbd6976fd6364d66359a2ff887b940bcb68"
-    sha256 cellar: :any_skip_relocation, monterey:       "25e3b36651bf03cd0396a9e1e2587b48b4f7c548f82daa4c590c46096642824b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "416f89b22d974814bab10d80acb7d7a8a03c397269ba0e66353725d00f416800"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "8eea1825fb34846881ecf0c4984a8bcd60bef60faa6efb1611a819b4fc2046eb"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.26-106"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fa1da701e9608a2f14745f86344f69bc1da9edb9f1ed529782dc36a1b272eb97"
+    sha256 cellar: :any_skip_relocation, ventura:       "2383b0d4d1e60fe85062756f07aefa359e2fe0ef1d6501039a3cba872e172c10"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1e654dbec6b3687935aea221a11881899cdd57d5657798596ae2ff35b71133a"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "6b618a9820ba14b8ebc91e7a15bc8d41594ee9c34e1a60a77e6568d82719e194"
   end
 
   depends_on "digitalspacestdio/common/icu4c@74.2"

@@ -15,7 +15,7 @@ class Php73 < AbstractPhp
     sha256 cellar: :any_skip_relocation, aarch64_linux:  "0bf43504d29753bdc704bfcb2fdc3065d24cbbce80c5bc80d2cd0ac4e6969290"
   end
   
-  url PHP_SRC_TARBALL
+  url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
   keg_only :versioned_formula

@@ -11,11 +11,11 @@ class Php82Igbinary < AbstractPhp82Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.21-106"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c724c74f6fbf5f6b6c3c311c228e8c0a890b66ed79d760f3d9b837d3fcd92be0"
-    sha256 cellar: :any_skip_relocation, monterey:       "56258b90f839330c710b761d0e26da6f4ddcedd874845bc41988cc6761e005af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "086790976ae58db6bb56d2ff9eebe3e48463db5419a12ec37b50e303b35a2b99"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "1ff75cab76506b4f1590a25aa76fe629ff2da56029352aff3ba781688a7a277c"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.26-106"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e698a94855e1a003bc42dc055e70e4da8b11f3a8feb54a8e39593072d3895371"
+    sha256 cellar: :any_skip_relocation, ventura:       "94ba07ceead71d1cb105b79a545e8bb62fcc6c2fa0ca3247159a7af7139fd702"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e6b0555a4c07a476bc4a6481a48b8e47d21e8b2dbd769ecabaa74612b9e0142"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "27924b7dd611281f0abe8ffc2496ebdfbea23e25279690b50aa6f7282b9af184"
   end
 
 

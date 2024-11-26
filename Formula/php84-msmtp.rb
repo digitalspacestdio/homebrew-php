@@ -9,11 +9,11 @@ class Php84Msmtp < AbstractPhp84Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.0beta5-100"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "15a5e23463d54f9b55441eac36f5b6f2fef4f50a8b8072dc543fb8cd5a82dc1b"
-    sha256 cellar: :any_skip_relocation, ventura:        "bf21e12da14176497b71ac35356353fb3bcc1b6aaf9f1fa8b2629445e6fc4536"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52d211f2784204d22b38e9b92e413a4d7173ddbd991c939cb4da474d2335647c"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "f63c6e1c819fc1a3d06b607ec5483f30259083402c57c9c30e071c5ea3e06f2b"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.1-106"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c3a6791e3bf98f3fdca834938e8e3f62b451d8b803a9bbeaac30ab2475599e00"
+    sha256 cellar: :any_skip_relocation, ventura:       "57c64c300eba1a543a9fe2cffb6aafe38eeb48a453cd691b3e53c0e08cfc2fc5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "622ef35fa4ee8ea30997154cd5fc32b95c40eb5003fb4b19dc369bbc0aa0fe20"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "0e4f12f846a4abe7bb6fd3d6d7a532bdfc975da3df823897ba47ccc1b1577cdc"
   end
 
   depends_on "msmtp"

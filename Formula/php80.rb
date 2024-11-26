@@ -15,7 +15,7 @@ class Php80 < AbstractPhp
     sha256 cellar: :any_skip_relocation, aarch64_linux:  "27e36389208f68f4d77da82b2dd24e31a4ac3cd53841b82f2123cc344adf46b7"
   end
 
-  url PHP_SRC_TARBALL
+  url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
   keg_only :versioned_formula

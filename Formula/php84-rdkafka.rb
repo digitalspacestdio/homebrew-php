@@ -10,11 +10,11 @@ class Php84Rdkafka < AbstractPhp84Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.0beta5-100"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "89c0e5db2c741bc722fa528f2f5a687629b61a4322f7bb0c2917086bada21f7b"
-    sha256 cellar: :any_skip_relocation, ventura:        "5a13943a9ad59e03491d0263e295dbd7b9b6bbcfb9a536b1ed4a84f65019d514"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5da4262a13b4222dcbb9d5caaff2099c65574ebd8deb012f821dabed6f2f1f5e"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "4deddf5833de9703aad8ab7e0d201593eae94bd1b5034c4df2a64e09df8b76e1"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.1-106"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c996011a3fa7db3df795b08e9c39bae82677a5c5bd107fcc24af6fe96d469f29"
+    sha256 cellar: :any_skip_relocation, ventura:       "0e19b62d03d2ae8f95841ecfaa0e9b7007d490431f194d22453985b072d0ff2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33d53ff689cd67927301e3ce0944f0a29fe93a6c8a738ee1a15cb40c71945a0e"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "3812db1cca7e61f885747f773b73b0013e740479905aa412b45cb2814d4ca920"
   end
 
   depends_on "pcre2"

@@ -6,15 +6,15 @@ class Php84Sodium < AbstractPhp84Extension
   homepage "https://php.net/manual/en/book.sodium.php"
   revision PHP_REVISION
 
-  url PHP_SRC_TARBALL
+  url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.0beta5-100"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7a66762f92d51f88a2656c44e1b7ae2dae92aae7d9cf00dbb07c854c80575b65"
-    sha256 cellar: :any_skip_relocation, ventura:        "70b0ff0774a4f1cc2d317486db2a5f3542e98066c161618d611f68442365beb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cdfbd3f3aad610395ba966e744179e19a50a302789143816814c8e923e0c7f28"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "d1f39a5a277ef853b28667f44ce9ecf306de913d9eb21bc1876e87d899b5c9d2"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.1-106"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d6d68a83681c188d914ee2d6c703fe8db897289c8bcc980ba0680f582e53cd4e"
+    sha256 cellar: :any_skip_relocation, ventura:       "8616be28451358bdc0142747c7cd949d7aa4c042bb7a5273da7b771f3a15cea3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b4fb6b02981d978269afc153fe19ceea54b981d36631eb7f3a18ea2db67e14e"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "36c1bcb6bacbce279e521f0f374f720aa4a41e5fbcfe5b23ca5790c0b985bcc5"
   end
 
   depends_on "pkg-config" => :build

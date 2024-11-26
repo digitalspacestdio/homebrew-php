@@ -6,7 +6,7 @@ class Php56Zip < AbstractPhp56Extension
   homepage "https://www.php.net/manual/ru/book.zip.php"
   revision PHP_REVISION
 
-  url PHP_SRC_TARBALL
+  url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do

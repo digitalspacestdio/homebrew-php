@@ -6,15 +6,15 @@ class Php84Opcache < AbstractPhp84Extension
   homepage "https://php.net/manual/en/book.opcache.php"
   revision PHP_REVISION
 
-  url PHP_SRC_TARBALL
+  url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.0beta5-100"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f2ea2d7b8d1da0c0be6a17e5fe6228ad7426408e2f8fb65b72b45722b6751e89"
-    sha256 cellar: :any_skip_relocation, ventura:        "47edd3486998cc764f4048b986728f9a4a4935d1ffa1b2d7a949ab767acb74e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5030df4faceba673f65e06fcd1922a601fff126d4878bc515655a763eb94a951"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "b1cfb089fbe17722a71479cb869d0e7121168b91ac48dceeb450f8749bc5ac83"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.1-106"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7eda34348c03054b7694e416d9ed7bc30c33ecc35c371a3d73ac4307656b111d"
+    sha256 cellar: :any_skip_relocation, ventura:       "f0b048cb82db9c0a2f25b74a9cb590aae186e3ec057ff9c91c1bf57f8306ba47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e550acbacdcb1ee89b56fa15e75881aec9d186e3d874e79fe348e846e4398bbd"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "6241bab56ab5f41bbdc3980944a1a4aea5e26c430220be22e3a6a308173cdaff"
   end
 
   depends_on "pcre2"

@@ -12,11 +12,11 @@ class Php83Apcu < AbstractPhp83Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.9-106"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8de376434df4f9896245f5386a268bc350fbd210ab762e1c6d239354394a49eb"
-    sha256 cellar: :any_skip_relocation, monterey:       "ad9e81d91a8a3d570efbecd83aa806d79f783831a964b2620e077be7174c77fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "152764c37d83c3c90933ea20189d521f515d340cfcf18cecbc06f39dddec26d3"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "3907f300dc94d9864891e5afdd9afe76ec0cac3a7c10035ac17e803064dbf443"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.14-106"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b7036b39e91f45803b1f3420f9d2190faa72aa599b4c90f39aaaef1219618e07"
+    sha256 cellar: :any_skip_relocation, ventura:       "720b629ed4de925e9b650a3b7a2ee1bd33963edc911f7fc3df580c43d53d193f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b34d15c52dff5d11fffb8300bc4f413928f4142d39f90ad18ca069d3ca1185ac"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "7cd15b1e85a7fe3a067a1ae81d6e128d95f7002975c4c730486559f280c0e467"
   end
 
   depends_on "pcre2"

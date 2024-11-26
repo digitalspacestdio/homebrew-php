@@ -6,15 +6,15 @@ class Php84PdoPgsql < AbstractPhp84Extension
   homepage "https://github.com/php/php-src/tree/master/ext/pdo_pgsql"
   revision PHP_REVISION
 
-  url PHP_SRC_TARBALL
+  url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.0beta5-100"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "777d47189a538aac1835fb889720ea1e5a3885887a70a303506d7fd71cc8f463"
-    sha256 cellar: :any_skip_relocation, ventura:        "c10904c398307509edcd5ea2c75e8db219bab75a9071fa7c5365b4444aea6479"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "910031104869e1dc6d01a7d5449e9de0664c1c5145997023f2ccc4667ddb1ba3"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "8df17e48723a833079e15c7c0cc7638ee8e08a58a7264545cdbe554fbae01b78"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.1-106"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3e8ba85136f638e6b31aee2fa41675f764b4771110da1be6b0a88b31a9c35773"
+    sha256 cellar: :any_skip_relocation, ventura:       "0b8c14698f52dc0dd3b6f98e43afdbcc0abbc245006abd73f11ce22c2e19998b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76d526071249c5f7c324df11aa57728639bc3b2a884132f0b5c1fd946ee56644"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "fc120845cc55510da72d0b0f8724a9c900b8816bf9479e21280021fe697bd525"
   end
 
   depends_on "digitalspacestdio/common/libpq@16.2-icu4c.74.2"

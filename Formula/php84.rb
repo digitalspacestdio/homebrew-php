@@ -4,11 +4,11 @@ class Php84 < AbstractPhp
   include AbstractPhpVersion::Php84Defs
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.0beta5-100"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "19a5cb228bc945125972563d578ec577ccbad64f7438424c5a594ea978e15c1d"
-    sha256 cellar: :any_skip_relocation, ventura:        "479467664cfde238f171d372bfc0d41064ab018eda6ddefcac024d6008f1fe60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "40668812c2ed5d9325face93c61bd1a77fd16fc6dc1d9b405694462abd18cb8c"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "57a33fcfbc5aeab57c3ebf70df6fd032551e5e75cb18a8a024b1fbb8f2c189ed"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.1-106"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "98c8fd297e0c84547eb902937cd32763578371b50f33b5279a7cb8011fce7aab"
+    sha256 cellar: :any_skip_relocation, ventura:       "effc15018455c5ab979b3502bcf73f15a36d34ca8d54fef8f00b9afd9c67cb03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5aac32e8059e3942df1c38451be56f6a99424a11f579d568fff1a6b0f29c578b"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "ccecdf95c291a7c99f1799bd57574aae34b766175679406a4aa8ad17c530dd6f"
   end
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
   desc "PHP " + PHP_VERSION
@@ -16,7 +16,7 @@ class Php84 < AbstractPhp
   revision PHP_REVISION
   head "https://github.com/php/php-src.git", branch: "php-8.4.0beta5"
   
-  url PHP_SRC_TARBALL
+  url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
   keg_only :versioned_formula

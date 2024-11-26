@@ -6,15 +6,15 @@ class Php84Zip < AbstractPhp84Extension
   homepage "https://www.php.net/manual/ru/book.zip.php"
   revision PHP_REVISION
 
-  url PHP_SRC_TARBALL
+  url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.0beta5-100"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8b308d4c1dac6a36532b079b21a448fce89c3015bc728e15779ad45d0ed089ee"
-    sha256 cellar: :any_skip_relocation, ventura:        "3071e42a5dda428f21ef38d6ecc90c74dd3f48b9b0071b816e6a37766329a112"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb16553492db3b5c7f4d72d0be12a38ceff90e75c53b9355ec483b4e600388d8"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "cf7a22b5db1da1901350ae4ce9f4f3f87d6c5c016ae6f04df03475a3e9af04a1"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.1-106"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a55d9543b7dd4af38b9b09a64a09d1ca6b6e1ebf6433bbfefda5924641232629"
+    sha256 cellar: :any_skip_relocation, ventura:       "6c00ef1c3064738cf0a782fddacf9ad22f1deec35e1214d0fa3b504b1bb24991"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "783b817270d0f706e457dfd1c0b80d76835f45c5c521f4dbdcc3e92087dc841a"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "943d8771b633351204461e6530ba580607cd1c9c734dc21c6e9b6dab6a2c7937"
   end
 
   depends_on "libzip"

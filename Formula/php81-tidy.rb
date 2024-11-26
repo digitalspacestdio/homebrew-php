@@ -6,15 +6,15 @@ class Php81Tidy < AbstractPhp81Extension
   homepage "https://php.net/manual/en/book.tidy.php"
   revision PHP_REVISION
 
-  url PHP_SRC_TARBALL
+  url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.29-106"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fba034f06a543c16e0dca490ba50bb4d960f18462c88edba3c92defbfe9c8d55"
-    sha256 cellar: :any_skip_relocation, monterey:       "ce14e55b8a75800285f18a0b11d7343a00523affe74092c24818a437823cc77d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ccbb037298f5ba38f4746fab252a67d208da932dbeeaaeca04ce5085119d4f7d"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "8634aaaec059d9aca6a952442ec68bf0baae27485c5d0a37f1f8217da48c6ffd"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-106"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3b7af0f5438b9965804d942239daf974b31512a8c2ab327b6913cfc71f20b28f"
+    sha256 cellar: :any_skip_relocation, ventura:       "84a278f80cd2d79cd7d6cc4cc5af6c1514647e184380d09910a429771d6f874b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af9b3f608673efaeb06a8d0241d828ff37604b0d415639ba6b1d9176d09f2936"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "75c8acd5012825a576af3e8c41c2732e7b7f1eaa6828fa7a2f26c4f9e0f8222d"
   end
 
   depends_on "tidy-html5"

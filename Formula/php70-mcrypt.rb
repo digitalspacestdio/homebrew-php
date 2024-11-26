@@ -7,7 +7,7 @@ class Php70Mcrypt < AbstractPhp70Extension
   revision PHP_REVISION
 
 
-  url PHP_SRC_TARBALL
+  url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
 
   depends_on "digitalspacestdio/common/mcrypt@2.6"
