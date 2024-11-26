@@ -12,6 +12,7 @@ class Php81Apcu < AbstractPhp81Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-106"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "19a1b5efb80d01d0a8b5d1acf71e279f87f5a13443b588f6293f34e994149f2e"
     sha256 cellar: :any_skip_relocation, ventura:       "454af5e0e9cde5e7df6941eddf8beb6f9b7a736fcc0dc13fbc9998fa1df12a83"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a81fc7057fa78fb81a11cfe7fb4ffe235368edfde8ca4e97bbfa8534ce55cf07"
     sha256 cellar: :any_skip_relocation, aarch64_linux: "1bd7161ff114a25c26c93199b963ba88866719d0ab73fbbfc1567529070b9d7e"

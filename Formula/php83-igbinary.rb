@@ -11,6 +11,7 @@ class Php83Igbinary < AbstractPhp83Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.14-106"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5db367a8aa0a62e5db469df53bb95fb06be7376cd87ac78cf8cc84bd7a4e9571"
     sha256 cellar: :any_skip_relocation, ventura:       "170adcca4791ebdfbfc210df72dba93736bc28b41328b25c10bee9eccfc43df2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "005a830ac68a5791e6661e1c0cbbc9c5006e923340e65352ecbf1bf087769d2a"
     sha256 cellar: :any_skip_relocation, aarch64_linux: "77dd4bf1d29538a3df12d172557f8f78d2a252da35fc80b183eb81ba41195f12"

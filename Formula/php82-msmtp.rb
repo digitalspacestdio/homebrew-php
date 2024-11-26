@@ -10,6 +10,7 @@ class Php82Msmtp < AbstractPhp82Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.26-106"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "713011afb78ea1e29b7c6db548661214fa3be820e3d5bef7484f2f3c23181461"
     sha256 cellar: :any_skip_relocation, ventura:       "95e16ee06ead9a3772b39a855a86f652c1788fe3236c0474eeeb8e81e9669ad6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2333d09b3b0429681b989057cd65e0cf68444c200d7b8906e53001a1d016af7c"
     sha256 cellar: :any_skip_relocation, aarch64_linux: "ba1976778a0435e114c71f3b0bdb41054ea88736be5317bec7f129e8fac2445c"
