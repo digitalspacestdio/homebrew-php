@@ -9,7 +9,6 @@ class Php81Yaml < AbstractPhp81Extension
   head "https://github.com/php/pecl-file_formats-yaml.git", :branch => "php7"
   revision PHP_REVISION
 
-
   depends_on "libyaml"
 
   def install
