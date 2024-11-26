@@ -9,32 +9,22 @@ class Php82Rdkafka < AbstractPhp82Extension
   head "https://github.com/arnaud-lb/php-rdkafka.git"
   revision PHP_REVISION
 
-  depends_on "pcre2"
-
-  resource "librdkafka" do
-    url "https://github.com/confluentinc/librdkafka/archive/refs/tags/v2.5.3.tar.gz"
-    sha256 "eaa1213fdddf9c43e28834d9a832d9dd732377d35121e42f875966305f52b8ff"
+  bottle do
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.21-106"
+    sha256 cellar: :any_skip_relocation, ventura:      "ece95d6dae730fb066037a87d0f485ec7958d40abe2921cbd018ff7f971c5a63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7ead72f2fb8a92492669ee0e8ca92c451b6873e4c1eebcfc8f886b4ea97a4f3e"
   end
 
+  depends_on "pcre2"
+  depends_on "librdkafka"
+
   def install
-    resource("librdkafka").stage do
-      ENV.append "CFLAGS", "-Wno-incompatible-pointer-types"
-      ENV.append "CFLAGS", "-Wno-deprecated-declarations"
-      args = []
-      args << "--prefix=#{prefix}/librdkafka"
-      args << "--mandir=#{man}"
-
-      system "./configure", *args
-      system "make"
-      system "make", "install"
-    end
-
     ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
     ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
 
     Dir.chdir "rdkafka-#{version}" unless build.head?
     safe_phpize
-    system "./configure", "--prefix=#{prefix}", "--with-rdkafka=#{prefix}/librdkafka", phpconfig
+    system "./configure", "--prefix=#{prefix}", "--with-rdkafka=#{Formula["librdkafka"].opt_prefix}", phpconfig
     system "make"
     prefix.install "modules/rdkafka.so"
     write_config_file if build.with? "config-file"
