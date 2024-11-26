@@ -9,6 +9,12 @@ class Php70Yaml < AbstractPhp70Extension
   head "https://github.com/php/pecl-file_formats-yaml.git", :branch => "php7"
   revision PHP_REVISION
 
+  bottle do
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-103"
+    sha256 cellar: :any_skip_relocation, monterey:     "763ddb7653b6456a3a20fdd332c3ccf9815ac73b3d06fee853ac79677cbefa66"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a7b0043a321eb509d02dfeb3cac5f8be5ee7b6e9ff2cdfb8df7bbb0d98b34877"
+  end
+
   depends_on "libyaml"
 
   def install
