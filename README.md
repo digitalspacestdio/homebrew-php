@@ -51,11 +51,11 @@ brew install digitalspacestdio/php/php-common
 ```
 To install specific version  with common extensions
 ```sh
-brew install digitalspacestdio/php/php81-common
+brew install digitalspacestdio/php/php84-common
 ```
 To install specific php version without extra extensions
 ```sh
-brew install digitalspacestdio/php/php81
+brew install digitalspacestdio/php/php84
 ```
 
 The common formula will install php and next extensions:
