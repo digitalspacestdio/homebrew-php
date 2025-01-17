@@ -23,7 +23,7 @@ class Php74Imap < AbstractPhp74Extension
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}", 
-    phpconfig \
+    phpconfig, \
     "--with-imap=shared, #{Formula["php-imap-uw"].opt_prefix}", \
     "--with-imap-ssl=#{Formula["openssl@3"].opt_prefix}", \
     "--with-kerberos"

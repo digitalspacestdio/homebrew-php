@@ -18,7 +18,10 @@ class Php80Imap < AbstractPhp80Extension
     Dir.chdir "ext/imap"
 
     safe_phpize
-    system "./configure", "--prefix=#{prefix}", phpconfig
+    phpconfig, \
+    "--with-imap=shared, #{Formula["php-imap-uw"].opt_prefix}", \
+    "--with-imap-ssl=#{Formula["openssl@3"].opt_prefix}", \
+    "--with-kerberos"
     system "make"
     prefix.install "modules/imap.so"
     write_config_file if build.with? "config-file"
