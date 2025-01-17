@@ -14,11 +14,19 @@ class Php74Imap < AbstractPhp81Extension
     "imap"
   end
 
+  depends_on "krb5"
+  depends_on "openssl@3"
+  depends_on "php-imap-uw"
+
   def install
     Dir.chdir "ext/imap"
 
     safe_phpize
-    system "./configure", "--prefix=#{prefix}", phpconfig
+    system "./configure", "--prefix=#{prefix}", 
+    phpconfig \
+    "--with-imap=shared, #{Formula["php-imap-uw"].opt_prefix}", \
+    "--with-imap-ssl=#{Formula["openssl@3"].opt_prefix}", \
+    "--with-kerberos"
     system "make"
     prefix.install "modules/imap.so"
     write_config_file if build.with? "config-file"
