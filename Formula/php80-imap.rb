@@ -18,6 +18,7 @@ class Php80Imap < AbstractPhp80Extension
     Dir.chdir "ext/imap"
 
     safe_phpize
+    system "./configure", "--prefix=#{prefix}", 
     phpconfig, \
     "--with-imap=shared, #{Formula["php-imap-uw"].opt_prefix}", \
     "--with-imap-ssl=#{Formula["openssl@3"].opt_prefix}", \
