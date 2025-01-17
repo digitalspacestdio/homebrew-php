@@ -18,7 +18,7 @@ class Php74Imap < AbstractPhp81Extension
     Dir.chdir "ext/imap"
 
     safe_phpize
-    system "./configure", "--prefix=#{prefix}", "--with-imap=#{Formula["imap"].prefix}", phpconfig
+    system "./configure", "--prefix=#{prefix}", phpconfig
     system "make"
     prefix.install "modules/imap.so"
     write_config_file if build.with? "config-file"

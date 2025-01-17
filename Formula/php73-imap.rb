@@ -1,6 +1,6 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
-class Php81Imap < AbstractPhp81Extension
+class Php73Imap < AbstractPhp81Extension
   init
   desc "IMAP Extension"
   homepage "https://github.com/php/php-src/tree/master/ext/imap"
