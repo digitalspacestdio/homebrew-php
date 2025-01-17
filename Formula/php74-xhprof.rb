@@ -1,7 +1,7 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
 class Php74Xhprof < AbstractPhp74Extension
-  init
+  init PHP_VERSION, false
   desc "XHProf is a function-level hierarchical profiler for PHP and has a simple HTML based user interface."
   homepage "https://tideways.com"
   url "https://codeload.github.com/tideways/php-xhprof-extension/tar.gz/ab391914cd59b95ea1a6904eacad6960a696a50b"
