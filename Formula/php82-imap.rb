@@ -17,9 +17,13 @@ class Php82Imap < AbstractPhp82Extension
   depends_on "krb5"
   depends_on "openssl@3"
   depends_on "php-imap-uw"
+  depends_on "pcre2"
 
   def install
     Dir.chdir "ext/imap"
+
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}", 
