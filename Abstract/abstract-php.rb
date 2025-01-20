@@ -10,7 +10,7 @@ class AbstractPhp < Formula
     @@php_version_path = php_version_path
 
     if @@php_version.start_with?("5.", "7.", "8.0")
-      @@php_open_ssl_formula = "openssl@1.1"
+      @@php_open_ssl_formula = "openssl111w"
       @@php_curl_formula = "digitalspacestdio/common/curl@7"
     else
       @@php_open_ssl_formula = "openssl@3"

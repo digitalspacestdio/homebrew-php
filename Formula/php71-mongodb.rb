@@ -18,7 +18,7 @@ class Php71Mongodb < AbstractPhp71Extension
     sha256 cellar: :any_skip_relocation, aarch64_linux:  "fc522bc3a4b7079742da649e926015d8f6a1a8a1002788e658a0242e9034fda5"
   end
 
-  depends_on "openssl@1.1"
+  depends_on "openssl111w"
   depends_on "digitalspacestdio/common/icu4c@69.1"
 
   def install
@@ -27,7 +27,7 @@ class Php71Mongodb < AbstractPhp71Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
-                          "--with-mongodb-ssl=openssl --with-mongodb-icu=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix} --with-openssl-dir=#{Formula["openssl"].opt_prefix}"
+                          "--with-mongodb-ssl=openssl --with-mongodb-icu=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix} --with-openssl-dir=#{Formula["openssl111w"].opt_prefix}"
     system "make"
     prefix.install "modules/mongodb.so"
     write_config_file if build.with? "config-file"
