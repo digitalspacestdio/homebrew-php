@@ -5,11 +5,8 @@ class Php83Common < AbstractPhpCommon
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.14-106"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c82e82ada18db9e97612494ccc5d4a457f0c455bf480983bcb88cd7c1b071caf"
-    sha256 cellar: :any_skip_relocation, ventura:       "71f4ea36f04e08f338732c78a85b70c6b611abe08b1c69215259014c78c25ae2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "620fddb179f1feb3e3b4ec6330c1803e289e45991402a49630917069aac0fb29"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "e212d3969aa6e8bb338ad5c217886bdda0f4aab0a4e580a541b8aeee9a3ebd2b"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.16-106"
+    sha256 cellar: :any_skip_relocation, ventura: "27fcf14be3849be1b1de477031bc88ecc9dcc836894756e8ab577d25f98cd989"
   end
   
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
