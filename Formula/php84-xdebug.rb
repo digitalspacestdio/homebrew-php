@@ -4,10 +4,10 @@ class Php84Xdebug < AbstractPhp84Extension
   init PHP_VERSION, false
   desc "Provides debugging and profiling capabilities."
   homepage "https://xdebug.org"
-  url "https://github.com/xdebug/xdebug/archive/12adc6394adbf14f239429d72cf34faadddd19fb.tar.gz"
-  sha256 "67bc7b1ec133a1a38dc9c23c892878bd2a0a308833964fccbae897b58aa6fe88"
+  url "https://github.com/xdebug/xdebug/archive/5107d2d978302323f9e65002fad2aee9f4c24628.tar.gz"
+  sha256 "d02d1b61cba9cc018e0fc68dd3bdca33c47d99dd909e56a2f4c114fb101f1ca3"
   head "https://github.com/xdebug/xdebug.git"
-  version "3.4.0alpha1"
+  version "3.4.1"
   revision PHP_REVISION
 
   bottle do

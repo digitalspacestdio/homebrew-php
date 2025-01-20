@@ -3,10 +3,10 @@ require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 class Php84Redis < AbstractPhp84Extension
   init
   desc "PHP extension for Redis"
-  url "https://codeload.github.com/phpredis/phpredis/tar.gz/6ea5b3e08bdbf8cbe93e0dc56b18e8316d65097c"
-  sha256 "1ead0114e39dec20f0ce254a5aaf10eb9a4e69abbaa398ad539a1c6597e3abf9"
-  head "https://github.com/phpredis/phpredis.git", branch: "develop"
-  version "0.0.0-dev.1"
+  url "https://codeload.github.com/phpredis/phpredis/tar.gz/5419cc9c60d1ee04163b4d5323dd0fb02fb4f8bb"
+  sha256 "58a1d293ec3a7214813da32545272acfef9346720ddecfa014f9d1c85e8471e7"
+  head "https://github.com/phpredis/phpredis.git", branch: "6.1.0"
+  version "6.1.0"
   revision PHP_REVISION
 
   bottle do
