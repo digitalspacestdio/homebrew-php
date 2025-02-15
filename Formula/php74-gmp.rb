@@ -11,11 +11,8 @@ class Php74Gmp < AbstractPhp74Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-106"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "84cc67aebf826c550b0b37716d58c516ab00033c3a2b9360eb0aaee890aad45c"
-    sha256 cellar: :any_skip_relocation, monterey:       "bb86a850ebc5f0b97fdb6262ba60f7c6a30f21e9fd0e8e2221df968acc577488"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50131d6f17bfa52f83508d48e63409ae6e48044b8093e9e94cfa3e61efb3366d"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "32bf33e45d340e008217730c742498378014dc2ac7861662dfafa904f27cd06a"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-107"
+    sha256 cellar: :any_skip_relocation, ventura: "25abf10b6a3efc1ac386557c6e536ef46a5b6f91c59920c136c6ccf330d7a6f5"
   end
 
   depends_on "gmp"

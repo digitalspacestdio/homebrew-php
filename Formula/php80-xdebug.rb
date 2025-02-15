@@ -11,11 +11,8 @@ class Php80Xdebug < AbstractPhp80Extension
   revision PHP_REVISION+1
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-104"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7332d27dca0ae5d31bd3c31bab43628fcc49888d4c7ef45483b0ea5a16b38619"
-    sha256 cellar: :any_skip_relocation, monterey:       "ed64d8938bc992aea078ea89fbcac4264c369108f151bf034e61663a1cf909d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "affa4ee5439875e811f374b0e556e3926a4cd6ef2bd7857a0509eaa809ce6442"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "db9751b1a846adf316045cdfa1c406d6de849f429b16c781b1a8e55773176e21"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-105"
+    sha256 cellar: :any_skip_relocation, ventura: "96f18df888a663e294b6599d88a9f8783f6794c29f823b704859c1c15dacdd97"
   end
 
   def extension_type

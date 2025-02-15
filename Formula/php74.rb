@@ -8,11 +8,8 @@ class Php74 < AbstractPhp
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-106"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "99a18db33735f101c3ad33b31d99ca3dad220346eed6300bdb051bf63a78bae0"
-    sha256 cellar: :any_skip_relocation, monterey:       "cd8a172228ecc6e8e498457c47ff2c4e177672c56f064f85723ecd258bc34310"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c5f221c0f287343032eefb41911110b96f2d2e1c27231909d3fac59dd095707f"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "c8fd13143931a0bec78025ae8d710edd90330cc8f60b591c8fc5261549d312bd"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-107"
+    sha256 cellar: :any_skip_relocation, ventura: "449cc217431a6d883f03300c1a425d5b9a629cda39294fee0fe397ca35e38445"
   end
   
   keg_only :versioned_formula

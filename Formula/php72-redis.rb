@@ -10,11 +10,8 @@ class Php72Redis < AbstractPhp72Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-103"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c0c71a2ce23308dc5fb2a22e1e8be9373afc3d111e45caac46135d53c6932054"
-    sha256 cellar: :any_skip_relocation, monterey:       "8c46005cfd1c46b7346872d77c1e308700cbce2b5c368ef186229f46992f0f0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9b8bd3da541a5b61deccdb63a397d9471f43c7bd02f845a8e7f641712556de4"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "277a129cdb5f0f2915184a09a65d84a691f9f845d855eac84678904a8dff7f1d"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-104"
+    sha256 cellar: :any_skip_relocation, ventura: "a462369449492703a548615253c6f2c3a13537527ee4b4986a9541699a1b27f0"
   end
 
   depends_on "digitalspacestdio/php/php72-igbinary"

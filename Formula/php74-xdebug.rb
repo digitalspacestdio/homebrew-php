@@ -11,11 +11,8 @@ class Php74Xdebug < AbstractPhp74Extension
   revision PHP_REVISION+1
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-106"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "404d4cfd17652efc6ea41f9d971c8efd249243a28a036d43de7e8e059a7e1bb9"
-    sha256 cellar: :any_skip_relocation, monterey:       "5305055a13c38b4b2b85ebeea48fdc1837deb03afaf581046834a35ad1665b88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "065710ead366f709592b3f1c8278307b2c0da99f9b918bcf9a057e41487611c9"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "eb88cef80d221e3753f291908fc9c76cad28a8a7f8468442da12245ab40e4cec"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-107"
+    sha256 cellar: :any_skip_relocation, ventura: "79b2e7bbf644bd9a055d74a6cc9222481a32ea91e25cfc0222fa08bca97fe052"
   end
 
   def extension_type

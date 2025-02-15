@@ -10,11 +10,8 @@ class Php72Apcu < AbstractPhp72Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-103"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b20bf72ce833724a16884d110e7918bc32e0a663726ca33afadc95f9d712fe6"
-    sha256 cellar: :any_skip_relocation, monterey:       "49a9661c1a8daf4a33c7c132e192d3b202ffb7e4068a791661567cc1d187c0d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c08adb255fc5f7b7d67adf263b3a9d88653eef1a4554c642bdaa2d1314b14b41"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "3277be6b361007e18514cb8f1cff738b3ea2f4a43fd52ed762cc599358f57ee9"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-104"
+    sha256 cellar: :any_skip_relocation, ventura: "f32f0b3a523991f3b79343b5ff3a4bd7c800ce4820ac80770ecb1a04cc039412"
   end
 
   depends_on "pcre2"

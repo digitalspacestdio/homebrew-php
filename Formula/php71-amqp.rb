@@ -10,11 +10,8 @@ class Php71Amqp < AbstractPhp71Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-103"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "286b1c129f2733b6157c75e5f7332ce7cecab5eb91e2be412ff18e4fc9598296"
-    sha256 cellar: :any_skip_relocation, monterey:       "3f4e9e4770a5fa88c07f9cfda5fb42d2b165d546e4f8e6b9943fa68b1d220ac7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b450dd945eeb939781798268296835740d4d49ff1bbec7a8f5db88f50ff7b3d"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "573524b0da74d627d855741f546a832e9188e3d9d7d18c6034c6c9da3febebcb"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-104"
+    sha256 cellar: :any_skip_relocation, ventura: "5586f59f8537d368794e6b59d4333d61feeb3b761c466f24bbc4a14aebb02e3b"
   end
 
   depends_on "rabbitmq-c"

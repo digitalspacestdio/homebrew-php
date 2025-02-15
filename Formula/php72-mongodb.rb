@@ -11,11 +11,8 @@ class Php72Mongodb < AbstractPhp72Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-103"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3786ed592d38efc8ee6f1cab83aa48c82f7cb0bee580a6603e25de63a93b62e0"
-    sha256 cellar: :any_skip_relocation, monterey:       "06ca24ab6f897ed8cd615e8bbcc8af6b76341b4ed5037eea56c63db3a3e115c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8aab3f5046c183e2fb378301256adf3d0fdeba05d883ce304c9037bae3228eb"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "f9e0166f4cb2a245457a24b41d7337e48c797d45b63b259454d20238ae1b388d"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-104"
+    sha256 cellar: :any_skip_relocation, ventura: "c89c7c7ea79d01a4ccdddb39230d804afd9cb0a2e99c671c76d924199992b54b"
   end
 
   depends_on "openssl"
