@@ -59,6 +59,9 @@ class AbstractPhpExtension < Formula
 
       ENV.append "CXXFLAGS", "-march=ivybridge"
       ENV.append "CXXFLAGS", "-msse4.2"
+    elsif Hardware::CPU.arm?
+      ENV.append "CFLAGS", "-march=armv8.5-a"
+      ENV.append "CXXFLAGS", "-march=armv8.5-a"
     end
 
     ENV.append "CFLAGS", "-O2"

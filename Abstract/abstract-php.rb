@@ -24,7 +24,7 @@ class AbstractPhp < Formula
 
     depends_on "pkg-config" => :build
     if OS.mac? && @@php_version.start_with?("7.", "8.0") || OS.linux?
-      depends_on "gcc@12" => :build
+      depends_on "gcc@13" => :build
     end
 
     depends_on "autoconf" => :build if !@@php_version.start_with?("5.")
@@ -164,6 +164,9 @@ class AbstractPhp < Formula
 
       ENV.append "CXXFLAGS", "-march=ivybridge"
       ENV.append "CXXFLAGS", "-msse4.2"
+    elsif Hardware::CPU.arm?
+      ENV.append "CFLAGS", "-march=armv8.5-a"
+      ENV.append "CXXFLAGS", "-march=armv8.5-a"
     end
 
     ENV.append "CFLAGS", "-O2"
@@ -180,8 +183,8 @@ class AbstractPhp < Formula
     ENV["RE2C"] = "#{Formula["re2c"].opt_prefix}/bin/re2c"
 
     if OS.mac? && @@php_version.start_with?("7.", "8.0") || OS.linux?
-      ENV["CC"] = "#{Formula["gcc@12"].opt_prefix}/bin/gcc-12"
-      ENV["CXX"] = "#{Formula["gcc@12"].opt_prefix}/bin/g++-12"
+      ENV["CC"] = "#{Formula["gcc@13"].opt_prefix}/bin/gcc-13"
+      ENV["CXX"] = "#{Formula["gcc@13"].opt_prefix}/bin/g++-13"
     end
     
     if @@php_version.start_with?("7.1", "7.0")
@@ -561,6 +564,7 @@ INFO
     ENV.append "CFLAGS", "-Wno-array-bound" if OS.mac?
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
     ENV.append "CFLAGS", "-Wno-incompatible-pointer-types"
+    ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"
     ENV.append "CFLAGS", "-Wno-implicit-int" if @@php_version.start_with?("5.")
 
     ENV.append "CFLAGS", "-DDEBUG_ZEND=2" if build.with? "debug"
