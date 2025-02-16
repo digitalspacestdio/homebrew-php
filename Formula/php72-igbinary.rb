@@ -10,7 +10,8 @@ class Php72Igbinary < AbstractPhp72Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-104"
-    sha256 cellar: :any_skip_relocation, ventura: "4075eed9c0c6ced0571f0579493dfb9122ea6d4b4ac1b4a90f4de44833939ac0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "52f095eed0a3c8afca8ff0fcef8ec71f0b7fb30138d0ad71df8607d149dfa0fe"
+    sha256 cellar: :any_skip_relocation, ventura:       "4075eed9c0c6ced0571f0579493dfb9122ea6d4b4ac1b4a90f4de44833939ac0"
   end
   revision PHP_REVISION
 

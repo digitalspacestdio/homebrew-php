@@ -11,7 +11,8 @@ class Php83Opcache < AbstractPhp83Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.16-106"
-    sha256 cellar: :any_skip_relocation, ventura: "cc5c0d387652fa4617507ce8f8511cd4c74228f57f8bde17bff76b60044d2fd8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cfc02b2051cd579ed9c873e6fcd75a81ec78dd051e05defbfdcb9c7d0336bf31"
+    sha256 cellar: :any_skip_relocation, ventura:       "cc5c0d387652fa4617507ce8f8511cd4c74228f57f8bde17bff76b60044d2fd8"
   end
 
   depends_on "pcre2"

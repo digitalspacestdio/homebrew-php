@@ -11,7 +11,8 @@ class Php72Sodium < AbstractPhp72Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-104"
-    sha256 cellar: :any_skip_relocation, ventura: "dd52ffd28faa00e0f0d5b912c5a99e27e23564c0e2bd24321e9c68c445249bef"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "08a1c07cf5858d2993345458a7b0b076a0b3f68fdc8f620ea7701197e67c266e"
+    sha256 cellar: :any_skip_relocation, ventura:       "dd52ffd28faa00e0f0d5b912c5a99e27e23564c0e2bd24321e9c68c445249bef"
   end
 
   depends_on "libsodium"

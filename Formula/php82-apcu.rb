@@ -12,7 +12,8 @@ class Php82Apcu < AbstractPhp82Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.27-106"
-    sha256 cellar: :any_skip_relocation, ventura: "8a2ad8f5d012bbdf3aa6db70cb8f6a6c215b482a94f427747b4bf5690d2098a7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "43d70801b361153a777503f3281817837a3d6a6bdc8b177bcb8a54682600105f"
+    sha256 cellar: :any_skip_relocation, ventura:       "8a2ad8f5d012bbdf3aa6db70cb8f6a6c215b482a94f427747b4bf5690d2098a7"
   end
 
   depends_on "pcre2"

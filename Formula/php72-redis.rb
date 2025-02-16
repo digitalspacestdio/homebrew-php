@@ -11,7 +11,8 @@ class Php72Redis < AbstractPhp72Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-104"
-    sha256 cellar: :any_skip_relocation, ventura: "a462369449492703a548615253c6f2c3a13537527ee4b4986a9541699a1b27f0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8cbbc9057b7a3a6489c9e17a7d7a844f96e35e121a3993c49e9e460e03f275f8"
+    sha256 cellar: :any_skip_relocation, ventura:       "a462369449492703a548615253c6f2c3a13537527ee4b4986a9541699a1b27f0"
   end
 
   depends_on "digitalspacestdio/php/php72-igbinary"

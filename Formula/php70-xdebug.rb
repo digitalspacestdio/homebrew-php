@@ -12,7 +12,8 @@ class Php70Xdebug < AbstractPhp70Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-104"
-    sha256 cellar: :any_skip_relocation, ventura: "b9df2d7614c85cba07d0221b8481492f51be2464b910710a2d5fca815d4d1377"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b2fa66ebe32e449fa461853d323c264a186db6836fb5605d59c9b1c21d1d8eb0"
+    sha256 cellar: :any_skip_relocation, ventura:       "b9df2d7614c85cba07d0221b8481492f51be2464b910710a2d5fca815d4d1377"
   end
 
 

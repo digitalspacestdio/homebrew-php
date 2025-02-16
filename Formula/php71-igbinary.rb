@@ -11,7 +11,8 @@ class Php71Igbinary < AbstractPhp71Extension
   
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-104"
-    sha256 cellar: :any_skip_relocation, ventura: "edb6782fe26bc821b0a047dbcaaecb509bc9c9eef836d104e16e8fcac17e4775"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9a113053fe9e84f6ea583a4bf577ffd9c494fb560900425dc693e220a349e379"
+    sha256 cellar: :any_skip_relocation, ventura:       "edb6782fe26bc821b0a047dbcaaecb509bc9c9eef836d104e16e8fcac17e4775"
   end
 
 

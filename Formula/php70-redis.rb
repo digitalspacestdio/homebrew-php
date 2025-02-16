@@ -11,7 +11,8 @@ class Php70Redis < AbstractPhp70Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-104"
-    sha256 cellar: :any_skip_relocation, ventura: "703c3499f7dcd1d0ec88ef52c21f64b2501b1f09b3666d8719e5588ca732673b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d377faa3135feeb64efbbd619097da8423f1fe6e2af72225451c8318ec3bb35d"
+    sha256 cellar: :any_skip_relocation, ventura:       "703c3499f7dcd1d0ec88ef52c21f64b2501b1f09b3666d8719e5588ca732673b"
   end
 
 

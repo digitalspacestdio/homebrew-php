@@ -12,7 +12,8 @@ class Php74Opcache < AbstractPhp74Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-107"
-    sha256 cellar: :any_skip_relocation, ventura: "51adc7efe9c9793b7bc5e828b0f6a00f6b5e55445026b70f04e5d34d43cddd68"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b89c7ce3b80ee8b899a0021e6858b9cadd50cb5a698d8ab409a00728b35455d8"
+    sha256 cellar: :any_skip_relocation, ventura:       "51adc7efe9c9793b7bc5e828b0f6a00f6b5e55445026b70f04e5d34d43cddd68"
   end
 
   depends_on "pcre2"

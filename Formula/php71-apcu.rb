@@ -10,7 +10,8 @@ class Php71Apcu < AbstractPhp71Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-104"
-    sha256 cellar: :any_skip_relocation, ventura: "ddc1c6e90c550a544584aec45fc7b07ea6e3cbe274639742deae2d2fe78eb715"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c4f8901d351adbcc6ab1fa92174d7762207de47e36962e9ff0d42fa3a9d7a9f9"
+    sha256 cellar: :any_skip_relocation, ventura:       "ddc1c6e90c550a544584aec45fc7b07ea6e3cbe274639742deae2d2fe78eb715"
   end
   depends_on "pcre2"
   revision PHP_REVISION

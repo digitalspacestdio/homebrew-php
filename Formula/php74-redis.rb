@@ -10,7 +10,8 @@ class Php74Redis < AbstractPhp74Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-107"
-    sha256 cellar: :any_skip_relocation, ventura: "727899307c16d858cf07451d81f081867333be2a936deaf782df53d15d06cc0e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0d7d38e9208282a994ffc6b26883879676f87aeb99958e0be4ed0713fda8daf5"
+    sha256 cellar: :any_skip_relocation, ventura:       "727899307c16d858cf07451d81f081867333be2a936deaf782df53d15d06cc0e"
   end
 
   depends_on "digitalspacestdio/php/php74-igbinary"

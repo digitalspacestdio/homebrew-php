@@ -12,7 +12,8 @@ class Php72Opcache < AbstractPhp72Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-104"
-    sha256 cellar: :any_skip_relocation, ventura: "c361783bd7bfe7c44146415a8d0308860c4edbffcf6df3a0e1073ac2052d7292"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2b157190c528ef0e79832ba2be018951379b446453161c50b957bbb6ffb2f15d"
+    sha256 cellar: :any_skip_relocation, ventura:       "c361783bd7bfe7c44146415a8d0308860c4edbffcf6df3a0e1073ac2052d7292"
   end
 
   depends_on "pcre2"

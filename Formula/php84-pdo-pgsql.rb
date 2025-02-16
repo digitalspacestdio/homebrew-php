@@ -11,7 +11,8 @@ class Php84PdoPgsql < AbstractPhp84Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.3-106"
-    sha256 cellar: :any_skip_relocation, ventura: "af241253fc3b1cfac784157bccffeb2416722684f1933cda80af4ddd56f190a3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8fe8656f0c454c58ee0ecc961c5ec93f93eddeadcbdb66db7fd73733472248af"
+    sha256 cellar: :any_skip_relocation, ventura:       "af241253fc3b1cfac784157bccffeb2416722684f1933cda80af4ddd56f190a3"
   end
 
   depends_on "digitalspacestdio/common/libpq@16.2-icu4c.74.2"

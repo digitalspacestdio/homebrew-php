@@ -12,10 +12,10 @@ class Php81Gmp < AbstractPhp81Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-106"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d7a4172c5039c3dec9a04a85fcd7da0c7c13346d7de9a42e69c7642165452a4a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ff0d64d8788ab9ad95b54ee7dc4eded56165b8a714d29fd43ebd5542543b4d35"
     sha256 cellar: :any_skip_relocation, ventura:       "8345c509827ddda764a10357f35e91422cbcd57f88b93430c96bd3e60898545e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0080cb5ec1816d6dc91a9a4c6d3af8f4b7fdde6e828c45dc4766c85c95da7a87"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a8d0afd5b8253eb0aca1fe6fe959017680edbf3f4c32521294c452c0488bc02c"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "a8d0afd5b8253eb0aca1fe6fe959017680edbf3f4c32521294c452c0488bc02c"
   end
 
   depends_on "gmp"

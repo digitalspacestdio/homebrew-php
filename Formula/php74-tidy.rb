@@ -11,7 +11,8 @@ class Php74Tidy < AbstractPhp74Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-107"
-    sha256 cellar: :any_skip_relocation, ventura: "088c13a692f8ab787ad273435f2673a2728680963af629d6e7617c9c2305459a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "253635c9d5d46d5d8de5d93ffc278ff58919750b24d0da66ea913a3a8ec1df2f"
+    sha256 cellar: :any_skip_relocation, ventura:       "088c13a692f8ab787ad273435f2673a2728680963af629d6e7617c9c2305459a"
   end
 
   depends_on "tidy-html5"
