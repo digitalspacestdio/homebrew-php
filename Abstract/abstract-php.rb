@@ -72,10 +72,12 @@ class AbstractPhp < Formula
     depends_on "mysql" if build.with?("libmysql")
 
     if @@php_version.start_with?("8.")
+      depends_on "digitalspacestdio/common/icu4c@74.2"
       depends_on "digitalspacestdio/common/gettext@0.22-icu4c.74.2"
       depends_on "digitalspacestdio/common/libxml2@2.12-icu4c.74.2" if OS.linux?
       depends_on "digitalspacestdio/common/libxslt@1.10-icu4c.74.2"
     elsif @@php_version.start_with?("7.4")
+      depends_on "digitalspacestdio/common/icu4c@74.2"
       depends_on "digitalspacestdio/common/gettext@0.22-icu4c.74.2"
       depends_on "digitalspacestdio/common/libxml2@2.12-icu4c.74.2" if OS.linux?
       depends_on "digitalspacestdio/common/libxslt@1.10-icu4c.74.2"
@@ -332,6 +334,9 @@ INFO
 
     # START - Icu4c settings 
     if @@php_version.start_with?("8.")
+      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix}/lib"
+      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix}/include"
+
       ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.74.2"].opt_prefix}/lib"
       ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.74.2"].opt_prefix}/include"
 
