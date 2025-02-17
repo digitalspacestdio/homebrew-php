@@ -270,9 +270,6 @@ INFO
       headers_path = ""
     end
 
-#    libzip = Formula["libzip"]
-    #ENV["CFLAGS"] = "-Wno-error -I#{libzip.opt_include}"
-
     fpm_user = OS.mac? ? "_www" : "www-data"
     fpm_group = OS.mac? ? "_www" : "www-data"
 
@@ -305,7 +302,7 @@ INFO
       "--without-snmp",
       "--with-kerberos#{headers_path}",
       "--with-mhash#{headers_path}",
-      "--with-pear"
+      "--without-pear"
     ]
 
     ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
@@ -391,9 +388,8 @@ INFO
       args << "--with-libxml-dir=#{Formula["digitalspacestdio/common/libxml2@2.9-icu4c.69.1"].opt_prefix}" if OS.linux?
       args << "--with-xsl=#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.69.1"].opt_prefix}"
       args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.69.1"].opt_prefix}"
-      
     end
-    # END - Icu4c settings 
+    # END - Icu4c settings
 
     # START - GD settings 
     if @@php_version.start_with?("7.4", "8.")
@@ -629,7 +625,7 @@ INFO
 
     chmod_R 0775, lib+"php"
 
-    system bin+"pear", "config-set", "php_ini", config_path+"php.ini", "system"
+    #system bin+"pear", "config-set", "php_ini", config_path+"php.ini", "system"
 
     if build_fpm?
       if File.exist?("sapi/fpm/init.d.php-fpm")

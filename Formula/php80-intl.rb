@@ -25,7 +25,6 @@ class Php80Intl < AbstractPhp80Extension
 
     # icu4c 61.1 compatability
     ENV.append "CPPFLAGS", "-DU_USING_ICU_NAMESPACE=1"
-    
     Dir.chdir "ext/intl"
 
     safe_phpize

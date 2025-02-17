@@ -28,14 +28,6 @@ class Php73 < AbstractPhp
   
   depends_on "libjpeg"
 
-  def install_args
-    args = super
-    if !build.without? "pear"
-      args << "--with-pear"
-    end
-    args
-  end
-
   if OS.mac?
     patch do
       url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php73/macos.patch"

@@ -92,6 +92,35 @@ class AbstractPhpExtension < Formula
       ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
       ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
     end
+
+    # START - Icu4c settings 
+    if @@php_version.start_with?("8.")
+      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.74.2"].opt_prefix}/lib"
+      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.74.2"].opt_prefix}/include"
+      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.74.2"].opt_prefix}/lib" if OS.linux?
+      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.74.2"].opt_prefix}/include" if OS.linux?
+    elsif @@php_version.start_with?("7.4")
+      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.74.2"].opt_prefix}/lib"
+      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.74.2"].opt_prefix}/include"
+      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.74.2"].opt_prefix}/lib" if OS.linux?
+      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.74.2"].opt_prefix}/include" if OS.linux?
+    elsif @@php_version.start_with?("7.3")
+      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}/lib"
+      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}/include"
+      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.69.1"].opt_prefix}/lib"
+      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.69.1"].opt_prefix}/include"
+    elsif @@php_version.start_with?("7.")
+      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}/lib"
+      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}/include"
+      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.69.1"].opt_prefix}/lib"
+      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.69.1"].opt_prefix}/include"    
+    elsif @@php_version.start_with?("5.")
+      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}/lib"
+      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}/include"
+      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.69.1"].opt_prefix}/lib"
+      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.69.1"].opt_prefix}/include"
+    end
+    # END - Icu4c settings
     
     system phpize
   end

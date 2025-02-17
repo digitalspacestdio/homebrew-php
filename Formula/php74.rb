@@ -33,14 +33,6 @@ class Php74 < AbstractPhp
 
   head PHP_GITHUB_URL, :branch => PHP_BRANCH
 
-  def install_args
-    args = super
-    if !build.without? "pear"
-      args << "--with-pear"
-    end
-    args
-  end
-
   if OS.mac?
       patch do
         url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php74/macos.patch"
