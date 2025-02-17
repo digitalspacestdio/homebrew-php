@@ -30,7 +30,7 @@ class AbstractPhpExtension < Formula
     depends_on "re2c" => :build if !@@php_version.start_with?("5.")
 
     if OS.linux? || OS.mac? && !@@php_version.start_with?("5.") && @@use_gcc
-      depends_on "gcc@12" => :build
+      depends_on "gcc@13" => :build
     end
     option "without-config-file", "Do not install extension config file"
   end
@@ -70,8 +70,8 @@ class AbstractPhpExtension < Formula
     ENV["RE2C"] = "#{Formula["re2c"].opt_prefix}/bin/re2c"
 
     if OS.linux? || OS.mac? && !@@php_version.start_with?("5.") && @@use_gcc
-      ENV["CC"] = "#{Formula["gcc@12"].opt_prefix}/bin/gcc-12"
-      ENV["CXX"] = "#{Formula["gcc@12"].opt_prefix}/bin/g++-12"
+      ENV["CC"] = "#{Formula["gcc@13"].opt_prefix}/bin/gcc-13"
+      ENV["CXX"] = "#{Formula["gcc@13"].opt_prefix}/bin/g++-13"
     end
 
     if @@php_version.start_with?("7.2", "7.1", "7.0", "5.")
