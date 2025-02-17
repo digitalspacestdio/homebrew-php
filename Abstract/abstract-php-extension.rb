@@ -22,10 +22,12 @@ class AbstractPhpExtension < Formula
     @@use_gcc = use_gcc
     
     depends_on "pcre2"
-    depends_on "autoconf" => :build if !@@php_version.start_with?("5.")
-    depends_on "autoconf@2.69" => :build if @@php_version.start_with?("5.")
     depends_on "pkg-config" => :build
 
+    depends_on "autoconf269" => :build if @@php_version.start_with?("5.")
+    depends_on "autoconf" => :build if !@@php_version.start_with?("5.")
+
+    depends_on "bison@2.7.1" => :build if @@php_version.start_with?("5.")
     depends_on "bison" => :build if !@@php_version.start_with?("5.")
     depends_on "re2c" => :build if !@@php_version.start_with?("5.")
 

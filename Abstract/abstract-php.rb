@@ -27,9 +27,10 @@ class AbstractPhp < Formula
       depends_on "gcc@13" => :build
     end
 
+    depends_on "autoconf269" => :build if @@php_version.start_with?("5.")
     depends_on "autoconf" => :build if !@@php_version.start_with?("5.")
-    depends_on "autoconf@2.69" => :build if @@php_version.start_with?("5.")
 
+    depends_on "bison@2.7.1" => :build if @@php_version.start_with?("5.")
     depends_on "bison" => :build if !@@php_version.start_with?("5.")
     depends_on "re2c" => :build if !@@php_version.start_with?("5.")
 
@@ -173,8 +174,8 @@ class AbstractPhp < Formula
     ENV.append "CXXFLAGS", "-O2"
 
     if @@php_version.start_with?("5.")
-      ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
-      ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
+      ENV["PHP_AUTOCONF"] = "#{Formula["autoconf269"].opt_bin}/autoconf"
+      ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf269"].opt_bin}/autoheader"
     else
       ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
       ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
@@ -579,8 +580,8 @@ INFO
     end
 
     if @@php_version.start_with?("5.")
-      ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
-      ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
+      ENV["PHP_AUTOCONF"] = "#{Formula["autoconf269"].opt_bin}/autoconf"
+      ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf269"].opt_bin}/autoheader"
     else
       ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
       ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
