@@ -67,8 +67,8 @@ class AbstractPhp < Formula
     depends_on "readline"
     depends_on "zlib"
     depends_on "bzip2"
+    depends_on "zstd"
     depends_on "libedit"
-    #depends_on "openldap"
     depends_on "mysql" if build.with?("libmysql")
 
     if @@php_version.start_with?("8.")
