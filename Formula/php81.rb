@@ -33,17 +33,6 @@ class Php81 < AbstractPhp
   depends_on "oniguruma"
   depends_on "libjpeg"
 
-
-
-  def install_args
-    args = super
-    if !build.without? "pear"
-      args << "--with-pear"
-    end
-    args << "--enable-gd"
-    args
-  end
-
   if OS.mac?
       patch do
         url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php74/macos.patch"

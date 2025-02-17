@@ -35,9 +35,6 @@ class Php83 < AbstractPhp
 
   def install_args
     args = super
-    if !build.without? "pear"
-      args << "--with-pear"
-    end
     args << "--with-bison=#{Formula["bison"].opt_prefix}"
     args << "--with-re2c=#{Formula["re2c"].opt_prefix}"
     args

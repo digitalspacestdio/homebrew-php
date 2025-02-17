@@ -122,7 +122,6 @@ class AbstractPhp < Formula
     option "with-imap", "Include IMAP extension"
     option "with-libmysql", "Include (old-style) libmysql support instead of mysqlnd"
     option "with-mssql", "Include MSSQL-DB support"
-    option "without-pear", "Build without PEAR"
     option "with-pdo-oci", "Include Oracle databases (requries ORACLE_HOME be set)"
     unless name.split("::")[2].casecmp("php53").zero?
       option "with-phpdbg", "Enable building of the phpdbg SAPI executable"
@@ -243,10 +242,6 @@ INFO
     "./php.ini-development"
   end
 
-  def skip_pear_config_set?
-    build.without? "pear"
-  end
-
   def install_args
     ENV["PKG_CONFIG_PATH"] = "#{Formula[@@php_open_ssl_formula].opt_prefix}/lib/pkgconfig:#{ENV["PKG_CONFIG_PATH"]}"
 
@@ -309,7 +304,8 @@ INFO
       "--without-gmp",
       "--without-snmp",
       "--with-kerberos#{headers_path}",
-      "--with-mhash#{headers_path}"
+      "--with-mhash#{headers_path}",
+      "--with-pear"
     ]
 
     ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
@@ -516,10 +512,6 @@ INFO
       end
     end
 
-    if build.without? "pear"
-      args << "--without-pear"
-    end
-
     if build.with? "postgresql"
       if Formula["postgresql"].opt_prefix.directory?
         args << "--with-pgsql=#{Formula["postgresql"].opt_prefix}"
@@ -637,7 +629,7 @@ INFO
 
     chmod_R 0775, lib+"php"
 
-    system bin+"pear", "config-set", "php_ini", config_path+"php.ini", "system" unless skip_pear_config_set?
+    system bin+"pear", "config-set", "php_ini", config_path+"php.ini", "system"
 
     if build_fpm?
       if File.exist?("sapi/fpm/init.d.php-fpm")
