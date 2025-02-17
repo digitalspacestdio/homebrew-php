@@ -12,7 +12,7 @@ class Php84 < AbstractPhp
   desc "PHP " + PHP_VERSION
   version PHP_VERSION
   revision PHP_REVISION
-  head "https://github.com/php/php-src.git", branch: "php-8.4.0beta5"
+  head "https://github.com/php/php-src.git", branch: "php-8.4"
   
   url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
