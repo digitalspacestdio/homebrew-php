@@ -24,7 +24,7 @@ class Php74Imagick < AbstractPhp74Extension
     ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
 
     safe_phpize
-    
+
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
                           "--with-imagick=#{Formula["digitalspacestdio/common/imagemagick7"].opt_prefix}"

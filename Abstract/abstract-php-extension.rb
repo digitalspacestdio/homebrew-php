@@ -284,7 +284,7 @@ end
 
 class AbstractPhp81Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php81Defs
-  def self.init(php_version = PHP_VERSION, use_gcc = true)
+  def self.init(php_version = PHP_VERSION, use_gcc = false)
     super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php81"
   end
@@ -292,7 +292,7 @@ end
 
 class AbstractPhp82Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php82Defs
-  def self.init(php_version = PHP_VERSION, use_gcc = true)
+  def self.init(php_version = PHP_VERSION, use_gcc = false)
     super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php82"
   end
@@ -300,7 +300,7 @@ end
 
 class AbstractPhp83Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php83Defs
-  def self.init(php_version = PHP_VERSION, use_gcc = true)
+  def self.init(php_version = PHP_VERSION, use_gcc = false)
     super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php83"
   end
@@ -308,7 +308,7 @@ end
 
 class AbstractPhp84Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php84Defs
-  def self.init(php_version = PHP_VERSION, use_gcc = true)
+  def self.init(php_version = PHP_VERSION, use_gcc = false)
     super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php84"
   end
