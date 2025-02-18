@@ -23,6 +23,9 @@ class Php80Imagick < AbstractPhp80Extension
   depends_on "digitalspacestdio/common/imagemagick7"
 
   def install
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
+    
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
