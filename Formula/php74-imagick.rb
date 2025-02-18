@@ -16,10 +16,13 @@ class Php74Imagick < AbstractPhp74Extension
   end
 
   depends_on "pkg-config" => :build
+  depends_on "pcre2"
   depends_on "digitalspacestdio/common/imagemagick7"
 
   def install
-    safe_phpize
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
+
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
                           "--with-imagick=#{Formula["digitalspacestdio/common/imagemagick7"].opt_prefix}"
