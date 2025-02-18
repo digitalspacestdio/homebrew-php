@@ -12,6 +12,7 @@ class Php56Imagick < AbstractPhp56Extension
 
   depends_on "pkg-config" => :build
   depends_on "imagemagick6"
+  depends_on "pcre2"
 
   def install
     Dir.chdir "imagick-#{version}" unless build.head?
