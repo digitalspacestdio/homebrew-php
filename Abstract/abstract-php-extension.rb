@@ -78,6 +78,7 @@ class AbstractPhpExtension < Formula
 
 
     ENV.append "CFLAGS", "-Wno-array-bound" if OS.mac?
+    ENV.append "CFLAGS", "-Wno-unused-command-line-argument"
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
     ENV.append "CFLAGS", "-Wno-incompatible-pointer-types"
     ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"
