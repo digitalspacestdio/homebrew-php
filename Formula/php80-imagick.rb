@@ -19,6 +19,7 @@ class Php80Imagick < AbstractPhp80Extension
 
   depends_on "pkg-config" => :build
   depends_on "imagemagick6"
+  depends_on "pcre2"
   depends_on "digitalspacestdio/common/imagemagick7"
 
   def install
