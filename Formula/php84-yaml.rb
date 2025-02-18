@@ -9,6 +9,11 @@ class Php84Yaml < AbstractPhp84Extension
   head "https://github.com/php/pecl-file_formats-yaml.git", :branch => "php7"
   revision PHP_REVISION
 
+  bottle do
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.4-110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "933ffac490f763015735fce384fcc7460910c7a0eb838ffb4fbf12905abf65d7"
+  end
+
   depends_on "libyaml"
 
   def install

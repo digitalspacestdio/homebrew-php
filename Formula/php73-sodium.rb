@@ -10,9 +10,8 @@ class Php73Sodium < AbstractPhp73Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.3.33-104"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ea1cbe5c497f6b607de00dbaa81142380fc2a05ada20eb441116d920435b8e45"
-    sha256 cellar: :any_skip_relocation, ventura:       "e134dff7ced98dfa527931f3ddbc12df97b3264adb33839351d3bbe61ab8110a"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.3.33-110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5ea0df980ca1608aaa14bd9ef864204de7ad1174df37fdb12be065f4aa3416c1"
   end
 
   depends_on "libsodium"

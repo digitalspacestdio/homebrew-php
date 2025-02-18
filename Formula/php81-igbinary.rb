@@ -11,11 +11,8 @@ class Php81Igbinary < AbstractPhp81Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-106"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e07971d37e93f3efa89f9b05cc6a9b4f490251d2f4db6e4b89075ffc43e17c78"
-    sha256 cellar: :any_skip_relocation, ventura:       "ee778c9fdb8d74ae82d39ab4a61a2552015e0238062a04328c2f72ae5fe9d88d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "feaad83a33246a8fc588248dd5d6820752261c2373dc726dd249f0609de65819"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "7c73db285352083d340598990eb6bd27566f3d1676a55531b637b6e0e19e4373"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "46f4747e3ceb459441db928e062f186879359f111c38ee96d80f14bcbc4b1eff"
   end
 
 

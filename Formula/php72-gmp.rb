@@ -11,9 +11,8 @@ class Php72Gmp < AbstractPhp72Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-104"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "883dfea4c6e68f0e2ad718b63f0039985d29288b2fa2baeab4106b585c126a5a"
-    sha256 cellar: :any_skip_relocation, ventura:       "51f494b8e9e44bc99b2fada192fe0595be399054007a18e4d638bc2569150342"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "49a07e4e38fd484a3f7e09b4c6592103db96673094f537a0d618ec0954ee916a"
   end
 
   depends_on "gmp"

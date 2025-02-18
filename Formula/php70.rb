@@ -8,9 +8,8 @@ class Php70 < AbstractPhp
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-104"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1c9f5deb62145c5a63f3054351941854d1dc0c4adf35c4fc0c492edf3af3fe0b"
-    sha256 cellar: :any_skip_relocation, ventura:       "40c452c7763eb35e4faed3194132644d94a77dc2f35685d01945b3dedb8ac39b"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7165e2c125318bb97d9f08ad2e820dc2d6eab1bd82ec4e7c7e49d3da23271085"
   end
 
   url PHP_SRC_URL

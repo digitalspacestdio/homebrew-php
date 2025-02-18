@@ -10,6 +10,11 @@ class Php83Imagick < AbstractPhp83Extension
 
   revision PHP_REVISION
 
+  bottle do
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.17-110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "13eea0d21ce10296cc31855c5c87231c5461bb3c886de0f3a8aaf95538c07513"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "digitalspacestdio/common/imagemagick7"
 

@@ -10,9 +10,8 @@ class Php73Apcu < AbstractPhp73Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.3.33-104"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8a70bfe30533150b1a8a3e70e6380588dd60f59250593b79f104e3c12be70190"
-    sha256 cellar: :any_skip_relocation, ventura:       "a94fcab1676d9e43ac34128e508b055755b6a1decbf9c7629827c94f1f8356d9"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.3.33-110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "545c1f2c17c0924921e7425fa9b2e489c4bd3e6030c60abae40f16260d9cefec"
   end
 
   depends_on "pcre2"

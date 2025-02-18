@@ -11,9 +11,8 @@ class Php74Intl < AbstractPhp74Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-107"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3d31a2c29fcc6d9efea586fae48cb09551a38933d3584f7b6ddfbfe85b776d20"
-    sha256 cellar: :any_skip_relocation, ventura:       "71a8f61b115668c91a919ffba8f0c1f22dab206bc556024ce2039693c31dd457"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "49a91c6ff52cb2953507db4668bd4b6563513d675aba5d77a950991ed04e2c3f"
   end
 
   depends_on "digitalspacestdio/common/icu4c@74.2"

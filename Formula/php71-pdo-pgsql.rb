@@ -11,9 +11,8 @@ class Php71PdoPgsql < AbstractPhp71Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-104"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b69eb26456d27ebb709ed35ba274736ec07569a07ba4157e03a814cd97d1293b"
-    sha256 cellar: :any_skip_relocation, ventura:       "a26b2370d6fdd59abcc5d752d52df01c0ca7aa3e98949d63ffdd14d79959d978"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2fb47aa6488a25d67ca4ed29f4fc3f091828e2d7a69272835cab7d1c2777746b"
   end
 
   depends_on "digitalspacestdio/common/libpq@16.2-icu4c.69.1"

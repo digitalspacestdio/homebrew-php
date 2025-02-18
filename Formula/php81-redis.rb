@@ -9,11 +9,8 @@ class Php81Redis < AbstractPhp81Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-106"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "060edfb254a61aaf0dad3d18783c6bd19aab7731ad8871dd167e62a2795e1183"
-    sha256 cellar: :any_skip_relocation, ventura:       "d1b58535acd2c5c32a6e6fc1a07d67066f7cacc5b39026c93f2535fef4d2f677"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6be55db74d54ac85bbd3bc55b1f0e58758f327aa117b6d31af320b1970573d51"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "eb5bf99408ca71febbbc86ffbfa9d80eda3af94b8a11dd883f0f00c12d1368f5"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cb857e4970151d67c80d12674c6c3b2a73507f4df11a2c0dec84d70d3c6bdb09"
   end
 
   depends_on "digitalspacestdio/php/php81-igbinary"

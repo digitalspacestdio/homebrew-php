@@ -10,9 +10,8 @@ class Php84Mongodb < AbstractPhp84Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.3-106"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cb20c86bf59f09916f069990553ec3cfffc0db2adf5fba61cc445bd85b4e4d01"
-    sha256 cellar: :any_skip_relocation, ventura:       "feed7c12cc635e7fa06316c15f07a8941fa947a4ece48c491763471c110dc4ff"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.4-110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "aa7afbea6e37cf6c0ded753a1bc197fb830a4adde9f787a6ead342f414ab42d8"
   end
 
   depends_on "openssl"

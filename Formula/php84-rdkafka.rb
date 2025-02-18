@@ -9,6 +9,11 @@ class Php84Rdkafka < AbstractPhp84Extension
   head "https://github.com/arnaud-lb/php-rdkafka.git"
   revision PHP_REVISION
 
+  bottle do
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.4-110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9f7f012fe81c444132a051bb496029d484f6138c4b168f655d328fbf5adf2e9b"
+  end
+
   depends_on "pcre2"
   depends_on "librdkafka"
 

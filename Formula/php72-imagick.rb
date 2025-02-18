@@ -9,6 +9,11 @@ class Php72Imagick < AbstractPhp72Extension
   head "https://github.com/mkoppanen/imagick.git"
   revision PHP_REVISION
 
+  bottle do
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c6c2e9be4325b88c9fda16dc2aaccf601c319e90be9aa0593a777194d5598c78"
+  end
+
 
   depends_on "pkg-config" => :build
   depends_on "imagemagick6"

@@ -12,9 +12,8 @@ class Php71 < AbstractPhp
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-104"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "dd2a5dc45f6f29e2e3f21b2cc6bb4907dc73aa9174be7b0a16a82c48d84df5e3"
-    sha256 cellar: :any_skip_relocation, ventura:       "2cc8c6dd0fb1a92305d59aa76513e89b7668184ec937181fc3d7b93f424168f3"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "099d73539edc41f6c3b6907c08a1be8339623017d2e9025b54baea85f9e21310"
   end
 
   keg_only :versioned_formula

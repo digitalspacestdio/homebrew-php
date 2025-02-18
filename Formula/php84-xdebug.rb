@@ -11,9 +11,8 @@ class Php84Xdebug < AbstractPhp84Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.3-106"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8e91191f759edf1fcc7e38415f774f74597681277f736b9762e17f3bf2077b30"
-    sha256 cellar: :any_skip_relocation, ventura:       "cc6853d7c6fac73736eb83fd5402cc26136c164cc09dd9fcda6caf84b0b50024"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.4-110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9d6b43f79c1a75e59b5327666e2193003590b5577ad20625bd4f3d325850b216"
   end
 
   def extension_type

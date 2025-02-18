@@ -11,9 +11,8 @@ class Php73Xdebug < AbstractPhp73Extension
   revision PHP_REVISION+1
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.3.33-104"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "29934e96dbd78aec894ef72421430aa7df393be74c5062cc213e14884b5b0ced"
-    sha256 cellar: :any_skip_relocation, ventura:       "5dc11ccde311d085bbf1cd54411bcf23b64a5e57b4df75551936ec456b0f1001"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.3.33-110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e4f7aa7ca5750519b4c9f4531a9a15dd6ad77e449a195f7930e89c2c8585ab7c"
   end
 
   def extension_type

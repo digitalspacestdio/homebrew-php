@@ -11,11 +11,8 @@ class Php81Apcu < AbstractPhp81Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-106"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b460e2c5bb7211506b0ae9d2cac3a6bf0272cb35cde331b406fddce095cca830"
-    sha256 cellar: :any_skip_relocation, ventura:       "c46f106c8f04d4fd3da878075ba33e92698cdc755a22e0907ba8453254211bca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a81fc7057fa78fb81a11cfe7fb4ffe235368edfde8ca4e97bbfa8534ce55cf07"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "1bd7161ff114a25c26c93199b963ba88866719d0ab73fbbfc1567529070b9d7e"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8fced7454a438a45c970c0cfa9ea7c12bee9b1578e04eb43c8b0f07a505369ff"
   end
 
   depends_on "pcre2"

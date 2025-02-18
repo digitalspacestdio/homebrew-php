@@ -9,9 +9,8 @@ class Php83Redis < AbstractPhp83Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.16-106"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e7770746b01d4515a9bcb0ee2241f49626cf7656879335cba5b28731ee8e5cb8"
-    sha256 cellar: :any_skip_relocation, ventura:       "e12dddac89184d3c4c4adef2ac4bf853ba26004eb739c7dec76b304eb470aa41"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.17-110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "abf440d2ec2034d41f14bc1351253cee3a6104616929d8111f6b7deec8ce9517"
   end
 
   depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-igbinary"

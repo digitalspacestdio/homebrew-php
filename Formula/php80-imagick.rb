@@ -11,6 +11,11 @@ class Php80Imagick < AbstractPhp80Extension
   version "132a11f"
   revision PHP_REVISION
 
+  bottle do
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "56add380f1d321d6871c0f1549e5dc98aea39bd083f646f1274fda9b2d29d629"
+  end
+
 
   depends_on "pkg-config" => :build
   depends_on "imagemagick6"

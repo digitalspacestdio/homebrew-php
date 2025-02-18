@@ -10,9 +10,8 @@ class Php70Sodium < AbstractPhp70Extension
   revision PHP_REVISION
   
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-104"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a6b711c245d5f6986290fb0c510b5e744feed1051659eeed93c00c63ef7fd165"
-    sha256 cellar: :any_skip_relocation, ventura:       "9ddb9481403ec73dc3660695837d3f80b71dc2450e1c5fd26dc7976aed17d21f"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4e4d60217fc4fce8081da3bbc6a7b9fb5e7eb7f3fe04145b9d036ddf58b057b1"
   end
 
   depends_on "libsodium"

@@ -10,9 +10,8 @@ class Php70Amqp < AbstractPhp70Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-104"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7d5f7f541caa6188d47c9f0cf8957c9a2b4c8610294d3bbf4bd566ef369842ff"
-    sha256 cellar: :any_skip_relocation, ventura:       "8a3b072b68a5181fb91b80c26a84cf6aced683447fc692359396ddf814c3688b"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f5373ff04c00b8db889000994bb998ace91b004920973ca302a00375c830f72d"
   end
 
   depends_on "rabbitmq-c"
