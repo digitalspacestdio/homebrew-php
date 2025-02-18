@@ -19,15 +19,13 @@ class Php80Imagick < AbstractPhp80Extension
 
   depends_on "pkg-config" => :build
   depends_on "imagemagick6"
-  depends_on "pcre2"
+  depends_on "digitalspacestdio/common/imagemagick7"
 
   def install
-    #Dir.chdir "imagick-#{version}" unless build.head?
-
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
-                          "--with-imagick=#{Formula["imagemagick6"].opt_prefix}"
+                          "--with-imagick=#{Formula["digitalspacestdio/common/imagemagick7"].opt_prefix}"
     system "make"
     prefix.install "modules/imagick.so"
     write_config_file if build.with? "config-file"
