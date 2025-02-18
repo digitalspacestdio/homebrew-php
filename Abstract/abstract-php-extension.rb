@@ -76,7 +76,14 @@ class AbstractPhpExtension < Formula
       ENV["CXX"] = "#{Formula["gcc@13"].opt_prefix}/bin/g++-13"
     end
 
-    if @@php_version.start_with?("7.2", "7.1", "7.0", "5.")
+
+    ENV.append "CFLAGS", "-Wno-array-bound" if OS.mac?
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+    ENV.append "CFLAGS", "-Wno-incompatible-pointer-types"
+    ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"
+    ENV.append "CFLAGS", "-Wno-implicit-int" if @@php_version.start_with?("5.")
+    
+    if @@php_version.start_with?("7.3", "7.2", "7.1", "7.0", "5.")
       ENV.append "CFLAGS", "-fcommon"
       ENV.append "CFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
       ENV.append "CXXFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
@@ -86,8 +93,8 @@ class AbstractPhpExtension < Formula
     end
 
     if @@php_version.start_with?("5.")
-      ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
-      ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
+      ENV["PHP_AUTOCONF"] = "#{Formula["autoconf269"].opt_bin}/autoconf"
+      ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf269"].opt_bin}/autoheader"
     else
       ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
       ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
