@@ -23,6 +23,8 @@ class Php74Imagick < AbstractPhp74Extension
     ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
     ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
 
+    safe_phpize
+    
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
                           "--with-imagick=#{Formula["digitalspacestdio/common/imagemagick7"].opt_prefix}"
