@@ -10,8 +10,8 @@ class Php70Redis < AbstractPhp70Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c9ca91179741891428171ff210cfe51c65d6ccb5bdfe5d3605d8c81a6ce02157"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-111"
+    sha256 cellar: :any_skip_relocation, ventura: "0c4dd5a809b7ffb409280be4df4eee97bc2ff9bafbd76a6cd2fb754ca3056cc9"
   end
 
 

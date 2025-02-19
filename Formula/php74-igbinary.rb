@@ -10,8 +10,8 @@ class Php74Igbinary < AbstractPhp74Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "550da06b76f07e8cc467c879430a56d765433252053039b3eb1f69e09e622728"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-111"
+    sha256 cellar: :any_skip_relocation, ventura: "cc4b41b9d93201fa1eb64b5f632271d8fd8defb3379a41318314c5a32d7da398"
   end
 
 

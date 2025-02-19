@@ -10,8 +10,8 @@ class Php74Tidy < AbstractPhp74Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "788247bbf4ac7e49a59146647abb5f0d3f9d5a24a88f71e1f1316e01cc72e0df"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-111"
+    sha256 cellar: :any_skip_relocation, ventura: "364c84b4ded8d89b6e8d066088452e688c8a2f7180e8df67b8e29d023c6e57c3"
   end
 
   depends_on "tidy-html5"

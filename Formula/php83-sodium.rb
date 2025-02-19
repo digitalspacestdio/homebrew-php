@@ -10,8 +10,8 @@ class Php83Sodium < AbstractPhp83Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.17-110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b36a77e568d698a7665dca2778730e26627ca03ed6af798e3ccbb2ea023f38f3"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.17-111"
+    sha256 cellar: :any_skip_relocation, ventura: "46659467ce2e47b92ecfbb8a12f7fe8ae10a33bd756e74d520ab58c900cd527d"
   end
 
   depends_on "pkg-config" => :build

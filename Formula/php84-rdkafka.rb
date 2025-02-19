@@ -10,8 +10,8 @@ class Php84Rdkafka < AbstractPhp84Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.4-110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9f7f012fe81c444132a051bb496029d484f6138c4b168f655d328fbf5adf2e9b"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.4-111"
+    sha256 cellar: :any_skip_relocation, ventura: "e982e6ca812c9e223199573ed358918d6829c1bea96fea305ec339682d4059d4"
   end
 
   depends_on "pcre2"

@@ -10,8 +10,8 @@ class Php80Amqp < AbstractPhp80Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "143fedd8b7500c6bfe5abbd349f4fa5d9d59abcadeaee6481a9c870ae2db7a3e"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-111"
+    sha256 cellar: :any_skip_relocation, ventura: "cb668cd36cc84c7446f4c5fdb099cf314426f4d31486910278d945e7030ce8b4"
   end
 
   depends_on "rabbitmq-c"

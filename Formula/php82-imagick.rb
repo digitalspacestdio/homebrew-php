@@ -11,8 +11,8 @@ class Php82Imagick < AbstractPhp82Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.27-110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "93aea5d2d32431a82d7a7ff04c9fc84e968570be8e25d1e964551d5c1dee8a8b"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.27-111"
+    sha256 cellar: :any_skip_relocation, ventura: "f29ef9cd82bb5c40f50b1545bb0c4b0cc9a1f10d17e3bdeb636503686e6dc685"
   end
 
   depends_on "pkg-config" => :build

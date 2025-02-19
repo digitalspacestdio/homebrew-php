@@ -10,8 +10,8 @@ class Php73Imagick < AbstractPhp73Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.3.33-110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "fa1957d5957587ada39fa6ece962fd397bb05ca0984c01964862c4ecec801ca5"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.3.33-111"
+    sha256 cellar: :any_skip_relocation, ventura: "8b7c2b6331b25f226b79aabc822d27a03a7c7b5558b5192f305100636f30f857"
   end
 
 

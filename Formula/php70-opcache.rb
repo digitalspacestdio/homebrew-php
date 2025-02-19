@@ -10,8 +10,8 @@ class Php70Opcache < AbstractPhp70Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "eaf3cfde15be5f0837df3251599e709c9d18f1e994a3ce7cc5db91aaadbba36c"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-111"
+    sha256 cellar: :any_skip_relocation, ventura: "fc3c5e4bcd27ca9def74f25e0d6748595bbf45392cbb26fb576afc1fb7a130fd"
   end
 
   depends_on "pcre2"

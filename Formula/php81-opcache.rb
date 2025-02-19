@@ -11,8 +11,8 @@ class Php81Opcache < AbstractPhp81Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d9a2423dbb4b495ff75149c8bf3e1fe72d0e9b81d40a7dc6818712e0d30346b2"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-111"
+    sha256 cellar: :any_skip_relocation, ventura: "27f0747d0dc7a8aa5d78b0e256b15b456d584bcb7a90ae5412d6e41685bcf1c6"
   end
 
   depends_on "pcre2"

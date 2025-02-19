@@ -11,8 +11,8 @@ class Php82Gmp < AbstractPhp82Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.27-110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a6a1eabb3523e35223374a6ad22f356d7ba0ebaee95e3adcc4e08e7445f74699"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.27-111"
+    sha256 cellar: :any_skip_relocation, ventura: "749e7e10d4096d84c9b9ce92e321a65bf7414916bb2e252e036a09939fd64ff8"
   end
 
   depends_on "gmp"

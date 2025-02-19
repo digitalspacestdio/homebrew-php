@@ -11,8 +11,8 @@ class Php70Ldap < AbstractPhp70Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f662d021c472972b4267ee0c8e10e28effb431b287f82784a0120c3494c89a9a"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-111"
+    sha256 cellar: :any_skip_relocation, ventura: "4f7121bca30c9ee81dc7446953fb2c1b988953fae33ca7b6e91a5f1b20936410"
   end
 
   depends_on "openldap"

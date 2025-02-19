@@ -9,8 +9,8 @@ class Php71Apcu < AbstractPhp71Extension
   head "https://github.com/krakjoe/apcu.git"
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "64c501ab2ea5422d85cfc4372a9be1a76451069e05d69f8dc62b9652be51df98"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-111"
+    sha256 cellar: :any_skip_relocation, ventura: "56d09bf3a6091a1eeba2228140ad4f9f29774ed2d18ac0203c85afdc19797d09"
   end
   depends_on "pcre2"
   revision PHP_REVISION

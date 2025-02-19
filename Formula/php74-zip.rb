@@ -11,8 +11,8 @@ class Php74Zip < AbstractPhp74Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7c3c5b34c1f26e77c3fc2994aac7739032133422c7121d5912268b57fed0c95f"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-111"
+    sha256 cellar: :any_skip_relocation, ventura: "4921a2a18d45f4cefd16349970153442f3b9010e0dd5da3addab8963a16aa238"
   end
 
   depends_on "libzip"

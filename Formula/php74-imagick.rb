@@ -11,8 +11,8 @@ class Php74Imagick < AbstractPhp74Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e1cde426007c21da62594a784541fd30732665295b3602c573f612eb235b6aad"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-111"
+    sha256 cellar: :any_skip_relocation, ventura: "de06953ae89e9f36e9ee7fa82513f8fefd5f1deed558a8555edd51c73574d44c"
   end
 
   depends_on "pkg-config" => :build

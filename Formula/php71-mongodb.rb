@@ -11,8 +11,8 @@ class Php71Mongodb < AbstractPhp71Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "61e6bcc090586cb2c4ca980c9531970b8bdc5844b8499f6c7d57ce7c79e9a457"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-111"
+    sha256 cellar: :any_skip_relocation, ventura: "ddcbc8793e63538b6c3831271baf2a76eb19619c501f732bd0af9694ce21ebe4"
   end
 
   depends_on "openssl111w"

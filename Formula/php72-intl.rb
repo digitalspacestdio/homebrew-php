@@ -10,8 +10,8 @@ class Php72Intl < AbstractPhp72Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2f83929e54df780d4dfd67838a4a5f5513b52529d5f8faa020e02579245fcb85"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-111"
+    sha256 cellar: :any_skip_relocation, ventura: "2a97503f3cd30a705ade6817209e161205642f4dc0b96564429668e48567f41f"
   end
 
   depends_on "digitalspacestdio/common/icu4c@69.1"

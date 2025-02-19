@@ -10,8 +10,8 @@ class Php70Yaml < AbstractPhp70Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "df6b796571f6b6abae423a7125fac848b1c418129e7a918fc4cc50df03b77f12"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-111"
+    sha256 cellar: :any_skip_relocation, ventura: "59716780787f4171ede5c1187a728b92a0ae4aa9ec9bdee4f3b16f1918d3c078"
   end
 
   depends_on "libyaml"

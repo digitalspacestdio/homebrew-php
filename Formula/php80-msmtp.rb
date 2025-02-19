@@ -9,8 +9,8 @@ class Php80Msmtp < AbstractPhp80Extension
   revision 1
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "740dfeeefe3a4d2e052615df32b9167206779f8275096739b072dc3aa1bca912"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-111"
+    sha256 cellar: :any_skip_relocation, ventura: "6775265d5119522d5ebcd0a460cfaf1b243720e82dac83016827312f3278ac33"
   end
 
   depends_on "msmtp"

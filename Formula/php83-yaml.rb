@@ -10,8 +10,8 @@ class Php83Yaml < AbstractPhp83Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.17-110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1bf1488939076a1488848e847bc1dc0230415f8d4b54a1268c8cfa8aeef65ad2"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.17-111"
+    sha256 cellar: :any_skip_relocation, ventura: "309fda7c3f18a6991b7b335a49a129ac5fcdd60353f5119033c0b3174e026d08"
   end
 
   depends_on "libyaml"

@@ -9,8 +9,8 @@ class Php71Msmtp < AbstractPhp71Extension
   revision 1
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "dae8bc8b56fd1e158e6cda88ecf68c5f317802b0fbcabd741588a88f03ba80a7"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-111"
+    sha256 cellar: :any_skip_relocation, ventura: "0433cb1dd67af17f2aca67b00d3b9d7754895445e02698545513daa7fb542bbc"
   end
 
   depends_on "msmtp"
