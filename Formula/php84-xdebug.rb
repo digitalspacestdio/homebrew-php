@@ -1,7 +1,7 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
 class Php84Xdebug < AbstractPhp84Extension
-  init PHP_VERSION, false
+  init
   desc "Provides debugging and profiling capabilities."
   homepage "https://xdebug.org"
   url "https://github.com/xdebug/xdebug/archive/5107d2d978302323f9e65002fad2aee9f4c24628.tar.gz"
