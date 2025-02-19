@@ -54,7 +54,7 @@ class AbstractPhpExtension < Formula
   def safe_phpize
     @@php_version
     @@php_version_path
-
+    ENV.cxx11
     if Hardware::CPU.intel?
       ENV.append "CFLAGS", "-march=ivybridge"
       ENV.append "CFLAGS", "-msse4.2"
