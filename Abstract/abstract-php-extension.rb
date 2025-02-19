@@ -292,7 +292,7 @@ end
 
 class AbstractPhp81Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php81Defs
-  def self.init(php_version = PHP_VERSION, use_gcc = false)
+  def self.init(php_version = PHP_VERSION, use_gcc = true)
     super(php_version, use_gcc)
     depends_on "digitalspacestdio/php/php81"
   end
