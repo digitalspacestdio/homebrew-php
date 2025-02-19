@@ -237,7 +237,7 @@ end
 
 class AbstractPhp56Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php56Defs
-  def self.init(php_version = PHP_VERSION, use_gcc = true)
+  def self.init(php_version = PHP_VERSION, use_gcc = false)
     super(php_version)
     depends_on "digitalspacestdio/php/php56"
   end
