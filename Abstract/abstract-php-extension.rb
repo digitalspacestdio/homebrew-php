@@ -100,7 +100,8 @@ class AbstractPhpExtension < Formula
       ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
       ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
     end
-
+    ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
     # START - Icu4c settings 
     if @@php_version.start_with?("8.")
       ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.74.2"].opt_prefix}/lib"
