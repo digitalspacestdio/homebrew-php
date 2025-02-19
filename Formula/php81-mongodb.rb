@@ -19,12 +19,14 @@ class Php81Mongodb < AbstractPhp81Extension
   depends_on "digitalspacestdio/common/icu4c@72.1"
 
   def install
+    ENV.append "LDFLAGS", "-L#{Formula["openssl@3"].opt_prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{Formula["openssl@3"].opt_prefix}/include"
     Dir.chdir "mongodb-#{version}" unless build.head?
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
-                          "--with-mongodb-ssl=openssl --with-mongodb-icu=#{Formula["digitalspacestdio/common/icu4c@72.1"].opt_prefix} --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}"
+                          "--with-mongodb-ssl=openssl --with-mongodb-icu=#{Formula["digitalspacestdio/common/icu4c@72.1"].opt_prefix}"
     system "make"
     prefix.install "modules/mongodb.so"
     write_config_file if build.with? "config-file"
