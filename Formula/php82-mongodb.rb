@@ -14,7 +14,7 @@ class Php82Mongodb < AbstractPhp82Extension
     sha256 cellar: :any_skip_relocation, x86_64_linux: "87be5861f66a3868854adcda6ab1005617ed28a3ddfd8be509609a3d9b28e883"
   end
 
-  depends_on "openssl"
+  depends_on "openssl@3"
   depends_on "digitalspacestdio/common/icu4c@74.2"
 
   def install
@@ -23,7 +23,7 @@ class Php82Mongodb < AbstractPhp82Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
-                          "--with-mongodb-ssl=openssl --with-mongodb-icu=#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix} --with-openssl-dir=#{Formula["openssl111w"].opt_prefix}"
+                          "--with-mongodb-ssl=openssl --with-mongodb-icu=#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix}"
     system "make"
     prefix.install "modules/mongodb.so"
     write_config_file if build.with? "config-file"
