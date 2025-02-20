@@ -11,7 +11,8 @@ class Php83Tidy < AbstractPhp83Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.17-111"
-    sha256 cellar: :any_skip_relocation, ventura: "bc6f02dc6eb4d091fb7e2227ac0b1d6dc775c16a2eb81b2f721269aeda613888"
+    sha256 cellar: :any_skip_relocation, ventura:      "bc6f02dc6eb4d091fb7e2227ac0b1d6dc775c16a2eb81b2f721269aeda613888"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "680c2eda82fc7c5db455775ec745d07122d00ff9e92e9745db187a2b8532e8bb"
   end
 
   depends_on "tidy-html5"

@@ -11,7 +11,8 @@ class Php70Rdkafka < AbstractPhp70Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-111"
-    sha256 cellar: :any_skip_relocation, ventura: "dc63f1976cde0020f62726bccbfd5097923da6bfd9b6ed133b0be766d851b7ae"
+    sha256 cellar: :any_skip_relocation, ventura:      "dc63f1976cde0020f62726bccbfd5097923da6bfd9b6ed133b0be766d851b7ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "02cba4e62c9b79c4cf60d4657203a5957d5c8b765d5a01fb81e471e95994f381"
   end
 
   depends_on "pcre2"

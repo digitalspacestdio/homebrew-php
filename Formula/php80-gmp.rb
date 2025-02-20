@@ -12,7 +12,8 @@ class Php80Gmp < AbstractPhp80Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-111"
-    sha256 cellar: :any_skip_relocation, ventura: "ee4b4b7e85d6d77d8a9b6258bbb73903638c637dab0937bee58e64fee30687c5"
+    sha256 cellar: :any_skip_relocation, ventura:      "ee4b4b7e85d6d77d8a9b6258bbb73903638c637dab0937bee58e64fee30687c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c5492ca8761d1a1c3573cf85169fc7d90d93b0e2ff06cec06c0f13130ddc0e57"
   end
 
   depends_on "gmp"

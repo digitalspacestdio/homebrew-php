@@ -12,7 +12,8 @@ class Php74Zip < AbstractPhp74Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-111"
-    sha256 cellar: :any_skip_relocation, ventura: "4921a2a18d45f4cefd16349970153442f3b9010e0dd5da3addab8963a16aa238"
+    sha256 cellar: :any_skip_relocation, ventura:      "4921a2a18d45f4cefd16349970153442f3b9010e0dd5da3addab8963a16aa238"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a19705208750f5e3f8e1335d532b4589ee85bede7f8c1ed6f5a66cecae2a2971"
   end
 
   depends_on "libzip"

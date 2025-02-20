@@ -10,7 +10,8 @@ class Php80Redis < AbstractPhp80Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-111"
-    sha256 cellar: :any_skip_relocation, ventura: "778d69b250289ede8ebc006ba23c9f6a5c1d5845eb3625643f36f3df82bf61c4"
+    sha256 cellar: :any_skip_relocation, ventura:      "778d69b250289ede8ebc006ba23c9f6a5c1d5845eb3625643f36f3df82bf61c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1ab28089f1530abde59f9401d7b795cae47e812455972f00db72441ed3b5cad6"
   end
 
   depends_on "digitalspacestdio/php/php80-igbinary"

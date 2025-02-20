@@ -13,7 +13,8 @@ class Php80Imagick < AbstractPhp80Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-111"
-    sha256 cellar: :any_skip_relocation, ventura: "19dbee590f864540d311153a4ac2b3a1cd4caf6065ebed43c7ce63b521acda89"
+    sha256 cellar: :any_skip_relocation, ventura:      "19dbee590f864540d311153a4ac2b3a1cd4caf6065ebed43c7ce63b521acda89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9d25c451f90230aa504faa0e018a8f8dc8f98b14347e8708ab8b35ad3caf2fd0"
   end
 
 

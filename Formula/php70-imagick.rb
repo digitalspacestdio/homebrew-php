@@ -11,7 +11,8 @@ class Php70Imagick < AbstractPhp70Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-111"
-    sha256 cellar: :any_skip_relocation, ventura: "5d6afdd43114b23a23dcda591ba69a4903faf02afbcff98803ad3478dde3b1ed"
+    sha256 cellar: :any_skip_relocation, ventura:      "5d6afdd43114b23a23dcda591ba69a4903faf02afbcff98803ad3478dde3b1ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "56d2d23b3cde943518310d2ec9b01a4b13b4ae8685d8d2bdde256b1f02a9a82d"
   end
 
 

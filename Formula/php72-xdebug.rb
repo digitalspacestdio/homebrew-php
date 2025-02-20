@@ -12,7 +12,8 @@ class Php72Xdebug < AbstractPhp72Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-111"
-    sha256 cellar: :any_skip_relocation, ventura: "c81dc8020b8b5c055e4b506ada5792fcf79aeb063b68f6f5e0eff75c1edbfd4a"
+    sha256 cellar: :any_skip_relocation, ventura:      "c81dc8020b8b5c055e4b506ada5792fcf79aeb063b68f6f5e0eff75c1edbfd4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "12a94078ac7ebd89c30b8d1b789d07a4239c2248aff922adf0713c513de33eda"
   end
 
   def extension_type

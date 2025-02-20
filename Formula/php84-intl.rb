@@ -12,7 +12,8 @@ class Php84Intl < AbstractPhp84Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.4-111"
-    sha256 cellar: :any_skip_relocation, ventura: "60840d98d5a470ea624c8acd51bbe232a0742d21f52653f3504555faa47edd8d"
+    sha256 cellar: :any_skip_relocation, ventura:      "60840d98d5a470ea624c8acd51bbe232a0742d21f52653f3504555faa47edd8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8a372da31b9b6c19f656316fec922d28f52a446cf8af2092e2ae49b5d9969c8f"
   end
 
   depends_on "digitalspacestdio/common/icu4c@74.2"

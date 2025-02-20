@@ -12,7 +12,8 @@ class Php71Gmp < AbstractPhp71Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-111"
-    sha256 cellar: :any_skip_relocation, ventura: "31b7882414ac243d0a8e3795d5ac09058cc815c7e4fd7b35a31290870d577185"
+    sha256 cellar: :any_skip_relocation, ventura:      "31b7882414ac243d0a8e3795d5ac09058cc815c7e4fd7b35a31290870d577185"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e15a47d01390021b57cac8baa4f439da84250a08dc2d89c10e60f7b5a30f6d9b"
   end
 
   depends_on "gmp"

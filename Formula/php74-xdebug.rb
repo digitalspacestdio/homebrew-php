@@ -12,7 +12,8 @@ class Php74Xdebug < AbstractPhp74Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-111"
-    sha256 cellar: :any_skip_relocation, ventura: "d458262f020e362ce7113c47a18d0266fdfdb0fb5c7b415e1a3fd9c5cbed3276"
+    sha256 cellar: :any_skip_relocation, ventura:      "d458262f020e362ce7113c47a18d0266fdfdb0fb5c7b415e1a3fd9c5cbed3276"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cb8279434bbf3eba0f9195869e4e54297bb3428dfa3e062dc293ee9ef7dd736a"
   end
 
   def extension_type

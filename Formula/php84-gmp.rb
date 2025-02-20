@@ -12,7 +12,8 @@ class Php84Gmp < AbstractPhp84Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.4-111"
-    sha256 cellar: :any_skip_relocation, ventura: "089983f35a4ea78f6104eba3470a62bfafa06ab009f23ce4c8344e5d4154cb3c"
+    sha256 cellar: :any_skip_relocation, ventura:      "089983f35a4ea78f6104eba3470a62bfafa06ab009f23ce4c8344e5d4154cb3c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ea963b4fb653518c57553f39d21389bef0287893afe23f02d7738afc9df797d1"
   end
 
   depends_on "gmp"

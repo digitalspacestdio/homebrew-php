@@ -12,7 +12,8 @@ class Php72Ldap < AbstractPhp72Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-111"
-    sha256 cellar: :any_skip_relocation, ventura: "2d1552cadfaf9689aeab03bb368509e400559034c3c2902a0200247b6863ce53"
+    sha256 cellar: :any_skip_relocation, ventura:      "2d1552cadfaf9689aeab03bb368509e400559034c3c2902a0200247b6863ce53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "388153684edab443a59088e8d228f61f1b1e9e0fa83e8861455ecfa0cafada25"
   end
 
   depends_on "openldap"

@@ -12,7 +12,8 @@ class Php84Imagick < AbstractPhp84Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.4-111"
-    sha256 cellar: :any_skip_relocation, ventura: "479968da5c115721e81d58d9a7f786731e586cf3a0205b91a7104b2dfb47b9f9"
+    sha256 cellar: :any_skip_relocation, ventura:      "479968da5c115721e81d58d9a7f786731e586cf3a0205b91a7104b2dfb47b9f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4a94a44e1e2795f8a26f16bc53176ea614bc8fe5fc30f4dee87ebdebe5a20c8a"
   end
 
   depends_on "pkg-config" => :build

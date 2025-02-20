@@ -12,7 +12,8 @@ class Php73PdoPgsql < AbstractPhp73Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.3.33-111"
-    sha256 cellar: :any_skip_relocation, ventura: "dac8a4dc56095f3a7bb4087eea106511b547e004e8c5e712c0650405441a22b7"
+    sha256 cellar: :any_skip_relocation, ventura:      "dac8a4dc56095f3a7bb4087eea106511b547e004e8c5e712c0650405441a22b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e81a25f97d82001820926201a96d8d197b820baeec370ed746c80bd6e7d32b6f"
   end
 
   depends_on "digitalspacestdio/common/libpq@16.2-icu4c.69.1"

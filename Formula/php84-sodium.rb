@@ -11,7 +11,8 @@ class Php84Sodium < AbstractPhp84Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.4-111"
-    sha256 cellar: :any_skip_relocation, ventura: "9894917a815f8a5f81e921c3500b1837df0251d563e8da3d16948d8e4e4e01dc"
+    sha256 cellar: :any_skip_relocation, ventura:      "9894917a815f8a5f81e921c3500b1837df0251d563e8da3d16948d8e4e4e01dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f2ce715dd140195247ae9dcbb742f90dc425e93a4a41d0348ae8be0125c8de0e"
   end
 
   depends_on "pkg-config" => :build

@@ -11,7 +11,8 @@ class Php74Amqp < AbstractPhp74Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-111"
-    sha256 cellar: :any_skip_relocation, ventura: "d8623e268566e983cccfc20fd59441ef25114d5c5416d0280cbb68e98f075fee"
+    sha256 cellar: :any_skip_relocation, ventura:      "d8623e268566e983cccfc20fd59441ef25114d5c5416d0280cbb68e98f075fee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "776ed7ac22bb34b471efb1e817a9db82749059d63b69142492bd2d9a7ffad62d"
   end
 
   depends_on "rabbitmq-c"

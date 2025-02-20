@@ -6,7 +6,8 @@ class Php72Common < AbstractPhpCommon
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-111"
-    sha256 cellar: :any_skip_relocation, ventura: "683e7c815498f285d787978f9897d90c8ccf9ab3a5c6494c94196dabb4452ce9"
+    sha256 cellar: :any_skip_relocation, ventura:      "683e7c815498f285d787978f9897d90c8ccf9ab3a5c6494c94196dabb4452ce9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e9066e5b97c8f93f76dde17f3e449db73329ef697ef9842f33c1361a7487c69c"
   end
 
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
