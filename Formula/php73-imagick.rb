@@ -11,8 +11,9 @@ class Php73Imagick < AbstractPhp73Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.3.33-111"
-    sha256 cellar: :any_skip_relocation, ventura:      "8b7c2b6331b25f226b79aabc822d27a03a7c7b5558b5192f305100636f30f857"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ad91c48253e95436642961c6287d9902451c9682794a96c45b62e35d9d7a242d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b8e91388dec839fd51c1367efaf48d423dd7720d1cc0aba60eef6e043aba3205"
+    sha256 cellar: :any_skip_relocation, ventura:       "8b7c2b6331b25f226b79aabc822d27a03a7c7b5558b5192f305100636f30f857"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad91c48253e95436642961c6287d9902451c9682794a96c45b62e35d9d7a242d"
   end
 
 

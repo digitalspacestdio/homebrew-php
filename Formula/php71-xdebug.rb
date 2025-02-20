@@ -12,8 +12,9 @@ class Php71Xdebug < AbstractPhp71Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-111"
-    sha256 cellar: :any_skip_relocation, ventura:      "d1df2061bd8cf04a38d1e4aa6dce3e5f6c4b38a1ba29601a392d3b7a9657502f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b3901d1ee5f0d9e6326d354fe44f494b822c6c54a4b6a9450de685fca1309a17"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f23a9061562ae8df4bebabad142776f87feca7fd8f0f86fc9800247a7be00dd8"
+    sha256 cellar: :any_skip_relocation, ventura:       "d1df2061bd8cf04a38d1e4aa6dce3e5f6c4b38a1ba29601a392d3b7a9657502f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3901d1ee5f0d9e6326d354fe44f494b822c6c54a4b6a9450de685fca1309a17"
   end
 
 

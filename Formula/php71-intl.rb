@@ -11,8 +11,9 @@ class Php71Intl < AbstractPhp71Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-111"
-    sha256 cellar: :any_skip_relocation, ventura:      "e9d3991f2fa9f7495acea544eb3f27a3574da2af8c22ed73d52d186462e72f3d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2b8621e68326bac0f2d1be79a6dd7fa5b2f2e88302b0651b592e0e96760a7919"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3b650f68e1cc349a123dfed122828224743f504d101b1a80a389596d68f226bd"
+    sha256 cellar: :any_skip_relocation, ventura:       "e9d3991f2fa9f7495acea544eb3f27a3574da2af8c22ed73d52d186462e72f3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b8621e68326bac0f2d1be79a6dd7fa5b2f2e88302b0651b592e0e96760a7919"
   end
 
   depends_on "digitalspacestdio/common/icu4c@69.1"

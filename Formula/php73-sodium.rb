@@ -11,8 +11,9 @@ class Php73Sodium < AbstractPhp73Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.3.33-111"
-    sha256 cellar: :any_skip_relocation, ventura:      "69da10c5f6d9ee9676cb488db6c5e206780b870ca14a14eb5f83ad806485d099"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "bcf5389097adf38d10e92f1b074a3b2ae2984ef365d85c29b0ed2fdab4ed2942"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2dc168d2ea6d2926d41ff93956bf6b407fc6dc88e4fcd7f4730c385ad94e7d05"
+    sha256 cellar: :any_skip_relocation, ventura:       "69da10c5f6d9ee9676cb488db6c5e206780b870ca14a14eb5f83ad806485d099"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcf5389097adf38d10e92f1b074a3b2ae2984ef365d85c29b0ed2fdab4ed2942"
   end
 
   depends_on "libsodium"

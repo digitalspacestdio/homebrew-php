@@ -10,8 +10,9 @@ class Php74Msmtp < AbstractPhp74Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-111"
-    sha256 cellar: :any_skip_relocation, ventura:      "717376c978228adc7001c95c47ecbcacb0353035d12a406e85047095b9f61694"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "892ead0066feb01d81991fdb0b84032dbe17075b9cec3d9e0daf16570416e563"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "53c87de5b12927f4e51c4bb65c480e5a6c537daf1e2fd5b4073dc0857f0c0229"
+    sha256 cellar: :any_skip_relocation, ventura:       "717376c978228adc7001c95c47ecbcacb0353035d12a406e85047095b9f61694"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "892ead0066feb01d81991fdb0b84032dbe17075b9cec3d9e0daf16570416e563"
   end
 
   depends_on "msmtp"

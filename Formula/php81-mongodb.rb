@@ -12,8 +12,9 @@ class Php81Mongodb < AbstractPhp81Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-111"
-    sha256 cellar: :any_skip_relocation, ventura:      "04d2fb537b1149171c3af86b1d3d9332c11fc4bd4915c9e1a4a717b73615a5ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c4985775c63eb49cf85d7551bbffa0a7a41de90d60b6385db75674614656a9a8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "12d84def8c75d1a4877d763a6efa780ecc78ac50d9472e14434a5bcb9b0e3198"
+    sha256 cellar: :any_skip_relocation, ventura:       "04d2fb537b1149171c3af86b1d3d9332c11fc4bd4915c9e1a4a717b73615a5ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4985775c63eb49cf85d7551bbffa0a7a41de90d60b6385db75674614656a9a8"
   end
 
   depends_on "openssl@3"

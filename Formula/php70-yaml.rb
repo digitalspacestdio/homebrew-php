@@ -11,8 +11,9 @@ class Php70Yaml < AbstractPhp70Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-111"
-    sha256 cellar: :any_skip_relocation, ventura:      "59716780787f4171ede5c1187a728b92a0ae4aa9ec9bdee4f3b16f1918d3c078"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a8d724d78f974a7cdfb735c2d7e59b5c6ec903a8e841a3b861bd85bd24d58667"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6f97923e979e401589128a737b6f36ae0a27ddbcac2c709430396d2167ff1909"
+    sha256 cellar: :any_skip_relocation, ventura:       "59716780787f4171ede5c1187a728b92a0ae4aa9ec9bdee4f3b16f1918d3c078"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8d724d78f974a7cdfb735c2d7e59b5c6ec903a8e841a3b861bd85bd24d58667"
   end
 
   depends_on "libyaml"

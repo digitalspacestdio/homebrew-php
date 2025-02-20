@@ -11,8 +11,9 @@ class Php82Yaml < AbstractPhp82Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.27-111"
-    sha256 cellar: :any_skip_relocation, ventura:      "77b37e4762fbc9726a9334b4fd4af2312e9228923623a02ef51989b475db7bac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3935fa9719281860575d734c8e3be06501bb6ffbb5e740563ed20a504581cc54"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f97f203163e41ffb74a9ce04009533dfd770a85bc026e1028d0a1c946d2ca616"
+    sha256 cellar: :any_skip_relocation, ventura:       "77b37e4762fbc9726a9334b4fd4af2312e9228923623a02ef51989b475db7bac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3935fa9719281860575d734c8e3be06501bb6ffbb5e740563ed20a504581cc54"
   end
 
   depends_on "libyaml"

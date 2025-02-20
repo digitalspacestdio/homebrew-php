@@ -11,8 +11,9 @@ class Php83Sodium < AbstractPhp83Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.17-111"
-    sha256 cellar: :any_skip_relocation, ventura:      "46659467ce2e47b92ecfbb8a12f7fe8ae10a33bd756e74d520ab58c900cd527d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "46e281f3a0405805c185acd699799cfdca760a65f01f3b3b9b80be83a8622fb7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ac47ddfce54ac6566868390a29551c1a5ad2137af6c83967cc9a71e57841be8d"
+    sha256 cellar: :any_skip_relocation, ventura:       "46659467ce2e47b92ecfbb8a12f7fe8ae10a33bd756e74d520ab58c900cd527d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46e281f3a0405805c185acd699799cfdca760a65f01f3b3b9b80be83a8622fb7"
   end
 
   depends_on "pkg-config" => :build

@@ -11,8 +11,9 @@ class Php70Igbinary < AbstractPhp70Extension
   
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-111"
-    sha256 cellar: :any_skip_relocation, ventura:      "566aa59616751f3c31a82281e1bdf84fdb2983aa1983e180e1214e2b106349bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9b3702b1ad4cbea920abe3fe2b8b6560112563b3ddf52072e8bae38537878ec2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1bc6e18f344413dcd765e51559ce4accc63b4f7f3f8a3d04ae1339bc91cb473c"
+    sha256 cellar: :any_skip_relocation, ventura:       "566aa59616751f3c31a82281e1bdf84fdb2983aa1983e180e1214e2b106349bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b3702b1ad4cbea920abe3fe2b8b6560112563b3ddf52072e8bae38537878ec2"
   end
 
 

@@ -12,8 +12,9 @@ class Php74Imagick < AbstractPhp74Extension
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-111"
-    sha256 cellar: :any_skip_relocation, ventura:      "de06953ae89e9f36e9ee7fa82513f8fefd5f1deed558a8555edd51c73574d44c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "91146ee029326caf4dcf58ef9d173e440f0be7fa65a9ed00ecda0dd375c9fe51"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6695b1037e8fdefc519b61044814488c8299cd73d9b22ed7902d8e0663c304b1"
+    sha256 cellar: :any_skip_relocation, ventura:       "de06953ae89e9f36e9ee7fa82513f8fefd5f1deed558a8555edd51c73574d44c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91146ee029326caf4dcf58ef9d173e440f0be7fa65a9ed00ecda0dd375c9fe51"
   end
 
   depends_on "pkg-config" => :build
