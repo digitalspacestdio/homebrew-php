@@ -8,11 +8,10 @@ class Php81 < AbstractPhp
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-106"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ff9f25bc6a98aa68bf6905f6cbdcae4fb342f304b1dd3ac48cb63f2f102d0687"
-    sha256 cellar: :any_skip_relocation, ventura:       "a7b551e8fdfffd77c2290130687cc6362a7d43a73d65ed1aeb0401e25829b531"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1350ed6c2c069be33330fc5038f3ecfd3cff1da0a29e54168b6b756cbaa68faf"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "5fafa062796e6c734b06250df13ae89147192d2648678f2ec8d3f35d7b9938b0"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fe92403865ab262d30e2a12c2280390e99699c7ec76dccb345316a76ad80e2f0"
+    sha256 cellar: :any_skip_relocation, ventura:       "3261b49085bbd2e9248d4ba8656fbbcb15482784d970f1a540bb1caa2effe02a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b2823b559b74e3ae367016c3b513f58114621b6dcb7c81d31008d63028e9c01"
   end
 
   url PHP_SRC_URL
@@ -32,17 +31,6 @@ class Php81 < AbstractPhp
   depends_on "krb5"
   depends_on "oniguruma"
   depends_on "libjpeg"
-
-
-
-  def install_args
-    args = super
-    if !build.without? "pear"
-      args << "--with-pear"
-    end
-    args << "--enable-gd"
-    args
-  end
 
   if OS.mac?
       patch do

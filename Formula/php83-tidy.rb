@@ -10,11 +10,10 @@ class Php83Tidy < AbstractPhp83Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.14-106"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "65952f788dbeec8eddbb9291269e726b3f83325fc641e20a18f73b56269ed032"
-    sha256 cellar: :any_skip_relocation, ventura:       "6b5da3ef92a2e5c20e53e4e77e47f303740b08a5a31f1dfe263fcc4ebaa3382d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24a15c4ab747e8c78051596547c3fbbb6273739204320a8ca473b5c2cf14795c"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "4f06ae800924239edb583f7bd6c5cea38447d84141851dd8f67f0c2f4b594a10"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.17-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "09c0cd029138deb4a2b17c24da3f33c1e3d720413264d24e4f9eaa494970d755"
+    sha256 cellar: :any_skip_relocation, ventura:       "bc6f02dc6eb4d091fb7e2227ac0b1d6dc775c16a2eb81b2f721269aeda613888"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "680c2eda82fc7c5db455775ec745d07122d00ff9e92e9745db187a2b8532e8bb"
   end
 
   depends_on "tidy-html5"

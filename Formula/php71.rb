@@ -12,11 +12,10 @@ class Php71 < AbstractPhp
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-103"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e673bc934c7a4bae17945b79555ceae4aa8b63a192fa114c4b9158517f667f2c"
-    sha256 cellar: :any_skip_relocation, monterey:       "f3fb64a5b7c274a283c240a1018e1003bacb844eda84003c77f2e2cfb7d1584c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e08a071047427c28d5e74e21c7999ddddff0c0571923c00ab4859d5aa251adcc"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "4b7372a621c714393009853780bc7a3f0f9928585e4314766d821bcd27119d5c"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8b7938912fdc1c1a82cdfb46a4c7c904aa3b1bd057ff34a4f3fb369016e2a434"
+    sha256 cellar: :any_skip_relocation, ventura:       "3c86c24f3ab1e5c549febe2534d91ca9d5597bc8cb4b6ebf56ab663db6c8d51b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58a1346a952ad1365528ffa0900c6f1d72e510c7c306524a19646f339c4f8de0"
   end
 
   keg_only :versioned_formula

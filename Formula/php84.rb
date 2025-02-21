@@ -4,17 +4,16 @@ class Php84 < AbstractPhp
   include AbstractPhpVersion::Php84Defs
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.1-106"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "98c8fd297e0c84547eb902937cd32763578371b50f33b5279a7cb8011fce7aab"
-    sha256 cellar: :any_skip_relocation, ventura:       "effc15018455c5ab979b3502bcf73f15a36d34ca8d54fef8f00b9afd9c67cb03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5aac32e8059e3942df1c38451be56f6a99424a11f579d568fff1a6b0f29c578b"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "ccecdf95c291a7c99f1799bd57574aae34b766175679406a4aa8ad17c530dd6f"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.4-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2a54430cfb8a8dfc33beb0e723853634113c3cd50272942de5ac424dce139d09"
+    sha256 cellar: :any_skip_relocation, ventura:       "f2c859c9ec54d4d4f9f44a7c1e4455cdf2a0f1c34a48bdd3af0e3e29c94f35e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6abd67e4c9836c2f62cd24f2ab19a30ab27a390484887b06b1308e313c451020"
   end
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
   desc "PHP " + PHP_VERSION
   version PHP_VERSION
   revision PHP_REVISION
-  head "https://github.com/php/php-src.git", branch: "php-8.4.0beta5"
+  head "https://github.com/php/php-src.git", branch: "php-8.4"
   
   url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
@@ -36,14 +35,6 @@ class Php84 < AbstractPhp
   depends_on "krb5"
   depends_on "oniguruma"
   depends_on "libjpeg"
-
-  def install_args
-    args = super
-    if !build.without? "pear"
-      args << "--with-pear"
-    end
-    args
-  end
 
   if OS.mac?
       patch do

@@ -10,11 +10,10 @@ class Php71Redis < AbstractPhp71Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-103"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "abc2cc2cc4909d58992669d4eebdcdf9a81ce8c6cf7edc1af4e17b0a78b7a08f"
-    sha256 cellar: :any_skip_relocation, monterey:       "44452e61bc331d1ec8d51bc133999e9321372b5724f2f2df1d80f7712c3f015e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "28a14b242c4deca7289a7ea10ab48594cec52836546bbc9608f5a3f985b241d3"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "72125f790b05043d4869a3c0afe6cb9f7322248af39d2c29d3e458bc3d4bbf1d"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b66061a604e353a7ad76939e40cf611d53093e50415c03f823fe866a1c0563dd"
+    sha256 cellar: :any_skip_relocation, ventura:       "14951a13747661dd0101d8f2145e2a11c72e2e04d89d0a7c196ced0989d8612f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a348702dd6aab71bba67666c3bb8842d6f56e1593dcc7c82faa409a93e6e672"
   end
 
   depends_on "digitalspacestdio/php/php71-igbinary"

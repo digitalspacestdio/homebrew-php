@@ -11,11 +11,10 @@ class Php74Gmp < AbstractPhp74Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-106"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "84cc67aebf826c550b0b37716d58c516ab00033c3a2b9360eb0aaee890aad45c"
-    sha256 cellar: :any_skip_relocation, monterey:       "bb86a850ebc5f0b97fdb6262ba60f7c6a30f21e9fd0e8e2221df968acc577488"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50131d6f17bfa52f83508d48e63409ae6e48044b8093e9e94cfa3e61efb3366d"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "32bf33e45d340e008217730c742498378014dc2ac7861662dfafa904f27cd06a"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2b67b69da5c7846a0856235e5ce9510690ee0c7cb46195fa7ca8a98ce3631f43"
+    sha256 cellar: :any_skip_relocation, ventura:       "7a4ffc586fa8ec0ac0d12528ed9439787b122e3b77ce6aca6acb32a3b1e523fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b69425edee37025de267978e0ec84d03b376a4d7ae0afc4029410b5b57ee947"
   end
 
   depends_on "gmp"

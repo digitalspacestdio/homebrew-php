@@ -10,7 +10,7 @@ class AbstractPhp < Formula
     @@php_version_path = php_version_path
 
     if @@php_version.start_with?("5.", "7.", "8.0")
-      @@php_open_ssl_formula = "openssl@1.1"
+      @@php_open_ssl_formula = "openssl111w"
       @@php_curl_formula = "digitalspacestdio/common/curl@7"
     else
       @@php_open_ssl_formula = "openssl@3"
@@ -23,13 +23,14 @@ class AbstractPhp < Formula
     skip_clean "bin", "sbin"
 
     depends_on "pkg-config" => :build
-    if OS.mac? && @@php_version.start_with?("7.", "8.0") || OS.linux?
-      depends_on "gcc@12" => :build
+    if OS.mac? && @@php_version.start_with?("7.", "8.0", "8.1") || OS.linux?
+      depends_on "gcc@13" => :build
     end
 
+    depends_on "autoconf269" => :build if @@php_version.start_with?("5.")
     depends_on "autoconf" => :build if !@@php_version.start_with?("5.")
-    depends_on "autoconf@2.69" => :build if @@php_version.start_with?("5.")
 
+    depends_on "bison@2.7.1" => :build if @@php_version.start_with?("5.")
     depends_on "bison" => :build if !@@php_version.start_with?("5.")
     depends_on "re2c" => :build if !@@php_version.start_with?("5.")
 
@@ -66,15 +67,17 @@ class AbstractPhp < Formula
     depends_on "readline"
     depends_on "zlib"
     depends_on "bzip2"
+    depends_on "zstd"
     depends_on "libedit"
-    #depends_on "openldap"
     depends_on "mysql" if build.with?("libmysql")
 
     if @@php_version.start_with?("8.")
+      depends_on "digitalspacestdio/common/icu4c@74.2"
       depends_on "digitalspacestdio/common/gettext@0.22-icu4c.74.2"
       depends_on "digitalspacestdio/common/libxml2@2.12-icu4c.74.2" if OS.linux?
       depends_on "digitalspacestdio/common/libxslt@1.10-icu4c.74.2"
     elsif @@php_version.start_with?("7.4")
+      depends_on "digitalspacestdio/common/icu4c@74.2"
       depends_on "digitalspacestdio/common/gettext@0.22-icu4c.74.2"
       depends_on "digitalspacestdio/common/libxml2@2.12-icu4c.74.2" if OS.linux?
       depends_on "digitalspacestdio/common/libxslt@1.10-icu4c.74.2"
@@ -121,7 +124,6 @@ class AbstractPhp < Formula
     option "with-imap", "Include IMAP extension"
     option "with-libmysql", "Include (old-style) libmysql support instead of mysqlnd"
     option "with-mssql", "Include MSSQL-DB support"
-    option "without-pear", "Build without PEAR"
     option "with-pdo-oci", "Include Oracle databases (requries ORACLE_HOME be set)"
     unless name.split("::")[2].casecmp("php53").zero?
       option "with-phpdbg", "Enable building of the phpdbg SAPI executable"
@@ -164,14 +166,17 @@ class AbstractPhp < Formula
 
       ENV.append "CXXFLAGS", "-march=ivybridge"
       ENV.append "CXXFLAGS", "-msse4.2"
+    elsif Hardware::CPU.arm?
+      ENV.append "CFLAGS", "-march=armv8.5-a"
+      ENV.append "CXXFLAGS", "-march=armv8.5-a"
     end
 
     ENV.append "CFLAGS", "-O2"
     ENV.append "CXXFLAGS", "-O2"
 
     if @@php_version.start_with?("5.")
-      ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
-      ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
+      ENV["PHP_AUTOCONF"] = "#{Formula["autoconf269"].opt_bin}/autoconf"
+      ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf269"].opt_bin}/autoheader"
     else
       ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
       ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
@@ -180,8 +185,8 @@ class AbstractPhp < Formula
     ENV["RE2C"] = "#{Formula["re2c"].opt_prefix}/bin/re2c"
 
     if OS.mac? && @@php_version.start_with?("7.", "8.0") || OS.linux?
-      ENV["CC"] = "#{Formula["gcc@12"].opt_prefix}/bin/gcc-12"
-      ENV["CXX"] = "#{Formula["gcc@12"].opt_prefix}/bin/g++-12"
+      ENV["CC"] = "#{Formula["gcc@13"].opt_prefix}/bin/gcc-13"
+      ENV["CXX"] = "#{Formula["gcc@13"].opt_prefix}/bin/g++-13"
     end
     
     if @@php_version.start_with?("7.1", "7.0")
@@ -239,10 +244,6 @@ INFO
     "./php.ini-development"
   end
 
-  def skip_pear_config_set?
-    build.without? "pear"
-  end
-
   def install_args
     ENV["PKG_CONFIG_PATH"] = "#{Formula[@@php_open_ssl_formula].opt_prefix}/lib/pkgconfig:#{ENV["PKG_CONFIG_PATH"]}"
 
@@ -270,9 +271,6 @@ INFO
     else
       headers_path = ""
     end
-
-#    libzip = Formula["libzip"]
-    #ENV["CFLAGS"] = "-Wno-error -I#{libzip.opt_include}"
 
     fpm_user = OS.mac? ? "_www" : "www-data"
     fpm_group = OS.mac? ? "_www" : "www-data"
@@ -305,7 +303,8 @@ INFO
       "--without-gmp",
       "--without-snmp",
       "--with-kerberos#{headers_path}",
-      "--with-mhash#{headers_path}"
+      "--with-mhash#{headers_path}",
+      "--without-pear"
     ]
 
     ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
@@ -335,6 +334,9 @@ INFO
 
     # START - Icu4c settings 
     if @@php_version.start_with?("8.")
+      ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix}/lib"
+      ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix}/include"
+
       ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.74.2"].opt_prefix}/lib"
       ENV.append "CPPFLAGS", "-I#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.74.2"].opt_prefix}/include"
 
@@ -391,9 +393,8 @@ INFO
       args << "--with-libxml-dir=#{Formula["digitalspacestdio/common/libxml2@2.9-icu4c.69.1"].opt_prefix}" if OS.linux?
       args << "--with-xsl=#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.69.1"].opt_prefix}"
       args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.69.1"].opt_prefix}"
-      
     end
-    # END - Icu4c settings 
+    # END - Icu4c settings
 
     # START - GD settings 
     if @@php_version.start_with?("7.4", "8.")
@@ -512,10 +513,6 @@ INFO
       end
     end
 
-    if build.without? "pear"
-      args << "--without-pear"
-    end
-
     if build.with? "postgresql"
       if Formula["postgresql"].opt_prefix.directory?
         args << "--with-pgsql=#{Formula["postgresql"].opt_prefix}"
@@ -552,15 +549,14 @@ INFO
   end
 
   def _install
-    #if php_version.start_with?("7.2", "7.1", "7.0", "5.")
     ENV.cxx11
-    #end
 
     # Work around configure issues with Xcode 12
     # See https://bugs.php.net/bug.php?id=80171
     ENV.append "CFLAGS", "-Wno-array-bound" if OS.mac?
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
     ENV.append "CFLAGS", "-Wno-incompatible-pointer-types"
+    ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"
     ENV.append "CFLAGS", "-Wno-implicit-int" if @@php_version.start_with?("5.")
 
     ENV.append "CFLAGS", "-DDEBUG_ZEND=2" if build.with? "debug"
@@ -575,8 +571,8 @@ INFO
     end
 
     if @@php_version.start_with?("5.")
-      ENV["PHP_AUTOCONF"] = "#{Formula["autoconf@2.69"].opt_bin}/autoconf"
-      ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf@2.69"].opt_bin}/autoheader"
+      ENV["PHP_AUTOCONF"] = "#{Formula["autoconf269"].opt_bin}/autoconf"
+      ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf269"].opt_bin}/autoheader"
     else
       ENV["PHP_AUTOCONF"] = "#{Formula["autoconf"].opt_bin}/autoconf"
       ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf"].opt_bin}/autoheader"
@@ -632,7 +628,7 @@ INFO
 
     chmod_R 0775, lib+"php"
 
-    system bin+"pear", "config-set", "php_ini", config_path+"php.ini", "system" unless skip_pear_config_set?
+    #system bin+"pear", "config-set", "php_ini", config_path+"php.ini", "system"
 
     if build_fpm?
       if File.exist?("sapi/fpm/init.d.php-fpm")

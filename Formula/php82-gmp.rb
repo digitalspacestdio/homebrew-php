@@ -11,11 +11,10 @@ class Php82Gmp < AbstractPhp82Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.26-106"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "19b546a831a2cc75b3e71ee81c8d993904ee1e6a5c03988c19fa56e12cc902e2"
-    sha256 cellar: :any_skip_relocation, ventura:       "859e8e2fd8017deca4b2f4c9c1f9b11ff5b8957c627c251af9fe9e515b56ea0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36d1b445712ed349b7bd89aafb7537e4275c1803b59c8cb8d569c6d1478df754"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "9296b9111f86004a5c2f2611df07456346e1a6c72f41618611c48474f02199df"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.27-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "31e35d9c6c9ad4ddaf7b052e4a5488f6605d9b604ea4321e919ab9d0cbe5f00b"
+    sha256 cellar: :any_skip_relocation, ventura:       "749e7e10d4096d84c9b9ce92e321a65bf7414916bb2e252e036a09939fd64ff8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7949fba9bc58977eb9c259bac00ccbede87130f1402064b6d976ad09afbbfcb"
   end
 
   depends_on "gmp"

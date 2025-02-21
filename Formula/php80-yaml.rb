@@ -9,6 +9,13 @@ class Php80Yaml < AbstractPhp80Extension
   head "https://github.com/php/pecl-file_formats-yaml.git", :branch => "php7"
   revision PHP_REVISION
 
+  bottle do
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "53fbf224b6f095a43d7ceaa6bed718be43c5267a67703cd3f054ff7e5255be6c"
+    sha256 cellar: :any_skip_relocation, ventura:       "3513d0ef558bc12ae0b66ee4a8a8e3d09ef6d54e3cf9b76250acf5da0d69f926"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67d77bf36fc35ea172c684338dedc3ae7be7d2a4d8d9e0c24e100f2071e53212"
+  end
+
   depends_on "libyaml"
 
   def install

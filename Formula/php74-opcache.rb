@@ -11,11 +11,10 @@ class Php74Opcache < AbstractPhp74Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-106"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "49dea3bd3a6d26a05507935f271758fce5592436964dc5815add100cf992426b"
-    sha256 cellar: :any_skip_relocation, monterey:       "09d44b23b3fc1e915cce3740514606ab961df11897bc7c818b89a0844fb6715c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4584b1411f9d954b84741570b69351bff694f77f1bbe284dd9e683f3c244bfbc"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "67bffc927b20034c98e9b2e27524eafd41f6dcf2634eb58d4340ead51a4bcab0"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0bf6812f9f609bd2396109456dc4ee1d8d5a65117cb247c7b36d7f9b76ed4ed7"
+    sha256 cellar: :any_skip_relocation, ventura:       "6500d9616ae5a00ef6d4ee4a9efaf8ad5f30fe51b08184b89c5894c4c3ff38b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b6c6d993ec2ab9f5e8e9321219e9a280947e5653e15c5332a0a8f0c3ea4e4df"
   end
 
   depends_on "pcre2"

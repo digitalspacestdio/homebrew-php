@@ -1,7 +1,7 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
 class Php72Mongodb < AbstractPhp72Extension
-  init PHP_VERSION, false
+  init
   desc "MongoDB driver for PHP."
   homepage "https://pecl.php.net/package/mongodb"
   url "https://github.com/mongodb/mongo-php-driver/releases/download/1.9.0/mongodb-1.9.0.tgz"
@@ -11,14 +11,13 @@ class Php72Mongodb < AbstractPhp72Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-103"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3786ed592d38efc8ee6f1cab83aa48c82f7cb0bee580a6603e25de63a93b62e0"
-    sha256 cellar: :any_skip_relocation, monterey:       "06ca24ab6f897ed8cd615e8bbcc8af6b76341b4ed5037eea56c63db3a3e115c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8aab3f5046c183e2fb378301256adf3d0fdeba05d883ce304c9037bae3228eb"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "f9e0166f4cb2a245457a24b41d7337e48c797d45b63b259454d20238ae1b388d"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "adf2a024bc4a5dc8f671331b3db1e0ef631e6452a5a73e014b53479c7ec99cb4"
+    sha256 cellar: :any_skip_relocation, ventura:       "4fd59f3c2ad6bd0c08f77748ff8030ef9b4105572343af4552f8e293db068a41"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9046bf94b142294abff1c1fc04b2482b8f3a6635523b335e468fbfa9f508f1c"
   end
 
-  depends_on "openssl"
+  depends_on "openssl111w"
   depends_on "digitalspacestdio/common/icu4c@69.1"
 
   def install
@@ -27,7 +26,7 @@ class Php72Mongodb < AbstractPhp72Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
-                          "--with-mongodb-ssl=openssl --with-mongodb-icu=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix} --with-openssl-dir=#{Formula["openssl"].opt_prefix}"
+                          "--with-mongodb-ssl=openssl --with-mongodb-icu=#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix} --with-openssl-dir=#{Formula["openssl111w"].opt_prefix}"
     system "make"
     prefix.install "modules/mongodb.so"
     write_config_file if build.with? "config-file"

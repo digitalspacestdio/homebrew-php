@@ -10,11 +10,10 @@ class Php81Amqp < AbstractPhp81Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-106"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f5cfc80cfc4898f9a0364f280bd01363b6c15c3c9c7743e8c711c713f40e4d62"
-    sha256 cellar: :any_skip_relocation, ventura:       "1b14e42036c690cdb6f53f2746f7ec4fff05c892401e366cf25d4c265e87f742"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ab76581999b6f03a17b208ac76a49262e75b99de9b1b65884ed17961fddc6a6"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "4f4383b1a41423d7e1903573ad030a2a3f81b08ffd0f7e2f549c13ac30453a42"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b4e7222c0f5e6f8f3c50cf11a2574457f1652102aed52507db08eed843bd9ad4"
+    sha256 cellar: :any_skip_relocation, ventura:       "14135c5bfe0cb18582e07300bafdcb44bbb250b9f9f2004ba8803b17002fe5ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38ba61872f0bd7a4c01273c10ed4c3726b926dbd4869667c410317c4f3deabfa"
   end
 
   depends_on "rabbitmq-c"

@@ -11,11 +11,10 @@ class Php71Ldap < AbstractPhp71Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-103"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "55ccce073e639b5a9a36a201ca038c5cc5bffc4597a72d99e7031d4cbd42e6fb"
-    sha256 cellar: :any_skip_relocation, monterey:       "c5bbb90e2d5c6733f0b3d9e5d7bfc308f8ef4f002c20af5a5bcc8c56f3431c73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e5a76d5fa609b687194660410afbafd62515c9dcf57a4579b431197668f96ef"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "7015356fda6a9c3888ce6aad5682e8ef6b9b64131bdfe2643e6466e794dab6cc"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3c252aa8bb52b444d9accb9db64a4600670f8992c19aa29298cc6c3f624882a5"
+    sha256 cellar: :any_skip_relocation, ventura:       "fb11dbf4c55387d4d040947aa3fd6448d5e97318827af5875f172ef295635c37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca791bbb9f3c13f5b982b2b38547bf01543ceaded7b47e15caa5d2ddf298093c"
   end
 
   depends_on "openldap"

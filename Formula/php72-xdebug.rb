@@ -1,7 +1,7 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
 class Php72Xdebug < AbstractPhp72Extension
-  init PHP_VERSION, false
+  init
   desc "Provides debugging and profiling capabilities."
   homepage "https://xdebug.org"
   head "https://github.com/xdebug/xdebug.git"
@@ -11,11 +11,10 @@ class Php72Xdebug < AbstractPhp72Extension
   revision PHP_REVISION+1
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-103"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6b471f1d6983bc99c7b7627b98af719bc356eca6a5d4fd960bbcd75ddbad22e9"
-    sha256 cellar: :any_skip_relocation, monterey:       "1e3aaaf127d270533e0beab4fbdcde0023ccb2247753a8ac23236ef8a2c9186b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c82ef19ef32b70e1ceb5826ee54ec833862afa3ea0c63ac90233c915e505ed75"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "0eeed969293d622d306b81067bbe0ff807830f6d5ba6ba4abea7a57cc884a433"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6c7ef260c195874707225b8ff3482286507ce746e3a70e0a75891082967483d1"
+    sha256 cellar: :any_skip_relocation, ventura:       "c81dc8020b8b5c055e4b506ada5792fcf79aeb063b68f6f5e0eff75c1edbfd4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12a94078ac7ebd89c30b8d1b789d07a4239c2248aff922adf0713c513de33eda"
   end
 
   def extension_type

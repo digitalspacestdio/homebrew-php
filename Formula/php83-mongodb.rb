@@ -10,14 +10,13 @@ class Php83Mongodb < AbstractPhp83Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.14-106"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "63b0e60fd3e422c5c6fade9ee56778657532f79600ab13e395c6db39e123104d"
-    sha256 cellar: :any_skip_relocation, ventura:       "457dd2dbe7acd431660e11399c6ed147417de0b32d8085ac5bcc10aa4a6e2da2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "002684f3a619d08540125314376eacbaf69fe5b9459713352b5caf3fc51f574b"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "566d35bec0a210e2b12b1ee8426b8cffe5d0865c73465b2a8c477cb9b87bc28c"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.3.17-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "58ca85957fd9bd30e9e3f48da15bbf5f39a4d781a73ac068682961cc018db5aa"
+    sha256 cellar: :any_skip_relocation, ventura:       "7701d5b6a55e060c503934bf48b7211284e2d6ce6e32c2749cf51e9529a27c44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2286be39271f3360e6b361240a38a7b84c17943699253c137986565372490d35"
   end
 
-  depends_on "openssl"
+  depends_on "openssl@3"
   depends_on "digitalspacestdio/common/icu4c@74.2"
 
   def install
@@ -26,7 +25,7 @@ class Php83Mongodb < AbstractPhp83Extension
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
-                          "--with-mongodb-ssl=openssl --with-mongodb-icu=#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix} --with-openssl-dir=#{Formula["openssl"].opt_prefix}"
+                          "--with-mongodb-ssl=openssl --with-mongodb-icu=#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix}  --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}"
     system "make"
     prefix.install "modules/mongodb.so"
     write_config_file if build.with? "config-file"

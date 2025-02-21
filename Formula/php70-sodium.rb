@@ -10,11 +10,10 @@ class Php70Sodium < AbstractPhp70Extension
   revision PHP_REVISION
   
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-103"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "26df748873ddfa31086cd68fd38b3f9804c95c8557e2fc72ae14791b4609ce94"
-    sha256 cellar: :any_skip_relocation, monterey:       "4dfc6a171d06c43f7ea227a931b8c1dd5c919fe53e87469658f19bc692ad9556"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "12ba47ead89e7580675ab5ec86e4ce9b7ccb9f0c92a0fb56bff233d70a5781f3"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "0633a53e4712a81440234e00fe6147bb5c3e0e2225039402a459c8b767bb9687"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "33916b824b066aacb30764e03b675c905c04c9e8a4bc589507f3fd7a9bb1da95"
+    sha256 cellar: :any_skip_relocation, ventura:       "b3b544d9cb53d3c767b84cf96a8058406dade68e2c5cc63bb06e1b3995d3a9e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f1dd8cf6261ffb4e544f4988ff621c6fae0a6e29852c2c26b4ae590f138d964"
   end
 
   depends_on "libsodium"

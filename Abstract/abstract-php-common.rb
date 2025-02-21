@@ -38,9 +38,10 @@ class AbstractPhpCommon < Formula
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-zip"
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-ldap"
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-xdebug"
-    # depends_on "digitalspacestdio/php/php#{@@php_version_path}-yaml"
-    # depends_on "digitalspacestdio/php/php#{@@php_version_path}-rdkafka"
-    # depends_on "digitalspacestdio/php/php#{@@php_version_path}-ioncubeloader"
+    depends_on "digitalspacestdio/php/php#{@@php_version_path}-yaml"
+    depends_on "digitalspacestdio/php/php#{@@php_version_path}-rdkafka"
+    depends_on "digitalspacestdio/php/php#{@@php_version_path}-imagick"
+    depends_on "digitalspacestdio/php/php#{@@php_version_path}-ldap"
   end
 
   def fetch

@@ -1,7 +1,7 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
 class Php81Intl < AbstractPhp81Extension
-  init PHP_VERSION, false
+  init
   desc "Wrapper for the ICU library"
   homepage "https://php.net/manual/en/book.intl.php"
   revision PHP_REVISION
@@ -11,11 +11,10 @@ class Php81Intl < AbstractPhp81Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-106"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "73b03cd802f9a9611f560b6bb09b961345350858181033d19882baeddab7d1e2"
-    sha256 cellar: :any_skip_relocation, ventura:       "5a042da2b31ead769b6988f98474249e4bfc980d21c36400d90e4ed0dc8d6c4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f6caf9a3d7f6a390ed8e6256423af6d94ddfad6bd09ff541b39a9228159abf8"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "ddd1e35d6972547a73c9fa92884ffa2670a165e8849722557809eca25c4a3fd7"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6e8bd13ef23a6d5486bd0ac38d8379c6a387a23ff895a2dc77a753247b9e8024"
+    sha256 cellar: :any_skip_relocation, ventura:       "41632493affdef98b34d73f35b77830d6d76c61608c6d2aee1a8c97a24bbe564"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "535331eb8f5428be41e1ce09c9f348e02b2d37f5c38bfc1347d2e529301c1586"
   end
 
   depends_on "digitalspacestdio/common/icu4c@74.2"

@@ -9,11 +9,10 @@ class Php72Igbinary < AbstractPhp72Extension
   head "https://github.com/igbinary/igbinary.git"
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-103"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "21d4fddd794656c5364745b9b73bb491c1fbb43a204934f006c8b51173177ae2"
-    sha256 cellar: :any_skip_relocation, monterey:       "64c0ba9e616b1c46be3d3fd9ca155e0b8aec418d37a2b6cb3840b60409791e64"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac5639cda78e398f4e3a099f01c3db3dae818da22865f36bc62409d1fb4afb84"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "16dddb874b21b836f60ac37e5db8302f64cbd13a814830136c17d40670bcb400"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7374d34130bd5a11a359dc12c5abfa2e4500744ccfce166f7ba0ff9362bd9896"
+    sha256 cellar: :any_skip_relocation, ventura:       "24ebc623a6ff472aeaa265329ed5ca75be892aeba5d84ff2865d816cf25b3e92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "032682122edc7b396168ea17eb38e17403b3349472667a8441e56384f99a004e"
   end
   revision PHP_REVISION
 

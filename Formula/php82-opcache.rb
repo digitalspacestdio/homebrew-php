@@ -1,7 +1,7 @@
 require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 
 class Php82Opcache < AbstractPhp82Extension
-  init PHP_VERSION, false
+  init
   desc "OPcache improves PHP performance"
   homepage "https://php.net/manual/en/book.opcache.php"
   revision PHP_REVISION
@@ -10,11 +10,10 @@ class Php82Opcache < AbstractPhp82Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.26-106"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "28511969783021fa8de99a7f253f6937dc2e01d84a85eb10e68467aa1a1a2734"
-    sha256 cellar: :any_skip_relocation, ventura:       "5e7a26d0b794c4d8052d7dc8cfccf3fcd6769714493d7c6248d6a78ea3816371"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10117ee176800f5027ffbc4431a42f2eb79d35053c3af7cea441622689f19f14"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "76c6fcf6434bc3fee34739f59fb96df178d05f18131e299b529c98302bc3980b"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.27-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ee44558c3a93e4afb0f1aa872455363765cb71c45f865e1c0e710751f745f09f"
+    sha256 cellar: :any_skip_relocation, ventura:       "0014f034c1141e711978e253e8663d44f0c541fbd98d8e294bb47e288ad22f56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ecf7f2e4c1307f2b4fcf3a53def728b4de7feadbd7c4e736fbc51e4f922a609"
   end
 
   depends_on "pcre2"

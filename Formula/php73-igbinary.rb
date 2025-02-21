@@ -10,11 +10,10 @@ class Php73Igbinary < AbstractPhp73Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.3.33-103"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c224d3c2ab1dcc7c193ee2d2ccf7c4b8c6bcf5d3f684c570c603c1a687e7b135"
-    sha256 cellar: :any_skip_relocation, monterey:       "29e9a7bf8d238a77ba6f63936faec2f324ec4596535469fe14f7b7a8797705d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b02590f4808b13883e96709117364f6660d1d21e4b1969b34dbc064f589b819"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "356c593c1b0b30a6f1fe1a382e1a1c1cefd77c06eb6d3538b8ab0c1b1ef209bd"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.3.33-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2139c0c1836a5f9c75eba9d8e79667bdc1a5a7766ddc73cd29473fb386f66da6"
+    sha256 cellar: :any_skip_relocation, ventura:       "1a0ca061c47c7f4f96a311fa24a26858cdda1e8a9f9fdfe9d2f19f08f4c206df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c9c31092676ad22f630fd7c8d713f2cf6bc971f07f70893eb52c23604ead0f2"
   end
 
 

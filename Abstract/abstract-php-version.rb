@@ -11,7 +11,7 @@ class AbstractPhpVersion < Formula
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "5.6".freeze
     PHP_VERSION     = "5.6.40".freeze
-    PHP_REVISION    = 103.freeze
+    PHP_REVISION    = 111.freeze
     PHP_BRANCH      = "PHP-5.6".freeze
     PHP_BRANCH_NUM  = "56".freeze
 
@@ -25,7 +25,7 @@ class AbstractPhpVersion < Formula
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "7.0".freeze
     PHP_VERSION     = "7.0.33".freeze
-    PHP_REVISION    = 103.freeze
+    PHP_REVISION    = 111.freeze
     PHP_BRANCH      = "PHP-7.0".freeze
     PHP_BRANCH_NUM  = "70".freeze
 
@@ -39,7 +39,7 @@ class AbstractPhpVersion < Formula
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "7.1".freeze
     PHP_VERSION     = "7.1.33".freeze
-    PHP_REVISION    = 103.freeze
+    PHP_REVISION    = 111.freeze
     PHP_BRANCH      = "PHP-7.1".freeze
     PHP_BRANCH_NUM  = "71".freeze
 
@@ -53,7 +53,7 @@ class AbstractPhpVersion < Formula
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "7.2".freeze
     PHP_VERSION     = "7.2.34".freeze
-    PHP_REVISION    = 103.freeze
+    PHP_REVISION    = 111.freeze
     PHP_BRANCH      = "PHP-7.2".freeze
     PHP_BRANCH_NUM  = "72".freeze
 
@@ -67,7 +67,7 @@ class AbstractPhpVersion < Formula
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "7.3".freeze
     PHP_VERSION     = "7.3.33".freeze
-    PHP_REVISION    = 103.freeze
+    PHP_REVISION    = 111.freeze
     PHP_BRANCH      = "PHP-7.3".freeze
     PHP_BRANCH_NUM  = "73".freeze
 
@@ -81,7 +81,7 @@ class AbstractPhpVersion < Formula
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "7.4".freeze
     PHP_VERSION     = "7.4.33".freeze
-    PHP_REVISION    = 106.freeze
+    PHP_REVISION    = 111.freeze
     PHP_BRANCH      = "PHP-7.4".freeze
     PHP_BRANCH_NUM  = "74".freeze
 
@@ -95,7 +95,7 @@ class AbstractPhpVersion < Formula
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "8.0".freeze
     PHP_VERSION     = "8.0.30".freeze
-    PHP_REVISION    = 104.freeze
+    PHP_REVISION    = 111.freeze
     PHP_BRANCH      = "PHP-8.0".freeze
     PHP_BRANCH_NUM  = "80".freeze
 
@@ -109,7 +109,7 @@ class AbstractPhpVersion < Formula
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "8.1".freeze
     PHP_VERSION     = "8.1.31".freeze
-    PHP_REVISION    = 106.freeze
+    PHP_REVISION    = 111.freeze
     PHP_BRANCH      = "PHP-8.1".freeze
     PHP_BRANCH_NUM  = "81".freeze
 
@@ -119,44 +119,44 @@ class AbstractPhpVersion < Formula
   end
 
   module Php82Defs
-    PHP_SRC_URL = "https://github.com/php/php-src/archive/refs/tags/php-8.2.26.tar.gz".freeze
+    PHP_SRC_URL = "https://github.com/php/php-src/archive/refs/tags/php-8.2.27.tar.gz".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "8.2".freeze
-    PHP_VERSION     = "8.2.26".freeze
-    PHP_REVISION    = 106.freeze
+    PHP_VERSION     = "8.2.27".freeze
+    PHP_REVISION    = 111.freeze
     PHP_BRANCH      = "PHP-8.2".freeze
     PHP_BRANCH_NUM  = "82".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "f68887b0ba83a4a6180388a48d93e52d46e73d20cec4d5fcc937fbf82fa70904",
+      :sha256 => "5707c30f1eb2986c19da2c8cd89ae1ca0417b65af41841f4ca8d6b1c631a4bdf",
     }.freeze
   end
 
   module Php83Defs
-    PHP_SRC_URL = "https://github.com/php/php-src/archive/refs/tags/php-8.3.14.tar.gz".freeze
+    PHP_SRC_URL = "https://github.com/php/php-src/archive/refs/tags/php-8.3.17.tar.gz".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "8.3".freeze
-    PHP_VERSION     = "8.3.14".freeze
-    PHP_REVISION    = 106.freeze
+    PHP_VERSION     = "8.3.17".freeze
+    PHP_REVISION    = 111.freeze
     PHP_BRANCH      = "PHP-8.3".freeze
     PHP_BRANCH_NUM  = "83".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "915d10b4320b219803b777841e54f27e612f76277ec40d03c96e232892ede88c",
+      :sha256 => "de860697df1e3a8983bfd63c1ad7ae8a7caadcd5a5ad77163a0b0f2fba0c9993",
     }.freeze
   end
 
   module Php84Defs
-    PHP_SRC_URL = "https://github.com/php/php-src/archive/refs/tags/php-8.4.1.tar.gz".freeze
+    PHP_SRC_URL = "https://github.com/php/php-src/archive/refs/tags/php-8.4.4.tar.gz".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "8.4".freeze
-    PHP_VERSION     = "8.4.1".freeze
-    PHP_REVISION    = 106.freeze
+    PHP_VERSION     = "8.4.4".freeze
+    PHP_REVISION    = 111.freeze
     PHP_BRANCH      = "PHP-8.4".freeze
     PHP_BRANCH_NUM  = "84".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "490df36775b2edbefb586ecb38cb4cd781fb05ac01794a345fc1269cca10792b",
+      :sha256 => "b94a8a210441463cd337bff80dd5d52a7f97b6f6a7d909d061518ebf392aac6c",
     }.freeze
   end
 end

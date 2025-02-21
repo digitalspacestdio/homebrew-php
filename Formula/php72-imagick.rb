@@ -9,9 +9,17 @@ class Php72Imagick < AbstractPhp72Extension
   head "https://github.com/mkoppanen/imagick.git"
   revision PHP_REVISION
 
+  bottle do
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.2.34-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "33211e4ab16c7615549f6edc32a6276b6d7e2d5cb541f79fe23382b3a915be12"
+    sha256 cellar: :any_skip_relocation, ventura:       "c06bfac76984ee862c85da6f4d3d3a2c30bc3fedbf96deb8fcfe35f05c3ee423"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afab31098a2ee2dec3356ccf8df67a11b0da8db77893b9da14d06f03c9b499b3"
+  end
+
 
   depends_on "pkg-config" => :build
   depends_on "imagemagick6"
+  depends_on "pcre2"
 
   def install
     Dir.chdir "imagick-#{version}" unless build.head?

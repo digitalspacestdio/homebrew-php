@@ -10,11 +10,10 @@ class Php71Zip < AbstractPhp71Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-103"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "57582c77839bf05ad858679c760bc5e09fd6463ea5e7d80f13ecaa344a16b365"
-    sha256 cellar: :any_skip_relocation, monterey:       "ce6b98832c3c0c9c1006de961dd0dd0f4c89c6b848a9f2cbd67bfc96cfedb9bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8bb092bbcfb288cae03cf64b7df9c81c479203570fe74bb6d9bc12e72b71ee7"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "c3d401bb55a129c83a650b007b889fee729417b9b0f75d87959c7122b765221d"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0851400299d1cdaac5bb1874f6539dd4a90eda7e55b2dfd7096643ace0b4bd04"
+    sha256 cellar: :any_skip_relocation, ventura:       "48da4a4d5855a25655abd08b3daa53572a0e09b0c7db0007d4cee4923405bdb6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bca27e0ef84da663dd01fc457f019a5ccc43d99ed1b1cec2ace0009f130f74b6"
   end
   depends_on "libzip"
   depends_on "zlib"

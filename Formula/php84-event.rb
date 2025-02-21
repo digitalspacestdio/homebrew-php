@@ -11,7 +11,7 @@ class Php84Event < AbstractPhp84Extension
 
 
   depends_on "libevent"
-  depends_on "openssl@1.1"
+  depends_on "openssl111w"
 
   def install
     Dir.chdir "event-#{version}" unless build.head?
@@ -22,7 +22,7 @@ class Php84Event < AbstractPhp84Extension
     args << "--enable-event-debug"
     args << "--with-event-libevent-dir=#{Formula["libevent"].opt_prefix}"
     args << "--with-event-openssl"
-    args << "--with-openssl-dir=#{Formula["openssl"].opt_prefix}"
+    args << "--with-openssl-dir=#{Formula["openssl111w"].opt_prefix}"
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}", phpconfig, *args

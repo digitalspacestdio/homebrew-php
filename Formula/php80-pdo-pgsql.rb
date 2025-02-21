@@ -11,11 +11,10 @@ class Php80PdoPgsql < AbstractPhp80Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-104"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b3affc43448f83ba59cc233bf3786311031a189b368a1a6c6d83b0c5f0a906bd"
-    sha256 cellar: :any_skip_relocation, monterey:       "4c73e4d0ccd7f1936d440dce7b506ff30b6abcbe1c8e3470ce9793b8f1cbdb96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b6dd5b6f40f4420190b630ff4e47135e795eaec8b34aa5c73959d01676ad2cbb"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "04fb142c1f2d1da4b33615dfad2bc8f1e8559f33c42fb51d8ebaf9ea7f50cb1d"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2ba46317e07298e2ae8463709824be7401b82325f30acbe0dbab82cbd3a8b160"
+    sha256 cellar: :any_skip_relocation, ventura:       "704e80b5abc6f8c2f9c51d17f2fd73cbedd2866a19199f49822ff85d77cc1a7c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29d0e449a3137b8be453c2bebc1e83a79b95f01fb99232c10b2034f037b78d0b"
   end
 
   depends_on "digitalspacestdio/common/libpq@16.2-icu4c.74.2"

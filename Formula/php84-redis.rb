@@ -3,15 +3,17 @@ require File.expand_path("../../Abstract/abstract-php-extension", __FILE__)
 class Php84Redis < AbstractPhp84Extension
   init
   desc "PHP extension for Redis"
-  url "https://codeload.github.com/phpredis/phpredis/tar.gz/6ea5b3e08bdbf8cbe93e0dc56b18e8316d65097c"
-  sha256 "1ead0114e39dec20f0ce254a5aaf10eb9a4e69abbaa398ad539a1c6597e3abf9"
-  head "https://github.com/phpredis/phpredis.git", branch: "develop"
-  version "0.0.0-dev.1"
+  url "https://codeload.github.com/phpredis/phpredis/tar.gz/5419cc9c60d1ee04163b4d5323dd0fb02fb4f8bb"
+  sha256 "58a1d293ec3a7214813da32545272acfef9346720ddecfa014f9d1c85e8471e7"
+  head "https://github.com/phpredis/phpredis.git", branch: "6.1.0"
+  version "6.1.0"
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.1-106"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "deae322a1ba562f518c49f4d3376858043a2fdd31ad73934689836bb5204851e"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.4.4-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "553d2410f5e26d8fef20327cc1abf3c1f2cd4cc4ae4901216258ce3e0a9003c3"
+    sha256 cellar: :any_skip_relocation, ventura:       "c992a3667b935cc3df0fdfecbb1200d7bc4166abdac5bad53765eed0c2d08db2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1817008afdcbf6f2922af36b93a90bfc2bddd3ddd14a0086244132db8d15c2c8"
   end
 
   depends_on "digitalspacestdio/php/php#{PHP_BRANCH_NUM}-igbinary"

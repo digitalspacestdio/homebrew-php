@@ -9,11 +9,10 @@ class Php70Msmtp < AbstractPhp70Extension
   revision 1
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-103"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0f4fe38db965fd83029a08847f4fdcdbfdbd2ad1d0b845b2219c03b6d09f962b"
-    sha256 cellar: :any_skip_relocation, monterey:       "151a55635235c5c1949c5eb8b0cb8cbc4b80c84e195b705445ab80b420f612f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c5fe86aa0d0c67504e819c2853f22acca9ac5b809571f5107f29b841add68193"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "18aeaf1dd21b2ea0d24d9407965086b44bc907694c0fe37a7c990dabab3ee985"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.0.33-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "77350867c5d33551c3347e0b28f8996c668477b1815785a8051c3d8edeaf9186"
+    sha256 cellar: :any_skip_relocation, ventura:       "68bbd434424191a8b66a87856a734a0620ff68f9aa2a3f45cec8155b3af4e88d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d70a7b117b9206f3076d3419a2e787b7ecc80c8903cda75ab81330ea69d658b2"
   end
 
   depends_on "msmtp"

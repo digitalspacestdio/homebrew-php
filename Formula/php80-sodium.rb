@@ -10,11 +10,10 @@ class Php80Sodium < AbstractPhp80Extension
   sha256 PHP_CHECKSUM[:sha256]
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-104"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "00e054a8808163910e92e2eb8f9f520a3cf69421f0b1edbb4c50ac94b7f4ae2b"
-    sha256 cellar: :any_skip_relocation, monterey:       "67650e95d64d6010b3b6aa69822f8fec7b4376270272534e75299a6056b513b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03671d2edeefaf55f20e6cb1889a6490016bc16cd74f046d20b12f5f6717df7c"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "cf35b9f4cb6e436218d67ded0bb87631038089e2d73a98c2dede318bd4612065"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "911899f785a6ee4c6841093297ca35295cdfbdf01faa41871cb32b969c4a6fa2"
+    sha256 cellar: :any_skip_relocation, ventura:       "5d2a15ac269021bdf5fc38c0d0db98d35f6947388530a48d358aca35582183d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1981515a5b1d1ad0ec04b06abfbfe439da26ebdf228a1fc683ba91119a67f9e"
   end
 
   depends_on "pkg-config" => :build

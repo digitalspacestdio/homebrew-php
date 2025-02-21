@@ -9,11 +9,10 @@ class Php80Redis < AbstractPhp80Extension
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-104"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "86ea5778fbf0b2ee76bdf37df3ad4b5f3bea4a780592839b684b404b0fff0236"
-    sha256 cellar: :any_skip_relocation, monterey:       "88aa1e2e62678446f819beafc51471089d1fc315a42453ddba843b1d37c17a82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "55c86f5f53dcca0a7196d4999c8a5d1adeb8192476dbf4bf01a54fd5e3c920e3"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "4f4d41b347f741542dc97c07335b27892acca2db379647c1cd7e91e2cd4946ca"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1ec5152bbe76a08546aa1b82fb225f3e791281ac17017c2f25730ccd5419ea32"
+    sha256 cellar: :any_skip_relocation, ventura:       "778d69b250289ede8ebc006ba23c9f6a5c1d5845eb3625643f36f3df82bf61c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ab28089f1530abde59f9401d7b795cae47e812455972f00db72441ed3b5cad6"
   end
 
   depends_on "digitalspacestdio/php/php80-igbinary"

@@ -9,11 +9,10 @@ class Php71Apcu < AbstractPhp71Extension
   head "https://github.com/krakjoe/apcu.git"
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-103"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "591606cf95c7ef7617020591ce0d1ac517b0376e3624c1471be25effdaedae7b"
-    sha256 cellar: :any_skip_relocation, monterey:       "d74e8ccdcc149259945118e7130647c087d77f54084f5df3fe3d5635fd246171"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6ca7897127d95008f1c5c19d50b647174f81d77ad4c38fa105683d713271b1b"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "01383e8eaa5f8c8887e3a3c4c06dcd38e2a99c3d8ce139c72cb1e55fea07d2ef"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.1.33-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a560e30b65885ed9c559044a4662543ce0095bcf6506b0640b6946df3db3bfbe"
+    sha256 cellar: :any_skip_relocation, ventura:       "56d09bf3a6091a1eeba2228140ad4f9f29774ed2d18ac0203c85afdc19797d09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3987e78a4232be0b619c9c99b71c859b8fbc2ccf7c780f73261e38b4e53179bc"
   end
   depends_on "pcre2"
   revision PHP_REVISION

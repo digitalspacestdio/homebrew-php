@@ -8,11 +8,10 @@ class Php73 < AbstractPhp
   revision PHP_REVISION
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.3.33-103"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a6be16c869a273def3826dca672273547cddcda3e3c893c37ecd9c17c9830d68"
-    sha256 cellar: :any_skip_relocation, monterey:       "29c6b1417e28d0d9f05c8a11bad9ac3e689df857ff7ca314ee97bc121ca06c79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57f2e1df8ba8624257b4ddbb96351b87f61d50ed3fa2793e46a60543c762d227"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "0bf43504d29753bdc704bfcb2fdc3065d24cbbce80c5bc80d2cd0ac4e6969290"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.3.33-111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "36e1bd6d75876ba599b8bd2851622a9d7ca23beb5fe2d51e7582ae47c3d278b2"
+    sha256 cellar: :any_skip_relocation, ventura:       "da36e477f456fc44bcc320ecfedcda3f1eb2d318eb88a0e3841bfe65e57bac9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad684d5ad79acf02339965b931bea50e837f57e83c801ccf4799ef334670bc0e"
   end
   
   url PHP_SRC_URL
@@ -29,14 +28,6 @@ class Php73 < AbstractPhp
   end
   
   depends_on "libjpeg"
-
-  def install_args
-    args = super
-    if !build.without? "pear"
-      args << "--with-pear"
-    end
-    args
-  end
 
   if OS.mac?
     patch do
