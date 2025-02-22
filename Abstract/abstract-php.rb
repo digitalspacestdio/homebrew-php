@@ -24,7 +24,8 @@ class AbstractPhp < Formula
 
     depends_on "pkg-config" => :build
     if OS.mac? && @@php_version.start_with?("7.", "8.0", "8.1") || OS.linux?
-      depends_on "gcc@13" => :build
+      # depends_on "gcc@13" => :build
+      depends_on "gcc@13"
     end
 
     depends_on "autoconf269" => :build if @@php_version.start_with?("5.")

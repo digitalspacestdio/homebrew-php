@@ -32,7 +32,8 @@ class AbstractPhpExtension < Formula
     depends_on "re2c" => :build if !@@php_version.start_with?("5.")
 
     if OS.linux? || OS.mac? && !@@php_version.start_with?("5.") && @@use_gcc
-      depends_on "gcc@13" => :build
+      # depends_on "gcc@13" => :build
+      depends_on "gcc@13"
     end
     option "without-config-file", "Do not install extension config file"
   end
