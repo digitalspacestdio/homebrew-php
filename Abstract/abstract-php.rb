@@ -698,10 +698,16 @@ INFO
   def post_install
     begin
       inreplace config_path_php_fpm_www do |s|
-        s.sub!(/^.*?listen\s*=.+$/, "listen = #{var}/run/php#{php_version}-fpm.sock ")
+        s.sub!(/^.*?listen\s*=.+$/, "listen = #{var}/run/php#{php_version}-fpm.sock ", audit_result: false)
       end
+    rescue StandardError
+      nil
+    end
+
+    # Make the newest installed version the default one
+    begin
       if !File.exist?(config_path_phprc) || Gem::Dependency.new('', "> " + config_path_phprc.read).match?('', php_version)
-        config_path_phprc.write(php_version)
+        File.write(config_path_phprc, php_version)
       end
     rescue StandardError
       nil
