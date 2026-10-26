@@ -323,3 +323,11 @@ class AbstractPhp84Extension < AbstractPhpExtension
     depends_on "digitalspacestdio/php/php84"
   end
 end
+
+class AbstractPhp85Extension < AbstractPhpExtension
+  include AbstractPhpVersion::Php85Defs
+  def self.init(php_version = PHP_VERSION, use_gcc = false)
+    super(php_version, use_gcc)
+    depends_on "digitalspacestdio/php/php85"
+  end
+end

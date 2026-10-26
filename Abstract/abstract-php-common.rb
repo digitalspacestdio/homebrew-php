@@ -30,7 +30,8 @@ class AbstractPhpCommon < Formula
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-intl"
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-mongodb"
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-msmtp"
-    depends_on "digitalspacestdio/php/php#{@@php_version_path}-opcache"
+    # Since PHP 8.5 opcache is always built into the core
+    depends_on "digitalspacestdio/php/php#{@@php_version_path}-opcache" if Gem::Version.new(@@php_version) < Gem::Version.new("8.5")
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-pdo-pgsql"
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-sodium"
     depends_on "digitalspacestdio/php/php#{@@php_version_path}-redis"
