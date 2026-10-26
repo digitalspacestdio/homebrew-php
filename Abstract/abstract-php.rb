@@ -254,7 +254,7 @@ INFO
     # system pkg-config missing
     ENV["KERBEROS_CFLAGS"] = " "
     if OS.mac?
-      ENV["SASL_CFLAGS"] = "-I#{MacOS.sdk_path_if_needed}/usr/include/sasl"
+      ENV["SASL_CFLAGS"] = "-I#{MacOS.sdk_path}/usr/include/sasl"
       ENV["SASL_LIBS"] = "-lsasl2"
     else
       ENV["SQLITE_CFLAGS"] = "-I#{Formula["sqlite"].opt_include}"
@@ -268,7 +268,7 @@ INFO
     # end
 
     if OS.mac? 
-      headers_path = "=#{MacOS.sdk_path_if_needed}/usr"
+      headers_path = "=#{MacOS.sdk_path}/usr"
     else
       headers_path = ""
     end
@@ -348,7 +348,7 @@ INFO
       args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.74.2"].opt_prefix}"
       args << "--with-libxml=#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.74.2"].opt_prefix}" if OS.linux?
 
-      args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}" if OS.mac?
+      args << "--with-os-sdkpath=#{MacOS.sdk_path}" if OS.mac?
 
     elsif @@php_version.start_with?("7.4")
       ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.74.2"].opt_prefix}/lib"
@@ -361,7 +361,7 @@ INFO
       args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.74.2"].opt_prefix}"
       args << "--with-libxml=#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.74.2"].opt_prefix}" if OS.linux?
 
-      args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}" if OS.mac?
+      args << "--with-os-sdkpath=#{MacOS.sdk_path}" if OS.mac?
 
     elsif @@php_version.start_with?("7.3")
       ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}/lib"
@@ -375,7 +375,7 @@ INFO
       args << "--with-xsl=#{Formula["digitalspacestdio/common/libxslt@1.10-icu4c.69.1"].opt_prefix}"
       args << "--with-gettext=#{Formula["digitalspacestdio/common/gettext@0.22-icu4c.69.1"].opt_prefix}"
 
-      args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}" if OS.mac?
+      args << "--with-os-sdkpath=#{MacOS.sdk_path}" if OS.mac?
 
     elsif @@php_version.start_with?("7.")
       ENV.append "LDFLAGS", "-L#{Formula["digitalspacestdio/common/icu4c@69.1"].opt_prefix}/lib"
