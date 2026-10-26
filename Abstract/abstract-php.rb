@@ -175,6 +175,9 @@ class AbstractPhp < Formula
     ENV.append "CFLAGS", "-O2"
     ENV.append "CXXFLAGS", "-O2"
 
+    # Newer clang defaults to C23, which drops K&R function definitions (e.g. bcmath in PHP < 8.4)
+    ENV.append "CFLAGS", "-std=gnu17"
+
     if @@php_version.start_with?("5.")
       ENV["PHP_AUTOCONF"] = "#{Formula["autoconf269"].opt_bin}/autoconf"
       ENV["PHP_AUTOHEADER"] = "#{Formula["autoconf269"].opt_bin}/autoheader"
