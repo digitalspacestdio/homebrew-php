@@ -10,15 +10,15 @@ class Php85Mongodb < AbstractPhp85Extension
   revision PHP_REVISION
 
   depends_on "openssl@3"
-  depends_on "digitalspacestdio/common/icu4c@74.2"
 
   def install
     Dir.chdir "mongodb-#{version}" unless build.head?
 
     safe_phpize
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@3"].opt_lib/"pkgconfig"
     system "./configure", "--prefix=#{prefix}",
                           phpconfig,
-                          "--with-mongodb-ssl=openssl --with-mongodb-icu=#{Formula["digitalspacestdio/common/icu4c@74.2"].opt_prefix} --with-openssl-dir=#{Formula["openssl@3"].opt_prefix}"
+                          "--with-mongodb-ssl=openssl"
     system "make"
     prefix.install "modules/mongodb.so"
     write_config_file if build.with? "config-file"

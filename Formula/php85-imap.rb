@@ -21,6 +21,8 @@ class Php85Imap < AbstractPhp85Extension
   def install
     ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_prefix}/lib"
     ENV.append "CPPFLAGS", "-I#{Formula["pcre2"].opt_prefix}/include"
+    # libc-client from php-imap-uw needs OpenSSL 3 (TLSv1_*_method is gone in OpenSSL 4)
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@3"].opt_lib/"pkgconfig"
 
     safe_phpize
     system "./configure", "--prefix=#{prefix}",
