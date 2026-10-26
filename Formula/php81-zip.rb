@@ -10,13 +10,6 @@ class Php81Zip < AbstractPhp81Extension
   url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
 
-  bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-111"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a52e1f04e4c6c0d9d473cfccff5c06c82a0c31e6816b329730194fc03724caba"
-    sha256 cellar: :any_skip_relocation, ventura:       "c88eb18321959afdd2e664d339f1429bd9abfdcb8ceb98f1b3aeaa58dfef65bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a7d6b312ee9b18b95ecdb8bf206902415c7d6bcbc4ad3c48eb9b2d5c74642a3"
-  end
-
   depends_on "libzip"
   depends_on "pkg-config" => :build
   depends_on "pcre2"

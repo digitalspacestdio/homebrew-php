@@ -5,14 +5,8 @@ class Php74 < AbstractPhp
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
   desc "PHP " + PHP_VERSION
   version PHP_VERSION
-  revision PHP_REVISION
+  revision PHP_REVISION + 1 # +1 for the CVE-2026-109618/109619 patch
 
-  bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/7.4.33-111"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c7be6cf3868140f9f3c8b8b24e02d614e732cbd8e645deb301e0d0720a1e5473"
-    sha256 cellar: :any_skip_relocation, ventura:       "dcc0edc8b857601fc104903f8327f84bd85e64ef2aba76ae86753afa35e4b5cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ad1f7f8d8de60870ab36ff12f2c24a938feda95facf7084eb32f5fe9131bb02"
-  end
   
   keg_only :versioned_formula
 
@@ -39,6 +33,12 @@ class Php74 < AbstractPhp
         url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php74/macos.patch"
         sha256 "53de4079666daabac28358b8a025e3c60103e5b1230c66860c8e0b7414c0fec1"
       end
+  end
+
+  # CVE-2026-109618, CVE-2026-109619 (from digitalspacestdio/php-legacy)
+  patch do
+    url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php74/CVE-2026-109618-109619.patch"
+    sha256 "658bc861d874b50a72f79b8e4c97b8198af0aeb36b14ba8ab79901803f516ade"
   end
 
   service do

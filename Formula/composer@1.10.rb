@@ -8,14 +8,6 @@ class ComposerAT110 < AbstractPhpPhar
   head "https://getcomposer.org/composer.phar"
   version "1.10.27"
 
-  bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/composer@1.10"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e820670faccfb2839f2ea42227804676f8bc74c453bbd190568b04feaed802b6"
-    sha256 cellar: :any_skip_relocation, monterey:       "1903057bae2993dcc81360bed019311a9e41e7ffdcca7322b43090bc62419c29"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06655ff6bb797bc4bbdcafd568ebe9ea9f28faf360432c2a8d8f762bb30b9f67"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "54eb37ffd14d52e2d589d4138b51127699427c2f0b1f75905eaab1b399bcbbe3"
-  end
-
   depends_on "gpatch"
   depends_on "git"
 

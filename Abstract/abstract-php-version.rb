@@ -105,16 +105,16 @@ class AbstractPhpVersion < Formula
   end
 
   module Php81Defs
-    PHP_SRC_URL = "https://github.com/php/php-src/archive/refs/tags/php-8.1.31.tar.gz".freeze
+    PHP_SRC_URL = "https://github.com/php/php-src/archive/refs/tags/php-8.1.34.tar.gz".freeze
     PHP_GITHUB_URL  = "https://github.com/php/php-src.git".freeze
     PHP_VERSION_MAJOR = "8.1".freeze
-    PHP_VERSION     = "8.1.31".freeze
+    PHP_VERSION     = "8.1.34".freeze
     PHP_REVISION    = 111.freeze
     PHP_BRANCH      = "PHP-8.1".freeze
     PHP_BRANCH_NUM  = "81".freeze
 
     PHP_CHECKSUM    = {
-      :sha256 => "35f13315fd7cb2aebb1514b487baf3c84ebd6dfbd98a3e533d22a1bbc17495e7",
+      :sha256 => "896859886cbda8d0717fcd696c7b1e93a12aac59d9ca90f69a37a2e7ae3418e3",
     }.freeze
   end
 

@@ -5,14 +5,7 @@ class Php56 < AbstractPhp
   init PHP_VERSION_MAJOR, PHP_VERSION, PHP_BRANCH_NUM
   desc "PHP " + PHP_VERSION
   version PHP_VERSION
-  revision PHP_REVISION
-
-  bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/5.6.40-103"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "febe53ce5a77c38210e314d07058fa08fc2d8c969e01ae1d24d04bdc6810c40a"
-    sha256 cellar: :any_skip_relocation, monterey:       "848e235fb0c3db84ac6e0d92b45d742e4a780d6b362dd68c63800ee1f8ef1b5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06230459ddd40a7d985b802aa6e4149e43a872397db09cddb27f4a4a24b569c9"
-  end  
+  revision PHP_REVISION + 1 # +1 for the CVE-2026-109618/109619 patch
 
   url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
@@ -42,6 +35,12 @@ class Php56 < AbstractPhp
   patch do
     url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php#{PHP_BRANCH_NUM}/Make-use-of-pkg-config-for-libxml2.patch"
     sha256 "92d9746508a98b5871a4645b59aa95a364aae63705aa9e184da829eedb6c74a9"
+  end
+
+  # CVE-2026-109618, CVE-2026-109619 (from digitalspacestdio/php-legacy)
+  patch do
+    url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php56/CVE-2026-109618-109619.patch"
+    sha256 "31cf9395782fca1933e34b89eff38262eef533c22a028e514e58ea95e900b9a0"
   end
 
   service do

@@ -10,11 +10,10 @@ class Php81Opcache < AbstractPhp81Extension
   url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
 
-  bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.1.31-111"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "dd6e840f45c3545d1c10757168d394510a3297f41d0b4669f83f2c88e1b81d0b"
-    sha256 cellar: :any_skip_relocation, ventura:       "27f0747d0dc7a8aa5d78b0e256b15b456d584bcb7a90ae5412d6e41685bcf1c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "650fd013887fa7b7cd504e1e19dd8a25bbad369c99da4ecc059855da14b24e31"
+  # CVE-2026-109618, CVE-2026-109619 (from digitalspacestdio/php-legacy), touches ext/opcache
+  patch do
+    url "https://raw.githubusercontent.com/digitalspacestdio/homebrew-php/master/Patches/php81/CVE-2026-109618-109619.patch"
+    sha256 "797955ab45234a510c17dfd27101d8ad6c2f65abc298168d84214e1a06b77591"
   end
 
   depends_on "pcre2"

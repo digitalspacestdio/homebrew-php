@@ -10,13 +10,6 @@ class Php82Intl < AbstractPhp82Extension
   url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
 
-  bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.2.27-111"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f49f324c4648becd9660ad69436538c3cc5254087c18f23b2682be6ddf2ceee2"
-    sha256 cellar: :any_skip_relocation, ventura:       "4347d14b6c5a1dcd8fb1402b57e7b04e9506cfe12564ba4c0bcded98eb3037d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf0fc6b6cccc0b1c1dd65eead45a4ac4f806529ce5c565c2c8c83cabebbafefd"
-  end
-
   depends_on "digitalspacestdio/common/icu4c@74.2"
   depends_on "pkg-config" => :build
 

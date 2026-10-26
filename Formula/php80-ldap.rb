@@ -10,13 +10,6 @@ class Php80Ldap < AbstractPhp80Extension
   url PHP_SRC_URL
   sha256 PHP_CHECKSUM[:sha256]
 
-  bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/8.0.30-111"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "de0cdbb5c1539b09bbff6a1d9808bdd308613a425671127fb4cac276cd97bb02"
-    sha256 cellar: :any_skip_relocation, ventura:       "191976080efd69a899edb7e39d14bec216644f7b57d1f93f2e6d4a4b6101c8ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbc6a06f2053030d7e99527cd070f64ee84ee4056eb72072cecdbc8f1f806fe9"
-  end
-
   depends_on "openldap"
 
   def install

@@ -6,14 +6,6 @@ class ComposerAT22 < Formula
   license "MIT"
   version "2.2.22"
 
-  bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/php/composer@2.2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "69d5880605b4b5decd12f41a3f21421ca865b640e90802e968d8038bf26fc394"
-    sha256 cellar: :any_skip_relocation, monterey:       "3c8639e6523011248808dfd85347591a3422bbecf5ec889d4b9276014f7851bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "850c50e877efbecb78267abbbbcce7ea3c7337811ba11723625d86b8a0c41307"
-    sha256 cellar: :any_skip_relocation, aarch64_linux:  "1ba1003af860f00633c213ccf1dd4d2dfb810f0011fe8831b3a164242743e6f4"
-  end
-
   depends_on "gpatch"
   depends_on "git"
 
