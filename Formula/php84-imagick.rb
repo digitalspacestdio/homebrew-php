@@ -5,8 +5,8 @@ class Php84Imagick < AbstractPhp84Extension
   desc "Provides a wrapper to the ImageMagick library."
   homepage "https://github.com/Imagick/imagick"
   head "https://github.com/mkoppanen/imagick.git"
-  url "https://github.com/Imagick/imagick/archive/refs/tags/3.7.0.tar.gz"
-  sha256 "aa2e311efb7348350c7332876252720af6fb71210d13268de765bc41f51128f9"
+  url "https://github.com/Imagick/imagick/archive/refs/tags/3.8.1.tar.gz"
+  sha256 "b0e9279ddf6e75a8c6b4068e16daec0475427dbca7ce2e144e30a51a88aa5ddc"
 
   revision PHP_REVISION
 
